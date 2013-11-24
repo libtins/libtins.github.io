@@ -4,15 +4,29 @@ layout: default
 ---
 <h3>Download</h3>
 
-The latest version is available on the project's github
+<p>
+In order to download <i>libtins</i>, please visit project's github
 <a href="https://github.com/mfontanini/libtins">
 page</a>.
+</p>
+
+<h4>Latest source</h4>
+
+<p>
+Download the latest sourcecode through the following links:
+</p>
+<ul>
+<li>In <a href="https://github.com/mfontanini/libtins/archive/master.tar.gz">tar.gz</a> format.</li>
+<li>In <a href="https://github.com/mfontanini/libtins/archive/master.zip">Zip</a> format.</li>
+</ul>
 
 <h4>Debian-based systems(only version 1.1)</h4>
 
+<p>
 <i>.deb</i> packages are also available(big thanks to <a href="http://kalgan.cc/">
 Raúl Benencia</a>), so in case you're using a Debian-based 
 system(Ubuntu, Linux Mint, etc), you can download them:
+</p>
 
 <h5>32 bit systems</h5>
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_i386.deb/download">
@@ -22,14 +36,16 @@ http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins1_1.1-1_i386.deb/download
 </a><br /><br />
 
+<p>
 Then install them using some Debian package installer tool, such as 
 <i>dpkg</i>:
+</p>
 
-<pre class="brush: bash;">
+{% highlight bash %}
 # As root
 dpkg -i libtins-dev_1.1-1_i386.deb
 dpkg -i libtins1_1.1-1_i386.deb
-</pre>
+{% endhighlight %}
 
 <h5>64 bit systems</h5>
 
@@ -38,22 +54,26 @@ http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_
 </a><br />
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins1_1.1-1_amd64.deb/download">
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins1_1.1-1_amd64.deb/download
-</a><br /><br />
+</a>
 
+<p>
 Then install them using some Debian package installer tool, such as 
 <i>dpkg</i>:
+</p>
 
-<pre class="brush: bash;">
+{% highlight bash %}
 # As root
 dpkg -i libtins-dev_1.1-1_amd64.deb
 dpkg -i libtins1_1.1-1_amd64.deb
-</pre>
+{% endhighlight %}
 
 <h4>Latest stable version</h4>
 
+<p>
 In order to get the latest stable version, you can clone the git repository.
 You can do that executing the following command:
+</p>
 
-<pre class="brush: bash;">
-git clone git://git.code.sf.net/p/libtins/code libtins-code
-</pre>
+{% highlight bash %}
+git clone git@github.com:mfontanini/libtins.git
+{% endhighlight %}
