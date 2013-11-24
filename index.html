@@ -33,7 +33,7 @@ bool handler(const PDU &pdu) {
 }
 
 int main() {
-    Sniffer("eth0", 1600).sniff_loop(handler);
+    Sniffer("eth0").sniff_loop(handler);
 }
 {% endhighlight %}
 
