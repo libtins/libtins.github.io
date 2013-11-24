@@ -1,0 +1,108 @@
+---
+title: Installation
+layout: default
+---
+<h3>Installation</h3>
+
+This section will guide you through the <i>libtins</i> installation
+process.
+
+<div id="section-listing">
+    <ul>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#compiling">Compiling libtins</a></li>
+        <li><a href="#cross-compiling">Cross-compiling libtins</a></li>
+        <li><a href="#using">Using libtins</a></li>
+    </ul>
+</div>
+<hr>
+
+<h4 id="requirements">Requirements</h4>
+
+<p>
+<i>libtins</i> depends on both, 
+<a href="http://www.tcpdump.org"><i>libpcap</i></a> and <i>libcrypto</i>, 
+which is provided by the <i>OpenSSL</i> library. Note that the latter 
+is only required if you want to allow WPA2 decryption. This feature
+can be disabled by using the <i>--disable-wpa2</i> configure switch.
+</p>
+<p>
+You should be able to install both libraries through your distribution's 
+package manager.
+</p>
+<p>
+For Debian based systems(Ubuntu, Linux Mint, etc), you can install it
+executing this command as <b>root</b>:
+</p>
+
+{% highlight bash %}
+apt-get install libpcap-dev libssl-dev
+{% endhighlight %}
+
+<h4 id="compiling">Compiling libtins</h4>
+<p>
+Now you've got everything you need for compiling <i>libtins</i>.
+In order to compile, just execute the following commands:
+</p>
+{% highlight bash %}
+./configure
+make
+{% endhighlight %}
+<p>
+If you want to enable C++11 support(many non-copyable classes will 
+be movable, plus, it will run faster), use the <i>--enable-c++11</i> 
+switch:
+</p>
+
+{% highlight bash %}
+./configure --enable-c++11
+{% endhighlight %}
+<p>
+Now you've compiled the library. The shared object will be located in 
+the <i>.libs</i> directory. If you want to install <i>libtins</i> in the 
+default include and library path, so you can use it easily in your 
+applications, run this command as <b>root</b>:
+</p>
+{% highlight bash %}
+make install
+{% endhighlight %}
+<p>
+This will tipically install the shared objects in <i>/usr/local/lib</i>
+and the header files in <i>/usr/local/include</i>.
+</p>
+<p>
+Note that unless you want to restart your system before using the library,
+you'll need to update <i>ldconfig</i>'s cache, by issuing:
+</p>
+
+{% highlight bash %}
+ldconfig
+{% endhighlight %}
+
+<h4 id="cross-compiling">Cross-compiling libtins</h4>
+
+<p>
+<i>libtins</i> works on several architectures commonly used in embedded
+systems, such as <i>ARM</i> and <i>MIPS</i>. The cross-compilation
+process in described in <a href="{{ site.url }}/cross-compile/">
+this tutorial</a>.
+</p>
+
+<h4 id="using">Using libtins</h4>
+
+<h5>Headers</h5>
+<p>
+<i>libtins</i>' headers are inside a directory named <i>tins</i>, inside
+your default include directory. You can include individual headers, or
+just include <tins/tins.h>, which will include all of them.
+</p>
+
+<h5>Linking</h5>
+<p>
+In order to link your application with <i>libtins</i> on GCC and clang,
+use the <i>-ltins</i> flag:
+</p>
+
+{% highlight bash %}
+g++ app.cpp -o app -ltins
+{% endhighlight %}

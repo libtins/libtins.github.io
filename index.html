@@ -1,0 +1,54 @@
+---
+title: C++ packet sniffing and crafting library
+layout: default
+---
+<p>
+    <i>libtins</i> is a high-level, multiplatform <i>C++</i> network 
+    packet sniffing and crafting library.
+</p>
+<p>
+    Its main purpose is to provide the <i>C++</i> developer an easy,
+    efficient, platform and endianess-independent way to create tools 
+    which need to send, receive and manipulate network packets.
+</p>
+<p>
+    The library is very simple to use. As a short example, this is 
+    how it could be used to print the source and destination addresses 
+    and ports of every <i>TCP</i> packet captured in the <i>eth0</i> 
+    interface:
+</p>
+
+{% highlight cpp %}
+#include <iostream>
+#include <tins/tins.h>
+
+using namespace Tins;
+
+bool handler(const PDU &pdu) {
+    const IP &ip = pdu.rfind_pdu<IP>();
+    const TCP &tcp = pdu.rfind_pdu<TCP>();
+    std::cout << ip.src_addr() << ':' << tcp.sport() << " -> " 
+              << ip.dst_addr() << ':' << tcp.dport() << std::endl;
+    return true;
+}
+
+int main() {
+    Sniffer("eth0", 1600).sniff_loop(handler);
+}
+{% endhighlight %}
+
+<p>
+    <i>libtins</i> was designed keeping efficiency in mind at all times.
+    In fact, it is one of the fastest packet sniffing and interpretation 
+    libraries available. The <a href="{{ site.url }}/benchmark/">benchmark</a> section 
+    contains some actual measurements of how fast it works.
+</p>
+<p>
+    Almost as much time was invested testing the library than 
+    developing it. At the moment of writing, there are 607 unit tests, 
+    which check that every getter, setter and method does what's 
+    expected. All of them run successfully on Windows, OSX and both 
+    little and big endian GNU/Linux and FreeBSD operating systems. 
+</p>
+
+

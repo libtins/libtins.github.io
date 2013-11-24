@@ -1,0 +1,139 @@
+---
+title: Changelog
+layout: default
+---
+<h3>Changelog</h3>
+
+In this section you can find a detailed explanation of the changes made
+in each released version.
+
+<div id="section-listing">
+    <ul>
+        <li><a href="#v1.2">Version 1.2</a></li>
+        <li><a href="#v1.1">Version 1.1</a></li>
+        <li><a href="#v1.0">Version 1.0</a></li>
+        <li><a href="#v0.3">Version 0.3</a></li>
+        <li><a href="#v0.2">Version 0.2</a></li>
+    </ul>
+</div>
+
+<hr>
+
+<h4 id="v1.2">Version 1.2</h4>
+<ul>
+    <li>Added BaseSniffer::begin and BaseSniffer::end.</li>
+    <li>BaseSniffer::next_packet uses pcap_loop instead of pcap_next, which
+doesn't work well on some linux distributions.</li>
+    <li>Added PPI PDU class.</li>
+    <li>Fixed a bug in EthernetII triggered when the size of the whole frame 
+was lower than 60 bytes.</li>
+    <li>Added AddressRange class and IPv4Address, IPv6Address and 
+HWAddress&lt;&gt;::operator/.</li>
+    <li>Added is_broadcast, is_multicast and is_unicast to IPv4, IPv6
+and HWAddress.</li>
+    <li>Added is_private and is_loopback methods to IPv4 and IPv6 addresses.</li>
+    <li>Done some optimizations on TCP's constructor from buffer.</li>
+    <li>Added helper functions to Dot11Data to retrieve the source, 
+destination and BSSID addresses.</li>
+    <li>Fixed bugs in DNS triggered when parsing MX and unknown records.</li>
+    <li>BaseSniffer::next_packet now iterates until a valid packet is found.</li>
+    <li>TCP::get_flag is now const.</li>
+    <li>The --disable-wpa2 now works as expected.</li>
+</ul>
+<h4 id="v1.1">Version 1.1</h4>
+<ul>
+    <li>Implemented std::hash specialization for IPv4, IPv6 and HWAddress&lt;&gt;
+types.</li>
+    <li>Added a RSNHandshakeCapturer class.</li>
+    <li>Added WPA2Decrypter class.</li>
+    <li>IEEE 802.11 frames are not parsed if the RadioTap FAILED_FCS flag 
+is on.</li>
+    <li>RadioTap now calculates its size everytime it's serialized.</li>
+    <li>Splitted the dot11.h and dot11.cpp files into several files to
+speed up compilation times.</li>
+    <li>Added HWAddress<>::is_broadcast and HWAddress::operator[].</li>
+    <li>Fixed a bug triggered when parsing Dot11QoSData frames.</li>
+</ul>
+<h4 id="v1.0">Version 1.0</h4>
+<ul>
+    <li>Link layer protocol PDUs now don't hold a NetworkInterface. This led
+    to changes in their constructors.</li>
+    <li>Removed the obsolete PDU* parameter taken by several classes' 
+    constructors.</li>
+    <li>IP now sets the sender's address automatically when no link layer
+    PDU is used.</li>
+    <li>IP, TCP and UDP now calculate the checksum everytime they're 
+    serialized.</li>
+    <li>Added PDU::rfind_pdu.</li>
+    <li>Defined several exception types.</li>
+    <li>Implemented matches_response on several protocols.</li>
+    <li>PacketSender is now movable.</li>
+    <li>Added an overload of add_option that takes an rvalue-reference in IP, 
+    TCP, DHCP, ICMPv6 and Dot11.</li>
+    <li>Added support for GNU/kFreeBSD.</li>
+    <li>Removed several deprecated methods, such as PDU::clone_packet.
+    <li>Added PacketSender::send(PDU&, NetworkInterface).</li>
+    <li>Normalized the TLV options naming conventions in all of the classes
+    that used them.</li>
+    <li>Added support for Dot1Q, STP, PPPoE protocols.</li>
+    <li>Made some important optimizations on PDUOption<>'s constructors.</li>
+    <li>Added Utils::resolve_domain and Utils::resolve_domain6.</li>
+</ul>
+<h4 id="v0.3">Version 0.3</h4>
+<ul>
+    <li>The IPv6, ICMPv6 and DHCPv6 protocols are now supported.</li>
+    <li>Added support for Loopback interfaces and the Linux Crooked 
+    Capture pseudo protocol.</li>
+    <li>AAAA records are now correctly handled in DNS.</li>
+    <li>Added Packet/RefPacket class. This classes allow reading the
+    timestamp provided by libpcap, which is associated with each packet
+    read from the wire or file.</li>
+    <li>The library now works on FreeBSD, OSX and Windows, appart from
+    the already supported GNU/Linux platform.</li>
+    <li>C++11 move constructors/assignment operators have been added to
+    every class that required one. This is extremely useful when working 
+    with non-copyable classes such as Sniffer or PacketWriter.</li>
+    <li>A complete rewrite of the build system was performed, which now
+    uses libtool.</li>
+</ul>
+<h4 id="v0.2">Version 0.2</h4>
+<ul>
+    <li>IP and hardware addresses can now be handled easily. Instead of 
+    using pointers or integral values to represent them, there's now a 
+    class which abstract each of them, making it easy to create them from 
+    their string representations, and compare them. You can now use 
+    hardware addresses as keys inside std::maps, or insert them in 
+    std::sets.</li>
+    <li>Added support for big endian architectures. We've worked hard to 
+    make sure every getter, setter and function available handles endianness 
+    correctly. Now you can create tools and run them on both little and big 
+    endian architectures, without worrying about it.</li>
+    <li>Generalized and simplified some interfaces. The Sniffer class 
+    required you to inherit a class from an AbstractSnifferHandler just 
+    to perform a call to Sniffer::sniff_loop. Now this function takes a 
+    template functor argument and calls it every time a new packet is 
+    sniffed off the wire, making your life a lot easier.</li>
+    <li>Network interfaces used to be handled internally by each PDU. 
+    Classes would usually take a std::string, look up the corresponding 
+    interface index and store it, and also provide overloads that took 
+    directly the integral index. Now there's a NetworkInterface class 
+    which does this job internally. So PDUs now take objects of this type 
+    rather than providing several overloads(which in cases like the Dot11 
+    class hierarchy, reduces the boilerplate code significantly).</li>
+    <li>You can now follow TCP streams on the fly. There's a 
+    TCPStreamFollower class that sniffs packets(either from a network 
+    interface or a pcap file), and reassembles TCP streams, executing a 
+    callback whenever there's data available.</li>
+    <li>We're planning to allow decrypting any 802.11 encrypted data frame 
+    on the fly. In this release, by providing tuples (bssid, password), 
+    you can decrypt WEP-encrypted frames while sniffing, in a completely 
+    transparent way. I'll soon add an example in the libtins website on 
+    how to do that.</li>
+    <li>We've added support for some new PDUs: Null/Loopback, IEEE 802.3, 
+    LLC and DNS.</li>
+    <li>You can now read and write pcap files, using a very simple 
+    interface. </li>
+    <li>Finally, there's been a huge refactoring on the entire code. Code 
+    has been RAII'd a lot. There are less pointers moving around, more 
+    automatic storage objects and references. </li>
+</ul>

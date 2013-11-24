@@ -1,0 +1,191 @@
+---
+title: "Tutorial : Adding new protocols"
+layout: default
+---
+<h3>Tutorial - Adding new protocols</h3>
+In this section we'll have a look how you can implement your own 
+protocols and integrate them with the library.
+<hr>
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
+<a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
+<b>Part 6: Adding new protocols</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#extending-pdu">Extending the PDU class</a></li>
+        <li><a href="#register-protocol">Registering the new protocol</a></li>
+        <li><a href="#example">Example</a></li>
+    </ul>
+</div>
+<hr>
+<h4 id="extending-pdu">Extending the PDU class</h4>
+<p>
+As you should already know, every protocol must derive the <i>PDU</i>
+class. Therefore, if you wanted to add new protocols, then your class
+must do so. Now, what member functions should you implement to make it
+work? Here's a dummy <i>PDU</i> you could use as a template:
+</p>
+
+{% highlight cpp %}
+/*
+ * This is a dummy PDU. It behaves very similarly to Tins::RawPDU.
+ */
+class DummyPDU : public PDU {
+public:
+    /* 
+     * Unique protocol identifier. For user-defined PDUs, you <b>must</b>
+     * use values greater or equal to PDU::USER_DEFINED_PDU;
+     */
+    static const PDU::PDUType pdu_flag;
+
+    /*
+     * Constructor from buffer. This constructor will be called while
+     * sniffing packets, whenever a PDU of this type is found. 
+     * 
+     * The "data" parameter points to a buffer of length "sz". 
+     */
+    DummyPDU(const uint8_t* data, uint32_t sz) : buffer(data, data + sz) { }
+    
+    /*
+     * Clones the PDU. This method is used when copying PDUs.
+     */
+    DummyPDU *clone() const { return new DummyPDU(*this); }
+    
+    /*
+     * Retrieves the size of this PDU. 
+     */
+    uint32_t header_size() const { return buffer.size(); }
+    
+    /*
+     * This method must return pdu_flag.
+     */
+    PDUType pdu_type() const { return pdu_flag; }
+    
+    /*
+     * Serializes the PDU. The serialization output should be written
+     * to the buffer pointed to by "data", which is of size "sz". The
+     * "sz" parameter will be equal to the value returned by 
+     * DummyPDU::header_size. 
+     * 
+     * The third parameter is a pointer to the parent PDU. You shouldn't
+     * normally need to use this. 
+     */
+    void write_serialization(uint8_t *data, uint32_t sz, const PDU *parent) 
+    { 
+        std::copy(buffer.begin(), buffer.end(), data);
+    }
+    
+    // This is just a getter to retrieve the buffer member.
+    const std::vector<uint8_t> &get_buffer() const 
+    {
+        return buffer;
+    }
+private:
+    std::vector<uint8_t> buffer;
+};
+
+// Let's assign some value to the pdu_flag.
+const PDU::PDUType DummyPDU::pdu_flag = PDU::USER_DEFINED_PDU;
+{% endhighlight %}
+
+<h4 id="register-protocol">Registering the new protocol</h4>
+<p>
+Okay, we've defined a new <i>PDU</i>, but now we need to register it, 
+so that the layers below it can recognize it while sniffing and 
+serializing.
+</p>
+<p>
+Registering a protocol is very simple. Let's imagine our <i>DummyPDU</i>
+is a network layer protocol. Therefore, we'd like <i>EthernetII</i>,
+<i>Dot3</i> and the rest of the link layer protocols to recognize it.
+In order to do so, the following line of code should be used:
+</p>
+{% highlight cpp %}
+// Allocators::register_allocator is defined in tins/pdu_allocator.h
+// This registers it for every link layer protocol. 
+Allocators::register_allocator<EthernetII, DummyPDU>(0x8ae);
+
+// If we wanted a transport layer which can appear after an 
+// IP or IPv6 PDUs, we'd call:
+// 
+// Allocators::register_allocator<IP, DummyPDU>(0x12);
+{% endhighlight %}
+<p>
+You are probably wondering what is that <i>0x8ae</i> constant used above.
+That is the identifier which link layer <i>PDU</i>s will use to identify
+our protocol, just like <i>ARP</i> is identified inside <i>EthernetII</i>
+using the <i>0x806</i> constant.
+</p>
+<p>
+Now that our <i>PDU</i> is registered, the following will happen:
+</p>
+<ul>
+    <li>When sniffing a packet, if the sniffed link layer <i>PDU</i>
+    finds that the network layer protocol identifier field is <i>0x8ae</i>, 
+    it will construct a <i>DummyPDU</i> from the sniffed bytes using the
+    <i>DummyPDU::DummyPDU(const uint8_t*, uint32_t) constructor</i>
+    </li>
+    <li>When serializing a <i>PDU</i>, our constant will be used in the
+    network layer's protocol identifier field.
+    </li>
+</ul>
+<p>
+Note that <i>Allocators::register_allocator</i>'s first template 
+parameter can only be one of the following types:
+</p>
+<ul>
+    <li>EthernetII</li>
+    <li>SNAP</li>
+    <li>SLL</li>
+    <li>Dot1Q</li>
+    <li>IP</li>
+    <li>IPv6</li>
+</ul>
+
+<h4 id="example">Example</h4>
+<p>
+As a final example, let's sniff a packet that contains a <i>DummyPDU</i>.
+This is the packet I've generated:
+</p>
+<center>
+<img src="/images/dummypdu-wireshark.png" alt="The packet shown in wireshark" />
+</center>
+<p>
+As you can see, the network layer protocol type is <i>0x8ae</i>. Now, let's sniff the
+packet and display the payload!
+</p>
+{% highlight cpp %}
+#include <iostream>
+#include <tins/tins.h>
+#include "dummy_pdu.h";
+
+using namespace Tins;
+
+int main() {
+    Allocators::register_allocator<EthernetII, DummyPDU>(0x8ae);
+    FileSniffer sniffer("/tmp/dummy.pcap");
+    Packet pkt = sniffer.next_packet();
+    if(!pkt)
+        std::cout << "Oops, didn't sniff anything.\n";
+    else {
+        DummyPDU &dummy = pkt.pdu()->rfind_pdu<DummyPDU>();
+        // Convert the contents of the DummyPDU to a std::string
+        std::string payload(dummy.get_buffer().begin(), dummy.get_buffer().end());
+        std::cout << "Payload: " << payload << std::endl;
+    }
+}
+{% endhighlight %}
+
+<p>
+After executing this example, this is the output I get:
+</p>
+<script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+matias@master:/tmp$ ./dummy_test
+Payload: AAAAAAAAAAAAAAAAAAAAAAAAAA
+]]></script>
+
+<div style="text-align: left;">
+    <a href="{{ site.url }}/tutorial/802.11/">Previous part: IEEE 802.11</a>
+</div>

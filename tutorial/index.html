@@ -1,0 +1,410 @@
+---
+title: "Tutorial : Basics"
+layout: default
+---
+<h3>Tutorial - Basics</h3>
+<p>
+In this section we'll have a look at how <i>libtins</i> works, and
+how to perform packet crafting, sending and sniffing. 
+</p>
+This section assumes you already know <a href="{{ site.url }}/installation/#using">
+how to compile applications and link them with <i>libtins</i></a>.
+<hr />
+<b>Part 1: Basics</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#pdus">PDUs</a></li>
+        <li><a href="#address">Address classes</a></li>
+        <li><a href="#ranges">Address range classes</a></li>
+        <li><a href="#ifaces">Network Interfaces</a></li>
+        <li><a href="#write-pcap">Writing pcap files</a></li>
+        <li><a href="#example">Putting it all together</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
+<a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
+<hr />
+<h4 id="intro">Introduction</h4>
+<p>
+So how does libtins work? libtins is conformed by <i>PDU</i> classes,
+sender and sniffer classes, classes that represent addresses, and some
+helper functions which make your life easier.
+</p>
+
+<h4 id="pdus">PDUs</h4>
+
+<p>
+We'll first have a look at what a <i>PDU</i> object is. Every <i>PDU</i>
+implemented in the library(say <i>IP</i>, <i>TCP</i>, <i>UDP</i>, etc)
+is a class that inherits an <i>abstract</i> class named <i>PDU</i>. 
+</p>
+
+<p>
+This class contains methods which can retrieve the actual <i>protocol 
+data unit</i> size and its type, among other things. It also contains a 
+method called <i>send</i> which allows you to effectively send that packet 
+through the network.
+</p>
+
+<p>
+<i>PDU</i> objects also support stacking. That means one <i>PDU</i>
+object(disregarding its actual type), can have 0 or 1 inner <i>PDU</i>.
+This is a very logical way of imagining a network packet. Suppose you
+create an <i>Ethernet II</i> frame, and then add an <i>IP</i> datagram
+on top of it, followed by a <i>TCP</i> frame. That structure would look
+like this inside libtins:
+</p>
+<center>
+<img src="{{ site.url }}/images/tutorial-intro-eth-ip-tcp.png" alt="Packet structure" />
+</center>
+<br />
+
+<p>
+As you may imagine, a <i>PDU</i>'s inner pdu can be retrieved using the
+method <i>PDU::inner_pdu()</i>. Let's see an code example of how this
+situation could be reproduced:
+</p>
+
+{% highlight cpp %}
+#include <tins/tins.h>
+
+using namespace Tins;
+
+int main() {
+    EthernetII eth;
+    IP *ip = new IP();
+    TCP *tcp = new TCP();
+    // tcp is ip's inner pdu
+    ip->inner_pdu(tcp);
+    // ip is eth's inner pdu
+    eth.inner_pdu(ip);
+}
+{% endhighlight %}
+
+<p>
+So what have we done here? The method <i>PDU::inner_pdu(PDU*)</i> sets
+the given parameter, as the callee's inner <i>PDU</i>. The object passed
+as an argument <b>must</b> have been allocated using <i>operator new</i>,
+and from that point on, that <i>PDU</i> is now owned by its parent, 
+meaning that the destruction of that object will be handled by it. So 
+in the above example there is no actual memory leak. On <i>eth</i>'s 
+destructor, both the allocated <i>IP</i> and <i>TCP</i> objects will be 
+destroyed and their memory released.
+</p>
+
+<p>
+Note that if you want to store a copy and not the actual pointer, you
+can use the <i>PDU::clone</i> function, which returns a copy of that
+<i>PDU</i>'s concrete type, including all of its stacked inner <i>PDU</i>s.
+</p>
+
+<p>
+There is a simpler way to nest <i>PDU</i>s. For those who have used
+<a href="http://www.secdev.org/projects/scapy/"><i>scapy</i></a>, 
+you may be used to creating a <i>PDU</i> stack using the division
+operator. <i>libtins</i> supports this as well! 
+</p>
+
+<p>
+The code above can be rewritten as the following:
+</p>
+
+{% highlight cpp %}
+#include <tins/tins.h>
+
+using namespace Tins;
+
+int main() {
+    // Simple stuff, no need to use pointers!
+    EthernetII eth = EthernetII() / IP() / TCP();
+    // Retrieve a pointer to the stored TCP PDU
+    TCP *tcp = eth.find_pdu<TCP>();
+    // You can also retrieve a reference. This will throw a
+    // pdu_not_found exception if there is no such PDU in this packet.
+    IP &ip = eth.rfind_pdu<IP>();
+}
+{% endhighlight %}
+
+<p>
+Note that the <i>IP</i> and <i>TCP</i> temporary objects created in
+the example above, are cloned using the <i>PDU::clone()</i> method.
+</p>
+
+<h4 id="address">Address classes</h4>
+
+<p>
+Both IP and hardware addresses are handled using the classes IPv4Address,
+IPv6Address and HWAddress<>. All of these classes can be constructed
+from an <i>std::string</i> or <i>c-string</i> containing an appropriate 
+representation(dotted-notation for IPv4Address, semicolon notation for 
+IPv6Addresses, etc). 
+</p>
+
+{% highlight cpp %}
+std::string lo_string("127.0.0.1");
+
+IPv4Address lo("127.0.0.1");
+IPv4Address empty; // represents the address 0.0.0.0
+// IPv6
+IPv6Address lo_6("::1");
+// Write it to stdout
+std::cout << "Lo: " << lo << std::endl;
+std::cout << "Empty: " << empty << std::endl;
+std::cout << "Lo6: " << lo_6 << std::endl;
+{% endhighlight %}
+
+<p>
+This addresses can be implicitly converted to an integral value, but 
+this is used inside the library, so you don't have to worry about it. 
+As you can notice from above, a default constructed IPv4Address 
+corresponds to the dotted-notation address <i>0.0.0.0</i>. 
+</p>
+<p>
+These classes also provide a constructor that takes an <i>uint32_t</i>,
+which is extremely useful when using default values for certain parameters 
+to functions/constructors.  In the above example's last couple of lines, a
+IPv4 and IPv6 addresses are written to stdout. This classes define the output 
+operator(<i>operator<<</i>), so it's easier to serialize them.
+</p>
+
+<p>
+The HWAddress<> class template is defined as follows:
+</p>
+
+{% highlight cpp %}
+template<size_t n, typename Storage = uint8_t>
+class HWAddress;
+{% endhighlight %}
+<p>
+Where the <i>n</i> non-type template parameter indicates the length of 
+the address(tipically 6 for network interfaces), and the <i>Storage</i>
+template parameter indicates the type of each of those <i>n</i> elements
+(this shouldn't normally be changed, <i>uint8_t</i> should do).<br />
+</p>
+
+<p>
+HWAddress objets can be constructed from both <i>std::string</i>s, 
+c-strings, <i>const Storage*</i> and HWAddress of any length. They
+can also be compared for equality, and provide some helper functions to
+allow iteration over the address:
+</p>
+
+{% highlight cpp %}
+HWAddress<6> hw_addr("01:de:22:01:09:af");
+
+std::cout << hw_addr << std::endl;
+std::cout << std::hex;
+for(auto i : hw_addr) // prints individual bytes
+    std::cout << static_cast<int>(i) << std::endl;
+{% endhighlight %}
+
+<h4 id="ranges">Address range classes</h4>
+
+<p>
+<i>libtins</i> also supports address ranges. This is very useful for
+several purposes, such as classifying traffic into different subnetworks.
+</p>
+<p>
+Creating address ranges is very intuitive, using either a 
+<i>slash-dotation</i>, or a netmask:
+</p>
+
+{% highlight cpp %}
+/* IPv4 */
+
+// 192.168.1.0-255
+IPv4Range range1 = IPv4Address("192.168.1.0") / 24;
+
+// Same as above
+IPv4Range range2 = IPv4Range::from_mask("192.168.1.0", "255.255.255.0");
+
+/* IPv6 */
+
+// dead:0000:0000:0000:0000:0000:0000:0000-00ff
+IPv6Range range3 = IPv6Address("dead::") / 120;
+
+// Same as above
+IPv6Range range4 = IPv6Range::from_mask("dead::", "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ff00");
+{% endhighlight %}
+
+<p>
+Now, what can you do with an address range? You can either iterate it,
+or ask it if a specific address is inside that network:
+</p>
+
+{% highlight cpp %}
+IPv4Range range = IPv4Address("192.168.1.0") / 24;
+
+range.contains("192.168.1.250"); // Yey, it belongs to this network
+range.contains("192.168.0.100"); // NOPE
+
+// Let's print 'em all
+for(const auto &addr : range) {
+    std::cout << addr << std::endl;
+}
+{% endhighlight %}
+
+<p>
+But wait, there's more. You can also create ranges of hardware addresses.
+Why is this useful? Using this, you can use the OUI specifiers to determine
+which is the vendor of a specific network device:
+</p>
+
+{% highlight cpp %}
+// Some OUI which belongs to Intel
+auto range = HWAddress<6>("00:19:D1:00:00:00") / 24;
+
+// Does this address belong to Intel?
+if(range.contains("00:19:d1:22:33:44"))
+    std::cout << "It's Intel!" << std::endl;
+{% endhighlight %}
+
+<h4 id="ifaces">Network interfaces</h4>
+
+<p>
+The last helper class reviewed here is <i>NetworkInterface</i>. This
+class represents the abstraction of a network interface. It can be 
+constructed from the interface's name(as string), and from an 
+IPv4Address. This last constructor creates the interface that would be
+the gateway if some packet were to be sent to the given ip address:
+</p>
+
+{% highlight cpp %}
+NetworkInterface lo("lo");
+// this would be lo
+NetworkInterface lo1(IPv4Address("127.0.0.1"));
+{% endhighlight %}
+
+<p>
+You can also retrieve an interface's name using <i>NetworkInterface::name()</i>.
+Note that this function searches through the system's interfaces and
+retrieves the name every time it is called, so you might want to call it 
+once and store the return value.
+</p>
+
+<h4 id="write-pcap">Writing pcap files</h4>
+
+<p>
+Writing packets to a pcap file is very simple as well. The 
+<i>PacketWriter</i> class takes the name of the file in which you want 
+to store packets as its argument, and a flag indicating which will be
+the lowest layer written to the file. That means, if you're writing 
+<i>EthernetII</i> <i>PDU</i>s, you should use the <i>PacketWriter::ETH2</i>
+flag, while on wireless interfaces you should use <i>PacketWriter::RADIOTAP</i>
+or <i>PacketWriter::DOT11</i>, depending on the encapsulation used in
+the device.
+</p>
+<p>
+Once a <i>PacketWriter</i> is created, you can write <i>PDU</i>s to it
+using the <i>PacketWriter::write</i> method. This method contains 2
+overloads: one takes a <i>PDU&</i>, the other one takes two template
+forward iterators, <i>start</i> and <i>end</i>. The latter will iterate 
+through the range <i>[start, end)</i> and write the <i>PDU</i>s stored 
+in each position of the range. This will work both if <i>*start</i>
+yields a <i>PDU&</i>, or if dereferecing it several times leads to
+a <i>PDU&</i>. This means a 
+<i>std::vector<std::unique_ptr<PDU>>::iterator</i> will 
+work as well.
+</p>
+<p>
+This example creates a <i>std::vector</i> containing one 
+<i>EthernetII PDU</i>, and writes it to a pcap file using both overloads:
+</p>
+{% highlight cpp %}
+#include <tins/tins.h>
+#include <vector>
+
+using namespace Tins;
+
+int main() {
+    // We'll write packets to /tmp/test.pcap. The lowest layer will be 
+    // EthernetII, so we use the appropriate identifier.
+    PacketWriter writer("/tmp/test.pcap", Tins::PacketWriter::ETH2);
+    // A vector containing one EthernetII PDU.
+    std::vector<EthernetII> vec(1, EthernetII("00:da:fe:13:ad:fa"));
+    // Write the PDU(s) in the vector(only one, in this case).
+    writer.write(vec.begin(), vec.end());
+    // Write the same PDU once again, using another overload.
+    writer.write(vec[0]);
+}
+{% endhighlight %}
+
+<h4 id="example">Putting it all together</h4>
+
+<p>
+Now we're going to use most of the classes listed above to create a
+packet and send it:
+</p>
+
+{% highlight cpp %}
+#include <tins/tins.h>
+#include <cassert>
+#include <iostream>
+#include <string>
+
+using namespace Tins;
+
+int main() {
+    // We'll use the default interface(default gateway)
+    NetworkInterface iface = NetworkInterface::default_interface();
+    
+    /* Retrieve this structure which holds the interface's IP, 
+     * broadcast, hardware address and the network mask.
+     */
+    NetworkInterface::Info info = iface.addresses();
+    
+    /* Create an Ethernet II PDU which will be sent to 
+     * 77:22:33:11:ad:ad using the default interface's hardware 
+     * address as the sender.
+     */
+    EthernetII eth("77:22:33:11:ad:ad", info.hw_addr);
+    
+    /* Create an IP PDU, with 192.168.0.1 as the destination address
+     * and the default interface's IP address as the sender.
+     */
+    eth /= IP("192.168.0.1", info.ip_addr);
+    
+    /* Create a TCP PDU using 13 as the destination port, and 15 
+     * as the source port.
+     */
+    eth /= TCP(13, 15);
+    
+    /* Create a RawPDU containing the string "I'm a payload!".
+     */
+    eth /= RawPDU("I'm a payload!");
+    
+    // The actual sender
+    PacketSender sender;
+    
+    // Send the packet through the default interface
+    sender.send(eth, iface);
+}
+{% endhighlight %}
+
+<p>
+Note that the creation of that packet can be done in one line, using
+<i>operator/</i> rather than <i>operator/=</i>:
+</p>
+
+{% highlight cpp %}
+// same as above, just shorter
+EthernetII eth = EthernetII("77:22:33:11:ad:ad", info.hw_addr) / 
+                 IP("192.168.0.1", info.ip_addr) /
+                 TCP(13, 15) /
+                 RawPDU("I'm a payload!");
+{% endhighlight %}
+
+<p>
+The packet sending mechanism is addressed in the 
+<a href="{{ site.url }}/tutorial/sending/">third section</a> 
+of this tutorial.
+</p>
+
+<br />
+<div style="text-align: right;">
+    <a href="{{ site.url }}/tutorial/sniffing/">Next part: Sniffing</a>
+</div>

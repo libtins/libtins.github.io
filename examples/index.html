@@ -1,0 +1,41 @@
+---
+title: Examples
+layout: default
+---
+<h3>Examples</h3>
+<p>
+This section assumes that you've read the 
+<a href="{{ site.url }}/tutorial/">tutorial</a>, so in case you haven't,
+you should have a look at it.
+</p>
+<p>
+Here you'll find several examples of simple applications you can create 
+using libtins. All of them are on libtins repository and/or latest
+release. 
+</p>
+<p>
+Keep in mind that many of these examples use <i>C++11</i> features
+and threads, therefore you should use the appropriate flags on your 
+compiler to enable them. For <i>GCC</i> compatible compilers(such as 
+<i>clang</i>), the following line should work for every example:
+</p>
+{% highlight bash %}
+g++ example.cpp -o example -O3 -std=c++11 -lpthread -ltins
+{% endhighlight %}
+<p>
+Here is the list of examples:
+</p>
+
+<div id="section-listing">
+    <ul>
+        <li><a href="{{ site.url }}/examples/syn-scanner/">SYN scanner</a></li>
+        <li><a href="{{ site.url }}/examples/arp-spoof/">ARP Spoofing</a></li>
+        <li><a href="{{ site.url }}/examples/arp-monitor/">ARP Monitor</a></li>
+        <li><a href="{{ site.url }}/examples/traceroute/">Traceroute</a></li>
+        <li><a href="{{ site.url }}/examples/beacon-display/">Access point detector</a></li>
+        <li><a href="{{ site.url }}/examples/dns-queries/">DNS queries sniffer</a></li>
+        <li><a href="{{ site.url }}/examples/dns-spoof/">DNS queries spoofer</a></li>
+        <li><a href="{{ site.url }}/examples/wps-detect/">WPS detector</a></li>
+    </ul>
+</div>
+<hr>

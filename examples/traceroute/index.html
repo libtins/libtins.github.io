@@ -1,0 +1,23 @@
+---
+title: Traceroute
+layout: default
+---
+<h3>Traceroute</h3>
+
+<p>
+This is a little traceroute application. It can detect at most 10 hops,
+and it might not detect those of them which take too much to answer
+(or those which suffer from some packet loss). Of course this could be
+enhanced, but it is just a simple example.
+</p>
+<p>
+This example uses features from the C++11 standard, so in order to 
+compile it you'll have to use a relatively new compiler. GCC >= 4.6
+and clang >= 3.1 should be able to compile it.
+</p>
+<p>
+You can download this code <a href="{{ site.url }}/examples/code/traceroute.cpp">here</a>.
+</p>
+{% highlight cpp %}
+{% include code/traceroute.cpp %}
+{% endhighlight %}

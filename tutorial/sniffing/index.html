@@ -1,0 +1,345 @@
+---
+title: "Tutorial : Sniffing packets"
+layout: default
+---
+<h3>Tutorial - Sniffing</h3>
+In this section we'll have a deeper look at how to perform sniffing
+using <i>libtins</i>.
+<hr>
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<b>Part 2: Sniffing</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#sniffing">Sniffing basics</a></li>
+        <li><a href="#loop-sniffing">Loop sniffing</a></li>
+        <li><a href="#iterator-sniffing">Sniffing using iterators</a></li>
+        <li><a href="#packet-objects">Packet objects</a></li>
+        <li><a href="#read-pcap">Reading pcap files</a></li>
+        <li><a href="#interpretation">Packet interpretation</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
+<a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
+<hr>
+
+<h4 id="sniffing">Sniffing basics</h4>
+
+<p>
+Sniffing is done through the <i>Sniffer</i> class. This class accepts
+a <i>libpcap</i> string filter, and lets you sniff a certain interface, 
+interpreting the packets sent through it, and giving you<i>PDU</i> 
+objects so you can easily work with them.
+</p>
+
+<p>
+Once you've set the filter, there are two functions which allow to 
+retrieve the sniffed packets. One of them is <i>Sniffer::next_packet</i>.
+This member function lets you retrieve a packet using the provided 
+filter:
+</p>
+
+{% highlight cpp %}
+// We want to sniff on eth0, and capture packets of at most 1000 bytes.
+Sniffer sniffer("eth0", 1000);
+// Only retrieve IP datagrams which are sent from 192.168.0.1
+sniffer.set_filter("ip src 192.168.0.1");
+// Retrieve the packet.
+PDU *some_pdu = sniffer.next_packet();
+// Do something with some_pdu...
+....
+// Delete it.
+delete some_pdu;
+{% endhighlight %}
+
+<p>
+Note that the third parameter in <i>Sniffer</i>'s constructor indicates 
+whether you want to set the interface in monitor mode. By default 
+it <b>is not</b>, so you'll only be able to sniff packets that are sent 
+to or by you.
+</p>
+
+<h4 id="loop-sniffing">Loop sniffing</h4>
+
+<p>
+Though this is a valid way of retrieving packets, it's very common
+that you want to sniff lots packets until some certain condition
+is met. In that case its better to use <i>Sniffer::sniff_loop</i>.
+</p>
+
+<p>
+This method takes a template functor as an argument, which must 
+define an operator with one of the following signatures:
+</p>
+
+{% highlight cpp %}
+bool operator()(PDU&);
+bool operator()(const PDU&);
+{% endhighlight %}
+<p>
+The call to <i>Sniffer::sniff_loop</i> will make the sniffer start 
+processing packets. The functor will be called using each processed 
+packet as its argument. If at some point, you want to stop sniffing, 
+then your functor should return <i>false</i>. Otherwise return <i>true</i> 
+and the <i>Sniffer</i> class will keep looping.
+</p>
+
+<p>
+The functor object will be copy constructed, so it must implement copy
+semantics. There is a helper template function which takes a pointer
+to an object of a template parameter type, and a member function, 
+and returns a <i>HandlerProxy</i>. That object implements the required
+operator, in which it forwards the call to the member function pointer
+provided, using the object pointer given:
+</p>
+
+{% highlight cpp %}
+#include <tins/tins.h>
+
+using namespace Tins;
+
+bool doo(PDU&) {
+    return false;
+}
+
+struct foo {
+    void bar() {
+        Sniffer sniffer("eth0", 1000, true, "ip src 192.168.0.100");
+        /* Uses the helper function to create a proxy object that
+         * will call this->handle. If you're using boost or C++11,
+         * you could use boost::bind or std::bind, that will also
+         * work.
+         */
+        sniffer.sniff_loop(make_sniffer_handler(this, &foo::handle));
+        // Also valid
+        sniffer.sniff_loop(doo);
+    }
+    
+    bool handle(PDU&) {
+        // Don't process anything
+        return false;
+    }
+};
+
+int main() {
+    foo f;
+    f.bar();
+}
+{% endhighlight %}
+
+<p>
+As you can see, the sniff_loop can not only be an easy way to process
+several packets, but also can make your code tidier when using classes.
+</p>
+<p>
+Now the interesting part. In the above example we know we are sniffing
+<i>IP PDU</i>s sent by the ip address <i>192.168.0.100</i>, but our
+function takes a <i>PDU&</i>. We want to search the <i>IP PDU</i> 
+stored inside the parameter(which will probably be of type EthernetII). 
+Luckily for us, you can ask a <i>PDU</i> to search for a certain 
+<i>PDU</i> type inside its whole stack of <i>PDU</i>s(including itself),
+and return a reference to it. If no such <i>PDU</i> is found in the 
+packet, a <i>pdu_not_found</i> exception is thrown:
+</p>
+
+{% highlight cpp %}
+bool doo(PDU &some_pdu) {
+    // Search for it. If there is no IP PDU in the packet, 
+    // the loop goes on
+    const IP &ip = some_pdu.rfind_pdu<IP>(); // non-const works as well
+    std::cout << "Destination address: " << ip->dst_addr() << std::endl;
+    // Just one packet please
+    return false;
+}
+
+void test() {
+    Sniffer sniffer("eth0", 1000, true, "ip src 192.168.0.100");
+    sniffer.sniff_loop(doo);
+}
+{% endhighlight %}
+
+<p>
+Another thing that makes the loop-sniffing mechanism better 
+than fetching packets one by one, is exception handling. 
+<i>Sniffer::sniff_loop</i> catches both <i>pdu_not_found</i> and
+<i>malformed_packet</i> exceptions thrown in the functor body. This 
+means you can use <i>PDU::rfind_pdu</i> and don't even care if such 
+<i>PDU</i> is not found, since the exception will be caught by 
+the <i>Sniffer</i>, and the sniffing session will continue. 
+</p>
+
+<h4 id="iterator-sniffing">Sniffing using iterators</h4>
+
+<p>
+There is yet another way to retrieve packets from a Sniffer object. 
+This class defines two methods, <i>begin()</i> and <i>end()</i>, which
+return forward iterators. These can be used to retrieve packets while
+they're being sniffed:
+</p>
+
+{% highlight cpp %}
+Sniffer s = ...;
+for(auto &pdu : s) {
+    // pdu is a PDU&
+    process(pdu);
+}
+{% endhighlight %}
+
+<h4 id="packet-objects">Packet objects</h4>
+
+<p>
+If you require to store a <i>PDU</i> along with the timestamp object, 
+then you should use the <i>Packet</i> class. <i>Packet</i>s contain a 
+<i>PDU</i> and <i>Timestamp</i>, can be copyed and moved. 
+</p>
+<p>
+Let's see an example in which we'll store 10 packets read from whire 
+into a vector:
+</p>
+
+{% highlight cpp %}
+#include <vector>
+#include <tins/tins.h>
+
+using namespace Tins;
+
+int main() {
+    std::vector<Packet> vt;
+    
+    Sniffer sniffer("eth0", 1500);
+    while(vt.size() != 10)
+        // next_packet returns a PtrPacket, which can be implicitly 
+        // converted to Packet.
+        vt.push_back(sniffer.next_packet());
+    // Done, now let's check the packets
+    for(const auto& packet : vt) {
+        // Is there an IP PDU somewhere?
+        if(packet.pdu()->find_pdu<IP>()) {
+            // Just print timestamp's seconds and IP source address
+            std::cout << "At: " << packet.timestamp().seconds()
+                    << " - " << packet.pdu()->find_pdu<IP>()->src_addr() 
+                    << std::endl;
+        }
+    }
+}
+{% endhighlight %}
+
+<p>
+As you may have noticed <i>Packet</i> objects can also be used along
+with <i>Sniffer::next_packet</i>:
+</p>
+
+{% highlight cpp %}
+Sniffer sniffer("eth0", 1500);
+// PDU pointer, as mentioned at the beginning
+std::unique_ptr<PDU> pdu_ptr(sniffer.next_packet());
+
+// auto cleanup, no need to use pointers!
+Packet packet = sniffer.next_packet();
+// If there was some kind of error, packet.pdu() == nullptr,
+// so we need to check that.
+if(packet)
+    process_packet(packet); // whatever
+{% endhighlight %}
+
+<h4 id="read-pcap">Reading pcap files</h4>
+
+<p>
+Reading files in <i>pcap</i> format is very straightforward. The 
+<i>FileSniffer</i> class takes the name of the file to be opened as 
+argument, and lets you process the packets in it. Both <i>Sniffer</i>
+and <i>FileSniffer</i> inherit from <i>BaseSniffer</i>, which is
+the class that actually implements <i>next_pdu</i> and <i>sniff_loop</i>.
+Therefore, we can use the <i>FileSniffer</i> class in the same way
+we used <i>Sniffer</i> in the examples above:
+</p>
+{% highlight cpp %}
+#include <tins/tins.h>
+#include <iostream>
+#include <stddef.h>
+
+using namespace Tins;
+
+size_t counter(0);
+
+bool count_packets(PDU &) {
+    counter++;
+    // Always keep looping. When the end of the file is found, 
+    // our callback will simply not be called again.
+    return true;
+}
+
+int main() {
+    FileSniffer sniffer("/tmp/some_pcap_file.pcap");
+    sniffer.sniff_loop(count_packets);
+    std::cout << "There are " << counter << " packets in the pcap filen";
+}
+{% endhighlight %}
+
+<h4 id="interpretation">Packet interpretation</h4>
+
+<p>
+Now that we've seen the ways in which you can read pcap files and sniff 
+from network interfaces, we'll have a look at how packet interpretation 
+is performed.
+</p>
+
+<p>
+Every time a packet is read from one of those sources, an object of that 
+source's link layer type is created(<i>EthernetII</i>, <i>RadioTap</i>, 
+etc). Each of these types of object detects which is the type of the next 
+<i>PDU</i> based on its internal flags, creates it, adds it as its 
+child, and propagates the same action.
+</p>
+
+<p>
+This action is performed by every instantiated <i>PDU</i>, except for 
+transport-layer protocols. This means that, for example, if a <i>DNS</i>
+packet is sniffed off an ethernet interface, you'll get the following
+structure:
+</p>
+
+<center>
+<img src="/images/DNS.png" />
+</center>
+<br />
+
+<p>
+You can then interpret that <i>DNS</i> packet constructing a <i>DNS</i>
+object using that <i>RawPDU</i>'s payload:
+</p>
+
+{% highlight cpp %}
+// This is a handler used in Sniffer::sniff_loop
+bool handler(const PDU& pkt) {
+    // Lookup the UDP PDU
+    const UDP &udp = pkt.rfind_pdu<UDP>();
+    // We need source/destination port to be 53
+    if(udp.sport() == 53 || udp.dport() == 53) {
+        // Interpret it as DNS. This might throw, but Sniffer catches it
+        DNS dns = pkt.rfind_pdu<RawPDU>().to<DNS>();
+        // Just print out each query's domain name
+        for(const auto &query : dns.queries())
+            std::cout << query.dname() << std::endl;
+    }
+    return true;
+}
+{% endhighlight %}
+
+<p>
+The same mechanism should be used for other protocols such as <i>DHCP</i>.
+In case you're wondering why application-layer protocols aren't interpreted 
+automatically by transport-layer <i>PDU</i>s, the reason is efficiency.
+Transport layer protocols, such as <i>DNS</i>, require much more processing
+in order to parse them than lower layer protocols. In addition, some 
+applications might not even require to use those protocols, so making them
+pay for that extra processing is undesirable.
+</p>
+
+<div style="float: left;">
+    <a href="{{ site.url }}/tutorial/">Previous part: Basics</a>
+</div>
+<div style="float: right;">
+    <a href="{{ site.url }}/tutorial/sending/">Next part: Sending packets</a>
+</div>

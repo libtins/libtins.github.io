@@ -1,0 +1,181 @@
+---
+title: "Tutorial : Protocols"
+layout: default
+---
+<h3>Tutorial - Protocols</h3>
+In this section we'll have a look how several commonly used protocols 
+work in <i>libtins</i>. 
+<hr>
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<b>Part 4: Protocols</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#eth">Ethernet II</a></li>
+        <li><a href="#ip">IP</a></li>
+        <li><a href="#tcp">TCP</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
+<hr>
+<h4 id="intro">Introduction</h4>
+<p>
+<i>libtins</i> provides support for several network protocols. The
+<a href="{{ site.url }}/documentation.php">documentation</a> contains information
+about each class, method and function present in the library. However,
+you might not want to read the whole documentation just to learn how to
+craft a simple <i>TCP</i> packet.
+</p>
+
+<p>
+In this section, we'll have a look at how some of the protocols you will
+most likely see in your home network are implemented in the library.
+</p>
+
+<h4 id="eth">Ethernet II</h4>
+
+<p>
+The Ethernet II protocol is represented by the <i>EthernetII</i> class, 
+and is actually very simple. It just contains methods to get and set the 
+destination and source addresses, and the payload type. It also contains
+a constructor which lets you, optionally, indicate both of the addresses:
+</p>
+
+{% highlight cpp %}
+// Both addresses are 00:00:00:00:00:00
+EthernetII eth;
+eth.dst_addr("01:02:03:04:05:06");
+eth.src_addr("00:01:02:03:04:05");
+
+// Same as above, just shorter
+EthernetII eth2("01:02:03:04:05:06", "00:01:02:03:04:05");
+{% endhighlight %}
+
+<h4 id="ip">IP</h4>
+
+<p>
+The <i>IP</i> class contains much more methods, both for accessing the
+protocol's fields and for adding and retrieving the stored options. 
+In this example, we'll modify some of those fields:
+</p>
+
+{% highlight cpp %}
+// Both addresses are 0.0.0.0
+IP ip;
+ip.dst_addr("192.168.0.100");
+ip.src_addr("192.168.0.50");
+
+// Same as above, just shorter
+IP ip2("192.168.0.100", "192.168.0.50");
+// Set the time-to-live attribute
+ip2.ttl(10);
+// Set the type-of-service attribute
+ip2.tos(3);
+{% endhighlight %}
+
+<p>
+<i>IP</i> is one of many protocols that support <i>TLV</i>
+(type-length-value) encoded options. This means that each option stored
+in the protocol contains a field that indicates its type, another one
+that holds its length, and a third one that carries the actual data. 
+</p>
+<p>
+Every class that contains options, such as <i>IP</i>, <i>TCP</i> and
+<i>DHCP</i>, among others, behave the same way. For any type <i>T</i>
+that contains options, <i>T::option</i> is the type in which the option
+is actually stored. Each of this protocols provides two member functions:
+</p>
+<ul>
+<li>{% highlight cpp %}
+void T::add_option(const T::option&){% endhighlight %} 
+Which adds an option to that <i>PDU</i>.</li>
+<li>{% highlight cpp %}
+const T::option* T::search_option(T::option::option_type){% endhighlight %}
+Which finds and option.</li>
+</ul>
+<p>
+Using these member functions, it is necessary to know both the length
+of the fields that compose each option type and their endianness. Since
+this is very cumbersome, each of these protocols provides a getter and
+a setter for every valid option. The getter will always throw a 
+<i>option_not_found</i> exception if the option is not present in the
+<i>PDU</i>.
+</p>
+<p>
+In the case of <i>IP</i>, these are some of the supported options 
+getters/setters:
+</p>
+{% highlight cpp %}
+IP ip;
+// Sets the Stream Identifier option.
+ip.stream_identifier(165);
+// Sets the Record Route option.
+ip.record_route(
+    { // Constructing a record_route_type object
+        2, // pointer
+        { "192.168.0.1", "192.168.0.2" } // routes
+    }
+);
+
+// Retrieve the Record Route option.
+IP::record_route_type routes = ip.record_route();
+// Echo
+std::cout << static_cast<int>(routes.pointer) << std::endl;
+std::copy(
+    routes.routes.begin(),
+    routes.routes.end(),
+    std::ostream_iterator<IP::address_type>(std::cout, "\n")
+);
+
+// This will throw an option_not_found exception.
+auto x = ip.security();
+{% endhighlight %}
+
+<h4 id="tcp">TCP</h4>
+
+<p>
+<i>TCP</i> contains several option types as well, so everything mentioned
+above about them is still valid. Let's have a look at how to craft 
+some basic <i>TCP</i> frames:
+</p>
+
+{% highlight cpp %}
+// Both source and destination ports are 0.
+TCP tcp;
+tcp.dport(22);
+tcp.sport(22334);
+
+// Same as above
+TCP tcp2(22, 22334);
+
+// Set the sequence number
+tcp.seq(0x9283);
+// Set the acknowledge number
+tcp.ack_seq(0x9283);
+// Set the SYN flag
+tcp.set_flag(TCP::SYN, 1);
+// This will be available as of libtins 1.2
+tcp.flags(TCP::SYN | TCP::ACK);
+
+// Get the SYN flag
+auto s = tcp.get_flag(TCP::SYN);
+// This will be available as of libtins 1.2
+bool is_syn_ack = (tcp.flags() == (TCP::SYN | TCP::ACK));
+
+// Set some options
+tcp.sack_permitted();
+if(tcp.has_sack_permitted()) {
+    // whatever
+}
+tcp.altchecksum(TCP::CHK_8FLETCHER);
+{% endhighlight %}
+
+<div style="float: left;">
+    <a href="{{ site.url }}/tutorial/sending/">Previous part: Sending packets</a>
+</div>
+<div style="float: right;">
+    <a href="{{ site.url }}/tutorial/802.11/">Next part: IEEE 802.11</a>
+</div>

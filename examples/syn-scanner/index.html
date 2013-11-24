@@ -1,0 +1,42 @@
+---
+title: SYN Scanner
+layout: default
+---
+<h3>SYN scanner</h3>
+
+<p>
+This is a simple <i>SYN</i> scanner. It takes an <i>IP</i> address and
+a variable number of ports as command line arguments, and verifies 
+if that host has those ports open or not.
+</p>
+<p>
+This is done by sending <i>TCP</i> frames with the <i>SYN</i> flag
+on. If the host's answer has the <i>RST</i> flag on, then the port is 
+closed, if it contains the <i>SYN</i> and <i>ACK</i> flag on, then it's 
+open. This doesn't take into account filtered ports, so you won't see 
+any output for any ports that are filtered by some firewall.
+</p>
+<p>
+One thing to notice is how sniffing is stopped. <i>libpcap</i>, which
+is what the <i>Sniffer</i> class uses to achieve sniffing, can be stopped
+using the <i>pcap_breakloop</i> only from the thread that is actually
+sniffing. In most of the cases, this is completely useless, since
+you are probably sniffing on one thread, and sending packets or 
+processing them in another.
+</p>
+<p>
+That is why applications that use the <i>Sniffer</i> class usually use
+the same mechanism to stop sniffing: define a "special packet" that
+will indicate that sniffing has stopped. You can also use some flag as
+the return value of the sniffer functor, modify it when you're done and 
+send a dummy packet so that the function checks the flag and ends. In 
+this case, we use the first one, but generally the second one is simpler
+to implement.
+</p>
+<p>
+You can download this code <a href="{{ site.url }}/examples/code/syn-scanner.cpp">here</a>.
+</p>
+
+{% highlight cpp %}
+{% include code/syn-scanner.cpp %}
+{% endhighlight %}

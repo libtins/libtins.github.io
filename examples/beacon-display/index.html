@@ -1,0 +1,25 @@
+---
+title: Access point detector
+layout: default
+---
+<h3>Access point detector</h3>
+
+<p>
+This small example shows how to sniff packets from wireless interfaces,
+capture 802.11 beacon frames, and display the <i>SSID</i> associated 
+with each <i>BSSID</i>.
+</p>
+<p>
+Note that depending on the interface and driver used, 802.11 packets
+could contain <i>RadioTap</i> encapsulation. This means that the first
+<i>PDU</i> in the <i>PDU</i> chain is not necessarily some subclass of
+<i>Dot11</i>. That is why you should <b>always</b> use the 
+<i>PDU::find_pdu</i> method template to find the layer you're looking
+for.
+</p>
+<p>
+You can download this code <a href="{{ site.url }}/examples/code/beacon-display.cpp">here</a>.
+</p>
+{% highlight cpp %}
+{% include code/beacon-display.cpp %}
+{% endhighlight %}

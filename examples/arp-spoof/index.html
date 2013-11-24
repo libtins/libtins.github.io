@@ -1,0 +1,22 @@
+---
+title: ARP Spoofing
+layout: default
+---
+<h3>ARP Spoofing</h3>
+
+<p>
+This is a simple implementation of an <i>ARP</i> spoofing attack. This
+implementation can spoof only one host's hardware address. You must 
+provide the gateway and the host's <i>IP</i> address as command line
+arguments.
+</p>
+<p>
+In this example you can have a look at how the <i>EthernetII PDU</i> 
+is used, and how hardware addresses are resolved in practice.
+</p>
+<p>
+You can download this code <a href="{{ site.url }}/examples/code/arp-spoof.cpp">here</a>.
+</p>
+{% highlight cpp %}
+{% include code/arp-spoof.cpp %}
+{% endhighlight %}

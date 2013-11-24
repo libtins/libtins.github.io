@@ -1,0 +1,23 @@
+---
+title: ARP Monitor
+layout: default
+---
+<h3>ARP Monitor</h3>
+
+<p>
+This is an <i>ARP</i> monitor. It keeps track of mappings between
+<i>IP</i> addresses and hardware addresses as informed by <i>ARP</i>
+replies. Everytime two different hardware addresses are mapped to the
+same <i>IP</i> address, the event is informed.
+</p>
+<p>
+This is an example of the output it generates:
+</p>
+<img src="/images/arp-monitor.png" />
+<p>
+You can download this code <a href="{{ site.url }}/examples/code/arp-monitor.cpp">here</a>.
+</p>
+{% highlight cpp %}
+{% include code/arp-monitor.cpp %}
+{% endhighlight %}
+

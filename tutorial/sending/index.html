@@ -1,0 +1,269 @@
+---
+title: "Tutorial : Sending packets"
+layout: default
+---
+<h3>Tutorial - Sending packets</h3>
+In this section we'll have a look at how the packet sending mechanism
+works on <i>libtins</i>.
+<hr />
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
+<b>Part 3: Sending packets</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#l3-sending">Sending network layer <i>PDU</i>s</a></li>
+        <li><a href="#l2-sending">Sending link layer <i>PDU</i>s</a></li>
+        <li><a href="#send-recv">Sending and receiving responses</a></li>
+        <li><a href="#checksums">Checksum calculation</a></li>
+        <li><a href="#thread-safety">Thread-safety</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
+<a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
+<hr>
+
+<h4 id="intro">Introduction</h4>
+
+<p>
+The <i>PacketSender</i> class is the responsible for sending packets
+over the network. Internally, it stores raw sockets for different socket
+layers(2 and 3 for example).
+</p>
+
+<p>
+When calling <i>PacketSender::send(PDU&)</i> the <i>PDU</i> parameter
+is serialized into a an array of bytes and sent through the appropriate 
+socket.
+</p>
+
+<h4 id="l3-sending">Sending network layer <i>PDU</i>s</h4>
+
+<p>
+Sending network layer <i>PDU</i>s, such as <i>IP</i> and <i>IPv6</i>
+is quite intuitive:
+</p>
+
+{% highlight cpp %}
+PacketSender sender;
+IP pkt = IP("192.168.0.1") / TCP(22) / RawPDU("foo");
+sender.send(pkt);
+{% endhighlight %}
+
+<p>
+Note that no source address was specified in the <i>IP</i> constructor.
+This uses by default the address 0.0.0.0. However, when sending network 
+layer <i>PDU</i>s, if the source address is 0.0.0.0, the <i>PDU</i> will
+perform a lookup on the routing table to find out which should be the
+source address and automatically sets it. This is done by the network
+driver already, but some transport layer protocols such as <i>TCP</i>, 
+require this address when calculating the checksum, so this must be
+done by the library as well.
+</p>
+
+<h4 id="l2-sending">Sending link layer <i>PDU</i>s</h4>
+
+<p>
+When sending link layer <i>PDU</i>s, such as <i>EthernetII</i>, there
+is one more thing that should be kept in mind. In this case, the packet
+must be sent through a specific network interface. You can specify this
+when sending it:
+</p>
+
+{% highlight cpp %}
+PacketSender sender;
+EthernetII pkt = EthernetII() / IP() / TCP() / RawPDU("foo");
+sender.send(pkt, "eth0"); // send it through eth0
+
+// if you're sending multiple packets, you might want to create
+// the NetworkInterface object once
+NetworkInterface iface("eth0"); 
+sender.send(pkt, iface);
+{% endhighlight %}
+
+<p>
+That will send the packet through the <i>eth0</i> interface.
+</p>
+
+<p>
+It is quite common to use the same network interface to send several
+packets. <i>PacketSender</i> contains a default interface, in which
+link layer <i>PDU</i>'s are sent when using the 
+<i>PacketSender::send(PDU&)</i> overload:
+</p>
+
+{% highlight cpp %}
+PacketSender sender("eth0");
+EthernetII pkt = EthernetII() / IP() / TCP() / RawPDU("foo");
+sender.send(pkt); // send it through eth0 as well
+
+std::cout << sender.default_interface().name() << std::endl;
+sender.default_interface("eth1");
+sender.send(pkt); // now we're sending through eth1.
+{% endhighlight %}
+
+<p>
+Note that by default this interface is invalid, so you need to set it 
+before sending link layer <i>PDU</i>s as shown above:
+</p>
+
+{% highlight cpp %}
+PacketSender sender;
+EthernetII pkt = EthernetII() / IP() / TCP() / RawPDU("foo");
+sender.send(pkt); // throws invalid_interface
+{% endhighlight %}
+
+<h4 id="send-recv">Sending and receiving responses</h4>
+
+<p>
+So far we've seen how to send packets, but what if you're expecting
+a response to that packet? Let's take as an example an <i>ARP</i>
+request. After it's sent, you'll most likely want to receive a response.
+</p>
+<p>
+This could be achieved by sniffing while sending the packet, checking 
+each sniffed packet until the response is found. However, in order to 
+match the packet response, it would be necessary to perform
+several protocol dependent comparisons. In the case of an <i>ARP</i> 
+response, it would be fairly straightforward. However, other protocols 
+require checking destination and source address and ports, identifier 
+numbers, etc.
+</p>
+<p>
+Fornutately, a sending and receiving mechanism has already been included 
+in the library. This can be achieved by using <i>PacketSender::send_recv</i>,
+which provides two overloads:
+</p>
+
+{% highlight cpp %}
+PDU *send_recv(PDU &pdu);
+PDU *send_recv(PDU &pdu, const NetworkInterface &iface);
+{% endhighlight %}
+
+<p>
+The <i>NetworkInterface</i> parameter serves the same purpose as in
+<i>PacketSender::send</i>. 
+</p>
+<p>
+Let's see how it could be used to perform an <i>ARP</i> request and 
+receiving its response:
+</p>
+
+{% highlight cpp %}
+// The address to resolve
+IPv4Address to_resolve("192.168.0.1");
+// The interface we'll use, since we need the sender's HW address
+NetworkInterface iface(to_resolve);
+// The interface's information
+auto info = iface.addresses();
+// Make the request
+EthernetII eth = ARP::make_arp_request(to_resolve, info.ip_addr, info.hw_addr);
+
+// The sender
+PacketSender sender;
+// Send and receive the response.
+std::unique_ptr<PDU> response(sender.send_recv(eth, iface));
+// Did we receive anything?
+if(response) {
+    const ARP &arp = response->rfind_pdu<ARP>();
+    std::cout << "Hardware address: " << arp.sender_hw_addr() << std::endl;
+}
+{% endhighlight %}
+
+<p>
+Note that inside <i>PacketSender::send_recv</i>, packets read from the
+socket will be matched against the sent one until a valid one is found.
+</p>
+<p>
+Just as a side note, hardware addresses can be resolved much easily, 
+using <i>Utils::resolve_hwaddr</i>:
+</p>
+
+{% highlight cpp %}
+// The sender
+PacketSender sender;
+// Will throw std::runtime_error if resolving fails
+HWAddress<6> addr = Utils::resolve_hwaddr("192.168.0.1", sender);
+std::cout << "Hardware address: " << addr << std::endl;
+{% endhighlight %}
+
+<p>
+Going back to the sending and receiving mechanism, we could also use 
+it to determine whether a TCP port is open:
+</p>
+
+{% highlight cpp %}
+// The sender
+PacketSender sender;
+// The SYN to be sent.
+IP pkt = IP("192.168.0.1") / TCP(22, 1337);
+pkt.rfind_pdu<TCP>().set_flag(TCP::SYN, 1);
+
+// Send and receive the response.
+std::unique_ptr<PDU> response(sender.send_recv(pkt));
+// Did we receive anything?
+if(response) {
+    TCP &tcp = response->rfind_pdu<TCP>();
+    if(tcp.get_flag(TCP::RST)) 
+        std::cout << "Port is closed!" << std::endl;
+    else
+        std::cout << "Port is open!" << std::endl;
+}
+{% endhighlight %}
+
+<p>
+As a last example, the following code resolves a domain name using
+<i>PacketSender::send_recv</i>:
+</p>
+
+{% highlight cpp %}
+// The sender
+PacketSender sender;
+// The DNS request
+IP pkt = IP("8.8.8.8") / UDP(53, 1337) / DNS();
+// Add the query
+pkt.rfind_pdu<DNS>().add_query({ "www.google.com", DNS::A, DNS::IN });
+// We want the query to be resolverd recursively
+pkt.rfind_pdu<DNS>().recursion_desired(1);
+
+// Send and receive the response.
+std::unique_ptr<PDU> response(sender.send_recv(pkt));
+// Did we receive anything?
+if(response) {
+    // Interpret the response
+    DNS dns = response->rfind_pdu<RawPDU>().to<DNS>();
+    // Print responses
+    for(const auto &record : dns.answers())
+        std::cout << record.dname() << " - " << record.data() << std::endl;
+}
+{% endhighlight %}
+
+<h4 id="checksums">Checksum calculation</h4>
+
+<p>
+In the examples above, some of the protocols used, such as <i>IP</i>
+and <i>TCP</i> contain a checksum field. This checksum must be 
+calculated everytime the packet is sent. <b><i>libtins</i> does this 
+automatically</b>: everytime a packet is serialized(this happens inside
+<i>PacketSender::send</i>), the checksums are calculated; so there is
+no need for you to worry about them.
+</p>
+
+<h4 id="thread-safety">Thread-safety</h4>
+
+<p>
+One thing that should be noticed is that the raw socket opening 
+operation <b>is not thread-safe</b>, so in case you're having multiple 
+writers, you should explicitly open the required sockets yourself(this 
+can be done through <i>PacketSender::open_l2_socket</i> and 
+<i>PacketSender::open_l3_socket</i>). Otherwise, the sockets will be 
+open when needed.
+</p>
+
+<div style="float: left;">
+    <a href="{{ site.url }}/tutorial/sniffing/">Previous part: Sniffing</a>
+</div>
+<div style="float: right;">
+    <a href="{{ site.url }}/tutorial/protocols/">Next part: Protocols</a>
+</div>

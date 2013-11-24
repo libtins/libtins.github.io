@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="<?php echo $title; ?>" />
+        <meta name="google-site-verification" content="lUNukBuE5GGe2p75_Z5pXBqx77QE0aKJ2AVfjlAW6ak" />
+        <title>{{ page.title }}</title>
+        
+        <link rel="stylesheet" href="{{ site.url }}/stylesheets/styles.css">
+        <link rel="stylesheet" href="{{ site.url }}/stylesheets/pygments/default.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="javascripts/respond.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <div id="header">
+            <h2>libtins: packet crafting and sniffing library</h2>
+        </div>
+        <hr />
+        <div id="main">
+            <div id="main-menu">
+                <ul>
+                    <li><a class="menu-item-link" href="{{ site.url }}/">Home</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/news/">News</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/download/">Download</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/benchmark/">Benchmarks</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/installation/">Installation</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/tutorial/">Tutorial</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/examples/">Examples</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/features/">Features</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/docs/1.2/">Documentation</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/changelog/">Changelog</a></li>
+                    <li><a class="menu-item-link" href="{{ site.url }}/contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div id="content">
+{{ content }}
+            </div>
+            <div id="footer">Website designed and developed by <a href="http://average-coder.blogspot.com">Matias Fontanini</a>.</div>
+            <div id="stopper"></div>
+        </div>
+        <!-- Google Analytics --> 
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-37812010-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </body>
+</html>

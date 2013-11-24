@@ -1,0 +1,26 @@
+---
+title: DNS queries spoofer
+layout: default
+---
+<h3>DNS queries spoofer</h3>
+
+<p>
+This example waits for <i>DNS</i> type <i>A</i> queries and answers 
+them, indicating that the queried address is <i>127.0.0.1</i>. The host 
+running this application should be somewhere between the one that sends 
+the queries and the actual <i>DNS</i> server.
+</p>
+<p>
+For example, running it on my machine and performing queries in a 
+virtual machine, this is the output I get:
+</p>
+<script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+matias@webserver:~$ host libtins.sourceforge.net
+libtins.sourceforge.net has address 127.0.0.1
+]]></script>
+<p>
+You can download this code <a href="{{ site.url }}/examples/code/dns-spoof.cpp">here</a>.
+</p>
+{% highlight cpp %}
+{% include code/dns-spoof.cpp %}
+{% endhighlight %}

@@ -1,0 +1,348 @@
+---
+title: "Tutorial : IEEE 802.11"
+layout: default
+---
+<h3>Tutorial - IEEE 802.11</h3>
+In this section we'll have a look how the IEEE 802.11 protocol is 
+implemented in <i>libtins</i>. 
+<hr>
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
+<b>Part 5: IEEE 802.11</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#802.11">IEEE 802.11</a></li>
+        <li><a href="#management-frames">Management frames</a></li>
+        <li><a href="#data-frames">Data frames</a></li>
+        <li><a href="#decrypting-data">Decrypting data frames</a></li>
+        <li><a href="#decrypting-wep">Decrypting WEP encrypted frames</a></li>
+        <li><a href="#decrypting-wpa">Decrypting WPA2 encrypted frames</a></li>
+        <li><a href="#encapsulation">802.11 encapsulation</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
+<hr>
+<h4 id="802.11">IEEE 802.11</h4>
+
+<p>
+<i>libtins</i> has great support for the IEEE 802.11 protocol. Tools
+such as those included in the <a href="http://www.aircrack-ng.org/">
+aircrack-ng</a> suite should be very simple to implement using this
+library.
+</p>
+
+<p>
+The whole protocol is implemented using a base class, <i>Dot11</i>,
+which contains fields shared by every frame in it. Every frame type is 
+represented by a certain class that inherits from it. 
+</p>
+
+<h4 id="management-frames">Management frames</h4>
+
+<p>
+Let's have a look at management frames, which are represented by the
+abstract class <i>Dot11Management</i>. This class contains several helper
+methods which allow you to search and add tagged options from the frame.
+We'll take as an example <i>Dot11Beacon</i>, which is the class that
+represents beacon frames:
+</p>
+
+{% highlight cpp %}
+Dot11Beacon beacon;
+// Make this a broadcast frame. Note that Dot11::BROADCAST
+// is just the same as "ff:ff:ff:ff:ff:ff"
+beacon.addr1(Dot11::BROADCAST);
+// We'll set the source address to some arbitrary address
+beacon.addr2("00:01:02:03:04:05");
+// Set the bssid, to the same one as above
+beacon.addr3(beacon.addr2());
+
+// Let's add an ssid option
+beacon.ssid("libtins");
+// Our current channel is 8
+beacon.ds_parameter_set(8);
+// This is our list of supported rates:
+beacon.supported_rates({ 1.0f, 5.5f, 11.0f });
+
+// Encryption: we'll say we use WPA2-psk encryption
+beacon.rsn_information(RSNInformation::wpa2_psk());
+
+// The beacon's ready to be sent!
+{% endhighlight %}
+
+<p>
+Note that the above curly brace syntax used when calling 
+<i>Dot11Beacon::supported_rates</i> will only work in C++11, the latest
+C++ ISO standard. That method takes a <i>std::vector<float></i> 
+as its argument, so we're calling vector's constructor from an 
+<i>initializer_list</i>. If we didn't use this feature, we'd have to
+create a temporary vector, fill it in, and pass it as argument.
+If you haven't checked out C++11, you should, it's awesome.
+</p>
+<h4 id="data-frames">Data frames</h4>
+
+<p>
+Data frames should be easy to deal with if you have a basic notion of
+how higher protocols are encapsulated within 802.11.
+</p>
+
+<p>
+Let's asume we've got no encryption in our data frames. A TCP packet will
+look like this in <i>libtins</i>:
+</p>
+
+<div style="text-align: center;">
+    <img src="/images/dot11-data.png" />
+</div><br />
+
+<p>
+Here, the <i>SNAP</i> class, represents the <i>LLC+SNAP</i> encapsulation.
+You should only care about this structure if you're actually crafting
+packets. While sniffing, you should always use the <i>PDU::find_pdu</i>
+method template to find the layer you're looking for. Note that instead
+of <i>SNAP + IP + TCP</i>, there might be just a <i>RawPDU</i> if the
+data is encrypted. In order to create a packet like the one shown above,
+you could do the following:
+</p>
+
+{% highlight cpp %}
+// Yikes! Simple stuff :D
+Dot11Data data = Dot11Data() / SNAP() / IP() / TCP() / RawPDU("Hallou");
+{% endhighlight %}
+
+<h4 id="decrypting-data">Decrypting data frames</h4>
+
+<p>
+<i>libtins</i> supports the decryption of <i>WEP</i> and <i>WPA2</i>(
+both <i>AES</i> and <i>TKIP</i>) encrypted 802.11 frames. Of course, the 
+library will not crack the password/<i>PSK</i> used to encrypt the 
+packets, you need to provide it yourself.
+</p>
+
+<h4 id="decrypting-wep">Decrypting WEP encrypted frames</h4>
+
+<p>
+The <i>WEPDecrypter</i> class, which lies the namespace <i>Crypto</i>,
+is the one that handles <i>WEP</i> decryption. You create an object of 
+that type, add tuples <i>(bssid, password)</i>, and let it decrypt packets. 
+Let's see an example:
+</p>
+
+{% highlight cpp %}
+Crypto::WEPDecrypter decrypter;
+// Packets sent to/from the AP whose BSSID is the one provided below,
+// will be decrypted using the password "passw"
+decrypter.decrypter.add_password("00:01:02:03:04:05", "passw");
+// Just asume we get an encrypted frame from somewhere
+Dot11Data some_data = generate_dot11data();
+if(decrypter.decrypt(some_data)) {
+    // Data was decrypted
+    std::cout << "Data was successfully decrypted!\n";
+}
+else {
+    // Data couldn't be decrypted
+    std::cout << "Decryption failed!\n";
+}
+{% endhighlight %}
+
+<p>
+Okay, the example is pretty straightforward. One thing I'd like to point
+out is why would decryption fail? Imagining the <i>BSSID</i> associated
+with the data frame was actually the one for which we provided a password,
+it could have happened that after decryption, the checksum field in the
+data frame was invalid. In this case, the <i>RawPDU</i> that contained 
+the data, would be removed, so <i>some_data.inner_pdu()</i> would be 
+effectively <i>nullptr</i>. I'll explain why does the class behave 
+this way below.
+</p>
+
+<p>
+In case decryption was successful, the <i>RawPDU</i> would be replaced
+by a <i>SNAP PDU</i>, followed by whatever that packet contained. 
+As an example, this picture illustrates what would happen if you 
+successfully decrypted a TCP packet:
+</p>
+
+<div style="text-align: center;">
+    <img src="/images/dot11-decrypt.png" />
+</div><br />
+
+<p>
+Note that everything that follows the <i>SNAP PDU</i> obviously depends
+on the actual packet being decrypted. Moreover, if the data frame were 
+not encrypted, or the associated BSSID was not the one given, the packet 
+will be left intact.
+</p>
+
+<p>
+If you read above and wondered why packets for which the checksum is 
+invalid are modified, and the <i>RawPDU</i> which contains the encrypted
+data is removed, then here's the reason. The situation given in the 
+snippet shown a few lines up is not very common. If you want to decrypt
+a packet, you are most surely taking it out from either your network
+interface, or a pcap file. The <i>WEPDecrypter</i> class was designed to 
+be plugged in between a sniffer and the sniffer callback. That can
+be achieved using the <i>DecrypterProxy</i> class template. This is
+how you'd do it:
+</p>
+
+{% highlight cpp %}
+bool handler(PDU &pdu) {
+    // process....
+    return true;
+}
+// ....
+
+// This creates a decrypter proxy class. 
+auto decrypt_proxy = make_wep_decrypter_proxy(handler);
+// Same as in the previous example.
+decrypt_proxy.decrypter().add_password("00:01:02:03:04:05", "passw");
+
+// Create a sniffer
+Sniffer sniffer("wlan0", 2000, true);
+// Sniff and decrypt!
+sniffer.sniff_loop(decrypt_proxy);
+{% endhighlight %}
+
+<p>
+The code shown above would be a more common situation in which you'd use
+a <i>WEPDecrypter</i>. Let's analyze it:
+</p>
+
+<ul>
+    <li>We define a handler function, called "handler".</li>
+    <li>We create a decrypter proxy. The "auto" specifier, again a C++11
+        feature, is used so we don't actually write down the type of
+        that object which should be something like
+        <i>DecrypterProxy<bool(*)(PDU&), WEPDecrypter></i>. 
+        Yes, it's a long name, that's why I used that specifier. This
+        proxy class implements an <i>operator()</i>, suitable to be used
+        as the argument to <i>Sniffer::sniff_loop</i>. It also stores
+        a decrypter, in this case a <i>WEPDecrypter</i>, which you can
+        access using the method <i>DecrypterProxy::decrypter</i></li>
+    <li>The same tuple (bssid, password) is added to the decrypter 
+        held by the proxy class.</li>
+    <li>A sniffer is created, which will interpret packets from the
+        wlan0 interface.</li>
+    <li>A sniffing loop is started. This is where the proxy does its 
+        magic. Instead of simply calling our handler, it will intercept
+        data frames that, in this case, are sent to/from the AP identified 
+        by the BSSID provided, and it will decrypt the content. When the
+        "handler" callback is executed, you know that if the <i>PDU</i>
+        argument is a data frame that should be decrypted, then it will
+        be. Frames from BSSIDs other than the ones provided will be left
+        intact, and you'll still be able to process them in the same 
+        callback. Packets for which the checksum is invalid will be 
+        discarded. This somehow explains the behaviour pointed out a 
+        few lines up. </li>
+</ul>
+<p>
+Using this design, when new decrypters are added, you'll simply chain
+them all together and use a somewhat "decrypting chain". 
+</p>
+
+<h4 id="decrypting-wpa">Decrypting WPA2 encrypted frames</h4>
+
+<p>
+As from <i>libtins</i> v1.1, the library supports the decryption of 
+<i>WPA2</i>(both <i>AES</i> and <i>TKIP</i>) encrypted frames. This is
+done through the class <i>WPA2Decrypter</i>.
+</p>
+
+<p>
+<i>WPA2</i> decryption is more complex than <i>WEP</i> decryption,
+since you can't just pick a random packet and decrypt it. There's a 
+handshake between each client and the access point in which some 
+<i>nonces</i>, which are later needed during decryption, are exchanged.
+</p>
+<p>
+Moreover, the access point's <i>SSID</i> is required in order to create
+the first set of keys(the <i>PMK</i>), so you have to provide that as 
+well. The object will be analyzing beacon frames looking for that 
+<i>SSID</i> so that handshakes performed against that access point can
+be filtered using the appropriate <i>BSSID</i>. 
+</p>
+<p>
+<i>WPA2Decrypter</i> will be looking for 4-way handshakes. Everytime
+one is detected, the <i>PTK</i> keys are generated(the <i>MIC</i> in 
+the handshake is verified), and from that point, every packet sent from/to
+that client will be decrypted, just like <i>WEPDecrypter</i> does.
+</p>
+<p>
+Let's see a small example on how to do this:
+</p>
+
+{% highlight cpp %}
+bool handler(PDU &pdu) {
+    // pdu here is not encrypted!
+    return true;
+}
+// ....
+
+// This creates a decrypter proxy class. 
+auto decrypt_proxy = make_wpa2_decrypter_proxy(handler);
+// Same as in the previous example.
+decrypt_proxy.decrypter().add_ap_data("my_secure_psk", "my_access_point_ssid");
+
+// Create a sniffer
+Sniffer sniffer("wlan0", 2000, true);
+// Sniff and decrypt!
+sniffer.sniff_loop(decrypt_proxy);
+{% endhighlight %}
+
+<h4 id="encapsulation">802.11 encapsulation</h4>
+
+<p>
+As you may know, network interface drivers typically use some form of 
+encapsulation rather than using raw 802.11 frames. A widely used form
+of encapsulation is the <i>RadioTap</i> protocol. If your driver uses
+<i>RadioTap</i>, then a packet taken from it will look like this:
+</p>
+
+<div style="text-align: center;">
+    <img src="/images/radiotap-encapsulation.png" />
+</div><br />
+
+<p>
+The <i>RadioTap</i> protocol gives you more information about 802.11
+frames. You can retrieve info such as the signal strength, noise, whether
+a Frame Check Sequence is used to provide integrity, etc. <br /><br />
+The <i>RadioTap</i> class uses some useful defaults, so you don't have 
+to provide every option, since most of the time you'll use the same value
+for them. As an example, this snippet:
+</p>
+
+{% highlight cpp %}
+#include <tins/tins.h>
+
+using namespace Tins;
+
+int main() {
+    RadioTap radio = RadioTap() / Dot11Beacon();
+    PacketWriter writer("/tmp/output.pcap", PacketWriter::RADIOTAP);
+    writer.write(radio);
+}
+{% endhighlight %}
+
+<p>
+Generates the following packet:
+</p>
+
+<img src="/images/radiotap-capture.png" /><br /><br />
+
+<p>
+Note that some drivers actually use raw 802.11 frames, without any 
+encapsulation. Others may use <i>AVS</i> or <i>Prism</i>, but
+unfortunately, <i>libtins</i> does not support them yet. However, adding
+them is in our TODO list, so they'll probably be included in the next
+release.
+</p>
+
+<div style="text-align: left;">
+    <a href="{{ site.url }}/tutorial/protocols/">Previous part: Protocols</a>
+</div>
+<div style="float: right;">
+    <a href="{{ site.url }}/tutorial/new_protocols/">Next part: Adding new protocols</a>
+</div>
