@@ -1,7 +1,11 @@
 ---
 title: C++ packet sniffing and crafting library
 layout: default
+section: home
 ---
+<div id="index-header-separator">
+</div>
+<h3>Introduction</h3>
 <p>
     <i>libtins</i> is a high-level, multiplatform <i>C++</i> network 
     packet sniffing and crafting library.
@@ -11,6 +15,7 @@ layout: default
     efficient, platform and endianess-independent way to create tools 
     which need to send, receive and manipulate network packets.
 </p>
+<h3>It's easy to use!</h3>
 <p>
     The library is very simple to use. As a short example, this is 
     how it could be used to print the source and destination addresses 
@@ -37,16 +42,18 @@ int main() {
 }
 {% endhighlight %}
 
+<h3>High level != inefficient</h3>
 <p>
     <i>libtins</i> was designed keeping efficiency in mind at all times.
     In fact, it is one of the fastest packet sniffing and interpretation 
     libraries available. The <a href="{{ site.url }}/benchmark/">benchmark</a> section 
     contains some actual measurements of how fast it works.
 </p>
+<h3>It's been thoroughly tested</h3>
 <p>
     Almost as much time was invested testing the library than 
-    developing it. At the moment of writing, there are 607 unit tests, 
-    which check that every getter, setter and method does what's 
+    developing it. At the moment of writing, there are 624 unit tests, 
+    which check that everything in <i>libtins</i> does what's
     expected. All of them run successfully on Windows, OSX and both 
     little and big endian GNU/Linux and FreeBSD operating systems. 
 </p>

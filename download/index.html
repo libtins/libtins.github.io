@@ -1,26 +1,50 @@
 ---
-title: Download
+title: Downloading and installing the library
 layout: default
+section: download
 ---
-<h3>Download</h3>
+<div class="page-header section-header">
+<h3>Downloading and installing the library</h3>
 
+<div id="section-listing">
+    <ul>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#compiling">Compiling libtins</a></li>
+        <li><a href="#cross-compiling">Cross-compiling libtins</a></li>
+        <li><a href="#using">Using libtins</a></li>
+    </ul>
+</div>
+</div>
+
+<h3 id="download">Download</h3>
 <p>
 In order to download <i>libtins</i>, please visit project's github
 <a href="https://github.com/mfontanini/libtins">
-page</a>.
+page</a> or use one of the following mechanisms:
 </p>
 
-<h4>Latest source</h4>
+<ul>
+<li><h4>Latest source</h4></li>
 
 <p>
-Download the latest sourcecode through the following links:
+It is highly recommended that you download the latest source code so
+you are less likely to encounter bugs and you will have access to more
+features. Using the following links you can download it:
 </p>
 <ul>
 <li>In <a href="https://github.com/mfontanini/libtins/archive/master.tar.gz">tar.gz</a> format.</li>
 <li>In <a href="https://github.com/mfontanini/libtins/archive/master.zip">Zip</a> format.</li>
 </ul>
 
-<h4>Debian-based systems(only version 1.1)</h4>
+<p>
+Or clone the git repository by executing:
+</p>
+{% highlight bash %}
+git clone git@github.com:mfontanini/libtins.git
+{% endhighlight %}
+
+<li><h4>Debian-based systems(only version 1.1)</h4></li>
 
 <p>
 <i>.deb</i> packages are also available(big thanks to <a href="http://kalgan.cc/">
@@ -28,7 +52,8 @@ Raúl Benencia</a>), so in case you're using a Debian-based
 system(Ubuntu, Linux Mint, etc), you can download them:
 </p>
 
-<h5>32 bit systems</h5>
+<ul>
+<li><h5>32 bit systems</h5></li>
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_i386.deb/download">
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_i386.deb/download
 </a><br />
@@ -47,8 +72,7 @@ dpkg -i libtins-dev_1.1-1_i386.deb
 dpkg -i libtins1_1.1-1_i386.deb
 {% endhighlight %}
 
-<h5>64 bit systems</h5>
-
+<li><h5>64 bit systems</h5></li>
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_amd64.deb/download">
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_amd64.deb/download
 </a><br />
@@ -66,14 +90,102 @@ Then install them using some Debian package installer tool, such as
 dpkg -i libtins-dev_1.1-1_amd64.deb
 dpkg -i libtins1_1.1-1_amd64.deb
 {% endhighlight %}
-
-<h4>Latest stable version</h4>
+</li>
+</ul>
+</ul>
+<h3 id="requirements">Requirements</h3>
 
 <p>
-In order to get the latest stable version, you can clone the git repository.
-You can do that executing the following command:
+<i>libtins</i> depends on both, 
+<a href="http://www.tcpdump.org"><i>libpcap</i></a> and 
+<a href="http://www.openssl.org/"><i>libcrypto</i></a>, 
+which is provided by the <i>OpenSSL</i> library. Note that the latter 
+is only required if you want to allow WPA2 decryption. This feature
+can be disabled by using the <i>--disable-wpa2</i> configure switch.
+</p>
+<p>
+You should be able to install both libraries through your distribution's 
+package manager.
+</p>
+<p>
+For Debian based systems(Ubuntu, Linux Mint, etc), you can install it
+executing this command as <b>root</b>:
 </p>
 
 {% highlight bash %}
-git clone git@github.com:mfontanini/libtins.git
+apt-get install libpcap-dev libssl-dev
 {% endhighlight %}
+
+<h3 id="compiling">Compiling libtins</h3>
+<p>
+Now you've got everything you need for compiling <i>libtins</i>.
+In order to compile, just execute the following commands:
+</p>
+{% highlight bash %}
+./configure
+make
+{% endhighlight %}
+<p>
+If you want to enable C++11 support(many non-copyable classes will 
+be movable, plus, it will run faster), use the <i>--enable-c++11</i> 
+switch:
+</p>
+
+{% highlight bash %}
+./configure --enable-c++11
+{% endhighlight %}
+<p>
+Now you've compiled the library. The shared object will be located in 
+the <i>.libs</i> directory. If you want to install <i>libtins</i> in the 
+default include and library path, so you can use it easily in your 
+applications, run this command as <b>root</b>:
+</p>
+{% highlight bash %}
+make install
+{% endhighlight %}
+<p>
+This will tipically install the shared objects in <i>/usr/local/lib</i>
+and the header files in <i>/usr/local/include</i>.
+</p>
+<p>
+Note that unless you want to restart your system before using the library,
+you'll need to update <i>ldconfig</i>'s cache, by issuing:
+</p>
+
+{% highlight bash %}
+ldconfig
+{% endhighlight %}
+
+<h3 id="cross-compiling">Cross-compiling libtins</h3>
+
+<p>
+<i>libtins</i> works on several architectures commonly used in embedded
+systems, such as <i>ARM</i> and <i>MIPS</i>. The cross-compilation
+process in described in <a href="{{ site.url }}/cross-compile/">
+this tutorial</a>.
+</p>
+
+<h3 id="using">Using libtins</h3>
+
+<p>
+Once you have compiled <i>libtins</i>, using it is just as simple as
+including the appropriate headers and linking against it.
+</p>
+
+<h4>Headers</h4>
+<p>
+<i>libtins</i>' headers are inside a directory named <i>tins</i>, inside
+your default include directory. You can include individual headers, or
+just include <tins/tins.h>, which will include all of them.
+</p>
+
+<h4>Linking</h4>
+<p>
+In order to link your application with <i>libtins</i> on GCC and clang,
+use the <i>-ltins</i> flag:
+</p>
+
+{% highlight bash %}
+g++ app.cpp -o app -ltins
+{% endhighlight %}
+

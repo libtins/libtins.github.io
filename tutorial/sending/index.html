@@ -1,10 +1,14 @@
 ---
-title: "Tutorial : Sending packets"
+title: "Tutorial: Sending packets"
 layout: default
+section: tutorial
 ---
-<h3>Tutorial - Sending packets</h3>
+<div class="page-header section-header">
+<h3>Sending packets</h3>
+<p class="section-description">
 In this section we'll have a look at how the packet sending mechanism
 works on <i>libtins</i>.
+</p>
 <hr />
 <a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
 <a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
@@ -22,9 +26,9 @@ works on <i>libtins</i>.
 <a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
 <a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
 <a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
-<hr>
+</div>
 
-<h4 id="intro">Introduction</h4>
+<h3 id="intro">Introduction</h3>
 
 <p>
 The <i>PacketSender</i> class is the responsible for sending packets
@@ -38,7 +42,7 @@ is serialized into a an array of bytes and sent through the appropriate
 socket.
 </p>
 
-<h4 id="l3-sending">Sending network layer <i>PDU</i>s</h4>
+<h3 id="l3-sending">Sending network layer <i>PDU</i>s</h3>
 
 <p>
 Sending network layer <i>PDU</i>s, such as <i>IP</i> and <i>IPv6</i>
@@ -62,7 +66,7 @@ require this address when calculating the checksum, so this must be
 done by the library as well.
 </p>
 
-<h4 id="l2-sending">Sending link layer <i>PDU</i>s</h4>
+<h3 id="l2-sending">Sending link layer <i>PDU</i>s</h3>
 
 <p>
 When sending link layer <i>PDU</i>s, such as <i>EthernetII</i>, there
@@ -114,7 +118,7 @@ EthernetII pkt = EthernetII() / IP() / TCP() / RawPDU("foo");
 sender.send(pkt); // throws invalid_interface
 {% endhighlight %}
 
-<h4 id="send-recv">Sending and receiving responses</h4>
+<h3 id="send-recv">Sending and receiving responses</h3>
 
 <p>
 So far we've seen how to send packets, but what if you're expecting
@@ -239,7 +243,7 @@ if(response) {
 }
 {% endhighlight %}
 
-<h4 id="checksums">Checksum calculation</h4>
+<h3 id="checksums">Checksum calculation</h3>
 
 <p>
 In the examples above, some of the protocols used, such as <i>IP</i>
@@ -250,7 +254,7 @@ automatically</b>: everytime a packet is serialized(this happens inside
 no need for you to worry about them.
 </p>
 
-<h4 id="thread-safety">Thread-safety</h4>
+<h3 id="thread-safety">Thread-safety</h3>
 
 <p>
 One thing that should be noticed is that the raw socket opening 

@@ -1,10 +1,14 @@
 ---
-title: "Tutorial : Sniffing packets"
+title: "Tutorial: Sniffing packets"
 layout: default
+section: tutorial
 ---
-<h3>Tutorial - Sniffing</h3>
+<div class="page-header section-header">
+<h3>Sniffing</h3>
+<p class="section-description">
 In this section we'll have a deeper look at how to perform sniffing
 using <i>libtins</i>.
+</p>
 <hr>
 <a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
 <b>Part 2: Sniffing</b>
@@ -22,9 +26,9 @@ using <i>libtins</i>.
 <a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
 <a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
 <a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
-<hr>
+</div>
 
-<h4 id="sniffing">Sniffing basics</h4>
+<h3 id="sniffing">Sniffing basics</h3>
 
 <p>
 Sniffing is done through the <i>Sniffer</i> class. This class accepts
@@ -60,7 +64,7 @@ it <b>is not</b>, so you'll only be able to sniff packets that are sent
 to or by you.
 </p>
 
-<h4 id="loop-sniffing">Loop sniffing</h4>
+<h3 id="loop-sniffing">Loop sniffing</h3>
 
 <p>
 Though this is a valid way of retrieving packets, it's very common
@@ -169,7 +173,7 @@ means you can use <i>PDU::rfind_pdu</i> and don't even care if such
 the <i>Sniffer</i>, and the sniffing session will continue. 
 </p>
 
-<h4 id="iterator-sniffing">Sniffing using iterators</h4>
+<h3 id="iterator-sniffing">Sniffing using iterators</h3>
 
 <p>
 There is yet another way to retrieve packets from a Sniffer object. 
@@ -186,7 +190,7 @@ for(auto &pdu : s) {
 }
 {% endhighlight %}
 
-<h4 id="packet-objects">Packet objects</h4>
+<h3 id="packet-objects">Packet objects</h3>
 
 <p>
 If you require to store a <i>PDU</i> along with the timestamp object, 
@@ -243,7 +247,7 @@ if(packet)
     process_packet(packet); // whatever
 {% endhighlight %}
 
-<h4 id="read-pcap">Reading pcap files</h4>
+<h3 id="read-pcap">Reading pcap files</h3>
 
 <p>
 Reading files in <i>pcap</i> format is very straightforward. The 
@@ -277,7 +281,7 @@ int main() {
 }
 {% endhighlight %}
 
-<h4 id="interpretation">Packet interpretation</h4>
+<h3 id="interpretation">Packet interpretation</h3>
 
 <p>
 Now that we've seen the ways in which you can read pcap files and sniff 

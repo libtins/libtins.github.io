@@ -1,10 +1,12 @@
 ---
 title: Benchmarks
 layout: default
+section: benchmark
 ---
+<div class="page-header section-header">
 <h3>Benchmarks</h3>
 
-<p>
+<p class="section-description">
 In this section you can find some benchmarks which aim at comparing
 how well does <i>libtins</i> work compared to other libraries that
 serve its same purpose.
@@ -18,9 +20,9 @@ serve its same purpose.
         <li><a href="#bench2">Benchmark #2 - Interpretting TCP + TCP Option</a></li>
     </ul>
 </div>
-<hr>
+</div>
 
-<h4 id="env">Testing enviornment</h4>
+<h3 id="env">Testing enviornment</h3>
 <p>
 Every benchmark was executed on a computer with the following specs:
 </p>
@@ -31,7 +33,7 @@ Every benchmark was executed on a computer with the following specs:
     <li>Compiler - gcc 4.7.2</li>
 </ul>
 
-<h4 id="libs">Tested libraries</h4></h4>
+<h3 id="libs">Tested libraries</h3>
 <p>
 Benchmarks were executed using the following libraries:
 </p>
@@ -49,7 +51,7 @@ Note that the <i>libtins</i> and <i>libcrafter</i> test cases
 were compiled using C++11(using the <i>-std=c++11</i> gcc switch). 
 </p>
 
-<h4 id="bench1">Benchmark #1 - Interpretting TCP</h4>
+<h3 id="bench1">Benchmark #1 - Interpretting TCP</h3>
 <p>
 In this first benchmark, I generated a pcap file containing 500000 packets
 generated, using the following template:
@@ -79,12 +81,12 @@ them use it implicitly to read the pcap file.
 <p>
 The benchmark results were the following:
 </p>
-<table class="bench-table" align="center" border="1">
+<table class="table table-striped">
     <thead>
         <tr>
-            <td class="bench-head-td">Library</td>
-            <td class="bench-head-td">Time taken(seconds)</td>
-            <td class="bench-head-td">Packets per second</td>
+            <th>Library</th>
+            <th>Time taken(seconds)</th>
+            <th>Packets per second</th>
         </tr>
     </thead>
     <tbody>
@@ -127,7 +129,7 @@ indicates the time taken for that library to parse the entire file,
 and the last one how many packets per second did the library interpret.
 </p>
 
-<h4 id="bench2">Benchmark #2 - Interpretting TCP + TCP Options</h4>
+<h3 id="bench2">Benchmark #2 - Interpretting TCP + TCP Options</h3>
 
 <p>
 This benchmark is very similar to the one above, but in this one, I added
@@ -151,12 +153,12 @@ tcp.altchecksum(TCP::CHK_TCP);
 <p>
 The results of this benchmark were the following:
 </p>
-<table class="bench-table" align="center" border="1">
+<table class="table table-striped">
     <thead>
         <tr>
-            <td class="bench-head-td">Library</td>
-            <td class="bench-head-td">Time taken(seconds)</td>
-            <td class="bench-head-td">Packets per second</td>
+            <th>Library</th>
+            <th>Time taken(seconds)</th>
+            <th>Packets per second</th>
         </tr>
     </thead>
     <tbody>

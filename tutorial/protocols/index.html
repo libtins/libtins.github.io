@@ -1,8 +1,10 @@
 ---
-title: "Tutorial : Protocols"
+title: "Tutorial: Protocols"
 layout: default
+section: tutorial
 ---
-<h3>Tutorial - Protocols</h3>
+<div class="page-header section-header">
+<h3>Protocols</h3>
 In this section we'll have a look how several commonly used protocols 
 work in <i>libtins</i>. 
 <hr>
@@ -20,8 +22,8 @@ work in <i>libtins</i>.
 </div>
 <a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
 <a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
-<hr>
-<h4 id="intro">Introduction</h4>
+</div>
+<h3 id="intro">Introduction</h3>
 <p>
 <i>libtins</i> provides support for several network protocols. The
 <a href="{{ site.url }}/documentation.php">documentation</a> contains information
@@ -35,7 +37,7 @@ In this section, we'll have a look at how some of the protocols you will
 most likely see in your home network are implemented in the library.
 </p>
 
-<h4 id="eth">Ethernet II</h4>
+<h3 id="eth">Ethernet II</h3>
 
 <p>
 The Ethernet II protocol is represented by the <i>EthernetII</i> class, 
@@ -54,7 +56,7 @@ eth.src_addr("00:01:02:03:04:05");
 EthernetII eth2("01:02:03:04:05:06", "00:01:02:03:04:05");
 {% endhighlight %}
 
-<h4 id="ip">IP</h4>
+<h3 id="ip">IP</h3>
 
 <p>
 The <i>IP</i> class contains much more methods, both for accessing the
@@ -134,7 +136,7 @@ std::copy(
 auto x = ip.security();
 {% endhighlight %}
 
-<h4 id="tcp">TCP</h4>
+<h3 id="tcp">TCP</h3>
 
 <p>
 <i>TCP</i> contains several option types as well, so everything mentioned

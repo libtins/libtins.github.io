@@ -1,10 +1,14 @@
 ---
-title: "Tutorial : IEEE 802.11"
+title: "Tutorial: IEEE 802.11"
 layout: default
+section: tutorial
 ---
-<h3>Tutorial - IEEE 802.11</h3>
+<div class="page-header section-header">
+<h3>IEEE 802.11</h3>
+<p class="section-description">
 In this section we'll have a look how the IEEE 802.11 protocol is 
 implemented in <i>libtins</i>. 
+</p>
 <hr>
 <a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
 <a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
@@ -23,8 +27,8 @@ implemented in <i>libtins</i>.
     </ul>
 </div>
 <a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
-<hr>
-<h4 id="802.11">IEEE 802.11</h4>
+</div>
+<h3 id="802.11">IEEE 802.11</h3>
 
 <p>
 <i>libtins</i> has great support for the IEEE 802.11 protocol. Tools
@@ -39,7 +43,7 @@ which contains fields shared by every frame in it. Every frame type is
 represented by a certain class that inherits from it. 
 </p>
 
-<h4 id="management-frames">Management frames</h4>
+<h3 id="management-frames">Management frames</h3>
 
 <p>
 Let's have a look at management frames, which are represented by the
@@ -81,7 +85,7 @@ as its argument, so we're calling vector's constructor from an
 create a temporary vector, fill it in, and pass it as argument.
 If you haven't checked out C++11, you should, it's awesome.
 </p>
-<h4 id="data-frames">Data frames</h4>
+<h3 id="data-frames">Data frames</h3>
 
 <p>
 Data frames should be easy to deal with if you have a basic notion of
@@ -112,7 +116,7 @@ you could do the following:
 Dot11Data data = Dot11Data() / SNAP() / IP() / TCP() / RawPDU("Hallou");
 {% endhighlight %}
 
-<h4 id="decrypting-data">Decrypting data frames</h4>
+<h3 id="decrypting-data">Decrypting data frames</h3>
 
 <p>
 <i>libtins</i> supports the decryption of <i>WEP</i> and <i>WPA2</i>(
@@ -121,7 +125,7 @@ library will not crack the password/<i>PSK</i> used to encrypt the
 packets, you need to provide it yourself.
 </p>
 
-<h4 id="decrypting-wep">Decrypting WEP encrypted frames</h4>
+<h3 id="decrypting-wep">Decrypting WEP encrypted frames</h3>
 
 <p>
 The <i>WEPDecrypter</i> class, which lies the namespace <i>Crypto</i>,
@@ -243,7 +247,7 @@ Using this design, when new decrypters are added, you'll simply chain
 them all together and use a somewhat "decrypting chain". 
 </p>
 
-<h4 id="decrypting-wpa">Decrypting WPA2 encrypted frames</h4>
+<h3 id="decrypting-wpa">Decrypting WPA2 encrypted frames</h3>
 
 <p>
 As from <i>libtins</i> v1.1, the library supports the decryption of 
@@ -292,7 +296,7 @@ Sniffer sniffer("wlan0", 2000, true);
 sniffer.sniff_loop(decrypt_proxy);
 {% endhighlight %}
 
-<h4 id="encapsulation">802.11 encapsulation</h4>
+<h3 id="encapsulation">802.11 encapsulation</h3>
 
 <p>
 As you may know, network interface drivers typically use some form of 

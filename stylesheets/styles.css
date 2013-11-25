@@ -51,33 +51,23 @@ a:hover {
     padding-bottom: 15px;
 }
 
-.bench-table {
-    border: solid;
-    text-align: center;
+.section-header {
+    font-size: 16px;
 }
 
-.bench-head-td {
-    font-size: 18px;
-    font-weight: bold;
-    padding-left: 10px;
-    padding-right: 10px;
+.section-description {
+    font-size: 14px;
 }
 
-code {
-  background-color: #f4f4f4;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 5px 15px;
-  border: solid 1px;
-  color: #121b28;
-  font-weight: normal;
-  font-style: normal;
-  display:-moz-inline-stack;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
+.section-listing {
+    font-size: 14px;
 }
 
-small {
-    color: #808080;
+h3, h4 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#index-header-separator {
+    margin: 40px 0 20px;
 }
