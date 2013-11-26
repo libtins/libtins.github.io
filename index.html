@@ -54,6 +54,55 @@ int main() {
     Almost as much time was invested testing the library than 
     developing it. At the moment of writing, there are 624 unit tests, 
     which check that everything in <i>libtins</i> does what's
-    expected. All of them run successfully on Windows, OSX and both 
-    little and big endian GNU/Linux and FreeBSD operating systems. 
+    expected. 
 </p>
+<h3>Portable!</h3>
+<p>
+Making your applications portable is very important. That is why a lot 
+of work has been done so that <i>libtins</i> works on Windows, OSX and 
+both little and big endian GNU/Linux and FreeBSD operating systems. 
+This means you can develop some sniffing application, cross-compile it
+and execute it directly on your <i>ARM</i> or <i>MIPS</i> routers, or
+any other device that has sniffing capabilities!
+</p>
+<h3>Features</h3>
+<p>
+<i>libtins</i> supports several protocols and features:
+</p>
+<ul>
+    <li>Network packet crafting.</li>
+    <li>Packet sniffing and automatic interpretation packets.</li>
+    <li>Reading and writing <i>PCAP</i> files.</li>
+    <li>Following and reassembling <i>TCP</i> streams on the fly.</li>
+    <li>Decrypting <i>WEP</i> and <i>WPA2</i>(<i>TKIP</i> and <i>CCMP</i>)
+        encrypted 802.11 data frames on the fly and interpreting the 
+        decrypted content.</li>
+    <li>
+        Supported protocols:
+        <ul>
+            <li>IEEE 802.11</li>
+            <li>IEEE 802.3</li>
+            <li>IEEE 802.1q</li>
+            <li>Ethernet II</li>
+            <li>ARP</li>
+            <li>IP</li>
+            <li>IPv6</li>
+            <li>ICMP</li>
+            <li>ICMPv6</li>
+            <li>TCP</li>
+            <li>UDP</li>
+            <li>DHCP</li>
+            <li>DHCPv6</li>
+            <li>DNS</li>
+            <li>RadioTap</li>
+            <li>EAPOL</li>
+            <li>PPPoE</li>
+            <li>STP</li>
+            <li>LLC</li>
+            <li>LLC+SNAP</li>
+            <li>Linux Crooked Capture</li>
+            <li>PPI</li>
+            <li>NULL/Loopback</li>
+        </ul>
+    </li>
+</ul>
