@@ -6,21 +6,26 @@
         <meta name="google-site-verification" content="lUNukBuE5GGe2p75_Z5pXBqx77QE0aKJ2AVfjlAW6ak" />
         <title>{{ page.title }}</title>
         
-        <link rel="stylesheet" href="{{ site.url }}/stylesheets/styles.css">
-        <link rel="stylesheet" href="{{ site.url }}/stylesheets/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ site.url }}/stylesheets/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{{ site.url }}/stylesheets/pygments/default.css">
+        <link rel="stylesheet" href="{{ site.url }}/stylesheets/styles.css" />
+        <link rel="stylesheet" href="{{ site.url }}/stylesheets/bootstrap.min.css" />
+        <link rel="stylesheet" href="{{ site.url }}/stylesheets/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="{{ site.url }}/stylesheets/pygments/default.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="javascripts/respond.js"></script>
         <script src="javascripts/bootstrap.min.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
-        <div id="header">
-            <h1>libtins <small>packet crafting and sniffing library</small></h1>
-        </div>
-        <hr />
         <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div id="header">
+                        <h1>libtins</h1>
+                        <h1><small>packet crafting and sniffing library</small></h1>
+                    </div>
+                    <hr />
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <ul class="nav nav-tabs">
@@ -32,6 +37,10 @@
                         <li id="section-docs"><a class="menu-item-link" href="{{ site.url }}/docs/1.2/">Documentation</a></li>
                         <li id="section-contact"><a class="menu-item-link" href="{{ site.url }}/contact/">Contact</a></li>
                     </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
 {{ content }}
                 </div>
             </div>
