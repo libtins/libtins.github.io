@@ -25,7 +25,8 @@ page</a> or use one of the following mechanisms:
 </p>
 
 <ul>
-<li><h4>Latest source</h4></li>
+<li>
+<h4>Latest source</h4>
 
 <p>
 It is highly recommended that you download the latest source code so
@@ -43,8 +44,9 @@ Or clone the git repository by executing:
 {% highlight bash %}
 git clone git@github.com:mfontanini/libtins.git
 {% endhighlight %}
-
-<li><h4>Debian-based systems(only version 1.1)</h4></li>
+</li>
+<li>
+<h4>Debian-based systems(only version 1.1)</h4>
 
 <p>
 <i>.deb</i> packages are also available(big thanks to <a href="http://kalgan.cc/">
@@ -53,13 +55,14 @@ system(Ubuntu, Linux Mint, etc), you can download them:
 </p>
 
 <ul>
-<li><h5>32 bit systems</h5></li>
+<li>
+<h5>32 bit systems</h5>
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_i386.deb/download">
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_i386.deb/download
-</a><br />
+</a>
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins1_1.1-1_i386.deb/download">
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins1_1.1-1_i386.deb/download
-</a><br /><br />
+</a>
 
 <p>
 Then install them using some Debian package installer tool, such as 
@@ -71,8 +74,9 @@ Then install them using some Debian package installer tool, such as
 dpkg -i libtins-dev_1.1-1_i386.deb
 dpkg -i libtins1_1.1-1_i386.deb
 {% endhighlight %}
-
-<li><h5>64 bit systems</h5></li>
+</li>
+<li>
+<h5>64 bit systems</h5>
 <a href="http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_amd64.deb/download">
 http://sourceforge.net/projects/libtins/files/libtins-1.1/deb/libtins-dev_1.1-1_amd64.deb/download
 </a><br />
@@ -92,6 +96,7 @@ dpkg -i libtins1_1.1-1_amd64.deb
 {% endhighlight %}
 </li>
 </ul>
+</li>
 </ul>
 <h3 id="requirements">Requirements</h3>
 
@@ -176,7 +181,7 @@ including the appropriate headers and linking against it.
 <p>
 <i>libtins</i>' headers are inside a directory named <i>tins</i>, inside
 your default include directory. You can include individual headers, or
-just include <tins/tins.h>, which will include all of them.
+just <code>#include &lt;tins/tins.&gt;</code>, which will include all of them.
 </p>
 
 <h4>Linking</h4>

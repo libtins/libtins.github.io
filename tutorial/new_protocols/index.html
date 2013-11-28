@@ -9,7 +9,7 @@ section: tutorial
 In this section we'll have a look how you can implement your own 
 protocols and integrate them with the library.
 </p>
-<hr>
+<hr />
 <a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
 <a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
 <a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
@@ -153,9 +153,11 @@ parameter can only be one of the following types:
 As a final example, let's sniff a packet that contains a <code>DummyPDU</code>.
 This is the packet I've generated:
 </p>
+<p>
 <center>
 <img src="/images/dummypdu-wireshark.png" alt="The packet shown in wireshark" />
 </center>
+</p>
 <p>
 As you can see, the network layer protocol type is <code>0x8ae</code>. Now, let's sniff the
 packet and display the payload!
@@ -185,10 +187,10 @@ int main() {
 <p>
 After executing this example, this is the output I get:
 </p>
-<script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+{% highlight bash %}
 matias@master:/tmp$ ./dummy_test
 Payload: AAAAAAAAAAAAAAAAAAAAAAAAAA
-]]></script>
+{% endhighlight %}
 
 <div style="text-align: left;">
     <a href="{{ site.url }}/tutorial/802.11/">Previous part: IEEE 802.11</a>

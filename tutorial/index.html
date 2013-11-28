@@ -145,11 +145,12 @@ the example above, are cloned using the <code>PDU::clone()</code> method.
 <h3 id="address">Address classes</h3>
 
 <p>
-Both IP and hardware addresses are handled using the classes IPv4Address,
-IPv6Address and HWAddress<>. All of these classes can be constructed
-from an <code>std::string</code> or <i>c-string</i> containing an appropriate 
-representation(dotted-notation for IPv4Address, semicolon notation for 
-IPv6Addresses, etc). 
+Both <i>IP</i> and hardware addresses are handled using the <code>IPv4Address</code>,
+<code>IPv6Address</code> and <code>HWAddress&lt;&ht;</code> classes. All of 
+these classes can be constructed from an <code>std::string</code> or 
+<i>c-string</i> containing an appropriate  representation(dotted-notation 
+for <code>IPv4Address</code>, semicolon notation for <code>IPv6Addresses</code>, 
+etc). 
 </p>
 
 {% highlight cpp %}
@@ -168,15 +169,16 @@ std::cout << "Lo6: " << lo_6 << std::endl;
 <p>
 This addresses can be implicitly converted to an integral value, but 
 this is used inside the library, so you don't have to worry about it. 
-As you can notice from above, a default constructed IPv4Address 
+As you can notice from above, a default constructed <code>IPv4Address</code> 
 corresponds to the dotted-notation address <code>0.0.0.0</code>. 
 </p>
 <p>
 These classes also provide a constructor that takes an <code>uint32_t</code>,
 which is extremely useful when using default values for certain parameters 
-to functions/constructors.  In the above example's last couple of lines, a
-IPv4 and IPv6 addresses are written to stdout. This classes define the output 
-operator(<code>operator&lt;&lt;</code>), so it's easier to serialize them.
+to functions/constructors.  In the above example's last couple of lines, 
+both an IPv4 and an IPv6 addresses are written to stdout. This classes 
+define the output operator(<code>operator&lt;&lt;</code>), so it's easier 
+to serialize them.
 </p>
 
 <p>
