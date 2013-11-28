@@ -69,8 +69,8 @@ and a payload of 742 bytes at the end of the <i>PDU</i> chain.
 <p>
 The test case developed for every library basically opens the generated
 pcap file and interprets each of the packets. Here "interprets" means
-creating a the corresponding <i>Ethernet</i> object for each library,
-and all of the following <i>PDU</i>s.
+creating a the corresponding <code>Ethernet</code> object for each library,
+and all of the following <code>PDU</code>s.
 </p>
 <p>
 The <i>libpcap</i> test is used as a base case; it simply reads
@@ -133,8 +133,8 @@ and the last one how many packets per second did the library interpret.
 
 <p>
 This benchmark is very similar to the one above, but in this one, I added
-<i>TCP</i> options to the <i>TCP</i> segment. This is the code that
-generates each packet:
+<code>TCP</code> options to the <code>TCP</code> segment. This is the code 
+that generates each packet:
 </p>
 
 {% highlight cpp %}

@@ -31,15 +31,15 @@ using <i>libtins</i>.
 <h3 id="sniffing">Sniffing basics</h3>
 
 <p>
-Sniffing is done through the <i>Sniffer</i> class. This class accepts
+Sniffing is done through the <code>Sniffer</code> class. This class accepts
 a <i>libpcap</i> string filter, and lets you sniff a certain interface, 
-interpreting the packets sent through it, and giving you<i>PDU</i> 
+interpreting the packets sent through it, and giving you<code>PDU</code> 
 objects so you can easily work with them.
 </p>
 
 <p>
 Once you've set the filter, there are two functions which allow to 
-retrieve the sniffed packets. One of them is <i>Sniffer::next_packet</i>.
+retrieve the sniffed packets. One of them is <code>Sniffer::next_packet</code>.
 This member function lets you retrieve a packet using the provided 
 filter:
 </p>
@@ -58,7 +58,7 @@ delete some_pdu;
 {% endhighlight %}
 
 <p>
-Note that the third parameter in <i>Sniffer</i>'s constructor indicates 
+Note that the third parameter in <code>Sniffer</code>'s constructor indicates 
 whether you want to set the interface in monitor mode. By default 
 it <b>is not</b>, so you'll only be able to sniff packets that are sent 
 to or by you.
@@ -69,7 +69,7 @@ to or by you.
 <p>
 Though this is a valid way of retrieving packets, it's very common
 that you want to sniff lots packets until some certain condition
-is met. In that case its better to use <i>Sniffer::sniff_loop</i>.
+is met. In that case its better to use <code>Sniffer::sniff_loop</code>.
 </p>
 
 <p>
@@ -82,19 +82,19 @@ bool operator()(PDU&);
 bool operator()(const PDU&);
 {% endhighlight %}
 <p>
-The call to <i>Sniffer::sniff_loop</i> will make the sniffer start 
+The call to <code>Sniffer::sniff_loop</code> will make the sniffer start 
 processing packets. The functor will be called using each processed 
 packet as its argument. If at some point, you want to stop sniffing, 
-then your functor should return <i>false</i>. Otherwise return <i>true</i> 
-and the <i>Sniffer</i> class will keep looping.
+then your functor should return <code>false</code>. Otherwise return 
+<code>true</code> and the <code>Sniffer</code> object will keep looping.
 </p>
 
 <p>
 The functor object will be copy constructed, so it must implement copy
 semantics. There is a helper template function which takes a pointer
 to an object of a template parameter type, and a member function, 
-and returns a <i>HandlerProxy</i>. That object implements the required
-operator, in which it forwards the call to the member function pointer
+and returns a <code>HandlerProxy</code>. That object implements the 
+required operator, in which it forwards the call to the member function pointer
 provided, using the object pointer given:
 </p>
 
@@ -138,13 +138,13 @@ several packets, but also can make your code tidier when using classes.
 </p>
 <p>
 Now the interesting part. In the above example we know we are sniffing
-<i>IP PDU</i>s sent by the ip address <i>192.168.0.100</i>, but our
-function takes a <i>PDU&</i>. We want to search the <i>IP PDU</i> 
-stored inside the parameter(which will probably be of type EthernetII). 
-Luckily for us, you can ask a <i>PDU</i> to search for a certain 
-<i>PDU</i> type inside its whole stack of <i>PDU</i>s(including itself),
-and return a reference to it. If no such <i>PDU</i> is found in the 
-packet, a <i>pdu_not_found</i> exception is thrown:
+<code>IP PDU</code>s sent by the ip address <i>192.168.0.100</i>, but our
+function takes a <code>PDU&amp;</code>. We want to search the <code>IP PDU</code> 
+stored inside the parameter(which will probably be of type <code>EthernetII</code>). 
+Luckily for us, you can ask a <code>PDU</code> to search for a certain 
+<code>PDU</code> type inside its whole stack of <i>PDU</i>s(including 
+itself), and return a reference to it. If no such <code>PDU</code> is 
+found in the packet, a <code>pdu_not_found</code> exception is thrown:
 </p>
 
 {% highlight cpp %}
@@ -166,18 +166,18 @@ void test() {
 <p>
 Another thing that makes the loop-sniffing mechanism better 
 than fetching packets one by one, is exception handling. 
-<i>Sniffer::sniff_loop</i> catches both <i>pdu_not_found</i> and
-<i>malformed_packet</i> exceptions thrown in the functor body. This 
-means you can use <i>PDU::rfind_pdu</i> and don't even care if such 
-<i>PDU</i> is not found, since the exception will be caught by 
-the <i>Sniffer</i>, and the sniffing session will continue. 
+<code>Sniffer::sniff_loop</code> catches both <code>pdu_not_found</code> and
+<code>malformed_packet</code> exceptions thrown in the functor body. This 
+means you can use <code>PDU::rfind_pdu</code> and don't even care if such 
+<code>PDU</code> is not found, since the exception will be caught by 
+the <code>Sniffer</code>, and the sniffing session will continue. 
 </p>
 
 <h3 id="iterator-sniffing">Sniffing using iterators</h3>
 
 <p>
 There is yet another way to retrieve packets from a Sniffer object. 
-This class defines two methods, <i>begin()</i> and <i>end()</i>, which
+This class defines two methods, <code>begin()</code> and <code>end()</code>, which
 return forward iterators. These can be used to retrieve packets while
 they're being sniffed:
 </p>
@@ -193,12 +193,12 @@ for(auto &pdu : s) {
 <h3 id="packet-objects">Packet objects</h3>
 
 <p>
-If you require to store a <i>PDU</i> along with the timestamp object, 
-then you should use the <i>Packet</i> class. <i>Packet</i>s contain a 
-<i>PDU</i> and <i>Timestamp</i>, can be copyed and moved. 
+If you require to store a <code>PDU</code> along with the timestamp object, 
+then you should use the <code>Packet</code> class. <code>Packet</code>s 
+contain a <code>PDU</code> and <code>Timestamp</code>, can be copyed and moved. 
 </p>
 <p>
-Let's see an example in which we'll store 10 packets read from whire 
+Let's see an example in which we'll store 10 packets read from wire 
 into a vector:
 </p>
 
@@ -230,8 +230,8 @@ int main() {
 {% endhighlight %}
 
 <p>
-As you may have noticed <i>Packet</i> objects can also be used along
-with <i>Sniffer::next_packet</i>:
+As you may have noticed <code>Packet</code> objects can also be used along
+with <code>Sniffer::next_packet</code>:
 </p>
 
 {% highlight cpp %}
@@ -251,12 +251,12 @@ if(packet)
 
 <p>
 Reading files in <i>pcap</i> format is very straightforward. The 
-<i>FileSniffer</i> class takes the name of the file to be opened as 
-argument, and lets you process the packets in it. Both <i>Sniffer</i>
-and <i>FileSniffer</i> inherit from <i>BaseSniffer</i>, which is
-the class that actually implements <i>next_pdu</i> and <i>sniff_loop</i>.
-Therefore, we can use the <i>FileSniffer</i> class in the same way
-we used <i>Sniffer</i> in the examples above:
+<code>FileSniffer</code> class takes the name of the file to be opened as 
+argument, and lets you process the packets in it. Both <code>Sniffer</code>
+and <code>FileSniffer</code> inherit from <code>BaseSniffer</code>, which is
+the class that actually implements <code>next_pdu</code> and <code>sniff_loop</code>.
+Therefore, we can use the <code>FileSniffer</code> class in the same way
+we used <code>Sniffer</code> in the examples above:
 </p>
 {% highlight cpp %}
 #include <tins/tins.h>
@@ -291,15 +291,15 @@ is performed.
 
 <p>
 Every time a packet is read from one of those sources, an object of that 
-source's link layer type is created(<i>EthernetII</i>, <i>RadioTap</i>, 
+source's link layer type is created(<code>EthernetII</code>, <code>RadioTap</code>, 
 etc). Each of these types of object detects which is the type of the next 
-<i>PDU</i> based on its internal flags, creates it, adds it as its 
+<code>PDU</code> based on its internal flags, creates it, adds it as its 
 child, and propagates the same action.
 </p>
 
 <p>
-This action is performed by every instantiated <i>PDU</i>, except for 
-transport-layer protocols. This means that, for example, if a <i>DNS</i>
+This action is performed by every instantiated <code>PDU</code>, except for 
+transport-layer protocols. This means that, for example, if a <code>DNS</code>
 packet is sniffed off an ethernet interface, you'll get the following
 structure:
 </p>
@@ -310,8 +310,8 @@ structure:
 <br />
 
 <p>
-You can then interpret that <i>DNS</i> packet constructing a <i>DNS</i>
-object using that <i>RawPDU</i>'s payload:
+You can then interpret that <code>DNS</code> packet constructing a <code>DNS</code>
+object using that <code>RawPDU</code>'s payload:
 </p>
 
 {% highlight cpp %}
@@ -332,10 +332,10 @@ bool handler(const PDU& pkt) {
 {% endhighlight %}
 
 <p>
-The same mechanism should be used for other protocols such as <i>DHCP</i>.
+The same mechanism should be used for other protocols such as <code>DHCP</code>.
 In case you're wondering why application-layer protocols aren't interpreted 
-automatically by transport-layer <i>PDU</i>s, the reason is efficiency.
-Transport layer protocols, such as <i>DNS</i>, require much more processing
+automatically by transport-layer <code>PDU</code>s, the reason is efficiency.
+Transport layer protocols, such as <code>DNS</code>, require much more processing
 in order to parse them than lower layer protocols. In addition, some 
 applications might not even require to use those protocols, so making them
 pay for that extra processing is undesirable.

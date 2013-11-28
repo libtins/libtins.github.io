@@ -29,7 +29,7 @@ work in <i>libtins</i>.
 <a href="{{ site.url }}/docs/1.2/">documentation</a> contains information
 about each class, method and function present in the library. However,
 you might not want to read the whole documentation just to learn how to
-craft a simple <i>TCP</i> packet.
+craft a simple <code>TCP</code> packet.
 </p>
 
 <p>
@@ -40,7 +40,7 @@ most likely see in your home network are implemented in the library.
 <h3 id="eth">Ethernet II</h3>
 
 <p>
-The Ethernet II protocol is represented by the <i>EthernetII</i> class, 
+The Ethernet II protocol is represented by the <code>EthernetII</code> class, 
 and is actually very simple. It just contains methods to get and set the 
 destination and source addresses, and the payload type. It also contains
 a constructor which lets you, optionally, indicate both of the addresses:
@@ -59,7 +59,7 @@ EthernetII eth2("01:02:03:04:05:06", "00:01:02:03:04:05");
 <h3 id="ip">IP</h3>
 
 <p>
-The <i>IP</i> class contains much more methods, both for accessing the
+The <code>IP</code> class contains much more methods, both for accessing the
 protocol's fields and for adding and retrieving the stored options. 
 In this example, we'll modify some of those fields:
 </p>
@@ -85,9 +85,9 @@ in the protocol contains a field that indicates its type, another one
 that holds its length, and a third one that carries the actual data. 
 </p>
 <p>
-Every class that contains options, such as <i>IP</i>, <i>TCP</i> and
-<i>DHCP</i>, among others, behave the same way. For any type <i>T</i>
-that contains options, <i>T::option</i> is the type in which the option
+Every class that contains options, such as <code>IP</code>, <code>TCP</code> and
+<code>DHCP</code>, among others, behave the same way. For any type <i>T</i>
+that contains options, <code>T::option</code> is the type in which the option
 is actually stored. Each of this protocols provides two member functions:
 </p>
 <ul>
@@ -103,11 +103,11 @@ Using these member functions, it is necessary to know both the length
 of the fields that compose each option type and their endianness. Since
 this is very cumbersome, each of these protocols provides a getter and
 a setter for every valid option. The getter will always throw a 
-<i>option_not_found</i> exception if the option is not present in the
-<i>PDU</i>.
+<code>option_not_found</code> exception if the option is not present in the
+<code>PDU</code>.
 </p>
 <p>
-In the case of <i>IP</i>, these are some of the supported options 
+In the case of <code>IP</code>, these are some of the supported options 
 getters/setters:
 </p>
 {% highlight cpp %}
@@ -139,9 +139,9 @@ auto x = ip.security();
 <h3 id="tcp">TCP</h3>
 
 <p>
-<i>TCP</i> contains several option types as well, so everything mentioned
+<code>TCP</code> contains several option types as well, so everything mentioned
 above about them is still valid. Let's have a look at how to craft 
-some basic <i>TCP</i> frames:
+some basic <code>TCP</code> frames:
 </p>
 
 {% highlight cpp %}

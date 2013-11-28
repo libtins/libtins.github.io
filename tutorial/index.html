@@ -34,7 +34,7 @@ how to compile applications and link them with <i>libtins</i></a>.
 </div>
 <h3 id="intro">Introduction</h3>
 <p>
-So how does libtins work? libtins is conformed by <i>PDU</i> classes,
+So how does libtins work? libtins is conformed by <code>PDU</code> classes,
 sender and sniffer classes, classes that represent addresses, and some
 helper functions which make your life easier.
 </p>
@@ -42,9 +42,10 @@ helper functions which make your life easier.
 <h3 id="pdus">PDUs</h3>
 
 <p>
-We'll first have a look at what a <i>PDU</i> object is. Every <i>PDU</i>
-implemented in the library(say <i>IP</i>, <i>TCP</i>, <i>UDP</i>, etc)
-is a class that inherits an <i>abstract</i> class named <i>PDU</i>. 
+We'll first have a look at what a <code>PDU</code> object is. Every 
+<code>PDU</code> implemented in the library(say <code>IP</code>, 
+<code>TCP</code>, <code>UDP</code>, etc) is a class that inherits an 
+abstract class named <code>PDU</code>. 
 </p>
 
 <p>
@@ -55,12 +56,13 @@ through the network.
 </p>
 
 <p>
-<i>PDU</i> objects also support stacking. That means one <i>PDU</i>
-object(disregarding its actual type), can have 0 or 1 inner <i>PDU</i>.
-This is a very logical way of imagining a network packet. Suppose you
-create an <i>Ethernet II</i> frame, and then add an <i>IP</i> datagram
-on top of it, followed by a <i>TCP</i> frame. That structure would look
-like this inside libtins:
+<code>PDU</code> objects also support stacking. That means one 
+<code>PDU</code> object(disregarding its actual type), can have 0 or 1 
+inner <code>PDU</code>. This is a very logical way of imagining a 
+network packet. Suppose you create an <code>Ethernet II</code> frame, 
+and then add an <code>IP</code> datagram on top of it, followed by a 
+<code>TCP</code> frame. That structure would look like this inside 
+<i>libtins</i>:
 </p>
 <center>
 <img src="{{ site.url }}/images/tutorial-intro-eth-ip-tcp.png" alt="Packet structure" />
@@ -68,9 +70,9 @@ like this inside libtins:
 <br />
 
 <p>
-As you may imagine, a <i>PDU</i>'s inner pdu can be retrieved using the
-method <i>PDU::inner_pdu()</i>. Let's see an code example of how this
-situation could be reproduced:
+As you may imagine, a <code>PDU</code>'s inner pdu can be retrieved using 
+the method <code>PDU::inner_pdu()</code>. Let's see an code example of 
+how this situation could be reproduced:
 </p>
 
 {% highlight cpp %}
@@ -90,26 +92,28 @@ int main() {
 {% endhighlight %}
 
 <p>
-So what have we done here? The method <i>PDU::inner_pdu(PDU*)</i> sets
-the given parameter, as the callee's inner <i>PDU</i>. The object passed
-as an argument <b>must</b> have been allocated using <i>operator new</i>,
-and from that point on, that <i>PDU</i> is now owned by its parent, 
+So what have we done here? The method <code>PDU::inner_pdu(PDU*)</code> 
+sets the given parameter, as the callee's inner <code>PDU</code>. The 
+object passed as an argument <b>must</b> have been allocated using 
+<code>operator new</code>,
+and from that point on, that <code>PDU</code> is now owned by its parent, 
 meaning that the destruction of that object will be handled by it. So 
 in the above example there is no actual memory leak. On <i>eth</i>'s 
-destructor, both the allocated <i>IP</i> and <i>TCP</i> objects will be 
-destroyed and their memory released.
+destructor, both the allocated <code>IP</code> and <code>TCP</code> 
+objects will be destroyed and their memory released.
 </p>
 
 <p>
 Note that if you want to store a copy and not the actual pointer, you
-can use the <i>PDU::clone</i> function, which returns a copy of that
-<i>PDU</i>'s concrete type, including all of its stacked inner <i>PDU</i>s.
+can use the <code>PDU::clone</code> function, which returns a copy of 
+that <code>PDU</code>'s concrete type, including all of its stacked 
+inner <code>PDU</code>s.
 </p>
 
 <p>
-There is a simpler way to nest <i>PDU</i>s. For those who have used
+There is a simpler way to nest <code>PDU</code>s. For those who have used
 <a href="http://www.secdev.org/projects/scapy/"><i>scapy</i></a>, 
-you may be used to creating a <i>PDU</i> stack using the division
+you may be used to creating a <code>PDU</code> stack using the division
 operator. <i>libtins</i> supports this as well! 
 </p>
 
@@ -134,8 +138,8 @@ int main() {
 {% endhighlight %}
 
 <p>
-Note that the <i>IP</i> and <i>TCP</i> temporary objects created in
-the example above, are cloned using the <i>PDU::clone()</i> method.
+Note that the <code>IP</code> and <code>TCP</code> temporary objects created in
+the example above, are cloned using the <code>PDU::clone()</code> method.
 </p>
 
 <h3 id="address">Address classes</h3>
@@ -143,7 +147,7 @@ the example above, are cloned using the <i>PDU::clone()</i> method.
 <p>
 Both IP and hardware addresses are handled using the classes IPv4Address,
 IPv6Address and HWAddress<>. All of these classes can be constructed
-from an <i>std::string</i> or <i>c-string</i> containing an appropriate 
+from an <code>std::string</code> or <i>c-string</i> containing an appropriate 
 representation(dotted-notation for IPv4Address, semicolon notation for 
 IPv6Addresses, etc). 
 </p>
@@ -165,18 +169,18 @@ std::cout << "Lo6: " << lo_6 << std::endl;
 This addresses can be implicitly converted to an integral value, but 
 this is used inside the library, so you don't have to worry about it. 
 As you can notice from above, a default constructed IPv4Address 
-corresponds to the dotted-notation address <i>0.0.0.0</i>. 
+corresponds to the dotted-notation address <code>0.0.0.0</code>. 
 </p>
 <p>
-These classes also provide a constructor that takes an <i>uint32_t</i>,
+These classes also provide a constructor that takes an <code>uint32_t</code>,
 which is extremely useful when using default values for certain parameters 
 to functions/constructors.  In the above example's last couple of lines, a
 IPv4 and IPv6 addresses are written to stdout. This classes define the output 
-operator(<i>operator<<</i>), so it's easier to serialize them.
+operator(<code>operator&lt;&lt;</code>), so it's easier to serialize them.
 </p>
 
 <p>
-The HWAddress<> class template is defined as follows:
+The <code>HWAddress&lt;&gt;</code> class template is defined as follows:
 </p>
 
 {% highlight cpp %}
@@ -185,14 +189,14 @@ class HWAddress;
 {% endhighlight %}
 <p>
 Where the <i>n</i> non-type template parameter indicates the length of 
-the address(tipically 6 for network interfaces), and the <i>Storage</i>
+the address(tipically 6 for network interfaces), and the <code>Storage</code>
 template parameter indicates the type of each of those <i>n</i> elements
-(this shouldn't normally be changed, <i>uint8_t</i> should do).<br />
+(this shouldn't normally be changed, <code>uint8_t</code> should do).<br />
 </p>
 
 <p>
-HWAddress objets can be constructed from both <i>std::string</i>s, 
-c-strings, <i>const Storage*</i> and HWAddress of any length. They
+HWAddress objets can be constructed from both <code>std::string</code>s, 
+<i>c-strings</i>, <code>const Storage*</code> and HWAddress of any length. They
 can also be compared for equality, and provide some helper functions to
 allow iteration over the address:
 </p>
@@ -270,7 +274,7 @@ if(range.contains("00:19:d1:22:33:44"))
 <h3 id="ifaces">Network interfaces</h3>
 
 <p>
-The last helper class reviewed here is <i>NetworkInterface</i>. This
+The last helper class reviewed here is <code>NetworkInterface</code>. This
 class represents the abstraction of a network interface. It can be 
 constructed from the interface's name(as string), and from an 
 IPv4Address. This last constructor creates the interface that would be
@@ -284,7 +288,7 @@ NetworkInterface lo1(IPv4Address("127.0.0.1"));
 {% endhighlight %}
 
 <p>
-You can also retrieve an interface's name using <i>NetworkInterface::name()</i>.
+You can also retrieve an interface's name using <code>NetworkInterface::name()</code>.
 Note that this function searches through the system's interfaces and
 retrieves the name every time it is called, so you might want to call it 
 once and store the return value.
@@ -294,29 +298,30 @@ once and store the return value.
 
 <p>
 Writing packets to a pcap file is very simple as well. The 
-<i>PacketWriter</i> class takes the name of the file in which you want 
+<code>PacketWriter</code> class takes the name of the file in which you want 
 to store packets as its argument, and a flag indicating which will be
 the lowest layer written to the file. That means, if you're writing 
-<i>EthernetII</i> <i>PDU</i>s, you should use the <i>PacketWriter::ETH2</i>
-flag, while on wireless interfaces you should use <i>PacketWriter::RADIOTAP</i>
-or <i>PacketWriter::DOT11</i>, depending on the encapsulation used in
+<code>EthernetII PDU</code>s, you should use the <code>PacketWriter::ETH2</code>
+flag, while on wireless interfaces you should use <code>PacketWriter::RADIOTAP</code>
+or <code>PacketWriter::DOT11</code>, depending on the encapsulation used in
 the device.
 </p>
 <p>
-Once a <i>PacketWriter</i> is created, you can write <i>PDU</i>s to it
-using the <i>PacketWriter::write</i> method. This method contains 2
-overloads: one takes a <i>PDU&</i>, the other one takes two template
-forward iterators, <i>start</i> and <i>end</i>. The latter will iterate 
-through the range <i>[start, end)</i> and write the <i>PDU</i>s stored 
-in each position of the range. This will work both if <i>*start</i>
-yields a <i>PDU&</i>, or if dereferecing it several times leads to
-a <i>PDU&</i>. This means a 
-<i>std::vector<std::unique_ptr<PDU>>::iterator</i> will 
+Once a <code>PacketWriter</code> is created, you can write <code>PDU</code>s to it
+using the <code>PacketWriter::write</code> method. This method contains 2
+overloads: one takes a <code>PDU&amp;</code>, the other one takes two template
+forward iterators, <code>start</code> and <code>end</code>. The latter will iterate 
+through the range <i>[start, end)</i> and write the <code>PDU</code>s stored 
+in each position of the range. This will work both if <code>*start</code>
+yields a <code>PDU&amp;</code>, or if dereferecing it several times leads to
+a <code>PDU&amp;</code>. This means a 
+<code>std::vector&lt;std::unique_ptr&lt;PDU&gt;&gt;::iterator</code> will 
 work as well.
 </p>
 <p>
-This example creates a <i>std::vector</i> containing one 
-<i>EthernetII PDU</i>, and writes it to a pcap file using both overloads:
+This example creates a <code>std::vector</code> containing one 
+<code>EthernetII PDU</code>, and writes it to a pcap file using both 
+overloads:
 </p>
 {% highlight cpp %}
 #include <tins/tins.h>
@@ -391,7 +396,7 @@ int main() {
 
 <p>
 Note that the creation of that packet can be done in one line, using
-<i>operator/</i> rather than <i>operator/=</i>:
+<code>operator/</code> rather than <code>operator/=</code>:
 </p>
 
 {% highlight cpp %}

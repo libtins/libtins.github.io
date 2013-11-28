@@ -31,13 +31,13 @@ works on <i>libtins</i>.
 <h3 id="intro">Introduction</h3>
 
 <p>
-The <i>PacketSender</i> class is the responsible for sending packets
+The <code>PacketSender</code> class is the responsible for sending packets
 over the network. Internally, it stores raw sockets for different socket
 layers(2 and 3 for example).
 </p>
 
 <p>
-When calling <i>PacketSender::send(PDU&)</i> the <i>PDU</i> parameter
+When calling <code>PacketSender::send(PDU&amp;)</code> the <code>PDU</code> parameter
 is serialized into a an array of bytes and sent through the appropriate 
 socket.
 </p>
@@ -45,8 +45,8 @@ socket.
 <h3 id="l3-sending">Sending network layer <i>PDU</i>s</h3>
 
 <p>
-Sending network layer <i>PDU</i>s, such as <i>IP</i> and <i>IPv6</i>
-is quite intuitive:
+Sending network layer <code>PDU</code>s, such as <codei>IP</code> and 
+<code>IPv6</code> is quite intuitive:
 </p>
 
 {% highlight cpp %}
@@ -56,12 +56,12 @@ sender.send(pkt);
 {% endhighlight %}
 
 <p>
-Note that no source address was specified in the <i>IP</i> constructor.
+Note that no source address was specified in the <code>IP</code> constructor.
 This uses by default the address 0.0.0.0. However, when sending network 
-layer <i>PDU</i>s, if the source address is 0.0.0.0, the <i>PDU</i> will
+layer <code>PDU</code>s, if the source address is 0.0.0.0, the <code>PDU</code> will
 perform a lookup on the routing table to find out which should be the
 source address and automatically sets it. This is done by the network
-driver already, but some transport layer protocols such as <i>TCP</i>, 
+driver already, but some transport layer protocols such as <code>TCP</code>, 
 require this address when calculating the checksum, so this must be
 done by the library as well.
 </p>
@@ -69,7 +69,7 @@ done by the library as well.
 <h3 id="l2-sending">Sending link layer <i>PDU</i>s</h3>
 
 <p>
-When sending link layer <i>PDU</i>s, such as <i>EthernetII</i>, there
+When sending link layer <code>PDU</code>s, such as <code>EthernetII</code>, there
 is one more thing that should be kept in mind. In this case, the packet
 must be sent through a specific network interface. You can specify this
 when sending it:
@@ -92,9 +92,9 @@ That will send the packet through the <i>eth0</i> interface.
 
 <p>
 It is quite common to use the same network interface to send several
-packets. <i>PacketSender</i> contains a default interface, in which
-link layer <i>PDU</i>'s are sent when using the 
-<i>PacketSender::send(PDU&)</i> overload:
+packets. <code>PacketSender</code> contains a default interface, in which
+link layer <code>PDU</code>'s are sent when using the 
+<code>PacketSender::send(PDU&amp;)</code> overload:
 </p>
 
 {% highlight cpp %}
@@ -109,7 +109,7 @@ sender.send(pkt); // now we're sending through eth1.
 
 <p>
 Note that by default this interface is invalid, so you need to set it 
-before sending link layer <i>PDU</i>s as shown above:
+before sending link layer <code>PDU</code>s as shown above:
 </p>
 
 {% highlight cpp %}
@@ -122,21 +122,21 @@ sender.send(pkt); // throws invalid_interface
 
 <p>
 So far we've seen how to send packets, but what if you're expecting
-a response to that packet? Let's take as an example an <i>ARP</i>
-request. After it's sent, you'll most likely want to receive a response.
+a response to that packet? Let's take as an example an <i>ARP
+request</i>. After it's sent, you'll most likely want to receive a response.
 </p>
 <p>
 This could be achieved by sniffing while sending the packet, checking 
 each sniffed packet until the response is found. However, in order to 
 match the packet response, it would be necessary to perform
-several protocol dependent comparisons. In the case of an <i>ARP</i> 
-response, it would be fairly straightforward. However, other protocols 
+several protocol dependent comparisons. In the case of an <i>ARP
+response</i>, it would be fairly straightforward. However, other protocols 
 require checking destination and source address and ports, identifier 
 numbers, etc.
 </p>
 <p>
 Fornutately, a sending and receiving mechanism has already been included 
-in the library. This can be achieved by using <i>PacketSender::send_recv</i>,
+in the library. This can be achieved by using <code>PacketSender::send_recv</code>,
 which provides two overloads:
 </p>
 
@@ -146,11 +146,11 @@ PDU *send_recv(PDU &pdu, const NetworkInterface &iface);
 {% endhighlight %}
 
 <p>
-The <i>NetworkInterface</i> parameter serves the same purpose as in
-<i>PacketSender::send</i>. 
+The <code>NetworkInterface</code> parameter serves the same purpose as in
+<code>PacketSender::send</code>. 
 </p>
 <p>
-Let's see how it could be used to perform an <i>ARP</i> request and 
+Let's see how it could be used to perform an <code>ARP</code> request and 
 receiving its response:
 </p>
 
@@ -176,12 +176,12 @@ if(response) {
 {% endhighlight %}
 
 <p>
-Note that inside <i>PacketSender::send_recv</i>, packets read from the
+Note that inside <code>PacketSender::send_recv</code>, packets read from the
 socket will be matched against the sent one until a valid one is found.
 </p>
 <p>
 Just as a side note, hardware addresses can be resolved much easily, 
-using <i>Utils::resolve_hwaddr</i>:
+using <code>Utils::resolve_hwaddr</code>:
 </p>
 
 {% highlight cpp %}
@@ -218,7 +218,7 @@ if(response) {
 
 <p>
 As a last example, the following code resolves a domain name using
-<i>PacketSender::send_recv</i>:
+<code>PacketSender::send_recv</code>:
 </p>
 
 {% highlight cpp %}
@@ -246,11 +246,11 @@ if(response) {
 <h3 id="checksums">Checksum calculation</h3>
 
 <p>
-In the examples above, some of the protocols used, such as <i>IP</i>
-and <i>TCP</i> contain a checksum field. This checksum must be 
-calculated everytime the packet is sent. <b><i>libtins</i> does this 
-automatically</b>: everytime a packet is serialized(this happens inside
-<i>PacketSender::send</i>), the checksums are calculated; so there is
+In the examples above, some of the protocols used, such as <code>IP</code>
+and <code>TCP</code> contain a checksum field. This checksum must be 
+calculated everytime the packet is sent. <strong><i>libtins</i> does this 
+automatically</strong>: everytime a packet is serialized(this happens inside
+<code>PacketSender::send</code>), the checksums are calculated; so there is
 no need for you to worry about them.
 </p>
 
@@ -258,10 +258,10 @@ no need for you to worry about them.
 
 <p>
 One thing that should be noticed is that the raw socket opening 
-operation <b>is not thread-safe</b>, so in case you're having multiple 
+operation <strong>is not thread-safe</strong>, so in case you're having multiple 
 writers, you should explicitly open the required sockets yourself(this 
-can be done through <i>PacketSender::open_l2_socket</i> and 
-<i>PacketSender::open_l3_socket</i>). Otherwise, the sockets will be 
+can be done through <code>PacketSender::open_l2_socket</code> and 
+<code>PacketSender::open_l3_socket</code>). Otherwise, the sockets will be 
 open when needed.
 </p>
 

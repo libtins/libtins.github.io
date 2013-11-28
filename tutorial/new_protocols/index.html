@@ -26,10 +26,10 @@ protocols and integrate them with the library.
 </div>
 <h3 id="extending-pdu">Extending the PDU class</h3>
 <p>
-As you should already know, every protocol must derive the <i>PDU</i>
+As you should already know, every protocol must derive the <code>PDU</code>
 class. Therefore, if you wanted to add new protocols, then your class
 must do so. Now, what member functions should you implement to make it
-work? Here's a dummy <i>PDU</i> you could use as a template:
+work? Here's a dummy <code>PDU</code> you could use as a template:
 </p>
 
 {% highlight cpp %}
@@ -39,7 +39,7 @@ work? Here's a dummy <i>PDU</i> you could use as a template:
 class DummyPDU : public PDU {
 public:
     /* 
-     * Unique protocol identifier. For user-defined PDUs, you <b>must</b>
+     * Unique protocol identifier. For user-defined PDUs, you **must**
      * use values greater or equal to PDU::USER_DEFINED_PDU;
      */
     static const PDU::PDUType pdu_flag;
@@ -96,14 +96,14 @@ const PDU::PDUType DummyPDU::pdu_flag = PDU::USER_DEFINED_PDU;
 
 <h3 id="register-protocol">Registering the new protocol</h3>
 <p>
-Okay, we've defined a new <i>PDU</i>, but now we need to register it, 
+Okay, we've defined a new <code>PDU</code>, but now we need to register it, 
 so that the layers below it can recognize it while sniffing and 
 serializing.
 </p>
 <p>
-Registering a protocol is very simple. Let's imagine our <i>DummyPDU</i>
-is a network layer protocol. Therefore, we'd like <i>EthernetII</i>,
-<i>Dot3</i> and the rest of the link layer protocols to recognize it.
+Registering a protocol is very simple. Let's imagine our <code>DummyPDU</code>
+is a network layer protocol. Therefore, we'd like <code>EthernetII</code>,
+<code>Dot3</code> and the rest of the link layer protocols to recognize it.
 In order to do so, the following line of code should be used:
 </p>
 {% highlight cpp %}
@@ -117,26 +117,26 @@ Allocators::register_allocator<EthernetII, DummyPDU>(0x8ae);
 // Allocators::register_allocator<IP, DummyPDU>(0x12);
 {% endhighlight %}
 <p>
-You are probably wondering what is that <i>0x8ae</i> constant used above.
-That is the identifier which link layer <i>PDU</i>s will use to identify
-our protocol, just like <i>ARP</i> is identified inside <i>EthernetII</i>
-using the <i>0x806</i> constant.
+You are probably wondering what is that <code>0x8ae</code> constant used above.
+That is the identifier which link layer <code>PDU</code>s will use to identify
+our protocol, just like <code>ARP</code> is identified inside <code>EthernetII</code>
+using the <code>0x806</code> constant.
 </p>
 <p>
-Now that our <i>PDU</i> is registered, the following will happen:
+Now that our <code>PDU</code> is registered, the following will happen:
 </p>
 <ul>
-    <li>When sniffing a packet, if the sniffed link layer <i>PDU</i>
-    finds that the network layer protocol identifier field is <i>0x8ae</i>, 
-    it will construct a <i>DummyPDU</i> from the sniffed bytes using the
-    <i>DummyPDU::DummyPDU(const uint8_t*, uint32_t) constructor</i>
+    <li>When sniffing a packet, if the sniffed link layer <code>PDU</code>
+    finds that the network layer protocol identifier field is <code>0x8ae</code>, 
+    it will construct a <code>DummyPDU</code> from the sniffed bytes using the
+    <code>DummyPDU::DummyPDU(const uint8_t*, uint32_t)</code> constructor
     </li>
-    <li>When serializing a <i>PDU</i>, our constant will be used in the
+    <li>When serializing a <code>PDU</code>, our constant will be used in the
     network layer's protocol identifier field.
     </li>
 </ul>
 <p>
-Note that <i>Allocators::register_allocator</i>'s first template 
+Note that <code>Allocators::register_allocator</code>'s first template 
 parameter can only be one of the following types:
 </p>
 <ul>
@@ -150,14 +150,14 @@ parameter can only be one of the following types:
 
 <h3 id="example">Example</h3>
 <p>
-As a final example, let's sniff a packet that contains a <i>DummyPDU</i>.
+As a final example, let's sniff a packet that contains a <code>DummyPDU</code>.
 This is the packet I've generated:
 </p>
 <center>
 <img src="/images/dummypdu-wireshark.png" alt="The packet shown in wireshark" />
 </center>
 <p>
-As you can see, the network layer protocol type is <i>0x8ae</i>. Now, let's sniff the
+As you can see, the network layer protocol type is <code>0x8ae</code>. Now, let's sniff the
 packet and display the payload!
 </p>
 {% highlight cpp %}
