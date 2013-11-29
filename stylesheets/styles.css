@@ -73,3 +73,7 @@ h3, h4 {
 .nav-tabs {
     text-align:center;
 }
+
+.shrinked {
+    display: inline-block;
+}

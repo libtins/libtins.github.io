@@ -153,11 +153,17 @@ parameter can only be one of the following types:
 As a final example, let's sniff a packet that contains a <code>DummyPDU</code>.
 This is the packet I've generated:
 </p>
-<p>
-<p>
-<img src="/images/dummypdu-wireshark.png" alt="The packet shown in wireshark" class="img-responsive" />
-</p>
-</p>
+
+<div class="text-center">
+<div class="panel panel-default">
+    <div class="panel-body">
+        <img src="{{ site.url }}/images/dummypdu-wireshark.png" alt="The packet shown in wireshark" class="img-responsive" />
+    </div>
+    <div class="panel-footer">
+        A <code>DummyPDU</code> serialized and inspected using <a href="http://www.wireshark.org/">wireshark</a>.
+    </div>
+</div>
+</div>
 <p>
 As you can see, the network layer protocol type is <code>0x8ae</code>. Now, let's sniff the
 packet and display the payload!

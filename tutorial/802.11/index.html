@@ -89,17 +89,24 @@ If you haven't checked out C++11, you should, it's awesome.
 
 <p>
 Data frames should be easy to deal with if you have a basic notion of
-how higher protocols are encapsulated within 802.11.
+how higher protocols are encapsulated within <i>802.11</i>.
 </p>
 
 <p>
-Let's asume we've got no encryption in our data frames. A TCP packet will
-look like this in <i>libtins</i>:
+Let's asume we've got no encryption in our data frames. A <i>TCP</i> packet 
+will look like this in <i>libtins</i>:
 </p>
 
-<div style="text-align: center;">
-    <img src="/images/dot11-data.png" alt="Dot11Data" />
-</div><br />
+<div class="text-center">
+<div class="panel panel-default shrinked">
+    <div class="panel-body">
+        <img src="{{ site.url }}/images/dot11-data.png" alt="Dot11Data" />
+    </div>
+    <div class="panel-footer">
+        A non-encrypted <i>IEEE 802.11</i> packet.
+    </div>
+</div>
+</div>
 
 <p>
 Here, the <code>SNAP</code> class, represents the <code>LLC+SNAP</code> encapsulation.
@@ -169,9 +176,16 @@ As an example, this picture illustrates what would happen if you
 successfully decrypted a TCP packet:
 </p>
 
-<div style="text-align: center;">
-    <img src="/images/dot11-decrypt.png" alt="Dot11Decrypt" />
-</div><br />
+<div class="text-center">
+<div class="panel panel-default shrinked">
+    <div class="panel-body">
+        <img src="{{ site.url }}/images/dot11-decrypt.png" alt="Dot11Decrypt" />
+    </div>
+    <div class="panel-footer">
+        The result of decryption applied to an encrypted packet.
+    </div>
+</div>
+</div>
 
 <p>
 Note that everything that follows the <code>SNAP PDU</code> obviously depends
@@ -305,9 +319,16 @@ of encapsulation is the <code>RadioTap</code> protocol. If your driver uses
 <i>RadioTap</i>, then a packet taken from it will look like this:
 </p>
 
-<div style="text-align: center;">
-    <img src="/images/radiotap-encapsulation.png" alt="RadioTap encapsulation" />
-</div><br />
+<div class="text-center">
+<div class="panel panel-default shrinked">
+    <div class="panel-body">
+        <img src="{{ site.url }}/images/radiotap-encapsulation.png" alt="RadioTap encapsulation" />
+    </div>
+    <div class="panel-footer">
+        <i>RadioTap</i> encapsulated <i>802.11</i> frame.
+    </div>
+</div>
+</div>
 
 <p>
 The <i>RadioTap</i> protocol gives you more information about 802.11
@@ -336,7 +357,17 @@ int main() {
 Generates the following packet:
 </p>
 
-<img src="/images/radiotap-capture.png" alt="RadioTap Wireshark" />
+<div class="text-center">
+<div class="panel panel-default shrinked">
+    <div class="panel-body">
+        <img src="{{ site.url }}/images/radiotap-capture.png" alt="RadioTap Wireshark" />
+    </div>
+    <div class="panel-footer">
+        <i>RadioTap</i> packet generated with <i>libtins</i>, as displayed 
+        by <a href="http://www.wireshark.org/">wireshark</a>.
+    </div>
+</div>
+</div>
 
 <p>
 Note that some drivers actually use raw 802.11 frames, without any 
