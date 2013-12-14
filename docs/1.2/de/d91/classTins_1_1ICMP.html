@@ -123,13 +123,20 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>ECHO_REQUEST</b> = 8, 
 <b>TIME_EXCEEDED</b> = 11, 
 <b>PARAM_PROBLEM</b> = 12, 
-<b>INFO_REQUEST</b> = 15, 
+<b>TIMESTAMP_REQUEST</b> = 13, 
 <br/>
-&#160;&#160;<b>INFO_REPLY</b> = 16
+&#160;&#160;<b>TIMESTAMP_REPLY</b> = 14, 
+<b>INFO_REQUEST</b> = 15, 
+<b>INFO_REPLY</b> = 16, 
+<b>ADDRESS_MASK_REQUEST</b> = 17, 
+<br/>
+&#160;&#160;<b>ADDRESS_MASK_REPLY</b> = 18
 <br/>
  }</td></tr>
 <tr class="memdesc:ad45ad2d86fb7313c0086a4959cef947b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU.">ICMP</a> flags. <br/></td></tr>
 <tr class="separator:ad45ad2d86fb7313c0086a4959cef947b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add2cdabfed8f496cdce0aca3223a7439"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a></td></tr>
+<tr class="separator:add2cdabfed8f496cdce0aca3223a7439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a6e9f9dea42db9ec8606759ec4569da95 inherit pub_types_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> { <br/>
 &#160;&#160;<b>RAW</b>, 
@@ -222,15 +229,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa49a85d02bf70eff29839e02950204c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#aa49a85d02bf70eff29839e02950204c5">sequence</a> (uint16_t new_seq)</td></tr>
 <tr class="memdesc:aa49a85d02bf70eff29839e02950204c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the sequence field.  <a href="#aa49a85d02bf70eff29839e02950204c5">More...</a><br/></td></tr>
 <tr class="separator:aa49a85d02bf70eff29839e02950204c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d47b345572ecd155086ba65e471258a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a8d47b345572ecd155086ba65e471258a">gateway</a> (uint32_t new_gw)</td></tr>
-<tr class="memdesc:a8d47b345572ecd155086ba65e471258a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the gateway field.  <a href="#a8d47b345572ecd155086ba65e471258a">More...</a><br/></td></tr>
-<tr class="separator:a8d47b345572ecd155086ba65e471258a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cbec7053864214e928f13665727164d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a1cbec7053864214e928f13665727164d">gateway</a> (<a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a> new_gw)</td></tr>
+<tr class="memdesc:a1cbec7053864214e928f13665727164d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the gateway field.  <a href="#a1cbec7053864214e928f13665727164d">More...</a><br/></td></tr>
+<tr class="separator:a1cbec7053864214e928f13665727164d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdf9afc6c6966acdaa8efc1b6666cf64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#abdf9afc6c6966acdaa8efc1b6666cf64">mtu</a> (uint16_t new_mtu)</td></tr>
 <tr class="memdesc:abdf9afc6c6966acdaa8efc1b6666cf64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the mtu field.  <a href="#abdf9afc6c6966acdaa8efc1b6666cf64">More...</a><br/></td></tr>
 <tr class="separator:abdf9afc6c6966acdaa8efc1b6666cf64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b0f0a14cdd7b01fc4f555b51a5a3029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a8b0f0a14cdd7b01fc4f555b51a5a3029">pointer</a> (uint8_t new_pointer)</td></tr>
 <tr class="memdesc:a8b0f0a14cdd7b01fc4f555b51a5a3029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the pointer field.  <a href="#a8b0f0a14cdd7b01fc4f555b51a5a3029">More...</a><br/></td></tr>
 <tr class="separator:a8b0f0a14cdd7b01fc4f555b51a5a3029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc1bf4e90f4441fd75e8ab9e2fcdf45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#aafc1bf4e90f4441fd75e8ab9e2fcdf45">original_timestamp</a> (uint32_t new_timestamp)</td></tr>
+<tr class="memdesc:aafc1bf4e90f4441fd75e8ab9e2fcdf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the original timestamp field.  <a href="#aafc1bf4e90f4441fd75e8ab9e2fcdf45">More...</a><br/></td></tr>
+<tr class="separator:aafc1bf4e90f4441fd75e8ab9e2fcdf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22586ebf1591204d06c8f19f2089058"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ae22586ebf1591204d06c8f19f2089058">receive_timestamp</a> (uint32_t new_timestamp)</td></tr>
+<tr class="memdesc:ae22586ebf1591204d06c8f19f2089058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the receive timestamp field.  <a href="#ae22586ebf1591204d06c8f19f2089058">More...</a><br/></td></tr>
+<tr class="separator:ae22586ebf1591204d06c8f19f2089058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f060f606395c6bb559c589ca510a823"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a2f060f606395c6bb559c589ca510a823">transmit_timestamp</a> (uint32_t new_timestamp)</td></tr>
+<tr class="memdesc:a2f060f606395c6bb559c589ca510a823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the transmit timestamp field.  <a href="#a2f060f606395c6bb559c589ca510a823">More...</a><br/></td></tr>
+<tr class="separator:a2f060f606395c6bb559c589ca510a823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a36e0f07d9036ec497fe61dd57201b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a47a36e0f07d9036ec497fe61dd57201b">address_mask</a> (<a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a> new_mask)</td></tr>
+<tr class="memdesc:a47a36e0f07d9036ec497fe61dd57201b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the address mask field.  <a href="#a47a36e0f07d9036ec497fe61dd57201b">More...</a><br/></td></tr>
+<tr class="separator:a47a36e0f07d9036ec497fe61dd57201b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cc8564408f6d2bb291806e73a9c29fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a6cc8564408f6d2bb291806e73a9c29fe">set_echo_request</a> (uint16_t <a class="el" href="../../de/d91/classTins_1_1ICMP.html#aa1e021beb3a09cdce85fefe11f3ffdb1">id</a>, uint16_t seq)</td></tr>
 <tr class="memdesc:a6cc8564408f6d2bb291806e73a9c29fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets echo request flag for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>.  <a href="#a6cc8564408f6d2bb291806e73a9c29fe">More...</a><br/></td></tr>
 <tr class="separator:a6cc8564408f6d2bb291806e73a9c29fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,9 +276,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ae08fd2c402a3cf05c250b79ddd6d430a">set_source_quench</a> ()</td></tr>
 <tr class="memdesc:ae08fd2c402a3cf05c250b79ddd6d430a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets source quench flag for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>. <br/></td></tr>
 <tr class="separator:ae08fd2c402a3cf05c250b79ddd6d430a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa119fd1da10dad0ec5a558be4ce98213"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#aa119fd1da10dad0ec5a558be4ce98213">set_redirect</a> (uint8_t icode, uint32_t address)</td></tr>
-<tr class="memdesc:aa119fd1da10dad0ec5a558be4ce98213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets redirect flag for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>.  <a href="#aa119fd1da10dad0ec5a558be4ce98213">More...</a><br/></td></tr>
-<tr class="separator:aa119fd1da10dad0ec5a558be4ce98213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0aeaec7c3f162edd47054175d203d4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ad0aeaec7c3f162edd47054175d203d4c">set_redirect</a> (uint8_t icode, <a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a> address)</td></tr>
+<tr class="memdesc:ad0aeaec7c3f162edd47054175d203d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets redirect flag for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>.  <a href="#ad0aeaec7c3f162edd47054175d203d4c">More...</a><br/></td></tr>
+<tr class="separator:ad0aeaec7c3f162edd47054175d203d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4330572598c3785b58afbd651735265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ad45ad2d86fb7313c0086a4959cef947b">Flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ae4330572598c3785b58afbd651735265">type</a> () const </td></tr>
 <tr class="memdesc:ae4330572598c3785b58afbd651735265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU.">ICMP</a> type flag.  <a href="#ae4330572598c3785b58afbd651735265">More...</a><br/></td></tr>
 <tr class="separator:ae4330572598c3785b58afbd651735265"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,15 +294,27 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:adf507223d2b29659de4def98ec75413a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#adf507223d2b29659de4def98ec75413a">sequence</a> () const </td></tr>
 <tr class="memdesc:adf507223d2b29659de4def98ec75413a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the echo sequence number.  <a href="#adf507223d2b29659de4def98ec75413a">More...</a><br/></td></tr>
 <tr class="separator:adf507223d2b29659de4def98ec75413a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae89b18358270369fa15a935823920223"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ae89b18358270369fa15a935823920223">gateway</a> () const </td></tr>
-<tr class="memdesc:ae89b18358270369fa15a935823920223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the gateway field.  <a href="#ae89b18358270369fa15a935823920223">More...</a><br/></td></tr>
-<tr class="separator:ae89b18358270369fa15a935823920223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84bc404ff922b2222159ab171ea6147"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ac84bc404ff922b2222159ab171ea6147">gateway</a> () const </td></tr>
+<tr class="memdesc:ac84bc404ff922b2222159ab171ea6147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the gateway field.  <a href="#ac84bc404ff922b2222159ab171ea6147">More...</a><br/></td></tr>
+<tr class="separator:ac84bc404ff922b2222159ab171ea6147"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87f59a472c30e1c79d51ee5d82501563"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a87f59a472c30e1c79d51ee5d82501563">pointer</a> () const </td></tr>
 <tr class="memdesc:a87f59a472c30e1c79d51ee5d82501563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the pointer field.  <a href="#a87f59a472c30e1c79d51ee5d82501563">More...</a><br/></td></tr>
 <tr class="separator:a87f59a472c30e1c79d51ee5d82501563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7de371fc0ee82f9f4cb24408c043d75a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a7de371fc0ee82f9f4cb24408c043d75a">mtu</a> () const </td></tr>
 <tr class="memdesc:a7de371fc0ee82f9f4cb24408c043d75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the mtu field.  <a href="#a7de371fc0ee82f9f4cb24408c043d75a">More...</a><br/></td></tr>
 <tr class="separator:a7de371fc0ee82f9f4cb24408c043d75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad869906931c006496079b5fac7ccebc8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ad869906931c006496079b5fac7ccebc8">original_timestamp</a> () const </td></tr>
+<tr class="memdesc:ad869906931c006496079b5fac7ccebc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the original timestamp field.  <a href="#ad869906931c006496079b5fac7ccebc8">More...</a><br/></td></tr>
+<tr class="separator:ad869906931c006496079b5fac7ccebc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5608bc2491aaea9bd21b1a4339da9722"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a5608bc2491aaea9bd21b1a4339da9722">receive_timestamp</a> () const </td></tr>
+<tr class="memdesc:a5608bc2491aaea9bd21b1a4339da9722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the receive timestamp field.  <a href="#a5608bc2491aaea9bd21b1a4339da9722">More...</a><br/></td></tr>
+<tr class="separator:a5608bc2491aaea9bd21b1a4339da9722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d86975901f5d9fe345afafbd320ee6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ab0d86975901f5d9fe345afafbd320ee6">transmit_timestamp</a> () const </td></tr>
+<tr class="memdesc:ab0d86975901f5d9fe345afafbd320ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the transmit timestamp field.  <a href="#ab0d86975901f5d9fe345afafbd320ee6">More...</a><br/></td></tr>
+<tr class="separator:ab0d86975901f5d9fe345afafbd320ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f9f31ccde587110ba8421f316d086e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ab8f9f31ccde587110ba8421f316d086e">address_mask</a> () const </td></tr>
+<tr class="memdesc:ab8f9f31ccde587110ba8421f316d086e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the address mask field.  <a href="#ab8f9f31ccde587110ba8421f316d086e">More...</a><br/></td></tr>
+<tr class="separator:ab8f9f31ccde587110ba8421f316d086e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60b8de60a23608bb7bcee3d7e79cacf7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a60b8de60a23608bb7bcee3d7e79cacf7">header_size</a> () const </td></tr>
 <tr class="memdesc:a60b8de60a23608bb7bcee3d7e79cacf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header size.  <a href="#a60b8de60a23608bb7bcee3d7e79cacf7">More...</a><br/></td></tr>
 <tr class="separator:a60b8de60a23608bb7bcee3d7e79cacf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,7 +412,21 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that represents an <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU.">ICMP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>. </p>
 <p><a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU.">ICMP</a> is the representation of the <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU.">ICMP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>. Instances of this class must be sent over a level 3 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units.">PDU</a>, this will otherwise fail. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="add2cdabfed8f496cdce0aca3223a7439"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> <a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">Tins::ICMP::address_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The type used to store addresses. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a538c43a5a84a13c0d0ae68a14d32f8a2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -445,6 +490,56 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a47a36e0f07d9036ec497fe61dd57201b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMP::address_mask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a>&#160;</td>
+          <td class="paramname"><em>new_mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the address mask field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_mask</td><td>the value to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab8f9f31ccde587110ba8421f316d086e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a> Tins::ICMP::address_mask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the address mask field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the address mask value. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a3180ac1462f4a2d6780e4f6c336e064d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -547,14 +642,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8d47b345572ecd155086ba65e471258a"></a>
+<a class="anchor" id="a1cbec7053864214e928f13665727164d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::ICMP::gateway </td>
           <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a>&#160;</td>
           <td class="paramname"><em>new_gw</em></td><td>)</td>
           <td></td>
         </tr>
@@ -564,14 +659,14 @@ Additional Inherited Members</h2></td></tr>
 <p>Setter for the gateway field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_gw</td><td>uint32_t with the new gateway. </td></tr>
+    <tr><td class="paramname">new_gw</td><td>The new value for the gateway field. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ae89b18358270369fa15a935823920223"></a>
+<a class="anchor" id="ac84bc404ff922b2222159ab171ea6147"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -579,7 +674,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t Tins::ICMP::gateway </td>
+          <td class="memname"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a> Tins::ICMP::gateway </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -593,7 +688,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the gateway field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the gateways in an unit32_t. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the gateway field value. </dd></dl>
 
 </div>
 </div>
@@ -768,7 +863,57 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the mtu field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the mtu value in an uint16_t. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the mtu field value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aafc1bf4e90f4441fd75e8ab9e2fcdf45"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMP::original_timestamp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>new_timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the original timestamp field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_timestamp</td><td>the value to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad869906931c006496079b5fac7ccebc8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Tins::ICMP::original_timestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the original timestamp field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the original timestamp value. </dd></dl>
 
 </div>
 </div>
@@ -846,7 +991,57 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the pointer field. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the pointer value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the pointer field value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae22586ebf1591204d06c8f19f2089058"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMP::receive_timestamp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>new_timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the receive timestamp field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_timestamp</td><td>the value to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5608bc2491aaea9bd21b1a4339da9722"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Tins::ICMP::receive_timestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the receive timestamp field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the receive timestamp value. </dd></dl>
 
 </div>
 </div>
@@ -1075,7 +1270,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa119fd1da10dad0ec5a558be4ce98213"></a>
+<a class="anchor" id="ad0aeaec7c3f162edd47054175d203d4c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1088,7 +1283,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#add2cdabfed8f496cdce0aca3223a7439">address_type</a>&#160;</td>
           <td class="paramname"><em>address</em>&#160;</td>
         </tr>
         <tr>
@@ -1131,6 +1326,56 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f060f606395c6bb559c589ca510a823"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMP::transmit_timestamp </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>new_timestamp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the transmit timestamp field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_timestamp</td><td>the value to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab0d86975901f5d9fe345afafbd320ee6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Tins::ICMP::transmit_timestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the transmit timestamp field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the transmit timestamp value. </dd></dl>
 
 </div>
 </div>
@@ -1191,7 +1436,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 23 2013 20:22:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 14 2013 14:28:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

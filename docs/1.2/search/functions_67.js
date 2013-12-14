@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gateway',['gateway',['../de/d91/classTins_1_1ICMP.html#a8d47b345572ecd155086ba65e471258a',1,'Tins::ICMP::gateway(uint32_t new_gw)'],['../de/d91/classTins_1_1ICMP.html#ae89b18358270369fa15a935823920223',1,'Tins::ICMP::gateway() const ']]],
+  ['gateway',['gateway',['../de/d91/classTins_1_1ICMP.html#a1cbec7053864214e928f13665727164d',1,'Tins::ICMP::gateway(address_type new_gw)'],['../de/d91/classTins_1_1ICMP.html#ac84bc404ff922b2222159ab171ea6147',1,'Tins::ICMP::gateway() const ']]],
   ['gateway_5ffrom_5fip',['gateway_from_ip',['../db/d81/namespaceTins_1_1Utils.html#a3458bc10bda24a3f8e455ae4827f386e',1,'Tins::Utils']]],
   ['generic_5ferror',['generic_error',['../db/d97/classTins_1_1PPPoE.html#a9ad5d4e43064ca1a7dabfe0c503e6ce2',1,'Tins::PPPoE::generic_error(const std::string &amp;value)'],['../db/d97/classTins_1_1PPPoE.html#af76b0922ea3f3ca6fd5faaf320b60396',1,'Tins::PPPoE::generic_error() const ']]],
   ['generic_5fiface_5floop',['generic_iface_loop',['../db/d81/namespaceTins_1_1Utils.html#a04acb69dc463905fdf58d77f229407ee',1,'Tins::Utils']]],

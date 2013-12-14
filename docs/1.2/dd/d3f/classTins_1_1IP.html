@@ -1138,6 +1138,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Setter for the protocol field. </p>
+<p>Note that this protocol will be overwritten using the inner_pdu's protocol type during serialization unless the <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU.">IP</a> datagram is fragmented.</p>
+<p>If the packet is fragmented and was originally sniffed, the original protocol type will be kept when serialized.</p>
+<p>If this packet has been crafted manually and the inner_pdu is, for example, a <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html" title="Represents a PDU which holds raw data.">RawPDU</a>, then setting the protocol yourself is necessary.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">new_protocol</td><td>The new protocol. </td></tr>
@@ -1713,7 +1716,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 23 2013 20:22:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Dec 14 2013 14:28:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
