@@ -18,6 +18,7 @@ serve its same purpose.
         <li><a href="#libs">Tested libraries</a></li>
         <li><a href="#bench1">Benchmark #1 - Interpretting TCP</a></li>
         <li><a href="#bench2">Benchmark #2 - Interpretting TCP + TCP Option</a></li>
+        <li><a href="#bench3">Benchmark #3 - Interpretting DNS responses</a></li>
     </ul>
 </div>
 </div>
@@ -38,10 +39,10 @@ Every benchmark was executed on a computer with the following specs:
 Benchmarks were executed using the following libraries:
 </p>
 <ul>
-    <li><a href="http://libtins.sourceforge.net">libtins</a> v1.2(compiled using the <i>--enable-c++11</i> configure switch)</li>
+    <li><a href="http://libtins.sourceforge.net">libtins</a> v2.0(compiled using the <i>--enable-c++11</i> configure switch)</li>
     <li><a href="http://code.google.com/p/libcrafter/">libcrafter</a> v0.2</li>
     <li><a href="http://www.secdev.org/projects/scapy/">scapy</a> v2.2</li>
-    <li><a href="http://corelabs.coresecurity.com/index.php?module=Wiki&amp;action=view&amp;type=tool&amp;name=Impacket">impacket</a> v0.9.9.9</li>
+    <li><a href="http://corelabs.coresecurity.com/index.php?module=Wiki&amp;action=view&amp;type=tool&amp;name=Impacket">impacket</a> v0.9.10</li>
     <li><a href="http://code.google.com/p/dpkt/">dpkt</a> v1.7</li>
     <li><a href="http://www.tcpdump.org/">libpcap</a> v1.1.1</li>
 </ul>
@@ -195,18 +196,86 @@ The results of this benchmark were the following:
     </tbody>
 </table>
 
+<h3 id="bench3">Benchmark #3 - Interpretting DNS responses</h3>
+
+<p>
+This benchmark measures the speed at which each library can parse 
+<i>DNS</i> packets. The input <i>pcap</i> file consists of 500000 copies
+of the following packet:
+</p>
+<div class="text-center">
+<div class="panel panel-default shrinked">
+    <div class="panel-body">
+        <img src="{{ site.url }}/images/dns-wireshark.png" alt="DNS packet" />
+    </div>
+    <div class="panel-footer">
+        The packet that is used in the test case.
+    </div>
+</div>
+</div>
+<p>
+As you can see, there are three domain names present and two of them 
+use compression. For this test case, the codes used not only parse the 
+packet and construct the appropriate <i>DNS</i> object when required,
+but also iterate over both the question and answer records so as to
+force the libraries to parse the domain names included in them.
+</p>
+<p>
+The results of this benchmark were the following:
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Library</th>
+            <th>Time taken(seconds)</th>
+            <th>Packets per second</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>libpcap</td>
+            <td>0.04</td>
+            <td>12,500,000</td>
+        </tr>
+        <tr style="font-weight: bold">
+            <td>libtins</td>
+            <td>0.45</td>
+            <td>1,111,111</td>
+        </tr>
+        <tr>
+            <td>libcrafter</td>
+            <td>19.55</td>
+            <td>25,575</td>
+        </tr>
+        <tr>
+            <td>dpkt</td>
+            <td>30.10</td>
+            <td>16,611</td>
+        </tr>
+        <tr>
+            <td>impacket</td>
+            <td>50.31</td>
+            <td>9,938</td>
+        </tr>
+        <tr>
+            <td>scapy</td>
+            <td>475.8</td>
+            <td>1,050</td>
+        </tr>
+    </tbody>
+</table>
+
 <h3>Conclusions</h3>
 
 <p>
-As you can see, <i>libtins</i> is very fast at interpretting
-packets compared to the rest of the libraries tested. 
+As you can see, <i>libtins</i> is quite faster at interpretting
+packets than the rest of the libraries tested. Moreover, it has
+very little overhead compared to <i>libpcap</i>, which does not perform
+any packet interpretation at all.
 </p>
 <p>
-If you want to reproduce the benchmark, you can download the source 
-code <a href="{{ site.url }}/benchmarks/benchmark01.tar.gz">here</a>. Just decompress 
-the tarball, cd into the generated directory, and execute 
-<i>./benchmark.sh</i>. That will compile each test case and run them,
-generating the results in a file named "results".
+If you want to reproduce these benchmarks, you can download their source 
+code <a href="{{ site.url }}/benchmark/benchmarks.tar.gz">here</a>. 
 </p>
 <p>
 More benchmarks will be added soon.
