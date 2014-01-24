@@ -219,7 +219,7 @@ auto decrypt_proxy = make_wep_decrypter_proxy(handler);
 decrypt_proxy.decrypter().add_password("00:01:02:03:04:05", "passw");
 
 // Create a sniffer
-Sniffer sniffer("wlan0", 2000, true);
+Sniffer sniffer("wlan0", Sniffer::PROMISC);
 // Sniff and decrypt!
 sniffer.sniff_loop(decrypt_proxy);
 {% endhighlight %}
@@ -240,10 +240,10 @@ a <code>WEPDecrypter</code>. Let's analyze it:
         as the argument to <code>Sniffer::sniff_loop</code>. It also stores
         a decrypter, in this case a <code>WEPDecrypter</code>, which you can
         access using the method <code>DecrypterProxy::decrypter</code></li>
-    <li>The same tuple (bssid, password) is added to the decrypter 
+    <li>The same tuple <i>(bssid, password)</i> is added to the decrypter 
         held by the proxy class.</li>
     <li>A sniffer is created, which will interpret packets from the
-        wlan0 interface.</li>
+        <i>wlan0</i> interface.</li>
     <li>A sniffing loop is started. This is where the proxy does its 
         magic. Instead of simply calling our handler, it will intercept
         data frames that, in this case, are sent to/from the AP identified 
@@ -266,7 +266,7 @@ them all together and use a somewhat "decrypting chain".
 <p>
 As from <i>libtins</i> v1.1, the library supports the decryption of 
 <i>WPA2</i>(both <i>AES</i> and <i>TKIP</i>) encrypted frames. This is
-done through the class <code>WPA2Decrypter</code>.
+done through the <code>WPA2Decrypter</code> class.
 </p>
 
 <p>
