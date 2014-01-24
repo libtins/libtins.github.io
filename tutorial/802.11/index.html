@@ -305,7 +305,7 @@ auto decrypt_proxy = make_wpa2_decrypter_proxy(handler);
 decrypt_proxy.decrypter().add_ap_data("my_secure_psk", "my_access_point_ssid");
 
 // Create a sniffer
-Sniffer sniffer("wlan0", 2000, true);
+Sniffer sniffer("wlan0", Sniffer::PROMISC);
 // Sniff and decrypt!
 sniffer.sniff_loop(decrypt_proxy);
 {% endhighlight %}
