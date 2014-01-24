@@ -45,8 +45,8 @@ filter:
 </p>
 
 {% highlight cpp %}
-// We want to sniff on eth0, and capture packets of at most 1000 bytes.
-Sniffer sniffer("eth0", 1000);
+// We want to sniff on eth0. This will capture packets of at most 64 kb.
+Sniffer sniffer("eth0");
 // Only retrieve IP datagrams which are sent from 192.168.0.1
 sniffer.set_filter("ip src 192.168.0.1");
 // Retrieve the packet.
@@ -58,10 +58,10 @@ delete some_pdu;
 {% endhighlight %}
 
 <p>
-Note that the third parameter in <code>Sniffer</code>'s constructor indicates 
-whether you want to set the interface in monitor mode. By default 
-it <b>is not</b>, so you'll only be able to sniff packets that are sent 
-to or by you.
+Note that the second parameter in <code>Sniffer</code>'s constructor 
+indicates whether you want to set the interface in monitor mode. By 
+default it <b>is not</b>, so you'll only be able to sniff packets that 
+are sent to or by you.
 </p>
 
 <h3 id="loop-sniffing">Loop sniffing</h3>
@@ -109,7 +109,7 @@ bool doo(PDU&) {
 
 struct foo {
     void bar() {
-        Sniffer sniffer("eth0", 1000, true, "ip src 192.168.0.100");
+        Sniffer sniffer("eth0", Sniffer::PROMISC, "ip src 192.168.0.100");
         /* Uses the helper function to create a proxy object that
          * will call this->handle. If you're using boost or C++11,
          * you could use boost::bind or std::bind, that will also
@@ -133,8 +133,9 @@ int main() {
 {% endhighlight %}
 
 <p>
-As you can see, the sniff_loop can not only be an easy way to process
-several packets, but also can make your code tidier when using classes.
+As you can see, sniffing using <code>Sniffer::sniff_loop</code> can not 
+only be an easy way to process several packets, but also can make your 
+code a lot tidier when using classes.
 </p>
 <p>
 Now the interesting part. In the above example we know we are sniffing
@@ -158,7 +159,8 @@ bool doo(PDU &some_pdu) {
 }
 
 void test() {
-    Sniffer sniffer("eth0", 1000, true, "ip src 192.168.0.100");
+    Sniffer sniffer("eth0", Sniffer::PROMISC);
+    sniffer.set_filter("ip src 192.168.0.100");
     sniffer.sniff_loop(doo);
 }
 {% endhighlight %}
@@ -211,10 +213,9 @@ using namespace Tins;
 int main() {
     std::vector<Packet> vt;
     
-    Sniffer sniffer("eth0", 1500);
+    Sniffer sniffer("eth0");
     while(vt.size() != 10)
-        // next_packet returns a PtrPacket, which can be implicitly 
-        // converted to Packet.
+        // next_packet returns a PtrPacket, which can be implicitly converted to Packet.
         vt.push_back(sniffer.next_packet());
     // Done, now let's check the packets
     for(const auto& packet : vt) {
@@ -222,7 +223,7 @@ int main() {
         if(packet.pdu()->find_pdu<IP>()) {
             // Just print timestamp's seconds and IP source address
             std::cout << "At: " << packet.timestamp().seconds()
-                    << " - " << packet.pdu()->find_pdu<IP>()->src_addr() 
+                    << " - " << packet.pdu()->rfind_pdu<IP>().src_addr() 
                     << std::endl;
         }
     }
@@ -235,7 +236,7 @@ with <code>Sniffer::next_packet</code>:
 </p>
 
 {% highlight cpp %}
-Sniffer sniffer("eth0", 1500);
+Sniffer sniffer("eth0");
 // PDU pointer, as mentioned at the beginning
 std::unique_ptr<PDU> pdu_ptr(sniffer.next_packet());
 
@@ -267,7 +268,7 @@ using namespace Tins;
 
 size_t counter(0);
 
-bool count_packets(PDU &) {
+bool count_packets(const PDU &) {
     counter++;
     // Always keep looping. When the end of the file is found, 
     // our callback will simply not be called again.
