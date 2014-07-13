@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Matias Fontanini
+ * Copyright (c) 2014, Matias Fontanini
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -54,10 +54,14 @@ bool callback(const PDU &pdu)
             if(query.type() == DNS::A) {
                 // Here's one! Let's add an answer.
                 dns.add_answer(
-                    query.dname(), 
-                    // 777 is just a random TTL
-                    DNS::make_info(DNS::A, query.query_class(), 777),
-                    IPv4Address("127.0.0.1")
+                    DNS::Resource(
+                        query.dname(), 
+                        "127.0.0.1",
+                        DNS::A, 
+                        query.query_class(), 
+                        // 777 is just a random TTL
+                        777
+                    )
                 );
             }
         }
@@ -85,10 +89,15 @@ int main(int argc, char *argv[])
         std::cout << "Usage: " << *argv << " <interface>" << std::endl;
         return 1;
     }
-    // Sniff on the provided interface, maximum packet size 2000
-    // in promiscuos mode and only udp packets sent to port 53
-    Sniffer sniffer(argv[1], 2000, true, "udp and dst port 53");
+    // Sniff on the provided interface in promiscuos mode
+    Sniffer sniffer(argv[1], Sniffer::PROMISC);
+    
+    // Only capture udp packets sent to port 53
+    sniffer.set_filter("udp and dst port 53");
+    
     // All packets will be sent through the provided interface
     sender.default_interface(argv[1]);
+    
+    // Start the capture
     sniffer.sniff_loop(callback);
 }
