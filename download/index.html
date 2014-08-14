@@ -113,12 +113,22 @@ You should be able to install both libraries through your distribution's
 package manager.
 </p>
 <p>
-For Debian based systems(Ubuntu, Linux Mint, etc), you can install it
-executing this command as <b>root</b>:
+For <i>Debian</i> based systems(<i>Ubuntu</i>, <i>Linux Mint</i>, etc), 
+you can install them by executing this command as <b>root</b>:
 </p>
 
 {% highlight bash %}
 apt-get install libpcap-dev libssl-dev
+{% endhighlight %}
+
+<p>
+For <i>Red Hat</i> based systems(<i>RHEL</i>, <i>Fedora</i>, 
+<i>CentOS</i>, etc), you can install them by executing the following 
+command as <b>root</b>:
+</p>
+
+{% highlight bash %}
+yum install libpcap-devel openssl-devel
 {% endhighlight %}
 
 <h3 id="compiling">Compiling libtins</h3>
@@ -181,7 +191,7 @@ including the appropriate headers and linking against it.
 <p>
 <i>libtins</i>' headers are inside a directory named <i>tins</i>, inside
 your default include directory. You can include individual headers, or
-just <code>#include &lt;tins/tins.&gt;</code>, which will include all of them.
+just <code>#include &lt;tins/tins.h&gt;</code>, which will include all of them.
 </p>
 
 <h4>Linking</h4>
