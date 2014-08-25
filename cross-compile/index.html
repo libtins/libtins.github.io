@@ -22,13 +22,17 @@ on those architectures.
 
 <h3 id="env">Environment</h3>
 
+<p>
 Through this section, I'm going to use a <i>MIPS</i> toolchain that
 I've compiled and installed. Getting the right toolchain is not covered
-in this tutorial. <br /><br />
+in this tutorial.
+</p>
 
+<p>
 My toolchain is installed in <i>/opt/mips_linux_toolchain/</i>. For 
 example, in <i>/opt/mips_linux_toolchain/bin/</i> I've got the compiler,
 linker and other utilities:
+</p>
 
 {% highlight bash %}
 $ ls /opt/mips_linux_toolchain/bin/
@@ -44,9 +48,11 @@ mips-linux-gnu-gcc        mips-linux-gnu-objcopy
 mips-linux-gnu-gcc-4.4.6  mips-linux-gnu-objdump
 {% endhighlight %}
 
+<p>
 I've already cross-compiled <i>libpcap</i> and located its headers in
 <i>/opt/mips_linux_toolchain/include/</i> and shared object in
 <i>/opt/mips_linux_toolchain/lib/</i>:
+</p>
 
 {% highlight bash %}
 $ ls /opt/mips_linux_toolchain/include/
@@ -60,37 +66,63 @@ $ ls /opt/mips_linux_toolchain/lib/libpcap*
 
 <h3 id="compiling">Compiling</h3>
 
+<p>
 Now that you've got a picture of how my environment is setup, let's go
 straight to the compilation process.
+</p>
 
-As usual, we have to execute the configure script:
+<p>
+As usual, we have to execute <i>CMake</i> so it configures the project:
+</p>
 
 {% highlight bash %}
-CXX=/opt/mips_linux_toolchain/bin/mips-linux-gnu-g++ ./configure \
---with-pcap-include-path=/opt/mips_linux_toolchain/include/ \
---with-pcap-lib-path=/opt/mips_linux_toolchain/lib/ \
---disable-wpa2
+# Create and move into the build directory
+mkdir build
+cd build
+# Configure the project
+cmake ../ -DCMAKE_FIND_ROOT_PATH=/opt/mips_linux_toolchain/ \
+-DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY \
+-DCMAKE_CXX_COMPILER=/opt/mips_linux_toolchain/bin/mips-linux-gnu-g++ \
+-DLIBTINS_ENABLE_WPA2=0
 {% endhighlight %}
 
+<p>
 Let's look at each flag used:
+</p>
 
 <ul>
-    <li><i>CXX=</i>: this indicates the C++ compiler that we are going
-    to use</li>
-    <li><i>--with-pcap-include-path</i>: this indicates the path in which
-    the <i>libpcap</i> headers are located.</li>
-    <li><i>--with-pcap-lib-path</i>: this indicates the path in which
-    the <i>libpcap</i> shared objectis located.</li>
-    <li><i>--disable-wpa2</i>: since I haven't cross-compiled
+    <li><i>CMAKE_FIND_ROOT_PATH</i>: this indicates the root path in 
+    which the toolchain is installed.</li>
+    <li><i>CMAKE_FIND_ROOT_PATH_MODE_LIBRARY</i>: this is not required,
+    but it's a useful flag. It tells <i>CMake</i> to only look for 
+    libraries in the path provided by the previous option. Without it,
+    it could detect another installation of them, even if they're
+    compiled for another architecture.</li>
+    <li><i>CMAKE_CXX_COMPILER</i>: this indicates the C++ compiler that 
+    we are going to use</li>
+    <li><i>LIBTINS_ENABLE_WPA2</i>: since I haven't cross-compiled
     <i>libcrypto</i>, I've disabled this feature.</li>
 </ul>
 
+<p>
+In this case, since <i>libpcap</i>'s headers and shared objects are 
+located inside the toolchain directory, there's no need to do anything
+to help <i>CMake</i> locate them. Otherwise, you would need to set
+the <i>PCAP_ROOT_DIR</i> option, providing the library path as its
+value.
+</p>
+
+<p>
 Then just run <i>make</i> as usual:
+</p>
 
 {% highlight bash %}
 make
 {% endhighlight %}
 
+<p>
 And you are done. When you execute the configure script, you can use
-the <i>--prefix</i> option, as usual, to indicate the path in which
-to install the library.
+the <i>CMAKE_INSTALL_PREFIX</i> option, as usual, to indicate the path 
+in which to install the library.
+</p>
+

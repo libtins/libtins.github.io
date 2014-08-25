@@ -9,10 +9,13 @@ section: download
 <div id="section-listing">
     <ul>
         <li><a href="#download">Download</a></li>
+        <li><a href="#download-binary">Download binary distributions</a></li>
         <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#compiling">Compiling libtins</a></li>
+        <li><a href="#compiling">Compiling libtins on <i>Linux/BSD/OSX</i></a></li>
+        <li><a href="#compiling-windows">Compiling libtins on <i>Windows</i></a></li>
         <li><a href="#cross-compiling">Cross-compiling libtins</a></li>
         <li><a href="#using">Using libtins</a></li>
+        <li><a href="#using-windows">Using <i>libtins</i> on <i>Windows</i></a></li>
     </ul>
 </div>
 </div>
@@ -23,10 +26,6 @@ In order to download <i>libtins</i>, please visit project's github
 <a href="https://github.com/mfontanini/libtins">
 page</a> or use one of the following mechanisms:
 </p>
-
-<ul>
-<li>
-<h4>Latest source</h4>
 
 <p>
 It is highly recommended that you download the latest source code so
@@ -44,8 +43,7 @@ Or clone the git repository by executing:
 {% highlight bash %}
 git clone git@github.com:mfontanini/libtins.git
 {% endhighlight %}
-</li>
-<li>
+<!---
 <h4>Debian-based systems(only version 1.1)</h4>
 
 <p>
@@ -97,7 +95,27 @@ dpkg -i libtins1_1.1-1_amd64.deb
 </li>
 </ul>
 </li>
-</ul>
+--->
+<h3 id="download-binary">Download binary distributions</h3>
+
+<p>
+In case you are using <i>Windows</i>, you can download the binary 
+distribution so you don't have to compile the entire library.
+</p>
+<p>
+You can get the version <i>3.1</i> <i>Windows</i> binary distribution 
+<a href="{{ site.url }}/download/binary/windows/libtins-3.1-win32.zip">here</a>.
+</p>
+<p>
+In order to use it, just unpack the package into a directory and then
+add the <i>include</i> folder into your application's include 
+directories, and add the <i>tins.lib</i> file as a linker dependency.
+</p>
+<p>
+Please have a look at the <a href="using-windows">using on 
+<i>Windows</i></a> section and see some notes on how to use it.
+</p>
+
 <h3 id="requirements">Requirements</h3>
 
 <p>
@@ -106,11 +124,17 @@ dpkg -i libtins1_1.1-1_amd64.deb
 <a href="http://www.openssl.org/"><i>libcrypto</i></a>, 
 which is provided by the <i>OpenSSL</i> library. Note that the latter 
 is only required if you want to allow WPA2 decryption. This feature
-can be disabled by using the <i>--disable-wpa2</i> configure switch.
+can be disabled by using <i>-DLIBTINS_ENABLE_WPA2=0</i>
+while executing <i>CMake</i>.
 </p>
 <p>
-You should be able to install both libraries through your distribution's 
-package manager.
+Since version <i>3.1</i>, <i>libtins</i> started using 
+<a href="http://www.cmake.org/">CMake</a> in its build system. 
+Therefore, you also need it in order to compile the library. 
+</p>
+<p>
+You should be able to install both libraries and <i>CMake</i>through 
+your distribution's package manager.
 </p>
 <p>
 For <i>Debian</i> based systems(<i>Ubuntu</i>, <i>Linux Mint</i>, etc), 
@@ -118,7 +142,7 @@ you can install them by executing this command as <b>root</b>:
 </p>
 
 {% highlight bash %}
-apt-get install libpcap-dev libssl-dev
+apt-get install libpcap-dev libssl-dev cmake
 {% endhighlight %}
 
 <p>
@@ -128,26 +152,40 @@ command as <b>root</b>:
 </p>
 
 {% highlight bash %}
-yum install libpcap-devel openssl-devel
+yum install libpcap-devel openssl-devel cmake
 {% endhighlight %}
 
-<h3 id="compiling">Compiling libtins</h3>
+<p>
+For <i>Windows</i>, you can download binary distribution of 
+<i>CMake</i> 
+<a href="http://www.cmake.org/cmake/resources/software.html">from their 
+website</a>. You should do the same for <i>OpenSSL</i> if you want
+to enable <i>WPA2</i> decryption support.
+</p>
+<p>
+You should also <a href="http://www.winpcap.org/">download the 
+<i>WinPCAP</i></a> developer package, which is the <i>Windows</i> 
+version of <i>libpcap</i>. 
+</p>
+<h3 id="compiling">Compiling libtins on <i>Linux/BSD/OSX</i></h3>
 <p>
 Now you've got everything you need for compiling <i>libtins</i>.
 In order to compile, just execute the following commands:
 </p>
 {% highlight bash %}
-./configure
+mkdir build
+cd build
+cmake ../
 make
 {% endhighlight %}
 <p>
 If you want to enable C++11 support(many non-copyable classes will 
-be movable, plus, it will run faster), use the <i>--enable-c++11</i> 
-switch:
+be movable, plus, it will run faster), use the 
+<i>-DLIBTINS_ENABLE_CXX11=1</i> switch:
 </p>
 
 {% highlight bash %}
-./configure --enable-c++11
+cmake ../ -DLIBTINS_ENABLE_CXX11=1
 {% endhighlight %}
 <p>
 Now you've compiled the library. The shared object will be located in 
@@ -164,12 +202,71 @@ and the header files in <i>/usr/local/include</i>.
 </p>
 <p>
 Note that unless you want to restart your system before using the library,
-you'll need to update <i>ldconfig</i>'s cache, by issuing:
+you'll probably need to update <i>ldconfig</i>'s cache, by issuing:
 </p>
 
 {% highlight bash %}
 ldconfig
 {% endhighlight %}
+
+<h3 id="compiling-windows">Compiling libtins on <i>Windows</i></h3>
+
+<p>
+Compiling <i>libtins</i> on <i>Windows</i> has been made easy since 
+version <i>3.1</i>. The next steps asume you are using 
+<i>Visual Studio</i>, and you have installed both <i>CMake</i>
+and the <i>Winpcap</i> developer pack.
+</p>
+<p>
+First, open a console (<i>cmd.exe</i>, <i>git bash</i>, <i>MSYS</i>,
+any will do) and <i>cd</i> into the directory in which <i>libtins</i>
+sources are located. Now execute the following commands, using the 
+path to the <i>WinPCAP</i> developer pack:
+</p>
+
+{% highlight bash %}
+mkdir build
+cd build
+# Replace with the WinPCAP developer pack path
+# This disables WPA2 decryption.
+cmake ../ -DPCAP_ROOT_DIR=PathTo_WinPCAP_DevPack -DLIBTINS_ENABLE_WPA2=0 -DLIBTINS_BUILD_SHARED=0
+{% endhighlight %}
+
+<p>
+Now, this will have generated a <i>Visual Studio</i> solution. You have 
+to choices:
+</p>
+<h4>Compiling using <i>Visual Studio</i></h4>
+
+<p>
+The first one is to open the generated solution and compile it from
+<i>Visual Studio</i>. In order to do so, open the file 
+<i>build/libtins.sln</i>. Then select the "<i>tins</i>" project, and 
+build it. You might want to compile in <i>Release</i> mode, which can 
+be selected from the <i>Build</i> menu.
+</p>
+
+<h4>Compiling using <i>CMake</i></h4>
+
+<p>
+You can also compile directly using <i>CMake</i>. The only drawback here
+is that you can't select a <i>Release</i> mode compilation. If you 
+are okay with this, execute:
+</p>
+
+{% highlight bash %}
+cmake --build .
+{% endhighlight %}
+
+<p>
+The generated <i>.lib</i> file will be in <i>build/lib/Debug/</i>.
+</p>
+
+<p>
+Despite the compilation method you used, you should have a look at the
+<a href="#using-windows">notes</a> on using <i>libtins</i> on 
+<i>Windows</i>.
+</p>
 
 <h3 id="cross-compiling">Cross-compiling libtins</h3>
 
@@ -204,3 +301,14 @@ use the <i>-ltins</i> flag:
 g++ app.cpp -o app -ltins
 {% endhighlight %}
 
+<h3 id="using-windows">Using <i>libtins</i> on <i>Windows</i></h4>
+
+<p>
+If you are using <i>libtins</i> on <i>Windows</i>, then you have link 
+your application with <i>tins.lib</i> and you also need to 
+include some additional linker dependencies: 
+<i>Ws2_32.lib</i>, <i>Iphlpapi.lib</i> and <i>wpcap.lib</i>. The first 
+two will be found by the compiler, so you don't need to provide a full
+path. The latter is <i>WinPCAP</i>'s static library, which comes with
+the developers pack.
+</p>
