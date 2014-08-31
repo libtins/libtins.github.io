@@ -33,7 +33,7 @@ section: home
 
 using namespace Tins;
 
-bool handler(const PDU &pdu) {
+bool callback(const PDU &pdu) {
     const IP &ip = pdu.rfind_pdu<IP>(); // Find the IP layer
     const TCP &tcp = pdu.rfind_pdu<TCP>(); // Find the TCP layer
     std::cout << ip.src_addr() << ':' << tcp.sport() << " -> " 
@@ -42,7 +42,7 @@ bool handler(const PDU &pdu) {
 }
 
 int main() {
-    Sniffer("eth0").sniff_loop(handler);
+    Sniffer("eth0").sniff_loop(callback);
 }
 {% endhighlight %}
 
@@ -75,7 +75,7 @@ any other device that has sniffing capabilities!
 </p>
 <ul>
     <li>Network packet crafting.</li>
-    <li>Packet sniffing and automatic interpretation packets.</li>
+    <li>Packet sniffing and automatic packet interpretation.</li>
     <li>Reading and writing <i>PCAP</i> files.</li>
     <li>Following and reassembling <i>TCP</i> streams on the fly.</li>
     <li>Decrypting <i>WEP</i> and <i>WPA2</i>(<i>TKIP</i> and <i>CCMP</i>)
@@ -87,7 +87,7 @@ any other device that has sniffing capabilities!
             <li>IEEE 802.11</li>
             <li>IEEE 802.3</li>
             <li>IEEE 802.1q</li>
-            <li>Ethernet II</li>
+            <li>Ethernet</li>
             <li>ARP</li>
             <li>IP</li>
             <li>IPv6</li>

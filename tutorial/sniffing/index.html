@@ -32,7 +32,7 @@ using <i>libtins</i>.
 
 <p>
 Sniffing is done through the <code>Sniffer</code> class. This class accepts
-a <i>libpcap</i> string filter, and lets you sniff a certain interface, 
+a <i>libpcap</i> string filter, and lets you sniff on some network device, 
 interpreting the packets sent through it, and giving you<code>PDU</code> 
 objects so you can easily work with them.
 </p>
@@ -59,7 +59,7 @@ delete some_pdu;
 
 <p>
 Note that the second parameter in <code>Sniffer</code>'s constructor 
-indicates whether you want to set the interface in monitor mode. By 
+indicates whether you want to set the interface in promiscuous mode. By 
 default it <b>is not</b>, so you'll only be able to sniff packets that 
 are sent to or by you.
 </p>
@@ -200,7 +200,7 @@ then you should use the <code>Packet</code> class. <code>Packet</code>s
 contain a <code>PDU</code> and <code>Timestamp</code>, can be copyed and moved. 
 </p>
 <p>
-Let's see an example in which we'll store 10 packets read from wire 
+Let's see an example in which we'll store 10 packets read from the wire 
 into a vector:
 </p>
 
@@ -278,7 +278,7 @@ bool count_packets(const PDU &) {
 int main() {
     FileSniffer sniffer("/tmp/some_pcap_file.pcap");
     sniffer.sniff_loop(count_packets);
-    std::cout << "There are " << counter << " packets in the pcap filen";
+    std::cout << "There are " << counter << " packets in the pcap file\n";
 }
 {% endhighlight %}
 

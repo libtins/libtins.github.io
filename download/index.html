@@ -24,7 +24,7 @@ section: download
 <p>
 In order to download <i>libtins</i>, please visit project's github
 <a href="https://github.com/mfontanini/libtins">
-page</a> or use one of the following mechanisms:
+page</a>.
 </p>
 
 <p>
@@ -105,6 +105,8 @@ distribution so you don't have to compile the entire library.
 <p>
 You can get the version <i>3.1</i> <i>Windows</i> binary distribution 
 <a href="{{ site.url }}/download/binary/windows/libtins-3.1-win32.zip">here</a>.
+This was compiled using <i>Visual Studio 2013</i>, under a <i>32 bit</i>
+operating system.
 </p>
 <p>
 In order to use it, just unpack the package into a directory and then
@@ -164,7 +166,7 @@ to enable <i>WPA2</i> decryption support.
 </p>
 <p>
 You should also <a href="http://www.winpcap.org/">download the 
-<i>WinPCAP</i></a> developer package, which is the <i>Windows</i> 
+<i>WinPCAP</i> developer package</a>, which is the <i>Windows</i> 
 version of <i>libpcap</i>. 
 </p>
 <h3 id="compiling">Compiling libtins on <i>Linux/BSD/OSX</i></h3>
@@ -293,22 +295,30 @@ just <code>#include &lt;tins/tins.h&gt;</code>, which will include all of them.
 
 <h4>Linking</h4>
 <p>
-In order to link your application with <i>libtins</i> on GCC and clang,
-use the <i>-ltins</i> flag:
+In order to link your application with <i>libtins</i> on <i>GCC</i> or 
+<i>clang</i>, use the <i>-ltins</i> flag:
 </p>
 
 {% highlight bash %}
 g++ app.cpp -o app -ltins
 {% endhighlight %}
 
-<h3 id="using-windows">Using <i>libtins</i> on <i>Windows</i></h4>
+<h3 id="using-windows">Using <i>libtins</i> on <i>Windows</i></h3>
 
 <p>
 If you are using <i>libtins</i> on <i>Windows</i>, then you have link 
 your application with <i>tins.lib</i> and you also need to 
-include some additional linker dependencies: 
-<i>Ws2_32.lib</i>, <i>Iphlpapi.lib</i> and <i>wpcap.lib</i>. The first 
-two will be found by the compiler, so you don't need to provide a full
-path. The latter is <i>WinPCAP</i>'s static library, which comes with
-the developers pack.
+include the following, additional, linker dependencies: 
+</p>
+
+{% highlight bash %}
+Ws2_32.lib
+Iphlpapi.lib
+wpcap.lib
+{% endhighlight %}
+
+<p>
+The first two will be found by the compiler, so you don't need to 
+provide a full path. The latter is <i>WinPCAP</i>'s static library, 
+which comes with the developers pack.
 </p>

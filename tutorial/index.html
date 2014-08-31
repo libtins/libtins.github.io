@@ -316,6 +316,24 @@ or <code>PacketWriter::DOT11</code>, depending on the encapsulation used in
 the device.
 </p>
 <p>
+As of version <i>3.2</i> (you can currently get this code by cloning the 
+repository), there's a simpler way to indicate the link layer protocol to 
+be used on the packets written by a <code>PacketWriter</code>. This can 
+be done by instantiating the template class <code>DataLinkType</code> 
+with a link layer protocol <code>PDU</code> as its template argument. 
+This makes it easier to use this class, since you won't have to 
+remember which is the identifier name for some link layer protocol. 
+The following example illustrates this usage: 
+</p>
+{% highlight cpp %}
+// We'll write packets to /tmp/test.pcap. Use EthernetII as the link
+// layer protocol.
+PacketWriter writer("/tmp/test.pcap", DataLinkLayer<EthernetII>());
+
+// Now create another writer, but this time we'll use RadioTap.
+PacketWriter other_writer("bleh.pcap", DataLinkLayer<RadioTap>());
+{% endhighlight %}
+<p>
 Once a <code>PacketWriter</code> is created, you can write <code>PDU</code>s to it
 using the <code>PacketWriter::write</code> method. This method contains 2
 overloads: one takes a <code>PDU&amp;</code>, the other one takes two template
@@ -341,7 +359,7 @@ using namespace Tins;
 int main() {
     // We'll write packets to /tmp/test.pcap. The lowest layer will be 
     // EthernetII, so we use the appropriate identifier.
-    PacketWriter writer("/tmp/test.pcap", Tins::PacketWriter::ETH2);
+    PacketWriter writer("/tmp/test.pcap", PacketWriter::ETH2);
     // A vector containing one EthernetII PDU.
     std::vector<EthernetII> vec(1, EthernetII("00:da:fe:13:ad:fa"));
     // Write the PDU(s) in the vector(only one, in this case).

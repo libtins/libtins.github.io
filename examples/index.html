@@ -22,9 +22,25 @@ and threads, therefore you should use the appropriate flags on your
 compiler to enable them. For <i>GCC</i> compatible compilers(such as 
 <i>clang</i>), the following line should work for every example:
 </p>
+
 {% highlight bash %}
 g++ example.cpp -o example -O3 -std=c++11 -lpthread -ltins
 {% endhighlight %}
+
+<p>
+Since version <i>3.1</i>, it is easier to compile all of the examples.
+Once you have created the build directory and compiled the library,
+just execute the following command to do so:
+</p>
+
+{% highlight bash %}
+make examples
+{% endhighlight %}
+
+<p>
+The compiled examples will be located in the "examples" directory,
+inside the build location.
+</p>
 <p>
 Here is the list of examples:
 </p>
