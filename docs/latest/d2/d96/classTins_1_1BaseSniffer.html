@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">3.2</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -158,14 +159,26 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../..
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a250c69c5ebda1f9d1ff5e15d934bc885"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a250c69c5ebda1f9d1ff5e15d934bc885">BaseSniffer</a> ()</td></tr>
 <tr class="separator:a250c69c5ebda1f9d1ff5e15d934bc885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaedd3f191567b527400e334dddc92560"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#aaedd3f191567b527400e334dddc92560">init</a> (pcap_t *phandle, const std::string &amp;filter, bpf_u_int32 if_mask)</td></tr>
-<tr class="memdesc:aaedd3f191567b527400e334dddc92560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialices this <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html" title="Base class for sniffers. ">BaseSniffer</a>.  <a href="#aaedd3f191567b527400e334dddc92560">More...</a><br/></td></tr>
-<tr class="separator:aaedd3f191567b527400e334dddc92560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9a692d26c73886b9d5d56826117425"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd9a692d26c73886b9d5d56826117425"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_pcap_handle</b> (pcap_t *const pcap_handle)</td></tr>
+<tr class="separator:acd9a692d26c73886b9d5d56826117425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa73cab9dfce9c41f0eab44854d68381"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa73cab9dfce9c41f0eab44854d68381"></a>
+pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><b>get_pcap_handle</b> ()</td></tr>
+<tr class="separator:aaa73cab9dfce9c41f0eab44854d68381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9d76824e2687d70fafb533f7d3aa04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f9d76824e2687d70fafb533f7d3aa04"></a>
+const pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><b>get_pcap_handle</b> () const </td></tr>
+<tr class="separator:a3f9d76824e2687d70fafb533f7d3aa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae18f7a6607b89bc7ab0d7286739235b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae18f7a6607b89bc7ab0d7286739235b1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_if_mask</b> (bpf_u_int32 if_mask)</td></tr>
+<tr class="separator:ae18f7a6607b89bc7ab0d7286739235b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb8b993d71040d19595801c86f867238"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb8b993d71040d19595801c86f867238"></a>
+bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b> () const </td></tr>
+<tr class="separator:aeb8b993d71040d19595801c86f867238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for sniffers. </p>
 <p>This class implements the basic sniffing operations. Subclasses should only initialize this object using a pcap_t pointer, which will be used to extract packets.</p>
-<p>Initialization must be done using the <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#aaedd3f191567b527400e334dddc92560" title="Initialices this BaseSniffer. ">BaseSniffer::init</a> method. </p>
+<p>Initialization must be done using the BaseSniffer::init method. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a26c1b3e36c2c2f7ed2df1798bfdc997f"></a>
 <div class="memitem">
@@ -235,56 +248,6 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Retrieves an end iterator. </p>
-
-</div>
-</div>
-<a class="anchor" id="aaedd3f191567b527400e334dddc92560"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Tins::BaseSniffer::init </td>
-          <td>(</td>
-          <td class="paramtype">pcap_t *&#160;</td>
-          <td class="paramname"><em>phandle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>filter</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bpf_u_int32&#160;</td>
-          <td class="paramname"><em>if_mask</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialices this <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html" title="Base class for sniffers. ">BaseSniffer</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">phandle</td><td>The pcap handle to be used for sniffing. </td></tr>
-    <tr><td class="paramname">filter</td><td>The pcap filter which will be applied to the stream. </td></tr>
-    <tr><td class="paramname">if_mask</td><td>The interface's subnet mask. If 0 is provided, then some <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> broadcast tests won't work correctly. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -487,7 +450,7 @@ template&lt;class Functor &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 8 2014 09:33:23 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

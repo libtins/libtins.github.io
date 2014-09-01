@@ -15,6 +15,7 @@ using <i>libtins</i>.
 <div id="section-listing">
     <ul>
         <li><a href="#sniffing">Sniffing basics</a></li>
+        <li><a href="#sniffer-config">Sniffer configuration</a></li>
         <li><a href="#loop-sniffing">Loop sniffing</a></li>
         <li><a href="#iterator-sniffing">Sniffing using iterators</a></li>
         <li><a href="#packet-objects">Packet objects</a></li>
@@ -57,19 +58,41 @@ PDU *some_pdu = sniffer.next_packet();
 delete some_pdu;
 {% endhighlight %}
 
+<h3 id="sniffer-config">Sniffer configuration</h3>
+
 <p>
-Note that the second parameter in <code>Sniffer</code>'s constructor 
-indicates whether you want to set the interface in promiscuous mode. By 
-default it <b>is not</b>, so you'll only be able to sniff packets that 
-are sent to or by you.
+Since version <i>3.2</i> (you can get this changes by using the latest
+version from the repository), there's a class that represents the 
+different parameters that can be given to the sniffer in order to affect
+the sniffing sessions. They are all wrappers over the different 
+<i>libpcap</i> functions, such as <i>pcap_setfilter</i>, 
+<i>pcap_set_promisc</i>, etc. It's an improvement over the many
+parameters that the other <code>Sniffer</code> constructors' take.
 </p>
+<p>
+For example, if you wanted to capture packets on port <i>80</i>,
+sniff on promiscuous mode and set a snapshot length of 400 bytes,
+you would do it this way:
+</p>
+
+{% highlight cpp %}
+// Create sniffer configuration object.
+SnifferConfiguration config;
+config.set_filter("port 80");
+config.set_promisc_mode(true);
+config.set_snap_len(400);
+
+// Construct a Sniffer object, using the configuration above.
+Sniffer sniffer("eth0", config);
+{% endhighlight %}
 
 <h3 id="loop-sniffing">Loop sniffing</h3>
 
 <p>
-Though this is a valid way of retrieving packets, it's very common
-that you want to sniff lots packets until some certain condition
-is met. In that case its better to use <code>Sniffer::sniff_loop</code>.
+There is another way to extract packets from a <code>Sniffer</code> 
+object, apart from <code>Sniffer::next_packet</code>. It's very common 
+that you want to sniff lots packets until some certain condition is 
+met. In that case its better to use <code>Sniffer::sniff_loop</code>.
 </p>
 
 <p>
@@ -109,7 +132,10 @@ bool doo(PDU&) {
 
 struct foo {
     void bar() {
-        Sniffer sniffer("eth0", Sniffer::PROMISC, "ip src 192.168.0.100");
+        SnifferConfiguration config;
+        config.set_promisc_mode(true);
+        config.set_filter("ip src 192.168.0.100");
+        Sniffer sniffer("eth0", config);
         /* Uses the helper function to create a proxy object that
          * will call this->handle. If you're using boost or C++11,
          * you could use boost::bind or std::bind, that will also
@@ -159,8 +185,10 @@ bool doo(PDU &some_pdu) {
 }
 
 void test() {
-    Sniffer sniffer("eth0", Sniffer::PROMISC);
-    sniffer.set_filter("ip src 192.168.0.100");
+    SnifferConfiguration config;
+    config.set_promisc_mode(true);
+    config.set_filter("ip src 192.168.0.100");
+    Sniffer sniffer("eth0", config);
     sniffer.sniff_loop(doo);
 }
 {% endhighlight %}

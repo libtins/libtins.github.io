@@ -13,6 +13,7 @@ var searchData=
   ['snap',['SNAP',['../da/d52/classTins_1_1SNAP.html',1,'Tins']]],
   ['sniff_5fdata',['sniff_data',['../da/d7e/structTins_1_1sniff__data.html',1,'Tins']]],
   ['sniffer',['Sniffer',['../de/dbb/classTins_1_1Sniffer.html',1,'Tins']]],
+  ['snifferconfiguration',['SnifferConfiguration',['../da/d53/classTins_1_1SnifferConfiguration.html',1,'Tins']]],
   ['snifferiterator',['SnifferIterator',['../d0/dc9/classTins_1_1SnifferIterator.html',1,'Tins']]],
   ['socket_5fclose_5ferror',['socket_close_error',['../d8/d83/classTins_1_1socket__close__error.html',1,'Tins']]],
   ['socket_5fopen_5ferror',['socket_open_error',['../dc/d88/classTins_1_1socket__open__error.html',1,'Tins']]],
