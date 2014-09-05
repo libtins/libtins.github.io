@@ -188,8 +188,14 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileSniffer</b></td>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> the configuration of a <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html" title="Base class for sniffers. ">BaseSniffer</a> object. </p>
 <p>This class can be used as an easy way to configure a <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> or <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html" title="Reads pcap files and interprets the packets in it. ">FileSniffer</a> object.</p>
-<p>It can be used by constructing an object of this type, setting the desired values and then passing it to the <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> or <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html" title="Reads pcap files and interprets the packets in it. ">FileSniffer</a> object's constructor.</p>
-<p>For example:</p>
+<p>It can be used by constructing an object of this type, setting the desired values and then passing it to the <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> or <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html" title="Reads pcap files and interprets the packets in it. ">FileSniffer</a> object's constructor. This sets default values for some attributes:</p>
+<ul>
+<li>Snapshot length: 65535 bytes (64 KB).</li>
+<li>Timeout: 1000 milliseconds.</li>
+<li>Promiscuous mode: false.</li>
+</ul>
+<p>For any of the attributes not listed above, the associated pcap function which is used to set them on a pcap handle won't be called at all.</p>
+<p>This class can be used to configure a <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> object, like this:</p>
 <div class="fragment"><div class="line"><span class="comment">// Initialize the configuration.</span></div>
 <div class="line"><a class="code" href="../../da/d53/classTins_1_1SnifferConfiguration.html#a2404f25539325f93d065a0069e61acc0">SnifferConfiguration</a> config;</div>
 <div class="line">config.set_filter(<span class="stringliteral">&quot;ip and port 80&quot;</span>);</div>
@@ -401,13 +407,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileSniffer</b></td>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
-<li>src/sniffer.cpp</li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
+<li>/home/matias/Projects/libtins/code/src/sniffer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

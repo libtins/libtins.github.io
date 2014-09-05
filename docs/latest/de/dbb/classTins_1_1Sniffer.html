@@ -125,8 +125,10 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:add5a5e6bb429572d18424c0654ba622c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#add5a5e6bb429572d18424c0654ba622c">Sniffer</a> (const std::string &amp;device, const <a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html">SnifferConfiguration</a> &amp;configuration)</td></tr>
+<tr class="memdesc:add5a5e6bb429572d18424c0654ba622c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> using the provided configuration.  <a href="#add5a5e6bb429572d18424c0654ba622c">More...</a><br/></td></tr>
 <tr class="separator:add5a5e6bb429572d18424c0654ba622c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaad3f243afbb314d0a97ce6092b1878c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#aaad3f243afbb314d0a97ce6092b1878c">Sniffer</a> (const std::string &amp;device, unsigned max_packet_size, bool promisc=false, const std::string &amp;filter=&quot;&quot;, bool rfmon=false)</td></tr>
+<tr class="memdesc:aaad3f243afbb314d0a97ce6092b1878c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a>.  <a href="#aaad3f243afbb314d0a97ce6092b1878c">More...</a><br/></td></tr>
 <tr class="separator:aaad3f243afbb314d0a97ce6092b1878c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ca621a56a0f713880061c703a684cc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a3ca621a56a0f713880061c703a684cc8">Sniffer</a> (const std::string &amp;device, <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a88243ed15db23d03c953ac93a105136d">promisc_type</a> promisc=NON_PROMISC, const std::string &amp;filter=&quot;&quot;, bool rfmon=false)</td></tr>
 <tr class="memdesc:a3ca621a56a0f713880061c703a684cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a>.  <a href="#a3ca621a56a0f713880061c703a684cc8">More...</a><br/></td></tr>
@@ -206,7 +208,7 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -234,7 +236,10 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a>.</p>
+
+<p>Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> using the provided configuration. </p>
+<p>This constructor was added as a way to improve the parameter bloat introduced by the other ones available. You should create an instance of <a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html" title="Represents the configuration of a BaseSniffer object. ">SnifferConfiguration</a>, set the desired parameters, and then use it when constructing a <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> object.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html" title="Represents the configuration of a BaseSniffer object. ">SnifferConfiguration</a></dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
@@ -286,9 +291,10 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a>.</dd></dl>
+
+<p>Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a>. </p>
 <p>By default the interface won't be put into promiscuous mode, and won't be put into monitor mode.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>Use the constructor that takes a <a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html" title="Represents the configuration of a BaseSniffer object. ">SnifferConfiguration</a>. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
     <tr><td class="paramname">max_packet_size</td><td>The maximum packet size to be read. </td></tr>
@@ -298,6 +304,7 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
   </table>
   </dd>
 </dl>
+</dd></dl>
 
 </div>
 </div>
@@ -339,7 +346,7 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 
 <p>Constructs an instance of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a>. </p>
 <p>The maximum capture size is set to 65535. By default the interface won't be put into promiscuous mode, and won't be put into monitor mode.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Use the constructor that takes a <a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html" title="Represents the configuration of a BaseSniffer object. ">SnifferConfiguration</a>. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
     <tr><td class="paramname">promisc</td><td>Indicates if the interface should be put in promiscuous mode. </td></tr>
@@ -348,17 +355,18 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
   </table>
   </dd>
 </dl>
+</dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
-<li>src/sniffer.cpp</li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
+<li>/home/matias/Projects/libtins/code/src/sniffer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

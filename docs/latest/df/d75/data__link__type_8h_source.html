@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>libtins: include/data_link_type.h Source File</title>
+<title>libtins: /home/matias/Projects/libtins/code/include/data_link_type.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -133,43 +133,43 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">class </span>Loopback;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">class </span>PPI;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d5/d26/structTins_1_1DataLinkType.html">   52</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d5/d26/structTins_1_1DataLinkType.html">DataLinkType</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define TINS_MAKE_DATA_LINK_TYPE(tins_type, pcap_type) \</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">template&lt;&gt; \</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">struct DataLinkType&lt;tins_type&gt; { \</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    static const int type = pcap_type; \</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    int get_type() const { \</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">        return type; \</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">    } \</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">}; </span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../df/dcb/classTins_1_1EthernetII.html">EthernetII</a>, DLT_EN10MB)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d4/d69/classTins_1_1Dot3.html">Dot3</a>, DLT_EN10MB)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d6/d47/classTins_1_1SLL.html">SLL</a>, DLT_LINUX_SLL)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d3/d37/classTins_1_1Loopback.html">Loopback</a>, DLT_LOOP)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../de/d25/classTins_1_1PPI.html">PPI</a>, DLT_PPI)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d8/df1/classTins_1_1Dot11.html">Dot11</a>, DLT_IEEE802_11)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d7/d0e/classTins_1_1RadioTap.html">RadioTap</a>, DLT_IEEE802_11_RADIO)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#undef TINS_MAKE_DATA_LINK_TYPE</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// Tins</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // TINS_DATA_LINK_TYPE_H</span></div>
-<div class="ttc" id="structTins_1_1DataLinkType_html"><div class="ttname"><a href="../../d5/d26/structTins_1_1DataLinkType.html">Tins::DataLinkType</a></div><div class="ttdoc">Maps a libtins link layer PDU to a libpcap data link identifier. </div><div class="ttdef"><b>Definition:</b> data_link_type.h:52</div></div>
-<div class="ttc" id="classTins_1_1SLL_html"><div class="ttname"><a href="../../d6/d47/classTins_1_1SLL.html">Tins::SLL</a></div><div class="ttdef"><b>Definition:</b> sll.h:39</div></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d5/d26/structTins_1_1DataLinkType.html">   58</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d5/d26/structTins_1_1DataLinkType.html">DataLinkType</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#define TINS_MAKE_DATA_LINK_TYPE(tins_type, pcap_type) \</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">template&lt;&gt; \</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">struct DataLinkType&lt;tins_type&gt; { \</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    static const int type = pcap_type; \</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">    int get_type() const { \</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        return type; \</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">    } \</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">}; </span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../df/dcb/classTins_1_1EthernetII.html">EthernetII</a>, DLT_EN10MB)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d4/d69/classTins_1_1Dot3.html">Dot3</a>, DLT_EN10MB)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d6/d47/classTins_1_1SLL.html">SLL</a>, DLT_LINUX_SLL)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d3/d37/classTins_1_1Loopback.html">Loopback</a>, DLT_LOOP)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../de/d25/classTins_1_1PPI.html">PPI</a>, DLT_PPI)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d8/df1/classTins_1_1Dot11.html">Dot11</a>, DLT_IEEE802_11)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;TINS_MAKE_DATA_LINK_TYPE(<a class="code" href="../../d7/d0e/classTins_1_1RadioTap.html">RadioTap</a>, DLT_IEEE802_11_RADIO)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#undef TINS_MAKE_DATA_LINK_TYPE</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // TINS_DATA_LINK_TYPE_H</span></div>
+<div class="ttc" id="structTins_1_1DataLinkType_html"><div class="ttname"><a href="../../d5/d26/structTins_1_1DataLinkType.html">Tins::DataLinkType</a></div><div class="ttdoc">Maps a libtins link layer PDU to a libpcap data link identifier. </div><div class="ttdef"><b>Definition:</b> data_link_type.h:58</div></div>
+<div class="ttc" id="classTins_1_1SLL_html"><div class="ttname"><a href="../../d6/d47/classTins_1_1SLL.html">Tins::SLL</a></div><div class="ttdoc">Represents a Linux cooked-mode capture (SLL) PDU. </div><div class="ttdef"><b>Definition:</b> sll.h:43</div></div>
 <div class="ttc" id="classTins_1_1Dot11_html"><div class="ttname"><a href="../../d8/df1/classTins_1_1Dot11.html">Tins::Dot11</a></div><div class="ttdoc">Class representing an 802.11 frame. </div><div class="ttdef"><b>Definition:</b> dot11_base.h:50</div></div>
-<div class="ttc" id="classTins_1_1PPI_html"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html">Tins::PPI</a></div><div class="ttdoc">Represents a Per-Packet Information PDU. </div><div class="ttdef"><b>Definition:</b> ppi.h:45</div></div>
+<div class="ttc" id="classTins_1_1PPI_html"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html">Tins::PPI</a></div><div class="ttdoc">Represents a Per-Packet Information PDU. </div><div class="ttdef"><b>Definition:</b> ppi.h:46</div></div>
 <div class="ttc" id="classTins_1_1Loopback_html"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html">Tins::Loopback</a></div><div class="ttdef"><b>Definition:</b> loopback.h:37</div></div>
-<div class="ttc" id="classTins_1_1Dot3_html"><div class="ttname"><a href="../../d4/d69/classTins_1_1Dot3.html">Tins::Dot3</a></div><div class="ttdoc">Class representing an Ethernet II PDU. </div><div class="ttdef"><b>Definition:</b> dot3.h:44</div></div>
+<div class="ttc" id="classTins_1_1Dot3_html"><div class="ttname"><a href="../../d4/d69/classTins_1_1Dot3.html">Tins::Dot3</a></div><div class="ttdoc">Class representing an IEEE 802.3 PDU. </div><div class="ttdef"><b>Definition:</b> dot3.h:45</div></div>
 <div class="ttc" id="classTins_1_1RadioTap_html"><div class="ttname"><a href="../../d7/d0e/classTins_1_1RadioTap.html">Tins::RadioTap</a></div><div class="ttdoc">Class that represents the IEEE 802.11 radio tap header. </div><div class="ttdef"><b>Definition:</b> radiotap.h:50</div></div>
-<div class="ttc" id="classTins_1_1EthernetII_html"><div class="ttname"><a href="../../df/dcb/classTins_1_1EthernetII.html">Tins::EthernetII</a></div><div class="ttdoc">Class representing an Ethernet II PDU. </div><div class="ttdef"><b>Definition:</b> ethernetII.h:44</div></div>
+<div class="ttc" id="classTins_1_1EthernetII_html"><div class="ttname"><a href="../../df/dcb/classTins_1_1EthernetII.html">Tins::EthernetII</a></div><div class="ttdoc">Represents an Ethernet II PDU. </div><div class="ttdef"><b>Definition:</b> ethernetII.h:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:46 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:50 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

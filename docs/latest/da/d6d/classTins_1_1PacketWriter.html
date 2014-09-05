@@ -113,18 +113,18 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>SLL</b> = DLT_LINUX_SLL
 <br/>
  }</td></tr>
-<tr class="memdesc:a42cccda42b3b89d2c87a0db54416eb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of PDUs that will be written to this file.  <a href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">More...</a><br/></td></tr>
+<tr class="memdesc:a42cccda42b3b89d2c87a0db54416eb38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of PDUs that will be written to this file (deprecated).  <a href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">More...</a><br/></td></tr>
 <tr class="separator:a42cccda42b3b89d2c87a0db54416eb38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5503e1c85bd863121fbf34e24d37e6b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a5503e1c85bd863121fbf34e24d37e6b9">PacketWriter</a> (const std::string &amp;file_name, <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">LinkType</a> lt)</td></tr>
-<tr class="memdesc:a5503e1c85bd863121fbf34e24d37e6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>.  <a href="#a5503e1c85bd863121fbf34e24d37e6b9">More...</a><br/></td></tr>
-<tr class="separator:a5503e1c85bd863121fbf34e24d37e6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a892a1b1dc3878ef8a8add27c0709464f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a892a1b1dc3878ef8a8add27c0709464f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a892a1b1dc3878ef8a8add27c0709464f">PacketWriter</a> (const std::string &amp;file_name, const <a class="el" href="../../d5/d26/structTins_1_1DataLinkType.html">DataLinkType</a>&lt; T &gt; &amp;lt)</td></tr>
 <tr class="memdesc:a892a1b1dc3878ef8a8add27c0709464f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>.  <a href="#a892a1b1dc3878ef8a8add27c0709464f">More...</a><br/></td></tr>
 <tr class="separator:a892a1b1dc3878ef8a8add27c0709464f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5503e1c85bd863121fbf34e24d37e6b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a5503e1c85bd863121fbf34e24d37e6b9">PacketWriter</a> (const std::string &amp;file_name, <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">LinkType</a> lt)</td></tr>
+<tr class="memdesc:a5503e1c85bd863121fbf34e24d37e6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>.  <a href="#a5503e1c85bd863121fbf34e24d37e6b9">More...</a><br/></td></tr>
+<tr class="separator:a5503e1c85bd863121fbf34e24d37e6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18d509747ff68e53303ef37a251dcf3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#ad18d509747ff68e53303ef37a251dcf3">~PacketWriter</a> ()</td></tr>
 <tr class="separator:ad18d509747ff68e53303ef37a251dcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0cc82b7d66be629dae31d664a1aee3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e0cc82b7d66be629dae31d664a1aee3"></a>
@@ -142,7 +142,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Writes PDUs to a pcap format file. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<p>This class can be used to write packets into a <em>pcap</em> format file. It supports both writing packets one by one, or writing all packets in a range (provided by iterators), so you can use it to dump all packets in a vector.</p>
+<p>Since you might use both <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> objects and pointers to them, both the <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a8e0cc82b7d66be629dae31d664a1aee3" title="Writes a PDU to this file. ">PacketWriter::write</a> overload that takes a single object or the one that takes an iterator range accept a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> reference type as well as any type that can be dereferenced until a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> type is found. This means you can use both raw and smart pointers.</p>
+<p>For example:</p>
+<div class="fragment"><div class="line"><span class="comment">// Differents types holding PDUs</span></div>
+<div class="line">EthernetII object;</div>
+<div class="line">std::shared_ptr&lt;PDU&gt; smart_ptr = ...;</div>
+<div class="line">std::vector&lt;std::shared_ptr&lt;PDU&gt;&gt; vt = ....;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// The writer we&#39;ll use</span></div>
+<div class="line"><a class="code" href="../../da/d6d/classTins_1_1PacketWriter.html#a892a1b1dc3878ef8a8add27c0709464f">PacketWriter</a> writer(<span class="stringliteral">&quot;/tmp/file.pcap&quot;</span>, DataLinkType&lt;EthernetII&gt;());</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Now write all of them</span></div>
+<div class="line">writer.write(<span class="keywordtype">object</span>);</div>
+<div class="line">writer.write(smart_ptr);</div>
+<div class="line">writer.write(vt.begin(), vt.end());</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a42cccda42b3b89d2c87a0db54416eb38"></a>
 <div class="memitem">
 <div class="memproto">
@@ -153,48 +168,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
       </table>
 </div><div class="memdoc">
 
-<p>The type of PDUs that will be written to this file. </p>
+<p>The type of PDUs that will be written to this file (deprecated). </p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use <a class="el" href="../../d5/d26/structTins_1_1DataLinkType.html" title="Maps a libtins link layer PDU to a libpcap data link identifier. ">DataLinkType</a> instead of this enum.</dd></dl>
 <p>This flag should match the type of the lowest layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> to be written. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a5503e1c85bd863121fbf34e24d37e6b9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Tins::PacketWriter::PacketWriter </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>file_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">LinkType</a>&#160;</td>
-          <td class="paramname"><em>lt</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file_name</td><td>The file in which to store the written PDUs. </td></tr>
-    <tr><td class="paramname">lt</td><td>The link type which will be written to this file. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38" title="The type of PDUs that will be written to this file. ">LinkType</a>. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a892a1b1dc3878ef8a8add27c0709464f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -231,9 +211,9 @@ template&lt;typename T &gt; </div>
 
 <p>Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>. </p>
 <p>This method takes a <a class="el" href="../../d5/d26/structTins_1_1DataLinkType.html" title="Maps a libtins link layer PDU to a libpcap data link identifier. ">DataLinkType</a>, which indicates the link layer protocol that will be used on the packets to write.</p>
-<p>For example, you can write packets that contain an <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Class representing an Ethernet II PDU. ">EthernetII</a> link layer type by doing:</p>
+<p>For example, you can write packets that contain an <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a> link layer type by doing:</p>
 <div class="fragment"><div class="line"><span class="comment">// Construct a PacketWriter</span></div>
-<div class="line"><a class="code" href="../../da/d6d/classTins_1_1PacketWriter.html#a5503e1c85bd863121fbf34e24d37e6b9">PacketWriter</a> writer(<span class="stringliteral">&quot;/tmp/test.pcap&quot;</span>, DataLinkType&lt;EthernetII&gt;());</div>
+<div class="line"><a class="code" href="../../da/d6d/classTins_1_1PacketWriter.html#a892a1b1dc3878ef8a8add27c0709464f">PacketWriter</a> writer(<span class="stringliteral">&quot;/tmp/test.pcap&quot;</span>, DataLinkType&lt;EthernetII&gt;());</div>
 <div class="line"><span class="comment">// Write some packet</span></div>
 <div class="line">writer.write(packet);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -244,6 +224,43 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section see"><dt>See Also</dt><dd>PcapIdentifier. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5503e1c85bd863121fbf34e24d37e6b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tins::PacketWriter::PacketWriter </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">LinkType</a>&#160;</td>
+          <td class="paramname"><em>lt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>. </p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use the other constructor, which takes a <a class="el" href="../../d5/d26/structTins_1_1DataLinkType.html" title="Maps a libtins link layer PDU to a libpcap data link identifier. ">DataLinkType</a>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td>The file in which to store the written PDUs. </td></tr>
+    <tr><td class="paramname">lt</td><td>The link type which will be written to this file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38" title="The type of PDUs that will be written to this file (deprecated). ">LinkType</a>. </dd></dl>
 
 </div>
 </div>
@@ -339,13 +356,13 @@ template&lt;typename ForwardIterator &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="../../d3/dba/packet__writer_8h_source.html">packet_writer.h</a></li>
-<li>src/packet_writer.cpp</li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../d3/dba/packet__writer_8h_source.html">packet_writer.h</a></li>
+<li>/home/matias/Projects/libtins/code/src/packet_writer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

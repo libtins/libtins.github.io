@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>libtins: include/offline_packet_filter.h Source File</title>
+<title>libtins: /home/matias/Projects/libtins/code/include/offline_packet_filter.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -128,48 +128,48 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>PDU;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a> {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">   63</a></span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a>(<span class="keyword">const</span> std::string&amp; filter, <span class="keyword">const</span> <a class="code" href="../../d5/d26/structTins_1_1DataLinkType.html">DataLinkType&lt;T&gt;</a>&amp; lt,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> snap_len = 65535)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    : string_filter(filter)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        init(filter, lt.get_type(), snap_len);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a>(<span class="keyword">const</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a>&amp; other);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a>&amp; <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#afb4cfad5f9d4471518f5b545efb94d5f">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a>&amp; other);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a2dc640f3c8bd7b35a97ac9341a14c8a6">~OfflinePacketFilter</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a864d9d69b33f7f7d472c7bf83f403060">matches_filter</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a864d9d69b33f7f7d472c7bf83f403060">matches_filter</a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> init(<span class="keyword">const</span> std::string&amp; pcap_filter, <span class="keywordtype">int</span> link_type, </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> snap_len);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    pcap_t* handle;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">mutable</span> bpf_program filter;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    std::string string_filter;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;} <span class="comment">// Tins</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif // TINS_OFFLINE_PACKET_FILTER_H</span></div>
-<div class="ttc" id="structTins_1_1DataLinkType_html"><div class="ttname"><a href="../../d5/d26/structTins_1_1DataLinkType.html">Tins::DataLinkType</a></div><div class="ttdoc">Maps a libtins link layer PDU to a libpcap data link identifier. </div><div class="ttdef"><b>Definition:</b> data_link_type.h:52</div></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">   87</a></span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a>(<span class="keyword">const</span> std::string&amp; filter, <span class="keyword">const</span> <a class="code" href="../../d5/d26/structTins_1_1DataLinkType.html">DataLinkType&lt;T&gt;</a>&amp; lt,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> snap_len = 65535)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    : string_filter(filter)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        init(filter, lt.get_type(), snap_len);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a>(<span class="keyword">const</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a>&amp; other);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a>&amp; <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#afb4cfad5f9d4471518f5b545efb94d5f">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">OfflinePacketFilter</a>&amp; other);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a2dc640f3c8bd7b35a97ac9341a14c8a6">~OfflinePacketFilter</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a864d9d69b33f7f7d472c7bf83f403060">matches_filter</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;     <span class="keywordtype">bool</span> <a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a864d9d69b33f7f7d472c7bf83f403060">matches_filter</a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> init(<span class="keyword">const</span> std::string&amp; pcap_filter, <span class="keywordtype">int</span> link_type, </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> snap_len);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    pcap_t* handle;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">mutable</span> bpf_program filter;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    std::string string_filter;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif // TINS_OFFLINE_PACKET_FILTER_H</span></div>
+<div class="ttc" id="structTins_1_1DataLinkType_html"><div class="ttname"><a href="../../d5/d26/structTins_1_1DataLinkType.html">Tins::DataLinkType</a></div><div class="ttdoc">Maps a libtins link layer PDU to a libpcap data link identifier. </div><div class="ttdef"><b>Definition:</b> data_link_type.h:58</div></div>
 <div class="ttc" id="classTins_1_1OfflinePacketFilter_html_a2dc640f3c8bd7b35a97ac9341a14c8a6"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a2dc640f3c8bd7b35a97ac9341a14c8a6">Tins::OfflinePacketFilter::~OfflinePacketFilter</a></div><div class="ttdeci">~OfflinePacketFilter()</div><div class="ttdef"><b>Definition:</b> offline_packet_filter.cpp:48</div></div>
-<div class="ttc" id="classTins_1_1OfflinePacketFilter_html"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">Tins::OfflinePacketFilter</a></div><div class="ttdoc">Wraps a pcap filter and matches it against a packet or buffer. </div><div class="ttdef"><b>Definition:</b> offline_packet_filter.h:53</div></div>
+<div class="ttc" id="classTins_1_1OfflinePacketFilter_html"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html">Tins::OfflinePacketFilter</a></div><div class="ttdoc">Wraps a pcap filter and matches it against a packet or buffer. </div><div class="ttdef"><b>Definition:</b> offline_packet_filter.h:77</div></div>
 <div class="ttc" id="classTins_1_1OfflinePacketFilter_html_a864d9d69b33f7f7d472c7bf83f403060"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a864d9d69b33f7f7d472c7bf83f403060">Tins::OfflinePacketFilter::matches_filter</a></div><div class="ttdeci">bool matches_filter(const uint8_t *buffer, uint32_t total_sz) const </div><div class="ttdoc">Applies the compiled filter on the provided buffer. </div><div class="ttdef"><b>Definition:</b> offline_packet_filter.cpp:67</div></div>
 <div class="ttc" id="classTins_1_1OfflinePacketFilter_html_afb4cfad5f9d4471518f5b545efb94d5f"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#afb4cfad5f9d4471518f5b545efb94d5f">Tins::OfflinePacketFilter::operator=</a></div><div class="ttdeci">OfflinePacketFilter &amp; operator=(const OfflinePacketFilter &amp;other)</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> offline_packet_filter.cpp:41</div></div>
-<div class="ttc" id="classTins_1_1OfflinePacketFilter_html_a48e28ce15f7c0d0b1a9d2ca470b584e7"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">Tins::OfflinePacketFilter::OfflinePacketFilter</a></div><div class="ttdeci">OfflinePacketFilter(const std::string &amp;filter, const DataLinkType&lt; T &gt; &amp;lt, unsigned int snap_len=65535)</div><div class="ttdef"><b>Definition:</b> offline_packet_filter.h:63</div></div>
-<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:61</div></div>
+<div class="ttc" id="classTins_1_1OfflinePacketFilter_html_a48e28ce15f7c0d0b1a9d2ca470b584e7"><div class="ttname"><a href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">Tins::OfflinePacketFilter::OfflinePacketFilter</a></div><div class="ttdeci">OfflinePacketFilter(const std::string &amp;filter, const DataLinkType&lt; T &gt; &amp;lt, unsigned int snap_len=65535)</div><div class="ttdef"><b>Definition:</b> offline_packet_filter.h:87</div></div>
+<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:63</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:46 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -124,8 +124,29 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wraps a pcap filter and matches it against a packet or buffer. </p>
 <p>This is a thin wrapper over <em>pcap_offline_filter</em>. You can use it to perform packet filtering outside of <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> instances.</p>
-<p>A potential use case would be if you are capturing packets that are sent from another host over <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a>. You would recieve <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> packets, then parse their content, and apply the <a class="el" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html" title="Wraps a pcap filter and matches it against a packet or buffer. ">OfflinePacketFilter</a> over the wrapped packet. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>A potential use case would be if you are capturing packets that are sent from another host over <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a>. You would recieve <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> packets, then parse their content, and apply the <a class="el" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html" title="Wraps a pcap filter and matches it against a packet or buffer. ">OfflinePacketFilter</a> over the wrapped packet. For example:</p>
+<div class="fragment"><div class="line"><span class="comment">// Assume we get an UDP packet from somewhere.</span></div>
+<div class="line"><span class="comment">// Inside the payload, there will be a complete packet</span></div>
+<div class="line"><span class="comment">// including its link layer protocol.</span></div>
+<div class="line">UDP udp = get_packet();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Create the filter. We&#39;ll be expecting Ethernet packets.</span></div>
+<div class="line"><a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a> filter(<span class="stringliteral">&quot;ip and port 80&quot;</span>, DataLinkLayer&lt;EthernetII&gt;());</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// We can use this directly over the inner PDU (assuming it has one)</span></div>
+<div class="line"><span class="comment">// See the notes on the efficiency of doing it this way.</span></div>
+<div class="line"><span class="keywordflow">if</span>(filter.matches_filter(*udp.inner_pdu())) {</div>
+<div class="line">    <span class="comment">// Matches!</span></div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// We can also use the payload. This version it faster and should</span></div>
+<div class="line"><span class="comment">// be preferred over the one above</span></div>
+<div class="line"><span class="keyword">const</span> RawPDU&amp; raw = udp.rfind_pdu&lt;RawPDU&gt;();</div>
+<div class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; payload = raw.payload();</div>
+<div class="line"><span class="keywordflow">if</span>(filter.matches_filter(payload.data(), payload.size())) {</div>
+<div class="line">    <span class="comment">// Matches!</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a48e28ce15f7c0d0b1a9d2ca470b584e7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -308,13 +329,13 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="../../d2/df7/offline__packet__filter_8h_source.html">offline_packet_filter.h</a></li>
-<li>src/offline_packet_filter.cpp</li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../d2/df7/offline__packet__filter_8h_source.html">offline_packet_filter.h</a></li>
+<li>/home/matias/Projects/libtins/code/src/offline_packet_filter.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

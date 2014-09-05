@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>libtins: include/snap.h Source File</title>
+<title>libtins: /home/matias/Projects/libtins/code/include/snap.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -130,88 +130,88 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html">   48</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a> : <span class="keyword">public</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">   53</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">pdu_flag</a> = PDU::SNAP;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">SNAP</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">SNAP</a>(<span class="keyword">const</span> uint8_t *buffer, uint32_t total_sz);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">/* Setters */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">control</a>(uint8_t new_control);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">org_code</a>(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;24&gt;</a> new_org);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">eth_type</a>(uint16_t new_eth);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">/* Getters */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">  102</a></span>&#160;        uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">dsap</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _snap.dsap; }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">  108</a></span>&#160;        uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">ssap</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _snap.ssap; }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">  114</a></span>&#160;        uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">control</a>()<span class="keyword"> const </span>{ </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">            #if TINS_IS_LITTLE_ENDIAN</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> (_snap.control_org) &amp; 0xff; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">            #else</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> (_snap.control_org &gt;&gt; 24) &amp; 0xff; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">            #endif</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor"></span>        }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">  126</a></span>&#160;        <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;24&gt;</a> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">org_code</a>()<span class="keyword"> const </span>{ </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">            #if TINS_IS_LITTLE_ENDIAN</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> Endian::be_to_host&lt;uint32_t&gt;(_snap.control_org &amp; 0xffffff00);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">            #else</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> _snap.control_org &amp; 0xffffff;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">            #endif</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor"></span>        }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">  138</a></span>&#160;        uint16_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">eth_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Endian::be_to_host(_snap.eth_type); } </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        uint32_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afc1549bfcfc92f7540c975e1a64d096f">header_size</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        </div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a6d8bf50f7a35972cafc9076081db9cc6">  152</a></span>&#160;        <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a6d8bf50f7a35972cafc9076081db9cc6">pdu_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">pdu_flag</a>; }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a52c7ab71516f4a29e751c40ab3101ec5">  159</a></span>&#160;        <a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a> *<a class="code" href="../../da/d52/classTins_1_1SNAP.html#a52c7ab71516f4a29e751c40ab3101ec5">clone</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">SNAP</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }    </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        TINS_BEGIN_PACK</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keyword">struct </span>snaphdr {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">dsap</a>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">ssap</a>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            uint32_t control_org;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            uint16_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">eth_type</a>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        } TINS_END_PACK;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a13b0f3ad713204f7aae5b967e91dc0ca">PDU</a> *parent);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        snaphdr _snap;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    };</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#endif // TINS_SNAP_H</span></div>
-<div class="ttc" id="classTins_1_1SNAP_html_a0ccc786855764e1ce625da46b25a0bdf"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">Tins::SNAP::ssap</a></div><div class="ttdeci">uint8_t ssap() const </div><div class="ttdoc">Getter for the SSAP field. </div><div class="ttdef"><b>Definition:</b> snap.h:108</div></div>
-<div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:81</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_a7b0491b58ee71d8daf6825f0308d0106"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">Tins::SNAP::org_code</a></div><div class="ttdeci">small_uint&lt; 24 &gt; org_code() const </div><div class="ttdoc">Getter for the Organization Code field. </div><div class="ttdef"><b>Definition:</b> snap.h:126</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_abf796f7ec8c9409d635ebd819c33f35d"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">Tins::SNAP::control</a></div><div class="ttdeci">uint8_t control() const </div><div class="ttdoc">Getter for the Control field. </div><div class="ttdef"><b>Definition:</b> snap.h:114</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_a6d8bf50f7a35972cafc9076081db9cc6"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a6d8bf50f7a35972cafc9076081db9cc6">Tins::SNAP::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> snap.h:152</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_a52c7ab71516f4a29e751c40ab3101ec5"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a52c7ab71516f4a29e751c40ab3101ec5">Tins::SNAP::clone</a></div><div class="ttdeci">SNAP * clone() const </div><div class="ttdoc">Clones this PDU. </div><div class="ttdef"><b>Definition:</b> snap.h:159</div></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html">   49</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a> : <span class="keyword">public</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">   54</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">pdu_flag</a> = PDU::SNAP;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">SNAP</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">SNAP</a>(<span class="keyword">const</span> uint8_t *buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">/* Setters */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">control</a>(uint8_t new_control);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">org_code</a>(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;24&gt;</a> new_org);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">eth_type</a>(uint16_t new_eth);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">/* Getters */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">  103</a></span>&#160;        uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">dsap</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _snap.dsap; }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">  109</a></span>&#160;        uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">ssap</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _snap.ssap; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">  115</a></span>&#160;        uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">control</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">            #if TINS_IS_LITTLE_ENDIAN</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> (_snap.control_org) &amp; 0xff; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">            #else</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> (_snap.control_org &gt;&gt; 24) &amp; 0xff; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor"></span>        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">  127</a></span>&#160;        <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;24&gt;</a> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">org_code</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">            #if TINS_IS_LITTLE_ENDIAN</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> Endian::be_to_host&lt;uint32_t&gt;(_snap.control_org &amp; 0xffffff00);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">            #else</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor"></span>            <span class="keywordflow">return</span> _snap.control_org &amp; 0xffffff;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span>        }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">  139</a></span>&#160;        uint16_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">eth_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Endian::be_to_host(_snap.eth_type); } </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        uint32_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afc1549bfcfc92f7540c975e1a64d096f">header_size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a6d8bf50f7a35972cafc9076081db9cc6">  153</a></span>&#160;        <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a6d8bf50f7a35972cafc9076081db9cc6">pdu_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">pdu_flag</a>; }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="../../da/d52/classTins_1_1SNAP.html#a52c7ab71516f4a29e751c40ab3101ec5">  160</a></span>&#160;        <a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a> *<a class="code" href="../../da/d52/classTins_1_1SNAP.html#a52c7ab71516f4a29e751c40ab3101ec5">clone</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">SNAP</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }    </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        TINS_BEGIN_PACK</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">struct </span>snaphdr {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">dsap</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            uint8_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">ssap</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            uint32_t control_org;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            uint16_t <a class="code" href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">eth_type</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        } TINS_END_PACK;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a13b0f3ad713204f7aae5b967e91dc0ca">PDU</a> *parent);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        snaphdr _snap;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    };</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif // TINS_SNAP_H</span></div>
+<div class="ttc" id="classTins_1_1SNAP_html_a0ccc786855764e1ce625da46b25a0bdf"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a0ccc786855764e1ce625da46b25a0bdf">Tins::SNAP::ssap</a></div><div class="ttdeci">uint8_t ssap() const </div><div class="ttdoc">Getter for the SSAP field. </div><div class="ttdef"><b>Definition:</b> snap.h:109</div></div>
+<div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:83</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_a7b0491b58ee71d8daf6825f0308d0106"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a7b0491b58ee71d8daf6825f0308d0106">Tins::SNAP::org_code</a></div><div class="ttdeci">small_uint&lt; 24 &gt; org_code() const </div><div class="ttdoc">Getter for the Organization Code field. </div><div class="ttdef"><b>Definition:</b> snap.h:127</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_abf796f7ec8c9409d635ebd819c33f35d"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d">Tins::SNAP::control</a></div><div class="ttdeci">uint8_t control() const </div><div class="ttdoc">Getter for the Control field. </div><div class="ttdef"><b>Definition:</b> snap.h:115</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_a6d8bf50f7a35972cafc9076081db9cc6"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a6d8bf50f7a35972cafc9076081db9cc6">Tins::SNAP::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> snap.h:153</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_a52c7ab71516f4a29e751c40ab3101ec5"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a52c7ab71516f4a29e751c40ab3101ec5">Tins::SNAP::clone</a></div><div class="ttdeci">SNAP * clone() const </div><div class="ttdoc">Clones this PDU. </div><div class="ttdef"><b>Definition:</b> snap.h:160</div></div>
 <div class="ttc" id="classTins_1_1small__uint_html"><div class="ttname"><a href="../../d0/df2/classTins_1_1small__uint.html">Tins::small_uint&lt; 24 &gt;</a></div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_afe4165645a236503ea1297862f363573"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">Tins::SNAP::eth_type</a></div><div class="ttdeci">uint16_t eth_type() const </div><div class="ttdoc">Getter for the Ethernet Type field. </div><div class="ttdef"><b>Definition:</b> snap.h:138</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_afe4165645a236503ea1297862f363573"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#afe4165645a236503ea1297862f363573">Tins::SNAP::eth_type</a></div><div class="ttdeci">uint16_t eth_type() const </div><div class="ttdoc">Getter for the Ethernet Type field. </div><div class="ttdef"><b>Definition:</b> snap.h:139</div></div>
 <div class="ttc" id="classTins_1_1SNAP_html_afc1549bfcfc92f7540c975e1a64d096f"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#afc1549bfcfc92f7540c975e1a64d096f">Tins::SNAP::header_size</a></div><div class="ttdeci">uint32_t header_size() const </div><div class="ttdoc">Returns the SNAP frame&#39;s header length. </div><div class="ttdef"><b>Definition:</b> snap.cpp:92</div></div>
 <div class="ttc" id="classTins_1_1PDU_html_a13b0f3ad713204f7aae5b967e91dc0ca"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a13b0f3ad713204f7aae5b967e91dc0ca">Tins::PDU::PDU</a></div><div class="ttdeci">PDU()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> pdu.cpp:39</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_aa73d4257a02a75cc79f4eb0d597f0103"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">Tins::SNAP::dsap</a></div><div class="ttdeci">uint8_t dsap() const </div><div class="ttdoc">Getter for the DSAP field. </div><div class="ttdef"><b>Definition:</b> snap.h:102</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html">Tins::SNAP</a></div><div class="ttdoc">Class representing a SNAP frame. </div><div class="ttdef"><b>Definition:</b> snap.h:48</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_aa73d4257a02a75cc79f4eb0d597f0103"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#aa73d4257a02a75cc79f4eb0d597f0103">Tins::SNAP::dsap</a></div><div class="ttdeci">uint8_t dsap() const </div><div class="ttdoc">Getter for the DSAP field. </div><div class="ttdef"><b>Definition:</b> snap.h:103</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html">Tins::SNAP</a></div><div class="ttdoc">Represents a SNAP frame. </div><div class="ttdef"><b>Definition:</b> snap.h:49</div></div>
 <div class="ttc" id="classTins_1_1SNAP_html_a0ee7af0738dac11707e1aceda12a0543"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a0ee7af0738dac11707e1aceda12a0543">Tins::SNAP::SNAP</a></div><div class="ttdeci">SNAP()</div><div class="ttdoc">Creates an instance of SNAP This constructor sets the dsap and ssap fields to 0xaa, and the id field to 3. </div><div class="ttdef"><b>Definition:</b> snap.cpp:47</div></div>
-<div class="ttc" id="classTins_1_1SNAP_html_a4e8c2cbb0431dbb43627a02b47f7f821"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">Tins::SNAP::pdu_flag</a></div><div class="ttdeci">static const PDU::PDUType pdu_flag</div><div class="ttdoc">This PDU&#39;s flag. </div><div class="ttdef"><b>Definition:</b> snap.h:53</div></div>
-<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:61</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html_a4e8c2cbb0431dbb43627a02b47f7f821"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html#a4e8c2cbb0431dbb43627a02b47f7f821">Tins::SNAP::pdu_flag</a></div><div class="ttdeci">static const PDU::PDUType pdu_flag</div><div class="ttdoc">This PDU&#39;s flag. </div><div class="ttdef"><b>Definition:</b> snap.h:54</div></div>
+<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:63</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:46 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

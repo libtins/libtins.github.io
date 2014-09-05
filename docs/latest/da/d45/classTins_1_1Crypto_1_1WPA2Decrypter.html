@@ -221,19 +221,19 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Decrypts the provided <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<p>A <a class="el" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is looked up inside the provided <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> chain. If no such <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> exists or no PSK was associated with the SSID broadcasted by the <a class="el" href="../../d8/df1/classTins_1_1Dot11.html" title="Class representing an 802.11 frame. ">Dot11</a> packet's BSSID, or no <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html" title="Class that represents the EAP encapsulation over LAN. ">EAPOL</a> handshake was captured for the client involved in the communication, then the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is left intact.</p>
+<p>A <a class="el" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is looked up inside the provided <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> chain. If no such <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> exists or no PSK was associated with the SSID broadcasted by the <a class="el" href="../../d8/df1/classTins_1_1Dot11.html" title="Class representing an 802.11 frame. ">Dot11</a> packet's BSSID, or no <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html" title="Represents the EAP encapsulation over LAN. ">EAPOL</a> handshake was captured for the client involved in the communication, then the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is left intact.</p>
 <p>Otherwise, the packet is decrypted using the generated PTK. If the resulting MIC is invalid, then the packet is left intact.</p>
 <dl class="section return"><dt>Returns</dt><dd>false if no decryption was performed, or the decryption failed, true otherwise. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="../../da/da0/crypto_8h_source.html">crypto.h</a></li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../da/da0/crypto_8h_source.html">crypto.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

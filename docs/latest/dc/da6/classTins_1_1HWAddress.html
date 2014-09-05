@@ -204,7 +204,16 @@ Friends</h2></td></tr>
 class Tins::HWAddress&lt; n, Storage &gt;</h3>
 
 <p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a hardware address. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<p>This class represents a hardware (MAC) address. It can be constructed from it's string representation and you can iterate over the bytes that compose it.</p>
+<p>For example:</p>
+<div class="fragment"><div class="line"><span class="comment">// Construct it from a string.</span></div>
+<div class="line">HWAddress&lt;6&gt; address(<span class="stringliteral">&quot;00:01:fa:9e:1a:cd&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Iterate over its bytes.</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> element : address) {</div>
+<div class="line">    <span class="comment">// element will be each of the bytes(\x00, \x01, \xfa, etc)</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a654d188640f10fc94662ec321fbdcf4a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +257,8 @@ template&lt;size_t n, typename Storage = uint8_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Constructor from a const storage_type*. </p>
-<p>If no pointer or a null pointer is provided, the address is initialized to 00:00:..... This constructor is very usefull when passing zero initialized addresses as arguments to other functions. You can use a literal 0, which will be implicitly converted to the empty address.</p>
+<p>If no pointer or a null pointer is provided, the address is initialized to 00:00:00:00:00:00.</p>
+<p>This constructor is very usefull when passing zero initialized addresses as arguments to other functions. You can use a literal 0, which will be implicitly converted to the empty address.</p>
 <p>If a pointer is provided, address_size storage_type elements are copied from the pointer, into the internal address representation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -769,12 +779,12 @@ template&lt;size_t n, typename Storage = uint8_t&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="../../d7/d05/hw__address_8h_source.html">hw_address.h</a></li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../d7/d05/hw__address_8h_source.html">hw_address.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

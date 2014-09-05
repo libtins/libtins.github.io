@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>libtins: include/ppi.h Source File</title>
+<title>libtins: /home/matias/Projects/libtins/code/include/ppi.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -126,69 +126,69 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;small_uint.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>Tins {</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d25/classTins_1_1PPI.html">PPI</a> : <span class="keyword">public</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">   50</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">pdu_flag</a> = PDU::PPI;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../de/d25/classTins_1_1PPI.html#a3cdf4d09454fee9f1c0044d26aaed93c">PPI</a>(<span class="keyword">const</span> uint8_t *buffer, uint32_t total_sz);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Getters</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">   71</a></span>&#160;    uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">version</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">return</span> _header.version;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">   79</a></span>&#160;    uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">flags</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> _header.flags;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">   87</a></span>&#160;    uint16_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">length</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> Endian::le_to_host(_header.length);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">   95</a></span>&#160;    uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">dlt</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> Endian::le_to_host(_header.dlt);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af07caabefcc22d4fcf3ebc318d7d6ce2">header_size</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">  110</a></span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">pdu_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">pdu_flag</a>; }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a643009834afa26bbbfdbbcca8bc8e154">  117</a></span>&#160;    <a class="code" href="../../de/d25/classTins_1_1PPI.html">PPI</a> *<a class="code" href="../../de/d25/classTins_1_1PPI.html#a643009834afa26bbbfdbbcca8bc8e154">clone</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a3cdf4d09454fee9f1c0044d26aaed93c">PPI</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">struct </span>header {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">version</a>, <a class="code" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">flags</a>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        uint16_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">length</a>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">dlt</a>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    header _header;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">byte_array</a> _data;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif // TINS_PPI_H</span></div>
-<div class="ttc" id="classTins_1_1PPI_html_a8e819a776e16b04ef30b1eb4fdd068be"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">Tins::PPI::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> ppi.h:110</div></div>
-<div class="ttc" id="classTins_1_1PPI_html_a45f8cbc65c228b7083972056f901f678"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">Tins::PPI::flags</a></div><div class="ttdeci">uint8_t flags() const </div><div class="ttdoc">Getter for the flags field. </div><div class="ttdef"><b>Definition:</b> ppi.h:79</div></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d25/classTins_1_1PPI.html">PPI</a> : <span class="keyword">public</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">   51</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">pdu_flag</a> = PDU::PPI;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../de/d25/classTins_1_1PPI.html#a3cdf4d09454fee9f1c0044d26aaed93c">PPI</a>(<span class="keyword">const</span> uint8_t *buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Getters</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">   72</a></span>&#160;    uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">version</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> _header.version;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">   80</a></span>&#160;    uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">flags</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> _header.flags;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">   88</a></span>&#160;    uint16_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">length</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> Endian::le_to_host(_header.length);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">   96</a></span>&#160;    uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">dlt</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> Endian::le_to_host(_header.dlt);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af07caabefcc22d4fcf3ebc318d7d6ce2">header_size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">  111</a></span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">pdu_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">pdu_flag</a>; }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../de/d25/classTins_1_1PPI.html#a643009834afa26bbbfdbbcca8bc8e154">  118</a></span>&#160;    <a class="code" href="../../de/d25/classTins_1_1PPI.html">PPI</a> *<a class="code" href="../../de/d25/classTins_1_1PPI.html#a643009834afa26bbbfdbbcca8bc8e154">clone</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../de/d25/classTins_1_1PPI.html#a3cdf4d09454fee9f1c0044d26aaed93c">PPI</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">struct </span>header {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">version</a>, <a class="code" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">flags</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        uint16_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">length</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">dlt</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    };</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    header _header;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">byte_array</a> _data;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif // TINS_PPI_H</span></div>
+<div class="ttc" id="classTins_1_1PPI_html_a8e819a776e16b04ef30b1eb4fdd068be"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">Tins::PPI::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> ppi.h:111</div></div>
+<div class="ttc" id="classTins_1_1PPI_html_a45f8cbc65c228b7083972056f901f678"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">Tins::PPI::flags</a></div><div class="ttdeci">uint8_t flags() const </div><div class="ttdoc">Getter for the flags field. </div><div class="ttdef"><b>Definition:</b> ppi.h:80</div></div>
 <div class="ttc" id="namespaceTins_html_a0e7b719fe92db144ba9273382c956d40"><div class="ttname"><a href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">Tins::byte_array</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; byte_array</div><div class="ttdef"><b>Definition:</b> pdu.h:45</div></div>
-<div class="ttc" id="classTins_1_1PPI_html_a643009834afa26bbbfdbbcca8bc8e154"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a643009834afa26bbbfdbbcca8bc8e154">Tins::PPI::clone</a></div><div class="ttdeci">PPI * clone() const </div><div class="ttdoc">Clones this PDU. </div><div class="ttdef"><b>Definition:</b> ppi.h:117</div></div>
-<div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:81</div></div>
-<div class="ttc" id="classTins_1_1PPI_html"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html">Tins::PPI</a></div><div class="ttdoc">Represents a Per-Packet Information PDU. </div><div class="ttdef"><b>Definition:</b> ppi.h:45</div></div>
+<div class="ttc" id="classTins_1_1PPI_html_a643009834afa26bbbfdbbcca8bc8e154"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a643009834afa26bbbfdbbcca8bc8e154">Tins::PPI::clone</a></div><div class="ttdeci">PPI * clone() const </div><div class="ttdoc">Clones this PDU. </div><div class="ttdef"><b>Definition:</b> ppi.h:118</div></div>
+<div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:83</div></div>
+<div class="ttc" id="classTins_1_1PPI_html"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html">Tins::PPI</a></div><div class="ttdoc">Represents a Per-Packet Information PDU. </div><div class="ttdef"><b>Definition:</b> ppi.h:46</div></div>
 <div class="ttc" id="classTins_1_1PPI_html_af07caabefcc22d4fcf3ebc318d7d6ce2"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#af07caabefcc22d4fcf3ebc318d7d6ce2">Tins::PPI::header_size</a></div><div class="ttdeci">uint32_t header_size() const </div><div class="ttdoc">Returns the header size. </div><div class="ttdef"><b>Definition:</b> ppi.cpp:94</div></div>
-<div class="ttc" id="classTins_1_1PPI_html_ab28961435a0087023c5734c7b0d6d57b"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">Tins::PPI::dlt</a></div><div class="ttdeci">uint32_t dlt() const </div><div class="ttdoc">Getter for the Data Link Type field. </div><div class="ttdef"><b>Definition:</b> ppi.h:95</div></div>
-<div class="ttc" id="classTins_1_1PPI_html_a9947feab334fbefac43285fd956f8dd6"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">Tins::PPI::pdu_flag</a></div><div class="ttdeci">static const PDU::PDUType pdu_flag</div><div class="ttdef"><b>Definition:</b> ppi.h:50</div></div>
-<div class="ttc" id="classTins_1_1PPI_html_af520c570268edb97edbe5c7df7098ba0"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">Tins::PPI::length</a></div><div class="ttdeci">uint16_t length() const </div><div class="ttdoc">Getter for the length field. </div><div class="ttdef"><b>Definition:</b> ppi.h:87</div></div>
-<div class="ttc" id="classTins_1_1PPI_html_ac946add5d209e45966b8ab626254aa81"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">Tins::PPI::version</a></div><div class="ttdeci">uint8_t version() const </div><div class="ttdoc">Getter for the version field. </div><div class="ttdef"><b>Definition:</b> ppi.h:71</div></div>
-<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:61</div></div>
+<div class="ttc" id="classTins_1_1PPI_html_ab28961435a0087023c5734c7b0d6d57b"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">Tins::PPI::dlt</a></div><div class="ttdeci">uint32_t dlt() const </div><div class="ttdoc">Getter for the Data Link Type field. </div><div class="ttdef"><b>Definition:</b> ppi.h:96</div></div>
+<div class="ttc" id="classTins_1_1PPI_html_a9947feab334fbefac43285fd956f8dd6"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a9947feab334fbefac43285fd956f8dd6">Tins::PPI::pdu_flag</a></div><div class="ttdeci">static const PDU::PDUType pdu_flag</div><div class="ttdef"><b>Definition:</b> ppi.h:51</div></div>
+<div class="ttc" id="classTins_1_1PPI_html_af520c570268edb97edbe5c7df7098ba0"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">Tins::PPI::length</a></div><div class="ttdeci">uint16_t length() const </div><div class="ttdoc">Getter for the length field. </div><div class="ttdef"><b>Definition:</b> ppi.h:88</div></div>
+<div class="ttc" id="classTins_1_1PPI_html_ac946add5d209e45966b8ab626254aa81"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">Tins::PPI::version</a></div><div class="ttdeci">uint8_t version() const </div><div class="ttdoc">Getter for the version field. </div><div class="ttdef"><b>Definition:</b> ppi.h:72</div></div>
+<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:63</div></div>
 <div class="ttc" id="classTins_1_1PPI_html_a3cdf4d09454fee9f1c0044d26aaed93c"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a3cdf4d09454fee9f1c0044d26aaed93c">Tins::PPI::PPI</a></div><div class="ttdeci">PPI(const uint8_t *buffer, uint32_t total_sz)</div><div class="ttdoc">Constructs an PPI object from a buffer and adds all identifiable PDUs found in the buffer as children...</div><div class="ttdef"><b>Definition:</b> ppi.cpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:46 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

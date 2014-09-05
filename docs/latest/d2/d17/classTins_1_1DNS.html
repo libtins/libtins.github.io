@@ -507,7 +507,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<p>This class represents the <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>, and allows easy access to queries and answer records.</p>
+<p>The <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is not parsed automatically while sniffing, so you will have to parse it manually from an <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> packet's payload, for example:</p>
+<div class="fragment"><div class="line"><span class="comment">// Assume we get an udp packet from somewhere.</span></div>
+<div class="line">UDP udp = get_udp_packet();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Now:</span></div>
+<div class="line"><span class="comment">// 1 - Get the RawPDU layer (contains the payload).</span></div>
+<div class="line"><span class="comment">// 2 - Construct a DNS object over its contents.</span></div>
+<div class="line"><a class="code" href="../../d2/d17/classTins_1_1DNS.html#a73d606185dd7a4ef95f32b98e22c6d66">DNS</a> dns = udp.rfind_pdu&lt;RawPDU&gt;().to&lt;DNS&gt;();</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Now use the DNS object!</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; query : dns.queries()) {</div>
+<div class="line">    <span class="comment">// Process a query</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a2f6553418a1f482f3647a14ccb7e5163"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1535,13 +1549,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="../../d5/d2e/dns_8h_source.html">dns.h</a></li>
-<li>src/dns.cpp</li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../d5/d2e/dns_8h_source.html">dns.h</a></li>
+<li>/home/matias/Projects/libtins/code/src/dns.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:46 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class representing an <a class="el" href="../../de/dcb/structTins_1_1Ethernet.html">Ethernet</a> II <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  
+<p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> an <a class="el" href="../../de/dcb/structTins_1_1Ethernet.html">Ethernet</a> II <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  
  <a href="../../df/dcb/classTins_1_1EthernetII.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../dd/df2/ethernetII_8h_source.html">ethernetII.h</a>&gt;</code></p>
@@ -201,7 +201,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:adf06dde2044087d3e3de77f4f28bfa4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an ethernet II <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#adf06dde2044087d3e3de77f4f28bfa4b">More...</a><br/></td></tr>
 <tr class="separator:adf06dde2044087d3e3de77f4f28bfa4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34e7ab706c719baad0a20f5debd21aa7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classTins_1_1EthernetII.html#a34e7ab706c719baad0a20f5debd21aa7">EthernetII</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
-<tr class="memdesc:a34e7ab706c719baad0a20f5debd21aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Class representing an Ethernet II PDU. ">EthernetII</a> object from a buffer and adds all identifiable PDUs found in the buffer as children of this one.  <a href="#a34e7ab706c719baad0a20f5debd21aa7">More...</a><br/></td></tr>
+<tr class="memdesc:a34e7ab706c719baad0a20f5debd21aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a> object from a buffer and adds all identifiable PDUs found in the buffer as children of this one.  <a href="#a34e7ab706c719baad0a20f5debd21aa7">More...</a><br/></td></tr>
 <tr class="separator:a34e7ab706c719baad0a20f5debd21aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a174254fe2257ef7584a02b597146cc89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dcb/classTins_1_1EthernetII.html#a78720557dd667068c367b97d0fcb37ed">address_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dcb/classTins_1_1EthernetII.html#a174254fe2257ef7584a02b597146cc89">dst_addr</a> () const </td></tr>
 <tr class="memdesc:a174254fe2257ef7584a02b597146cc89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the destination's hardware address.  <a href="#a174254fe2257ef7584a02b597146cc89">More...</a><br/></td></tr>
@@ -322,7 +322,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing an <a class="el" href="../../de/dcb/structTins_1_1Ethernet.html">Ethernet</a> II <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<div class="textblock"><p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> an <a class="el" href="../../de/dcb/structTins_1_1Ethernet.html">Ethernet</a> II <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adf06dde2044087d3e3de77f4f28bfa4b"></a>
 <div class="memitem">
@@ -383,9 +383,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Class representing an Ethernet II PDU. ">EthernetII</a> object from a buffer and adds all identifiable PDUs found in the buffer as children of this one. </p>
-<p>If the next <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is not recognized, then a <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html" title="Represents a PDU which holds raw data. ">RawPDU</a> is used.</p>
-<p>If there is not enough size for a <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Class representing an Ethernet II PDU. ">EthernetII</a> header in the buffer, a <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> exception is thrown.</p>
+<p>Constructs a <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a> object from a buffer and adds all identifiable PDUs found in the buffer as children of this one. </p>
+<p>If the next <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is not recognized, then a <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> is used.</p>
+<p>If there is not enough size for a <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a> header in the buffer, a <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> exception is thrown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>The buffer from which this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> will be constructed. </td></tr>
@@ -782,13 +782,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="../../dd/df2/ethernetII_8h_source.html">ethernetII.h</a></li>
-<li>src/ethernetII.cpp</li>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../dd/df2/ethernetII_8h_source.html">ethernetII.h</a></li>
+<li>/home/matias/Projects/libtins/code/src/ethernetII.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:47 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

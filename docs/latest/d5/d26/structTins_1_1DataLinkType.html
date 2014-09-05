@@ -102,14 +102,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 struct Tins::DataLinkType&lt; T &gt;</h3>
 
 <p>Maps a libtins link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> to a libpcap data link identifier. </p>
-<p>This should be instantiated with any object that represents a link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> (<a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Class representing an Ethernet II PDU. ">EthernetII</a>, <a class="el" href="../../d8/df1/classTins_1_1Dot11.html" title="Class representing an 802.11 frame. ">Dot11</a>, <a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html" title="Class that represents the IEEE 802.11 radio tap header. ">RadioTap</a>, etc) </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="../../df/d75/data__link__type_8h_source.html">data_link_type.h</a></li>
+<p>This is an empty class that should be instantiated with any object that represents a link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> (<a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a>, <a class="el" href="../../d8/df1/classTins_1_1Dot11.html" title="Class representing an 802.11 frame. ">Dot11</a>, <a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html" title="Class that represents the IEEE 802.11 radio tap header. ">RadioTap</a>, etc):</p>
+<div class="fragment"><div class="line"><span class="comment">// Instantiate it and pass it to PacketWriter&#39;s constructor.</span></div>
+<div class="line">PacketWriter writer(<span class="stringliteral">&quot;file.pcap&quot;</span>, DataLinkType&lt;RadioTap&gt;());</div>
+</div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../df/d75/data__link__type_8h_source.html">data_link_type.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2014 21:38:46 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 4 2014 23:04:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
