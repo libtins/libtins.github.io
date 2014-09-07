@@ -9,12 +9,12 @@ section: download
 <div id="section-listing">
     <ul>
         <li><a href="#download">Download</a></li>
-        <li><a href="#download-binary">Download binary distributions</a></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#compiling">Compiling libtins on <i>Linux/BSD/OSX</i></a></li>
-        <li><a href="#compiling-windows">Compiling libtins on <i>Windows</i></a></li>
-        <li><a href="#cross-compiling">Cross-compiling libtins</a></li>
-        <li><a href="#using">Using libtins</a></li>
+        <li><a href="#download-binary">Download binary/precompiled distributions</a></li>
+        <li><a href="#requirements">Compilation equirements</a></li>
+        <li><a href="#compiling">Compiling <i>libtins</i> on <i>Linux/BSD/OSX</i></a></li>
+        <li><a href="#compiling-windows">Compiling <i>libtins</i> on <i>Windows</i></a></li>
+        <li><a href="#cross-compiling">Cross-compiling <i>libtins</i></a></li>
+        <li><a href="#using">Using <i>libtins</i></a></li>
         <li><a href="#using-windows">Using <i>libtins</i> on <i>Windows</i></a></li>
     </ul>
 </div>
@@ -96,8 +96,14 @@ dpkg -i libtins1_1.1-1_amd64.deb
 </ul>
 </li>
 --->
-<h3 id="download-binary">Download binary distributions</h3>
+<h3 id="download-binary">Download binary/precompiled distributions</h3>
 
+<p>
+There are some precompiled versions of the library that you can download
+so you don't have to compile it yourself.
+</p>
+
+<h4>Windows</h4>
 <p>
 In case you are using <i>Windows</i>, you can download the binary 
 distribution so you don't have to compile the entire library.
@@ -118,16 +124,26 @@ Please have a look at the <a href="using-windows">using on
 <i>Windows</i></a> section and see some notes on how to use it.
 </p>
 
-<h3 id="requirements">Requirements</h3>
+<h4>OSX</h4>
+
+<p>
+You can install the latest version of <i>libtins</i> (3.1) on <i>OSX</i>
+using <i>homebrew</i>:
+</p>
+
+{% highlight bash %}
+homebrew install libtins
+{% endhighlight %}
+
+<h3 id="requirements">Compilation requirements</h3>
 
 <p>
 <i>libtins</i> depends on both, 
 <a href="http://www.tcpdump.org"><i>libpcap</i></a> and 
-<a href="http://www.openssl.org/"><i>libcrypto</i></a>, 
-which is provided by the <i>OpenSSL</i> library. Note that the latter 
-is only required if you want to allow WPA2 decryption. This feature
-can be disabled by using <i>-DLIBTINS_ENABLE_WPA2=0</i>
-while executing <i>CMake</i>.
+<a href="http://www.openssl.org/"><i>libcrypto</i></a>. The latter  
+is provided by the <i>OpenSSL</i> library and it is only required if 
+you want to allow WPA2 decryption. This feature can be disabled by 
+using <i>-DLIBTINS_ENABLE_WPA2=0</i> while executing <i>CMake</i>.
 </p>
 <p>
 Since version <i>3.1</i>, <i>libtins</i> started using 
@@ -135,11 +151,11 @@ Since version <i>3.1</i>, <i>libtins</i> started using
 Therefore, you also need it in order to compile the library. 
 </p>
 <p>
-You should be able to install both libraries and <i>CMake</i>through 
+You should be able to install both libraries and <i>CMake</i> through 
 your distribution's package manager.
 </p>
 <p>
-For <i>Debian</i> based systems(<i>Ubuntu</i>, <i>Linux Mint</i>, etc), 
+For <b>Debian</b> based systems(<i>Ubuntu</i>, <i>Linux Mint</i>, etc), 
 you can install them by executing this command as <b>root</b>:
 </p>
 
@@ -148,7 +164,7 @@ apt-get install libpcap-dev libssl-dev cmake
 {% endhighlight %}
 
 <p>
-For <i>Red Hat</i> based systems(<i>RHEL</i>, <i>Fedora</i>, 
+For <b>Red Hat</b> based systems(<i>RHEL</i>, <i>Fedora</i>, 
 <i>CentOS</i>, etc), you can install them by executing the following 
 command as <b>root</b>:
 </p>
@@ -158,7 +174,7 @@ yum install libpcap-devel openssl-devel cmake
 {% endhighlight %}
 
 <p>
-For <i>Windows</i>, you can download binary distribution of 
+For <b>Windows</b>, you can download binary distribution of 
 <i>CMake</i> 
 <a href="http://www.cmake.org/cmake/resources/software.html">from their 
 website</a>. You should do the same for <i>OpenSSL</i> if you want
@@ -169,7 +185,7 @@ You should also <a href="http://www.winpcap.org/">download the
 <i>WinPCAP</i> developer package</a>, which is the <i>Windows</i> 
 version of <i>libpcap</i>. 
 </p>
-<h3 id="compiling">Compiling libtins on <i>Linux/BSD/OSX</i></h3>
+<h3 id="compiling">Compiling <i>libtins</i> on <i>Linux/BSD/OSX</i></h3>
 <p>
 Now you've got everything you need for compiling <i>libtins</i>.
 In order to compile, just execute the following commands:
@@ -211,7 +227,7 @@ you'll probably need to update <i>ldconfig</i>'s cache, by issuing:
 ldconfig
 {% endhighlight %}
 
-<h3 id="compiling-windows">Compiling libtins on <i>Windows</i></h3>
+<h3 id="compiling-windows">Compiling <i>libtins</i> on <i>Windows</i></h3>
 
 <p>
 Compiling <i>libtins</i> on <i>Windows</i> has been made easy since 
@@ -270,7 +286,7 @@ Despite the compilation method you used, you should have a look at the
 <i>Windows</i>.
 </p>
 
-<h3 id="cross-compiling">Cross-compiling libtins</h3>
+<h3 id="cross-compiling">Cross-compiling <i>libtins</i></h3>
 
 <p>
 <i>libtins</i> works on several architectures commonly used in embedded
@@ -279,7 +295,7 @@ process in described in <a href="{{ site.url }}/cross-compile/">
 this tutorial</a>.
 </p>
 
-<h3 id="using">Using libtins</h3>
+<h3 id="using">Using <i>libtins</i></h3>
 
 <p>
 Once you have compiled <i>libtins</i>, using it is just as simple as
