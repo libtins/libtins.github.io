@@ -20,6 +20,7 @@ var searchData=
   ['frameflags',['FrameFlags',['../d7/d0e/classTins_1_1RadioTap.html#aa5af7f33b5c641a8cddc10290ab4b9cd',1,'Tins::RadioTap']]],
   ['from_5fbytes',['from_bytes',['../d8/df1/classTins_1_1Dot11.html#ad8e45d4d14bcfcb4551772fc0c758cd4',1,'Tins::Dot11::from_bytes()'],['../d5/ddb/classTins_1_1EAPOL.html#ac1212b93777370e99e47cd22b2cd4fd4',1,'Tins::EAPOL::from_bytes()']]],
   ['from_5fds',['from_ds',['../d8/df1/classTins_1_1Dot11.html#a99e28132271a37a28b4465ee7f8b5383',1,'Tins::Dot11::from_ds() const '],['../d8/df1/classTins_1_1Dot11.html#a634522ae6e2f9bbb97c31d2e08df95a3',1,'Tins::Dot11::from_ds(small_uint&lt; 1 &gt; new_value)']]],
+  ['from_5findex',['from_index',['../d0/de7/classTins_1_1NetworkInterface.html#a1dd0eb0c10c2ef9414637ec19d224acf',1,'Tins::NetworkInterface']]],
   ['from_5fmask',['from_mask',['../d2/d43/classTins_1_1AddressRange.html#a6d70d1daf464c6217caf742a7b2d4cd3',1,'Tins::AddressRange']]],
   ['from_5foption',['from_option',['../df/dd6/classTins_1_1RSNInformation.html#a284a2f1a7750d450ee4776fc9a527f08',1,'Tins::RSNInformation']]],
   ['functor_5ftype',['functor_type',['../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3',1,'Tins::Crypto::DecrypterProxy']]],

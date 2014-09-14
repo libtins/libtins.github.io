@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class that enables sending the created PDUs.  
+<p>Sends packets through a network interface.  
  <a href="../../d3/dea/classTins_1_1PacketSender.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d3/d61/packet__sender_8h_source.html">packet_sender.h</a>&gt;</code></p>
@@ -122,10 +122,10 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6185c19fe02605ee547930eff4c17009"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a> (const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface=<a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>(), uint32_t recv_timeout=<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">DEFAULT_TIMEOUT</a>, uint32_t usec=0)</td></tr>
-<tr class="memdesc:a6185c19fe02605ee547930eff4c17009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> objects.  <a href="#a6185c19fe02605ee547930eff4c17009">More...</a><br/></td></tr>
+<tr class="memdesc:a6185c19fe02605ee547930eff4c17009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> objects.  <a href="#a6185c19fe02605ee547930eff4c17009">More...</a><br/></td></tr>
 <tr class="separator:a6185c19fe02605ee547930eff4c17009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2a9a1a43e134b3cbae87f581b7457b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ac2a9a1a43e134b3cbae87f581b7457b6">~PacketSender</a> ()</td></tr>
-<tr class="memdesc:ac2a9a1a43e134b3cbae87f581b7457b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> destructor.  <a href="#ac2a9a1a43e134b3cbae87f581b7457b6">More...</a><br/></td></tr>
+<tr class="memdesc:ac2a9a1a43e134b3cbae87f581b7457b6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> destructor.  <a href="#ac2a9a1a43e134b3cbae87f581b7457b6">More...</a><br/></td></tr>
 <tr class="separator:ac2a9a1a43e134b3cbae87f581b7457b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34c69468f27dda0004f4cc289ff9aee6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#a34c69468f27dda0004f4cc289ff9aee6">open_l2_socket</a> (const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface=<a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>())</td></tr>
 <tr class="memdesc:a34c69468f27dda0004f4cc289ff9aee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a layer 2 socket.  <a href="#a34c69468f27dda0004f4cc289ff9aee6">More...</a><br/></td></tr>
@@ -173,8 +173,45 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a14fc49e9ce15100fe398d6e7b1d81acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class that enables sending the created PDUs. </p>
-<p><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> class is responsible for sending the packets using the correct <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> layer. It is responsible for opening the raw sockets. </p>
+<div class="textblock"><p>Sends packets through a network interface. </p>
+<p>This class allows sending packets through a network interface. It can send basically two types of packets:</p>
+<ul>
+<li>Those that contain a link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> (<a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a>, <a class="el" href="../../d6/d47/classTins_1_1SLL.html" title="Represents a Linux cooked-mode capture (SLL) PDU. ">SLL</a>, etc). These will be serialized and sent through an interface that has to be specified. This can be done by providing it when you call <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a>, or set a default one using <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#a81638a36e8d4a3a70df7b44fed4dff68" title="Sets the default interface. ">PacketSender::default_interface</a>.</li>
+<li>Those that don't contain a link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. In this case, the kernel will be responsible for picking the appropriate network interface based on the destination address.</li>
+</ul>
+<p>Sending packets can be done via <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a>:</p>
+<div class="fragment"><div class="line"><span class="comment">// Construct a packet which uses an EthernetII link layer.</span></div>
+<div class="line">EthernetII pkt1 = ...;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Construct a packet sender, which we&#39;ll use to send packets.</span></div>
+<div class="line"><a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a> sender;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Send it through interface eth0</span></div>
+<div class="line">sender.send(pkt1, <span class="stringliteral">&quot;eth0&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Set the default interface to eth0</span></div>
+<div class="line">sender.default_interface(<span class="stringliteral">&quot;eth0&quot;</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// This is now equivalent to the previous send.</span></div>
+<div class="line">sender.send(pkt1);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Construct a packet which has no link layer protocol.</span></div>
+<div class="line">IP ip = IP(<span class="stringliteral">&quot;192.168.0.1&quot;</span>) / TCP(22, 928);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Here the kernel will figure out which interface to use and it will</span></div>
+<div class="line"><span class="comment">// append the appropriate link layer protocol PDU. It will also perform</span></div>
+<div class="line"><span class="comment">// the necessary ARP lookups in order to use the destination host&#39;s</span></div>
+<div class="line"><span class="comment">// hardware address.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// libtins will find which is the appropriate source IP address to use.</span></div>
+<div class="line"><span class="comment">// This will be done by the kernel as well, but it&#39;s required when </span></div>
+<div class="line"><span class="comment">// calculating checksums.</span></div>
+<div class="line">sender.send(ip);</div>
+</div><!-- fragment --><p><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> also supports sending a packet and waiting for a response. This can be done by using <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371" title="Sends a PDU and waits for its response. ">PacketSender::send_recv</a>.</p>
+<p>This class opens sockets as it needs to, and closes them when the object is destructed.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a> </dd>
+<dd>
+<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371" title="Sends a PDU and waits for its response. ">PacketSender::send_recv</a> </dd></dl>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a1d36b09517550b9d7d7d650d5c2944c9"></a>
 <div class="memitem">
@@ -220,7 +257,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> objects. </p>
+<p>Constructor for <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> objects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">iface</td><td>The default interface in which to send the packets. </td></tr>
@@ -244,7 +281,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> destructor. </p>
+<p><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> destructor. </p>
 <p>This gracefully closes all open sockets. </p>
 
 </div>
@@ -404,7 +441,8 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Receives a layer 2 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> response to a previously sent <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<p>This <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> will receive data from a raw socket, open using the corresponding flag, according to the given type of protocol, until a match for the given <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is received.</p>
+<p>This method is used internally. You should just use <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371" title="Sends a PDU and waits for its response. ">PacketSender::send_recv</a>.</p>
+<p>This <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> will receive data from a raw socket, open using the corresponding flag, according to the given type of protocol, until a match for the given <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is received.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pdu</td><td>The <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> which will try to match the responses. </td></tr>
@@ -454,7 +492,8 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Receives a layer 3 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> response to a previously sent <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<p>This <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Class that enables sending the created PDUs. ">PacketSender</a> will receive data from a raw socket, open using the corresponding flag, according to the given type of protocol, until a match for the given <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is received.</p>
+<p>This method is used internally. You should just use <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371" title="Sends a PDU and waits for its response. ">PacketSender::send_recv</a>.</p>
+<p>This <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> will receive data from a raw socket, open using the corresponding flag, according to the given type of protocol, until a match for the given <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is received.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pdu</td><td>The <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> which will try to match the responses. </td></tr>
@@ -571,6 +610,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends a level 2 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<p>This method is used internally. You should just use <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a>.</p>
 <p>This method sends a layer 2 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>, using a raw socket, open using the corresponding flag, according to the given type of protocol.</p>
 <p>If any socket write error occurs, a <a class="el" href="../../d3/dea/classTins_1_1socket__write__error.html" title="Exception thrown when PacketSender fails to write on a socket. ">socket_write_error</a> is thrown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -621,6 +661,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends a level 3 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<p>This method is used internally. You should just use <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a>.</p>
 <p>This method sends a layer 3 <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>, using a raw socket, open using the corresponding flag, according to the given type of protocol.</p>
 <p>If any socket write error occurs, a <a class="el" href="../../d3/dea/classTins_1_1socket__write__error.html" title="Exception thrown when PacketSender fails to write on a socket. ">socket_write_error</a> is thrown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -650,7 +691,9 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> and waits for its response. </p>
-<p>This method is used to send PDUs and receive their response. It opens the required socket(if it's not open yet). This can be used to expect responses for <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a>, <a class="el" href="../../d1/db0/classTins_1_1ARP.html" title="Represents an ARP PDU. ">ARP</a>, and such packets that are normally answered by the host that receives the packet.</p>
+<p>This method is used to send PDUs and receive their response. The packet is sent, and then a response is awaited. PDU::matches_pdu is called on the packet sent in order to check whether a packet received is a response.</p>
+<p>This will match every response to a packet. For example, if you send a <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> packet, any response matching the same <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> addresses and ports will be taken as a response to it. This also happens for other protocols, such as <a class="el" href="../../d1/db0/classTins_1_1ARP.html" title="Represents an ARP PDU. ">ARP</a>, <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a>, <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a>, <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a>, <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a>, etc.</p>
+<p>If you send a packet and get an <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a> response indicating an error (such as host unreachable, ttl exceeded, etc), that packet will be considered a response.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pdu</td><td>The <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> to send. </td></tr>
@@ -686,7 +729,8 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sends a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> and waits for its response. </p>
-<p>This method is used to send PDUs and receive their response. It opens the required socket(if it's not open yet). This can be used to expect responses for <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a>, <a class="el" href="../../d1/db0/classTins_1_1ARP.html" title="Represents an ARP PDU. ">ARP</a>, and such packets that are normally answered by the host that receives the packet.</p>
+<p>Sends a packet and receives a response. This overload takes a <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html" title="Abstraction of a network interface. ">NetworkInterface</a>.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371" title="Sends a PDU and waits for its response. ">PacketSender::send_recv(PDU&amp;)</a>; </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pdu</td><td>The <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> to send. </td></tr>
@@ -727,7 +771,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 14 2014 14:11:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

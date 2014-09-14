@@ -126,6 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5503e1c85bd863121fbf34e24d37e6b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>.  <a href="#a5503e1c85bd863121fbf34e24d37e6b9">More...</a><br/></td></tr>
 <tr class="separator:a5503e1c85bd863121fbf34e24d37e6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18d509747ff68e53303ef37a251dcf3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#ad18d509747ff68e53303ef37a251dcf3">~PacketWriter</a> ()</td></tr>
+<tr class="memdesc:ad18d509747ff68e53303ef37a251dcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ad18d509747ff68e53303ef37a251dcf3">More...</a><br/></td></tr>
 <tr class="separator:ad18d509747ff68e53303ef37a251dcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e0cc82b7d66be629dae31d664a1aee3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e0cc82b7d66be629dae31d664a1aee3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a8e0cc82b7d66be629dae31d664a1aee3">write</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu)</td></tr>
@@ -252,7 +253,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html" title="Writes PDUs to a pcap format file. ">PacketWriter</a>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use the other constructor, which takes a <a class="el" href="../../d5/d26/structTins_1_1DataLinkType.html" title="Maps a libtins link layer PDU to a libpcap data link identifier. ">DataLinkType</a>.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use the <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a892a1b1dc3878ef8a8add27c0709464f" title="Constructs a PacketWriter. ">PacketWriter(const std::string&amp;, const DataLinkType&lt;T&gt;&amp;)</a> constructor.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>The file in which to store the written PDUs. </td></tr>
@@ -276,7 +277,9 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
 <p>Destructor. </p>
+<p>Gracefully closes the output file. </p>
 
 </div>
 </div>
@@ -362,7 +365,7 @@ template&lt;typename ForwardIterator &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 14 2014 14:11:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

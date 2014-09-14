@@ -157,6 +157,11 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad736f47d8e986cad7c694c702241fed5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#ad736f47d8e986cad7c694c702241fed5">default_interface</a> ()</td></tr>
 <tr class="separator:ad736f47d8e986cad7c694c702241fed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af424d097ed0897430465ec90daafe410"><td class="memItemLeft" align="right" valign="top">static std::vector<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#af424d097ed0897430465ec90daafe410">all</a> ()</td></tr>
+<tr class="separator:af424d097ed0897430465ec90daafe410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd0eb0c10c2ef9414637ec19d224acf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#a1dd0eb0c10c2ef9414637ec19d224acf">from_index</a> (<a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#a292dd0b1e1d67c354292c6549b27d582">id_type</a> identifier)</td></tr>
+<tr class="separator:a1dd0eb0c10c2ef9414637ec19d224acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstraction of a network interface. </p>
@@ -269,6 +274,30 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af424d097ed0897430465ec90daafe410"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &gt; Tins::NetworkInterface::all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns all available network interfaces. </p>
+
+</div>
+</div>
 <a class="anchor" id="ad736f47d8e986cad7c694c702241fed5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -290,6 +319,31 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Returns a <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html" title="Abstraction of a network interface. ">NetworkInterface</a> object associated with the default interface. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1dd0eb0c10c2ef9414637ec19d224acf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> Tins::NetworkInterface::from_index </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#a292dd0b1e1d67c354292c6549b27d582">id_type</a>&#160;</td>
+          <td class="paramname"><em>identifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a network interface for the given index. </p>
 
 </div>
 </div>
@@ -333,6 +387,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves this interface's name. </p>
+<p>This name can be used as the interface name provided to the <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> class when starting a sniffing session.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../de/dbb/classTins_1_1Sniffer.html" title="Sniffs packets from a network interface. ">Sniffer</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string containing this interface's name. </dd></dl>
 
 </div>
@@ -434,7 +490,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 14 2014 14:11:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

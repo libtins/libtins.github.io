@@ -147,10 +147,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:aceb57a571aceae1285c8239cc8508a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does the 16 bits sum of all 2 bytes elements between start and end.  <a href="#aceb57a571aceae1285c8239cc8508a52">More...</a><br/></td></tr>
 <tr class="separator:aceb57a571aceae1285c8239cc8508a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac922424d9261b7acc000c6018e00599c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d81/namespaceTins_1_1Utils.html#ac922424d9261b7acc000c6018e00599c">pseudoheader_checksum</a> (<a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> source_ip, <a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> dest_ip, uint32_t len, uint32_t flag)</td></tr>
-<tr class="memdesc:ac922424d9261b7acc000c6018e00599c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Class that represents an TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> PDUs.  <a href="#ac922424d9261b7acc000c6018e00599c">More...</a><br/></td></tr>
+<tr class="memdesc:ac922424d9261b7acc000c6018e00599c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Represents an UDP PDU. ">UDP</a> PDUs.  <a href="#ac922424d9261b7acc000c6018e00599c">More...</a><br/></td></tr>
 <tr class="separator:ac922424d9261b7acc000c6018e00599c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a091a19195bf49a0accc7b0979280d66a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d81/namespaceTins_1_1Utils.html#a091a19195bf49a0accc7b0979280d66a">pseudoheader_checksum</a> (<a class="el" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Address</a> source_ip, <a class="el" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Address</a> dest_ip, uint32_t len, uint32_t flag)</td></tr>
-<tr class="memdesc:a091a19195bf49a0accc7b0979280d66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Class that represents an TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> PDUs.  <a href="#a091a19195bf49a0accc7b0979280d66a">More...</a><br/></td></tr>
+<tr class="memdesc:a091a19195bf49a0accc7b0979280d66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Represents an UDP PDU. ">UDP</a> PDUs.  <a href="#a091a19195bf49a0accc7b0979280d66a">More...</a><br/></td></tr>
 <tr class="separator:a091a19195bf49a0accc7b0979280d66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04acb69dc463905fdf58d77f229407ee"><td class="memTemplParams" colspan="2">template&lt;class Functor &gt; </td></tr>
 <tr class="memitem:a04acb69dc463905fdf58d77f229407ee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../db/d81/namespaceTins_1_1Utils.html#a04acb69dc463905fdf58d77f229407ee">generic_iface_loop</a> (Functor &amp;functor)</td></tr>
@@ -313,7 +313,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Does the 16 bits sum of all 2 bytes elements between start and end. </p>
-<p>This is the checksum used by <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a>, <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> and <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Class that represents an TCP PDU. ">TCP</a>. If there's and odd number of bytes, the last one is padded and added to the checksum. The checksum is performed using network endiannes. </p>
+<p>This is the checksum used by <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a>, <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Represents an UDP PDU. ">UDP</a> and <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a>. If there's and odd number of bytes, the last one is padded and added to the checksum. The checksum is performed using network endiannes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>The pointer to the start of the buffer. </td></tr>
@@ -467,7 +467,7 @@ template&lt;class Functor &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Class that represents an TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> PDUs. </p>
+<p>Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Represents an UDP PDU. ">UDP</a> PDUs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source_ip</td><td>The source ip address. </td></tr>
@@ -517,7 +517,7 @@ template&lt;class Functor &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Class that represents an TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Class that represents an UDP PDU. ">UDP</a> PDUs. </p>
+<p>Performs the pseudo header checksum used in <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> and <a class="el" href="../../d1/d9f/classTins_1_1UDP.html" title="Represents an UDP PDU. ">UDP</a> PDUs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source_ip</td><td>The source ip address. </td></tr>
@@ -730,7 +730,7 @@ template&lt;class ForwardIterator &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 4 2014 23:04:52 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 14 2014 14:11:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
