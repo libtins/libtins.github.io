@@ -125,6 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3989a582ac92cd6f19047b3cb1dc4112"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d37/classTins_1_1Loopback.html#a3989a582ac92cd6f19047b3cb1dc4112">pdu_type</a> () const </td></tr>
 <tr class="memdesc:a3989a582ac92cd6f19047b3cb1dc4112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s type.  <a href="#a3989a582ac92cd6f19047b3cb1dc4112">More...</a><br/></td></tr>
 <tr class="separator:a3989a582ac92cd6f19047b3cb1dc4112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b5430c52a2fe714a99f71f482f3605"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d37/classTins_1_1Loopback.html#a05b5430c52a2fe714a99f71f482f3605">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
+<tr class="memdesc:a05b5430c52a2fe714a99f71f482f3605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a05b5430c52a2fe714a99f71f482f3605">More...</a><br/></td></tr>
+<tr class="separator:a05b5430c52a2fe714a99f71f482f3605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad569ec15571f38bcd260062abb720e6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d37/classTins_1_1Loopback.html">Loopback</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">clone</a> () const </td></tr>
 <tr class="separator:ad569ec15571f38bcd260062abb720e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
@@ -178,9 +181,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae961e5f5f07be3cd3b340d02a951eec7">recv_response</a> (<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface)</td></tr>
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a460063a6577eb92bd24a9d66ad7e581f">More...</a><br/></td></tr>
-<tr class="separator:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
 <tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,6 +263,7 @@ Additional Inherited Members</h2></td></tr>
 <br/>
 &#160;&#160;<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
+<b>PKTAP</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -448,6 +449,52 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a05b5430c52a2fe714a99f71f482f3605"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tins::Loopback::matches_response </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>total_sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
+    <tr><td class="paramname">total_sz</td><td>The size of the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">Tins::PDU</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3989a582ac92cd6f19047b3cb1dc4112"></a>
 <div class="memitem">
 <div class="memproto">
@@ -499,13 +546,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../d3/d4a/loopback_8h_source.html">loopback.h</a></li>
+<li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../d3/d4a/loopback_8h_source.html">loopback.h</a></li>
 <li>/home/matias/Projects/libtins/code/src/loopback.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 14 2014 14:11:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 16:53:05 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

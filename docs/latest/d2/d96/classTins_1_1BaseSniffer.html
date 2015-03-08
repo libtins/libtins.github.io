@@ -154,6 +154,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../..
 <tr class="separator:ac50a6707abe01024525cea19b94533dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d4131d5d7d296eb61b0a54e7ea109db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a26c1b3e36c2c2f7ed2df1798bfdc997f">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a7d4131d5d7d296eb61b0a54e7ea109db">end</a> ()</td></tr>
 <tr class="separator:a7d4131d5d7d296eb61b0a54e7ea109db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa73cab9dfce9c41f0eab44854d68381"><td class="memItemLeft" align="right" valign="top">pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#aaa73cab9dfce9c41f0eab44854d68381">get_pcap_handle</a> ()</td></tr>
+<tr class="separator:aaa73cab9dfce9c41f0eab44854d68381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9d76824e2687d70fafb533f7d3aa04"><td class="memItemLeft" align="right" valign="top">const pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a3f9d76824e2687d70fafb533f7d3aa04">get_pcap_handle</a> () const </td></tr>
+<tr class="separator:a3f9d76824e2687d70fafb533f7d3aa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -162,12 +166,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:acd9a692d26c73886b9d5d56826117425"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd9a692d26c73886b9d5d56826117425"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_pcap_handle</b> (pcap_t *const pcap_handle)</td></tr>
 <tr class="separator:acd9a692d26c73886b9d5d56826117425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa73cab9dfce9c41f0eab44854d68381"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa73cab9dfce9c41f0eab44854d68381"></a>
-pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><b>get_pcap_handle</b> ()</td></tr>
-<tr class="separator:aaa73cab9dfce9c41f0eab44854d68381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f9d76824e2687d70fafb533f7d3aa04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f9d76824e2687d70fafb533f7d3aa04"></a>
-const pcap_t *&#160;</td><td class="memItemRight" valign="bottom"><b>get_pcap_handle</b> () const </td></tr>
-<tr class="separator:a3f9d76824e2687d70fafb533f7d3aa04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18f7a6607b89bc7ab0d7286739235b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae18f7a6607b89bc7ab0d7286739235b1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_if_mask</b> (bpf_u_int32 if_mask)</td></tr>
 <tr class="separator:ae18f7a6607b89bc7ab0d7286739235b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,6 +249,38 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 
 </div>
 </div>
+<a class="anchor" id="aaa73cab9dfce9c41f0eab44854d68381"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pcap_t * Tins::BaseSniffer::get_pcap_handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retrieves the pcap handle used by this sniffer. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3f9d76824e2687d70fafb533f7d3aa04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const pcap_t * Tins::BaseSniffer::get_pcap_handle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retrieves the pcap handle used by this sniffer. </p>
+
+</div>
+</div>
 <a class="anchor" id="a6db4824653994120468955df1aa3a8bd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +317,7 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 <p>The return type is a thin wrapper over a PDU* and a <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html" title="Represents a packet timestamp. ">Timestamp</a> object. This wrapper can be both implicitly converted to a PDU* and a <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> object. So doing this:</p>
 <div class="fragment"><div class="line">Sniffer s(...);</div>
 <div class="line">std::unique_ptr&lt;PDU&gt; pdu(s.next_packet());</div>
-<div class="line"><span class="comment">// Packet takes care of the PDU*. </span></div>
+<div class="line"><span class="comment">// Packet takes care of the PDU*.</span></div>
 <div class="line">Packet packet(s.next_packet());</div>
 </div><!-- fragment --><p>Is fine, but this:</p>
 <div class="fragment"><div class="line"><span class="comment">// bad!!</span></div>
@@ -404,13 +434,17 @@ template&lt;class Functor &gt; </div>
 <p>The functor must implement an operator with one of the following signatures:</p>
 <div class="fragment"><div class="line">bool(PDU&amp;);</div>
 <div class="line">bool(<span class="keyword">const</span> PDU&amp;);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// These two are only allowed when compiling in C++11 mode</span></div>
+<div class="line">bool(Packet&amp;);</div>
+<div class="line">bool(<span class="keyword">const</span> Packet&amp;);</div>
 </div><!-- fragment --><p>This functor will be called using the each of the sniffed packets as its argument. Using <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> member functions that modify the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>, such as <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a8a302fa02decfafd585d8ec227bf9f06" title="Releases the inner PDU. ">PDU::release_inner_pdu</a>, is perfectly valid.</p>
 <p>Note that if you're using a functor object, it will be copied using its copy constructor, so it should be some kind of proxy to another object which will process the packets(e.g. std::bind).</p>
 <p>Sniffing will stop when either max_packets are sniffed(if it is != 0), or when the functor returns false.</p>
 <p>This method catches both <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> and <a class="el" href="../../df/d15/classTins_1_1pdu__not__found.html" title="Exception thrown when a PDU is not found when using PDU::rfind_pdu. ">pdu_not_found</a> exceptions, which allows writing much cleaner code, since you can call <a class="el" href="../../d8/de6/classTins_1_1PDU.html#ac3acbf56976a2edc1958bbe63ef568ab" title="Finds and returns the first PDU that matches the given flag. ">PDU::rfind_pdu</a> without worrying about catching the exception that can be thrown. This allows writing code such as the following:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">bool</span> callback(<span class="keyword">const</span> PDU&amp; pdu) {</div>
-<div class="line">    <span class="comment">// If either RawPDU is not found, or construction of the DNS </span></div>
-<div class="line">    <span class="comment">// object fails, the BaseSniffer object will trap the exceptions, </span></div>
+<div class="line">    <span class="comment">// If either RawPDU is not found, or construction of the DNS</span></div>
+<div class="line">    <span class="comment">// object fails, the BaseSniffer object will trap the exceptions,</span></div>
 <div class="line">    <span class="comment">// so we don&#39;t need to worry about it.</span></div>
 <div class="line">    DNS dns = pdu.rfind_pdu&lt;RawPDU&gt;().to&lt;DNS&gt;();</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -444,13 +478,13 @@ template&lt;class Functor &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
+<li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
 <li>/home/matias/Projects/libtins/code/src/sniffer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 14 2014 14:11:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 16:53:06 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

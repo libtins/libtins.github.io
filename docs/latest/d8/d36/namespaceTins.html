@@ -228,6 +228,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d13/classTins_1_1invalid__interface.html">invalid_interface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when <a class="el" href="../../d8/de6/classTins_1_1PDU.html#afc8b2159719f56b04d67a999f82054b3" title="Send the stack of PDUs through a PacketSender. ">PDU::send</a> requires a valid interface, but an invalid is used.  <a href="../../d9/d13/classTins_1_1invalid__interface.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd4/classTins_1_1field__not__present.html">field_not_present</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a field is not present in frame.  <a href="../../d1/dd4/classTins_1_1field__not__present.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d88/classTins_1_1socket__open__error.html">socket_open_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html" title="Sends packets through a network interface. ">PacketSender</a> fails to open a socket.  <a href="../../dc/d88/classTins_1_1socket__open__error.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,6 +320,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/classTins_1_1PDUOption.html">PDUOption</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> option field.  <a href="../../df/ddb/classTins_1_1PDUOption.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da4/classTins_1_1PKTAP.html">PKTAP</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d25/classTins_1_1PPI.html">PPI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a Per-Packet Information <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="../../de/d25/classTins_1_1PPI.html#details">More...</a><br/></td></tr>
@@ -491,7 +496,7 @@ const <a class="el" href="../../d2/d43/classTins_1_1AddressRange.html">AddressRa
 const <a class="el" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><b>loopback_address</b> = &quot;::1&quot;</td></tr>
 <tr class="separator:aa6b110101ece5f32d75ee32fd24faf69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a411bc7490bbb00063166aae8107a1ecd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a411bc7490bbb00063166aae8107a1ecd"></a>
-static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>seq_number_diff</b> = 2147483648</td></tr>
+static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>seq_number_diff</b> = 2147483648U</td></tr>
 <tr class="separator:a411bc7490bbb00063166aae8107a1ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac7cbc4c23b81a0eef3fd5863f628eee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac7cbc4c23b81a0eef3fd5863f628eee"></a>
 static const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>addition_modulo</b> = std::numeric_limits&lt;uint32_t&gt;::max()</td></tr>
@@ -845,7 +850,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 14 2014 14:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 16:53:04 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

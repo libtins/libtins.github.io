@@ -29,7 +29,7 @@ var searchData=
   ['is_5ffinished',['is_finished',['../d8/d0f/classTins_1_1TCPStream.html#a4a535c8d2a439b2ff7e9d4bd6506b9f1',1,'Tins::TCPStream']]],
   ['is_5ffragmented',['is_fragmented',['../dd/d3f/classTins_1_1IP.html#aadd4c8c63e2473bfce9f2c68d47b22e5',1,'Tins::IP']]],
   ['is_5fiterable',['is_iterable',['../d2/d43/classTins_1_1AddressRange.html#a15357c50640b1b30a011de7f12731c9b',1,'Tins::AddressRange']]],
-  ['is_5floopback',['is_loopback',['../d2/d08/classTins_1_1IPv4Address.html#ac0727630a275e6a2ff371e6f4d905f43',1,'Tins::IPv4Address::is_loopback()'],['../de/dd2/classTins_1_1IPv6Address.html#a7b480b10baae6860c787fdb35787c169',1,'Tins::IPv6Address::is_loopback()']]],
+  ['is_5floopback',['is_loopback',['../d2/d08/classTins_1_1IPv4Address.html#ac0727630a275e6a2ff371e6f4d905f43',1,'Tins::IPv4Address::is_loopback()'],['../de/dd2/classTins_1_1IPv6Address.html#a7b480b10baae6860c787fdb35787c169',1,'Tins::IPv6Address::is_loopback()'],['../d0/de7/classTins_1_1NetworkInterface.html#adc64496879f547f571cf4072808ab085',1,'Tins::NetworkInterface::is_loopback()']]],
   ['is_5fmulticast',['is_multicast',['../dc/da6/classTins_1_1HWAddress.html#ae7214e3c7a8c0308df9e134aad35fc4b',1,'Tins::HWAddress::is_multicast()'],['../d2/d08/classTins_1_1IPv4Address.html#a165fe36d15d131f940b242791488de73',1,'Tins::IPv4Address::is_multicast()'],['../de/dd2/classTins_1_1IPv6Address.html#a52ae4ab3e241b26402c9c35147eab814',1,'Tins::IPv6Address::is_multicast()']]],
   ['is_5fprivate',['is_private',['../d2/d08/classTins_1_1IPv4Address.html#a8b27c40cf7733acc36e497920e197cff',1,'Tins::IPv4Address']]],
   ['is_5frelay_5fmessage',['is_relay_message',['../d8/d2b/classTins_1_1DHCPv6.html#af757b182f7af6da203b9ccf48e97d6b3',1,'Tins::DHCPv6']]],

@@ -103,6 +103,10 @@ define an operator with one of the following signatures:
 {% highlight cpp %}
 bool operator()(PDU&);
 bool operator()(const PDU&);
+
+// These are only allowed when compiling in C++11 mode.
+bool operator()(Packet&);
+bool operator()(const Packet&);
 {% endhighlight %}
 <p>
 The call to <code>Sniffer::sniff_loop</code> will make the sniffer start 
@@ -214,9 +218,9 @@ they're being sniffed:
 
 {% highlight cpp %}
 Sniffer s = ...;
-for(auto &pdu : s) {
-    // pdu is a PDU&
-    process(pdu);
+for(auto &packet : s) {
+    // packet is a Packet&
+    process(packet);
 }
 {% endhighlight %}
 
@@ -275,6 +279,12 @@ Packet packet = sniffer.next_packet();
 if(packet)
     process_packet(packet); // whatever
 {% endhighlight %}
+
+<p>
+<code>Packet</code>s can also be accepted on the functor object used
+on <code>Sniffer::sniff_loop</code>, but <b>only when you are compiling 
+in C++11 mode</b>.
+</p>
 
 <h3 id="read-pcap">Reading pcap files</h3>
 

@@ -92,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="../../d2/d10/classTins_1_1RadioTap-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -113,6 +114,12 @@ Inheritance diagram for Tins::RadioTap:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html">mcs_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used to represent the MCS flags field.  <a href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aee6d4da8dfa1f3489d273e29c93267f3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aee6d4da8dfa1f3489d273e29c93267f3">ChannelType</a> { <br/>
@@ -130,25 +137,29 @@ Public Types</h2></td></tr>
 <tr class="memdesc:aee6d4da8dfa1f3489d273e29c93267f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of the different channel type flags.  <a href="../../d7/d0e/classTins_1_1RadioTap.html#aee6d4da8dfa1f3489d273e29c93267f3">More...</a><br/></td></tr>
 <tr class="separator:aee6d4da8dfa1f3489d273e29c93267f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada2e8a0fdc1ed3721c9c766e053c647f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ada2e8a0fdc1ed3721c9c766e053c647f">PresentFlags</a> { <br/>
-&#160;&#160;<b>TSTF</b> = 1, 
-<b>FLAGS</b> = 2, 
-<b>RATE</b> = 4, 
-<b>CHANNEL</b> = 8, 
+&#160;&#160;<b>TSTF</b> = 1 &lt;&lt; 0, 
+<b>FLAGS</b> = 1 &lt;&lt; 1, 
+<b>RATE</b> = 1 &lt;&lt; 2, 
+<b>CHANNEL</b> = 1 &lt;&lt; 3, 
 <br/>
-&#160;&#160;<b>FHSS</b> = 16, 
-<b>DBM_SIGNAL</b> = 32, 
-<b>DBM_NOISE</b> = 64, 
-<b>LOCK_QUALITY</b> = 128, 
+&#160;&#160;<b>FHSS</b> = 1 &lt;&lt; 4, 
+<b>DBM_SIGNAL</b> = 1 &lt;&lt; 5, 
+<b>DBM_NOISE</b> = 1 &lt;&lt; 6, 
+<b>LOCK_QUALITY</b> = 1 &lt;&lt; 7, 
 <br/>
-&#160;&#160;<b>TX_ATTENUATION</b> = 256, 
-<b>DB_TX_ATTENUATION</b> = 512, 
-<b>DBM_TX_ATTENUATION</b> = 1024, 
-<b>ANTENNA</b> = 2048, 
+&#160;&#160;<b>TX_ATTENUATION</b> = 1 &lt;&lt; 8, 
+<b>DB_TX_ATTENUATION</b> = 1 &lt;&lt; 9, 
+<b>DBM_TX_ATTENUATION</b> = 1 &lt;&lt; 10, 
+<b>ANTENNA</b> = 1 &lt;&lt; 11, 
 <br/>
-&#160;&#160;<b>DB_SIGNAL</b> = 4096, 
-<b>DB_NOISE</b> = 8192, 
-<b>RX_FLAGS</b> = 16382, 
-<b>CHANNEL_PLUS</b> = 262144
+&#160;&#160;<b>DB_SIGNAL</b> = 1 &lt;&lt; 12, 
+<b>DB_NOISE</b> = 1 &lt;&lt; 13, 
+<b>RX_FLAGS</b> = 1 &lt;&lt; 14, 
+<b>TX_FLAGS</b> = 1 &lt;&lt; 15, 
+<br/>
+&#160;&#160;<b>DATA_RETRIES</b> = 1 &lt;&lt; 17, 
+<b>CHANNEL_PLUS</b> = 1 &lt;&lt; 18, 
+<b>MCS</b> = 1 &lt;&lt; 19
 <br/>
  }</td></tr>
 <tr class="memdesc:ada2e8a0fdc1ed3721c9c766e053c647f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags used in the present field.  <a href="../../d7/d0e/classTins_1_1RadioTap.html#ada2e8a0fdc1ed3721c9c766e053c647f">More...</a><br/></td></tr>
@@ -235,6 +246,7 @@ Public Types</h2></td></tr>
 <br/>
 &#160;&#160;<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
+<b>PKTAP</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -275,12 +287,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a074565cc82651c43cc3cfeee96db8fba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a074565cc82651c43cc3cfeee96db8fba">channel</a> (uint16_t new_freq, uint16_t new_type)</td></tr>
 <tr class="memdesc:a074565cc82651c43cc3cfeee96db8fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the channel frequency and type field.  <a href="#a074565cc82651c43cc3cfeee96db8fba">More...</a><br/></td></tr>
 <tr class="separator:a074565cc82651c43cc3cfeee96db8fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac451dfc3223d1857630f41548f357928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ac451dfc3223d1857630f41548f357928">dbm_signal</a> (uint8_t new_dbm_signal)</td></tr>
-<tr class="memdesc:ac451dfc3223d1857630f41548f357928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the dbm signal field.  <a href="#ac451dfc3223d1857630f41548f357928">More...</a><br/></td></tr>
-<tr class="separator:ac451dfc3223d1857630f41548f357928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed3342e1a9f1bfe9c202c56c5d4f6072"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aed3342e1a9f1bfe9c202c56c5d4f6072">dbm_noise</a> (uint8_t new_dbm_noise)</td></tr>
-<tr class="memdesc:aed3342e1a9f1bfe9c202c56c5d4f6072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the dbm noise field.  <a href="#aed3342e1a9f1bfe9c202c56c5d4f6072">More...</a><br/></td></tr>
-<tr class="separator:aed3342e1a9f1bfe9c202c56c5d4f6072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06bb216d1bcd20b3d2edcc6d2a97289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aa06bb216d1bcd20b3d2edcc6d2a97289">dbm_signal</a> (int8_t new_dbm_signal)</td></tr>
+<tr class="memdesc:aa06bb216d1bcd20b3d2edcc6d2a97289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the dbm signal field.  <a href="#aa06bb216d1bcd20b3d2edcc6d2a97289">More...</a><br/></td></tr>
+<tr class="separator:aa06bb216d1bcd20b3d2edcc6d2a97289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00086b60640995e77ae508323f45d97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ac00086b60640995e77ae508323f45d97">dbm_noise</a> (int8_t new_dbm_noise)</td></tr>
+<tr class="memdesc:ac00086b60640995e77ae508323f45d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the dbm noise field.  <a href="#ac00086b60640995e77ae508323f45d97">More...</a><br/></td></tr>
+<tr class="separator:ac00086b60640995e77ae508323f45d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4bd2a7b8d11e443fb77d02a4f1a95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#acd4bd2a7b8d11e443fb77d02a4f1a95c">signal_quality</a> (uint8_t new_signal_quality)</td></tr>
 <tr class="memdesc:acd4bd2a7b8d11e443fb77d02a4f1a95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the signal quality field.  <a href="#acd4bd2a7b8d11e443fb77d02a4f1a95c">More...</a><br/></td></tr>
 <tr class="separator:acd4bd2a7b8d11e443fb77d02a4f1a95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,6 +305,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac68873698663a9e7d696a37c131060e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ac68873698663a9e7d696a37c131060e7">rx_flags</a> (uint16_t new_rx_flag)</td></tr>
 <tr class="memdesc:ac68873698663a9e7d696a37c131060e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the rx flag field.  <a href="#ac68873698663a9e7d696a37c131060e7">More...</a><br/></td></tr>
 <tr class="separator:ac68873698663a9e7d696a37c131060e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec3b51ebb7ed696a6327d54f806d1cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a8ec3b51ebb7ed696a6327d54f806d1cc">tx_flags</a> (uint16_t new_tx_flag)</td></tr>
+<tr class="memdesc:a8ec3b51ebb7ed696a6327d54f806d1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the tx flag field.  <a href="#a8ec3b51ebb7ed696a6327d54f806d1cc">More...</a><br/></td></tr>
+<tr class="separator:a8ec3b51ebb7ed696a6327d54f806d1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5db139153ef9de150541200bb555486f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a5db139153ef9de150541200bb555486f">data_retries</a> (uint8_t new_data_retries)</td></tr>
+<tr class="memdesc:a5db139153ef9de150541200bb555486f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the data retries field.  <a href="#a5db139153ef9de150541200bb555486f">More...</a><br/></td></tr>
+<tr class="separator:a5db139153ef9de150541200bb555486f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114a03950be58baad6370b28aef70678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a114a03950be58baad6370b28aef70678">mcs</a> (const <a class="el" href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html">mcs_type</a> &amp;new_mcs)</td></tr>
+<tr class="memdesc:a114a03950be58baad6370b28aef70678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the MCS field.  <a href="#a114a03950be58baad6370b28aef70678">More...</a><br/></td></tr>
+<tr class="separator:a114a03950be58baad6370b28aef70678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9591b0dcb0d298f9fa7382c47cd52140"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a9591b0dcb0d298f9fa7382c47cd52140">version</a> () const </td></tr>
 <tr class="memdesc:a9591b0dcb0d298f9fa7382c47cd52140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the version field.  <a href="#a9591b0dcb0d298f9fa7382c47cd52140">More...</a><br/></td></tr>
 <tr class="separator:a9591b0dcb0d298f9fa7382c47cd52140"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,12 +338,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9132a21f2b88c08abeb61cf7c358ba6b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a9132a21f2b88c08abeb61cf7c358ba6b">channel_type</a> () const </td></tr>
 <tr class="memdesc:a9132a21f2b88c08abeb61cf7c358ba6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the channel type field.  <a href="#a9132a21f2b88c08abeb61cf7c358ba6b">More...</a><br/></td></tr>
 <tr class="separator:a9132a21f2b88c08abeb61cf7c358ba6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad474d9f1f019c3cc1ddef9143260f9d5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ad474d9f1f019c3cc1ddef9143260f9d5">dbm_signal</a> () const </td></tr>
-<tr class="memdesc:ad474d9f1f019c3cc1ddef9143260f9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the dbm signal field.  <a href="#ad474d9f1f019c3cc1ddef9143260f9d5">More...</a><br/></td></tr>
-<tr class="separator:ad474d9f1f019c3cc1ddef9143260f9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac96f53f8d54e735cba266880098db8f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ac96f53f8d54e735cba266880098db8f5">dbm_noise</a> () const </td></tr>
-<tr class="memdesc:ac96f53f8d54e735cba266880098db8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the dbm noise field.  <a href="#ac96f53f8d54e735cba266880098db8f5">More...</a><br/></td></tr>
-<tr class="separator:ac96f53f8d54e735cba266880098db8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4770430a620196264cfce3c4601f894d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a4770430a620196264cfce3c4601f894d">dbm_signal</a> () const </td></tr>
+<tr class="memdesc:a4770430a620196264cfce3c4601f894d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the dbm signal field.  <a href="#a4770430a620196264cfce3c4601f894d">More...</a><br/></td></tr>
+<tr class="separator:a4770430a620196264cfce3c4601f894d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be6fe2ebf51e4a6d4ad33acd443f408"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a4be6fe2ebf51e4a6d4ad33acd443f408">dbm_noise</a> () const </td></tr>
+<tr class="memdesc:a4be6fe2ebf51e4a6d4ad33acd443f408"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the dbm noise field.  <a href="#a4be6fe2ebf51e4a6d4ad33acd443f408">More...</a><br/></td></tr>
+<tr class="separator:a4be6fe2ebf51e4a6d4ad33acd443f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12f69efb6e864751a66fd79859cb9c22"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a12f69efb6e864751a66fd79859cb9c22">signal_quality</a> () const </td></tr>
 <tr class="memdesc:a12f69efb6e864751a66fd79859cb9c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the signal quality field.  <a href="#a12f69efb6e864751a66fd79859cb9c22">More...</a><br/></td></tr>
 <tr class="separator:a12f69efb6e864751a66fd79859cb9c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,9 +356,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a93ed548b2a791b5e38fe1ab841408cdd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#a93ed548b2a791b5e38fe1ab841408cdd">channel_plus</a> () const </td></tr>
 <tr class="memdesc:a93ed548b2a791b5e38fe1ab841408cdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the channel+ field.  <a href="#a93ed548b2a791b5e38fe1ab841408cdd">More...</a><br/></td></tr>
 <tr class="separator:a93ed548b2a791b5e38fe1ab841408cdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa40e7586d8a0fd3ec8e203d0ae3d713"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aaa40e7586d8a0fd3ec8e203d0ae3d713">data_retries</a> () const </td></tr>
+<tr class="memdesc:aaa40e7586d8a0fd3ec8e203d0ae3d713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the data retries field.  <a href="#aaa40e7586d8a0fd3ec8e203d0ae3d713">More...</a><br/></td></tr>
+<tr class="separator:aaa40e7586d8a0fd3ec8e203d0ae3d713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa426b250dd2148e9747cf2019a0cf3c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aaa426b250dd2148e9747cf2019a0cf3c">rx_flags</a> () const </td></tr>
 <tr class="memdesc:aaa426b250dd2148e9747cf2019a0cf3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the rx flags field.  <a href="#aaa426b250dd2148e9747cf2019a0cf3c">More...</a><br/></td></tr>
 <tr class="separator:aaa426b250dd2148e9747cf2019a0cf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1120d2c6ba1f157e0d21eae85bd2f8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aeb1120d2c6ba1f157e0d21eae85bd2f8">tx_flags</a> () const </td></tr>
+<tr class="memdesc:aeb1120d2c6ba1f157e0d21eae85bd2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the tx flags field.  <a href="#aeb1120d2c6ba1f157e0d21eae85bd2f8">More...</a><br/></td></tr>
+<tr class="separator:aeb1120d2c6ba1f157e0d21eae85bd2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae0a1702c1817fbf6d92f8037fe3b4ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html">mcs_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aae0a1702c1817fbf6d92f8037fe3b4ab">mcs</a> () const </td></tr>
+<tr class="memdesc:aae0a1702c1817fbf6d92f8037fe3b4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the MCS field.  <a href="#aae0a1702c1817fbf6d92f8037fe3b4ab">More...</a><br/></td></tr>
+<tr class="separator:aae0a1702c1817fbf6d92f8037fe3b4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59bbbd933e28d529fde7d0ac980299e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ada2e8a0fdc1ed3721c9c766e053c647f">PresentFlags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#ab59bbbd933e28d529fde7d0ac980299e">present</a> () const </td></tr>
 <tr class="memdesc:ab59bbbd933e28d529fde7d0ac980299e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the present bit fields.  <a href="#ab59bbbd933e28d529fde7d0ac980299e">More...</a><br/></td></tr>
 <tr class="separator:ab59bbbd933e28d529fde7d0ac980299e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -403,6 +433,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
 <tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a94e20a3b3d9570177ce096a04745c95d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94e20a3b3d9570177ce096a04745c95d"></a>
+TINS_BEGIN_PACK struct <br class="typebreak"/>
+<a class="el" href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html">Tins::RadioTap::mcs_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TINS_END_PACK</b></td></tr>
+<tr class="separator:a94e20a3b3d9570177ce096a04745c95d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -534,9 +571,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a55b0a32852012f5ce1b0f3f52bf291d7"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t Tins::RadioTap::antenna </td>
@@ -545,11 +579,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the antenna field. </p>
@@ -595,9 +624,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a9a68e4bf3f77936b71ed6830460cd95c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint16_t Tins::RadioTap::channel_freq </td>
@@ -606,11 +632,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the channel frequency field. </p>
@@ -621,9 +642,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a93ed548b2a791b5e38fe1ab841408cdd"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint32_t Tins::RadioTap::channel_plus </td>
@@ -632,11 +650,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the channel+ field. </p>
@@ -647,9 +660,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a9132a21f2b88c08abeb61cf7c358ba6b"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint16_t Tins::RadioTap::channel_type </td>
@@ -658,11 +668,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the channel type field. </p>
@@ -696,6 +701,48 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5db139153ef9de150541200bb555486f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::RadioTap::data_retries </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>new_data_retries</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the data retries field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_rx_flag</td><td>The data retries. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa40e7586d8a0fd3ec8e203d0ae3d713"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Tins::RadioTap::data_retries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the data retries field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The data retries field. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac2a4957742269496057c58d545086cf0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -723,9 +770,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a1d407293a63f72b17d561fd2fe36a99e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t Tins::RadioTap::db_signal </td>
@@ -734,11 +778,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the db signal field. </p>
@@ -746,14 +785,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aed3342e1a9f1bfe9c202c56c5d4f6072"></a>
+<a class="anchor" id="ac00086b60640995e77ae508323f45d97"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::RadioTap::dbm_noise </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">int8_t&#160;</td>
           <td class="paramname"><em>new_dbm_noise</em></td><td>)</td>
           <td></td>
         </tr>
@@ -770,25 +809,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac96f53f8d54e735cba266880098db8f5"></a>
+<a class="anchor" id="a4be6fe2ebf51e4a6d4ad33acd443f408"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t Tins::RadioTap::dbm_noise </td>
+          <td class="memname">int8_t Tins::RadioTap::dbm_noise </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the dbm noise field. </p>
@@ -796,14 +827,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac451dfc3223d1857630f41548f357928"></a>
+<a class="anchor" id="aa06bb216d1bcd20b3d2edcc6d2a97289"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::RadioTap::dbm_signal </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramtype">int8_t&#160;</td>
           <td class="paramname"><em>new_dbm_signal</em></td><td>)</td>
           <td></td>
         </tr>
@@ -820,25 +851,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad474d9f1f019c3cc1ddef9143260f9d5"></a>
+<a class="anchor" id="a4770430a620196264cfce3c4601f894d"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t Tins::RadioTap::dbm_signal </td>
+          <td class="memname">int8_t Tins::RadioTap::dbm_signal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the dbm signal field. </p>
@@ -873,9 +896,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a607c1f7a5f60318f0e31e67a93b0930e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../d7/d0e/classTins_1_1RadioTap.html#aa5af7f33b5c641a8cddc10290ab4b9cd">FrameFlags</a> Tins::RadioTap::flags </td>
@@ -884,11 +904,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the flags field. </p>
@@ -952,9 +967,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a21a62718ee2c68e6c43fa4fc61cad95e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint16_t Tins::RadioTap::length </td>
@@ -963,11 +975,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the length field. </p>
@@ -1021,6 +1028,48 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a114a03950be58baad6370b28aef70678"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::RadioTap::mcs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html">mcs_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_mcs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the MCS field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_rx_flag</td><td>The MCS retries. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aae0a1702c1817fbf6d92f8037fe3b4ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html">mcs_type</a> Tins::RadioTap::mcs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the MCS field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The MCS field. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a4802f173f4eff957eb7dafc3ccf64b4e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1048,9 +1097,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a30518d21444d84c794174a2d5459d80e"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t Tins::RadioTap::padding </td>
@@ -1059,11 +1105,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the padding field. </p>
@@ -1152,9 +1193,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a93f4a401fcc4d61f263829a4c2bd1aca"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t Tins::RadioTap::rate </td>
@@ -1163,11 +1201,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the rate field. </p>
@@ -1192,7 +1225,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Setter for the rx flag field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_rx_flag</td><td>The antenna signal. </td></tr>
+    <tr><td class="paramname">new_rx_flag</td><td>The rx flags. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1202,9 +1235,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="aaa426b250dd2148e9747cf2019a0cf3c"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint16_t Tins::RadioTap::rx_flags </td>
@@ -1213,11 +1243,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the rx flags field. </p>
@@ -1289,9 +1314,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a12f69efb6e864751a66fd79859cb9c22"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint16_t Tins::RadioTap::signal_quality </td>
@@ -1300,11 +1322,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the signal quality field. </p>
@@ -1367,9 +1384,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a2e0e8b91b85a2dfe717a84d0fb76098a"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint64_t Tins::RadioTap::tsft </td>
@@ -1378,15 +1392,52 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the tsft field. </p>
 <dl class="section return"><dt>Returns</dt><dd>The tsft field. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ec3b51ebb7ed696a6327d54f806d1cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::RadioTap::tx_flags </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>new_tx_flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the tx flag field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_tx_flag</td><td>The tx flags. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb1120d2c6ba1f157e0d21eae85bd2f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Tins::RadioTap::tx_flags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the tx flags field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The tx flags field. </dd></dl>
 
 </div>
 </div>
@@ -1417,9 +1468,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a9591b0dcb0d298f9fa7382c47cd52140"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t Tins::RadioTap::version </td>
@@ -1428,11 +1476,6 @@ Additional Inherited Members</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Getter for the version field. </p>
@@ -1441,12 +1484,12 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/matias/Projects/libtins/code/include/<a class="el" href="../../d7/dcc/radiotap_8h_source.html">radiotap.h</a></li>
+<li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../d7/dcc/radiotap_8h_source.html">radiotap.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 14 2014 14:11:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 16:53:06 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

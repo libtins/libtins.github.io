@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>libtins: /home/matias/Projects/libtins/code/include/loopback.h Source File</title>
+<title>libtins: /home/matias/Projects/libtins/code/include/tins/loopback.h Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_12937f0ebf3aded5cc3ca06f8594477d.html">tins</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -141,22 +141,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
 <div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d3/d37/classTins_1_1Loopback.html#a3989a582ac92cd6f19047b3cb1dc4112">   87</a></span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../d3/d37/classTins_1_1Loopback.html#a3989a582ac92cd6f19047b3cb1dc4112">pdu_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d3/d37/classTins_1_1Loopback.html#ac154fae30429944ec605d482f7fc5d3e">pdu_flag</a>; }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">   92</a></span>&#160;    <a class="code" href="../../d3/d37/classTins_1_1Loopback.html">Loopback</a> *<a class="code" href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">clone</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d3/d37/classTins_1_1Loopback.html#a645499b940967af0a2838c503b8b8455">Loopback</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Null/Loopback can only be sent in *BSD</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">    #ifdef BSD</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#afc8b2159719f56b04d67a999f82054b3">send</a>(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, <span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">    #endif // BSD</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor"></span><span class="keyword">private</span>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *parent);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint32_t _family;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif // TINS_LOOPBACK_H</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d3/d37/classTins_1_1Loopback.html#a05b5430c52a2fe714a99f71f482f3605">matches_response</a>(<span class="keyword">const</span> uint8_t *ptr, uint32_t total_sz) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">  101</a></span>&#160;    <a class="code" href="../../d3/d37/classTins_1_1Loopback.html">Loopback</a> *<a class="code" href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">clone</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d3/d37/classTins_1_1Loopback.html#a645499b940967af0a2838c503b8b8455">Loopback</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Null/Loopback can only be sent in *BSD</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">    #ifdef BSD</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#afc8b2159719f56b04d67a999f82054b3">send</a>(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, <span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">    #endif // BSD</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span><span class="keyword">private</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *parent);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    uint32_t _family;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif // TINS_LOOPBACK_H</span></div>
 <div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:127</div></div>
 <div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:106</div></div>
 <div class="ttc" id="classTins_1_1Loopback_html_a79f30a12b55e19250758178fc825c641"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#a79f30a12b55e19250758178fc825c641">Tins::Loopback::family</a></div><div class="ttdeci">uint32_t family() const </div><div class="ttdoc">Getter for the family identifier. </div><div class="ttdef"><b>Definition:</b> loopback.h:70</div></div>
@@ -165,14 +167,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1Loopback_html_a645499b940967af0a2838c503b8b8455"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#a645499b940967af0a2838c503b8b8455">Tins::Loopback::Loopback</a></div><div class="ttdeci">Loopback()</div><div class="ttdoc">Default constructs a Loopback PDU. </div><div class="ttdef"><b>Definition:</b> loopback.cpp:58</div></div>
 <div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:44</div></div>
 <div class="ttc" id="classTins_1_1Loopback_html_a3989a582ac92cd6f19047b3cb1dc4112"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#a3989a582ac92cd6f19047b3cb1dc4112">Tins::Loopback::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> loopback.h:87</div></div>
-<div class="ttc" id="classTins_1_1Loopback_html_ad569ec15571f38bcd260062abb720e6a"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">Tins::Loopback::clone</a></div><div class="ttdeci">Loopback * clone() const </div><div class="ttdef"><b>Definition:</b> loopback.h:92</div></div>
+<div class="ttc" id="classTins_1_1Loopback_html_ad569ec15571f38bcd260062abb720e6a"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#ad569ec15571f38bcd260062abb720e6a">Tins::Loopback::clone</a></div><div class="ttdeci">Loopback * clone() const </div><div class="ttdef"><b>Definition:</b> loopback.h:101</div></div>
 <div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:107</div></div>
 <div class="ttc" id="classTins_1_1Loopback_html_a45f5f32c156ac3b957b7718ad8200385"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#a45f5f32c156ac3b957b7718ad8200385">Tins::Loopback::header_size</a></div><div class="ttdeci">uint32_t header_size() const </div><div class="ttdef"><b>Definition:</b> loopback.cpp:92</div></div>
 <div class="ttc" id="classTins_1_1Loopback_html_ac154fae30429944ec605d482f7fc5d3e"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#ac154fae30429944ec605d482f7fc5d3e">Tins::Loopback::pdu_flag</a></div><div class="ttdeci">static const PDU::PDUType pdu_flag</div><div class="ttdef"><b>Definition:</b> loopback.h:42</div></div>
+<div class="ttc" id="classTins_1_1Loopback_html_a05b5430c52a2fe714a99f71f482f3605"><div class="ttname"><a href="../../d3/d37/classTins_1_1Loopback.html#a05b5430c52a2fe714a99f71f482f3605">Tins::Loopback::matches_response</a></div><div class="ttdeci">bool matches_response(const uint8_t *ptr, uint32_t total_sz) const </div><div class="ttdoc">Check wether ptr points to a valid response for this PDU. </div><div class="ttdef"><b>Definition:</b> loopback.cpp:109</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 14 2014 14:11:00 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 7 2015 16:53:04 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
