@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.2</span>
+   &#160;<span id="projectnumber">3.3</span>
    </div>
   </td>
  </tr>
@@ -156,7 +156,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a63198af7b971777a2520c57bdf966214"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>ReasonCodes</b> { <br/>
+<tr class="memitem:a63198af7b971777a2520c57bdf966214"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a63198af7b971777a2520c57bdf966214">ReasonCodes</a> { <br/>
 &#160;&#160;<b>UNSPECIFIED</b> = 1, 
 <b>PREV_AUTH_NOT_VALID</b> = 2, 
 <b>STA_LEAVING_IBSS_ESS</b> = 3, 
@@ -198,12 +198,28 @@ Public Types</h2></td></tr>
 <b>PEER_STA_NOT_SUPPORT_CIPHER</b> = 45
 <br/>
  }</td></tr>
+<tr class="memdesc:a63198af7b971777a2520c57bdf966214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum used in the reason code field.  <a href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a63198af7b971777a2520c57bdf966214">More...</a><br/></td></tr>
 <tr class="separator:a63198af7b971777a2520c57bdf966214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35ce024e244059d64973daca2188ff2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#ae35ce024e244059d64973daca2188ff2">MapMask</a> { <br/>
+&#160;&#160;<b>BSS</b> = 0x1, 
+<b>OFDM_PREAMBLE</b> = 0x2, 
+<b>UNIDENTIFIED_SIGNAL</b> = 0x4, 
+<b>RADAR</b> = 0x8, 
+<br/>
+&#160;&#160;<b>UNMEASURED</b> = 0x10, 
+<b>RESERVED</b> = 0xE0
+<br/>
+ }</td></tr>
+<tr class="memdesc:ae35ce024e244059d64973daca2188ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that represents the map field within a channels map field.  <a href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#ae35ce024e244059d64973daca2188ff2">More...</a><br/></td></tr>
+<tr class="separator:ae35ce024e244059d64973daca2188ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a416ff08e1b13bcaf06736c9e0e411493"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a416ff08e1b13bcaf06736c9e0e411493">rates_type</a></td></tr>
 <tr class="separator:a416ff08e1b13bcaf06736c9e0e411493"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07b5c4a5282512ada80822b113b4ca9f"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::pair<br class="typebreak"/>
 &lt; uint8_t, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a07b5c4a5282512ada80822b113b4ca9f">channels_type</a></td></tr>
 <tr class="separator:a07b5c4a5282512ada80822b113b4ca9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f898639aff49e5ca88d4766a8564aaf"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::pair<br class="typebreak"/>
+&lt; uint8_t, uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a6f898639aff49e5ca88d4766a8564aaf">channel_map_type</a></td></tr>
+<tr class="separator:a6f898639aff49e5ca88d4766a8564aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2497d1b91d8234eba7854e6693ef57c9"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a2497d1b91d8234eba7854e6693ef57c9">request_info_type</a></td></tr>
 <tr class="separator:a2497d1b91d8234eba7854e6693ef57c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43e0d981e4b8ee3a1d272e6dfc30fc82"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a43e0d981e4b8ee3a1d272e6dfc30fc82">qos_capability_type</a></td></tr>
@@ -510,9 +526,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36a5d43131d8d3eb224796c4a21e5226"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a36a5d43131d8d3eb224796c4a21e5226">vendor_specific</a> (const <a class="el" href="../../d1/d11/structTins_1_1Dot11ManagementFrame_1_1vendor__specific__type.html">vendor_specific_type</a> &amp;data)</td></tr>
 <tr class="memdesc:a36a5d43131d8d3eb224796c4a21e5226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to add a Vendor Specific tagged option.  <a href="#a36a5d43131d8d3eb224796c4a21e5226">More...</a><br/></td></tr>
 <tr class="separator:a36a5d43131d8d3eb224796c4a21e5226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6465ab4816d4c1f945dc8f2c78e48b98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd6/classTins_1_1RSNInformation.html">RSNInformation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a6465ab4816d4c1f945dc8f2c78e48b98">rsn_information</a> ()</td></tr>
-<tr class="memdesc:a6465ab4816d4c1f945dc8f2c78e48b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to search for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s rsn information option.  <a href="#a6465ab4816d4c1f945dc8f2c78e48b98">More...</a><br/></td></tr>
-<tr class="separator:a6465ab4816d4c1f945dc8f2c78e48b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039a01615d1caeb66eb3f244a0c3fe97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd6/classTins_1_1RSNInformation.html">RSNInformation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a039a01615d1caeb66eb3f244a0c3fe97">rsn_information</a> () const </td></tr>
+<tr class="memdesc:a039a01615d1caeb66eb3f244a0c3fe97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to search for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s rsn information option.  <a href="#a039a01615d1caeb66eb3f244a0c3fe97">More...</a><br/></td></tr>
+<tr class="separator:a039a01615d1caeb66eb3f244a0c3fe97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a014d760bfb447a9738e174207a6a1733"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a014d760bfb447a9738e174207a6a1733">ssid</a> () const </td></tr>
 <tr class="memdesc:a014d760bfb447a9738e174207a6a1733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to search for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s SSID.  <a href="#a014d760bfb447a9738e174207a6a1733">More...</a><br/></td></tr>
 <tr class="separator:a014d760bfb447a9738e174207a6a1733"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -829,6 +845,19 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class that englobes all Management frames in the 802.11 protocol. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a6f898639aff49e5ca88d4766a8564aaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;std::pair&lt;uint8_t, uint8_t&gt; &gt; <a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a6f898639aff49e5ca88d4766a8564aaf">Tins::Dot11ManagementFrame::channel_map_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The channel map container type. </p>
+
+</div>
+</div>
 <a class="anchor" id="a07b5c4a5282512ada80822b113b4ca9f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -878,6 +907,37 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The requested information container type. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="ae35ce024e244059d64973daca2188ff2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#ae35ce024e244059d64973daca2188ff2">Tins::Dot11ManagementFrame::MapMask</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum that represents the map field within a channels map field. </p>
+<p>These bitmasks can be used to get or set the second value of ibss_dfs_params().channel_map </p>
+
+</div>
+</div>
+<a class="anchor" id="a63198af7b971777a2520c57bdf966214"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#a63198af7b971777a2520c57bdf966214">Tins::Dot11ManagementFrame::ReasonCodes</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum used in the reason code field. </p>
+<p>This enumeration can be used to get or set the reason code field in a Deauthentication or Disassociation </p>
 
 </div>
 </div>
@@ -2090,7 +2150,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6465ab4816d4c1f945dc8f2c78e48b98"></a>
+<a class="anchor" id="a039a01615d1caeb66eb3f244a0c3fe97"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2098,7 +2158,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname"><a class="el" href="../../df/dd6/classTins_1_1RSNInformation.html">RSNInformation</a> Tins::Dot11ManagementFrame::rsn_information </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2448,7 +2508,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 16:53:05 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 25 2015 19:16:55 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

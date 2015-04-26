@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.2</span>
+   &#160;<span id="projectnumber">3.3</span>
    </div>
   </td>
  </tr>
@@ -179,6 +179,7 @@ Static Public Attributes</h2></td></tr>
 <li>Those that contain a link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> (<a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a>, <a class="el" href="../../d6/d47/classTins_1_1SLL.html" title="Represents a Linux cooked-mode capture (SLL) PDU. ">SLL</a>, etc). These will be serialized and sent through an interface that has to be specified. This can be done by providing it when you call <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a>, or set a default one using <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#a81638a36e8d4a3a70df7b44fed4dff68" title="Sets the default interface. ">PacketSender::default_interface</a>.</li>
 <li>Those that don't contain a link layer <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. In this case, the kernel will be responsible for picking the appropriate network interface based on the destination address.</li>
 </ul>
+<dl class="section user"><dt>Note for Windows users:</dt><dd>Sending layer 3 PDUs (without a link layer protocol) is very restricted on Windows (<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms740548(v=vs.85).aspx">link</a>). Therefore it's recommended you always send packets which contain link layer PDUs. This will use Winpcap's pcap_sendpacket to inject the packets.</dd></dl>
 <p>Sending packets can be done via <a class="el" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9" title="Sends a PDU. ">PacketSender::send</a>:</p>
 <div class="fragment"><div class="line"><span class="comment">// Construct a packet which uses an EthernetII link layer.</span></div>
 <div class="line">EthernetII pkt1 = ...;</div>
@@ -771,7 +772,7 @@ Static Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 16:53:06 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 25 2015 19:16:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

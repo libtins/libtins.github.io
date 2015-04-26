@@ -14,6 +14,7 @@ var searchData=
   ['channel',['channel',['../d7/d0e/classTins_1_1RadioTap.html#a074565cc82651c43cc3cfeee96db8fba',1,'Tins::RadioTap']]],
   ['channel_5fagility',['channel_agility',['../d2/d63/classTins_1_1Dot11ManagementFrame_1_1capability__information.html#a6c4d1070b705ba6484bb82e27c934996',1,'Tins::Dot11ManagementFrame::capability_information::channel_agility() const '],['../d2/d63/classTins_1_1Dot11ManagementFrame_1_1capability__information.html#aae637d78b01db809ef70ada3ae418983',1,'Tins::Dot11ManagementFrame::capability_information::channel_agility(bool new_value)']]],
   ['channel_5ffreq',['channel_freq',['../d7/d0e/classTins_1_1RadioTap.html#a9a68e4bf3f77936b71ed6830460cd95c',1,'Tins::RadioTap']]],
+  ['channel_5fmap_5ftype',['channel_map_type',['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a6f898639aff49e5ca88d4766a8564aaf',1,'Tins::Dot11ManagementFrame']]],
   ['channel_5fplus',['channel_plus',['../d7/d0e/classTins_1_1RadioTap.html#a93ed548b2a791b5e38fe1ab841408cdd',1,'Tins::RadioTap']]],
   ['channel_5fswitch',['channel_switch',['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a0e85a5f874424a82227a3039ee2182ab',1,'Tins::Dot11ManagementFrame::channel_switch(const channel_switch_type &amp;data)'],['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a4e7b256186e75c7f981c627c484e1e92',1,'Tins::Dot11ManagementFrame::channel_switch() const ']]],
   ['channel_5fswitch_5ftype',['channel_switch_type',['../d5/d9c/structTins_1_1Dot11ManagementFrame_1_1channel__switch__type.html',1,'Tins::Dot11ManagementFrame']]],

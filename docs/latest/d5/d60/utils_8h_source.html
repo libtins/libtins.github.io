@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.2</span>
+   &#160;<span id="projectnumber">3.3</span>
    </div>
   </td>
  </tr>
@@ -320,55 +320,54 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">Tins::Utils::route_entries</a>(ForwardIterator output) {</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    MIB_IPFORWARDTABLE *table;</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    ULONG size = 0;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordtype">char</span> iface_name[256];</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    GetIpForwardTable(0, &amp;size, 0);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    std::vector&lt;uint8_t&gt; buffer(size);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    table = (MIB_IPFORWARDTABLE*)&amp;buffer[0];</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    GetIpForwardTable(table, &amp;size, 0);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; table-&gt;dwNumEntries; i++) {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        MIB_IPFORWARDROW *row = &amp;table-&gt;table[i];</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span>(row-&gt;dwForwardType == MIB_IPROUTE_TYPE_INDIRECT) {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            RouteEntry entry;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            entry.interface = NetworkInterface::from_index(row-&gt;dwForwardIfIndex).name();</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            entry.destination = IPv4Address(row-&gt;dwForwardDest);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            entry.mask = IPv4Address(row-&gt;dwForwardMask);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            entry.gateway = IPv4Address(row-&gt;dwForwardNextHop);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            *output++ = entry;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    }</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor"></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ForwardIterator&gt;</div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">  404</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">Tins::Utils::route_entries</a>(ForwardIterator output) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keyword">using namespace </span>Tins::Internals;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    std::ifstream input(<span class="stringliteral">&quot;/proc/net/route&quot;</span>);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    std::string destination, mask, gw;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    uint32_t dummy;</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    skip_line(input);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <a class="code" href="../../d9/d05/structTins_1_1Utils_1_1RouteEntry.html">RouteEntry</a> entry;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">while</span>(input &gt;&gt; entry.interface &gt;&gt; destination &gt;&gt; gw) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i(0); i &lt; 5; ++i)</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            input &gt;&gt; mask;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        from_hex(destination, dummy);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        entry.destination = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>(dummy);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        from_hex(mask, dummy);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        entry.mask = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>(dummy);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        from_hex(gw, dummy);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        entry.gateway = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>(dummy);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        skip_line(input);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        *output = entry;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        ++output;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;}</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">#endif // TINS_UTILS_H</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    GetIpForwardTable(0, &amp;size, 0);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    std::vector&lt;uint8_t&gt; buffer(size);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    table = (MIB_IPFORWARDTABLE*)&amp;buffer[0];</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    GetIpForwardTable(table, &amp;size, 0);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; table-&gt;dwNumEntries; i++) {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        MIB_IPFORWARDROW *row = &amp;table-&gt;table[i];</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span>(row-&gt;dwForwardType == MIB_IPROUTE_TYPE_INDIRECT) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            RouteEntry entry;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            entry.interface = NetworkInterface::from_index(row-&gt;dwForwardIfIndex).name();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            entry.destination = IPv4Address(row-&gt;dwForwardDest);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            entry.mask = IPv4Address(row-&gt;dwForwardMask);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            entry.gateway = IPv4Address(row-&gt;dwForwardNextHop);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            *output++ = entry;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor"></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ForwardIterator&gt;</div>
+<div class="line"><a name="l00403"></a><span class="lineno"><a class="line" href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">  403</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">Tins::Utils::route_entries</a>(ForwardIterator output) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keyword">using namespace </span>Tins::Internals;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    std::ifstream input(<span class="stringliteral">&quot;/proc/net/route&quot;</span>);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    std::string destination, mask, gw;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    uint32_t dummy;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    skip_line(input);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <a class="code" href="../../d9/d05/structTins_1_1Utils_1_1RouteEntry.html">RouteEntry</a> entry;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">while</span>(input &gt;&gt; entry.interface &gt;&gt; destination &gt;&gt; gw) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i(0); i &lt; 5; ++i)</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            input &gt;&gt; mask;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        from_hex(destination, dummy);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        entry.destination = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>(dummy);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        from_hex(mask, dummy);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        entry.mask = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>(dummy);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        from_hex(gw, dummy);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        entry.gateway = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>(dummy);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        skip_line(input);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        *output = entry;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        ++output;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor">#endif // TINS_UTILS_H</span></div>
 <div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:127</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_af93d4b742c085f387b5a78b02224e328"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#af93d4b742c085f387b5a78b02224e328">Tins::Utils::channel_to_mhz</a></div><div class="ttdeci">uint16_t channel_to_mhz(uint16_t channel)</div><div class="ttdoc">Converts a channel number to its mhz representation. </div><div class="ttdef"><b>Definition:</b> utils.cpp:152</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_a1ea921c76702e7f70ba2d96ac15a1ba1"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a1ea921c76702e7f70ba2d96ac15a1ba1">Tins::Utils::resolve_domain</a></div><div class="ttdeci">IPv4Address resolve_domain(const std::string &amp;to_resolve)</div><div class="ttdoc">Resolves a domain name and returns its corresponding ip address. </div><div class="ttdef"><b>Definition:</b> utils.cpp:94</div></div>
 <div class="ttc" id="structTins_1_1Utils_1_1RouteEntry_html_af37d5d36084d9b4e9217f05cef971e7b"><div class="ttname"><a href="../../d9/d05/structTins_1_1Utils_1_1RouteEntry.html#af37d5d36084d9b4e9217f05cef971e7b">Tins::Utils::RouteEntry::destination</a></div><div class="ttdeci">IPv4Address destination</div><div class="ttdef"><b>Definition:</b> utils.h:86</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:106</div></div>
+<div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:116</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_af05e3f8ca1854e4bdae41e27875ec210"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#af05e3f8ca1854e4bdae41e27875ec210">Tins::Utils::dereference_until_pdu</a></div><div class="ttdeci">PDU &amp; dereference_until_pdu(PDU &amp;pdu)</div><div class="ttdef"><b>Definition:</b> utils.h:295</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_ae3d324621eba366ba5dd90f5931bc531"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#ae3d324621eba366ba5dd90f5931bc531">Tins::Utils::to_string</a></div><div class="ttdeci">std::string to_string(PDU::PDUType pduType)</div><div class="ttdoc">Converts a PDUType to a string. </div></div>
 <div class="ttc" id="structTins_1_1Utils_1_1RouteEntry_html"><div class="ttname"><a href="../../d9/d05/structTins_1_1Utils_1_1RouteEntry.html">Tins::Utils::RouteEntry</a></div><div class="ttdef"><b>Definition:</b> utils.h:77</div></div>
@@ -389,12 +388,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:43</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_a3458bc10bda24a3f8e455ae4827f386e"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a3458bc10bda24a3f8e455ae4827f386e">Tins::Utils::gateway_from_ip</a></div><div class="ttdeci">bool gateway_from_ip(IPv4Address ip, IPv4Address &amp;gw_addr)</div><div class="ttdoc">Finds the gateway&#39;s IP address for the given IP address. </div></div>
 <div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:107</div></div>
-<div class="ttc" id="namespaceTins_1_1Utils_html_a9f663552f5d4bc58493677394f633962"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">Tins::Utils::route_entries</a></div><div class="ttdeci">void route_entries(ForwardIterator output)</div><div class="ttdoc">Retrieves entries in the routing table. </div><div class="ttdef"><b>Definition:</b> utils.h:404</div></div>
+<div class="ttc" id="namespaceTins_1_1Utils_html_a9f663552f5d4bc58493677394f633962"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">Tins::Utils::route_entries</a></div><div class="ttdeci">void route_entries(ForwardIterator output)</div><div class="ttdoc">Retrieves entries in the routing table. </div><div class="ttdef"><b>Definition:</b> utils.h:403</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_ac51d056eade868c1d980c55413978f51"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#ac51d056eade868c1d980c55413978f51">Tins::Utils::mhz_to_channel</a></div><div class="ttdeci">uint16_t mhz_to_channel(uint16_t mhz)</div><div class="ttdoc">Converts mhz units to the appropriate channel number. </div><div class="ttdef"><b>Definition:</b> utils.cpp:156</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 7 2015 16:53:04 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 25 2015 19:16:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
