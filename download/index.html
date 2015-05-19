@@ -53,17 +53,18 @@ so you don't have to compile it yourself.
 
 <h4>Windows</h4>
 <p>
-In case you are using <i>Windows</i>, you can download the binary 
-distribution so you don't have to compile the entire library.
+The library is automatically built after every commit to the master branch on
+Windows using the <a href="https://ci.appveyor.com/">appveyor platform</a>
 </p>
 <p>
-You can get the the latest version (the compiled code is from the master branch, 
-commit <a href="https://github.com/mfontanini/libtins/commit/9de57e1b23a042ca31ea538c770822881c46bf77">
-9de57e1b23a042ca31ea538c770822881c46bf77</a>) for <i>Windows</i> binary distribution 
-<a href="{{ site.url }}/download/binary/windows/libtins-latest-win32.zip">here</a>.
-This was compiled using <i>Visual Studio 2013</i>, under a <i>32 bit</i>
-operating system.
+You can get the the latest version of the <i>Windows</i> binary package, 
+compiled using <i>Visual Studio 2013</i>, 
+<a href="https://ci.appveyor.com/project/mfontanini/libtins/branch/master">here</a>.
+You can pick between a 32 and 64 bits build, using debug or release mode 
+(make sure to pick the right one or you'll get linker errors if you compile your
+code in debug mode and try to link with <i>libtins</i> compiled in release mode).
 </p>
+<p>You will find the appropriate <i>.zip</i> file inside the "artifacts" tab.</p>
 <p>
 In order to use it, just unpack the package into a directory and then
 add the <i>include</i> folder into your application's include 
