@@ -26,6 +26,7 @@ var searchData=
   ['option_5fidentifier',['option_identifier',['../d3/d1a/structTins_1_1IP_1_1option__identifier.html',1,'Tins::IP']]],
   ['option_5fidentifier',['option_identifier',['../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a60e64c2c5c5521535805f9c1908f66a1',1,'Tins::IP::option_identifier::option_identifier()'],['../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a395bd7f0e06bd9e47ad96634203fa5b3',1,'Tins::IP::option_identifier::option_identifier(uint8_t value)'],['../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a90e7a9449a21c49ea3360bf7870581fc',1,'Tins::IP::option_identifier::option_identifier(OptionNumber number, OptionClass op_class, small_uint&lt; 1 &gt; copied)']]],
   ['option_5fnot_5ffound',['option_not_found',['../d6/d07/classTins_1_1option__not__found.html',1,'Tins']]],
+  ['option_5fpayload_5ftoo_5flarge',['option_payload_too_large',['../da/dbf/classTins_1_1option__payload__too__large.html',1,'Tins']]],
   ['option_5frequest',['option_request',['../d8/d2b/classTins_1_1DHCPv6.html#ada105b9b2f26ceb0613c83994fadbea0',1,'Tins::DHCPv6::option_request() const '],['../d8/d2b/classTins_1_1DHCPv6.html#ae185f456124fe2cb1bb5a47888e88ce0',1,'Tins::DHCPv6::option_request(const option_request_type &amp;value)']]],
   ['option_5frequest_5ftype',['option_request_type',['../d8/d2b/classTins_1_1DHCPv6.html#a3029e95e6edd6d4166bf482a622227fa',1,'Tins::DHCPv6']]],
   ['optionclass',['OptionClass',['../dd/d3f/classTins_1_1IP.html#a0ef893a6853b95b3446718133a95da27',1,'Tins::IP']]],

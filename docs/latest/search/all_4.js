@@ -25,7 +25,7 @@ var searchData=
   ['ethernetii',['EthernetII',['../df/dcb/classTins_1_1EthernetII.html#adf06dde2044087d3e3de77f4f28bfa4b',1,'Tins::EthernetII::EthernetII(const address_type &amp;dst_hw_addr=address_type(), const address_type &amp;src_hw_addr=address_type())'],['../df/dcb/classTins_1_1EthernetII.html#a34e7ab706c719baad0a20f5debd21aa7',1,'Tins::EthernetII::EthernetII(const uint8_t *buffer, uint32_t total_sz)']]],
   ['ext_5fheader',['ext_header',['../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267',1,'Tins::IPv6']]],
   ['extended_5fsupported_5frates',['extended_supported_rates',['../dd/da0/classTins_1_1Dot11ManagementFrame.html#ad8808063b10318b3c1fc8f4016c5615e',1,'Tins::Dot11ManagementFrame::extended_supported_rates(const rates_type &amp;new_rates)'],['../dd/da0/classTins_1_1Dot11ManagementFrame.html#ad55751c0b804b5519d14a51115a45c42',1,'Tins::Dot11ManagementFrame::extended_supported_rates() const ']]],
-  ['extendedheader',['ExtendedHeader',['../dc/d13/structTins_1_1Dot11Data_1_1ExtendedHeader.html',1,'Tins::Dot11Data']]],
   ['extendedheader',['ExtendedHeader',['../d6/d23/structTins_1_1Dot11ManagementFrame_1_1ExtendedHeader.html',1,'Tins::Dot11ManagementFrame']]],
+  ['extendedheader',['ExtendedHeader',['../dc/d13/structTins_1_1Dot11Data_1_1ExtendedHeader.html',1,'Tins::Dot11Data']]],
   ['extensionheader',['ExtensionHeader',['../dd/d25/classTins_1_1IPv6.html#a8818a0ba9596f5b27f4a29955d1f0207',1,'Tins::IPv6']]]
 ];

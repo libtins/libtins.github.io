@@ -228,15 +228,34 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;};</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;} <span class="comment">// Tins</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif // TINS_EXCEPTIONS_H</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../da/dbf/classTins_1_1option__payload__too__large.html">  187</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/dbf/classTins_1_1option__payload__too__large.html">option_payload_too_large</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *what() <span class="keyword">const</span> <span class="keywordflow">throw</span>() {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Option payload too large&quot;</span>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">namespace </span>Crypto {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">namespace </span>WPA2 {</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="../../d4/d7f/classTins_1_1Crypto_1_1WPA2_1_1invalid__handshake.html">  199</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d4/d7f/classTins_1_1Crypto_1_1WPA2_1_1invalid__handshake.html">invalid_handshake</a> : <span class="keyword">public</span> std::exception {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *what() <span class="keyword">const</span> <span class="keywordflow">throw</span>() {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Invalid WPA2 handshake&quot;</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    };</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;} <span class="comment">// WPA2</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;} <span class="comment">// Crypto</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#endif // TINS_EXCEPTIONS_H</span></div>
 <div class="ttc" id="classTins_1_1protocol__disabled_html"><div class="ttname"><a href="../../d0/d65/classTins_1_1protocol__disabled.html">Tins::protocol_disabled</a></div><div class="ttdoc">Exception thrown when sniffing a protocol that has been disabled at compile time. ...</div><div class="ttdef"><b>Definition:</b> exceptions.h:176</div></div>
 <div class="ttc" id="classTins_1_1unknown__link__type_html"><div class="ttname"><a href="../../da/dbc/classTins_1_1unknown__link__type.html">Tins::unknown_link_type</a></div><div class="ttdoc">Exception thrown when an unkown link layer PDU type is found while sniffing. </div><div class="ttdef"><b>Definition:</b> exceptions.h:145</div></div>
 <div class="ttc" id="classTins_1_1pdu__not__found_html"><div class="ttname"><a href="../../df/d15/classTins_1_1pdu__not__found.html">Tins::pdu_not_found</a></div><div class="ttdoc">Exception thrown when a PDU is not found when using PDU::rfind_pdu. </div><div class="ttdef"><b>Definition:</b> exceptions.h:67</div></div>
 <div class="ttc" id="classTins_1_1field__not__present_html"><div class="ttname"><a href="../../d1/dd4/classTins_1_1field__not__present.html">Tins::field_not_present</a></div><div class="ttdoc">Exception thrown when a field is not present in frame. </div><div class="ttdef"><b>Definition:</b> exceptions.h:94</div></div>
 <div class="ttc" id="classTins_1_1malformed__packet_html"><div class="ttname"><a href="../../d9/d02/classTins_1_1malformed__packet.html">Tins::malformed_packet</a></div><div class="ttdoc">Exception thrown when a malformed packet is parsed. </div><div class="ttdef"><b>Definition:</b> exceptions.h:54</div></div>
 <div class="ttc" id="classTins_1_1socket__open__error_html"><div class="ttname"><a href="../../dc/d88/classTins_1_1socket__open__error.html">Tins::socket_open_error</a></div><div class="ttdoc">Exception thrown when PacketSender fails to open a socket. </div><div class="ttdef"><b>Definition:</b> exceptions.h:106</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1invalid__handshake_html"><div class="ttname"><a href="../../d4/d7f/classTins_1_1Crypto_1_1WPA2_1_1invalid__handshake.html">Tins::Crypto::WPA2::invalid_handshake</a></div><div class="ttdoc">Exception thrown when an invalid WPA2 handshake is found. </div><div class="ttdef"><b>Definition:</b> exceptions.h:199</div></div>
 <div class="ttc" id="classTins_1_1invalid__socket__type_html"><div class="ttname"><a href="../../d0/d7c/classTins_1_1invalid__socket__type.html">Tins::invalid_socket_type</a></div><div class="ttdoc">Exception thrown when an invalid socket type is provided to PacketSender. </div><div class="ttdef"><b>Definition:</b> exceptions.h:134</div></div>
 <div class="ttc" id="classTins_1_1malformed__option_html"><div class="ttname"><a href="../../db/d3d/classTins_1_1malformed__option.html">Tins::malformed_option</a></div><div class="ttdoc">Exception thrown when a malformed option is found. </div><div class="ttdef"><b>Definition:</b> exceptions.h:155</div></div>
 <div class="ttc" id="classTins_1_1socket__write__error_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1socket__write__error.html">Tins::socket_write_error</a></div><div class="ttdoc">Exception thrown when PacketSender fails to write on a socket. </div><div class="ttdef"><b>Definition:</b> exceptions.h:124</div></div>
@@ -244,10 +263,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1invalid__interface_html"><div class="ttname"><a href="../../d9/d13/classTins_1_1invalid__interface.html">Tins::invalid_interface</a></div><div class="ttdoc">Exception thrown when PDU::send requires a valid interface, but an invalid is used. </div><div class="ttdef"><b>Definition:</b> exceptions.h:81</div></div>
 <div class="ttc" id="classTins_1_1bad__tins__cast_html"><div class="ttname"><a href="../../dd/d68/classTins_1_1bad__tins__cast.html">Tins::bad_tins_cast</a></div><div class="ttdoc">Exception thrown when a call to tins_cast fails. </div><div class="ttdef"><b>Definition:</b> exceptions.h:165</div></div>
 <div class="ttc" id="classTins_1_1option__not__found_html"><div class="ttname"><a href="../../d6/d07/classTins_1_1option__not__found.html">Tins::option_not_found</a></div><div class="ttdoc">Exception thrown when an option is not found. </div><div class="ttdef"><b>Definition:</b> exceptions.h:40</div></div>
+<div class="ttc" id="classTins_1_1option__payload__too__large_html"><div class="ttname"><a href="../../da/dbf/classTins_1_1option__payload__too__large.html">Tins::option_payload_too_large</a></div><div class="ttdoc">Exception thrown when a payload is too large to fit into a PDUOption. </div><div class="ttdef"><b>Definition:</b> exceptions.h:187</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 25 2015 19:16:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2015 20:44:12 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

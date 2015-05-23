@@ -143,12 +143,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:affe3b4fcdcdaa036b2ad9520861fa8c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d08/structTins_1_1NetworkInterface_1_1Info.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#affe3b4fcdcdaa036b2ad9520861fa8c1">addresses</a> () const </td></tr>
 <tr class="memdesc:affe3b4fcdcdaa036b2ad9520861fa8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve this interface's addresses.  <a href="#affe3b4fcdcdaa036b2ad9520861fa8c1">More...</a><br/></td></tr>
 <tr class="separator:affe3b4fcdcdaa036b2ad9520861fa8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a2de27c86b7b78cf9a6cebb73e1248"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d08/structTins_1_1NetworkInterface_1_1Info.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#af7a2de27c86b7b78cf9a6cebb73e1248">info</a> () const </td></tr>
+<tr class="memdesc:af7a2de27c86b7b78cf9a6cebb73e1248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve this interface's information.  <a href="#af7a2de27c86b7b78cf9a6cebb73e1248">More...</a><br/></td></tr>
+<tr class="separator:af7a2de27c86b7b78cf9a6cebb73e1248"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade2c3399449af4dc19545897639407b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#ade2c3399449af4dc19545897639407b1">operator bool</a> () const </td></tr>
 <tr class="memdesc:ade2c3399449af4dc19545897639407b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether this is a valid interface;.  <a href="#ade2c3399449af4dc19545897639407b1">More...</a><br/></td></tr>
 <tr class="separator:ade2c3399449af4dc19545897639407b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc64496879f547f571cf4072808ab085"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#adc64496879f547f571cf4072808ab085">is_loopback</a> () const </td></tr>
 <tr class="memdesc:adc64496879f547f571cf4072808ab085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this is a loopback device.  <a href="#adc64496879f547f571cf4072808ab085">More...</a><br/></td></tr>
 <tr class="separator:adc64496879f547f571cf4072808ab085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c23cd6aefc98914d3c2fcb8de29fa3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#a06c23cd6aefc98914d3c2fcb8de29fa3">is_up</a> () const </td></tr>
+<tr class="memdesc:a06c23cd6aefc98914d3c2fcb8de29fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this interface is up.  <a href="#a06c23cd6aefc98914d3c2fcb8de29fa3">More...</a><br/></td></tr>
+<tr class="separator:a06c23cd6aefc98914d3c2fcb8de29fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba91d9cb480e62579c7a1d50c60bccb9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#aba91d9cb480e62579c7a1d50c60bccb9">operator==</a> (const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;rhs) const </td></tr>
 <tr class="memdesc:aba91d9cb480e62579c7a1d50c60bccb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares this interface for equality.  <a href="#aba91d9cb480e62579c7a1d50c60bccb9">More...</a><br/></td></tr>
 <tr class="separator:aba91d9cb480e62579c7a1d50c60bccb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,7 +279,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieve this interface's addresses. </p>
-<p>This method iterates through all the interface's until the correct one is found. Therefore it's O(N), being N the amount of interfaces in the system. </p>
+<p>This method is deprecated. You should use <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#af7a2de27c86b7b78cf9a6cebb73e1248" title="Retrieve this interface&#39;s information. ">NetworkInterface::info</a> (this is just a naming deprecation, <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#af7a2de27c86b7b78cf9a6cebb73e1248" title="Retrieve this interface&#39;s information. ">NetworkInterface::info</a> is equivalent). </p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -376,6 +383,24 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af7a2de27c86b7b78cf9a6cebb73e1248"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d08/structTins_1_1NetworkInterface_1_1Info.html">NetworkInterface::Info</a> Tins::NetworkInterface::info </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve this interface's information. </p>
+<p>This method iterates through all the interface's until the correct one is found. Therefore it's O(N), being N the amount of interfaces in the system. </p>
+
+</div>
+</div>
 <a class="anchor" id="adc64496879f547f571cf4072808ab085"></a>
 <div class="memitem">
 <div class="memproto">
@@ -391,6 +416,24 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Indicates whether this is a loopback device. </p>
 <dl class="section return"><dt>Returns</dt><dd>true iff this is a loopback device. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a06c23cd6aefc98914d3c2fcb8de29fa3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tins::NetworkInterface::is_up </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether this interface is up. </p>
+<p>This is equivalent to getting the interface info and checking for the is_up attribute. </p>
 
 </div>
 </div>
@@ -511,7 +554,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 25 2015 19:16:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2015 20:44:13 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

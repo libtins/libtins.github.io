@@ -29,7 +29,7 @@ var searchData=
   ['contains',['contains',['../d2/d43/classTins_1_1AddressRange.html#aa39cb855ad1f13eca681685f2163ea71',1,'Tins::AddressRange']]],
   ['control',['control',['../da/d52/classTins_1_1SNAP.html#a1e5e5694623dce92f2f424cc065f0046',1,'Tins::SNAP::control(uint8_t new_control)'],['../da/d52/classTins_1_1SNAP.html#abf796f7ec8c9409d635ebd819c33f35d',1,'Tins::SNAP::control() const ']]],
   ['controlta_5fsize',['controlta_size',['../d7/de8/classTins_1_1Dot11ControlTA.html#a609e8233b7547ab690bdeef00b81d0e5',1,'Tins::Dot11ControlTA']]],
-  ['copy',['copy',['../dc/da6/classTins_1_1HWAddress.html#a6cbae4270e364132c0a23490a72fc33b',1,'Tins::HWAddress::copy()'],['../de/dd2/classTins_1_1IPv6Address.html#a9769930fd38bac19fea86f9a5efdbb2b',1,'Tins::IPv6Address::copy()']]],
+  ['copy',['copy',['../dc/da6/classTins_1_1HWAddress.html#aeb8b455cb3e9bf1cab3d98e2785e5df8',1,'Tins::HWAddress::copy()'],['../de/dd2/classTins_1_1IPv6Address.html#a9769930fd38bac19fea86f9a5efdbb2b',1,'Tins::IPv6Address::copy()']]],
   ['copy_5finner_5fpdu',['copy_inner_pdu',['../d8/de6/classTins_1_1PDU.html#a20c4a5be760bd77bf0f69bb138e4cda9',1,'Tins::PDU']]],
   ['country',['country',['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a4ec5091ccc4e7e58d3b2a0554a8adaba',1,'Tins::Dot11ManagementFrame::country(const country_params &amp;params)'],['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a88a0649399e0c7847a76fd368c36fb01',1,'Tins::Dot11ManagementFrame::country() const ']]],
   ['crc32',['crc32',['../db/d81/namespaceTins_1_1Utils.html#a6f8e8fafa83afd7281380177e7c949d3',1,'Tins::Utils']]],

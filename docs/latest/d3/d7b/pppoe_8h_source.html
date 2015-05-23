@@ -232,7 +232,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">    #if TINS_IS_CXX11</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d97/classTins_1_1PPPoE.html#a379bfc03066cee6d6e6b8b7a5e649f78">add_tag</a>(<a class="code" href="../../db/d97/classTins_1_1PPPoE.html#ae504fb375d3592b4bc425e21e3351fce">tag</a> &amp;&amp;option) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            _tags_size += option.data_size() + <span class="keyword">sizeof</span>(uint16_t) * 2;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            _tags_size += <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(option.data_size() + <span class="keyword">sizeof</span>(uint16_t) * 2);</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            _tags.push_back(std::move(option));</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        }</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">    #endif</span></div>
@@ -358,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 25 2015 19:16:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2015 20:44:12 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

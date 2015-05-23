@@ -107,6 +107,14 @@ Public Types</h2></td></tr>
 <tr class="memitem:a6d64943f944bd64b7955d02bc74585ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d64943f944bd64b7955d02bc74585ae"></a>
 typedef <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress</a>&lt; 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>address_type</b></td></tr>
 <tr class="separator:a6d64943f944bd64b7955d02bc74585ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76af801b8e8f55fed2650db99f3c4865"><td class="memItemLeft" align="right" valign="top">typedef std::pair<br class="typebreak"/>
+&lt; <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>, <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a></td></tr>
+<tr class="memdesc:a76af801b8e8f55fed2650db99f3c4865"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a pair of mac addresses.  <a href="#a76af801b8e8f55fed2650db99f3c4865">More...</a><br/></td></tr>
+<tr class="separator:a76af801b8e8f55fed2650db99f3c4865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743290b502d012e5bb02129ab093868e"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a>, <br class="typebreak"/>
+<a class="el" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">WPA2::SessionKeys</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a></td></tr>
+<tr class="memdesc:a743290b502d012e5bb02129ab093868e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps an address pair to the session keys.  <a href="#a743290b502d012e5bb02129ab093868e">More...</a><br/></td></tr>
+<tr class="separator:a743290b502d012e5bb02129ab093868e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -116,14 +124,52 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27e4be9c6469ea3a0e5be6acac8909de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a27e4be9c6469ea3a0e5be6acac8909de">add_ap_data</a> (const std::string &amp;psk, const std::string &amp;ssid, const <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &amp;addr)</td></tr>
 <tr class="memdesc:a27e4be9c6469ea3a0e5be6acac8909de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a access points's information, including its BSSID.  <a href="#a27e4be9c6469ea3a0e5be6acac8909de">More...</a><br/></td></tr>
 <tr class="separator:a27e4be9c6469ea3a0e5be6acac8909de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae027629acfe050af8f8928a2c26d7087"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ae027629acfe050af8f8928a2c26d7087">add_decryption_keys</a> (const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a> &amp;addresses, const <a class="el" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">WPA2::SessionKeys</a> &amp;session_keys)</td></tr>
+<tr class="memdesc:ae027629acfe050af8f8928a2c26d7087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Explicitly add decryption keys.  <a href="#ae027629acfe050af8f8928a2c26d7087">More...</a><br/></td></tr>
+<tr class="separator:ae027629acfe050af8f8928a2c26d7087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdf7d1f0c5e306b56ca259630301d760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#abdf7d1f0c5e306b56ca259630301d760">decrypt</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu)</td></tr>
 <tr class="memdesc:abdf7d1f0c5e306b56ca259630301d760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts the provided <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#abdf7d1f0c5e306b56ca259630301d760">More...</a><br/></td></tr>
 <tr class="separator:abdf7d1f0c5e306b56ca259630301d760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4edf4607641dcd5aee5d97c2eccd0e1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ab4edf4607641dcd5aee5d97c2eccd0e1">get_keys</a> () const </td></tr>
+<tr class="memdesc:ab4edf4607641dcd5aee5d97c2eccd0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the keys on this decrypter.  <a href="#ab4edf4607641dcd5aee5d97c2eccd0e1">More...</a><br/></td></tr>
+<tr class="separator:ab4edf4607641dcd5aee5d97c2eccd0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Decrypts WPA2-encrypted traffic. </p>
 <p>This class takes valid PSK and SSID tuples, captures client handshakes, and decrypts their traffic afterwards. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a76af801b8e8f55fed2650db99f3c4865"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::pair&lt;<a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>, <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&gt; <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">Tins::Crypto::WPA2Decrypter::addr_pair</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a pair of mac addresses. </p>
+<p>This is used to identify a host and the access point to which it is connected. The first element in the pair will always de lower or equal than the second one, so that given any host and the access point it's connected to, we can uniquely identify it with an address pair. </p>
+
+</div>
+</div>
+<a class="anchor" id="a743290b502d012e5bb02129ab093868e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;<a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a>, <a class="el" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">WPA2::SessionKeys</a>&gt; <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">Tins::Crypto::WPA2Decrypter::keys_map</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maps an address pair to the session keys. </p>
+<p>This type associates an address pair (host, access point) with the session keys, as generated using the packets seen on a handshake.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865" title="Represents a pair of mac addresses. ">addr_pair</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa43511842ded844df373c10c44be9a1e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -206,6 +252,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae027629acfe050af8f8928a2c26d7087"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::Crypto::WPA2Decrypter::add_decryption_keys </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a> &amp;&#160;</td>
+          <td class="paramname"><em>addresses</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">WPA2::SessionKeys</a> &amp;&#160;</td>
+          <td class="paramname"><em>session_keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Explicitly add decryption keys. </p>
+<p>This method associates a pair (host, access point) with the given decryption keys. All encrypted packets sent between the given addresses will be decrypted using the provided keys.</p>
+<p>This method shouldn't normally be required. The <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html" title="Decrypts WPA2-encrypted traffic. ">WPA2Decrypter</a> will be waiting for handshakes and will automatically extract the session keys, decrypting all encrypted packets with them. You should only use this method if for some reason you know the actual keys being used (because you checked and stored the keys_map somewhere).</p>
+<p>The actual order of the addresses doesn't matter, this method will make sure they're sorted.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addresses</td><td>The address pair (host, access point) to associate. </td></tr>
+    <tr><td class="paramname">session_keys</td><td>The keys to use when decrypting messages sent between the given addresses. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="abdf7d1f0c5e306b56ca259630301d760"></a>
 <div class="memitem">
 <div class="memproto">
@@ -227,13 +311,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab4edf4607641dcd5aee5d97c2eccd0e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a>&amp; Tins::Crypto::WPA2Decrypter::get_keys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the keys on this decrypter. </p>
+<p>The returned map will be populated every time a new, complete, handshake is captured.</p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html" title="Decrypts WPA2-encrypted traffic. ">WPA2Decrypter</a> keys map. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../da/da0/crypto_8h_source.html">crypto.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 25 2015 19:16:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2015 20:44:14 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

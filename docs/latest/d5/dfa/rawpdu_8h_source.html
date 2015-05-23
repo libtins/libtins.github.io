@@ -162,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        uint32_t <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html#a39fd7342d7a5453aaadd6a6c540197c7">header_size</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        </div>
 <div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../d0/dfc/classTins_1_1RawPDU.html#a182aeb47bb16646b26a26101b16eacf4">  159</a></span>&#160;        uint32_t <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html#a182aeb47bb16646b26a26101b16eacf4">payload_size</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> _payload.size();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(_payload.size());</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html#a98bfd4fdc8aef92cf1a7295c4d65d679">matches_response</a>(<span class="keyword">const</span> uint8_t *ptr, uint32_t total_sz) <span class="keyword">const</span>;</div>
@@ -171,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../d0/dfc/classTins_1_1RawPDU.html#a4f54aafebf99355a787eefc553cdf948">  186</a></span>&#160;        T <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html#a4f54aafebf99355a787eefc553cdf948">to</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">return</span> T(&amp;_payload[0], _payload.size());</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">return</span> T(&amp;_payload[0], static_cast&lt;uint32_t&gt;(_payload.size()));</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        </div>
 <div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d0/dfc/classTins_1_1RawPDU.html#aa4ccb35d24f504bd0d35985e45538f90">  193</a></span>&#160;        <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> *<a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html#aa4ccb35d24f504bd0d35985e45538f90">clone</a>()<span class="keyword"> const </span>{</div>
@@ -206,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 25 2015 19:16:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2015 20:44:12 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

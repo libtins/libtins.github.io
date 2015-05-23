@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef TINS_UTILS_H</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_UTILS_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifndef WIN32</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifndef _WIN32</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #include &lt;ifaddrs.h&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #include &lt;winsock2.h&gt;</span></div>
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        uint32_t <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#ac922424d9261b7acc000c6018e00599c">pseudoheader_checksum</a>(<a class="code" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Address</a> source_ip, <a class="code" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Address</a> dest_ip, uint32_t len, uint32_t flag);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">        #ifndef WIN32</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">        #ifndef _WIN32</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor"></span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> Functor&gt; </div>
 <div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="../../db/d81/namespaceTins_1_1Utils.html#a04acb69dc463905fdf58d77f229407ee">  253</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#a04acb69dc463905fdf58d77f229407ee">generic_iface_loop</a>(Functor &amp;functor) {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keyword">struct </span>ifaddrs *ifaddrs = 0;</div>
@@ -211,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">if</span>(ifaddrs)</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                freeifaddrs(ifaddrs);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">        #else // WIN32</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">        #else // _WIN32</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor"></span>        <span class="keyword">template</span>&lt;<span class="keyword">class</span> Functor&gt; </div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#a04acb69dc463905fdf58d77f229407ee">generic_iface_loop</a>(Functor &amp;functor) {</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            ULONG size;</div>
@@ -226,7 +226,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                }</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">        #endif // WIN32</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="preprocessor">        #endif // _WIN32</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor"></span>        </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="../../df/d7f/structTins_1_1Utils_1_1is__pdu.html">  282</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="../../df/d7f/structTins_1_1Utils_1_1is__pdu.html">is_pdu</a> {  </div>
@@ -315,7 +315,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        next += rtm-&gt;rtm_msglen;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    }</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="preprocessor">#elif defined(WIN32)</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="preprocessor">#elif defined(_WIN32)</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="preprocessor"></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> ForwardIterator&gt;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../db/d81/namespaceTins_1_1Utils.html#a9f663552f5d4bc58493677394f633962">Tins::Utils::route_entries</a>(ForwardIterator output) {</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    MIB_IPFORWARDTABLE *table;</div>
@@ -393,7 +393,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 25 2015 19:16:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 22 2015 20:44:12 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
