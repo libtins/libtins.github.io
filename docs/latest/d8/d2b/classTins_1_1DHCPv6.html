@@ -516,9 +516,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a4287f3284ead4f248721a0f6b422522f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#a4287f3284ead4f248721a0f6b422522f">add_option</a> (const <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#aa982362a9f5fd85623bf8e413e40ff14">option</a> &amp;opt)</td></tr>
 <tr class="memdesc:a4287f3284ead4f248721a0f6b422522f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html" title="Represents a DHCPv6 PDU. ">DHCPv6</a> option.  <a href="#a4287f3284ead4f248721a0f6b422522f">More...</a><br/></td></tr>
 <tr class="separator:a4287f3284ead4f248721a0f6b422522f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ba0c9d03f5670a529ea4cb917f6511b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#aa982362a9f5fd85623bf8e413e40ff14">option</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#a0ba0c9d03f5670a529ea4cb917f6511b">search_option</a> (<a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#ab59a581d27581f1a5fa10d30da6802bf">OptionTypes</a> id) const </td></tr>
-<tr class="memdesc:a0ba0c9d03f5670a529ea4cb917f6511b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for an option that matchs the given flag.  <a href="#a0ba0c9d03f5670a529ea4cb917f6511b">More...</a><br/></td></tr>
-<tr class="separator:a0ba0c9d03f5670a529ea4cb917f6511b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd01db219210b681478a4319b08d308"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#aacd01db219210b681478a4319b08d308">remove_option</a> (<a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#ab59a581d27581f1a5fa10d30da6802bf">OptionTypes</a> type)</td></tr>
+<tr class="memdesc:aacd01db219210b681478a4319b08d308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html" title="Represents a DHCPv6 PDU. ">DHCPv6</a> option.  <a href="#aacd01db219210b681478a4319b08d308">More...</a><br/></td></tr>
+<tr class="separator:aacd01db219210b681478a4319b08d308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7b2be392f9335117da2371c05097a8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#aa982362a9f5fd85623bf8e413e40ff14">option</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#adc7b2be392f9335117da2371c05097a8">search_option</a> (<a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#ab59a581d27581f1a5fa10d30da6802bf">OptionTypes</a> type) const </td></tr>
+<tr class="memdesc:adc7b2be392f9335117da2371c05097a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for an option that matchs the given type.  <a href="#adc7b2be392f9335117da2371c05097a8">More...</a><br/></td></tr>
+<tr class="separator:adc7b2be392f9335117da2371c05097a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c329a5b41524f7550d91efb048dc587"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#a5c329a5b41524f7550d91efb048dc587">header_size</a> () const </td></tr>
 <tr class="memdesc:a5c329a5b41524f7550d91efb048dc587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header size.  <a href="#a5c329a5b41524f7550d91efb048dc587">More...</a><br/></td></tr>
 <tr class="separator:a5c329a5b41524f7550d91efb048dc587"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1683,7 +1686,33 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0ba0c9d03f5670a529ea4cb917f6511b"></a>
+<a class="anchor" id="aacd01db219210b681478a4319b08d308"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tins::DHCPv6::remove_option </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#ab59a581d27581f1a5fa10d30da6802bf">OptionTypes</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html" title="Represents a DHCPv6 PDU. ">DHCPv6</a> option. </p>
+<p>If there are multiple options of the given type, only the first one will be removed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The type of the option to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the option was removed, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adc7b2be392f9335117da2371c05097a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1691,17 +1720,17 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">const <a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#aa982362a9f5fd85623bf8e413e40ff14">DHCPv6::option</a> * Tins::DHCPv6::search_option </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d8/d2b/classTins_1_1DHCPv6.html#ab59a581d27581f1a5fa10d30da6802bf">OptionTypes</a>&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Searchs for an option that matchs the given flag. </p>
+<p>Searchs for an option that matchs the given type. </p>
 <p>If the option is not found, a null pointer is returned. Deleting the returned pointer will result in <b>undefined behaviour</b>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>The option identifier to be searched. </td></tr>
+    <tr><td class="paramname">type</td><td>The option identifier to be searched. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2039,7 +2068,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 26 2015 22:45:37 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:43:27 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

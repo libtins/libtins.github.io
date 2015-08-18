@@ -20,6 +20,7 @@ var searchData=
   ['mcs',['mcs',['../d7/d0e/classTins_1_1RadioTap.html#a114a03950be58baad6370b28aef70678',1,'Tins::RadioTap::mcs(const mcs_type &amp;new_mcs)'],['../d7/d0e/classTins_1_1RadioTap.html#aae0a1702c1817fbf6d92f8037fe3b4ab',1,'Tins::RadioTap::mcs() const ']]],
   ['mcs_5ftype',['mcs_type',['../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html',1,'Tins::RadioTap']]],
   ['messagetype',['MessageType',['../d8/d2b/classTins_1_1DHCPv6.html#a207c4fee31ce2ebb29410d28a7729b8d',1,'Tins::DHCPv6']]],
+  ['metric',['metric',['../d9/d05/structTins_1_1Utils_1_1RouteEntry.html#ab3e165961035b5f6634b88f15b267d30',1,'Tins::Utils::RouteEntry']]],
   ['mhz_5fto_5fchannel',['mhz_to_channel',['../db/d81/namespaceTins_1_1Utils.html#ac51d056eade868c1d980c55413978f51',1,'Tins::Utils']]],
   ['mic',['mic',['../da/de8/classTins_1_1RSNEAPOL.html#a7156e256c7fe49b9625d5f783b8647b9',1,'Tins::RSNEAPOL::mic() const '],['../da/de8/classTins_1_1RSNEAPOL.html#a9cc55570b35d6a4e4153b752edee3228',1,'Tins::RSNEAPOL::mic(const uint8_t *new_mic)']]],
   ['mic_5fsize',['mic_size',['../da/de8/classTins_1_1RSNEAPOL.html#a56df66796cd88a81560c6441548e1b3e',1,'Tins::RSNEAPOL']]],

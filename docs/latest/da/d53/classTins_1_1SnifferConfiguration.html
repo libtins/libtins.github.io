@@ -91,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -121,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2138027f7fb9a7b0487d6ce8c8244baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10b2f3d331e8c346fafb2299adda2110"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html#a10b2f3d331e8c346fafb2299adda2110">set_timeout</a> (unsigned timeout)</td></tr>
 <tr class="separator:a10b2f3d331e8c346fafb2299adda2110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74667eb044fe7cba222ee81c629e8dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html#a74667eb044fe7cba222ee81c629e8dee">set_immediate_mode</a> (bool enabled)</td></tr>
+<tr class="separator:a74667eb044fe7cba222ee81c629e8dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -130,6 +133,19 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a18f379cdaf5b53ee552a96056204e526"><td class="memItemLeft" align="right" valign="top">static const unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html#a18f379cdaf5b53ee552a96056204e526">DEFAULT_TIMEOUT</a> = 1000</td></tr>
 <tr class="memdesc:a18f379cdaf5b53ee552a96056204e526"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default timeout.  <a href="#a18f379cdaf5b53ee552a96056204e526">More...</a><br/></td></tr>
 <tr class="separator:a18f379cdaf5b53ee552a96056204e526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a7b299b778288bf0db3b99a5022526b8a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>Flags</b> { <br/>
+&#160;&#160;<b>BUFFER_SIZE</b> = 1, 
+<b>PROMISCUOUS</b> = 2, 
+<b>RFMON</b> = 4, 
+<b>PACKET_FILTER</b> = 8, 
+<br/>
+&#160;&#160;<b>IMMEDIATE_MODE</b> = 16
+<br/>
+ }</td></tr>
+<tr class="separator:a7b299b778288bf0db3b99a5022526b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -145,36 +161,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>configure_sniffer_pos
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:aa9cde229154d71208290ae154a070b85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9cde229154d71208290ae154a070b85"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>_flags</b></td></tr>
+<tr class="separator:aa9cde229154d71208290ae154a070b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a270122d65c6e8ef3cbc7fd5d821566c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a270122d65c6e8ef3cbc7fd5d821566c3"></a>
 unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_snap_len</b></td></tr>
 <tr class="separator:a270122d65c6e8ef3cbc7fd5d821566c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44d38c0cb2f1b39dd176863ccfc6a407"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44d38c0cb2f1b39dd176863ccfc6a407"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_has_buffer_size</b></td></tr>
-<tr class="separator:a44d38c0cb2f1b39dd176863ccfc6a407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3454cfa733559361f45ab932270d71a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3454cfa733559361f45ab932270d71a"></a>
 unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_buffer_size</b></td></tr>
 <tr class="separator:af3454cfa733559361f45ab932270d71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9866adfe59352612e255096304627218"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9866adfe59352612e255096304627218"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_has_promisc</b></td></tr>
-<tr class="separator:a9866adfe59352612e255096304627218"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6352697b603f78ab7eeafc74c25f8453"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6352697b603f78ab7eeafc74c25f8453"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_promisc</b></td></tr>
-<tr class="separator:a6352697b603f78ab7eeafc74c25f8453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ebc71e9396b5d9d5dd460fcf68bdf3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ebc71e9396b5d9d5dd460fcf68bdf3d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_has_rfmon</b></td></tr>
-<tr class="separator:a9ebc71e9396b5d9d5dd460fcf68bdf3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0b2f4ffab699087745f54f8de1e7f18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0b2f4ffab699087745f54f8de1e7f18"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_rfmon</b></td></tr>
-<tr class="separator:ae0b2f4ffab699087745f54f8de1e7f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdc96b32a99df59998882c5484d98065"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdc96b32a99df59998882c5484d98065"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_has_filter</b></td></tr>
-<tr class="separator:afdc96b32a99df59998882c5484d98065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3af137fed0cf881eacc0ff536f195deb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3af137fed0cf881eacc0ff536f195deb"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_filter</b></td></tr>
 <tr class="separator:a3af137fed0cf881eacc0ff536f195deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac29d0f1e574b47cb0bbf983c6ea21ba6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac29d0f1e574b47cb0bbf983c6ea21ba6"></a>
 unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_timeout</b></td></tr>
 <tr class="separator:ac29d0f1e574b47cb0bbf983c6ea21ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6352697b603f78ab7eeafc74c25f8453"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6352697b603f78ab7eeafc74c25f8453"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_promisc</b></td></tr>
+<tr class="separator:a6352697b603f78ab7eeafc74c25f8453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b2f4ffab699087745f54f8de1e7f18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0b2f4ffab699087745f54f8de1e7f18"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_rfmon</b></td></tr>
+<tr class="separator:ae0b2f4ffab699087745f54f8de1e7f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1182b4c8b4857b0dd41652400eecadd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1182b4c8b4857b0dd41652400eecadd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_immediate_mode</b></td></tr>
+<tr class="separator:ac1182b4c8b4857b0dd41652400eecadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -261,6 +271,29 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileSniffer</b></td>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filter</td><td>The pcap filter to be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a74667eb044fe7cba222ee81c629e8dee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::SnifferConfiguration::set_immediate_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the immediate mode option. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>The immediate mode option value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -413,7 +446,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileSniffer</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 26 2015 22:45:38 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:43:28 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

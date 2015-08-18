@@ -38,6 +38,7 @@ var searchData=
   ['relay_5fsession_5fid',['relay_session_id',['../db/d97/classTins_1_1PPPoE.html#aaf31138ccc2cce7573558886b18b0563',1,'Tins::PPPoE::relay_session_id(const byte_array &amp;value)'],['../db/d97/classTins_1_1PPPoE.html#ab2676c3c5d4d732cd0e02ce5396c557b',1,'Tins::PPPoE::relay_session_id() const ']]],
   ['release_5finner_5fpdu',['release_inner_pdu',['../d8/de6/classTins_1_1PDU.html#a8a302fa02decfafd585d8ec227bf9f06',1,'Tins::PDU']]],
   ['release_5fpdu',['release_pdu',['../da/da0/classTins_1_1Packet.html#abbaeb29438e77057a798735b226ff63e',1,'Tins::Packet']]],
+  ['remove_5foption',['remove_option',['../db/dbb/classTins_1_1DHCP.html#a83566adb9e7f0db9bf3c505b6d6a4019',1,'Tins::DHCP::remove_option()'],['../d8/d2b/classTins_1_1DHCPv6.html#aacd01db219210b681478a4319b08d308',1,'Tins::DHCPv6::remove_option()'],['../d8/df1/classTins_1_1Dot11.html#a832cd9bc19962a2ff40f875251bbea30',1,'Tins::Dot11::remove_option()'],['../d7/d38/classTins_1_1ICMPv6.html#abfadbdee13711194d8ef73754035d256',1,'Tins::ICMPv6::remove_option()'],['../dd/d3f/classTins_1_1IP.html#abef67f2c16f35a0cfa6fd4a7e2e94682',1,'Tins::IP::remove_option()'],['../d0/de4/classTins_1_1TCP.html#ad821efea427dfa7664404601cf4a6da1',1,'Tins::TCP::remove_option()']]],
   ['remove_5fpassword',['remove_password',['../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#a1adad1419017cf944c44d6831eac54f5',1,'Tins::Crypto::WEPDecrypter']]],
   ['remove_5fpointer',['remove_pointer',['../df/dc8/structTins_1_1Internals_1_1remove__pointer.html',1,'Tins::Internals']]],
   ['remove_5fpointer_3c_20t_20_2a_20_3e',['remove_pointer&lt; T * &gt;',['../d7/d5c/structTins_1_1Internals_1_1remove__pointer_3_01T_01_5_01_4.html',1,'Tins::Internals']]],
@@ -75,11 +76,11 @@ var searchData=
   ['rsc',['rsc',['../da/de8/classTins_1_1RSNEAPOL.html#aee92982c581617f88fb9638f9c164cd9',1,'Tins::RSNEAPOL::rsc() const '],['../da/de8/classTins_1_1RSNEAPOL.html#ae7d23b91ff2c1c5c4f62df7a32c278f6',1,'Tins::RSNEAPOL::rsc(const uint8_t *new_rsc)']]],
   ['rsc_5fsize',['rsc_size',['../da/de8/classTins_1_1RSNEAPOL.html#ac77ceda64a294d504ed047e01eeb81ba',1,'Tins::RSNEAPOL']]],
   ['rsn_5finformation',['rsn_information',['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a3e7d119176e3bd2159453cf822a63b2c',1,'Tins::Dot11ManagementFrame::rsn_information(const RSNInformation &amp;info)'],['../dd/da0/classTins_1_1Dot11ManagementFrame.html#a039a01615d1caeb66eb3f244a0c3fe97',1,'Tins::Dot11ManagementFrame::rsn_information() const ']]],
-  ['rsneapol',['RSNEAPOL',['../da/de8/classTins_1_1RSNEAPOL.html#a31752c46efdc8bae2111b7f1293917fb',1,'Tins::RSNEAPOL::RSNEAPOL()'],['../da/de8/classTins_1_1RSNEAPOL.html#a0c8098522df6fa18d47e37dcb1b8195f',1,'Tins::RSNEAPOL::RSNEAPOL(const uint8_t *buffer, uint32_t total_sz)']]],
   ['rsneapol',['RSNEAPOL',['../da/de8/classTins_1_1RSNEAPOL.html',1,'Tins']]],
+  ['rsneapol',['RSNEAPOL',['../da/de8/classTins_1_1RSNEAPOL.html#a31752c46efdc8bae2111b7f1293917fb',1,'Tins::RSNEAPOL::RSNEAPOL()'],['../da/de8/classTins_1_1RSNEAPOL.html#a0c8098522df6fa18d47e37dcb1b8195f',1,'Tins::RSNEAPOL::RSNEAPOL(const uint8_t *buffer, uint32_t total_sz)']]],
   ['rsnhandshake',['RSNHandshake',['../d8/d36/namespaceTins.html#a45ade21a93b504b118ebdae19909bd34',1,'Tins']]],
   ['rsnhandshakecapturer',['RSNHandshakeCapturer',['../de/da8/classTins_1_1RSNHandshakeCapturer.html',1,'Tins']]],
-  ['rsninformation',['RSNInformation',['../df/dd6/classTins_1_1RSNInformation.html',1,'Tins']]],
   ['rsninformation',['RSNInformation',['../df/dd6/classTins_1_1RSNInformation.html#a148318146eab7dd87a69f43ba9897cdd',1,'Tins::RSNInformation::RSNInformation()'],['../df/dd6/classTins_1_1RSNInformation.html#aa5daf0d7329d622266086b87abe356f0',1,'Tins::RSNInformation::RSNInformation(const serialization_type &amp;buffer)'],['../df/dd6/classTins_1_1RSNInformation.html#a6a2c1cfbbe3ca86bd44393184a50e582',1,'Tins::RSNInformation::RSNInformation(const uint8_t *buffer, uint32_t total_sz)']]],
+  ['rsninformation',['RSNInformation',['../df/dd6/classTins_1_1RSNInformation.html',1,'Tins']]],
   ['rx_5fflags',['rx_flags',['../d7/d0e/classTins_1_1RadioTap.html#ac68873698663a9e7d696a37c131060e7',1,'Tins::RadioTap::rx_flags(uint16_t new_rx_flag)'],['../d7/d0e/classTins_1_1RadioTap.html#aaa426b250dd2148e9747cf2019a0cf3c',1,'Tins::RadioTap::rx_flags() const ']]]
 ];

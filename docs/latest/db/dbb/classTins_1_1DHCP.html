@@ -324,6 +324,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af20a19ab9bc85059e52ffdc058c53fec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#af20a19ab9bc85059e52ffdc058c53fec">add_option</a> (const <a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a90b7a9b607b36a1db2152a196394878c">option</a> &amp;opt)</td></tr>
 <tr class="memdesc:af20a19ab9bc85059e52ffdc058c53fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new option to this <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#af20a19ab9bc85059e52ffdc058c53fec">More...</a><br/></td></tr>
 <tr class="separator:af20a19ab9bc85059e52ffdc058c53fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83566adb9e7f0db9bf3c505b6d6a4019"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a83566adb9e7f0db9bf3c505b6d6a4019">remove_option</a> (<a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a4afa693abecc1e4b1f478dd1999eab00">OptionTypes</a> <a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a7aac9e2e100bfb970e9a9acf59502a20">type</a>)</td></tr>
+<tr class="memdesc:a83566adb9e7f0db9bf3c505b6d6a4019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a> option.  <a href="#a83566adb9e7f0db9bf3c505b6d6a4019">More...</a><br/></td></tr>
+<tr class="separator:a83566adb9e7f0db9bf3c505b6d6a4019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f778f1fa5000de767daf22faeb70fa0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a90b7a9b607b36a1db2152a196394878c">option</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a2f778f1fa5000de767daf22faeb70fa0">search_option</a> (<a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a4afa693abecc1e4b1f478dd1999eab00">OptionTypes</a> opt) const </td></tr>
 <tr class="memdesc:a2f778f1fa5000de767daf22faeb70fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for an option that matchs the given flag.  <a href="#a2f778f1fa5000de767daf22faeb70fa0">More...</a><br/></td></tr>
 <tr class="separator:a2f778f1fa5000de767daf22faeb70fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1134,6 +1137,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a83566adb9e7f0db9bf3c505b6d6a4019"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tins::DHCP::remove_option </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a4afa693abecc1e4b1f478dd1999eab00">OptionTypes</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a> option. </p>
+<p>If there are multiple options of the given type, only the first one will be removed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The type of the option to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the option was removed, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a6c79a1003771bc637821f44de8153081"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1452,7 +1481,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 26 2015 22:45:37 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:43:27 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -508,8 +508,28 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        data_type* big_buffer_ptr;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    } payload_;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;};</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;} <span class="comment">// namespace Tins</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="preprocessor">#endif // TINS_PDU_OPTION_H</span></div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="keyword">namespace </span>Internals {</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="comment">     * \cond</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Option&gt;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keyword">struct </span>option_type_equality_comparator {</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        option_type_equality_comparator(<span class="keyword">typename</span> Option::option_type type) : type(type) { }</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordtype">bool</span> operator()(<span class="keyword">const</span> Option&amp; opt)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            <span class="keywordflow">return</span> opt.option() == type;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        }</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keyword">typename</span> Option::option_type type; </div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    };</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="comment">     * \endcond</span></div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;} <span class="comment">// Internals</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;} <span class="comment">// namespace Tins</span></div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="preprocessor">#endif // TINS_PDU_OPTION_H</span></div>
 <div class="ttc" id="classTins_1_1PDUOption_html_a915d92468c5c88c2d34c142e70d76fd2"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html#a915d92468c5c88c2d34c142e70d76fd2">Tins::PDUOption::~PDUOption</a></div><div class="ttdeci">~PDUOption()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:385</div></div>
 <div class="ttc" id="classTins_1_1PDUOption_html_a21915c99c1478e79a02357dadbdc3fa8"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html#a21915c99c1478e79a02357dadbdc3fa8">Tins::PDUOption::length_field</a></div><div class="ttdeci">size_t length_field() const </div><div class="ttdoc">Retrieves the data length field. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:478</div></div>
 <div class="ttc" id="classTins_1_1PDUOption_html"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html">Tins::PDUOption</a></div><div class="ttdoc">Represents a PDU option field. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:302</div></div>
@@ -522,12 +542,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1PDUOption_html_aba523fdd5f611578b669a7f73fa90ba4"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html#aba523fdd5f611578b669a7f73fa90ba4">Tins::PDUOption::option</a></div><div class="ttdeci">option_type option() const </div><div class="ttdef"><b>Definition:</b> pdu_option.h:430</div></div>
 <div class="ttc" id="classTins_1_1PDUOption_html_a03da72c35783ed2cd82e8b3dde8b8220"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html#a03da72c35783ed2cd82e8b3dde8b8220">Tins::PDUOption::operator=</a></div><div class="ttdeci">PDUOption &amp; operator=(const PDUOption &amp;rhs)</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:371</div></div>
 <div class="ttc" id="classTins_1_1PDUOption_html_a3b4491f44d7754b5a32d1845093e80ea"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html#a3b4491f44d7754b5a32d1845093e80ea">Tins::PDUOption::data_size</a></div><div class="ttdeci">size_t data_size() const </div><div class="ttdoc">Retrieves the length of this option&#39;s data. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:462</div></div>
-<div class="ttc" id="classTins_1_1option__payload__too__large_html"><div class="ttname"><a href="../../da/dbf/classTins_1_1option__payload__too__large.html">Tins::option_payload_too_large</a></div><div class="ttdoc">Exception thrown when a payload is too large to fit into a PDUOption. </div><div class="ttdef"><b>Definition:</b> exceptions.h:187</div></div>
+<div class="ttc" id="classTins_1_1option__payload__too__large_html"><div class="ttname"><a href="../../da/dbf/classTins_1_1option__payload__too__large.html">Tins::option_payload_too_large</a></div><div class="ttdoc">Exception thrown when a payload is too large to fit into a PDUOption. </div><div class="ttdef"><b>Definition:</b> exceptions.h:185</div></div>
 <div class="ttc" id="classTins_1_1PDUOption_html_ae7e61ab6998c89f7aa652fca5c2e7e0a"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html#ae7e61ab6998c89f7aa652fca5c2e7e0a">Tins::PDUOption::PDUOption</a></div><div class="ttdeci">PDUOption(option_type opt, uint16_t length, ForwardIterator start, ForwardIterator end)</div><div class="ttdoc">Constructs a PDUOption from iterators, which indicate the data to be stored in it. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:421</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 26 2015 22:45:36 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 17 2015 22:43:26 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
