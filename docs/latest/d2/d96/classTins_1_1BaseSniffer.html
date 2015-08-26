@@ -441,6 +441,7 @@ template&lt;class Functor &gt; </div>
 </div><!-- fragment --><p>This functor will be called using the each of the sniffed packets as its argument. Using <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> member functions that modify the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>, such as <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a8a302fa02decfafd585d8ec227bf9f06" title="Releases the inner PDU. ">PDU::release_inner_pdu</a>, is perfectly valid.</p>
 <p>Note that if you're using a functor object, it will be copied using its copy constructor, so it should be some kind of proxy to another object which will process the packets(e.g. std::bind).</p>
 <p>Sniffing will stop when either max_packets are sniffed(if it is != 0), or when the functor returns false.</p>
+<p>Note that the pcap handle stored in a <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html" title="Base class for sniffers. ">BaseSniffer</a> will always be the same. This means that if you start sniffing using sniff_loop, then stop and at some point in the future you call sniff_loop again, you will keep iterating over the same handle. If the handle points to a pcap file, then you will continue processing packets from it. If the handle points to a network device, you will keep sniffing from it.</p>
 <p>This method catches both <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> and <a class="el" href="../../df/d15/classTins_1_1pdu__not__found.html" title="Exception thrown when a PDU is not found when using PDU::rfind_pdu. ">pdu_not_found</a> exceptions, which allows writing much cleaner code, since you can call <a class="el" href="../../d8/de6/classTins_1_1PDU.html#ac3acbf56976a2edc1958bbe63ef568ab" title="Finds and returns the first PDU that matches the given flag. ">PDU::rfind_pdu</a> without worrying about catching the exception that can be thrown. This allows writing code such as the following:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">bool</span> callback(<span class="keyword">const</span> PDU&amp; pdu) {</div>
 <div class="line">    <span class="comment">// If either RawPDU is not found, or construction of the DNS</span></div>
@@ -484,7 +485,7 @@ template&lt;class Functor &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 17 2015 22:43:28 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 25 2015 20:16:36 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
