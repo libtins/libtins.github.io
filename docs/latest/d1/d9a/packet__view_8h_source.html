@@ -127,51 +127,58 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">PacketViewIterator</a>&amp; rhs) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">PacketViewIterator</a>&amp; rhs) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    PDU::metadata get_metadata(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz, </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> type);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> uint8_t* buffer_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    uint32_t size_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> current_type_;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    PDU::metadata current_metadata_;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d6/d24/classTins_1_1PacketView.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d24/classTins_1_1PacketView.html">PacketView</a> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">PacketViewIterator</a> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">iterator</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d6/d24/classTins_1_1PacketView.html">PacketView</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz, <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> link_type);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">typedef</span> PDU::metadata (*metadata_allocator)(<span class="keyword">const</span> uint8_t *, uint32_t);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;metadata_allocator&gt; AllocatorVector;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> AllocatorVector allocators;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> AllocatorVector create_allocators();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> PDU::metadata generate_unknown_metadata(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    PDU::metadata get_metadata(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz, </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> type);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> uint8_t* buffer_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint32_t size_;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> current_type_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    PDU::metadata current_metadata_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> begin() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> end() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    T extract_pdu() {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> iter = begin(); iter != end(); ++iter) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">auto</span> value = *iter;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (value.type() == T::pdu_flag) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">return</span> value.to&lt;T&gt;();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> uint8_t* buffer_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    uint32_t size_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> link_type_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// Tins</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // TINS_PACKET_VIEW_H</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d6/d24/classTins_1_1PacketView.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d24/classTins_1_1PacketView.html">PacketView</a> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">PacketViewIterator</a> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">iterator</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d6/d24/classTins_1_1PacketView.html">PacketView</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz, <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> link_type);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> begin() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> end() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    T extract_pdu() {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="../../db/db4/classTins_1_1PacketViewIterator.html">const_iterator</a> iter = begin(); iter != end(); ++iter) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">auto</span> value = *iter;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (value.type() == T::pdu_flag) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span> value.to&lt;T&gt;();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> uint8_t* buffer_;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    uint32_t size_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> link_type_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif // TINS_PACKET_VIEW_H</span></div>
 <div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:127</div></div>
 <div class="ttc" id="classTins_1_1PacketViewIterator_html"><div class="ttname"><a href="../../db/db4/classTins_1_1PacketViewIterator.html">Tins::PacketViewIterator</a></div><div class="ttdef"><b>Definition:</b> packet_view.h:27</div></div>
-<div class="ttc" id="classTins_1_1PacketView_html"><div class="ttname"><a href="../../d6/d24/classTins_1_1PacketView.html">Tins::PacketView</a></div><div class="ttdef"><b>Definition:</b> packet_view.h:48</div></div>
+<div class="ttc" id="classTins_1_1PacketView_html"><div class="ttname"><a href="../../d6/d24/classTins_1_1PacketView.html">Tins::PacketView</a></div><div class="ttdef"><b>Definition:</b> packet_view.h:55</div></div>
 <div class="ttc" id="classTins_1_1PDUView_html"><div class="ttname"><a href="../../d3/d8e/classTins_1_1PDUView.html">Tins::PDUView</a></div><div class="ttdef"><b>Definition:</b> packet_view.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 25 2015 20:16:35 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 09:01:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -328,10 +328,10 @@ The following example illustrates this usage:
 {% highlight cpp %}
 // We'll write packets to /tmp/test.pcap. Use EthernetII as the link
 // layer protocol.
-PacketWriter writer("/tmp/test.pcap", DataLinkLayer<EthernetII>());
+PacketWriter writer("/tmp/test.pcap", DataLinkType<EthernetII>());
 
 // Now create another writer, but this time we'll use RadioTap.
-PacketWriter other_writer("bleh.pcap", DataLinkLayer<RadioTap>());
+PacketWriter other_writer("bleh.pcap", DataLinkType<RadioTap>());
 {% endhighlight %}
 <p>
 Once a <code>PacketWriter</code> is created, you can write <code>PDU</code>s to it

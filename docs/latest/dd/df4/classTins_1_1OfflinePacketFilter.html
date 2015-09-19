@@ -131,7 +131,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">UDP udp = get_packet();</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// Create the filter. We&#39;ll be expecting Ethernet packets.</span></div>
-<div class="line"><a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a> filter(<span class="stringliteral">&quot;ip and port 80&quot;</span>, DataLinkLayer&lt;EthernetII&gt;());</div>
+<div class="line"><a class="code" href="../../dd/df4/classTins_1_1OfflinePacketFilter.html#a48e28ce15f7c0d0b1a9d2ca470b584e7">OfflinePacketFilter</a> filter(<span class="stringliteral">&quot;ip and port 80&quot;</span>, DataLinkType&lt;EthernetII&gt;());</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// We can use this directly over the inner PDU (assuming it has one)</span></div>
 <div class="line"><span class="comment">// See the notes on the efficiency of doing it this way.</span></div>
@@ -335,7 +335,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 25 2015 20:16:36 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 09:01:10 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
