@@ -126,6 +126,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a48923f5353017ef75bbe2c6db2b71b5a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a> { <b>FLAG_RESERVED</b> = 4, 
+<b>DONT_FRAGMENT</b> = 2, 
+<b>MORE_FRAGMENTS</b> = 1
+ }</td></tr>
+<tr class="separator:a48923f5353017ef75bbe2c6db2b71b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ef893a6853b95b3446718133a95da27"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a0ef893a6853b95b3446718133a95da27">OptionClass</a> { <b>CONTROL</b> = 0, 
 <b>MEASUREMENT</b> = 2
  }</td></tr>
@@ -269,9 +274,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a61d2b3ef6b4ac44e0b450cf0be5fa937"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">id</a> () const </td></tr>
 <tr class="memdesc:a61d2b3ef6b4ac44e0b450cf0be5fa937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the id field.  <a href="#a61d2b3ef6b4ac44e0b450cf0be5fa937">More...</a><br/></td></tr>
 <tr class="separator:a61d2b3ef6b4ac44e0b450cf0be5fa937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a888c5ffb330ec54376416aae904e30b0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a888c5ffb330ec54376416aae904e30b0">frag_off</a> () const </td></tr>
-<tr class="memdesc:a888c5ffb330ec54376416aae904e30b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the fragment offset field.  <a href="#a888c5ffb330ec54376416aae904e30b0">More...</a><br/></td></tr>
-<tr class="separator:a888c5ffb330ec54376416aae904e30b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0052624d24554ed0768179ad2895b810"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">TINS_DEPRECATED</a> (uint16_t frag_off() const)</td></tr>
+<tr class="memdesc:a0052624d24554ed0768179ad2895b810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the fragment offset field.  <a href="#a0052624d24554ed0768179ad2895b810">More...</a><br/></td></tr>
+<tr class="separator:a0052624d24554ed0768179ad2895b810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32a6bf84af274748317ef61ce1a91ce5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 13 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">fragment_offset</a> () const </td></tr>
+<tr class="memdesc:a32a6bf84af274748317ef61ce1a91ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the fragment offset field.  <a href="#a32a6bf84af274748317ef61ce1a91ce5">More...</a><br/></td></tr>
+<tr class="separator:a32a6bf84af274748317ef61ce1a91ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c7d3d678ea191435048fad09c76873"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">flags</a> () const </td></tr>
+<tr class="memdesc:ac3c7d3d678ea191435048fad09c76873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the flags field.  <a href="#ac3c7d3d678ea191435048fad09c76873">More...</a><br/></td></tr>
+<tr class="separator:ac3c7d3d678ea191435048fad09c76873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7df8889b6fd693048102e2a905b71df1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">ttl</a> () const </td></tr>
 <tr class="memdesc:a7df8889b6fd693048102e2a905b71df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the time to live field.  <a href="#a7df8889b6fd693048102e2a905b71df1">More...</a><br/></td></tr>
 <tr class="separator:a7df8889b6fd693048102e2a905b71df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -299,9 +310,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfd7f759eee865db6d1a5ea484329d36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#abfd7f759eee865db6d1a5ea484329d36">id</a> (uint16_t new_id)</td></tr>
 <tr class="memdesc:abfd7f759eee865db6d1a5ea484329d36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the id field.  <a href="#abfd7f759eee865db6d1a5ea484329d36">More...</a><br/></td></tr>
 <tr class="separator:abfd7f759eee865db6d1a5ea484329d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dcf3ff47d8e246eeb23552052316513"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a4dcf3ff47d8e246eeb23552052316513">frag_off</a> (uint16_t new_frag_off)</td></tr>
-<tr class="memdesc:a4dcf3ff47d8e246eeb23552052316513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the fragment offset field.  <a href="#a4dcf3ff47d8e246eeb23552052316513">More...</a><br/></td></tr>
-<tr class="separator:a4dcf3ff47d8e246eeb23552052316513"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2798603d3269c5e16bff1f747ec6286"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#ab2798603d3269c5e16bff1f747ec6286">TINS_DEPRECATED</a> (void frag_off(uint16_t new_frag_off))</td></tr>
+<tr class="memdesc:ab2798603d3269c5e16bff1f747ec6286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the fragment offset field.  <a href="#ab2798603d3269c5e16bff1f747ec6286">More...</a><br/></td></tr>
+<tr class="separator:ab2798603d3269c5e16bff1f747ec6286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa82efde70c3be9141a9281dddac1b6d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#aa82efde70c3be9141a9281dddac1b6d6">fragment_offset</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 13 &gt; new_frag_off)</td></tr>
+<tr class="memdesc:aa82efde70c3be9141a9281dddac1b6d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the fragment offset field.  <a href="#aa82efde70c3be9141a9281dddac1b6d6">More...</a><br/></td></tr>
+<tr class="separator:aa82efde70c3be9141a9281dddac1b6d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7a9372e539d3b704f0640bc114db68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#aba7a9372e539d3b704f0640bc114db68">flags</a> (<a class="el" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a> new_flags)</td></tr>
+<tr class="memdesc:aba7a9372e539d3b704f0640bc114db68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the flags field.  <a href="#aba7a9372e539d3b704f0640bc114db68">More...</a><br/></td></tr>
+<tr class="separator:aba7a9372e539d3b704f0640bc114db68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff44b3cb926ccb4105ae59138d0b2df6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#aff44b3cb926ccb4105ae59138d0b2df6">ttl</a> (uint8_t new_ttl)</td></tr>
 <tr class="memdesc:aff44b3cb926ccb4105ae59138d0b2df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the time to live field.  <a href="#aff44b3cb926ccb4105ae59138d0b2df6">More...</a><br/></td></tr>
 <tr class="separator:aff44b3cb926ccb4105ae59138d0b2df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -466,7 +483,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that represents an <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<p>By default, <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> PDUs are initialized, setting TTL to IP::DEFAULT_TTL, id field to 1 and version to 4. Taking this into account, users should set destination and source port and would be enough to send one. </p>
+<p>By default, <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> PDUs are initialized, setting TTL to IP::DEFAULT_TTL, id field to 1 and version to 4. Taking this into account, users should set destination and source port and would be enough to send one.</p>
+<p>When <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> is the lowest layer on a packet, and the packet is serialized this willc heck if the source address is different than 0.0.0.0. If it is, the address of the interface in which the packet is going to be sent is retrieved (by using the routing table and the destination address) and set as the source address. If you don't want this behaviour, simply set the source address to 0.0.0.0. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a6732c318307ed290ca6773c5cd9efe1a"></a>
 <div class="memitem">
@@ -547,6 +565,19 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a48923f5353017ef75bbe2c6db2b71b5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Tins::IP::Flags</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Type used to represent the different <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> flags. </p>
+
+</div>
+</div>
 <a class="anchor" id="a0ef893a6853b95b3446718133a95da27"></a>
 <div class="memitem">
 <div class="memproto">
@@ -778,7 +809,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a888c5ffb330ec54376416aae904e30b0"></a>
+<a class="anchor" id="ac3c7d3d678ea191435048fad09c76873"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -786,7 +817,57 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t Tins::IP::frag_off </td>
+          <td class="memname"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a> Tins::IP::flags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the flags field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> flags field </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba7a9372e539d3b704f0640bc114db68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::IP::flags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a>&#160;</td>
+          <td class="paramname"><em>new_flags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the flags field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_flags</td><td>The new <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> flags field value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a32a6bf84af274748317ef61ce1a91ce5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt;13&gt; Tins::IP::fragment_offset </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -800,18 +881,19 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the fragment offset field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The fragment offset for this <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<p>This will return the fragment offset field, as present in the packet, which indicates the offset of this fragment in blocks of 8 bytes.</p>
+<dl class="section return"><dt>Returns</dt><dd>The fragment offset, measured in units of 8 byte blocks </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a4dcf3ff47d8e246eeb23552052316513"></a>
+<a class="anchor" id="aa82efde70c3be9141a9281dddac1b6d6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Tins::IP::frag_off </td>
+          <td class="memname">void Tins::IP::fragment_offset </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 13 &gt;&#160;</td>
           <td class="paramname"><em>new_frag_off</em></td><td>)</td>
           <td></td>
         </tr>
@@ -819,9 +901,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Setter for the fragment offset field. </p>
+<p>The value provided is measured in units of 8 byte blocks. This means that if you want this packet to have a fragment offset of <em>X</em>, you need to provide <em>X / 8</em> as the argument to this method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_frag_off</td><td>The new fragment offset. </td></tr>
+    <tr><td class="paramname">new_frag_off</td><td>The new fragment offset, measured in units of 8 byte blocks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1549,6 +1632,67 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0052624d24554ed0768179ad2895b810"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tins::IP::TINS_DEPRECATED </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t frag_off()&#160;</td>
+          <td class="paramname"><em>const</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the fragment offset field. </p>
+<p>This method is deprecated. Use <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> and <a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a>.</p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd><dl class="section return"><dt>Returns</dt><dd>The fragment offset for this <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> </dd>
+<dd>
+<a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a> </dd></dl>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab2798603d3269c5e16bff1f747ec6286"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tins::IP::TINS_DEPRECATED </td>
+          <td>(</td>
+          <td class="paramtype">void &#160;</td>
+          <td class="paramname"><em>frag_off</em>uint16_t new_frag_off</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the fragment offset field. </p>
+<p>This method is deprecated. Use <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> and <a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a>.</p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_frag_off</td><td>The new fragment offset. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> </dd>
+<dd>
+<a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a> </dd></dl>
+</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a932807f1348dd17a0d049434dccd4e12"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1754,7 +1898,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 09:01:10 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

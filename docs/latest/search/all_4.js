@@ -26,7 +26,7 @@ var searchData=
   ['exception_5fbase',['exception_base',['../db/da4/classTins_1_1exception__base.html',1,'Tins']]],
   ['ext_5fheader',['ext_header',['../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267',1,'Tins::IPv6']]],
   ['extended_5fsupported_5frates',['extended_supported_rates',['../dd/da0/classTins_1_1Dot11ManagementFrame.html#ad8808063b10318b3c1fc8f4016c5615e',1,'Tins::Dot11ManagementFrame::extended_supported_rates(const rates_type &amp;new_rates)'],['../dd/da0/classTins_1_1Dot11ManagementFrame.html#ad55751c0b804b5519d14a51115a45c42',1,'Tins::Dot11ManagementFrame::extended_supported_rates() const ']]],
-  ['extendedheader',['ExtendedHeader',['../d6/d23/structTins_1_1Dot11ManagementFrame_1_1ExtendedHeader.html',1,'Tins::Dot11ManagementFrame']]],
   ['extendedheader',['ExtendedHeader',['../dc/d13/structTins_1_1Dot11Data_1_1ExtendedHeader.html',1,'Tins::Dot11Data']]],
+  ['extendedheader',['ExtendedHeader',['../d6/d23/structTins_1_1Dot11ManagementFrame_1_1ExtendedHeader.html',1,'Tins::Dot11ManagementFrame']]],
   ['extensionheader',['ExtensionHeader',['../dd/d25/classTins_1_1IPv6.html#a8818a0ba9596f5b27f4a29955d1f0207',1,'Tins::IPv6']]]
 ];

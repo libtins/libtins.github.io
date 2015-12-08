@@ -1,7 +1,6 @@
 var searchData=
 [
   ['security_5ftype',['security_type',['../d3/d6e/structTins_1_1IP_1_1security__type.html',1,'Tins::IP']]],
-  ['sessionkeys',['SessionKeys',['../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html',1,'Tins::Crypto::WPA2']]],
   ['shortcut_5flimit_5ftype',['shortcut_limit_type',['../d0/d94/structTins_1_1ICMPv6_1_1shortcut__limit__type.html',1,'Tins::ICMPv6']]],
   ['sll',['SLL',['../d6/d47/classTins_1_1SLL.html',1,'Tins']]],
   ['small_5fuint',['small_uint',['../d0/df2/classTins_1_1small__uint.html',1,'Tins']]],
@@ -21,6 +20,5 @@ var searchData=
   ['socket_5fwrite_5ferror',['socket_write_error',['../d3/dea/classTins_1_1socket__write__error.html',1,'Tins']]],
   ['status_5fcode_5ftype',['status_code_type',['../d7/db2/structTins_1_1DHCPv6_1_1status__code__type.html',1,'Tins::DHCPv6']]],
   ['stp',['STP',['../da/df7/classTins_1_1STP.html',1,'Tins']]],
-  ['streaminfo',['StreamInfo',['../d3/d45/structTins_1_1TCPStream_1_1StreamInfo.html',1,'Tins::TCPStream']]],
-  ['supplicantdata',['SupplicantData',['../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html',1,'Tins::Crypto::WPA2']]]
+  ['streaminfo',['StreamInfo',['../d3/d45/structTins_1_1TCPStream_1_1StreamInfo.html',1,'Tins::TCPStream']]]
 ];

@@ -7,6 +7,6 @@ var searchData=
   ['ethernet',['Ethernet',['../de/dcb/structTins_1_1Ethernet.html',1,'Tins']]],
   ['ethernetii',['EthernetII',['../df/dcb/classTins_1_1EthernetII.html',1,'Tins']]],
   ['exception_5fbase',['exception_base',['../db/da4/classTins_1_1exception__base.html',1,'Tins']]],
-  ['extendedheader',['ExtendedHeader',['../dc/d13/structTins_1_1Dot11Data_1_1ExtendedHeader.html',1,'Tins::Dot11Data']]],
-  ['extendedheader',['ExtendedHeader',['../d6/d23/structTins_1_1Dot11ManagementFrame_1_1ExtendedHeader.html',1,'Tins::Dot11ManagementFrame']]]
+  ['extendedheader',['ExtendedHeader',['../d6/d23/structTins_1_1Dot11ManagementFrame_1_1ExtendedHeader.html',1,'Tins::Dot11ManagementFrame']]],
+  ['extendedheader',['ExtendedHeader',['../dc/d13/structTins_1_1Dot11Data_1_1ExtendedHeader.html',1,'Tins::Dot11Data']]]
 ];

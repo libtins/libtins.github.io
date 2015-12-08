@@ -159,19 +159,20 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t *buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">struct </span>header {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">version</a>, <a class="code" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">flags</a>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        uint16_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">length</a>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">dlt</a>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    };</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    header _header;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">byte_array</a> _data;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif // TINS_PPI_H</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> parse_80211(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">struct </span>header {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        uint8_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ac946add5d209e45966b8ab626254aa81">version</a>, <a class="code" href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">flags</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        uint16_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#af520c570268edb97edbe5c7df7098ba0">length</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        uint32_t <a class="code" href="../../de/d25/classTins_1_1PPI.html#ab28961435a0087023c5734c7b0d6d57b">dlt</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    };</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    header _header;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">byte_array</a> _data;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif // TINS_PPI_H</span></div>
 <div class="ttc" id="classTins_1_1PPI_html_a8e819a776e16b04ef30b1eb4fdd068be"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a8e819a776e16b04ef30b1eb4fdd068be">Tins::PPI::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> ppi.h:111</div></div>
 <div class="ttc" id="classTins_1_1PPI_html_a45f8cbc65c228b7083972056f901f678"><div class="ttname"><a href="../../de/d25/classTins_1_1PPI.html#a45f8cbc65c228b7083972056f901f678">Tins::PPI::flags</a></div><div class="ttdeci">uint8_t flags() const </div><div class="ttdoc">Getter for the flags field. </div><div class="ttdef"><b>Definition:</b> ppi.h:80</div></div>
 <div class="ttc" id="namespaceTins_html_a0e7b719fe92db144ba9273382c956d40"><div class="ttname"><a href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">Tins::byte_array</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; byte_array</div><div class="ttdef"><b>Definition:</b> pdu.h:45</div></div>
@@ -188,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 09:01:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

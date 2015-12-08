@@ -81,17 +81,34 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_deprecated000007"></a>Member <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html#ac4738b75f0cf187161fac2d9490ba80e">Tins::FileSniffer::FileSniffer</a>  (const std::string &amp;file_name, const std::string &amp;filter="")</dt>
+<dt><a class="anchor" id="_deprecated000009"></a>Member <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html#ac4738b75f0cf187161fac2d9490ba80e">Tins::FileSniffer::FileSniffer</a>  (const std::string &amp;file_name, const std::string &amp;filter="")</dt>
 <dd>Use the constructor that takes a SnifferConfiguration instead. </dd>
-<dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#affe3b4fcdcdaa036b2ad9520861fa8c1">Tins::NetworkInterface::addresses</a>  () const </dt>
+<dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">Tins::IP::TINS_DEPRECATED</a>  (uint16_t frag_off() const)</dt>
+<dd><dl class="section return"><dt>Returns</dt><dd>The fragment offset for this IP PDU. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>IP::fragment_offset </dd>
+<dd>
+IP::flags  </dd></dl>
+</dd>
+<dt><a class="anchor" id="_deprecated000002"></a>Member <a class="el" href="../../dd/d3f/classTins_1_1IP.html#ab2798603d3269c5e16bff1f747ec6286">Tins::IP::TINS_DEPRECATED</a>  (void frag_off(uint16_t new_frag_off))</dt>
+<dd><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_frag_off</td><td>The new fragment offset. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See Also</dt><dd>IP::fragment_offset </dd>
+<dd>
+IP::flags  </dd></dl>
+</dd>
+<dt><a class="anchor" id="_deprecated000003"></a>Member <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#affe3b4fcdcdaa036b2ad9520861fa8c1">Tins::NetworkInterface::addresses</a>  () const </dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000002"></a>Member <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">Tins::PacketWriter::LinkType</a>  </dt>
+<dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">Tins::PacketWriter::LinkType</a>  </dt>
 <dd>Use DataLinkType instead of this enum. </dd>
-<dt><a class="anchor" id="_deprecated000003"></a>Member <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a5503e1c85bd863121fbf34e24d37e6b9">Tins::PacketWriter::PacketWriter</a>  (const std::string &amp;file_name, LinkType lt)</dt>
+<dt><a class="anchor" id="_deprecated000005"></a>Member <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a5503e1c85bd863121fbf34e24d37e6b9">Tins::PacketWriter::PacketWriter</a>  (const std::string &amp;file_name, LinkType lt)</dt>
 <dd>Use the PacketWriter(const std::string&amp;, const DataLinkType&lt;T&gt;&amp;) constructor. </dd>
-<dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a88243ed15db23d03c953ac93a105136d">Tins::Sniffer::promisc_type</a>  </dt>
+<dt><a class="anchor" id="_deprecated000006"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a88243ed15db23d03c953ac93a105136d">Tins::Sniffer::promisc_type</a>  </dt>
 <dd>This enum is no longer necessary. You should use the Sniffer(const std::string&amp;, const SnifferConfiguration&amp;) constructor.  </dd>
-<dt><a class="anchor" id="_deprecated000005"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#aaad3f243afbb314d0a97ce6092b1878c">Tins::Sniffer::Sniffer</a>  (const std::string &amp;device, unsigned max_packet_size, bool promisc=false, const std::string &amp;filter="", bool rfmon=false)</dt>
+<dt><a class="anchor" id="_deprecated000007"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#aaad3f243afbb314d0a97ce6092b1878c">Tins::Sniffer::Sniffer</a>  (const std::string &amp;device, unsigned max_packet_size, bool promisc=false, const std::string &amp;filter="", bool rfmon=false)</dt>
 <dd>Use the Sniffer(const std::string&amp;, const SnifferConfiguration&amp;) constructor. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
@@ -103,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </dd>
 </dl>
 </dd>
-<dt><a class="anchor" id="_deprecated000006"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a3ca621a56a0f713880061c703a684cc8">Tins::Sniffer::Sniffer</a>  (const std::string &amp;device, promisc_type promisc=NON_PROMISC, const std::string &amp;filter="", bool rfmon=false)</dt>
+<dt><a class="anchor" id="_deprecated000008"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a3ca621a56a0f713880061c703a684cc8">Tins::Sniffer::Sniffer</a>  (const std::string &amp;device, promisc_type promisc=NON_PROMISC, const std::string &amp;filter="", bool rfmon=false)</dt>
 <dd>Use the Sniffer(const std::string&amp;, const SnifferConfiguration&amp;) constructor. <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
@@ -118,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 09:01:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
