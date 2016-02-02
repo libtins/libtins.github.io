@@ -169,7 +169,7 @@ PacketSender sender;
 // Send and receive the response.
 std::unique_ptr<PDU> response(sender.send_recv(eth, iface));
 // Did we receive anything?
-if(response) {
+if (response) {
     const ARP &arp = response->rfind_pdu<ARP>();
     std::cout << "Hardware address: " << arp.sender_hw_addr() << std::endl;
 }
@@ -207,12 +207,14 @@ pkt.rfind_pdu<TCP>().set_flag(TCP::SYN, 1);
 // Send and receive the response.
 std::unique_ptr<PDU> response(sender.send_recv(pkt));
 // Did we receive anything?
-if(response) {
+if (response) {
     TCP &tcp = response->rfind_pdu<TCP>();
-    if(tcp.get_flag(TCP::RST)) 
+    if (tcp.get_flag(TCP::RST)) { 
         std::cout << "Port is closed!" << std::endl;
-    else
+    }
+    else {
         std::cout << "Port is open!" << std::endl;
+    }
 }
 {% endhighlight %}
 
@@ -234,12 +236,13 @@ pkt.rfind_pdu<DNS>().recursion_desired(1);
 // Send and receive the response.
 std::unique_ptr<PDU> response(sender.send_recv(pkt));
 // Did we receive anything?
-if(response) {
+if (response) {
     // Interpret the response
     DNS dns = response->rfind_pdu<RawPDU>().to<DNS>();
     // Print responses
-    for(const auto &record : dns.answers())
+    for (const auto &record : dns.answers()) {
         std::cout << record.dname() << " - " << record.data() << std::endl;
+    }
 }
 {% endhighlight %}
 

@@ -169,7 +169,7 @@ bool is_syn_ack = (tcp.flags() == (TCP::SYN | TCP::ACK));
 
 // Set some options
 tcp.sack_permitted();
-if(tcp.has_sack_permitted()) {
+if (tcp.has_sack_permitted()) {
     // whatever
 }
 tcp.altchecksum(TCP::CHK_8FLETCHER);

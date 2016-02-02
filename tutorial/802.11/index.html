@@ -148,7 +148,7 @@ Crypto::WEPDecrypter decrypter;
 decrypter.decrypter.add_password("00:01:02:03:04:05", "passw");
 // Just asume we get an encrypted frame from somewhere
 Dot11Data some_data = generate_dot11data();
-if(decrypter.decrypt(some_data)) {
+if (decrypter.decrypt(some_data)) {
     // Data was decrypted
     std::cout << "Data was successfully decrypted!\n";
 }

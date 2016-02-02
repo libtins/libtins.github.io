@@ -179,8 +179,9 @@ int main() {
     Allocators::register_allocator<EthernetII, DummyPDU>(0x8ae);
     FileSniffer sniffer("/tmp/dummy.pcap");
     Packet pkt = sniffer.next_packet();
-    if(!pkt)
+    if (!pkt) {
         std::cout << "Oops, didn't sniff anything.\n";
+    }
     else {
         DummyPDU &dummy = pkt.pdu()->rfind_pdu<DummyPDU>();
         // Convert the contents of the DummyPDU to a std::string

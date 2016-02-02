@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013, Matias Fontanini
+ * Copyright (c) 2016, Matias Fontanini
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -41,11 +41,11 @@ std::set<HWAddress<6>> addrs;
 const HWAddress<3> expected_oui("00:50:F2");
 
 bool handler(const PDU& pdu) {
-    const Dot11Beacon &beacon = pdu.rfind_pdu<Dot11Beacon>();
+    const Dot11Beacon& beacon = pdu.rfind_pdu<Dot11Beacon>();
     // Only process it once
     if(addrs.insert(beacon.addr3()).second) {
         // Iterate the tagged options
-        for(const auto &opt : beacon.options()) {
+        for(const auto& opt : beacon.options()) {
             // Is this a vendor-specific tag?
             if(opt.option() == Dot11::VENDOR_SPECIFIC) {
                 // Make sure there's enough size for the OUI + identifier
@@ -63,12 +63,16 @@ bool handler(const PDU& pdu) {
     return true;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     if(argc != 2) {
-        std::cout << "Usage: " << *argv << " <DEVICE>\n";
+        std::cout << "Usage: " <<* argv << " <DEVICE>\n";
         return 1;
     }
     // Only sniff beacons
-    Sniffer sniffer(argv[1], 2000, true, "wlan type mgt subtype beacon");
+    SnifferConfiguration config;
+    config.set_snap_len(2000);
+    config.set_promisc_mode(true);
+    config.set_filter("wlan type mgt subtype beacon");
+    Sniffer sniffer(argv[1], config);
     sniffer.sniff_loop(handler);
 }

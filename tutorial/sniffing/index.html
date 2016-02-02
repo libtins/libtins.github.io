@@ -61,8 +61,7 @@ delete some_pdu;
 <h3 id="sniffer-config">Sniffer configuration</h3>
 
 <p>
-Since version <i>3.2</i> (you can get this changes by using the latest
-version from the repository), there's a class that represents the 
+Since version <i>3.2</i>, there's a class that represents the 
 different parameters that can be given to the sniffer in order to affect
 the sniffing sessions. They are all wrappers over the different 
 <i>libpcap</i> functions, such as <i>pcap_setfilter</i>, 
@@ -218,7 +217,7 @@ they're being sniffed:
 
 {% highlight cpp %}
 Sniffer s = ...;
-for(auto &packet : s) {
+for (auto &packet : s) {
     // packet is a Packet&
     process(packet);
 }
@@ -246,13 +245,14 @@ int main() {
     std::vector<Packet> vt;
     
     Sniffer sniffer("eth0");
-    while(vt.size() != 10)
+    while (vt.size() != 10) {
         // next_packet returns a PtrPacket, which can be implicitly converted to Packet.
         vt.push_back(sniffer.next_packet());
+    }
     // Done, now let's check the packets
-    for(const auto& packet : vt) {
+    for (const auto& packet : vt) {
         // Is there an IP PDU somewhere?
-        if(packet.pdu()->find_pdu<IP>()) {
+        if (packet.pdu()->find_pdu<IP>()) {
             // Just print timestamp's seconds and IP source address
             std::cout << "At: " << packet.timestamp().seconds()
                     << " - " << packet.pdu()->rfind_pdu<IP>().src_addr() 
@@ -276,8 +276,9 @@ std::unique_ptr<PDU> pdu_ptr(sniffer.next_packet());
 Packet packet = sniffer.next_packet();
 // If there was some kind of error, packet.pdu() == nullptr,
 // so we need to check that.
-if(packet)
+if (packet) {
     process_packet(packet); // whatever
+}
 {% endhighlight %}
 
 <p>
@@ -366,12 +367,13 @@ bool handler(const PDU& pkt) {
     // Lookup the UDP PDU
     const UDP &udp = pkt.rfind_pdu<UDP>();
     // We need source/destination port to be 53
-    if(udp.sport() == 53 || udp.dport() == 53) {
+    if (udp.sport() == 53 || udp.dport() == 53) {
         // Interpret it as DNS. This might throw, but Sniffer catches it
         DNS dns = pkt.rfind_pdu<RawPDU>().to<DNS>();
         // Just print out each query's domain name
-        for(const auto &query : dns.queries())
+        for (const auto &query : dns.queries()) {
             std::cout << query.dname() << std::endl;
+        }
     }
     return true;
 }

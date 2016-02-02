@@ -215,8 +215,10 @@ HWAddress<6> hw_addr("01:de:22:01:09:af");
 
 std::cout << hw_addr << std::endl;
 std::cout << std::hex;
-for(auto i : hw_addr) // prints individual bytes
+// prints individual bytes
+for (auto i : hw_addr) {
     std::cout << static_cast<int>(i) << std::endl;
+}
 {% endhighlight %}
 
 <h3 id="ranges">Address range classes</h3>
@@ -260,7 +262,7 @@ range.contains("192.168.1.250"); // Yey, it belongs to this network
 range.contains("192.168.0.100"); // NOPE
 
 // Let's print 'em all
-for(const auto &addr : range) {
+for (const auto &addr : range) {
     std::cout << addr << std::endl;
 }
 {% endhighlight %}
@@ -276,8 +278,9 @@ which is the vendor of a specific network device:
 auto range = HWAddress<6>("00:19:D1:00:00:00") / 24;
 
 // Does this address belong to Intel?
-if(range.contains("00:19:d1:22:33:44"))
+if (range.contains("00:19:d1:22:33:44")) {
     std::cout << "It's Intel!" << std::endl;
+}
 {% endhighlight %}
 
 <h3 id="ifaces">Network interfaces</h3>
@@ -316,10 +319,9 @@ or <code>PacketWriter::DOT11</code>, depending on the encapsulation used in
 the device.
 </p>
 <p>
-As of version <i>3.2</i> (you can currently get this code by cloning the 
-repository), there's a simpler way to indicate the link layer protocol to 
-be used on the packets written by a <code>PacketWriter</code>. This can 
-be done by instantiating the template class <code>DataLinkType</code> 
+As of version <i>3.2</i> , there's a simpler way to indicate the link layer
+protocol to  be used on the packets written by a <code>PacketWriter</code>. 
+This can be done by instantiating the template class <code>DataLinkType</code> 
 with a link layer protocol <code>PDU</code> as its template argument. 
 This makes it easier to use this class, since you won't have to 
 remember which is the identifier name for some link layer protocol. 
