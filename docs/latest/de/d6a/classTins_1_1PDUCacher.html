@@ -125,66 +125,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -455,7 +458,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Forwards the call to the cached <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781" title="Check wether this PDU matches the specified flag. ">PDU::matches_flag</a>. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781" title="Check whether this PDU matches the specified flag. ">PDU::matches_flag</a>. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">Tins::PDU</a>.</p>
 
@@ -495,7 +498,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Forwards the call to the cached <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a>. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a>. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">Tins::PDU</a>.</p>
 
@@ -616,7 +619,7 @@ template&lt;typename T&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

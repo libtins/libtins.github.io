@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2014, Matias Fontanini</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2016, Matias Fontanini</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor"></span>    </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d9/d36/classTins_1_1Timestamp.html#a042d542f42b1c36808cc03e9cf24ac69">   96</a></span>&#160;    <a class="code" href="../../d9/d36/classTins_1_1Timestamp.html#a042d542f42b1c36808cc03e9cf24ac69">Timestamp</a>(<span class="keyword">const</span> timeval &amp;time_val) : tv(time_val) {}</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d9/d36/classTins_1_1Timestamp.html#a042d542f42b1c36808cc03e9cf24ac69">   96</a></span>&#160;    <a class="code" href="../../d9/d36/classTins_1_1Timestamp.html#a042d542f42b1c36808cc03e9cf24ac69">Timestamp</a>(<span class="keyword">const</span> timeval&amp; time_val) : tv(time_val) {}</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    </div>
 <div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d9/d36/classTins_1_1Timestamp.html#a8a86b5dbfbcf6a9bbe5f0bbd5283cf12">  101</a></span>&#160;    seconds_type <a class="code" href="../../d9/d36/classTins_1_1Timestamp.html#a8a86b5dbfbcf6a9bbe5f0bbd5283cf12">seconds</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> tv.tv_sec;</div>
@@ -189,9 +189,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor"></span><span class="keyword">private</span>:</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    timeval tv;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif // TINS_TIMESTAMP_H</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif // TINS_TIMESTAMP_H</span></div>
 <div class="ttc" id="classTins_1_1Timestamp_html_a39bbed8f52e8e14d272b4f3eea46aa36"><div class="ttname"><a href="../../d9/d36/classTins_1_1Timestamp.html#a39bbed8f52e8e14d272b4f3eea46aa36">Tins::Timestamp::microseconds</a></div><div class="ttdeci">microseconds_type microseconds() const </div><div class="ttdef"><b>Definition:</b> timestamp.h:108</div></div>
 <div class="ttc" id="classTins_1_1Timestamp_html_a021eeb13a0de295ac3222af673060dca"><div class="ttname"><a href="../../d9/d36/classTins_1_1Timestamp.html#a021eeb13a0de295ac3222af673060dca">Tins::Timestamp::Timestamp</a></div><div class="ttdeci">Timestamp()</div><div class="ttdef"><b>Definition:</b> timestamp.h:74</div></div>
 <div class="ttc" id="classTins_1_1Timestamp_html_af267c3468d42d769ed93f6cd6e18ba0b"><div class="ttname"><a href="../../d9/d36/classTins_1_1Timestamp.html#af267c3468d42d769ed93f6cd6e18ba0b">Tins::Timestamp::current_time</a></div><div class="ttdeci">static Timestamp current_time()</div><div class="ttdoc">Constructs a Timestamp which will hold the current time. </div><div class="ttdef"><b>Definition:</b> timestamp.h:60</div></div>
@@ -201,7 +202,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

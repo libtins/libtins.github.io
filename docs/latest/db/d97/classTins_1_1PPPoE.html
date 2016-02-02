@@ -150,66 +150,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -305,12 +308,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a9ad5d4e43064ca1a7dabfe0c503e6ce2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a9ad5d4e43064ca1a7dabfe0c503e6ce2">generic_error</a> (const std::string &amp;value)</td></tr>
 <tr class="memdesc:a9ad5d4e43064ca1a7dabfe0c503e6ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a Generic-Error tag.  <a href="#a9ad5d4e43064ca1a7dabfe0c503e6ce2">More...</a><br/></td></tr>
 <tr class="separator:a9ad5d4e43064ca1a7dabfe0c503e6ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a8b1aac0cb818265a342a0598018952"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a7a8b1aac0cb818265a342a0598018952">service_name</a> () const </td></tr>
-<tr class="memdesc:a7a8b1aac0cb818265a342a0598018952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the service-name tag.  <a href="#a7a8b1aac0cb818265a342a0598018952">More...</a><br/></td></tr>
-<tr class="separator:a7a8b1aac0cb818265a342a0598018952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e6eee0e99568b27853d2215bf8ecba2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a2e6eee0e99568b27853d2215bf8ecba2">ac_name</a> () const </td></tr>
-<tr class="memdesc:a2e6eee0e99568b27853d2215bf8ecba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the AC-name tag.  <a href="#a2e6eee0e99568b27853d2215bf8ecba2">More...</a><br/></td></tr>
-<tr class="separator:a2e6eee0e99568b27853d2215bf8ecba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae748fa733d2c73e71a06a2c0e05e08a8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#ae748fa733d2c73e71a06a2c0e05e08a8">service_name</a> () const </td></tr>
+<tr class="memdesc:ae748fa733d2c73e71a06a2c0e05e08a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the service-name tag.  <a href="#ae748fa733d2c73e71a06a2c0e05e08a8">More...</a><br/></td></tr>
+<tr class="separator:ae748fa733d2c73e71a06a2c0e05e08a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e316b9f7493784f8beab724881b909"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#ae4e316b9f7493784f8beab724881b909">ac_name</a> () const </td></tr>
+<tr class="memdesc:ae4e316b9f7493784f8beab724881b909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the AC-name tag.  <a href="#ae4e316b9f7493784f8beab724881b909">More...</a><br/></td></tr>
+<tr class="separator:ae4e316b9f7493784f8beab724881b909"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9539a27626f1df5b617e3aa7b6fe7a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">byte_array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#ad9539a27626f1df5b617e3aa7b6fe7a0">host_uniq</a> () const </td></tr>
 <tr class="memdesc:ad9539a27626f1df5b617e3aa7b6fe7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the host-uniq tag.  <a href="#ad9539a27626f1df5b617e3aa7b6fe7a0">More...</a><br/></td></tr>
 <tr class="separator:ad9539a27626f1df5b617e3aa7b6fe7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,15 +326,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:ab2676c3c5d4d732cd0e02ce5396c557b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d36/namespaceTins.html#a0e7b719fe92db144ba9273382c956d40">byte_array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#ab2676c3c5d4d732cd0e02ce5396c557b">relay_session_id</a> () const </td></tr>
 <tr class="memdesc:ab2676c3c5d4d732cd0e02ce5396c557b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Vendor-Specific tag.  <a href="#ab2676c3c5d4d732cd0e02ce5396c557b">More...</a><br/></td></tr>
 <tr class="separator:ab2676c3c5d4d732cd0e02ce5396c557b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a929cdbd03b49ead650c9b8635f267735"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a929cdbd03b49ead650c9b8635f267735">service_name_error</a> () const </td></tr>
-<tr class="memdesc:a929cdbd03b49ead650c9b8635f267735"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Service-Name-Error tag.  <a href="#a929cdbd03b49ead650c9b8635f267735">More...</a><br/></td></tr>
-<tr class="separator:a929cdbd03b49ead650c9b8635f267735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c886a765d5c28c9b796d5e48c7408f4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a8c886a765d5c28c9b796d5e48c7408f4">ac_system_error</a> () const </td></tr>
-<tr class="memdesc:a8c886a765d5c28c9b796d5e48c7408f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the AC-System-Error tag.  <a href="#a8c886a765d5c28c9b796d5e48c7408f4">More...</a><br/></td></tr>
-<tr class="separator:a8c886a765d5c28c9b796d5e48c7408f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af76b0922ea3f3ca6fd5faaf320b60396"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#af76b0922ea3f3ca6fd5faaf320b60396">generic_error</a> () const </td></tr>
-<tr class="memdesc:af76b0922ea3f3ca6fd5faaf320b60396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Generic-Error tag.  <a href="#af76b0922ea3f3ca6fd5faaf320b60396">More...</a><br/></td></tr>
-<tr class="separator:af76b0922ea3f3ca6fd5faaf320b60396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1b907b4f41bcf89b0d23feb131ef62"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a5c1b907b4f41bcf89b0d23feb131ef62">service_name_error</a> () const </td></tr>
+<tr class="memdesc:a5c1b907b4f41bcf89b0d23feb131ef62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Service-Name-Error tag.  <a href="#a5c1b907b4f41bcf89b0d23feb131ef62">More...</a><br/></td></tr>
+<tr class="separator:a5c1b907b4f41bcf89b0d23feb131ef62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f4cafad68ba9b095b8fed45baf5135"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a87f4cafad68ba9b095b8fed45baf5135">ac_system_error</a> () const </td></tr>
+<tr class="memdesc:a87f4cafad68ba9b095b8fed45baf5135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the AC-System-Error tag.  <a href="#a87f4cafad68ba9b095b8fed45baf5135">More...</a><br/></td></tr>
+<tr class="separator:a87f4cafad68ba9b095b8fed45baf5135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4488decec8db4bd330f75bf1b9a9fbaa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d97/classTins_1_1PPPoE.html#a4488decec8db4bd330f75bf1b9a9fbaa">generic_error</a> () const </td></tr>
+<tr class="memdesc:a4488decec8db4bd330f75bf1b9a9fbaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Generic-Error tag.  <a href="#a4488decec8db4bd330f75bf1b9a9fbaa">More...</a><br/></td></tr>
+<tr class="separator:a4488decec8db4bd330f75bf1b9a9fbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a13b0f3ad713204f7aae5b967e91dc0ca inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13b0f3ad713204f7aae5b967e91dc0ca"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a13b0f3ad713204f7aae5b967e91dc0ca">PDU</a> ()</td></tr>
@@ -384,10 +387,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a460063a6577eb92bd24a9d66ad7e581f">More...</a><br/></td></tr>
+<tr class="memdesc:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a460063a6577eb92bd24a9d66ad7e581f">More...</a><br/></td></tr>
 <tr class="separator:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -584,12 +587,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2e6eee0e99568b27853d2215bf8ecba2"></a>
+<a class="anchor" id="ae4e316b9f7493784f8beab724881b909"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::PPPoE::ac_name </td>
+          <td class="memname">string Tins::PPPoE::ac_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -626,12 +629,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8c886a765d5c28c9b796d5e48c7408f4"></a>
+<a class="anchor" id="a87f4cafad68ba9b095b8fed45baf5135"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::PPPoE::ac_system_error </td>
+          <td class="memname">string Tins::PPPoE::ac_system_error </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -768,12 +771,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af76b0922ea3f3ca6fd5faaf320b60396"></a>
+<a class="anchor" id="a4488decec8db4bd330f75bf1b9a9fbaa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::PPPoE::generic_error </td>
+          <td class="memname">string Tins::PPPoE::generic_error </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1001,12 +1004,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7a8b1aac0cb818265a342a0598018952"></a>
+<a class="anchor" id="ae748fa733d2c73e71a06a2c0e05e08a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::PPPoE::service_name </td>
+          <td class="memname">string Tins::PPPoE::service_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1043,12 +1046,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a929cdbd03b49ead650c9b8635f267735"></a>
+<a class="anchor" id="a5c1b907b4f41bcf89b0d23feb131ef62"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::PPPoE::service_name_error </td>
+          <td class="memname">string Tins::PPPoE::service_name_error </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1282,7 +1285,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

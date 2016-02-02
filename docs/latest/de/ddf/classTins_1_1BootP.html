@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class representing a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> packet.  
+<p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  
  <a href="../../de/ddf/classTins_1_1BootP.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d4/dd5/bootp_8h_source.html">bootp.h</a>&gt;</code></p>
@@ -120,7 +120,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:ad3f82c6c288d87de0e3f3d6293439309"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ad3f82c6c288d87de0e3f3d6293439309">OpCodes</a> { <b>BOOTREQUEST</b> = 1, 
 <b>BOOTREPLY</b> = 2
  }</td></tr>
-<tr class="memdesc:ad3f82c6c288d87de0e3f3d6293439309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum which contains the different opcodes <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> messages. <br/></td></tr>
+<tr class="memdesc:ad3f82c6c288d87de0e3f3d6293439309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum which contains the different opcodes <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> messages. <br/></td></tr>
 <tr class="separator:ad3f82c6c288d87de0e3f3d6293439309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3746f940246c0136ffeebcfe683d3df"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a></td></tr>
 <tr class="separator:ae3746f940246c0136ffeebcfe683d3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,66 +137,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -208,10 +211,10 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a89f86ab157a8ec4db79cd5eb8abfbf16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a89f86ab157a8ec4db79cd5eb8abfbf16">BootP</a> ()</td></tr>
-<tr class="memdesc:a89f86ab157a8ec4db79cd5eb8abfbf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a>.  <a href="#a89f86ab157a8ec4db79cd5eb8abfbf16">More...</a><br/></td></tr>
+<tr class="memdesc:a89f86ab157a8ec4db79cd5eb8abfbf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a>.  <a href="#a89f86ab157a8ec4db79cd5eb8abfbf16">More...</a><br/></td></tr>
 <tr class="separator:a89f86ab157a8ec4db79cd5eb8abfbf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86474cfda43ef591ec95b5c0fd4092f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a86474cfda43ef591ec95b5c0fd4092f3">BootP</a> (const uint8_t *buffer, uint32_t total_sz, uint32_t vend_field_size=64)</td></tr>
-<tr class="memdesc:a86474cfda43ef591ec95b5c0fd4092f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> object from a buffer .  <a href="#a86474cfda43ef591ec95b5c0fd4092f3">More...</a><br/></td></tr>
+<tr class="memdesc:a86474cfda43ef591ec95b5c0fd4092f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> object from a buffer .  <a href="#a86474cfda43ef591ec95b5c0fd4092f3">More...</a><br/></td></tr>
 <tr class="separator:a86474cfda43ef591ec95b5c0fd4092f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0f6d17d452dd556b1ecc9cd0c6bba99"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#af0f6d17d452dd556b1ecc9cd0c6bba99">opcode</a> () const </td></tr>
 <tr class="memdesc:af0f6d17d452dd556b1ecc9cd0c6bba99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the opcode field.  <a href="#af0f6d17d452dd556b1ecc9cd0c6bba99">More...</a><br/></td></tr>
@@ -261,39 +264,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56b3d821c2bf61faeb1c289d39192f3c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a56b3d821c2bf61faeb1c289d39192f3c">header_size</a> () const </td></tr>
 <tr class="memdesc:a56b3d821c2bf61faeb1c289d39192f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the header size.  <a href="#a56b3d821c2bf61faeb1c289d39192f3c">More...</a><br/></td></tr>
 <tr class="separator:a56b3d821c2bf61faeb1c289d39192f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa558444c2107bb2c99f027e2b0a92365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#aa558444c2107bb2c99f027e2b0a92365">opcode</a> (uint8_t new_opcode)</td></tr>
-<tr class="memdesc:aa558444c2107bb2c99f027e2b0a92365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the opcode field.  <a href="#aa558444c2107bb2c99f027e2b0a92365">More...</a><br/></td></tr>
-<tr class="separator:aa558444c2107bb2c99f027e2b0a92365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee28a3bd34118c54c317ef2b1972691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#adee28a3bd34118c54c317ef2b1972691">htype</a> (uint8_t new_htype)</td></tr>
-<tr class="memdesc:adee28a3bd34118c54c317ef2b1972691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the htype field.  <a href="#adee28a3bd34118c54c317ef2b1972691">More...</a><br/></td></tr>
-<tr class="separator:adee28a3bd34118c54c317ef2b1972691"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5981ebf77aa6c142d1162f8dbd547da3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a5981ebf77aa6c142d1162f8dbd547da3">hlen</a> (uint8_t new_hlen)</td></tr>
-<tr class="memdesc:a5981ebf77aa6c142d1162f8dbd547da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hlen field.  <a href="#a5981ebf77aa6c142d1162f8dbd547da3">More...</a><br/></td></tr>
-<tr class="separator:a5981ebf77aa6c142d1162f8dbd547da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a633b7a6d4656aeb5e918f0a8b0d10ddb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a633b7a6d4656aeb5e918f0a8b0d10ddb">hops</a> (uint8_t new_hops)</td></tr>
-<tr class="memdesc:a633b7a6d4656aeb5e918f0a8b0d10ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hops field.  <a href="#a633b7a6d4656aeb5e918f0a8b0d10ddb">More...</a><br/></td></tr>
-<tr class="separator:a633b7a6d4656aeb5e918f0a8b0d10ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e9f0357072599687d0900e547af07e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3e9f0357072599687d0900e547af07e">xid</a> (uint32_t new_xid)</td></tr>
-<tr class="memdesc:ae3e9f0357072599687d0900e547af07e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the xid field.  <a href="#ae3e9f0357072599687d0900e547af07e">More...</a><br/></td></tr>
-<tr class="separator:ae3e9f0357072599687d0900e547af07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56fa76fc8c67de54912d24c1eab8394f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a56fa76fc8c67de54912d24c1eab8394f">secs</a> (uint16_t new_secs)</td></tr>
-<tr class="memdesc:a56fa76fc8c67de54912d24c1eab8394f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the secs field.  <a href="#a56fa76fc8c67de54912d24c1eab8394f">More...</a><br/></td></tr>
-<tr class="separator:a56fa76fc8c67de54912d24c1eab8394f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdf9a0f367884648f82b569c0c98db27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#afdf9a0f367884648f82b569c0c98db27">padding</a> (uint16_t new_padding)</td></tr>
-<tr class="memdesc:afdf9a0f367884648f82b569c0c98db27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the padding field.  <a href="#afdf9a0f367884648f82b569c0c98db27">More...</a><br/></td></tr>
-<tr class="separator:afdf9a0f367884648f82b569c0c98db27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64de7cdfa4a2d769a66196cb4d7a95cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a64de7cdfa4a2d769a66196cb4d7a95cc">ciaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_ciaddr)</td></tr>
-<tr class="memdesc:a64de7cdfa4a2d769a66196cb4d7a95cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the ciaddr field.  <a href="#a64de7cdfa4a2d769a66196cb4d7a95cc">More...</a><br/></td></tr>
-<tr class="separator:a64de7cdfa4a2d769a66196cb4d7a95cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09df25b0c4ce72b6976615e2c71da67b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a09df25b0c4ce72b6976615e2c71da67b">yiaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_yiaddr)</td></tr>
-<tr class="memdesc:a09df25b0c4ce72b6976615e2c71da67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the yiaddr field.  <a href="#a09df25b0c4ce72b6976615e2c71da67b">More...</a><br/></td></tr>
-<tr class="separator:a09df25b0c4ce72b6976615e2c71da67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc5f242da74ac360fc520fd83dba466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a8fc5f242da74ac360fc520fd83dba466">siaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_siaddr)</td></tr>
-<tr class="memdesc:a8fc5f242da74ac360fc520fd83dba466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the siaddr field.  <a href="#a8fc5f242da74ac360fc520fd83dba466">More...</a><br/></td></tr>
-<tr class="separator:a8fc5f242da74ac360fc520fd83dba466"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a230bf5a363e43eceb84c458c2f1e85d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a230bf5a363e43eceb84c458c2f1e85d6">giaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_giaddr)</td></tr>
-<tr class="memdesc:a230bf5a363e43eceb84c458c2f1e85d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the giaddr field.  <a href="#a230bf5a363e43eceb84c458c2f1e85d6">More...</a><br/></td></tr>
-<tr class="separator:a230bf5a363e43eceb84c458c2f1e85d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe042acc885db883559722f95ec4d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a3fe042acc885db883559722f95ec4d89">opcode</a> (uint8_t code)</td></tr>
+<tr class="memdesc:a3fe042acc885db883559722f95ec4d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the opcode field.  <a href="#a3fe042acc885db883559722f95ec4d89">More...</a><br/></td></tr>
+<tr class="separator:a3fe042acc885db883559722f95ec4d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6b72f475969932f7d386a84b8981ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a3c6b72f475969932f7d386a84b8981ea">htype</a> (uint8_t type)</td></tr>
+<tr class="memdesc:a3c6b72f475969932f7d386a84b8981ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hardware type field.  <a href="#a3c6b72f475969932f7d386a84b8981ea">More...</a><br/></td></tr>
+<tr class="separator:a3c6b72f475969932f7d386a84b8981ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac752228e58232ee7a7688d5fbfbc25ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ac752228e58232ee7a7688d5fbfbc25ee">hlen</a> (uint8_t length)</td></tr>
+<tr class="memdesc:ac752228e58232ee7a7688d5fbfbc25ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hlen field.  <a href="#ac752228e58232ee7a7688d5fbfbc25ee">More...</a><br/></td></tr>
+<tr class="separator:ac752228e58232ee7a7688d5fbfbc25ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72859bfc9bf4ea9dd603d67e1692ec3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a72859bfc9bf4ea9dd603d67e1692ec3e">hops</a> (uint8_t count)</td></tr>
+<tr class="memdesc:a72859bfc9bf4ea9dd603d67e1692ec3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hops field.  <a href="#a72859bfc9bf4ea9dd603d67e1692ec3e">More...</a><br/></td></tr>
+<tr class="separator:a72859bfc9bf4ea9dd603d67e1692ec3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2121d826ba3bc0ba6643bf79c7c69ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae2121d826ba3bc0ba6643bf79c7c69ea">xid</a> (uint32_t identifier)</td></tr>
+<tr class="memdesc:ae2121d826ba3bc0ba6643bf79c7c69ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the xid field.  <a href="#ae2121d826ba3bc0ba6643bf79c7c69ea">More...</a><br/></td></tr>
+<tr class="separator:ae2121d826ba3bc0ba6643bf79c7c69ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd99620b71ba38d72e57af76556dc617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#afd99620b71ba38d72e57af76556dc617">secs</a> (uint16_t value)</td></tr>
+<tr class="memdesc:afd99620b71ba38d72e57af76556dc617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the secs field.  <a href="#afd99620b71ba38d72e57af76556dc617">More...</a><br/></td></tr>
+<tr class="separator:afd99620b71ba38d72e57af76556dc617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb07ccce931d74cb01013eac50c1961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a9bb07ccce931d74cb01013eac50c1961">padding</a> (uint16_t value)</td></tr>
+<tr class="memdesc:a9bb07ccce931d74cb01013eac50c1961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the padding field.  <a href="#a9bb07ccce931d74cb01013eac50c1961">More...</a><br/></td></tr>
+<tr class="separator:a9bb07ccce931d74cb01013eac50c1961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5193965fb762317df4a6d16ce940b62d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a5193965fb762317df4a6d16ce940b62d">ciaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a5193965fb762317df4a6d16ce940b62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the ciaddr field.  <a href="#a5193965fb762317df4a6d16ce940b62d">More...</a><br/></td></tr>
+<tr class="separator:a5193965fb762317df4a6d16ce940b62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1664850569342e0f00675a862afd62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a9d1664850569342e0f00675a862afd62">yiaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a9d1664850569342e0f00675a862afd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the yiaddr field.  <a href="#a9d1664850569342e0f00675a862afd62">More...</a><br/></td></tr>
+<tr class="separator:a9d1664850569342e0f00675a862afd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce09a984336e4ef750464b0aa489a1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a5ce09a984336e4ef750464b0aa489a1d">siaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a5ce09a984336e4ef750464b0aa489a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the siaddr field.  <a href="#a5ce09a984336e4ef750464b0aa489a1d">More...</a><br/></td></tr>
+<tr class="separator:a5ce09a984336e4ef750464b0aa489a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d26de6dc74c6350dae194f5455268a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a7d26de6dc74c6350dae194f5455268a6">giaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a7d26de6dc74c6350dae194f5455268a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the giaddr field.  <a href="#a7d26de6dc74c6350dae194f5455268a6">More...</a><br/></td></tr>
+<tr class="separator:a7d26de6dc74c6350dae194f5455268a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73fdd4597bd8387f48d0bba949baee68"><td class="memTemplParams" colspan="2">template&lt;size_t n&gt; </td></tr>
 <tr class="memitem:a73fdd4597bd8387f48d0bba949baee68"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a73fdd4597bd8387f48d0bba949baee68">chaddr</a> (const <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress</a>&lt; n &gt; &amp;new_chaddr)</td></tr>
 <tr class="memdesc:a73fdd4597bd8387f48d0bba949baee68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the chaddr field. The new_chaddr pointer must be at least BOOTP::hlen() bytes long.  <a href="#a73fdd4597bd8387f48d0bba949baee68">More...</a><br/></td></tr>
@@ -304,11 +307,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aff67d7136cdc094110ed53d91a93f920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#aff67d7136cdc094110ed53d91a93f920">file</a> (const uint8_t *new_file)</td></tr>
 <tr class="memdesc:aff67d7136cdc094110ed53d91a93f920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the file field.  <a href="#aff67d7136cdc094110ed53d91a93f920">More...</a><br/></td></tr>
 <tr class="separator:aff67d7136cdc094110ed53d91a93f920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20568d722ea218860a477232c78afca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a20568d722ea218860a477232c78afca5">vend</a> (const <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> &amp;new_vend)</td></tr>
-<tr class="memdesc:a20568d722ea218860a477232c78afca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the vend field.  <a href="#a20568d722ea218860a477232c78afca5">More...</a><br/></td></tr>
-<tr class="separator:a20568d722ea218860a477232c78afca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05abf86687a1c84137d7bf9e91186d9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a05abf86687a1c84137d7bf9e91186d9c">vend</a> (const <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> &amp;newvend_)</td></tr>
+<tr class="memdesc:a05abf86687a1c84137d7bf9e91186d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the vend field.  <a href="#a05abf86687a1c84137d7bf9e91186d9c">More...</a><br/></td></tr>
+<tr class="separator:a05abf86687a1c84137d7bf9e91186d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36b22efd61fdbec8ec0e4de938b9dae1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a36b22efd61fdbec8ec0e4de938b9dae1">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a36b22efd61fdbec8ec0e4de938b9dae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a36b22efd61fdbec8ec0e4de938b9dae1">More...</a><br/></td></tr>
+<tr class="memdesc:a36b22efd61fdbec8ec0e4de938b9dae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a36b22efd61fdbec8ec0e4de938b9dae1">More...</a><br/></td></tr>
 <tr class="separator:a36b22efd61fdbec8ec0e4de938b9dae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab19ce1e1b3adf47e276d6f976e7836e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab19ce1e1b3adf47e276d6f976e7836e2">pdu_type</a> () const </td></tr>
 <tr class="memdesc:ab19ce1e1b3adf47e276d6f976e7836e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s type.  <a href="#ab19ce1e1b3adf47e276d6f976e7836e2">More...</a><br/></td></tr>
@@ -367,7 +370,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -408,7 +411,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> packet. </p>
+<div class="textblock"><p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="aaf693281d2c0c036135b54d4e9428f56"></a>
 <div class="memitem">
@@ -463,8 +466,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates an instance of <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a>. </p>
-<p>This sets the size of the vend field to 64, as the <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> RFC states. </p>
+<p>Creates an instance of <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a>. </p>
+<p>This sets the size of the vend field to 64, as the <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> RFC states. </p>
 
 </div>
 </div>
@@ -498,8 +501,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> object from a buffer . </p>
-<p>If there's not enough size for a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> header, then a <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> exception is thrown.</p>
+<p>Constructs a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> object from a buffer . </p>
+<p>If there's not enough size for a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> header, then a <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> exception is thrown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>The buffer from which this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> will be constructed. </td></tr>
@@ -534,7 +537,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Getter for the chaddr field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The chddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The chddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
@@ -594,11 +597,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the ciaddr field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The ciaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The ciaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a64de7cdfa4a2d769a66196cb4d7a95cc"></a>
+<a class="anchor" id="a5193965fb762317df4a6d16ce940b62d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -606,7 +609,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::ciaddr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td>
-          <td class="paramname"><em>new_ciaddr</em></td><td>)</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -615,7 +618,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the ciaddr field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_ciaddr</td><td>The ciaddr to be set. </td></tr>
+    <tr><td class="paramname">address</td><td>The ciaddr to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -672,7 +675,7 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the file field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The file field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The file field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
@@ -722,11 +725,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the giaddr field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The giaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The giaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a230bf5a363e43eceb84c458c2f1e85d6"></a>
+<a class="anchor" id="a7d26de6dc74c6350dae194f5455268a6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -734,7 +737,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::giaddr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td>
-          <td class="paramname"><em>new_giaddr</em></td><td>)</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -743,7 +746,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the giaddr field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_giaddr</td><td>The giaddr to be set. </td></tr>
+    <tr><td class="paramname">address</td><td>The giaddr to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -803,11 +806,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the hlen field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The hlen field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The hlen field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5981ebf77aa6c142d1162f8dbd547da3"></a>
+<a class="anchor" id="ac752228e58232ee7a7688d5fbfbc25ee"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -815,7 +818,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::hlen </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>new_hlen</em></td><td>)</td>
+          <td class="paramname"><em>length</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -824,7 +827,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the hlen field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_hlen</td><td>The hlen to be set. </td></tr>
+    <tr><td class="paramname">length</td><td>The hlen field value to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -853,11 +856,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the hops field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The hops field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The hops field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a633b7a6d4656aeb5e918f0a8b0d10ddb"></a>
+<a class="anchor" id="a72859bfc9bf4ea9dd603d67e1692ec3e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -865,7 +868,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::hops </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>new_hops</em></td><td>)</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -874,7 +877,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the hops field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_hops</td><td>The hops to be set. </td></tr>
+    <tr><td class="paramname">count</td><td>The hops field value to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -903,11 +906,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the htype field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The htype field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The htype field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="adee28a3bd34118c54c317ef2b1972691"></a>
+<a class="anchor" id="a3c6b72f475969932f7d386a84b8981ea"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -915,16 +918,16 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::htype </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>new_htype</em></td><td>)</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Setter for the htype field. </p>
+<p>Setter for the hardware type field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_htype</td><td>The htype to be set. </td></tr>
+    <tr><td class="paramname">type</td><td>The hardware type field value to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -963,9 +966,9 @@ template&lt;size_t n&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
 <p>This returns true if the xid field is equal.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -1000,11 +1003,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the opcode field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The opcode field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The opcode field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa558444c2107bb2c99f027e2b0a92365"></a>
+<a class="anchor" id="a3fe042acc885db883559722f95ec4d89"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1012,7 +1015,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::opcode </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>new_opcode</em></td><td>)</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1021,7 +1024,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the opcode field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_opcode</td><td>The opcode to be set. </td></tr>
+    <tr><td class="paramname">code</td><td>The opcode to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1050,11 +1053,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the padding field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The padding field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The padding field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="afdf9a0f367884648f82b569c0c98db27"></a>
+<a class="anchor" id="a9bb07ccce931d74cb01013eac50c1961"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1062,7 +1065,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::padding </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>new_padding</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1071,7 +1074,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the padding field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_padding</td><td>The padding to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The padding to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1130,11 +1133,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the secs field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The secs field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The secs field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a56fa76fc8c67de54912d24c1eab8394f"></a>
+<a class="anchor" id="afd99620b71ba38d72e57af76556dc617"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1142,7 +1145,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::secs </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>new_secs</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1151,7 +1154,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the secs field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_secs</td><td>The secs to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The secs to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1180,11 +1183,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the siaddr field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The siaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The siaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8fc5f242da74ac360fc520fd83dba466"></a>
+<a class="anchor" id="a5ce09a984336e4ef750464b0aa489a1d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1192,7 +1195,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::siaddr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td>
-          <td class="paramname"><em>new_siaddr</em></td><td>)</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1201,7 +1204,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the siaddr field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_siaddr</td><td>The siaddr to be set. </td></tr>
+    <tr><td class="paramname">address</td><td>The siaddr to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1230,7 +1233,7 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the sname field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The sname field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The sname field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
@@ -1280,11 +1283,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the vend field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The vend field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The vend field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a20568d722ea218860a477232c78afca5"></a>
+<a class="anchor" id="a05abf86687a1c84137d7bf9e91186d9c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1292,7 +1295,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::vend </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>new_vend</em></td><td>)</td>
+          <td class="paramname"><em>newvend_</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1301,7 +1304,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the vend field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_vend</td><td>The vend to be set. </td></tr>
+    <tr><td class="paramname">newvend_</td><td>The vend to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1331,7 +1334,7 @@ template&lt;size_t n&gt; </div>
 
 <p>Getter for the vend field. </p>
 <p>This getter can be used by subclasses to avoid copying the vend field around.</p>
-<dl class="section return"><dt>Returns</dt><dd>The vend field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The vend field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
@@ -1410,11 +1413,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the xid field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The xid field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The xid field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae3e9f0357072599687d0900e547af07e"></a>
+<a class="anchor" id="ae2121d826ba3bc0ba6643bf79c7c69ea"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1422,7 +1425,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::xid </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>new_xid</em></td><td>)</td>
+          <td class="paramname"><em>identifier</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1431,7 +1434,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the xid field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_xid</td><td>The xid to be set. </td></tr>
+    <tr><td class="paramname">identifier</td><td>The xid to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1460,11 +1463,11 @@ template&lt;size_t n&gt; </div>
 </div><div class="memdoc">
 
 <p>Getter for the yiaddr field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The yiaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The yiaddr field for this <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a09df25b0c4ce72b6976615e2c71da67b"></a>
+<a class="anchor" id="a9d1664850569342e0f00675a862afd62"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1472,7 +1475,7 @@ template&lt;size_t n&gt; </div>
           <td class="memname">void Tins::BootP::yiaddr </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td>
-          <td class="paramname"><em>new_yiaddr</em></td><td>)</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1481,7 +1484,7 @@ template&lt;size_t n&gt; </div>
 <p>Setter for the yiaddr field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_yiaddr</td><td>The yiaddr to be set. </td></tr>
+    <tr><td class="paramname">address</td><td>The yiaddr to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1495,7 +1498,7 @@ template&lt;size_t n&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

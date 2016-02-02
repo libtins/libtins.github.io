@@ -164,66 +164,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -322,9 +325,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:ab41cef78190ee46d143594b624fee2bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de4/classTins_1_1TCP.html#ab41cef78190ee46d143594b624fee2bd">timestamp</a> (uint32_t value, uint32_t reply)</td></tr>
 <tr class="memdesc:ab41cef78190ee46d143594b624fee2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a timestamp option.  <a href="#ab41cef78190ee46d143594b624fee2bd">More...</a><br/></td></tr>
 <tr class="separator:ab41cef78190ee46d143594b624fee2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5845eae488b73629e4dc4c7ed5549c15"><td class="memItemLeft" align="right" valign="top">std::pair&lt; uint32_t, uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de4/classTins_1_1TCP.html#a5845eae488b73629e4dc4c7ed5549c15">timestamp</a> () const </td></tr>
-<tr class="memdesc:a5845eae488b73629e4dc4c7ed5549c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a timestamp option.  <a href="#a5845eae488b73629e4dc4c7ed5549c15">More...</a><br/></td></tr>
-<tr class="separator:a5845eae488b73629e4dc4c7ed5549c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93f7979bb22bfe604d32f1394d5f11e"><td class="memItemLeft" align="right" valign="top">std::pair&lt; uint32_t, uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de4/classTins_1_1TCP.html#ac93f7979bb22bfe604d32f1394d5f11e">timestamp</a> () const </td></tr>
+<tr class="memdesc:ac93f7979bb22bfe604d32f1394d5f11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a timestamp option.  <a href="#ac93f7979bb22bfe604d32f1394d5f11e">More...</a><br/></td></tr>
+<tr class="separator:ac93f7979bb22bfe604d32f1394d5f11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a145081291e33957f91b991f04992ea4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de4/classTins_1_1TCP.html#a145081291e33957f91b991f04992ea4d">altchecksum</a> (<a class="el" href="../../d0/de4/classTins_1_1TCP.html#a18f48174cc5350676e08f1d41de147a0">AltChecksums</a> value)</td></tr>
 <tr class="memdesc:a145081291e33957f91b991f04992ea4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a alternate checksum option.  <a href="#a145081291e33957f91b991f04992ea4d">More...</a><br/></td></tr>
 <tr class="separator:a145081291e33957f91b991f04992ea4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -347,7 +350,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:a68e90f2186aea1d5699af64073db4711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header size.  <a href="#a68e90f2186aea1d5699af64073db4711">More...</a><br/></td></tr>
 <tr class="separator:a68e90f2186aea1d5699af64073db4711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a996b53f15f5722a8ad149199d946ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de4/classTins_1_1TCP.html#a5a996b53f15f5722a8ad149199d946ac">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a5a996b53f15f5722a8ad149199d946ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a5a996b53f15f5722a8ad149199d946ac">More...</a><br/></td></tr>
+<tr class="memdesc:a5a996b53f15f5722a8ad149199d946ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a5a996b53f15f5722a8ad149199d946ac">More...</a><br/></td></tr>
 <tr class="separator:a5a996b53f15f5722a8ad149199d946ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b68ff2031a0b201142ccfe84f383320"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de4/classTins_1_1TCP.html#a8b68ff2031a0b201142ccfe84f383320">pdu_type</a> () const </td></tr>
 <tr class="memdesc:a8b68ff2031a0b201142ccfe84f383320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s type.  <a href="#a8b68ff2031a0b201142ccfe84f383320">More...</a><br/></td></tr>
@@ -409,7 +412,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -1043,8 +1046,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -1428,12 +1431,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5845eae488b73629e4dc4c7ed5549c15"></a>
+<a class="anchor" id="ac93f7979bb22bfe604d32f1394d5f11e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt; uint32_t, uint32_t &gt; Tins::TCP::timestamp </td>
+          <td class="memname">pair&lt; uint32_t, uint32_t &gt; Tins::TCP::timestamp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1630,7 +1633,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

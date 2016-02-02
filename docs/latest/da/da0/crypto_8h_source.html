@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2014, Matias Fontanini</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2016, Matias Fontanini</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
@@ -130,261 +130,273 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;utils.h&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;snap.h&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;rawpdu.h&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;handshake_capturer.h&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>Tins {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">class </span>PDU;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">class </span>Dot11;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">class </span>Dot11Data;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>Crypto {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">struct </span>RC4Key;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #ifdef HAVE_WPA2_DECRYPTION</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>    <span class="keyword">namespace </span>WPA2 {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">class </span>SessionKeys {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> PMK_SIZE;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> PTK_SIZE;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;macros.h&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;handshake_capturer.h&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>Tins {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">class </span>PDU;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">class </span>Dot11;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">class </span>Dot11Data;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>Crypto {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">struct </span>RC4Key;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef HAVE_WPA2_DECRYPTION</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span><span class="keyword">namespace </span>WPA2 {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">   61</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">SessionKeys</a> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#ae8ea8a488690775bb8962707895cf250">   66</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#ae8ea8a488690775bb8962707895cf250">PMK_SIZE</a>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">typedef</span> std::vector&lt;uint8_t&gt; ptk_type;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a53e1755881b0e3018d75fda3eb818b18">   71</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a53e1755881b0e3018d75fda3eb818b18">PTK_SIZE</a>;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keyword">typedef</span> std::vector&lt;uint8_t&gt; pmk_type;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            SessionKeys();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            SessionKeys(<span class="keyword">const</span> ptk_type&amp; ptk, <span class="keywordtype">bool</span> is_ccmp);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            SessionKeys(<span class="keyword">const</span> <a class="code" href="../../d8/d36/namespaceTins.html#a45ade21a93b504b118ebdae19909bd34">RSNHandshake</a> &amp;hs, <span class="keyword">const</span> pmk_type &amp;pmk);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            SNAP *decrypt_unicast(<span class="keyword">const</span> Dot11Data &amp;dot11, RawPDU &amp;raw) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keyword">const</span> ptk_type&amp; get_ptk() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordtype">bool</span> uses_ccmp() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            SNAP *ccmp_decrypt_unicast(<span class="keyword">const</span> Dot11Data &amp;dot11, RawPDU &amp;raw) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            SNAP *tkip_decrypt_unicast(<span class="keyword">const</span> Dot11Data &amp;dot11, RawPDU &amp;raw) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            RC4Key generate_rc4_key(<span class="keyword">const</span> Dot11Data &amp;dot11, <span class="keyword">const</span> RawPDU &amp;raw) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            ptk_type ptk;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordtype">bool</span> is_ccmp;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        };</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keyword">class </span>SupplicantData {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keyword">typedef</span> SessionKeys::pmk_type pmk_type;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            SupplicantData(<span class="keyword">const</span> std::string &amp;psk, <span class="keyword">const</span> std::string &amp;ssid);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keyword">const</span> pmk_type &amp;pmk() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            pmk_type pmk_;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        };</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    } <span class="comment">// WPA2</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">    #endif // HAVE_WPA2_DECRYPTION</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">  167</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a> {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size = 256;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator&gt;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">RC4Key</a>(ForwardIterator start, ForwardIterator end);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">  182</a></span>&#160;        uint8_t <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[data_size];</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    };</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a8f5de83f93897eeaf8d80485e1bec24b">   76</a></span>&#160;    <span class="keyword">typedef</span> std::vector&lt;uint8_t&gt; <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a8f5de83f93897eeaf8d80485e1bec24b">ptk_type</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a5ce051049875873fe1f964c46181c2ce">   81</a></span>&#160;    <span class="keyword">typedef</span> std::vector&lt;uint8_t&gt; <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a5ce051049875873fe1f964c46181c2ce">pmk_type</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">SessionKeys</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">SessionKeys</a>(<span class="keyword">const</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a8f5de83f93897eeaf8d80485e1bec24b">ptk_type</a>&amp; ptk, <span class="keywordtype">bool</span> is_ccmp);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">SessionKeys</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d69/classTins_1_1EAPOLHandshake.html">RSNHandshake</a>&amp; hs, <span class="keyword">const</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a5ce051049875873fe1f964c46181c2ce">pmk_type</a>&amp; pmk);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a>* decrypt_unicast(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11, <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a>&amp; raw) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a8f5de83f93897eeaf8d80485e1bec24b">ptk_type</a>&amp; get_ptk() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">bool</span> uses_ccmp() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a>* ccmp_decrypt_unicast(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11, <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a>&amp; raw) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../da/d52/classTins_1_1SNAP.html">SNAP</a>* tkip_decrypt_unicast(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11, <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a>&amp; raw) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a> generate_rc4_key(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11, <span class="keyword">const</span> <a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a>&amp; raw) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a8f5de83f93897eeaf8d80485e1bec24b">ptk_type</a> ptk_;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">bool</span> is_ccmp_;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html">  144</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html">SupplicantData</a> {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html#a934e680a1342cbdbf202ef5e5928243f">  149</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a5ce051049875873fe1f964c46181c2ce">SessionKeys::pmk_type</a> <a class="code" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html#a934e680a1342cbdbf202ef5e5928243f">pmk_type</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html">SupplicantData</a>(<span class="keyword">const</span> std::string&amp; psk, <span class="keyword">const</span> std::string&amp; ssid);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html#a934e680a1342cbdbf202ef5e5928243f">pmk_type</a>&amp; pmk() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html#a934e680a1342cbdbf202ef5e5928243f">pmk_type</a> pmk_;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;};</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;} <span class="comment">// WPA2</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif // HAVE_WPA2_DECRYPTION</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">  173</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a> {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> data_size = 256;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator&gt;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">RC4Key</a>(ForwardIterator start, ForwardIterator end);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">  188</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">WEPDecrypter</a> {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress&lt;6&gt;</a> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#af45f232e79783475f7530d82cf4eb133">WEPDecrypter</a>();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#a0523f0971c9e803fd70c710284bdc6e2">add_password</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &amp;addr, <span class="keyword">const</span> std::string &amp;password);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#a1adad1419017cf944c44d6831eac54f5">remove_password</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &amp;addr);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#ad771b80378750664ba88afe77239f51f">decrypt</a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">typedef</span> std::map&lt;address_type, std::string&gt; passwords_type;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *<a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#ad771b80378750664ba88afe77239f51f">decrypt</a>(<a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> &amp;raw, <span class="keyword">const</span> std::string &amp;password);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        passwords_type passwords;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        std::vector&lt;uint8_t&gt; key_buffer;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    };</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">  188</a></span>&#160;    uint8_t <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[data_size];</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;};</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">  194</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">WEPDecrypter</a> {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress&lt;6&gt;</a> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">WEPDecrypter</a>();</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">void</span> add_password(<span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; addr, <span class="keyword">const</span> std::string&amp; password);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> remove_password(<span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; addr);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">bool</span> decrypt(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">typedef</span> std::map&lt;address_type, std::string&gt; passwords_type;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">    #ifdef HAVE_WPA2_DECRYPTION</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">class </span>WPA2Decrypter {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="comment">         * \brief The type used to store Dot11 addresses.</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress&lt;6&gt;</a> address_type;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keyword">typedef</span> std::pair&lt;address_type, address_type&gt; addr_pair;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keyword">typedef</span> std::map&lt;addr_pair, WPA2::SessionKeys&gt; keys_map;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordtype">void</span> add_ap_data(<span class="keyword">const</span> std::string &amp;psk, <span class="keyword">const</span> std::string &amp;ssid);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordtype">void</span> add_ap_data(<span class="keyword">const</span> std::string &amp;psk, <span class="keyword">const</span> std::string &amp;ssid, <span class="keyword">const</span> address_type &amp;addr);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        </div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordtype">void</span> add_decryption_keys(<span class="keyword">const</span> addr_pair&amp; addresses, <span class="keyword">const</span> WPA2::SessionKeys&amp; session_keys);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordtype">bool</span> decrypt(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keyword">const</span> keys_map&amp; get_keys() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keyword">typedef</span> std::map&lt;std::string, WPA2::SupplicantData&gt; pmks_map;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keyword">typedef</span> std::map&lt;address_type, WPA2::SupplicantData&gt; bssids_map;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordtype">void</span> try_add_keys(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a> &amp;dot11, <span class="keyword">const</span> <a class="code" href="../../dc/d69/classTins_1_1EAPOLHandshake.html">RSNHandshake</a> &amp;hs);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        addr_pair make_addr_pair(<span class="keyword">const</span> address_type &amp;addr1, <span class="keyword">const</span> address_type &amp;addr2) {</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordflow">return</span> (addr1 &lt; addr2) ? </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                std::make_pair(addr1, addr2) :</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                std::make_pair(addr2, addr1);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        }</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        addr_pair extract_addr_pair(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a> &amp;dot11);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        addr_pair extract_addr_pair_dst(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a> &amp;dot11);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        bssids_map::const_iterator find_ap(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a> &amp;dot11);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordtype">void</span> add_access_point(<span class="keyword">const</span> std::string &amp;ssid, <span class="keyword">const</span> address_type &amp;addr);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <a class="code" href="../../de/da8/classTins_1_1RSNHandshakeCapturer.html">RSNHandshakeCapturer</a> capturer;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        pmks_map pmks;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        bssids_map aps;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        keys_map keys;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    };</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;<span class="preprocessor">    #endif // HAVE_WPA2_DECRYPTION</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
-<div class="line"><a name="l00387"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">  387</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy</a> {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">  392</a></span>&#160;        <span class="keyword">typedef</span> Functor <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">functor_type</a>;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    </div>
-<div class="line"><a name="l00397"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">  397</a></span>&#160;        <span class="keyword">typedef</span> Decrypter <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">DecrypterProxy</a>(<span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">functor_type</a> &amp;func, </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;          <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a> &amp;decr = <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>());</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a> &amp;<a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">decrypter</a>();</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a> &amp;<a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">decrypter</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">operator() </a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        Functor functor_;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a> decrypter_;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    };</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator, <span class="keyword">typename</span> OutputIterator&gt;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keywordtype">void</span> rc4(ForwardIterator start, ForwardIterator end, <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a> &amp;key, OutputIterator output);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    </div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WEPDecrypter&gt;</a> make_wep_decrypter_proxy(<span class="keyword">const</span> Functor &amp;functor);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="preprocessor">    #ifdef HAVE_WPA2_DECRYPTION</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WPA2Decrypter&gt;</a> make_wpa2_decrypter_proxy(<span class="keyword">const</span> Functor &amp;functor) {</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WPA2Decrypter&gt;</a>(functor);</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="preprocessor">    #endif // HAVE_WPA2_DECRYPTION</span></div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="preprocessor"></span>    </div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="comment">// Implementation section</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    </div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="comment">// DecrypterProxy</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    </div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
-<div class="line"><a name="l00472"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">  472</a></span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">DecrypterProxy&lt;Functor, Decrypter&gt;::DecrypterProxy</a>(</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">functor_type</a> &amp;func, <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>&amp; decr) </div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    : functor_(func), decrypter_(decr)</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    {</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        </div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    }</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="keyword">typename</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter_type</a> &amp;</div>
-<div class="line"><a name="l00481"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">  481</a></span>&#160;      <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter</a>() </div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        <span class="keywordflow">return</span> decrypter_;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    }</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter_type</a> &amp;</div>
-<div class="line"><a name="l00488"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad86495acf4008e7ac05bda782d848248">  488</a></span>&#160;      <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter</a>()<span class="keyword"> const </span></div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keywordflow">return</span> decrypter_;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>* decrypt(<a class="code" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a>&amp; raw, <span class="keyword">const</span> std::string&amp; password);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    passwords_type passwords_;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    std::vector&lt;uint8_t&gt; key_buffer_;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;};</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#ifdef HAVE_WPA2_DECRYPTION</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html">  250</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html">WPA2Decrypter</a> {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">     * \brief The type used to store Dot11 addresses.</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress&lt;6&gt;</a> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    </div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">  266</a></span>&#160;    <span class="keyword">typedef</span> std::pair&lt;address_type, address_type&gt; <a class="code" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">  276</a></span>&#160;    <span class="keyword">typedef</span> std::map&lt;addr_pair, WPA2::SessionKeys&gt; <a class="code" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordtype">void</span> add_ap_data(<span class="keyword">const</span> std::string&amp; psk, <span class="keyword">const</span> std::string&amp; ssid);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">void</span> add_ap_data(<span class="keyword">const</span> std::string&amp; psk,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                     <span class="keyword">const</span> std::string&amp; ssid,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                     <span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; addr);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordtype">void</span> add_decryption_keys(<span class="keyword">const</span> <a class="code" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a>&amp; addresses, </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                             <span class="keyword">const</span> <a class="code" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">WPA2::SessionKeys</a>&amp; session_keys);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordtype">bool</span> decrypt(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a>&amp; get_keys() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keyword">typedef</span> std::map&lt;std::string, WPA2::SupplicantData&gt; pmks_map;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keyword">typedef</span> std::map&lt;address_type, WPA2::SupplicantData&gt; bssids_map;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">void</span> try_add_keys(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11, <span class="keyword">const</span> <a class="code" href="../../dc/d69/classTins_1_1EAPOLHandshake.html">RSNHandshake</a>&amp; hs);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <a class="code" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">addr_pair</a> make_addr_pair(<span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; addr1, <span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; addr2) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">return</span> (addr1 &lt; addr2) ? </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            std::make_pair(addr1, addr2) :</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            std::make_pair(addr2, addr1);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    addr_pair extract_addr_pair(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    addr_pair extract_addr_pair_dst(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    bssids_map::const_iterator find_ap(<span class="keyword">const</span> <a class="code" href="../../d4/d3e/classTins_1_1Dot11Data.html">Dot11Data</a>&amp; dot11);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">void</span> add_access_point(<span class="keyword">const</span> std::string&amp; ssid, <span class="keyword">const</span> address_type&amp; addr);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="../../de/da8/classTins_1_1RSNHandshakeCapturer.html">RSNHandshakeCapturer</a> capturer_;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    pmks_map pmks_;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    bssids_map aps_;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    keys_map keys_;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;};</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="preprocessor">#endif // HAVE_WPA2_DECRYPTION</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">  396</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy</a> {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00401"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">  401</a></span>&#160;    <span class="keyword">typedef</span> Functor <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">functor_type</a>;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
+<div class="line"><a name="l00406"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">  406</a></span>&#160;    <span class="keyword">typedef</span> Decrypter <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">DecrypterProxy</a>(<span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">functor_type</a>&amp; func, </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>&amp; decr = <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>());</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>&amp; <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">decrypter</a>();</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    </div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>&amp; <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">decrypter</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">operator() </a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    Functor functor_;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a> decrypter_;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;};</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator, <span class="keyword">typename</span> OutputIterator&gt;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="keywordtype">void</span> rc4(ForwardIterator start, ForwardIterator end, <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a>&amp; key, OutputIterator output);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WEPDecrypter&gt;</a> make_wep_decrypter_proxy(<span class="keyword">const</span> Functor&amp; functor);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="preprocessor">#ifdef HAVE_WPA2_DECRYPTION</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WPA2Decrypter&gt;</a> make_wpa2_decrypter_proxy(<span class="keyword">const</span> Functor&amp; functor) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WPA2Decrypter&gt;</a>(functor);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;}</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="preprocessor">#endif // HAVE_WPA2_DECRYPTION</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="comment">// Implementation section</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="comment">// DecrypterProxy</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
+<div class="line"><a name="l00481"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">  481</a></span>&#160;<a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">DecrypterProxy&lt;Functor, Decrypter&gt;::DecrypterProxy</a>(<span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">functor_type</a>&amp; func,</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                                                   <span class="keyword">const</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">decrypter_type</a>&amp; decr) </div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;: functor_(func), decrypter_(decr) {</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    </div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;}</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="keyword">typename</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter_type</a> &amp;</div>
+<div class="line"><a name="l00489"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">  489</a></span>&#160;  <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter</a>() {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keywordflow">return</span> decrypter_;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;}</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
-<div class="line"><a name="l00494"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">  494</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">DecrypterProxy&lt;Functor, Decrypter&gt;::operator() </a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu) </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    {</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="keywordflow">return</span> decrypter_.decrypt(pdu) ? functor_(pdu) : <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    }</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WEPDecrypter&gt;</a> make_wep_decrypter_proxy(<span class="keyword">const</span> Functor &amp;functor)</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    {</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WEPDecrypter&gt;</a>(functor);</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    }</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">// RC4 stuff</span></div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator&gt;</div>
-<div class="line"><a name="l00508"></a><span class="lineno"><a class="line" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">  508</a></span>&#160;    <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">RC4Key::RC4Key</a>(ForwardIterator start, ForwardIterator end) {</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; data_size; ++i) {</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i] = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(i);</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        }</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        <span class="keywordtype">size_t</span> j = 0;</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        ForwardIterator iter = start;</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; data_size; ++i) {</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;            j = (j + <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i] + *iter++) % 256;</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;            <span class="keywordflow">if</span>(iter == end)</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                iter = start;</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;            std::swap(<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i], <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[j]);</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        }</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    }</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    </div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator, <span class="keyword">typename</span> OutputIterator&gt;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keywordtype">void</span> rc4(ForwardIterator start, ForwardIterator end, <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a> &amp;key, OutputIterator output) {</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordtype">size_t</span> i = 0, j = 0;</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordflow">while</span>(start != end) {</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            i = (i + 1) % RC4Key::data_size;</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            j = (j + key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i]) % RC4Key::data_size;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            std::swap(key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i], key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[j]);</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            *output++ = *start++ ^ key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[(key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i] + key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[j]) % RC4Key::data_size];</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        }</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    }</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;}</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;}</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="preprocessor">#endif // TINS_CRYPTO_H</span></div>
-<div class="ttc" id="structTins_1_1Crypto_1_1RC4Key_html_af4450025485e05c330cbd09e73f7f66c"><div class="ttname"><a href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">Tins::Crypto::RC4Key::RC4Key</a></div><div class="ttdeci">RC4Key(ForwardIterator start, ForwardIterator end)</div><div class="ttdoc">Initializes the key using the provided iterator range. </div><div class="ttdef"><b>Definition:</b> crypto.h:508</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_a867dd792f3e76d2d66cb0107af93a015"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">Tins::Crypto::DecrypterProxy::decrypter</a></div><div class="ttdeci">decrypter_type &amp; decrypter()</div><div class="ttdoc">Retrieves a reference to the decrypter object. </div><div class="ttdef"><b>Definition:</b> crypto.h:481</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1WEPDecrypter_html_a0523f0971c9e803fd70c710284bdc6e2"><div class="ttname"><a href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#a0523f0971c9e803fd70c710284bdc6e2">Tins::Crypto::WEPDecrypter::add_password</a></div><div class="ttdeci">void add_password(const address_type &amp;addr, const std::string &amp;password)</div><div class="ttdoc">Adds a decryption password. </div></div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="keyword">const</span> <span class="keyword">typename</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter_type</a> &amp;</div>
+<div class="line"><a name="l00495"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad86495acf4008e7ac05bda782d848248">  495</a></span>&#160;  <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">DecrypterProxy&lt;Functor, Decrypter&gt;::decrypter</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="keywordflow">return</span> decrypter_;</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;}</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor, <span class="keyword">typename</span> Decrypter&gt;</div>
+<div class="line"><a name="l00500"></a><span class="lineno"><a class="line" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">  500</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">DecrypterProxy&lt;Functor, Decrypter&gt;::operator() </a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu) {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keywordflow">return</span> decrypter_.decrypt(pdu) ? functor_(pdu) : <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;<a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WEPDecrypter&gt;</a> make_wep_decrypter_proxy(<span class="keyword">const</span> Functor&amp; functor) {</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">DecrypterProxy&lt;Functor, WEPDecrypter&gt;</a>(functor);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;}</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="comment">// RC4 stuff</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator&gt;</div>
+<div class="line"><a name="l00512"></a><span class="lineno"><a class="line" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">  512</a></span>&#160;<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">RC4Key::RC4Key</a>(ForwardIterator start, ForwardIterator end) {</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; data_size; ++i) {</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i] = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    }</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordtype">size_t</span> j = 0;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    ForwardIterator iter = start;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; data_size; ++i) {</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        j = (j + <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i] + *iter++) % 256;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        <span class="keywordflow">if</span>(iter == end) {</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            iter = start;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        std::swap(<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i], <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[j]);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;}</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ForwardIterator, <span class="keyword">typename</span> OutputIterator&gt;</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="keywordtype">void</span> rc4(ForwardIterator start, ForwardIterator end, <a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">RC4Key</a>&amp; key, OutputIterator output) {</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordtype">size_t</span> i = 0, j = 0;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">while</span> (start != end) {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        i = (i + 1) % RC4Key::data_size;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        j = (j + key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i]) % RC4Key::data_size;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        std::swap(key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i], key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[j]);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        *output++ = *start++ ^ key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[(key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[i] + key.<a class="code" href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">data</a>[j]) % RC4Key::data_size];</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    }</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;}</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;} <span class="comment">// Crypto</span></div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="preprocessor">#endif // TINS_CRYPTO_H</span></div>
+<div class="ttc" id="structTins_1_1Crypto_1_1RC4Key_html_af4450025485e05c330cbd09e73f7f66c"><div class="ttname"><a href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#af4450025485e05c330cbd09e73f7f66c">Tins::Crypto::RC4Key::RC4Key</a></div><div class="ttdeci">RC4Key(ForwardIterator start, ForwardIterator end)</div><div class="ttdoc">Initializes the key using the provided iterator range. </div><div class="ttdef"><b>Definition:</b> crypto.h:512</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_a867dd792f3e76d2d66cb0107af93a015"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a867dd792f3e76d2d66cb0107af93a015">Tins::Crypto::DecrypterProxy::decrypter</a></div><div class="ttdeci">decrypter_type &amp; decrypter()</div><div class="ttdoc">Retrieves a reference to the decrypter object. </div><div class="ttdef"><b>Definition:</b> crypto.h:489</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SessionKeys_html"><div class="ttname"><a href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">Tins::Crypto::WPA2::SessionKeys</a></div><div class="ttdoc">Class that represents the keys used to decrypt a session. </div><div class="ttdef"><b>Definition:</b> crypto.h:61</div></div>
 <div class="ttc" id="classTins_1_1RSNHandshakeCapturer_html"><div class="ttname"><a href="../../de/da8/classTins_1_1RSNHandshakeCapturer.html">Tins::RSNHandshakeCapturer</a></div><div class="ttdef"><b>Definition:</b> handshake_capturer.h:109</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_af41e8b71f5da5c9be46130f8346804fe"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">Tins::Crypto::DecrypterProxy::DecrypterProxy</a></div><div class="ttdeci">DecrypterProxy(const functor_type &amp;func, const decrypter_type &amp;decr=decrypter_type())</div><div class="ttdoc">Constructs an object from a functor and a decrypter. </div><div class="ttdef"><b>Definition:</b> crypto.h:472</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1WEPDecrypter_html_ad771b80378750664ba88afe77239f51f"><div class="ttname"><a href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#ad771b80378750664ba88afe77239f51f">Tins::Crypto::WEPDecrypter::decrypt</a></div><div class="ttdeci">bool decrypt(PDU &amp;pdu)</div><div class="ttdoc">Decrypts the provided PDU. </div></div>
-<div class="ttc" id="namespaceTins_html_a45ade21a93b504b118ebdae19909bd34"><div class="ttname"><a href="../../d8/d36/namespaceTins.html#a45ade21a93b504b118ebdae19909bd34">Tins::RSNHandshake</a></div><div class="ttdeci">EAPOLHandshake&lt; RSNEAPOL &gt; RSNHandshake</div><div class="ttdef"><b>Definition:</b> handshake_capturer.h:104</div></div>
-<div class="ttc" id="classTins_1_1EAPOLHandshake_html"><div class="ttname"><a href="../../dc/d69/classTins_1_1EAPOLHandshake.html">Tins::EAPOLHandshake</a></div><div class="ttdoc">Generic EAPOL handshake. </div><div class="ttdef"><b>Definition:</b> handshake_capturer.h:50</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_a137877e83262cf3c60954adbddfef1da"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">Tins::Crypto::DecrypterProxy::decrypter_type</a></div><div class="ttdeci">Decrypter decrypter_type</div><div class="ttdef"><b>Definition:</b> crypto.h:397</div></div>
-<div class="ttc" id="classTins_1_1Dot11Data_html"><div class="ttname"><a href="../../d4/d3e/classTins_1_1Dot11Data.html">Tins::Dot11Data</a></div><div class="ttdef"><b>Definition:</b> dot11_data.h:38</div></div>
-<div class="ttc" id="structTins_1_1Crypto_1_1RC4Key_html"><div class="ttname"><a href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">Tins::Crypto::RC4Key</a></div><div class="ttdoc">RC4 Key abstraction. </div><div class="ttdef"><b>Definition:</b> crypto.h:167</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_af41e8b71f5da5c9be46130f8346804fe"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#af41e8b71f5da5c9be46130f8346804fe">Tins::Crypto::DecrypterProxy::DecrypterProxy</a></div><div class="ttdeci">DecrypterProxy(const functor_type &amp;func, const decrypter_type &amp;decr=decrypter_type())</div><div class="ttdoc">Constructs an object from a functor and a decrypter. </div><div class="ttdef"><b>Definition:</b> crypto.h:481</div></div>
+<div class="ttc" id="classTins_1_1EAPOLHandshake_html"><div class="ttname"><a href="../../dc/d69/classTins_1_1EAPOLHandshake.html">Tins::EAPOLHandshake</a></div><div class="ttdoc">Generic EAPOL handshake. </div><div class="ttdef"><b>Definition:</b> handshake_capturer.h:51</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_a137877e83262cf3c60954adbddfef1da"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a137877e83262cf3c60954adbddfef1da">Tins::Crypto::DecrypterProxy::decrypter_type</a></div><div class="ttdeci">Decrypter decrypter_type</div><div class="ttdef"><b>Definition:</b> crypto.h:406</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SessionKeys_html_a5ce051049875873fe1f964c46181c2ce"><div class="ttname"><a href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a5ce051049875873fe1f964c46181c2ce">Tins::Crypto::WPA2::SessionKeys::pmk_type</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; pmk_type</div><div class="ttdef"><b>Definition:</b> crypto.h:81</div></div>
+<div class="ttc" id="classTins_1_1Dot11Data_html"><div class="ttname"><a href="../../d4/d3e/classTins_1_1Dot11Data.html">Tins::Dot11Data</a></div><div class="ttdoc">Represents an IEEE 802.11 data frame. </div><div class="ttdef"><b>Definition:</b> dot11_data.h:43</div></div>
+<div class="ttc" id="structTins_1_1Crypto_1_1RC4Key_html"><div class="ttname"><a href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html">Tins::Crypto::RC4Key</a></div><div class="ttdoc">RC4 Key abstraction. </div><div class="ttdef"><b>Definition:</b> crypto.h:173</div></div>
 <div class="ttc" id="classTins_1_1HWAddress_html"><div class="ttname"><a href="../../dc/da6/classTins_1_1HWAddress.html">Tins::HWAddress&lt; 6 &gt;</a></div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1WEPDecrypter_html_af45f232e79783475f7530d82cf4eb133"><div class="ttname"><a href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#af45f232e79783475f7530d82cf4eb133">Tins::Crypto::WEPDecrypter::WEPDecrypter</a></div><div class="ttdeci">WEPDecrypter()</div><div class="ttdoc">Constructs a WEPDecrypter object. </div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_a89b3f62c1473e5e2497384ccac905fc3"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">Tins::Crypto::DecrypterProxy::operator()</a></div><div class="ttdeci">bool operator()(PDU &amp;pdu)</div><div class="ttdoc">The operator() which decrypts packets and forwards them to the functor. </div><div class="ttdef"><b>Definition:</b> crypto.h:494</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1WEPDecrypter_html"><div class="ttname"><a href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">Tins::Crypto::WEPDecrypter</a></div><div class="ttdoc">Decrypts WEP-encrypted traffic. </div><div class="ttdef"><b>Definition:</b> crypto.h:188</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">Tins::Crypto::DecrypterProxy</a></div><div class="ttdoc">Pluggable decrypter object which can be used to decrypt data on sniffing sessions. </div><div class="ttdef"><b>Definition:</b> crypto.h:387</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_ad3300342672a38fc25c23631cb240ee3"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">Tins::Crypto::DecrypterProxy::functor_type</a></div><div class="ttdeci">Functor functor_type</div><div class="ttdef"><b>Definition:</b> crypto.h:392</div></div>
-<div class="ttc" id="classTins_1_1RawPDU_html"><div class="ttname"><a href="../../d0/dfc/classTins_1_1RawPDU.html">Tins::RawPDU</a></div><div class="ttdef"><b>Definition:</b> rawpdu.h:63</div></div>
-<div class="ttc" id="classTins_1_1Crypto_1_1WEPDecrypter_html_a1adad1419017cf944c44d6831eac54f5"><div class="ttname"><a href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html#a1adad1419017cf944c44d6831eac54f5">Tins::Crypto::WEPDecrypter::remove_password</a></div><div class="ttdeci">void remove_password(const address_type &amp;addr)</div><div class="ttdoc">Removes a decryption password. </div></div>
-<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:107</div></div>
-<div class="ttc" id="structTins_1_1Crypto_1_1RC4Key_html_a62921982fc33e8f46ee091adad40367a"><div class="ttname"><a href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">Tins::Crypto::RC4Key::data</a></div><div class="ttdeci">uint8_t data[data_size]</div><div class="ttdef"><b>Definition:</b> crypto.h:182</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_a89b3f62c1473e5e2497384ccac905fc3"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#a89b3f62c1473e5e2497384ccac905fc3">Tins::Crypto::DecrypterProxy::operator()</a></div><div class="ttdeci">bool operator()(PDU &amp;pdu)</div><div class="ttdoc">The operator() which decrypts packets and forwards them to the functor. </div><div class="ttdef"><b>Definition:</b> crypto.h:500</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WEPDecrypter_html"><div class="ttname"><a href="../../da/df6/classTins_1_1Crypto_1_1WEPDecrypter.html">Tins::Crypto::WEPDecrypter</a></div><div class="ttdoc">Decrypts WEP-encrypted traffic. </div><div class="ttdef"><b>Definition:</b> crypto.h:194</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2Decrypter_html_a743290b502d012e5bb02129ab093868e"><div class="ttname"><a href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">Tins::Crypto::WPA2Decrypter::keys_map</a></div><div class="ttdeci">std::map&lt; addr_pair, WPA2::SessionKeys &gt; keys_map</div><div class="ttdoc">Maps an address pair to the session keys. </div><div class="ttdef"><b>Definition:</b> crypto.h:276</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2Decrypter_html"><div class="ttname"><a href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html">Tins::Crypto::WPA2Decrypter</a></div><div class="ttdoc">Decrypts WPA2-encrypted traffic. </div><div class="ttdef"><b>Definition:</b> crypto.h:250</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html">Tins::Crypto::DecrypterProxy</a></div><div class="ttdoc">Pluggable decrypter object which can be used to decrypt data on sniffing sessions. </div><div class="ttdef"><b>Definition:</b> crypto.h:396</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2Decrypter_html_a76af801b8e8f55fed2650db99f3c4865"><div class="ttname"><a href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a76af801b8e8f55fed2650db99f3c4865">Tins::Crypto::WPA2Decrypter::addr_pair</a></div><div class="ttdeci">std::pair&lt; address_type, address_type &gt; addr_pair</div><div class="ttdoc">Represents a pair of mac addresses. </div><div class="ttdef"><b>Definition:</b> crypto.h:266</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1DecrypterProxy_html_ad3300342672a38fc25c23631cb240ee3"><div class="ttname"><a href="../../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html#ad3300342672a38fc25c23631cb240ee3">Tins::Crypto::DecrypterProxy::functor_type</a></div><div class="ttdeci">Functor functor_type</div><div class="ttdef"><b>Definition:</b> crypto.h:401</div></div>
+<div class="ttc" id="classTins_1_1SNAP_html"><div class="ttname"><a href="../../da/d52/classTins_1_1SNAP.html">Tins::SNAP</a></div><div class="ttdoc">Represents a SNAP frame. </div><div class="ttdef"><b>Definition:</b> snap.h:49</div></div>
+<div class="ttc" id="classTins_1_1RawPDU_html"><div class="ttname"><a href="../../d0/dfc/classTins_1_1RawPDU.html">Tins::RawPDU</a></div><div class="ttdef"><b>Definition:</b> rawpdu.h:64</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SessionKeys_html_ae8ea8a488690775bb8962707895cf250"><div class="ttname"><a href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#ae8ea8a488690775bb8962707895cf250">Tins::Crypto::WPA2::SessionKeys::PMK_SIZE</a></div><div class="ttdeci">static const size_t PMK_SIZE</div><div class="ttdef"><b>Definition:</b> crypto.h:66</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SessionKeys_html_a8f5de83f93897eeaf8d80485e1bec24b"><div class="ttname"><a href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a8f5de83f93897eeaf8d80485e1bec24b">Tins::Crypto::WPA2::SessionKeys::ptk_type</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; ptk_type</div><div class="ttdef"><b>Definition:</b> crypto.h:76</div></div>
+<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:108</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SupplicantData_html_a934e680a1342cbdbf202ef5e5928243f"><div class="ttname"><a href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html#a934e680a1342cbdbf202ef5e5928243f">Tins::Crypto::WPA2::SupplicantData::pmk_type</a></div><div class="ttdeci">SessionKeys::pmk_type pmk_type</div><div class="ttdef"><b>Definition:</b> crypto.h:149</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SessionKeys_html_a53e1755881b0e3018d75fda3eb818b18"><div class="ttname"><a href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#a53e1755881b0e3018d75fda3eb818b18">Tins::Crypto::WPA2::SessionKeys::PTK_SIZE</a></div><div class="ttdeci">static const size_t PTK_SIZE</div><div class="ttdef"><b>Definition:</b> crypto.h:71</div></div>
+<div class="ttc" id="classTins_1_1Crypto_1_1WPA2_1_1SupplicantData_html"><div class="ttname"><a href="../../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html">Tins::Crypto::WPA2::SupplicantData</a></div><div class="ttdoc">Represents a WPA2 supplicant&#39;s data. </div><div class="ttdef"><b>Definition:</b> crypto.h:144</div></div>
+<div class="ttc" id="structTins_1_1Crypto_1_1RC4Key_html_a62921982fc33e8f46ee091adad40367a"><div class="ttname"><a href="../../d9/d3b/structTins_1_1Crypto_1_1RC4Key.html#a62921982fc33e8f46ee091adad40367a">Tins::Crypto::RC4Key::data</a></div><div class="ttdeci">uint8_t data[data_size]</div><div class="ttdef"><b>Definition:</b> crypto.h:188</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

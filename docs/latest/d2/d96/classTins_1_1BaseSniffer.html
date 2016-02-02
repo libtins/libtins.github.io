@@ -127,7 +127,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 <tr class="memitem:a86017793ebf553aeacc2797eb018bc61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d36/namespaceTins.html#a12d080ed74cdd447255b07b3fac38be4">PtrPacket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a86017793ebf553aeacc2797eb018bc61">next_packet</a> ()</td></tr>
 <tr class="memdesc:a86017793ebf553aeacc2797eb018bc61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiles a filter and uses it to capture one packet.  <a href="#a86017793ebf553aeacc2797eb018bc61">More...</a><br/></td></tr>
 <tr class="separator:a86017793ebf553aeacc2797eb018bc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724fc3b740bc9d91aeaff4cfb5244868"><td class="memTemplParams" colspan="2">template&lt;class Functor &gt; </td></tr>
+<tr class="memitem:a724fc3b740bc9d91aeaff4cfb5244868"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
 <tr class="memitem:a724fc3b740bc9d91aeaff4cfb5244868"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a724fc3b740bc9d91aeaff4cfb5244868">sniff_loop</a> (Functor function, uint32_t max_packets=0)</td></tr>
 <tr class="memdesc:a724fc3b740bc9d91aeaff4cfb5244868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a sniffing loop, using a callback functor for every sniffed packet.  <a href="#a724fc3b740bc9d91aeaff4cfb5244868">More...</a><br/></td></tr>
 <tr class="separator:a724fc3b740bc9d91aeaff4cfb5244868"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +141,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a687d31d38fd21dbc1ec70ed1ac827752">get_fd</a> ()</td></tr>
 <tr class="memdesc:a687d31d38fd21dbc1ec70ed1ac827752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file descriptor associated with the sniffer. <br/></td></tr>
 <tr class="separator:a687d31d38fd21dbc1ec70ed1ac827752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8ecc3768daf2eada227ea0a0dfa2a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#afe8ecc3768daf2eada227ea0a0dfa2a2">set_direction</a> (pcap_direction_t d)</td></tr>
+<tr class="memdesc:afe8ecc3768daf2eada227ea0a0dfa2a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets direction for the sniffer.  <a href="#afe8ecc3768daf2eada227ea0a0dfa2a2">More...</a><br/></td></tr>
+<tr class="separator:afe8ecc3768daf2eada227ea0a0dfa2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fa2700184823dd590fadb5efe82e2ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a0fa2700184823dd590fadb5efe82e2ef">set_timeout</a> (int ms)</td></tr>
 <tr class="memdesc:a0fa2700184823dd590fadb5efe82e2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the read timeout for this sniffer.  <a href="#a0fa2700184823dd590fadb5efe82e2ef">More...</a><br/></td></tr>
 <tr class="separator:a0fa2700184823dd590fadb5efe82e2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,9 +166,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../..
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a250c69c5ebda1f9d1ff5e15d934bc885"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a250c69c5ebda1f9d1ff5e15d934bc885">BaseSniffer</a> ()</td></tr>
 <tr class="separator:a250c69c5ebda1f9d1ff5e15d934bc885"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd9a692d26c73886b9d5d56826117425"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd9a692d26c73886b9d5d56826117425"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_pcap_handle</b> (pcap_t *const pcap_handle)</td></tr>
-<tr class="separator:acd9a692d26c73886b9d5d56826117425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec44d3fb266b5a75a028e6f04643b86b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec44d3fb266b5a75a028e6f04643b86b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_pcap_handle</b> (pcap_t *pcap_handle)</td></tr>
+<tr class="separator:aec44d3fb266b5a75a028e6f04643b86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18f7a6607b89bc7ab0d7286739235b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae18f7a6607b89bc7ab0d7286739235b1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_if_mask</b> (bpf_u_int32 if_mask)</td></tr>
 <tr class="separator:ae18f7a6607b89bc7ab0d7286739235b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -328,6 +331,31 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 
 </div>
 </div>
+<a class="anchor" id="afe8ecc3768daf2eada227ea0a0dfa2a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Tins::BaseSniffer::set_direction </td>
+          <td>(</td>
+          <td class="paramtype">pcap_direction_t&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets direction for the sniffer. </p>
+<p>This calls pcap_setdirection using the provided parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>The direction for the sniffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="abf37b914a0834dbc708f37c93afb9190"></a>
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +436,7 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Functor &gt; </div>
+template&lt;typename Functor &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void Tins::BaseSniffer::sniff_loop </td>
@@ -485,7 +513,7 @@ template&lt;class Functor &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

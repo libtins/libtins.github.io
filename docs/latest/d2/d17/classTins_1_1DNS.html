@@ -94,6 +94,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="../../d0/d36/classTins_1_1DNS-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Tins::DNS Class Reference</div>  </div>
@@ -116,11 +117,14 @@ Inheritance diagram for Tins::DNS:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d33/classTins_1_1DNS_1_1Query.html">Query</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that represent <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> queries.  <a href="../../d8/d33/classTins_1_1DNS_1_1Query.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d32/classTins_1_1DNS_1_1query.html">query</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that represent <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> queries.  <a href="../../d6/d32/classTins_1_1DNS_1_1query.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that represent <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> resource records.  <a href="../../df/dc5/classTins_1_1DNS_1_1Resource.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represent <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> resource records.  <a href="../../db/d25/classTins_1_1DNS_1_1resource.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7f/classTins_1_1DNS_1_1soa__record.html">soa_record</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a Start Of Authority record.  <a href="../../d7/d7f/classTins_1_1DNS_1_1soa__record.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -195,7 +199,7 @@ Public Types</h2></td></tr>
 <b>NSEC3PARAM</b>
 <br/>
  }</td></tr>
-<tr class="memdesc:a6e67b7a0ad2227f49398a4b693c68115"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d8/d33/classTins_1_1DNS_1_1Query.html" title="Struct that represent DNS queries. ">Query</a> types enum. <br/></td></tr>
+<tr class="memdesc:a6e67b7a0ad2227f49398a4b693c68115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query types enum. <br/></td></tr>
 <tr class="separator:a6e67b7a0ad2227f49398a4b693c68115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab89c3516ad36cbf78e253d9914125564"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>QueryClass</b> { <b>IN</b> = 1, 
 <b>CH</b> = 3, 
@@ -203,12 +207,12 @@ Public Types</h2></td></tr>
 <b>ANY</b> = 255
  }</td></tr>
 <tr class="separator:ab89c3516ad36cbf78e253d9914125564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7872e0d093a147753ffe5b9dd8246d18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7872e0d093a147753ffe5b9dd8246d18"></a>
-typedef std::list&lt; <a class="el" href="../../d8/d33/classTins_1_1DNS_1_1Query.html">Query</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queries_type</b></td></tr>
-<tr class="separator:a7872e0d093a147753ffe5b9dd8246d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77a6d96fdb48e2f6055803928e5f65f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77a6d96fdb48e2f6055803928e5f65f1"></a>
-typedef std::list&lt; <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>resources_type</b></td></tr>
-<tr class="separator:a77a6d96fdb48e2f6055803928e5f65f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e10add6aef974d779dfdccba0cee89"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61e10add6aef974d779dfdccba0cee89"></a>
+typedef std::list&lt; <a class="el" href="../../d6/d32/classTins_1_1DNS_1_1query.html">query</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queries_type</b></td></tr>
+<tr class="separator:a61e10add6aef974d779dfdccba0cee89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f12dafeadf1e8502b39af379638bf0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45f12dafeadf1e8502b39af379638bf0"></a>
+typedef std::list&lt; <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>resources_type</b></td></tr>
+<tr class="separator:a45f12dafeadf1e8502b39af379638bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acce7d5f0a5fbac9c7791dae58bd384a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acce7d5f0a5fbac9c7791dae58bd384a5"></a>
 typedef <a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><b>address_type</b></td></tr>
 <tr class="separator:acce7d5f0a5fbac9c7791dae58bd384a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,66 +228,69 @@ typedef <a class="el" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Addr
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -294,6 +301,12 @@ typedef <a class="el" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Addr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8dfb7b328ca406736b5f97c439cba307"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dfb7b328ca406736b5f97c439cba307"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TINS_DEPRECATED</b> (typedef <a class="el" href="../../d6/d32/classTins_1_1DNS_1_1query.html">query</a> Query)</td></tr>
+<tr class="separator:a8dfb7b328ca406736b5f97c439cba307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a469dbe70f5316334a746c3970a814"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96a469dbe70f5316334a746c3970a814"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TINS_DEPRECATED</b> (typedef <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> Resource)</td></tr>
+<tr class="separator:a96a469dbe70f5316334a746c3970a814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73d606185dd7a4ef95f32b98e22c6d66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a73d606185dd7a4ef95f32b98e22c6d66">DNS</a> ()</td></tr>
 <tr class="memdesc:a73d606185dd7a4ef95f32b98e22c6d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a73d606185dd7a4ef95f32b98e22c6d66">More...</a><br/></td></tr>
 <tr class="separator:a73d606185dd7a4ef95f32b98e22c6d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -385,18 +398,18 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memitem:a47f0a7e865f2727834c031c5d1fbf2cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a47f0a7e865f2727834c031c5d1fbf2cf">rcode</a> (uint8_t new_rcode)</td></tr>
 <tr class="memdesc:a47f0a7e865f2727834c031c5d1fbf2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the rcode field.  <a href="#a47f0a7e865f2727834c031c5d1fbf2cf">More...</a><br/></td></tr>
 <tr class="separator:a47f0a7e865f2727834c031c5d1fbf2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a006337bda774570adb2e2707e2188ffd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a006337bda774570adb2e2707e2188ffd">add_query</a> (const <a class="el" href="../../d8/d33/classTins_1_1DNS_1_1Query.html">Query</a> &amp;query)</td></tr>
-<tr class="memdesc:a006337bda774570adb2e2707e2188ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a query to perform.  <a href="#a006337bda774570adb2e2707e2188ffd">More...</a><br/></td></tr>
-<tr class="separator:a006337bda774570adb2e2707e2188ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80ff82366b829760d724b83b75c1854b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a80ff82366b829760d724b83b75c1854b">add_answer</a> (const <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &amp;resource)</td></tr>
-<tr class="memdesc:a80ff82366b829760d724b83b75c1854b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an answer resource record.  <a href="#a80ff82366b829760d724b83b75c1854b">More...</a><br/></td></tr>
-<tr class="separator:a80ff82366b829760d724b83b75c1854b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ed45f014a41dadf3fac6efaaa18d2d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a9ed45f014a41dadf3fac6efaaa18d2d9">add_authority</a> (const <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &amp;resource)</td></tr>
-<tr class="memdesc:a9ed45f014a41dadf3fac6efaaa18d2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an authority resource record.  <a href="#a9ed45f014a41dadf3fac6efaaa18d2d9">More...</a><br/></td></tr>
-<tr class="separator:a9ed45f014a41dadf3fac6efaaa18d2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c33746d625c3455c34a3aba7fcc37d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a2c33746d625c3455c34a3aba7fcc37d8">add_additional</a> (const <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &amp;resource)</td></tr>
-<tr class="memdesc:a2c33746d625c3455c34a3aba7fcc37d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an additional resource record.  <a href="#a2c33746d625c3455c34a3aba7fcc37d8">More...</a><br/></td></tr>
-<tr class="separator:a2c33746d625c3455c34a3aba7fcc37d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69b478d84bfdc91752fcd1b9fe6abd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#ad69b478d84bfdc91752fcd1b9fe6abd0">add_query</a> (const <a class="el" href="../../d6/d32/classTins_1_1DNS_1_1query.html">query</a> &amp;<a class="el" href="../../d6/d32/classTins_1_1DNS_1_1query.html">query</a>)</td></tr>
+<tr class="memdesc:ad69b478d84bfdc91752fcd1b9fe6abd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a query to perform.  <a href="#ad69b478d84bfdc91752fcd1b9fe6abd0">More...</a><br/></td></tr>
+<tr class="separator:ad69b478d84bfdc91752fcd1b9fe6abd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532d8d231419d95f987a5a7aa8135300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a532d8d231419d95f987a5a7aa8135300">add_answer</a> (const <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &amp;<a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a>)</td></tr>
+<tr class="memdesc:a532d8d231419d95f987a5a7aa8135300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an answer resource record.  <a href="#a532d8d231419d95f987a5a7aa8135300">More...</a><br/></td></tr>
+<tr class="separator:a532d8d231419d95f987a5a7aa8135300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77885b6a675de1dde2a52d8b9dddcb49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a77885b6a675de1dde2a52d8b9dddcb49">add_authority</a> (const <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &amp;<a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a>)</td></tr>
+<tr class="memdesc:a77885b6a675de1dde2a52d8b9dddcb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an authority resource record.  <a href="#a77885b6a675de1dde2a52d8b9dddcb49">More...</a><br/></td></tr>
+<tr class="separator:a77885b6a675de1dde2a52d8b9dddcb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8b2b6448650b09851d79c2355625bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#aee8b2b6448650b09851d79c2355625bd">add_additional</a> (const <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &amp;<a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a>)</td></tr>
+<tr class="memdesc:aee8b2b6448650b09851d79c2355625bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an additional resource record.  <a href="#aee8b2b6448650b09851d79c2355625bd">More...</a><br/></td></tr>
+<tr class="separator:aee8b2b6448650b09851d79c2355625bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07a4bbe0bdfd2ab7f4f84205ee28c53a"><td class="memItemLeft" align="right" valign="top">queries_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a07a4bbe0bdfd2ab7f4f84205ee28c53a">queries</a> () const </td></tr>
 <tr class="memdesc:a07a4bbe0bdfd2ab7f4f84205ee28c53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> queries.  <a href="#a07a4bbe0bdfd2ab7f4f84205ee28c53a">More...</a><br/></td></tr>
 <tr class="separator:a07a4bbe0bdfd2ab7f4f84205ee28c53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -410,7 +423,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:a6086b140a6aa5922ae23e2be973ef426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s <a class="el" href="../../d2/d17/classTins_1_1DNS.html" title="Represents a DNS PDU. ">DNS</a> additional records.  <a href="#a6086b140a6aa5922ae23e2be973ef426">More...</a><br/></td></tr>
 <tr class="separator:a6086b140a6aa5922ae23e2be973ef426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08daa0fcfa1b09f3013dc13a828b8caa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a08daa0fcfa1b09f3013dc13a828b8caa">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a08daa0fcfa1b09f3013dc13a828b8caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a08daa0fcfa1b09f3013dc13a828b8caa">More...</a><br/></td></tr>
+<tr class="memdesc:a08daa0fcfa1b09f3013dc13a828b8caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a08daa0fcfa1b09f3013dc13a828b8caa">More...</a><br/></td></tr>
 <tr class="separator:a08daa0fcfa1b09f3013dc13a828b8caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4bc8da209ae27441d8fe4444119da3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d17/classTins_1_1DNS.html">DNS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a5d4bc8da209ae27441d8fe4444119da3">clone</a> () const </td></tr>
 <tr class="separator:a5d4bc8da209ae27441d8fe4444119da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -466,14 +479,17 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac65eaa1fef3d110d6ec9493fa7e34d96"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#ac65eaa1fef3d110d6ec9493fa7e34d96">encode_domain_name</a> (const std::string &amp;domain_name)</td></tr>
-<tr class="memdesc:ac65eaa1fef3d110d6ec9493fa7e34d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes a domain name.  <a href="#ac65eaa1fef3d110d6ec9493fa7e34d96">More...</a><br/></td></tr>
-<tr class="separator:ac65eaa1fef3d110d6ec9493fa7e34d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a295f0b8d7fb440e7f6b24d9ff5578286"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a295f0b8d7fb440e7f6b24d9ff5578286">encode_domain_name</a> (const std::string &amp;domain_name)</td></tr>
+<tr class="memdesc:a295f0b8d7fb440e7f6b24d9ff5578286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encodes a domain name.  <a href="#a295f0b8d7fb440e7f6b24d9ff5578286">More...</a><br/></td></tr>
+<tr class="separator:a295f0b8d7fb440e7f6b24d9ff5578286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94eb99bf2e0389cca95673bb30946927"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d17/classTins_1_1DNS.html#a94eb99bf2e0389cca95673bb30946927">decode_domain_name</a> (const std::string &amp;domain_name)</td></tr>
+<tr class="memdesc:a94eb99bf2e0389cca95673bb30946927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decodes a domain name.  <a href="#a94eb99bf2e0389cca95673bb30946927">More...</a><br/></td></tr>
+<tr class="separator:a94eb99bf2e0389cca95673bb30946927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -484,6 +500,12 @@ static const <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42d
 <tr class="inherit_header pub_static_attribs_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a0c42bc868a5fcd45a7fa128ecb06d5b7 inherit pub_static_attribs_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a027b795cdc01bbecb841bffde2fa6651">endian_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a0c42bc868a5fcd45a7fa128ecb06d5b7">endianness</a> = BE</td></tr>
 <tr class="separator:a0c42bc868a5fcd45a7fa128ecb06d5b7 inherit pub_static_attribs_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aaf6b4fe5efc61c153d11f05b84fbf4c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf6b4fe5efc61c153d11f05b84fbf4c7"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>soa_record</b></td></tr>
+<tr class="separator:aaf6b4fe5efc61c153d11f05b84fbf4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -592,14 +614,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2c33746d625c3455c34a3aba7fcc37d8"></a>
+<a class="anchor" id="aee8b2b6448650b09851d79c2355625bd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::DNS::add_additional </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &amp;&#160;</td>
           <td class="paramname"><em>resource</em></td><td>)</td>
           <td></td>
         </tr>
@@ -616,14 +638,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a80ff82366b829760d724b83b75c1854b"></a>
+<a class="anchor" id="a532d8d231419d95f987a5a7aa8135300"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::DNS::add_answer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &amp;&#160;</td>
           <td class="paramname"><em>resource</em></td><td>)</td>
           <td></td>
         </tr>
@@ -640,14 +662,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9ed45f014a41dadf3fac6efaaa18d2d9"></a>
+<a class="anchor" id="a77885b6a675de1dde2a52d8b9dddcb49"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::DNS::add_authority </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../df/dc5/classTins_1_1DNS_1_1Resource.html">Resource</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html">resource</a> &amp;&#160;</td>
           <td class="paramname"><em>resource</em></td><td>)</td>
           <td></td>
         </tr>
@@ -664,14 +686,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a006337bda774570adb2e2707e2188ffd"></a>
+<a class="anchor" id="ad69b478d84bfdc91752fcd1b9fe6abd0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Tins::DNS::add_query </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/d33/classTins_1_1DNS_1_1Query.html">Query</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d6/d32/classTins_1_1DNS_1_1query.html">query</a> &amp;&#160;</td>
           <td class="paramname"><em>query</em></td><td>)</td>
           <td></td>
         </tr>
@@ -996,7 +1018,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac65eaa1fef3d110d6ec9493fa7e34d96"></a>
+<a class="anchor" id="a94eb99bf2e0389cca95673bb30946927"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1004,7 +1026,42 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::DNS::encode_domain_name </td>
+          <td class="memname">string Tins::DNS::decode_domain_name </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>domain_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decodes a domain name. </p>
+<p>This method processes an encoded domain name and returns the decoded version. This <b>can't handle</b> offset labels.</p>
+<p>For example, given the input "\x03www\x07example\x03com\x00", the output would be www.example.com".</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">domain_name</td><td>The domain name to decode. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The decoded domain name. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a295f0b8d7fb440e7f6b24d9ff5578286"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Tins::DNS::encode_domain_name </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>domain_name</em></td><td>)</td>
@@ -1113,8 +1170,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -1556,7 +1613,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

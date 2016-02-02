@@ -146,7 +146,7 @@ class Tins::AddressRange&lt; Address &gt;</h3>
 <p>This class provides a <a class="el" href="../../d2/d43/classTins_1_1AddressRange.html#ab280d7c20184a6728d66a69bff49e350" title="Returns an interator to the beginning of this range. ">begin()</a>/end() interface which allows iterating through every address stored in it.</p>
 <p>Note that when iterating a range that was created using operator/(IPv4Address, int) and the analog for <a class="el" href="../../dd/d25/classTins_1_1IPv6.html">IPv6</a>, the network and broadcast addresses are discarded:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> range = IPv4Address(<span class="stringliteral">&quot;192.168.5.0&quot;</span>) / 24;</div>
-<div class="line"><span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;addr : range) {</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; addr : range) {</div>
 <div class="line">    <span class="comment">// process 192.168.5.1-254, .0 and .255 are discarded</span></div>
 <div class="line">    process(addr);</div>
 <div class="line">}</div>
@@ -157,7 +157,7 @@ class Tins::AddressRange&lt; Address &gt;</h3>
 <div class="line">assert(range.contains(<span class="stringliteral">&quot;192.168.5.255&quot;</span>)); <span class="comment">// works</span></div>
 </div><!-- fragment --><p>Ranges created using AddressRange(address_type, address_type) will allow the iteration over the entire range:</p>
 <div class="fragment"><div class="line">AddressRange&lt;IPv4Address&gt; range(<span class="stringliteral">&quot;192.168.5.0&quot;</span>, <span class="stringliteral">&quot;192.168.5.255&quot;</span>);</div>
-<div class="line"><span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp;addr : range) {</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; addr : range) {</div>
 <div class="line">    <span class="comment">// process 192.168.5.0-255, no addresses are discarded</span></div>
 <div class="line">    process(addr);</div>
 <div class="line">}</div>
@@ -441,7 +441,7 @@ template&lt;typename Address&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

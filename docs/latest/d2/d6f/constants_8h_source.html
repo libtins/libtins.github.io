@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2014, Matias Fontanini</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2016, Matias Fontanini</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
@@ -122,136 +122,140 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_CONSTANTS_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>Tins {</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d2/d50/namespaceTins_1_1Constants.html">   37</a></span>&#160;    <span class="keyword">namespace </span>Constants {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">struct </span><a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">enum</span> e {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                PROTO_IP = 0,        <span class="comment">/* Dummy protocol for TCP.  */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                PROTO_HOPOPTS = 0,   <span class="comment">/* IPv6 Hop-by-Hop options.  */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                PROTO_ICMP = 1,      <span class="comment">/* Internet Control Message Protocol.  */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                PROTO_IGMP = 2,      <span class="comment">/* Internet Group Management Protocol. */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                PROTO_IPIP = 4,      <span class="comment">/* IPIP tunnels (older KA9Q tunnels use 94).  */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                PROTO_TCP = 6,       <span class="comment">/* Transmission Control Protocol.  */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                PROTO_EGP = 8,       <span class="comment">/* Exterior Gateway Protocol.  */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                PROTO_PUP = 12,      <span class="comment">/* PUP protocol.  */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                PROTO_UDP = 17,      <span class="comment">/* User Datagram Protocol.  */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                PROTO_IDP = 22,      <span class="comment">/* XNS IDP protocol.  */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                PROTO_TP = 29,       <span class="comment">/* SO Transport Protocol Class 4.  */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                PROTO_DCCP = 33,     <span class="comment">/* Datagram Congestion Control Protocol.  */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                PROTO_IPV6 = 41,     <span class="comment">/* IPv6 header.  */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                PROTO_ROUTING = 43,  <span class="comment">/* IPv6 routing header.  */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                PROTO_FRAGMENT = 44, <span class="comment">/* IPv6 fragmentation header.  */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                PROTO_RSVP = 46,     <span class="comment">/* Reservation Protocol.  */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                PROTO_GRE = 47,      <span class="comment">/* General Routing Encapsulation.  */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                PROTO_ESP = 50,      <span class="comment">/* encapsulating security payload.  */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                PROTO_AH = 51,       <span class="comment">/* authentication header.  */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                PROTO_ICMPV6 = 58,   <span class="comment">/* ICMPv6.  */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                PROTO_NONE = 59,     <span class="comment">/* IPv6 no next header.  */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                PROTO_DSTOPTS = 60,  <span class="comment">/* IPv6 destination options.  */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                PROTO_MTP = 92,      <span class="comment">/* Multicast Transport Protocol.  */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                PROTO_ENCAP = 98,    <span class="comment">/* Encapsulation Header.  */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                PROTO_PIM = 103,     <span class="comment">/* Protocol Independent Multicast.  */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                PROTO_COMP = 108,    <span class="comment">/* Compression Header Protocol.  */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                PROTO_SCTP = 132,    <span class="comment">/* Stream Control Transmission Protocol.  */</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                PROTO_UDPLITE = 136, <span class="comment">/* UDP-Lite protocol.  */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                PROTO_RAW = 255      <span class="comment">/* Raw IP packets.  */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        };</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../de/dcb/structTins_1_1Ethernet.html">   74</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="../../de/dcb/structTins_1_1Ethernet.html">Ethernet</a> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keyword">enum</span> e {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                UNKNOWN = 0,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">//~ PUP = 0x0200,     /* Xerox PUP */</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                SPRITE = 0x0500,  <span class="comment">/* Sprite */</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a> = 0x0800,      <span class="comment">/* IP */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="../../d1/db0/classTins_1_1ARP.html">ARP</a> = 0x0806,     <span class="comment">/* Address resolution */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                REVARP = 0x8035,  <span class="comment">/* Reverse ARP */</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                AT = 0x809B,      <span class="comment">/* AppleTalk protocol */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                AARP = 0x80F3,    <span class="comment">/* AppleTalk ARP */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                VLAN = 0x8100,    <span class="comment">/* IEEE 802.1Q VLAN tagging */</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                IPX = 0x8137,     <span class="comment">/* IPX */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                IPV6 = 0x86dd,    <span class="comment">/* IP protocol version 6 */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                PPPOED = 0x8863, <span class="comment">/* PPPoE Discovery */</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                PPPOES = 0x8864, <span class="comment">/* PPPoE Session */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="../../d5/ddb/classTins_1_1EAPOL.html">EAPOL</a> = 0x888e,   <span class="comment">/* EAPOL */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                LOOPBACK = 0x9000 <span class="comment">/* used to test interfaces */</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            };</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">struct </span><a class="code" href="../../d1/db0/classTins_1_1ARP.html">ARP</a> {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">enum</span> e {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                NETROM = 0,         <span class="comment">/* From KA9Q: NET/ROM pseudo. */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                ETHER = 1,          <span class="comment">/* Ethernet 10/100Mbps.  */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                EETHER = 2,         <span class="comment">/* Experimental Ethernet.  */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                AX25 = 3,           <span class="comment">/* AX.25 Level 2.  */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                PRONET = 4,         <span class="comment">/* PROnet token ring.  */</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                CHAOS = 5,          <span class="comment">/* Chaosnet.  */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                IEEE802 = 6,        <span class="comment">/* IEEE 802.2 Ethernet/TR/TB.  */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                ARCNET = 7,         <span class="comment">/* ARCnet.  */</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                APPLETLK = 8,       <span class="comment">/* APPLEtalk.  */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                DLCI = 15,          <span class="comment">/* Frame Relay DLCI.  */</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                ATM = 19,           <span class="comment">/* ATM.  */</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                METRICOM = 23,      <span class="comment">/* Metricom STRIP (new IANA id).  */</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                IEEE1394 = 24,      <span class="comment">/* IEEE 1394 IPv4 - RFC 2734.  */</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                EUI64 = 27,         <span class="comment">/* EUI-64.  */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                INFINIBAND = 32,    <span class="comment">/* InfiniBand.  */</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                SLIP = 256,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                CSLIP = 257,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                SLIP6 = 258,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                CSLIP6 = 259,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                RSRVD = 260,        <span class="comment">/* Notional KISS type.  */</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                ADAPT = 264,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                ROSE    = 270,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                X25 = 271,          <span class="comment">/* CCITT X.25.  */</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                HWX25 = 272,        <span class="comment">/* Boards with X.25 in firmware.  */</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                PPP = 512,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                CISCO = 513,        <span class="comment">/* Cisco HDLC.  */</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                HDLC    = CISCO,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                LAPB    = 516,      <span class="comment">/* LAPB.  */</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                DDCMP = 517,        <span class="comment">/* Digital&#39;s DDCMP.  */</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                RAWHDLC = 518,      <span class="comment">/* Raw HDLC.  */</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                TUNNEL = 768,       <span class="comment">/* IPIP tunnel.  */</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                TUNNEL6 = 769,      <span class="comment">/* IPIP6 tunnel.  */</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                FRAD = 770,         <span class="comment">/* Frame Relay Access Device.  */</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                SKIP = 771,         <span class="comment">/* SKIP vif.  */</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                LOOPBACK = 772,     <span class="comment">/* Loopback device.  */</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                LOCALTLK = 773,     <span class="comment">/* Localtalk device.  */</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                FDDI = 774,         <span class="comment">/* Fiber Distributed Data Interface. */</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                BIF = 775,          <span class="comment">/* AP1000 BIF.  */</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                SIT = 776,          <span class="comment">/* sit0 device - IPv6-in-IPv4.  */</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                IPDDP = 777,        <span class="comment">/* IP-in-DDP tunnel.  */</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                IPGRE = 778,        <span class="comment">/* GRE over IP.  */</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                PIMREG = 779,       <span class="comment">/* PIMSM register interface.  */</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                HIPPI = 780,        <span class="comment">/* High Performance Parallel I&#39;face. */</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                ASH = 781,          <span class="comment">/* (Nexus Electronics) Ash.  */</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                ECONET = 782,       <span class="comment">/* Acorn Econet.  */</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                IRDA = 783,         <span class="comment">/* Linux-IrDA.  */</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                FCPP = 784,         <span class="comment">/* Point to point fibrechanel.  */</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                FCAL = 785,         <span class="comment">/* Fibrechanel arbitrated loop.  */</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                FCPL = 786,         <span class="comment">/* Fibrechanel public loop.  */</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                FCFABRIC = 787,     <span class="comment">/* Fibrechanel fabric.  */</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                IEEE802_TR = 800,   <span class="comment">/* Magic type ident for TR.  */</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                IEEE80211 = 801,    <span class="comment">/* IEEE 802.11.  */</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                IEEE80211_PRISM = 802,  <span class="comment">/* IEEE 802.11 + Prism2 header.  */</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                IEEE80211_RADIOTAP = 803,   <span class="comment">/* IEEE 802.11 + radiotap header.  */</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                IEEE802154 = 804, <span class="comment">/* IEEE 802.15.4 header.  */</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                IEEE802154_PHY = 805, <span class="comment">/* IEEE 802.15.4 PHY header.  */</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                VOID_TYPE = 0xFFFF,      <span class="comment">/* Void type, nothing is known.  */</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                NONE = 0xFFFE         <span class="comment">/* Zero header length.  */</span>  </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            };</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        };</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d2/d50/namespaceTins_1_1Constants.html">   38</a></span>&#160;<span class="keyword">namespace </span>Constants {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">struct </span><a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">enum</span> e {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        PROTO_IP = 0,        <span class="comment">// Dummy protocol for TCP. </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        PROTO_HOPOPTS = 0,   <span class="comment">// IPv6 Hop-by-Hop options. </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        PROTO_ICMP = 1,      <span class="comment">// Internet Control Message Protocol. </span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        PROTO_IGMP = 2,      <span class="comment">// Internet Group Management Protocol.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        PROTO_IPIP = 4,      <span class="comment">// IPIP tunnels (older KA9Q tunnels use 94). </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        PROTO_TCP = 6,       <span class="comment">// Transmission Control Protocol. </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        PROTO_EGP = 8,       <span class="comment">// Exterior Gateway Protocol. </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        PROTO_PUP = 12,      <span class="comment">// PUP protocol. </span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        PROTO_UDP = 17,      <span class="comment">// User Datagram Protocol. </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        PROTO_IDP = 22,      <span class="comment">// XNS IDP protocol. </span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        PROTO_TP = 29,       <span class="comment">// SO Transport Protocol Class 4. </span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        PROTO_DCCP = 33,     <span class="comment">// Datagram Congestion Control Protocol. </span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        PROTO_IPV6 = 41,     <span class="comment">// IPv6 header. </span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        PROTO_ROUTING = 43,  <span class="comment">// IPv6 routing header. </span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        PROTO_FRAGMENT = 44, <span class="comment">// IPv6 fragmentation header. </span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        PROTO_RSVP = 46,     <span class="comment">// Reservation Protocol. </span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        PROTO_GRE = 47,      <span class="comment">// General Routing Encapsulation. </span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        PROTO_ESP = 50,      <span class="comment">// encapsulating security payload. </span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        PROTO_AH = 51,       <span class="comment">// authentication header. </span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        PROTO_ICMPV6 = 58,   <span class="comment">// ICMPv6. </span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        PROTO_NONE = 59,     <span class="comment">// IPv6 no next header. </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        PROTO_DSTOPTS = 60,  <span class="comment">// IPv6 destination options. </span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        PROTO_MTP = 92,      <span class="comment">// Multicast Transport Protocol. </span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        PROTO_ENCAP = 98,    <span class="comment">// Encapsulation Header. </span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        PROTO_PIM = 103,     <span class="comment">// Protocol Independent Multicast. </span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        PROTO_COMP = 108,    <span class="comment">// Compression Header Protocol. </span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        PROTO_SCTP = 132,    <span class="comment">// Stream Control Transmission Protocol. </span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        PROTO_UDPLITE = 136, <span class="comment">// UDP-Lite protocol. </span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        PROTO_RAW = 255      <span class="comment">// Raw IP packets. </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../de/dcb/structTins_1_1Ethernet.html">   75</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../de/dcb/structTins_1_1Ethernet.html">Ethernet</a> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">enum</span> e {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        UNKNOWN = 0,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        SPRITE = 0x0500,   <span class="comment">// Sprite</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a> = 0x0800,       <span class="comment">// IP</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../d1/db0/classTins_1_1ARP.html">ARP</a> = 0x0806,      <span class="comment">// Address resolution</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="../../db/d4a/classTins_1_1MPLS.html">MPLS</a> = 0x8847,     <span class="comment">// MPLS</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        REVARP = 0x8035,   <span class="comment">// Reverse ARP</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        AT = 0x809B,       <span class="comment">// AppleTalk protocol</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        AARP = 0x80F3,     <span class="comment">// AppleTalk ARP</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        VLAN = 0x8100,     <span class="comment">// IEEE 802.1Q VLAN tagging</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QINQ = 0x88a8,     <span class="comment">// IEEE 802.1ad VLAN tagging</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        OLD_QINQ = 0x9100, <span class="comment">// IEEE 802.1ad VLAN tagging (old, deprecated, value)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        IPX = 0x8137,      <span class="comment">// IPX</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        IPV6 = 0x86dd,     <span class="comment">// IP protocol version 6</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        PPPOED = 0x8863,   <span class="comment">// PPPoE Discovery</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        PPPOES = 0x8864,   <span class="comment">// PPPoE Session</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="../../d5/ddb/classTins_1_1EAPOL.html">EAPOL</a> = 0x888e,    <span class="comment">// EAPOL</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        LOOPBACK = 0x9000  <span class="comment">// used to test interfaces</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    };</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/db0/classTins_1_1ARP.html">ARP</a> {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">enum</span> e {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        NETROM = 0,         <span class="comment">// From KA9Q: NET/ROM pseudo.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        ETHER = 1,          <span class="comment">// Ethernet 10/100Mbps. </span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        EETHER = 2,         <span class="comment">// Experimental Ethernet. </span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        AX25 = 3,           <span class="comment">// AX.25 Level 2. </span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        PRONET = 4,         <span class="comment">// PROnet token ring. </span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        CHAOS = 5,          <span class="comment">// Chaosnet. </span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        IEEE802 = 6,        <span class="comment">// IEEE 802.2 Ethernet/TR/TB. </span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        ARCNET = 7,         <span class="comment">// ARCnet. </span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        APPLETLK = 8,       <span class="comment">// APPLEtalk. </span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        DLCI = 15,          <span class="comment">// Frame Relay DLCI. </span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        ATM = 19,           <span class="comment">// ATM. </span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        METRICOM = 23,      <span class="comment">// Metricom STRIP (new IANA id). </span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        IEEE1394 = 24,      <span class="comment">// IEEE 1394 IPv4 - RFC 2734. </span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        EUI64 = 27,         <span class="comment">// EUI-64. </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        INFINIBAND = 32,    <span class="comment">// InfiniBand. </span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        SLIP = 256,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        CSLIP = 257,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        SLIP6 = 258,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        CSLIP6 = 259,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        RSRVD = 260,        <span class="comment">// Notional KISS type. </span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ADAPT = 264,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        ROSE    = 270,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        X25 = 271,          <span class="comment">// CCITT X.25. </span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        HWX25 = 272,        <span class="comment">// Boards with X.25 in firmware. </span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        PPP = 512,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        CISCO = 513,        <span class="comment">// Cisco HDLC. </span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        HDLC    = CISCO,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        LAPB    = 516,      <span class="comment">// LAPB. </span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        DDCMP = 517,        <span class="comment">// Digital&#39;s DDCMP. </span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        RAWHDLC = 518,      <span class="comment">// Raw HDLC. </span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        TUNNEL = 768,       <span class="comment">// IPIP tunnel. </span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        TUNNEL6 = 769,      <span class="comment">// IPIP6 tunnel. </span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        FRAD = 770,         <span class="comment">// Frame Relay Access Device. </span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        SKIP = 771,         <span class="comment">// SKIP vif. </span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        LOOPBACK = 772,     <span class="comment">// Loopback device. </span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        LOCALTLK = 773,     <span class="comment">// Localtalk device. </span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        FDDI = 774,         <span class="comment">// Fiber Distributed Data Interface.</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        BIF = 775,          <span class="comment">// AP1000 BIF. </span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        SIT = 776,          <span class="comment">// sit0 device - IPv6-in-IPv4. </span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        IPDDP = 777,        <span class="comment">// IP-in-DDP tunnel. </span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        IPGRE = 778,        <span class="comment">// GRE over IP. </span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        PIMREG = 779,       <span class="comment">// PIMSM register interface. </span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        HIPPI = 780,        <span class="comment">// High Performance Parallel I&#39;face.</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        ASH = 781,          <span class="comment">// (Nexus Electronics) Ash. </span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        ECONET = 782,       <span class="comment">// Acorn Econet. </span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        IRDA = 783,         <span class="comment">// Linux-IrDA. </span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        FCPP = 784,         <span class="comment">// Point to point fibrechanel. </span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        FCAL = 785,         <span class="comment">// Fibrechanel arbitrated loop. </span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        FCPL = 786,         <span class="comment">// Fibrechanel public loop. </span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        FCFABRIC = 787,     <span class="comment">// Fibrechanel fabric. </span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        IEEE802_TR = 800,   <span class="comment">// Magic type ident for TR. </span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        IEEE80211 = 801,    <span class="comment">// IEEE 802.11. </span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        IEEE80211_PRISM = 802,  <span class="comment">// IEEE 802.11 + Prism2 header. </span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        IEEE80211_RADIOTAP = 803,   <span class="comment">// IEEE 802.11 + radiotap header. </span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        IEEE802154 = 804, <span class="comment">// IEEE 802.15.4 header. </span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        IEEE802154_PHY = 805, <span class="comment">// IEEE 802.15.4 PHY header. </span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        VOID_TYPE = 0xFFFF,      <span class="comment">// Void type, nothing is known. </span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        NONE = 0xFFFE         <span class="comment">// Zero header length.   </span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    };</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif // TINS_CONSTANTS_H</span></div>
-<div class="ttc" id="classTins_1_1IP_html"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html">Tins::IP</a></div><div class="ttdoc">Class that represents an IP PDU. </div><div class="ttdef"><b>Definition:</b> ip.h:59</div></div>
-<div class="ttc" id="classTins_1_1ARP_html"><div class="ttname"><a href="../../d1/db0/classTins_1_1ARP.html">Tins::ARP</a></div><div class="ttdoc">Represents an ARP PDU. </div><div class="ttdef"><b>Definition:</b> arp.h:49</div></div>
-<div class="ttc" id="structTins_1_1Ethernet_html"><div class="ttname"><a href="../../de/dcb/structTins_1_1Ethernet.html">Tins::Ethernet</a></div><div class="ttdef"><b>Definition:</b> constants.h:74</div></div>
-<div class="ttc" id="classTins_1_1EAPOL_html"><div class="ttname"><a href="../../d5/ddb/classTins_1_1EAPOL.html">Tins::EAPOL</a></div><div class="ttdoc">Represents the EAP encapsulation over LAN. </div><div class="ttdef"><b>Definition:</b> eapol.h:52</div></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;} <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif // TINS_CONSTANTS_H</span></div>
+<div class="ttc" id="classTins_1_1IP_html"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html">Tins::IP</a></div><div class="ttdoc">Class that represents an IP PDU. </div><div class="ttdef"><b>Definition:</b> ip.h:64</div></div>
+<div class="ttc" id="classTins_1_1MPLS_html"><div class="ttname"><a href="../../db/d4a/classTins_1_1MPLS.html">Tins::MPLS</a></div><div class="ttdoc">Represents an MPLS PDU. </div><div class="ttdef"><b>Definition:</b> mpls.h:45</div></div>
+<div class="ttc" id="classTins_1_1ARP_html"><div class="ttname"><a href="../../d1/db0/classTins_1_1ARP.html">Tins::ARP</a></div><div class="ttdoc">Represents an ARP PDU. </div><div class="ttdef"><b>Definition:</b> arp.h:50</div></div>
+<div class="ttc" id="structTins_1_1Ethernet_html"><div class="ttname"><a href="../../de/dcb/structTins_1_1Ethernet.html">Tins::Ethernet</a></div><div class="ttdef"><b>Definition:</b> constants.h:75</div></div>
+<div class="ttc" id="classTins_1_1EAPOL_html"><div class="ttname"><a href="../../d5/ddb/classTins_1_1EAPOL.html">Tins::EAPOL</a></div><div class="ttdoc">Represents the EAP encapsulation over LAN. </div><div class="ttdef"><b>Definition:</b> eapol.h:56</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

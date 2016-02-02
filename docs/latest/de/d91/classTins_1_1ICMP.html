@@ -147,66 +147,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -306,6 +309,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a87f59a472c30e1c79d51ee5d82501563"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a87f59a472c30e1c79d51ee5d82501563">pointer</a> () const </td></tr>
 <tr class="memdesc:a87f59a472c30e1c79d51ee5d82501563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the pointer field.  <a href="#a87f59a472c30e1c79d51ee5d82501563">More...</a><br/></td></tr>
 <tr class="separator:a87f59a472c30e1c79d51ee5d82501563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58393e8301bb96b47ba392127ac17a29"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a58393e8301bb96b47ba392127ac17a29">length</a> () const </td></tr>
+<tr class="memdesc:a58393e8301bb96b47ba392127ac17a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the length field.  <a href="#a58393e8301bb96b47ba392127ac17a29">More...</a><br/></td></tr>
+<tr class="separator:a58393e8301bb96b47ba392127ac17a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7de371fc0ee82f9f4cb24408c043d75a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a7de371fc0ee82f9f4cb24408c043d75a">mtu</a> () const </td></tr>
 <tr class="memdesc:a7de371fc0ee82f9f4cb24408c043d75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the mtu field.  <a href="#a7de371fc0ee82f9f4cb24408c043d75a">More...</a><br/></td></tr>
 <tr class="separator:a7de371fc0ee82f9f4cb24408c043d75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,9 +330,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a60b8de60a23608bb7bcee3d7e79cacf7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a60b8de60a23608bb7bcee3d7e79cacf7">header_size</a> () const </td></tr>
 <tr class="memdesc:a60b8de60a23608bb7bcee3d7e79cacf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header size.  <a href="#a60b8de60a23608bb7bcee3d7e79cacf7">More...</a><br/></td></tr>
 <tr class="separator:a60b8de60a23608bb7bcee3d7e79cacf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac44ecd657925505836145befe53cb3b3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ac44ecd657925505836145befe53cb3b3">trailer_size</a> () const </td></tr>
+<tr class="memdesc:ac44ecd657925505836145befe53cb3b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the trailer size.  <a href="#ac44ecd657925505836145befe53cb3b3">More...</a><br/></td></tr>
+<tr class="separator:ac44ecd657925505836145befe53cb3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab08f37bb35b2d967771ee32d16c76884"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#ab08f37bb35b2d967771ee32d16c76884">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:ab08f37bb35b2d967771ee32d16c76884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#ab08f37bb35b2d967771ee32d16c76884">More...</a><br/></td></tr>
+<tr class="memdesc:ab08f37bb35b2d967771ee32d16c76884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#ab08f37bb35b2d967771ee32d16c76884">More...</a><br/></td></tr>
 <tr class="separator:ab08f37bb35b2d967771ee32d16c76884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9079c3549b53a3e63fdac11758b33b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#abb9079c3549b53a3e63fdac11758b33b">extensions</a> () const </td></tr>
+<tr class="memdesc:abb9079c3549b53a3e63fdac11758b33b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the extensions field.  <a href="#abb9079c3549b53a3e63fdac11758b33b">More...</a><br/></td></tr>
+<tr class="separator:abb9079c3549b53a3e63fdac11758b33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4baf6c06ae79f7e11248b72757106dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a4baf6c06ae79f7e11248b72757106dea">extensions</a> ()</td></tr>
+<tr class="memdesc:a4baf6c06ae79f7e11248b72757106dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the extensions field.  <a href="#a4baf6c06ae79f7e11248b72757106dea">More...</a><br/></td></tr>
+<tr class="separator:a4baf6c06ae79f7e11248b72757106dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af276639fb241fd7a52f14fa16ce26523"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af276639fb241fd7a52f14fa16ce26523"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#af276639fb241fd7a52f14fa16ce26523">has_extensions</a> () const </td></tr>
+<tr class="memdesc:af276639fb241fd7a52f14fa16ce26523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this object contains <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a> extensions. <br/></td></tr>
+<tr class="separator:af276639fb241fd7a52f14fa16ce26523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d62bad409672fd0952deffd6985a716"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a7d62bad409672fd0952deffd6985a716">use_length_field</a> (bool value)</td></tr>
+<tr class="memdesc:a7d62bad409672fd0952deffd6985a716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the length field will be set for packets that use it.  <a href="#a7d62bad409672fd0952deffd6985a716">More...</a><br/></td></tr>
+<tr class="separator:a7d62bad409672fd0952deffd6985a716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d88e0e42ec1b7056baa679816b9e098"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d91/classTins_1_1ICMP.html#a6d88e0e42ec1b7056baa679816b9e098">pdu_type</a> () const </td></tr>
 <tr class="memdesc:a6d88e0e42ec1b7056baa679816b9e098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s type.  <a href="#a6d88e0e42ec1b7056baa679816b9e098">More...</a><br/></td></tr>
 <tr class="separator:a6d88e0e42ec1b7056baa679816b9e098"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -340,9 +362,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a08c76956e67052570edb1d59f687a1cf inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a08c76956e67052570edb1d59f687a1cf">~PDU</a> ()</td></tr>
 <tr class="memdesc:a08c76956e67052570edb1d59f687a1cf inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> destructor.  <a href="#a08c76956e67052570edb1d59f687a1cf">More...</a><br/></td></tr>
 <tr class="separator:a08c76956e67052570edb1d59f687a1cf inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5f4ea02961e44b98b25d3f74ad6cb67 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67">trailer_size</a> () const </td></tr>
-<tr class="memdesc:aa5f4ea02961e44b98b25d3f74ad6cb67 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trailer's size.  <a href="#aa5f4ea02961e44b98b25d3f74ad6cb67">More...</a><br/></td></tr>
-<tr class="separator:aa5f4ea02961e44b98b25d3f74ad6cb67 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ca49eefc669dbd5f193f39d2bf2d9be inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a5ca49eefc669dbd5f193f39d2bf2d9be">size</a> () const </td></tr>
 <tr class="memdesc:a5ca49eefc669dbd5f193f39d2bf2d9be inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">The whole chain of <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s size, including this one.  <a href="#a5ca49eefc669dbd5f193f39d2bf2d9be">More...</a><br/></td></tr>
 <tr class="separator:a5ca49eefc669dbd5f193f39d2bf2d9be inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -384,7 +403,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -651,6 +670,58 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="abb9079c3549b53a3e63fdac11758b33b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a>&amp; Tins::ICMP::extensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the extensions field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The extensions field </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4baf6c06ae79f7e11248b72757106dea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a>&amp; Tins::ICMP::extensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the extensions field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The extensions field </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a1cbec7053864214e928f13665727164d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -723,7 +794,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the header size. </p>
-<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a>. This size includes the payload and options size. </p>
+<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a>. This size includes the payload and options size.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a> </dd></dl>
 
 <p>Implements <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750">Tins::PDU</a>.</p>
@@ -780,6 +851,32 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a58393e8301bb96b47ba392127ac17a29"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Tins::ICMP::length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the length field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the length field value. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ab08f37bb35b2d967771ee32d16c76884"></a>
 <div class="memitem">
 <div class="memproto">
@@ -812,8 +909,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -1271,7 +1368,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets parameter problem flag for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">set_pointer</td><td>Indicates wether a pointer to the bad octet is provided. </td></tr>
+    <tr><td class="paramname">set_pointer</td><td>Indicates whether a pointer to the bad octet is provided. </td></tr>
     <tr><td class="paramname">bad_octet</td><td>Identifies the octet in which the error was detected. If set_pointer == false, it is ignored. </td></tr>
   </table>
   </dd>
@@ -1335,6 +1432,35 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ac44ecd657925505836145befe53cb3b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Tins::ICMP::trailer_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the trailer size. </p>
+<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67" title="Trailer&#39;s size. ">PDU::trailer_size</a>. This size will hold the extensions size</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67">Tins::PDU</a>.</p>
 
 </div>
 </div>
@@ -1438,6 +1564,28 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7d62bad409672fd0952deffd6985a716"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMP::use_length_field </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets whether the length field will be set for packets that use it. </p>
+<p>As defined in RFC 4884, some <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a> packet types can have a length field. This method controlers whether the length field is set or not.</p>
+<p>Note that this only indicates that the packet should use this field. The actual value will be set during the packet's serialization.</p>
+<p>Note that, in order to br RFC compliant, if the size of the encapsulated <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is greater than 128, the length field will always be set, regardless of whether this method was called or not.</p>
+<p>/param value true iff the length field should be set appropriately </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../d0/d49/icmp_8h_source.html">icmp.h</a></li>
 <li>/home/matias/Projects/libtins/code/src/icmp.cpp</li>
@@ -1445,7 +1593,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

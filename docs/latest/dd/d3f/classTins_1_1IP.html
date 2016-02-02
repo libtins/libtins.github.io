@@ -186,66 +186,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -387,7 +390,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:a995e15da3f8ca0be391232439af33baa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a995e15da3f8ca0be391232439af33baa">send</a> (<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;)</td></tr>
 <tr class="separator:a995e15da3f8ca0be391232439af33baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e8f7a979bc8e2b4e86f2fb0ba99a750"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a0e8f7a979bc8e2b4e86f2fb0ba99a750">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a0e8f7a979bc8e2b4e86f2fb0ba99a750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a0e8f7a979bc8e2b4e86f2fb0ba99a750">More...</a><br/></td></tr>
+<tr class="memdesc:a0e8f7a979bc8e2b4e86f2fb0ba99a750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a0e8f7a979bc8e2b4e86f2fb0ba99a750">More...</a><br/></td></tr>
 <tr class="separator:a0e8f7a979bc8e2b4e86f2fb0ba99a750"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f1702dab5ecc0a66775e88f5df290c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a44f1702dab5ecc0a66775e88f5df290c">recv_response</a> (<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;)</td></tr>
 <tr class="memdesc:a44f1702dab5ecc0a66775e88f5df290c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#a44f1702dab5ecc0a66775e88f5df290c">More...</a><br/></td></tr>
@@ -445,7 +448,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:ab0813cea264d381abcbb064b17bdb6d0 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and returns the first <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> that matches the given flag.  <a href="#ab0813cea264d381abcbb064b17bdb6d0">More...</a><br/></td></tr>
 <tr class="separator:ab0813cea264d381abcbb064b17bdb6d0 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -1124,8 +1127,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -1656,7 +1659,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Getter for the fragment offset field. </p>
 <p>This method is deprecated. Use <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> and <a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd><dl class="section return"><dt>Returns</dt><dd>The fragment offset for this <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd><dl class="section return"><dt>Returns</dt><dd>The fragment offset for this <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> </dd>
 <dd>
 <a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a> </dd></dl>
@@ -1680,7 +1683,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Setter for the fragment offset field. </p>
 <p>This method is deprecated. Use <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5" title="Getter for the fragment offset field. ">IP::fragment_offset</a> and <a class="el" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873" title="Getter for the flags field. ">IP::flags</a>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd><dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">new_frag_off</td><td>The new fragment offset. </td></tr>
   </table>
@@ -1898,7 +1901,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

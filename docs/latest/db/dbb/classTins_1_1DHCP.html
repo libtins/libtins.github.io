@@ -108,7 +108,7 @@ Inheritance diagram for Tins::DHCP:</div>
  <div class="center">
   <img src="../../db/dbb/classTins_1_1DHCP.png" usemap="#Tins::DHCP_map" alt=""/>
   <map id="Tins::DHCP_map" name="Tins::DHCP_map">
-<area href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. " alt="Tins::BootP" shape="rect" coords="0,56,76,80"/>
+<area href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. " alt="Tins::BootP" shape="rect" coords="0,56,76,80"/>
 <area href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. " alt="Tins::PDU" shape="rect" coords="0,0,76,24"/>
 </map>
  </div></div>
@@ -228,7 +228,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:ad3f82c6c288d87de0e3f3d6293439309 inherit pub_types_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ad3f82c6c288d87de0e3f3d6293439309">OpCodes</a> { <b>BOOTREQUEST</b> = 1, 
 <b>BOOTREPLY</b> = 2
  }</td></tr>
-<tr class="memdesc:ad3f82c6c288d87de0e3f3d6293439309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum which contains the different opcodes <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> messages. <br/></td></tr>
+<tr class="memdesc:ad3f82c6c288d87de0e3f3d6293439309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum which contains the different opcodes <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> messages. <br/></td></tr>
 <tr class="separator:ad3f82c6c288d87de0e3f3d6293439309 inherit pub_types_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3746f940246c0136ffeebcfe683d3df inherit pub_types_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a></td></tr>
 <tr class="separator:ae3746f940246c0136ffeebcfe683d3df inherit pub_types_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,66 +245,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -387,24 +390,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef3a2e20b70afeeebc8dd65901c77a9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#aef3a2e20b70afeeebc8dd65901c77a9c">subnet_mask</a> () const </td></tr>
 <tr class="memdesc:aef3a2e20b70afeeebc8dd65901c77a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a subnet mask option.  <a href="#aef3a2e20b70afeeebc8dd65901c77a9c">More...</a><br/></td></tr>
 <tr class="separator:aef3a2e20b70afeeebc8dd65901c77a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab45228db72e261676f8af60c8a3b3384"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#ab45228db72e261676f8af60c8a3b3384">routers</a> () const </td></tr>
-<tr class="memdesc:ab45228db72e261676f8af60c8a3b3384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a routers option.  <a href="#ab45228db72e261676f8af60c8a3b3384">More...</a><br/></td></tr>
-<tr class="separator:ab45228db72e261676f8af60c8a3b3384"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0dcf54ac3d31977287d34aa454190aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#ab0dcf54ac3d31977287d34aa454190aa">domain_name_servers</a> () const </td></tr>
-<tr class="memdesc:ab0dcf54ac3d31977287d34aa454190aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a dns option.  <a href="#ab0dcf54ac3d31977287d34aa454190aa">More...</a><br/></td></tr>
-<tr class="separator:ab0dcf54ac3d31977287d34aa454190aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0cb40074db56fd13fc5a23cdcb161c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a6b0cb40074db56fd13fc5a23cdcb161c">routers</a> () const </td></tr>
+<tr class="memdesc:a6b0cb40074db56fd13fc5a23cdcb161c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a routers option.  <a href="#a6b0cb40074db56fd13fc5a23cdcb161c">More...</a><br/></td></tr>
+<tr class="separator:a6b0cb40074db56fd13fc5a23cdcb161c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05dc370232210af2b34083dc07f58db4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a05dc370232210af2b34083dc07f58db4">domain_name_servers</a> () const </td></tr>
+<tr class="memdesc:a05dc370232210af2b34083dc07f58db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a dns option.  <a href="#a05dc370232210af2b34083dc07f58db4">More...</a><br/></td></tr>
+<tr class="separator:a05dc370232210af2b34083dc07f58db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b8452cf9896be91322ca43b0fe4c325"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a1b8452cf9896be91322ca43b0fe4c325">broadcast</a> () const </td></tr>
 <tr class="memdesc:a1b8452cf9896be91322ca43b0fe4c325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a broadcast option.  <a href="#a1b8452cf9896be91322ca43b0fe4c325">More...</a><br/></td></tr>
 <tr class="separator:a1b8452cf9896be91322ca43b0fe4c325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af09f54498797ba56d8d27ecb5768d9ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#af09f54498797ba56d8d27ecb5768d9ba">requested_ip</a> () const </td></tr>
 <tr class="memdesc:af09f54498797ba56d8d27ecb5768d9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a requested option.  <a href="#af09f54498797ba56d8d27ecb5768d9ba">More...</a><br/></td></tr>
 <tr class="separator:af09f54498797ba56d8d27ecb5768d9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe6a2bcb359bae297b35d5192acf58c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#abe6a2bcb359bae297b35d5192acf58c2">domain_name</a> () const </td></tr>
-<tr class="memdesc:abe6a2bcb359bae297b35d5192acf58c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a domain name option.  <a href="#abe6a2bcb359bae297b35d5192acf58c2">More...</a><br/></td></tr>
-<tr class="separator:abe6a2bcb359bae297b35d5192acf58c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39084f25f1393bda5b847a4408b88b4b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a39084f25f1393bda5b847a4408b88b4b">hostname</a> () const </td></tr>
-<tr class="memdesc:a39084f25f1393bda5b847a4408b88b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a hostname option.  <a href="#a39084f25f1393bda5b847a4408b88b4b">More...</a><br/></td></tr>
-<tr class="separator:a39084f25f1393bda5b847a4408b88b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1810ff36c386f3428c5f43e9893f2316"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a1810ff36c386f3428c5f43e9893f2316">domain_name</a> () const </td></tr>
+<tr class="memdesc:a1810ff36c386f3428c5f43e9893f2316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a domain name option.  <a href="#a1810ff36c386f3428c5f43e9893f2316">More...</a><br/></td></tr>
+<tr class="separator:a1810ff36c386f3428c5f43e9893f2316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18734312bd60b30fa357972fed6d5e7d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a18734312bd60b30fa357972fed6d5e7d">hostname</a> () const </td></tr>
+<tr class="memdesc:a18734312bd60b30fa357972fed6d5e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for a hostname option.  <a href="#a18734312bd60b30fa357972fed6d5e7d">More...</a><br/></td></tr>
+<tr class="separator:a18734312bd60b30fa357972fed6d5e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52915d92e3bdcc0de768fc8a76037efd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a3a770f5fb5d2f3f6d1a94f99de784cef">options_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a52915d92e3bdcc0de768fc8a76037efd">options</a> () const </td></tr>
 <tr class="memdesc:a52915d92e3bdcc0de768fc8a76037efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the options list.  <a href="#a52915d92e3bdcc0de768fc8a76037efd">More...</a><br/></td></tr>
 <tr class="separator:a52915d92e3bdcc0de768fc8a76037efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -418,10 +421,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aec6504ba9b91e7558d72b8c499b49df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTins_1_1BootP"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTins_1_1BootP')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../de/ddf/classTins_1_1BootP.html">Tins::BootP</a></td></tr>
 <tr class="memitem:a89f86ab157a8ec4db79cd5eb8abfbf16 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a89f86ab157a8ec4db79cd5eb8abfbf16">BootP</a> ()</td></tr>
-<tr class="memdesc:a89f86ab157a8ec4db79cd5eb8abfbf16 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a>.  <a href="#a89f86ab157a8ec4db79cd5eb8abfbf16">More...</a><br/></td></tr>
+<tr class="memdesc:a89f86ab157a8ec4db79cd5eb8abfbf16 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a>.  <a href="#a89f86ab157a8ec4db79cd5eb8abfbf16">More...</a><br/></td></tr>
 <tr class="separator:a89f86ab157a8ec4db79cd5eb8abfbf16 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86474cfda43ef591ec95b5c0fd4092f3 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a86474cfda43ef591ec95b5c0fd4092f3">BootP</a> (const uint8_t *buffer, uint32_t total_sz, uint32_t vend_field_size=64)</td></tr>
-<tr class="memdesc:a86474cfda43ef591ec95b5c0fd4092f3 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> object from a buffer .  <a href="#a86474cfda43ef591ec95b5c0fd4092f3">More...</a><br/></td></tr>
+<tr class="memdesc:a86474cfda43ef591ec95b5c0fd4092f3 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> object from a buffer .  <a href="#a86474cfda43ef591ec95b5c0fd4092f3">More...</a><br/></td></tr>
 <tr class="separator:a86474cfda43ef591ec95b5c0fd4092f3 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0f6d17d452dd556b1ecc9cd0c6bba99 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#af0f6d17d452dd556b1ecc9cd0c6bba99">opcode</a> () const </td></tr>
 <tr class="memdesc:af0f6d17d452dd556b1ecc9cd0c6bba99 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the opcode field.  <a href="#af0f6d17d452dd556b1ecc9cd0c6bba99">More...</a><br/></td></tr>
@@ -468,39 +471,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0921428bec64eeaf814f7dbbfaa99a0c inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a0921428bec64eeaf814f7dbbfaa99a0c">vend</a> () const </td></tr>
 <tr class="memdesc:a0921428bec64eeaf814f7dbbfaa99a0c inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the vend field.  <a href="#a0921428bec64eeaf814f7dbbfaa99a0c">More...</a><br/></td></tr>
 <tr class="separator:a0921428bec64eeaf814f7dbbfaa99a0c inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa558444c2107bb2c99f027e2b0a92365 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#aa558444c2107bb2c99f027e2b0a92365">opcode</a> (uint8_t new_opcode)</td></tr>
-<tr class="memdesc:aa558444c2107bb2c99f027e2b0a92365 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the opcode field.  <a href="#aa558444c2107bb2c99f027e2b0a92365">More...</a><br/></td></tr>
-<tr class="separator:aa558444c2107bb2c99f027e2b0a92365 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adee28a3bd34118c54c317ef2b1972691 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#adee28a3bd34118c54c317ef2b1972691">htype</a> (uint8_t new_htype)</td></tr>
-<tr class="memdesc:adee28a3bd34118c54c317ef2b1972691 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the htype field.  <a href="#adee28a3bd34118c54c317ef2b1972691">More...</a><br/></td></tr>
-<tr class="separator:adee28a3bd34118c54c317ef2b1972691 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5981ebf77aa6c142d1162f8dbd547da3 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a5981ebf77aa6c142d1162f8dbd547da3">hlen</a> (uint8_t new_hlen)</td></tr>
-<tr class="memdesc:a5981ebf77aa6c142d1162f8dbd547da3 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hlen field.  <a href="#a5981ebf77aa6c142d1162f8dbd547da3">More...</a><br/></td></tr>
-<tr class="separator:a5981ebf77aa6c142d1162f8dbd547da3 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a633b7a6d4656aeb5e918f0a8b0d10ddb inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a633b7a6d4656aeb5e918f0a8b0d10ddb">hops</a> (uint8_t new_hops)</td></tr>
-<tr class="memdesc:a633b7a6d4656aeb5e918f0a8b0d10ddb inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hops field.  <a href="#a633b7a6d4656aeb5e918f0a8b0d10ddb">More...</a><br/></td></tr>
-<tr class="separator:a633b7a6d4656aeb5e918f0a8b0d10ddb inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3e9f0357072599687d0900e547af07e inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3e9f0357072599687d0900e547af07e">xid</a> (uint32_t new_xid)</td></tr>
-<tr class="memdesc:ae3e9f0357072599687d0900e547af07e inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the xid field.  <a href="#ae3e9f0357072599687d0900e547af07e">More...</a><br/></td></tr>
-<tr class="separator:ae3e9f0357072599687d0900e547af07e inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56fa76fc8c67de54912d24c1eab8394f inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a56fa76fc8c67de54912d24c1eab8394f">secs</a> (uint16_t new_secs)</td></tr>
-<tr class="memdesc:a56fa76fc8c67de54912d24c1eab8394f inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the secs field.  <a href="#a56fa76fc8c67de54912d24c1eab8394f">More...</a><br/></td></tr>
-<tr class="separator:a56fa76fc8c67de54912d24c1eab8394f inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdf9a0f367884648f82b569c0c98db27 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#afdf9a0f367884648f82b569c0c98db27">padding</a> (uint16_t new_padding)</td></tr>
-<tr class="memdesc:afdf9a0f367884648f82b569c0c98db27 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the padding field.  <a href="#afdf9a0f367884648f82b569c0c98db27">More...</a><br/></td></tr>
-<tr class="separator:afdf9a0f367884648f82b569c0c98db27 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64de7cdfa4a2d769a66196cb4d7a95cc inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a64de7cdfa4a2d769a66196cb4d7a95cc">ciaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_ciaddr)</td></tr>
-<tr class="memdesc:a64de7cdfa4a2d769a66196cb4d7a95cc inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the ciaddr field.  <a href="#a64de7cdfa4a2d769a66196cb4d7a95cc">More...</a><br/></td></tr>
-<tr class="separator:a64de7cdfa4a2d769a66196cb4d7a95cc inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09df25b0c4ce72b6976615e2c71da67b inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a09df25b0c4ce72b6976615e2c71da67b">yiaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_yiaddr)</td></tr>
-<tr class="memdesc:a09df25b0c4ce72b6976615e2c71da67b inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the yiaddr field.  <a href="#a09df25b0c4ce72b6976615e2c71da67b">More...</a><br/></td></tr>
-<tr class="separator:a09df25b0c4ce72b6976615e2c71da67b inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc5f242da74ac360fc520fd83dba466 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a8fc5f242da74ac360fc520fd83dba466">siaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_siaddr)</td></tr>
-<tr class="memdesc:a8fc5f242da74ac360fc520fd83dba466 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the siaddr field.  <a href="#a8fc5f242da74ac360fc520fd83dba466">More...</a><br/></td></tr>
-<tr class="separator:a8fc5f242da74ac360fc520fd83dba466 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a230bf5a363e43eceb84c458c2f1e85d6 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a230bf5a363e43eceb84c458c2f1e85d6">giaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> new_giaddr)</td></tr>
-<tr class="memdesc:a230bf5a363e43eceb84c458c2f1e85d6 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the giaddr field.  <a href="#a230bf5a363e43eceb84c458c2f1e85d6">More...</a><br/></td></tr>
-<tr class="separator:a230bf5a363e43eceb84c458c2f1e85d6 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe042acc885db883559722f95ec4d89 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a3fe042acc885db883559722f95ec4d89">opcode</a> (uint8_t code)</td></tr>
+<tr class="memdesc:a3fe042acc885db883559722f95ec4d89 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the opcode field.  <a href="#a3fe042acc885db883559722f95ec4d89">More...</a><br/></td></tr>
+<tr class="separator:a3fe042acc885db883559722f95ec4d89 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6b72f475969932f7d386a84b8981ea inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a3c6b72f475969932f7d386a84b8981ea">htype</a> (uint8_t type)</td></tr>
+<tr class="memdesc:a3c6b72f475969932f7d386a84b8981ea inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hardware type field.  <a href="#a3c6b72f475969932f7d386a84b8981ea">More...</a><br/></td></tr>
+<tr class="separator:a3c6b72f475969932f7d386a84b8981ea inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac752228e58232ee7a7688d5fbfbc25ee inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ac752228e58232ee7a7688d5fbfbc25ee">hlen</a> (uint8_t length)</td></tr>
+<tr class="memdesc:ac752228e58232ee7a7688d5fbfbc25ee inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hlen field.  <a href="#ac752228e58232ee7a7688d5fbfbc25ee">More...</a><br/></td></tr>
+<tr class="separator:ac752228e58232ee7a7688d5fbfbc25ee inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72859bfc9bf4ea9dd603d67e1692ec3e inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a72859bfc9bf4ea9dd603d67e1692ec3e">hops</a> (uint8_t count)</td></tr>
+<tr class="memdesc:a72859bfc9bf4ea9dd603d67e1692ec3e inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hops field.  <a href="#a72859bfc9bf4ea9dd603d67e1692ec3e">More...</a><br/></td></tr>
+<tr class="separator:a72859bfc9bf4ea9dd603d67e1692ec3e inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2121d826ba3bc0ba6643bf79c7c69ea inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae2121d826ba3bc0ba6643bf79c7c69ea">xid</a> (uint32_t identifier)</td></tr>
+<tr class="memdesc:ae2121d826ba3bc0ba6643bf79c7c69ea inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the xid field.  <a href="#ae2121d826ba3bc0ba6643bf79c7c69ea">More...</a><br/></td></tr>
+<tr class="separator:ae2121d826ba3bc0ba6643bf79c7c69ea inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd99620b71ba38d72e57af76556dc617 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#afd99620b71ba38d72e57af76556dc617">secs</a> (uint16_t value)</td></tr>
+<tr class="memdesc:afd99620b71ba38d72e57af76556dc617 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the secs field.  <a href="#afd99620b71ba38d72e57af76556dc617">More...</a><br/></td></tr>
+<tr class="separator:afd99620b71ba38d72e57af76556dc617 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb07ccce931d74cb01013eac50c1961 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a9bb07ccce931d74cb01013eac50c1961">padding</a> (uint16_t value)</td></tr>
+<tr class="memdesc:a9bb07ccce931d74cb01013eac50c1961 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the padding field.  <a href="#a9bb07ccce931d74cb01013eac50c1961">More...</a><br/></td></tr>
+<tr class="separator:a9bb07ccce931d74cb01013eac50c1961 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5193965fb762317df4a6d16ce940b62d inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a5193965fb762317df4a6d16ce940b62d">ciaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a5193965fb762317df4a6d16ce940b62d inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the ciaddr field.  <a href="#a5193965fb762317df4a6d16ce940b62d">More...</a><br/></td></tr>
+<tr class="separator:a5193965fb762317df4a6d16ce940b62d inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1664850569342e0f00675a862afd62 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a9d1664850569342e0f00675a862afd62">yiaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a9d1664850569342e0f00675a862afd62 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the yiaddr field.  <a href="#a9d1664850569342e0f00675a862afd62">More...</a><br/></td></tr>
+<tr class="separator:a9d1664850569342e0f00675a862afd62 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce09a984336e4ef750464b0aa489a1d inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a5ce09a984336e4ef750464b0aa489a1d">siaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a5ce09a984336e4ef750464b0aa489a1d inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the siaddr field.  <a href="#a5ce09a984336e4ef750464b0aa489a1d">More...</a><br/></td></tr>
+<tr class="separator:a5ce09a984336e4ef750464b0aa489a1d inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d26de6dc74c6350dae194f5455268a6 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a7d26de6dc74c6350dae194f5455268a6">giaddr</a> (<a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">ipaddress_type</a> address)</td></tr>
+<tr class="memdesc:a7d26de6dc74c6350dae194f5455268a6 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the giaddr field.  <a href="#a7d26de6dc74c6350dae194f5455268a6">More...</a><br/></td></tr>
+<tr class="separator:a7d26de6dc74c6350dae194f5455268a6 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73fdd4597bd8387f48d0bba949baee68 inherit pub_methods_classTins_1_1BootP"><td class="memTemplParams" colspan="2">template&lt;size_t n&gt; </td></tr>
 <tr class="memitem:a73fdd4597bd8387f48d0bba949baee68 inherit pub_methods_classTins_1_1BootP"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a73fdd4597bd8387f48d0bba949baee68">chaddr</a> (const <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress</a>&lt; n &gt; &amp;new_chaddr)</td></tr>
 <tr class="memdesc:a73fdd4597bd8387f48d0bba949baee68 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the chaddr field. The new_chaddr pointer must be at least BOOTP::hlen() bytes long.  <a href="#a73fdd4597bd8387f48d0bba949baee68">More...</a><br/></td></tr>
@@ -511,11 +514,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aff67d7136cdc094110ed53d91a93f920 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#aff67d7136cdc094110ed53d91a93f920">file</a> (const uint8_t *new_file)</td></tr>
 <tr class="memdesc:aff67d7136cdc094110ed53d91a93f920 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the file field.  <a href="#aff67d7136cdc094110ed53d91a93f920">More...</a><br/></td></tr>
 <tr class="separator:aff67d7136cdc094110ed53d91a93f920 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20568d722ea218860a477232c78afca5 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a20568d722ea218860a477232c78afca5">vend</a> (const <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> &amp;new_vend)</td></tr>
-<tr class="memdesc:a20568d722ea218860a477232c78afca5 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the vend field.  <a href="#a20568d722ea218860a477232c78afca5">More...</a><br/></td></tr>
-<tr class="separator:a20568d722ea218860a477232c78afca5 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05abf86687a1c84137d7bf9e91186d9c inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a05abf86687a1c84137d7bf9e91186d9c">vend</a> (const <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> &amp;newvend_)</td></tr>
+<tr class="memdesc:a05abf86687a1c84137d7bf9e91186d9c inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the vend field.  <a href="#a05abf86687a1c84137d7bf9e91186d9c">More...</a><br/></td></tr>
+<tr class="separator:a05abf86687a1c84137d7bf9e91186d9c inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36b22efd61fdbec8ec0e4de938b9dae1 inherit pub_methods_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/ddf/classTins_1_1BootP.html#a36b22efd61fdbec8ec0e4de938b9dae1">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a36b22efd61fdbec8ec0e4de938b9dae1 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a36b22efd61fdbec8ec0e4de938b9dae1">More...</a><br/></td></tr>
+<tr class="memdesc:a36b22efd61fdbec8ec0e4de938b9dae1 inherit pub_methods_classTins_1_1BootP"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a36b22efd61fdbec8ec0e4de938b9dae1">More...</a><br/></td></tr>
 <tr class="separator:a36b22efd61fdbec8ec0e4de938b9dae1 inherit pub_methods_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a13b0f3ad713204f7aae5b967e91dc0ca inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13b0f3ad713204f7aae5b967e91dc0ca"></a>
@@ -569,7 +572,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -709,7 +712,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a> object from a buffer. </p>
-<p>If there is not enough size for a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Class representing a BootP packet. ">BootP</a> header, or any of the TLV options contains an invalid size field, then a <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> exception is thrown.</p>
+<p>If there is not enough size for a <a class="el" href="../../de/ddf/classTins_1_1BootP.html" title="Represents a BootP PDU. ">BootP</a> header, or any of the TLV options contains an invalid size field, then a <a class="el" href="../../d9/d02/classTins_1_1malformed__packet.html" title="Exception thrown when a malformed packet is parsed. ">malformed_packet</a> exception is thrown.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer</td><td>The buffer from which this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> will be constructed. </td></tr>
@@ -840,12 +843,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abe6a2bcb359bae297b35d5192acf58c2"></a>
+<a class="anchor" id="a1810ff36c386f3428c5f43e9893f2316"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::DHCP::domain_name </td>
+          <td class="memname">string Tins::DHCP::domain_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -884,12 +887,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab0dcf54ac3d31977287d34aa454190aa"></a>
+<a class="anchor" id="a05dc370232210af2b34083dc07f58db4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">DHCP::ipaddress_type</a> &gt; Tins::DHCP::domain_name_servers </td>
+          <td class="memname">vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">DHCP::ipaddress_type</a> &gt; Tins::DHCP::domain_name_servers </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -976,12 +979,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a39084f25f1393bda5b847a4408b88b4b"></a>
+<a class="anchor" id="a18734312bd60b30fa357972fed6d5e7d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Tins::DHCP::hostname </td>
+          <td class="memname">string Tins::DHCP::hostname </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1276,12 +1279,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab45228db72e261676f8af60c8a3b3384"></a>
+<a class="anchor" id="a6b0cb40074db56fd13fc5a23cdcb161c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">DHCP::ipaddress_type</a> &gt; Tins::DHCP::routers </td>
+          <td class="memname">vector&lt; <a class="el" href="../../de/ddf/classTins_1_1BootP.html#ae3746f940246c0136ffeebcfe683d3df">DHCP::ipaddress_type</a> &gt; Tins::DHCP::routers </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1481,7 +1484,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

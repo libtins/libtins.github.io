@@ -128,66 +128,69 @@ typedef <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress<
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -213,22 +216,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a10566da689ef96096118ce30f611a286"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#a10566da689ef96096118ce30f611a286">length</a> () const </td></tr>
 <tr class="memdesc:a10566da689ef96096118ce30f611a286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the length field.  <a href="#a10566da689ef96096118ce30f611a286">More...</a><br/></td></tr>
 <tr class="separator:a10566da689ef96096118ce30f611a286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4789ec124ab99e0b1162edcd67e62b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#ac4789ec124ab99e0b1162edcd67e62b0">dst_addr</a> (const <a class="el" href="../../d4/d69/classTins_1_1Dot3.html#abbb96ef662de30ae0969083ec0820115">address_type</a> &amp;new_dst_mac)</td></tr>
-<tr class="memdesc:ac4789ec124ab99e0b1162edcd67e62b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the destination hardware address.  <a href="#ac4789ec124ab99e0b1162edcd67e62b0">More...</a><br/></td></tr>
-<tr class="separator:ac4789ec124ab99e0b1162edcd67e62b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addd308e61ebe21032e6769b3a329f243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#addd308e61ebe21032e6769b3a329f243">src_addr</a> (const <a class="el" href="../../d4/d69/classTins_1_1Dot3.html#abbb96ef662de30ae0969083ec0820115">address_type</a> &amp;new_src_mac)</td></tr>
-<tr class="memdesc:addd308e61ebe21032e6769b3a329f243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the source hardware address.  <a href="#addd308e61ebe21032e6769b3a329f243">More...</a><br/></td></tr>
-<tr class="separator:addd308e61ebe21032e6769b3a329f243"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d1642f7c3083bc9533efdcc9cd4c48e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#a3d1642f7c3083bc9533efdcc9cd4c48e">length</a> (uint16_t new_length)</td></tr>
-<tr class="memdesc:a3d1642f7c3083bc9533efdcc9cd4c48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the length field.  <a href="#a3d1642f7c3083bc9533efdcc9cd4c48e">More...</a><br/></td></tr>
-<tr class="separator:a3d1642f7c3083bc9533efdcc9cd4c48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b52cc862b0584dd9a1730e9298af383"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#a7b52cc862b0584dd9a1730e9298af383">dst_addr</a> (const <a class="el" href="../../d4/d69/classTins_1_1Dot3.html#abbb96ef662de30ae0969083ec0820115">address_type</a> &amp;address)</td></tr>
+<tr class="memdesc:a7b52cc862b0584dd9a1730e9298af383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the destination hardware address.  <a href="#a7b52cc862b0584dd9a1730e9298af383">More...</a><br/></td></tr>
+<tr class="separator:a7b52cc862b0584dd9a1730e9298af383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1068986c3b66e55b80b9ff6859dc0871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#a1068986c3b66e55b80b9ff6859dc0871">src_addr</a> (const <a class="el" href="../../d4/d69/classTins_1_1Dot3.html#abbb96ef662de30ae0969083ec0820115">address_type</a> &amp;address)</td></tr>
+<tr class="memdesc:a1068986c3b66e55b80b9ff6859dc0871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the source hardware address.  <a href="#a1068986c3b66e55b80b9ff6859dc0871">More...</a><br/></td></tr>
+<tr class="separator:a1068986c3b66e55b80b9ff6859dc0871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b7d73cd3d0b0b825e29316600f391e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#ae4b7d73cd3d0b0b825e29316600f391e">length</a> (uint16_t value)</td></tr>
+<tr class="memdesc:ae4b7d73cd3d0b0b825e29316600f391e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the length field.  <a href="#ae4b7d73cd3d0b0b825e29316600f391e">More...</a><br/></td></tr>
+<tr class="separator:ae4b7d73cd3d0b0b825e29316600f391e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ffb530af831dec6ba5483cefaee73bf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#a7ffb530af831dec6ba5483cefaee73bf">header_size</a> () const </td></tr>
 <tr class="memdesc:a7ffb530af831dec6ba5483cefaee73bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="../../d4/d69/classTins_1_1Dot3.html" title="Class representing an IEEE 802.3 PDU. ">Dot3</a> frame's header length.  <a href="#a7ffb530af831dec6ba5483cefaee73bf">More...</a><br/></td></tr>
 <tr class="separator:a7ffb530af831dec6ba5483cefaee73bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb1e70f42da3e33429411195c4d16d77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#aeb1e70f42da3e33429411195c4d16d77">send</a> (<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface)</td></tr>
 <tr class="separator:aeb1e70f42da3e33429411195c4d16d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa30310cbb40daa3c46a5066a625390bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#aa30310cbb40daa3c46a5066a625390bd">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:aa30310cbb40daa3c46a5066a625390bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#aa30310cbb40daa3c46a5066a625390bd">More...</a><br/></td></tr>
+<tr class="memdesc:aa30310cbb40daa3c46a5066a625390bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#aa30310cbb40daa3c46a5066a625390bd">More...</a><br/></td></tr>
 <tr class="separator:aa30310cbb40daa3c46a5066a625390bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66d50b408dcc2907b96b55d7316e4e86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d69/classTins_1_1Dot3.html#a66d50b408dcc2907b96b55d7316e4e86">recv_response</a> (<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface)</td></tr>
 <tr class="separator:a66d50b408dcc2907b96b55d7316e4e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,7 +286,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab0813cea264d381abcbb064b17bdb6d0 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and returns the first <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> that matches the given flag.  <a href="#ab0813cea264d381abcbb064b17bdb6d0">More...</a><br/></td></tr>
 <tr class="separator:ab0813cea264d381abcbb064b17bdb6d0 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -450,7 +453,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac4789ec124ab99e0b1162edcd67e62b0"></a>
+<a class="anchor" id="a7b52cc862b0584dd9a1730e9298af383"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -458,7 +461,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void Tins::Dot3::dst_addr </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d4/d69/classTins_1_1Dot3.html#abbb96ef662de30ae0969083ec0820115">address_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>new_dst_mac</em></td><td>)</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -467,7 +470,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Setter for the destination hardware address. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_dst_mac</td><td>The new destination hardware address. </td></tr>
+    <tr><td class="paramname">address</td><td>The new destination hardware address. </td></tr>
   </table>
   </dd>
 </dl>
@@ -529,7 +532,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3d1642f7c3083bc9533efdcc9cd4c48e"></a>
+<a class="anchor" id="ae4b7d73cd3d0b0b825e29316600f391e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -537,7 +540,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void Tins::Dot3::length </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>new_length</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -546,7 +549,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Setter for the length field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_length</td><td>uint16_t with the new value of the length field. </td></tr>
+    <tr><td class="paramname">value</td><td>The new value for the length field </td></tr>
   </table>
   </dd>
 </dl>
@@ -585,8 +588,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -727,7 +730,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="addd308e61ebe21032e6769b3a329f243"></a>
+<a class="anchor" id="a1068986c3b66e55b80b9ff6859dc0871"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -735,7 +738,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void Tins::Dot3::src_addr </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d4/d69/classTins_1_1Dot3.html#abbb96ef662de30ae0969083ec0820115">address_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>new_src_mac</em></td><td>)</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -744,7 +747,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Setter for the source hardware address. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_src_mac</td><td>The new source hardware address. </td></tr>
+    <tr><td class="paramname">address</td><td>The new source hardware address. </td></tr>
   </table>
   </dd>
 </dl>
@@ -758,7 +761,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:02 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:55 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

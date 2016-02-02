@@ -134,6 +134,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de8/structTins_1_1ICMPv6_1_1mobile__node__id__type.html">mobile_node_id_type</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d62/structTins_1_1ICMPv6_1_1multicast__address__record.html">multicast_address_record</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de5/structTins_1_1ICMPv6_1_1naack__type.html">naack_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used to store the neighbour advertisement acknowledgement option data.  <a href="../../d8/de5/structTins_1_1ICMPv6_1_1naack__type.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,6 +252,13 @@ typedef std::vector&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign=
 <tr class="memitem:abd1d7fc60cd4397ddec65d20afc4feeb"><td class="memItemLeft" align="right" valign="top">typedef std::pair&lt; uint16_t, <br class="typebreak"/>
 uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#abd1d7fc60cd4397ddec65d20afc4feeb">mtu_type</a></td></tr>
 <tr class="separator:abd1d7fc60cd4397ddec65d20afc4feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a766d0acb4152cad1833edf47be1c2968"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a766d0acb4152cad1833edf47be1c2968"></a>
+typedef std::list<br class="typebreak"/>
+&lt; <a class="el" href="../../d9/d62/structTins_1_1ICMPv6_1_1multicast__address__record.html">multicast_address_record</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>multicast_address_records_list</b></td></tr>
+<tr class="separator:a766d0acb4152cad1833edf47be1c2968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81f3506075b73a8e10b4159ed5ab3e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab81f3506075b73a8e10b4159ed5ab3e0"></a>
+typedef std::list&lt; <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sources_list</b></td></tr>
+<tr class="separator:ab81f3506075b73a8e10b4159ed5ab3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a027b795cdc01bbecb841bffde2fa6651 inherit pub_types_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a027b795cdc01bbecb841bffde2fa6651">endian_type</a> { <b>BE</b>, 
 <b>LE</b>
@@ -259,66 +268,69 @@ uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -360,8 +372,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa3514dd15c5947eb5072301f6eafb17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the router field.  <a href="#aa3514dd15c5947eb5072301f6eafb17f">More...</a><br/></td></tr>
 <tr class="separator:aa3514dd15c5947eb5072301f6eafb17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6c4ce96c23cdabc4ac09d26670180ca"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#aa6c4ce96c23cdabc4ac09d26670180ca">hop_limit</a> () const </td></tr>
-<tr class="memdesc:aa6c4ce96c23cdabc4ac09d26670180ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the hop_limit field.  <a href="#aa6c4ce96c23cdabc4ac09d26670180ca">More...</a><br/></td></tr>
+<tr class="memdesc:aa6c4ce96c23cdabc4ac09d26670180ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the hop limit field.  <a href="#aa6c4ce96c23cdabc4ac09d26670180ca">More...</a><br/></td></tr>
 <tr class="separator:aa6c4ce96c23cdabc4ac09d26670180ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e16e499bf84d6e188f08f503c85fd6a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a8e16e499bf84d6e188f08f503c85fd6a">maximum_response_code</a> () const </td></tr>
+<tr class="memdesc:a8e16e499bf84d6e188f08f503c85fd6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the maximum response code field.  <a href="#a8e16e499bf84d6e188f08f503c85fd6a">More...</a><br/></td></tr>
+<tr class="separator:a8e16e499bf84d6e188f08f503c85fd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cc6298a0210d4aae6d88caa1909798d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a8cc6298a0210d4aae6d88caa1909798d">router_pref</a> () const </td></tr>
 <tr class="memdesc:a8cc6298a0210d4aae6d88caa1909798d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the router_pref field.  <a href="#a8cc6298a0210d4aae6d88caa1909798d">More...</a><br/></td></tr>
 <tr class="separator:a8cc6298a0210d4aae6d88caa1909798d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -389,9 +404,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f587ee13abbe8d0d43e79b8dca61b18"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a6f587ee13abbe8d0d43e79b8dca61b18">dest_addr</a> () const </td></tr>
 <tr class="memdesc:a6f587ee13abbe8d0d43e79b8dca61b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the destination address field.  <a href="#a6f587ee13abbe8d0d43e79b8dca61b18">More...</a><br/></td></tr>
 <tr class="separator:a6f587ee13abbe8d0d43e79b8dca61b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1686f6c8454e910d9f69fa404907967c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a1686f6c8454e910d9f69fa404907967c">multicast_addr</a> () const </td></tr>
+<tr class="memdesc:a1686f6c8454e910d9f69fa404907967c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the multicast address field.  <a href="#a1686f6c8454e910d9f69fa404907967c">More...</a><br/></td></tr>
+<tr class="separator:a1686f6c8454e910d9f69fa404907967c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91b81691b43bdc3a6c17ec549f6f8f02"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#abc89397229de20f3804f9a0dcb4c9bd3">options_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a91b81691b43bdc3a6c17ec549f6f8f02">options</a> () const </td></tr>
 <tr class="memdesc:a91b81691b43bdc3a6c17ec549f6f8f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html" title="Represents an ICMPv6 PDU. ">ICMPv6</a> options.  <a href="#a91b81691b43bdc3a6c17ec549f6f8f02">More...</a><br/></td></tr>
 <tr class="separator:a91b81691b43bdc3a6c17ec549f6f8f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a19feac5a6a177d4d9f2273b1da9b6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a39a19feac5a6a177d4d9f2273b1da9b6">length</a> () const </td></tr>
+<tr class="memdesc:a39a19feac5a6a177d4d9f2273b1da9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the length field.  <a href="#a39a19feac5a6a177d4d9f2273b1da9b6">More...</a><br/></td></tr>
+<tr class="separator:a39a19feac5a6a177d4d9f2273b1da9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c29d7cbe930fb6ba7674da462ee0e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36c29d7cbe930fb6ba7674da462ee0e5"></a>
+const <br class="typebreak"/>
+multicast_address_records_list &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a36c29d7cbe930fb6ba7674da462ee0e5">multicast_address_records</a> () const </td></tr>
+<tr class="memdesc:a36c29d7cbe930fb6ba7674da462ee0e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the multicast address records field. <br/></td></tr>
+<tr class="separator:a36c29d7cbe930fb6ba7674da462ee0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0361efa15da15b2715ce231d3561a6d1"><td class="memItemLeft" align="right" valign="top">const sources_list &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a0361efa15da15b2715ce231d3561a6d1">sources</a> () const </td></tr>
+<tr class="memdesc:a0361efa15da15b2715ce231d3561a6d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the multicast address records field.  <a href="#a0361efa15da15b2715ce231d3561a6d1">More...</a><br/></td></tr>
+<tr class="separator:a0361efa15da15b2715ce231d3561a6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1465fc639ee097d36070f3dc6e8f75c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a1465fc639ee097d36070f3dc6e8f75c8">supress</a> () const </td></tr>
+<tr class="memdesc:a1465fc639ee097d36070f3dc6e8f75c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Suppress Router-Side Processing field.  <a href="#a1465fc639ee097d36070f3dc6e8f75c8">More...</a><br/></td></tr>
+<tr class="separator:a1465fc639ee097d36070f3dc6e8f75c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed7702459802582b9b5486ca563062a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a4ed7702459802582b9b5486ca563062a">qrv</a> () const </td></tr>
+<tr class="memdesc:a4ed7702459802582b9b5486ca563062a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Querier's Robustnes Variable field.  <a href="#a4ed7702459802582b9b5486ca563062a">More...</a><br/></td></tr>
+<tr class="separator:a4ed7702459802582b9b5486ca563062a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec32ff19fe8216e57d374880f8117f3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a2ec32ff19fe8216e57d374880f8117f3">qqic</a> () const </td></tr>
+<tr class="memdesc:a2ec32ff19fe8216e57d374880f8117f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the Querier's Query Interval Code field.  <a href="#a2ec32ff19fe8216e57d374880f8117f3">More...</a><br/></td></tr>
+<tr class="separator:a2ec32ff19fe8216e57d374880f8117f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a598b81e97e689b4fa69c69cd6b3a16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a0a598b81e97e689b4fa69c69cd6b3a16">type</a> (<a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a437e0548f5341674f454361c5d4af150">Types</a> new_type)</td></tr>
 <tr class="memdesc:a0a598b81e97e689b4fa69c69cd6b3a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the type field.  <a href="#a0a598b81e97e689b4fa69c69cd6b3a16">More...</a><br/></td></tr>
 <tr class="separator:a0a598b81e97e689b4fa69c69cd6b3a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -419,6 +457,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aecf3a60df258b5925e963dff1b39a794"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#aecf3a60df258b5925e963dff1b39a794">hop_limit</a> (uint8_t new_hop_limit)</td></tr>
 <tr class="memdesc:aecf3a60df258b5925e963dff1b39a794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the hop_limit field.  <a href="#aecf3a60df258b5925e963dff1b39a794">More...</a><br/></td></tr>
 <tr class="separator:aecf3a60df258b5925e963dff1b39a794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f96468fa486009886032840154cd74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a51f96468fa486009886032840154cd74">maximum_response_code</a> (uint16_t maximum_response_code)</td></tr>
+<tr class="memdesc:a51f96468fa486009886032840154cd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the maximum response code field.  <a href="#a51f96468fa486009886032840154cd74">More...</a><br/></td></tr>
+<tr class="separator:a51f96468fa486009886032840154cd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77e04af5149dc327f2bf795eea95de3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a77e04af5149dc327f2bf795eea95de3f">router_pref</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 2 &gt; new_router_pref)</td></tr>
 <tr class="memdesc:a77e04af5149dc327f2bf795eea95de3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the router_pref field.  <a href="#a77e04af5149dc327f2bf795eea95de3f">More...</a><br/></td></tr>
 <tr class="separator:a77e04af5149dc327f2bf795eea95de3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -440,12 +481,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7743c1f13c38e0df61bc48a454d249ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a7743c1f13c38e0df61bc48a454d249ed">dest_addr</a> (const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a> &amp;new_dest_addr)</td></tr>
 <tr class="memdesc:a7743c1f13c38e0df61bc48a454d249ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the destination address field.  <a href="#a7743c1f13c38e0df61bc48a454d249ed">More...</a><br/></td></tr>
 <tr class="separator:a7743c1f13c38e0df61bc48a454d249ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bab1dcc76fc21f44865c9336b608cec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a1bab1dcc76fc21f44865c9336b608cec">multicast_addr</a> (const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a> &amp;new_multicast_addr)</td></tr>
+<tr class="memdesc:a1bab1dcc76fc21f44865c9336b608cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the multicast address field.  <a href="#a1bab1dcc76fc21f44865c9336b608cec">More...</a><br/></td></tr>
+<tr class="separator:a1bab1dcc76fc21f44865c9336b608cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7097c819246bc98d92eea4ae268fcd78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a7097c819246bc98d92eea4ae268fcd78">reachable_time</a> (uint32_t new_reachable_time)</td></tr>
 <tr class="memdesc:a7097c819246bc98d92eea4ae268fcd78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the reachable_time field.  <a href="#a7097c819246bc98d92eea4ae268fcd78">More...</a><br/></td></tr>
 <tr class="separator:a7097c819246bc98d92eea4ae268fcd78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac374acde89f23624bcf73bda80a84c1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#ac374acde89f23624bcf73bda80a84c1f">retransmit_timer</a> (uint32_t new_retrans_timer)</td></tr>
 <tr class="memdesc:ac374acde89f23624bcf73bda80a84c1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the retransmit_timer field.  <a href="#ac374acde89f23624bcf73bda80a84c1f">More...</a><br/></td></tr>
 <tr class="separator:ac374acde89f23624bcf73bda80a84c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae714142d8a719a12bee80544358bc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#abae714142d8a719a12bee80544358bc1">multicast_address_records</a> (const multicast_address_records_list &amp;records)</td></tr>
+<tr class="memdesc:abae714142d8a719a12bee80544358bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the multicast address records field.  <a href="#abae714142d8a719a12bee80544358bc1">More...</a><br/></td></tr>
+<tr class="separator:abae714142d8a719a12bee80544358bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97ba2fb5f7a7572815ac3bd6fad262bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a97ba2fb5f7a7572815ac3bd6fad262bb">sources</a> (const sources_list &amp;new_sources)</td></tr>
+<tr class="memdesc:a97ba2fb5f7a7572815ac3bd6fad262bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the sources field.  <a href="#a97ba2fb5f7a7572815ac3bd6fad262bb">More...</a><br/></td></tr>
+<tr class="separator:a97ba2fb5f7a7572815ac3bd6fad262bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef42842756435c3e2d607eac09dbde3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#aef42842756435c3e2d607eac09dbde3d">supress</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 1 &gt; value)</td></tr>
+<tr class="memdesc:aef42842756435c3e2d607eac09dbde3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the supress field.  <a href="#aef42842756435c3e2d607eac09dbde3d">More...</a><br/></td></tr>
+<tr class="separator:aef42842756435c3e2d607eac09dbde3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1da95ac27f028b00b916bbba2c3cf2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#ab1da95ac27f028b00b916bbba2c3cf2e">qrv</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 3 &gt; value)</td></tr>
+<tr class="memdesc:ab1da95ac27f028b00b916bbba2c3cf2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the Querier's Robustness Variable field.  <a href="#ab1da95ac27f028b00b916bbba2c3cf2e">More...</a><br/></td></tr>
+<tr class="separator:ab1da95ac27f028b00b916bbba2c3cf2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7638d5424524136ad1a858ab35d25502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a7638d5424524136ad1a858ab35d25502">qqic</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a7638d5424524136ad1a858ab35d25502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for the Querier's Query Interval Code field.  <a href="#a7638d5424524136ad1a858ab35d25502">More...</a><br/></td></tr>
+<tr class="separator:a7638d5424524136ad1a858ab35d25502"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c26dc8f95d8f7f071e2596fc0ac654f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a9c26dc8f95d8f7f071e2596fc0ac654f">pdu_type</a> () const </td></tr>
 <tr class="memdesc:a9c26dc8f95d8f7f071e2596fc0ac654f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s type.  <a href="#a9c26dc8f95d8f7f071e2596fc0ac654f">More...</a><br/></td></tr>
 <tr class="separator:a9c26dc8f95d8f7f071e2596fc0ac654f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -464,8 +523,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e4cba438fd5d591ac0860b10e026c91"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a9e4cba438fd5d591ac0860b10e026c91">header_size</a> () const </td></tr>
 <tr class="memdesc:a9e4cba438fd5d591ac0860b10e026c91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header size.  <a href="#a9e4cba438fd5d591ac0860b10e026c91">More...</a><br/></td></tr>
 <tr class="separator:a9e4cba438fd5d591ac0860b10e026c91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1813888b9d57f28f3fe6a152b79a6a12"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a1813888b9d57f28f3fe6a152b79a6a12">trailer_size</a> () const </td></tr>
+<tr class="memdesc:a1813888b9d57f28f3fe6a152b79a6a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the trailer size.  <a href="#a1813888b9d57f28f3fe6a152b79a6a12">More...</a><br/></td></tr>
+<tr class="separator:a1813888b9d57f28f3fe6a152b79a6a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb465af73f42cc938f90e44ccbabab1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a5bb465af73f42cc938f90e44ccbabab1">extensions</a> () const </td></tr>
+<tr class="memdesc:a5bb465af73f42cc938f90e44ccbabab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the extensions field.  <a href="#a5bb465af73f42cc938f90e44ccbabab1">More...</a><br/></td></tr>
+<tr class="separator:a5bb465af73f42cc938f90e44ccbabab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe65ff51263f350595b439c09d36d685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#abe65ff51263f350595b439c09d36d685">extensions</a> ()</td></tr>
+<tr class="memdesc:abe65ff51263f350595b439c09d36d685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the extensions field.  <a href="#abe65ff51263f350595b439c09d36d685">More...</a><br/></td></tr>
+<tr class="separator:abe65ff51263f350595b439c09d36d685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a166867afadbafb99cfa8beb09e26c53b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a166867afadbafb99cfa8beb09e26c53b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a166867afadbafb99cfa8beb09e26c53b">has_extensions</a> () const </td></tr>
+<tr class="memdesc:a166867afadbafb99cfa8beb09e26c53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this object contains <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a> extensions. <br/></td></tr>
+<tr class="separator:a166867afadbafb99cfa8beb09e26c53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62322ac6a9f99b5f27e5e1f1c542288b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a62322ac6a9f99b5f27e5e1f1c542288b">use_length_field</a> (bool value)</td></tr>
+<tr class="memdesc:a62322ac6a9f99b5f27e5e1f1c542288b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the length field will be set for packets that use it.  <a href="#a62322ac6a9f99b5f27e5e1f1c542288b">More...</a><br/></td></tr>
+<tr class="separator:a62322ac6a9f99b5f27e5e1f1c542288b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af61dea3e5d287a5c9e068629718c528f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#af61dea3e5d287a5c9e068629718c528f">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:af61dea3e5d287a5c9e068629718c528f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#af61dea3e5d287a5c9e068629718c528f">More...</a><br/></td></tr>
+<tr class="memdesc:af61dea3e5d287a5c9e068629718c528f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#af61dea3e5d287a5c9e068629718c528f">More...</a><br/></td></tr>
 <tr class="separator:af61dea3e5d287a5c9e068629718c528f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b3843d467b92702e9df3c1ae85d98b7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a278ee6b9fc8cef0033aa6b01359396ea">option</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a2b3843d467b92702e9df3c1ae85d98b7">search_option</a> (<a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#aae591c715eefb23cb79ad0d52621e58f">OptionTypes</a> <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a3cd7f86d1b7178bfff5381f7aa266e5b">type</a>) const </td></tr>
 <tr class="memdesc:a2b3843d467b92702e9df3c1ae85d98b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for an option that matchs the given flag.  <a href="#a2b3843d467b92702e9df3c1ae85d98b7">More...</a><br/></td></tr>
@@ -624,9 +699,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a08c76956e67052570edb1d59f687a1cf inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a08c76956e67052570edb1d59f687a1cf">~PDU</a> ()</td></tr>
 <tr class="memdesc:a08c76956e67052570edb1d59f687a1cf inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> destructor.  <a href="#a08c76956e67052570edb1d59f687a1cf">More...</a><br/></td></tr>
 <tr class="separator:a08c76956e67052570edb1d59f687a1cf inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5f4ea02961e44b98b25d3f74ad6cb67 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67">trailer_size</a> () const </td></tr>
-<tr class="memdesc:aa5f4ea02961e44b98b25d3f74ad6cb67 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trailer's size.  <a href="#aa5f4ea02961e44b98b25d3f74ad6cb67">More...</a><br/></td></tr>
-<tr class="separator:aa5f4ea02961e44b98b25d3f74ad6cb67 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ca49eefc669dbd5f193f39d2bf2d9be inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a5ca49eefc669dbd5f193f39d2bf2d9be">size</a> () const </td></tr>
 <tr class="memdesc:a5ca49eefc669dbd5f193f39d2bf2d9be inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">The whole chain of <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s size, including this one.  <a href="#a5ca49eefc669dbd5f193f39d2bf2d9be">More...</a><br/></td></tr>
 <tr class="separator:a5ca49eefc669dbd5f193f39d2bf2d9be inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -668,7 +740,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
+<tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -1117,6 +1189,58 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5bb465af73f42cc938f90e44ccbabab1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a>&amp; Tins::ICMPv6::extensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the extensions field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The extensions field </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abe65ff51263f350595b439c09d36d685"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">ICMPExtensionsStructure</a>&amp; Tins::ICMPv6::extensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the extensions field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The extensions field </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac176d6e88a21a54c0e0df9064705a655"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1395,8 +1519,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Getter for the hop_limit field. </p>
-<dl class="section return"><dt>Returns</dt><dd>The stored hop_limit field value. </dd></dl>
+<p>Getter for the hop limit field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored hop limit field value. </dd></dl>
 
 </div>
 </div>
@@ -1513,6 +1637,32 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Getter for the <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> address/prefix option. </p>
 <p>This method will throw an <a class="el" href="../../d6/d07/classTins_1_1option__not__found.html" title="Exception thrown when an option is not found. ">option_not_found</a> exception if the option is not found. </p>
+
+</div>
+</div>
+<a class="anchor" id="a39a19feac5a6a177d4d9f2273b1da9b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Tins::ICMPv6::length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the length field. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the length field value. </dd></dl>
 
 </div>
 </div>
@@ -1682,8 +1832,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check wether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -1693,6 +1843,56 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">Tins::PDU</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e16e499bf84d6e188f08f503c85fd6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Tins::ICMPv6::maximum_response_code </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the maximum response code field. </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored maximum response code field value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a51f96468fa486009886032840154cd74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::maximum_response_code </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>maximum_response_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the maximum response code field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_hop_limit</td><td>The new maximum response code field value. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1777,6 +1977,77 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Getter for the MTU option. </p>
 <p>This method will throw an <a class="el" href="../../d6/d07/classTins_1_1option__not__found.html" title="Exception thrown when an option is not found. ">option_not_found</a> exception if the option is not found. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1686f6c8454e910d9f69fa404907967c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a>&amp; Tins::ICMPv6::multicast_addr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the multicast address field. </p>
+<p>Note that this field is only valid for Multicast Listener Query Message packets </p>
+<dl class="section return"><dt>Returns</dt><dd>The stored multicast address field value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1bab1dcc76fc21f44865c9336b608cec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::multicast_addr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#a13fc784b094f60fe318604e033d79e11">ipaddress_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_multicast_addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the multicast address field. </p>
+<p>Note that this field is only valid if the type is MGM_QUERY</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_multicast_addr</td><td>The new multicast address field value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abae714142d8a719a12bee80544358bc1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::multicast_address_records </td>
+          <td>(</td>
+          <td class="paramtype">const multicast_address_records_list &amp;&#160;</td>
+          <td class="paramname"><em>records</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the multicast address records field. </p>
+<p>This field is only valid if the type of this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is MLD2_REPORT </p>
 
 </div>
 </div>
@@ -2141,6 +2412,96 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Getter for the prefix information option. </p>
 <p>This method will throw an <a class="el" href="../../d6/d07/classTins_1_1option__not__found.html" title="Exception thrown when an option is not found. ">option_not_found</a> exception if the option is not found. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ec32ff19fe8216e57d374880f8117f3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Tins::ICMPv6::qqic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the Querier's Query Interval Code field. </p>
+<p>Note that this field is only valid for Multicast Listener Query Message packets </p>
+
+</div>
+</div>
+<a class="anchor" id="a7638d5424524136ad1a858ab35d25502"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::qqic </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the Querier's Query Interval Code field. </p>
+<p>This field is only valid if the type of this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is MGM_QUERY </p>
+
+</div>
+</div>
+<a class="anchor" id="a4ed7702459802582b9b5486ca563062a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt;3&gt; Tins::ICMPv6::qrv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the Querier's Robustnes Variable field. </p>
+<p>Note that this field is only valid for Multicast Listener Query Message packets </p>
+
+</div>
+</div>
+<a class="anchor" id="ab1da95ac27f028b00b916bbba2c3cf2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::qrv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 3 &gt;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the Querier's Robustness Variable field. </p>
+<p>This field is only valid if the type of this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is MGM_QUERY </p>
 
 </div>
 </div>
@@ -2839,6 +3200,96 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0361efa15da15b2715ce231d3561a6d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sources_list&amp; Tins::ICMPv6::sources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the multicast address records field. </p>
+<p>Note that this field is only valid for Multicast Listener Query Message packets </p>
+
+</div>
+</div>
+<a class="anchor" id="a97ba2fb5f7a7572815ac3bd6fad262bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::sources </td>
+          <td>(</td>
+          <td class="paramtype">const sources_list &amp;&#160;</td>
+          <td class="paramname"><em>new_sources</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the sources field. </p>
+<p>This field is only valid if the type of this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is MGM_QUERY </p>
+
+</div>
+</div>
+<a class="anchor" id="a1465fc639ee097d36070f3dc6e8f75c8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt;1&gt; Tins::ICMPv6::supress </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the Suppress Router-Side Processing field. </p>
+<p>Note that this field is only valid for Multicast Listener Query Message packets </p>
+
+</div>
+</div>
+<a class="anchor" id="aef42842756435c3e2d607eac09dbde3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::supress </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 1 &gt;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setter for the supress field. </p>
+<p>This field is only valid if the type of this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is MGM_QUERY </p>
+
+</div>
+</div>
 <a class="anchor" id="a128d868f137468b8a6af26a4f36336c5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3015,6 +3466,35 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1813888b9d57f28f3fe6a152b79a6a12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Tins::ICMPv6::trailer_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the trailer size. </p>
+<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67" title="Trailer&#39;s size. ">PDU::trailer_size</a>. This size will hold the extensions size</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67">Tins::PDU</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3cd7f86d1b7178bfff5381f7aa266e5b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3065,6 +3545,28 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a62322ac6a9f99b5f27e5e1f1c542288b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::ICMPv6::use_length_field </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets whether the length field will be set for packets that use it. </p>
+<p>As defined in RFC 4884, some <a class="el" href="../../de/d91/classTins_1_1ICMP.html" title="Class that represents an ICMP PDU. ">ICMP</a> packet types can have a length field. This method controlers whether the length field is set or not.</p>
+<p>Note that this only indicates that the packet should use this field. The actual value will be set during the packet's serialization.</p>
+<p>Note that, in order to br RFC compliant, if the size of the encapsulated <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is greater than 128, the length field will always be set, regardless of whether this method was called or not.</p>
+<p>/param value true iff the length field should be set appropriately </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../dd/d46/icmpv6_8h_source.html">icmpv6.h</a></li>
 <li>/home/matias/Projects/libtins/code/src/icmpv6.cpp</li>
@@ -3072,7 +3574,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

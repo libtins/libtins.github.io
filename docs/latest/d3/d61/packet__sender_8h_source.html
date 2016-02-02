@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2014, Matias Fontanini</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2016, Matias Fontanini</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
@@ -139,158 +139,151 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">struct </span>sockaddr;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span>Tins {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">class </span>PDU;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d3/dea/classTins_1_1PacketSender.html">  116</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">  121</a></span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint32_t <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">DEFAULT_TIMEOUT</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    </div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">  126</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            ETHER_SOCKET,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            IP_TCP_SOCKET,</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            IP_UDP_SOCKET,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            IP_RAW_SOCKET,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            ARP_SOCKET,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            ICMP_SOCKET,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            IPV6_SOCKET,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            SOCKETS_END</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        };</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>(<span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;iface = <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>(), </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;          uint32_t recv_timeout = <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">DEFAULT_TIMEOUT</a>, uint32_t usec = 0);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">        #if TINS_IS_CXX11</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;&amp;rhs) TINS_NOEXCEPT {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                *<span class="keyword">this</span> = std::move(rhs);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>&amp; operator=(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a> &amp;&amp;rhs) TINS_NOEXCEPT {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                _sockets = std::move(rhs._sockets);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                rhs._sockets = std::vector&lt;int&gt;(SOCKETS_END, INVALID_RAW_SOCKET);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">                #ifndef _WIN32</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                    #if defined(BSD) || defined(__FreeBSD_kernel__)</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor"></span>                    _ether_socket = std::move(rhs._ether_socket);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">                    #else</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor"></span>                    _ether_socket = rhs._ether_socket;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    rhs._ether_socket = INVALID_RAW_SOCKET;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">                    #endif</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                #endif</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor"></span>                _types = rhs._types; <span class="comment">// no move</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                _timeout = rhs._timeout;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                _timeout_usec = rhs._timeout_usec;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                default_iface = rhs.default_iface;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">        #endif</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#ac2a9a1a43e134b3cbae87f581b7457b6">~PacketSender</a>();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">        #if !defined(_WIN32) || defined(HAVE_PACKET_SENDER_PCAP_SENDPACKET)</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a34c69468f27dda0004f4cc289ff9aee6">open_l2_socket</a>(<span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">        #endif // !_WIN32 || defined(HAVE_PACKET_SENDER_PCAP_SENDPACKET)</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a03af8f661221117a123104ae17ac24a2">open_l3_socket</a>(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> type);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a3231cbb6383c803dab6445a8a69e609f">close_socket</a>(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> type, <span class="keyword">const</span> NetworkInterface &amp;iface = NetworkInterface());</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a7e0940c6f8036923a3ab19b184a26d82">default_interface</a>(<span class="keyword">const</span> NetworkInterface &amp;iface);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keyword">const</span> NetworkInterface&amp; <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a7e0940c6f8036923a3ab19b184a26d82">default_interface</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9">send</a>(PDU &amp;pdu);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9">send</a>(PDU &amp;pdu, <span class="keyword">const</span> NetworkInterface &amp;iface);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        PDU *<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371">send_recv</a>(PDU &amp;pdu);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        PDU *<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371">send_recv</a>(PDU &amp;pdu, <span class="keyword">const</span> NetworkInterface &amp;iface);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">        #ifndef _WIN32</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        PDU *<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a5fc07f0fb64d3b5f2bfbc4b4500ee589">recv_l2</a>(PDU &amp;pdu, <span class="keyword">struct</span> sockaddr *link_addr, uint32_t len_addr,</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;          <span class="keyword">const</span> NetworkInterface &amp;iface = NetworkInterface());</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="preprocessor">        #endif // _WIN32</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">        #if !defined(_WIN32) || defined(HAVE_PACKET_SENDER_PCAP_SENDPACKET)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">class </span>PDU;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d3/dea/classTins_1_1PacketSender.html">  117</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">  122</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">DEFAULT_TIMEOUT</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">  127</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        ETHER_SOCKET,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        IP_TCP_SOCKET,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        IP_UDP_SOCKET,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        IP_RAW_SOCKET,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        ARP_SOCKET,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ICMP_SOCKET,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        IPV6_SOCKET,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        SOCKETS_END</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    };</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a>(<span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>&amp; iface = <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a>(),</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                 uint32_t recv_timeout = DEFAULT_TIMEOUT,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                 uint32_t usec = 0);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">    #if TINS_IS_CXX11</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a>(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;&amp;rhs) TINS_NOEXCEPT {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            *<span class="keyword">this</span> = std::move(rhs);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        PacketSender&amp; operator=(PacketSender &amp;&amp;rhs) TINS_NOEXCEPT {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            sockets_ = std::move(rhs.sockets_);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            rhs.sockets_ = std::vector&lt;int&gt;(SOCKETS_END, INVALID_RAW_SOCKET);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">            #ifndef _WIN32</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                #if defined(BSD) || defined(__FreeBSD_kernel__)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor"></span>                ether_socket_ = std::move(rhs.ether_socket_);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">                #else</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor"></span>                ether_socket_ = rhs.ether_socket_;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                rhs.ether_socket_ = INVALID_RAW_SOCKET;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">                #endif</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor"></span><span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor"></span>            types_ = rhs.types_; <span class="comment">// no move</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            _timeout = rhs._timeout;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            timeout_usec_ = rhs.timeout_usec_;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            default_iface_ = rhs.default_iface_;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">return</span>* <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor"></span>    </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    ~PacketSender();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">    #if !defined(_WIN32) || defined(HAVE_PACKET_SENDER_PCAP_SENDPACKET)</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">void</span> open_l2_socket(<span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">    #endif // !_WIN32 || defined(HAVE_PACKET_SENDER_PCAP_SENDPACKET)</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> open_l3_socket(SocketType type);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">void</span> close_socket(SocketType type, <span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">void</span> default_interface(<span class="keyword">const</span> NetworkInterface&amp; iface);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">const</span> NetworkInterface&amp; default_interface() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">void</span> send(PDU&amp; pdu);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">void</span> send(PDU&amp; pdu, <span class="keyword">const</span> NetworkInterface&amp; iface);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    PDU* send_recv(PDU&amp; pdu);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    PDU* send_recv(PDU&amp; pdu, <span class="keyword">const</span> NetworkInterface&amp; iface);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">    #ifndef _WIN32</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    PDU* recv_l2(PDU&amp; pdu, <span class="keyword">struct</span> sockaddr* link_addr, uint32_t len_addr,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;      <span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">    #endif // _WIN32</span></div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#af49c316495445bb3e70fa171b8f1660b">send_l2</a>(PDU &amp;pdu, <span class="keyword">struct</span> sockaddr* link_addr, uint32_t len_addr, </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;          <span class="keyword">const</span> NetworkInterface &amp;iface = NetworkInterface());</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="preprocessor">        #endif // !_WIN32 || HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        PDU *<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a19d93b11339d7984a0866937f443d2f4">recv_l3</a>(PDU &amp;pdu, <span class="keyword">struct</span> sockaddr *link_addr, uint32_t len_addr, <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> type);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a4e21c97308094e26bf001cc379e4cc4e">send_l3</a>(PDU &amp;pdu, <span class="keyword">struct</span> sockaddr *link_addr, uint32_t len_addr, <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> type);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> INVALID_RAW_SOCKET;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keyword">typedef</span> std::map&lt;SocketType, int&gt; SocketTypeMap;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">    #if !defined(_WIN32) || defined(HAVE_PACKET_SENDER_PCAP_SENDPACKET)</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">void</span> send_l2(PDU&amp; pdu, <span class="keyword">struct</span> sockaddr* link_addr, uint32_t len_addr, </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;      <span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="preprocessor">    #endif // !_WIN32 || HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    PDU* recv_l3(PDU&amp; pdu, <span class="keyword">struct</span> sockaddr* link_addr, uint32_t len_addr, SocketType type);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">void</span> send_l3(PDU&amp; pdu, <span class="keyword">struct</span> sockaddr* link_addr, uint32_t len_addr, SocketType type);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> INVALID_RAW_SOCKET;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>(<span class="keyword">const</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>&amp;);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">PacketSender</a>&amp;);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordtype">int</span> find_type(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">SocketType</a> type);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordtype">int</span> timeval_subtract (<span class="keyword">struct</span> timeval *result, <span class="keyword">struct</span> timeval *x, <span class="keyword">struct</span> timeval *y);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">        #ifndef _WIN32</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor"></span>            <span class="keywordtype">bool</span> ether_socket_initialized(<span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface()) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordtype">int</span> get_ether_socket(<span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor">        #endif</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor"></span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9">send</a>(PDU &amp;pdu, <span class="keyword">const</span> NetworkInterface &amp;iface) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keyword">static_cast&lt;</span>T&amp;<span class="keyword">&gt;</span>(pdu).<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9">send</a>(*<span class="keyword">this</span>, iface);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        }</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">        #ifdef HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor"></span>            pcap_t* make_pcap_handle(<span class="keyword">const</span> NetworkInterface&amp; iface) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">        #endif // HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        PDU *recv_match_loop(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; sockets, PDU &amp;pdu, <span class="keyword">struct</span> sockaddr* link_addr, </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            uint32_t addrlen);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        std::vector&lt;int&gt; _sockets;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">        #ifndef _WIN32</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor"></span><span class="preprocessor">            #if defined(BSD) || defined(__FreeBSD_kernel__)</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;<span class="preprocessor"></span>            <span class="keyword">typedef</span> std::map&lt;uint32_t, int&gt; BSDEtherSockets;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            BSDEtherSockets _ether_socket;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">            #else</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="preprocessor"></span>            <span class="keywordtype">int</span> _ether_socket;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor">            #endif</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #endif</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor"></span>        SocketTypeMap _types;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        uint32_t _timeout, _timeout_usec;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        NetworkInterface default_iface;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">// In BSD we need to store the buffer size, retrieved using BIOCGBLEN</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor">        #if defined(BSD) || defined(__FreeBSD_kernel__)</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor"></span>        <span class="keywordtype">int</span> buffer_size;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;<span class="preprocessor">        #endif // BSD</span></div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #ifdef HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor"></span>            <span class="keyword">typedef</span> std::map&lt;NetworkInterface, pcap_t*&gt; PcapHandleMap; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            PcapHandleMap pcap_handles;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor">        #endif // HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="preprocessor"></span>    };</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;}</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor">#endif // TINS_PACKET_SENDER_H</span></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a1d36b09517550b9d7d7d650d5c2944c9"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">Tins::PacketSender::SocketType</a></div><div class="ttdeci">SocketType</div><div class="ttdef"><b>Definition:</b> packet_sender.h:126</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a19d93b11339d7984a0866937f443d2f4"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a19d93b11339d7984a0866937f443d2f4">Tins::PacketSender::recv_l3</a></div><div class="ttdeci">PDU * recv_l3(PDU &amp;pdu, struct sockaddr *link_addr, uint32_t len_addr, SocketType type)</div><div class="ttdoc">Receives a layer 3 PDU response to a previously sent PDU. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:349</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:116</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a14fc49e9ce15100fe398d6e7b1d81acd"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">Tins::PacketSender::DEFAULT_TIMEOUT</a></div><div class="ttdeci">static const uint32_t DEFAULT_TIMEOUT</div><div class="ttdef"><b>Definition:</b> packet_sender.h:121</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a03af8f661221117a123104ae17ac24a2"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a03af8f661221117a123104ae17ac24a2">Tins::PacketSender::open_l3_socket</a></div><div class="ttdeci">void open_l3_socket(SocketType type)</div><div class="ttdoc">Opens a layer 3 socket, using the corresponding protocol for the given flag. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:228</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a6185c19fe02605ee547930eff4c17009"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a6185c19fe02605ee547930eff4c17009">Tins::PacketSender::PacketSender</a></div><div class="ttdeci">PacketSender(const NetworkInterface &amp;iface=NetworkInterface(), uint32_t recv_timeout=DEFAULT_TIMEOUT, uint32_t usec=0)</div><div class="ttdoc">Constructor for PacketSender objects. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:91</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_af49c316495445bb3e70fa171b8f1660b"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#af49c316495445bb3e70fa171b8f1660b">Tins::PacketSender::send_l2</a></div><div class="ttdeci">void send_l2(PDU &amp;pdu, struct sockaddr *link_addr, uint32_t len_addr, const NetworkInterface &amp;iface=NetworkInterface())</div><div class="ttdoc">Sends a level 2 PDU. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:313</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a4e21c97308094e26bf001cc379e4cc4e"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a4e21c97308094e26bf001cc379e4cc4e">Tins::PacketSender::send_l3</a></div><div class="ttdeci">void send_l3(PDU &amp;pdu, struct sockaddr *link_addr, uint32_t len_addr, SocketType type)</div><div class="ttdoc">Sends a level 3 PDU. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:362</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a7e0940c6f8036923a3ab19b184a26d82"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a7e0940c6f8036923a3ab19b184a26d82">Tins::PacketSender::default_interface</a></div><div class="ttdeci">const NetworkInterface &amp; default_interface() const </div><div class="ttdoc">Gets the default interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:135</div></div>
-<div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:44</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a34c69468f27dda0004f4cc289ff9aee6"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a34c69468f27dda0004f4cc289ff9aee6">Tins::PacketSender::open_l2_socket</a></div><div class="ttdeci">void open_l2_socket(const NetworkInterface &amp;iface=NetworkInterface())</div><div class="ttdoc">Opens a layer 2 socket. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:186</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_af043a77941dfdb5deb3ed34b40d72371"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#af043a77941dfdb5deb3ed34b40d72371">Tins::PacketSender::send_recv</a></div><div class="ttdeci">PDU * send_recv(PDU &amp;pdu)</div><div class="ttdoc">Sends a PDU and waits for its response. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:298</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_ab1f3320837295338fb441da8406bfbc9"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#ab1f3320837295338fb441da8406bfbc9">Tins::PacketSender::send</a></div><div class="ttdeci">void send(PDU &amp;pdu)</div><div class="ttdoc">Sends a PDU. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:280</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a5fc07f0fb64d3b5f2bfbc4b4500ee589"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a5fc07f0fb64d3b5f2bfbc4b4500ee589">Tins::PacketSender::recv_l2</a></div><div class="ttdeci">PDU * recv_l2(PDU &amp;pdu, struct sockaddr *link_addr, uint32_t len_addr, const NetworkInterface &amp;iface=NetworkInterface())</div><div class="ttdoc">Receives a layer 2 PDU response to a previously sent PDU. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:340</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_ac2a9a1a43e134b3cbae87f581b7457b6"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#ac2a9a1a43e134b3cbae87f581b7457b6">Tins::PacketSender::~PacketSender</a></div><div class="ttdeci">~PacketSender()</div><div class="ttdoc">PacketSender destructor. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:106</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html_a3231cbb6383c803dab6445a8a69e609f"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a3231cbb6383c803dab6445a8a69e609f">Tins::PacketSender::close_socket</a></div><div class="ttdeci">void close_socket(SocketType type, const NetworkInterface &amp;iface=NetworkInterface())</div><div class="ttdoc">Closes the socket associated with the given flag. </div><div class="ttdef"><b>Definition:</b> packet_sender.cpp:250</div></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keyword">typedef</span> std::map&lt;SocketType, int&gt; SocketTypeMap;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    PacketSender(<span class="keyword">const</span> PacketSender&amp;);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    PacketSender&amp; operator=(<span class="keyword">const</span> PacketSender&amp;);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordtype">int</span> find_type(SocketType type);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordtype">int</span> timeval_subtract (<span class="keyword">struct</span> timeval* result, <span class="keyword">struct</span> timeval* x, <span class="keyword">struct</span> timeval* y);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="preprocessor">    #ifndef _WIN32</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor"></span>        <span class="keywordtype">bool</span> ether_socket_initialized(<span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface()) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordtype">int</span> getether_socket_(<span class="keyword">const</span> NetworkInterface&amp; iface = NetworkInterface());</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordtype">void</span> send(PDU&amp; pdu, <span class="keyword">const</span> NetworkInterface&amp; iface) {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">static_cast&lt;</span>T&amp;<span class="keyword">&gt;</span>(pdu).send(*<span class="keyword">this</span>, iface);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">    #ifdef HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor"></span>        pcap_t* make_pcap_handle(<span class="keyword">const</span> NetworkInterface&amp; iface) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;<span class="preprocessor">    #endif // HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="preprocessor"></span>    </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    PDU* recv_match_loop(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; sockets, </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                         PDU&amp; pdu,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                         <span class="keyword">struct</span> sockaddr* link_addr, </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                         uint32_t addrlen);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    std::vector&lt;int&gt; sockets_;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;<span class="preprocessor">    #ifndef _WIN32</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="preprocessor"></span><span class="preprocessor">        #if defined(BSD) || defined(__FreeBSD_kernel__)</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="preprocessor"></span>        <span class="keyword">typedef</span> std::map&lt;uint32_t, int&gt; BSDEtherSockets;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        BSDEtherSockets ether_socket_;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor">        #else</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor"></span>        <span class="keywordtype">int</span> ether_socket_;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor"></span>    SocketTypeMap types_;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    uint32_t _timeout, timeout_usec_;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    NetworkInterface default_iface_;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">// In BSD we need to store the buffer size, retrieved using BIOCGBLEN</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">    #if defined(BSD) || defined(__FreeBSD_kernel__)</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">int</span> buffer_size_;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor">    #endif // BSD</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #ifdef HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="preprocessor"></span>        <span class="keyword">typedef</span> std::map&lt;NetworkInterface, pcap_t*&gt; PcapHandleMap; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        PcapHandleMap pcap_handles_;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="preprocessor">    #endif // HAVE_PACKET_SENDER_PCAP_SENDPACKET</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor"></span>};</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">#endif // TINS_PACKET_SENDER_H</span></div>
+<div class="ttc" id="classTins_1_1PacketSender_html_a1d36b09517550b9d7d7d650d5c2944c9"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9">Tins::PacketSender::SocketType</a></div><div class="ttdeci">SocketType</div><div class="ttdef"><b>Definition:</b> packet_sender.h:127</div></div>
+<div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:117</div></div>
+<div class="ttc" id="classTins_1_1PacketSender_html_a14fc49e9ce15100fe398d6e7b1d81acd"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html#a14fc49e9ce15100fe398d6e7b1d81acd">Tins::PacketSender::DEFAULT_TIMEOUT</a></div><div class="ttdeci">static const uint32_t DEFAULT_TIMEOUT</div><div class="ttdef"><b>Definition:</b> packet_sender.h:122</div></div>
+<div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

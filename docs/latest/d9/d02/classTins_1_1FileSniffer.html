@@ -126,7 +126,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 <tr class="memitem:a86017793ebf553aeacc2797eb018bc61 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d36/namespaceTins.html#a12d080ed74cdd447255b07b3fac38be4">PtrPacket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a86017793ebf553aeacc2797eb018bc61">next_packet</a> ()</td></tr>
 <tr class="memdesc:a86017793ebf553aeacc2797eb018bc61 inherit pub_methods_classTins_1_1BaseSniffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiles a filter and uses it to capture one packet.  <a href="#a86017793ebf553aeacc2797eb018bc61">More...</a><br/></td></tr>
 <tr class="separator:a86017793ebf553aeacc2797eb018bc61 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a724fc3b740bc9d91aeaff4cfb5244868 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memTemplParams" colspan="2">template&lt;class Functor &gt; </td></tr>
+<tr class="memitem:a724fc3b740bc9d91aeaff4cfb5244868 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
 <tr class="memitem:a724fc3b740bc9d91aeaff4cfb5244868 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a724fc3b740bc9d91aeaff4cfb5244868">sniff_loop</a> (Functor function, uint32_t max_packets=0)</td></tr>
 <tr class="memdesc:a724fc3b740bc9d91aeaff4cfb5244868 inherit pub_methods_classTins_1_1BaseSniffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a sniffing loop, using a callback functor for every sniffed packet.  <a href="#a724fc3b740bc9d91aeaff4cfb5244868">More...</a><br/></td></tr>
 <tr class="separator:a724fc3b740bc9d91aeaff4cfb5244868 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +140,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=".
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a687d31d38fd21dbc1ec70ed1ac827752">get_fd</a> ()</td></tr>
 <tr class="memdesc:a687d31d38fd21dbc1ec70ed1ac827752 inherit pub_methods_classTins_1_1BaseSniffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file descriptor associated with the sniffer. <br/></td></tr>
 <tr class="separator:a687d31d38fd21dbc1ec70ed1ac827752 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8ecc3768daf2eada227ea0a0dfa2a2 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#afe8ecc3768daf2eada227ea0a0dfa2a2">set_direction</a> (pcap_direction_t d)</td></tr>
+<tr class="memdesc:afe8ecc3768daf2eada227ea0a0dfa2a2 inherit pub_methods_classTins_1_1BaseSniffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets direction for the sniffer.  <a href="#afe8ecc3768daf2eada227ea0a0dfa2a2">More...</a><br/></td></tr>
+<tr class="separator:afe8ecc3768daf2eada227ea0a0dfa2a2 inherit pub_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fa2700184823dd590fadb5efe82e2ef inherit pub_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a0fa2700184823dd590fadb5efe82e2ef">set_timeout</a> (int ms)</td></tr>
 <tr class="memdesc:a0fa2700184823dd590fadb5efe82e2ef inherit pub_methods_classTins_1_1BaseSniffer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the read timeout for this sniffer.  <a href="#a0fa2700184823dd590fadb5efe82e2ef">More...</a><br/></td></tr>
 <tr class="separator:a0fa2700184823dd590fadb5efe82e2ef inherit pub_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,9 +169,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classTins_1_1BaseSniffer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classTins_1_1BaseSniffer')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html">Tins::BaseSniffer</a></td></tr>
 <tr class="memitem:a250c69c5ebda1f9d1ff5e15d934bc885 inherit pro_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a250c69c5ebda1f9d1ff5e15d934bc885">BaseSniffer</a> ()</td></tr>
 <tr class="separator:a250c69c5ebda1f9d1ff5e15d934bc885 inherit pro_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd9a692d26c73886b9d5d56826117425 inherit pro_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd9a692d26c73886b9d5d56826117425"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_pcap_handle</b> (pcap_t *const pcap_handle)</td></tr>
-<tr class="separator:acd9a692d26c73886b9d5d56826117425 inherit pro_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec44d3fb266b5a75a028e6f04643b86b inherit pro_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec44d3fb266b5a75a028e6f04643b86b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_pcap_handle</b> (pcap_t *pcap_handle)</td></tr>
+<tr class="separator:aec44d3fb266b5a75a028e6f04643b86b inherit pro_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae18f7a6607b89bc7ab0d7286739235b1 inherit pro_methods_classTins_1_1BaseSniffer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae18f7a6607b89bc7ab0d7286739235b1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_if_mask</b> (bpf_u_int32 if_mask)</td></tr>
 <tr class="separator:ae18f7a6607b89bc7ab0d7286739235b1 inherit pro_methods_classTins_1_1BaseSniffer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -240,7 +243,7 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 </div><div class="memdoc">
 
 <p>Constructs an instance of <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html" title="Reads pcap files and interprets the packets in it. ">FileSniffer</a>. </p>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>Use the constructor that takes a <a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html" title="Represents the configuration of a BaseSniffer object. ">SnifferConfiguration</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000013">Deprecated:</a></b></dt><dd>Use the constructor that takes a <a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html" title="Represents the configuration of a BaseSniffer object. ">SnifferConfiguration</a> instead.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td>The pcap file which will be parsed. </td></tr>
@@ -251,14 +254,13 @@ bpf_u_int32&#160;</td><td class="memItemRight" valign="bottom"><b>get_if_mask</b
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../dc/db3/sniffer_8h_source.html">sniffer.h</a></li>
-<li>/home/matias/Projects/libtins/code/src/sniffer.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

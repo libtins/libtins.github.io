@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2138027f7fb9a7b0487d6ce8c8244baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10b2f3d331e8c346fafb2299adda2110"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html#a10b2f3d331e8c346fafb2299adda2110">set_timeout</a> (unsigned timeout)</td></tr>
 <tr class="separator:a10b2f3d331e8c346fafb2299adda2110"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90881591c062747d092ace9cc9fa9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html#aa90881591c062747d092ace9cc9fa9a2">set_direction</a> (pcap_direction_t direction)</td></tr>
+<tr class="separator:aa90881591c062747d092ace9cc9fa9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74667eb044fe7cba222ee81c629e8dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classTins_1_1SnifferConfiguration.html#a74667eb044fe7cba222ee81c629e8dee">set_immediate_mode</a> (bool enabled)</td></tr>
 <tr class="separator:a74667eb044fe7cba222ee81c629e8dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -142,7 +144,8 @@ Protected Types</h2></td></tr>
 <b>RFMON</b> = 4, 
 <b>PACKET_FILTER</b> = 8, 
 <br/>
-&#160;&#160;<b>IMMEDIATE_MODE</b> = 16
+&#160;&#160;<b>IMMEDIATE_MODE</b> = 16, 
+<b>DIRECTION</b> = 16
 <br/>
  }</td></tr>
 <tr class="separator:a7b299b778288bf0db3b99a5022526b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,30 +164,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>configure_sniffer_pos
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aa9cde229154d71208290ae154a070b85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9cde229154d71208290ae154a070b85"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>_flags</b></td></tr>
-<tr class="separator:aa9cde229154d71208290ae154a070b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a270122d65c6e8ef3cbc7fd5d821566c3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a270122d65c6e8ef3cbc7fd5d821566c3"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_snap_len</b></td></tr>
-<tr class="separator:a270122d65c6e8ef3cbc7fd5d821566c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3454cfa733559361f45ab932270d71a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3454cfa733559361f45ab932270d71a"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_buffer_size</b></td></tr>
-<tr class="separator:af3454cfa733559361f45ab932270d71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3af137fed0cf881eacc0ff536f195deb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3af137fed0cf881eacc0ff536f195deb"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_filter</b></td></tr>
-<tr class="separator:a3af137fed0cf881eacc0ff536f195deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac29d0f1e574b47cb0bbf983c6ea21ba6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac29d0f1e574b47cb0bbf983c6ea21ba6"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>_timeout</b></td></tr>
-<tr class="separator:ac29d0f1e574b47cb0bbf983c6ea21ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6352697b603f78ab7eeafc74c25f8453"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6352697b603f78ab7eeafc74c25f8453"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_promisc</b></td></tr>
-<tr class="separator:a6352697b603f78ab7eeafc74c25f8453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0b2f4ffab699087745f54f8de1e7f18"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0b2f4ffab699087745f54f8de1e7f18"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_rfmon</b></td></tr>
-<tr class="separator:ae0b2f4ffab699087745f54f8de1e7f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1182b4c8b4857b0dd41652400eecadd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1182b4c8b4857b0dd41652400eecadd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_immediate_mode</b></td></tr>
-<tr class="separator:ac1182b4c8b4857b0dd41652400eecadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28167f5b4420cc33d0779940d0dedede"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28167f5b4420cc33d0779940d0dedede"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>flags_</b></td></tr>
+<tr class="separator:a28167f5b4420cc33d0779940d0dedede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5927e69453fe9d073fe2407a47017e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5927e69453fe9d073fe2407a47017e4"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>snap_len_</b></td></tr>
+<tr class="separator:ad5927e69453fe9d073fe2407a47017e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb905fa88e28971c44115085ebd9eb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fb905fa88e28971c44115085ebd9eb2"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_size_</b></td></tr>
+<tr class="separator:a9fb905fa88e28971c44115085ebd9eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966b4d8faa38fcc96559739a8224034a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a966b4d8faa38fcc96559739a8224034a"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>filter_</b></td></tr>
+<tr class="separator:a966b4d8faa38fcc96559739a8224034a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c98f3f7b72c4da4045448c11093f4a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c98f3f7b72c4da4045448c11093f4a1"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>timeout_</b></td></tr>
+<tr class="separator:a1c98f3f7b72c4da4045448c11093f4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb0f5c926e4c719686951c178055919"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdb0f5c926e4c719686951c178055919"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>promisc_</b></td></tr>
+<tr class="separator:afdb0f5c926e4c719686951c178055919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c292d6c98fa73bac823a2fadf3e6d71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c292d6c98fa73bac823a2fadf3e6d71"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>rfmon_</b></td></tr>
+<tr class="separator:a9c292d6c98fa73bac823a2fadf3e6d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7a6b22abd7e0bf5d2cade2e55658692"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7a6b22abd7e0bf5d2cade2e55658692"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>immediate_mode_</b></td></tr>
+<tr class="separator:ad7a6b22abd7e0bf5d2cade2e55658692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8070a1cea15219d3ac4ca6675f43895c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8070a1cea15219d3ac4ca6675f43895c"></a>
+pcap_direction_t&#160;</td><td class="memItemRight" valign="bottom"><b>direction_</b></td></tr>
+<tr class="separator:a8070a1cea15219d3ac4ca6675f43895c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -248,6 +254,29 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileSniffer</b></td>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buffer_size</td><td>The buffer size to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa90881591c062747d092ace9cc9fa9a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::SnifferConfiguration::set_direction </td>
+          <td>(</td>
+          <td class="paramtype">pcap_direction_t&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the direction option. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>The direction to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -446,7 +475,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>FileSniffer</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:03 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

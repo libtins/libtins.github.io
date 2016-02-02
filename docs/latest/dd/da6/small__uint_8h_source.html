@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2014, Matias Fontanini</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2016, Matias Fontanini</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d9/d04/classTins_1_1value__too__large.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d04/classTins_1_1value__too__large.html">value_too_large</a> : <span class="keyword">public</span> std::exception {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *what() <span class="keyword">const</span> <span class="keywordflow">throw</span>() {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* what() <span class="keyword">const</span> <span class="keywordflow">throw</span>() {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Value is too large&quot;</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
@@ -179,20 +179,22 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../d0/df2/classTins_1_1small__uint.html#ad97cfcc50d740a4b6d704853bdc774b5">  104</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#ad97cfcc50d740a4b6d704853bdc774b5">small_uint</a>() : value() {}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    </div>
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../d0/df2/classTins_1_1small__uint.html#afe287764cf85a6d044b9880e788728f6">  114</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#afe287764cf85a6d044b9880e788728f6">small_uint</a>(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html#addd463f92fdeacf5b256771f0903a8d2">repr_type</a> val) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span>(val &gt; <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#a27e7b8d8d61a5b0a22a22f64a18e8a57">max_value</a>)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (val &gt; <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#a27e7b8d8d61a5b0a22a22f64a18e8a57">max_value</a>) {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../d9/d04/classTins_1_1value__too__large.html">value_too_large</a>();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        value = val;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d0/df2/classTins_1_1small__uint.html#acf3db1fdd726021a7ae86a16b6fd6cfb">  123</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#addd463f92fdeacf5b256771f0903a8d2">repr_type</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#addd463f92fdeacf5b256771f0903a8d2">repr_type</a> value;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;} <span class="comment">// namespace Tins</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif // TINS_SMALL_UINT_H</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        value = val;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d0/df2/classTins_1_1small__uint.html#acf3db1fdd726021a7ae86a16b6fd6cfb">  124</a></span>&#160;    <span class="keyword">operator</span> <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#addd463f92fdeacf5b256771f0903a8d2">repr_type</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html#addd463f92fdeacf5b256771f0903a8d2">repr_type</a> value;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif // TINS_SMALL_UINT_H</span></div>
 <div class="ttc" id="classTins_1_1value__too__large_html"><div class="ttname"><a href="../../d9/d04/classTins_1_1value__too__large.html">Tins::value_too_large</a></div><div class="ttdef"><b>Definition:</b> small_uint.h:37</div></div>
 <div class="ttc" id="classTins_1_1small__uint_html_ad97cfcc50d740a4b6d704853bdc774b5"><div class="ttname"><a href="../../d0/df2/classTins_1_1small__uint.html#ad97cfcc50d740a4b6d704853bdc774b5">Tins::small_uint::small_uint</a></div><div class="ttdeci">small_uint()</div><div class="ttdef"><b>Definition:</b> small_uint.h:104</div></div>
 <div class="ttc" id="classTins_1_1small__uint_html"><div class="ttname"><a href="../../d0/df2/classTins_1_1small__uint.html">Tins::small_uint</a></div><div class="ttdoc">Represents a field of n bits. </div><div class="ttdef"><b>Definition:</b> small_uint.h:52</div></div>
@@ -202,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:01 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:54 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -133,66 +133,69 @@ Public Types</h2></td></tr>
 &#160;&#160;<b>RAW</b>, 
 <b>ETHERNET_II</b>, 
 <b>IEEE802_3</b>, 
-<b>RADIOTAP</b>, 
+<b>DOT3</b> = IEEE802_3, 
 <br/>
-&#160;&#160;<b>DOT11</b>, 
+&#160;&#160;<b>RADIOTAP</b>, 
+<b>DOT11</b>, 
 <b>DOT11_ACK</b>, 
 <b>DOT11_ASSOC_REQ</b>, 
-<b>DOT11_ASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_AUTH</b>, 
+&#160;&#160;<b>DOT11_ASSOC_RESP</b>, 
+<b>DOT11_AUTH</b>, 
 <b>DOT11_BEACON</b>, 
 <b>DOT11_BLOCK_ACK</b>, 
-<b>DOT11_BLOCK_ACK_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_CF_END</b>, 
+&#160;&#160;<b>DOT11_BLOCK_ACK_REQ</b>, 
+<b>DOT11_CF_END</b>, 
 <b>DOT11_DATA</b>, 
 <b>DOT11_CONTROL</b>, 
-<b>DOT11_DEAUTH</b>, 
 <br/>
-&#160;&#160;<b>DOT11_DIASSOC</b>, 
+&#160;&#160;<b>DOT11_DEAUTH</b>, 
+<b>DOT11_DIASSOC</b>, 
 <b>DOT11_END_CF_ACK</b>, 
 <b>DOT11_MANAGEMENT</b>, 
-<b>DOT11_PROBE_REQ</b>, 
 <br/>
-&#160;&#160;<b>DOT11_PROBE_RESP</b>, 
+&#160;&#160;<b>DOT11_PROBE_REQ</b>, 
+<b>DOT11_PROBE_RESP</b>, 
 <b>DOT11_PS_POLL</b>, 
 <b>DOT11_REASSOC_REQ</b>, 
-<b>DOT11_REASSOC_RESP</b>, 
 <br/>
-&#160;&#160;<b>DOT11_RTS</b>, 
+&#160;&#160;<b>DOT11_REASSOC_RESP</b>, 
+<b>DOT11_RTS</b>, 
 <b>DOT11_QOS_DATA</b>, 
 <b>LLC</b>, 
-<b>SNAP</b>, 
 <br/>
-&#160;&#160;<b>IP</b>, 
+&#160;&#160;<b>SNAP</b>, 
+<b>IP</b>, 
 <b>ARP</b>, 
 <b>TCP</b>, 
-<b>UDP</b>, 
 <br/>
-&#160;&#160;<b>ICMP</b>, 
+&#160;&#160;<b>UDP</b>, 
+<b>ICMP</b>, 
 <b>BOOTP</b>, 
 <b>DHCP</b>, 
-<b>EAPOL</b>, 
 <br/>
-&#160;&#160;<b>RC4EAPOL</b>, 
+&#160;&#160;<b>EAPOL</b>, 
+<b>RC4EAPOL</b>, 
 <b>RSNEAPOL</b>, 
 <b>DNS</b>, 
-<b>LOOPBACK</b>, 
 <br/>
-&#160;&#160;<b>IPv6</b>, 
+&#160;&#160;<b>LOOPBACK</b>, 
+<b>IPv6</b>, 
 <b>ICMPv6</b>, 
 <b>SLL</b>, 
-<b>DHCPv6</b>, 
 <br/>
-&#160;&#160;<b>DOT1Q</b>, 
+&#160;&#160;<b>DHCPv6</b>, 
+<b>DOT1Q</b>, 
 <b>PPPOE</b>, 
 <b>STP</b>, 
-<b>PPI</b>, 
 <br/>
-&#160;&#160;<b>IPSEC_AH</b>, 
+&#160;&#160;<b>PPI</b>, 
+<b>IPSEC_AH</b>, 
 <b>IPSEC_ESP</b>, 
 <b>PKTAP</b>, 
+<br/>
+&#160;&#160;<b>MPLS</b>, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -231,27 +234,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a245db5f6ddfe9bc928e03b1bbeb0e059"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a57fddfb4aa0496ae4ae5f30c963d3a88">key_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a245db5f6ddfe9bc928e03b1bbeb0e059">key</a> () const </td></tr>
 <tr class="memdesc:a245db5f6ddfe9bc928e03b1bbeb0e059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the key field.  <a href="#a245db5f6ddfe9bc928e03b1bbeb0e059">More...</a><br/></td></tr>
 <tr class="separator:a245db5f6ddfe9bc928e03b1bbeb0e059"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ad15172495ce4388eae1572d9556457"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a1ad15172495ce4388eae1572d9556457">key_length</a> (uint16_t new_key_length)</td></tr>
-<tr class="memdesc:a1ad15172495ce4388eae1572d9556457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key length field.  <a href="#a1ad15172495ce4388eae1572d9556457">More...</a><br/></td></tr>
-<tr class="separator:a1ad15172495ce4388eae1572d9556457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa055505939f7f39fa8d950c3fe20ddf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#aa055505939f7f39fa8d950c3fe20ddf4">replay_counter</a> (uint64_t new_replay_counter)</td></tr>
-<tr class="memdesc:aa055505939f7f39fa8d950c3fe20ddf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the replay counter field.  <a href="#aa055505939f7f39fa8d950c3fe20ddf4">More...</a><br/></td></tr>
-<tr class="separator:aa055505939f7f39fa8d950c3fe20ddf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3afae67c247d53c809b1d4232a357b63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a3afae67c247d53c809b1d4232a357b63">key_iv</a> (const uint8_t *new_key_iv)</td></tr>
-<tr class="memdesc:a3afae67c247d53c809b1d4232a357b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key IV field.  <a href="#a3afae67c247d53c809b1d4232a357b63">More...</a><br/></td></tr>
-<tr class="separator:a3afae67c247d53c809b1d4232a357b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2b3f9132ea5710d9ea9e58906b7f8f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#ae2b3f9132ea5710d9ea9e58906b7f8f2">key_flag</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 1 &gt; new_key_flag)</td></tr>
-<tr class="memdesc:ae2b3f9132ea5710d9ea9e58906b7f8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key flag field.  <a href="#ae2b3f9132ea5710d9ea9e58906b7f8f2">More...</a><br/></td></tr>
-<tr class="separator:ae2b3f9132ea5710d9ea9e58906b7f8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa5cc6cd0e89af065120777b186df7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a3fa5cc6cd0e89af065120777b186df7a">key_index</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 7 &gt; new_key_index)</td></tr>
-<tr class="memdesc:a3fa5cc6cd0e89af065120777b186df7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key index field.  <a href="#a3fa5cc6cd0e89af065120777b186df7a">More...</a><br/></td></tr>
-<tr class="separator:a3fa5cc6cd0e89af065120777b186df7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeed3d8efb8e5da461292fbd8abe262d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#adeed3d8efb8e5da461292fbd8abe262d">key_sign</a> (const uint8_t *new_key_sign)</td></tr>
-<tr class="memdesc:adeed3d8efb8e5da461292fbd8abe262d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key signature field.  <a href="#adeed3d8efb8e5da461292fbd8abe262d">More...</a><br/></td></tr>
-<tr class="separator:adeed3d8efb8e5da461292fbd8abe262d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9bb15636de2f477b8e3ee9193eb6b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#af9bb15636de2f477b8e3ee9193eb6b44">key</a> (const <a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a57fddfb4aa0496ae4ae5f30c963d3a88">key_type</a> &amp;new_key)</td></tr>
-<tr class="memdesc:af9bb15636de2f477b8e3ee9193eb6b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key field.  <a href="#af9bb15636de2f477b8e3ee9193eb6b44">More...</a><br/></td></tr>
-<tr class="separator:af9bb15636de2f477b8e3ee9193eb6b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c0c488cf013f313b3143ad97b6fa43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#ae5c0c488cf013f313b3143ad97b6fa43">key_length</a> (uint16_t value)</td></tr>
+<tr class="memdesc:ae5c0c488cf013f313b3143ad97b6fa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key length field.  <a href="#ae5c0c488cf013f313b3143ad97b6fa43">More...</a><br/></td></tr>
+<tr class="separator:ae5c0c488cf013f313b3143ad97b6fa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6a06193ec6f2534bc12d8d31bbe326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a1a6a06193ec6f2534bc12d8d31bbe326">replay_counter</a> (uint64_t value)</td></tr>
+<tr class="memdesc:a1a6a06193ec6f2534bc12d8d31bbe326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the replay counter field.  <a href="#a1a6a06193ec6f2534bc12d8d31bbe326">More...</a><br/></td></tr>
+<tr class="separator:a1a6a06193ec6f2534bc12d8d31bbe326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ec2cd9de0aec09fc438bfbc80a0506"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#ac5ec2cd9de0aec09fc438bfbc80a0506">key_iv</a> (const uint8_t *value)</td></tr>
+<tr class="memdesc:ac5ec2cd9de0aec09fc438bfbc80a0506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key IV field.  <a href="#ac5ec2cd9de0aec09fc438bfbc80a0506">More...</a><br/></td></tr>
+<tr class="separator:ac5ec2cd9de0aec09fc438bfbc80a0506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd73501f08764ef461e4c53c269a632"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#abcd73501f08764ef461e4c53c269a632">key_flag</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 1 &gt; value)</td></tr>
+<tr class="memdesc:abcd73501f08764ef461e4c53c269a632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key flag field.  <a href="#abcd73501f08764ef461e4c53c269a632">More...</a><br/></td></tr>
+<tr class="separator:abcd73501f08764ef461e4c53c269a632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05989d52f8d3e4cfe948738cd497a9e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a05989d52f8d3e4cfe948738cd497a9e1">key_index</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 7 &gt; value)</td></tr>
+<tr class="memdesc:a05989d52f8d3e4cfe948738cd497a9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key index field.  <a href="#a05989d52f8d3e4cfe948738cd497a9e1">More...</a><br/></td></tr>
+<tr class="separator:a05989d52f8d3e4cfe948738cd497a9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb44cd80339ab7273f4b6dbcfc761f0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#abb44cd80339ab7273f4b6dbcfc761f0f">key_sign</a> (const uint8_t *value)</td></tr>
+<tr class="memdesc:abb44cd80339ab7273f4b6dbcfc761f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key signature field.  <a href="#abb44cd80339ab7273f4b6dbcfc761f0f">More...</a><br/></td></tr>
+<tr class="separator:abb44cd80339ab7273f4b6dbcfc761f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a187e740f60204f9316136670c932ac57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a187e740f60204f9316136670c932ac57">key</a> (const <a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a57fddfb4aa0496ae4ae5f30c963d3a88">key_type</a> &amp;value)</td></tr>
+<tr class="memdesc:a187e740f60204f9316136670c932ac57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the key field.  <a href="#a187e740f60204f9316136670c932ac57">More...</a><br/></td></tr>
+<tr class="separator:a187e740f60204f9316136670c932ac57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb46606d691840ee5dd8557dc409271"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a7bb46606d691840ee5dd8557dc409271">header_size</a> () const </td></tr>
 <tr class="memdesc:a7bb46606d691840ee5dd8557dc409271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the header size.  <a href="#a7bb46606d691840ee5dd8557dc409271">More...</a><br/></td></tr>
 <tr class="separator:a7bb46606d691840ee5dd8557dc409271"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,7 +262,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:affcd9a231df30ff5e4166c32bc2f7c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s type.  <a href="#affcd9a231df30ff5e4166c32bc2f7c70">More...</a><br/></td></tr>
 <tr class="separator:affcd9a231df30ff5e4166c32bc2f7c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adebdda8e0bf9a2b3578ba176dbfcf2a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#adebdda8e0bf9a2b3578ba176dbfcf2a6">matches_flag</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag) const </td></tr>
-<tr class="memdesc:adebdda8e0bf9a2b3578ba176dbfcf2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#adebdda8e0bf9a2b3578ba176dbfcf2a6">More...</a><br/></td></tr>
+<tr class="memdesc:adebdda8e0bf9a2b3578ba176dbfcf2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#adebdda8e0bf9a2b3578ba176dbfcf2a6">More...</a><br/></td></tr>
 <tr class="separator:adebdda8e0bf9a2b3578ba176dbfcf2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a523df14ffb46838484bd0ce1401cd724"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html">RC4EAPOL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a523df14ffb46838484bd0ce1401cd724">clone</a> () const </td></tr>
 <tr class="memdesc:a523df14ffb46838484bd0ce1401cd724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a523df14ffb46838484bd0ce1401cd724">More...</a><br/></td></tr>
@@ -277,18 +280,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:addbfc4d91b43dfe0579ae33677db7058 inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#addbfc4d91b43dfe0579ae33677db7058">type</a> () const </td></tr>
 <tr class="memdesc:addbfc4d91b43dfe0579ae33677db7058 inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the type field.  <a href="#addbfc4d91b43dfe0579ae33677db7058">More...</a><br/></td></tr>
 <tr class="separator:addbfc4d91b43dfe0579ae33677db7058 inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a30c512fa134c04399ca7b9f9529d66 inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a7a30c512fa134c04399ca7b9f9529d66">version</a> (uint8_t new_version)</td></tr>
-<tr class="memdesc:a7a30c512fa134c04399ca7b9f9529d66 inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the version field.  <a href="#a7a30c512fa134c04399ca7b9f9529d66">More...</a><br/></td></tr>
-<tr class="separator:a7a30c512fa134c04399ca7b9f9529d66 inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45c79f9de4260bc60c742da11cbd3d38 inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a45c79f9de4260bc60c742da11cbd3d38">packet_type</a> (uint8_t new_ptype)</td></tr>
-<tr class="memdesc:a45c79f9de4260bc60c742da11cbd3d38 inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the packet type field.  <a href="#a45c79f9de4260bc60c742da11cbd3d38">More...</a><br/></td></tr>
-<tr class="separator:a45c79f9de4260bc60c742da11cbd3d38 inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fd0c22ae0a23690c9934e892eae9a8b inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a4fd0c22ae0a23690c9934e892eae9a8b">length</a> (uint16_t new_length)</td></tr>
-<tr class="memdesc:a4fd0c22ae0a23690c9934e892eae9a8b inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the length field.  <a href="#a4fd0c22ae0a23690c9934e892eae9a8b">More...</a><br/></td></tr>
-<tr class="separator:a4fd0c22ae0a23690c9934e892eae9a8b inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30150ddb6189cb14860a3b378e16515c inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a30150ddb6189cb14860a3b378e16515c">type</a> (uint8_t new_type)</td></tr>
-<tr class="memdesc:a30150ddb6189cb14860a3b378e16515c inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the type field.  <a href="#a30150ddb6189cb14860a3b378e16515c">More...</a><br/></td></tr>
-<tr class="separator:a30150ddb6189cb14860a3b378e16515c inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863f61662fa68d43d225d63af3a9f27e inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a863f61662fa68d43d225d63af3a9f27e">version</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a863f61662fa68d43d225d63af3a9f27e inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the version field.  <a href="#a863f61662fa68d43d225d63af3a9f27e">More...</a><br/></td></tr>
+<tr class="separator:a863f61662fa68d43d225d63af3a9f27e inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b844527a2cbc116fb2fbf9a10da401 inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a58b844527a2cbc116fb2fbf9a10da401">packet_type</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a58b844527a2cbc116fb2fbf9a10da401 inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the packet type field.  <a href="#a58b844527a2cbc116fb2fbf9a10da401">More...</a><br/></td></tr>
+<tr class="separator:a58b844527a2cbc116fb2fbf9a10da401 inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7778bb30620f465c978656d1a21d08c4 inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#a7778bb30620f465c978656d1a21d08c4">length</a> (uint16_t value)</td></tr>
+<tr class="memdesc:a7778bb30620f465c978656d1a21d08c4 inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the length field.  <a href="#a7778bb30620f465c978656d1a21d08c4">More...</a><br/></td></tr>
+<tr class="separator:a7778bb30620f465c978656d1a21d08c4 inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa86f38fe24a1f2274fe1b5f90b9289a inherit pub_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#aaa86f38fe24a1f2274fe1b5f90b9289a">type</a> (uint8_t value)</td></tr>
+<tr class="memdesc:aaa86f38fe24a1f2274fe1b5f90b9289a inherit pub_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the type field.  <a href="#aaa86f38fe24a1f2274fe1b5f90b9289a">More...</a><br/></td></tr>
+<tr class="separator:aaa86f38fe24a1f2274fe1b5f90b9289a inherit pub_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a13b0f3ad713204f7aae5b967e91dc0ca inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13b0f3ad713204f7aae5b967e91dc0ca"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a13b0f3ad713204f7aae5b967e91dc0ca">PDU</a> ()</td></tr>
@@ -341,7 +344,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a matching response for this packet.  <a href="#ae961e5f5f07be3cd3b340d02a951eec7">More...</a><br/></td></tr>
 <tr class="separator:ae961e5f5f07be3cd3b340d02a951eec7 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">matches_response</a> (const uint8_t *ptr, uint32_t total_sz) const </td></tr>
-<tr class="memdesc:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a460063a6577eb92bd24a9d66ad7e581f">More...</a><br/></td></tr>
+<tr class="memdesc:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a460063a6577eb92bd24a9d66ad7e581f">More...</a><br/></td></tr>
 <tr class="separator:a460063a6577eb92bd24a9d66ad7e581f inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -394,10 +397,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> and propagates this action to child PDUs.  <a href="#a292094fe6758b3e61383d6a59e18aec2">More...</a><br/></td></tr>
 <tr class="separator:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classTins_1_1EAPOL"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classTins_1_1EAPOL')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html">Tins::EAPOL</a></td></tr>
-<tr class="memitem:a8258e3733a25aa7b902cd0af6cfedf7c inherit pro_attribs_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8258e3733a25aa7b902cd0af6cfedf7c"></a>
+<tr class="memitem:ac42ca8d7d74c2808eb3da0f325b808c3 inherit pro_attribs_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac42ca8d7d74c2808eb3da0f325b808c3"></a>
 TINS_BEGIN_PACK struct <br class="typebreak"/>
-<a class="el" href="../../df/df3/structTins_1_1EAPOL_1_1eapolhdr.html">Tins::EAPOL::eapolhdr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TINS_END_PACK</b></td></tr>
-<tr class="separator:a8258e3733a25aa7b902cd0af6cfedf7c inherit pro_attribs_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<a class="el" href="../../de/dee/structTins_1_1EAPOL_1_1eapol__header.html">Tins::EAPOL::eapol_header</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TINS_END_PACK</b></td></tr>
+<tr class="separator:ac42ca8d7d74c2808eb3da0f325b808c3 inherit pro_attribs_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that represents the RC4 <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html" title="Represents the EAP encapsulation over LAN. ">EAPOL</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
@@ -536,7 +539,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="af9bb15636de2f477b8e3ee9193eb6b44"></a>
+<a class="anchor" id="a187e740f60204f9316136670c932ac57"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -544,7 +547,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::key </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d9/d51/classTins_1_1RC4EAPOL.html#a57fddfb4aa0496ae4ae5f30c963d3a88">key_type</a> &amp;&#160;</td>
-          <td class="paramname"><em>new_key</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -553,7 +556,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the key field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_key</td><td>The new key to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new key to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -586,7 +589,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="ae2b3f9132ea5710d9ea9e58906b7f8f2"></a>
+<a class="anchor" id="abcd73501f08764ef461e4c53c269a632"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -594,7 +597,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::key_flag </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 1 &gt;&#160;</td>
-          <td class="paramname"><em>new_key_flag</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -603,7 +606,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the key flag field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_key_flag</td><td>The new key flag to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new key flag to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -636,7 +639,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a3fa5cc6cd0e89af065120777b186df7a"></a>
+<a class="anchor" id="a05989d52f8d3e4cfe948738cd497a9e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -644,7 +647,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::key_index </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 7 &gt;&#160;</td>
-          <td class="paramname"><em>new_key_index</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -653,7 +656,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the key index field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_key_index</td><td>The new key index to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new key index to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -686,7 +689,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a3afae67c247d53c809b1d4232a357b63"></a>
+<a class="anchor" id="ac5ec2cd9de0aec09fc438bfbc80a0506"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -694,7 +697,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::key_iv </td>
           <td>(</td>
           <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>new_key_iv</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -703,7 +706,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the key IV field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_key_iv</td><td>The new key IV to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new key IV to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -736,7 +739,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="a1ad15172495ce4388eae1572d9556457"></a>
+<a class="anchor" id="ae5c0c488cf013f313b3143ad97b6fa43"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -744,7 +747,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::key_length </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>new_key_length</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -753,7 +756,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the key length field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_key_length</td><td>The new key length to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new key length to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -786,7 +789,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="adeed3d8efb8e5da461292fbd8abe262d"></a>
+<a class="anchor" id="abb44cd80339ab7273f4b6dbcfc761f0f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -794,7 +797,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::key_sign </td>
           <td>(</td>
           <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>new_key_sign</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -803,7 +806,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the key signature field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_key_sign</td><td>The new key signature to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new key signature to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -832,14 +835,14 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 </table>
 </div><div class="memdoc">
 
-<p>Check wether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag. </p>
+<p>Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flag</td><td>The flag to match </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781" title="Check wether this PDU matches the specified flag. ">PDU::matches_flag</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781" title="Check whether this PDU matches the specified flag. ">PDU::matches_flag</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#ae34f7381fddcee41ab4525985634b781">Tins::PDU</a>.</p>
 
@@ -899,7 +902,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 
 </div>
 </div>
-<a class="anchor" id="aa055505939f7f39fa8d950c3fe20ddf4"></a>
+<a class="anchor" id="a1a6a06193ec6f2534bc12d8d31bbe326"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -907,7 +910,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
           <td class="memname">void Tins::RC4EAPOL::replay_counter </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>new_replay_counter</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -916,7 +919,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 <p>Sets the replay counter field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">new_replay_counter</td><td>The new replay counter to be set. </td></tr>
+    <tr><td class="paramname">value</td><td>The new replay counter to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -994,7 +997,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 8 2015 08:11:02 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 1 2016 20:32:55 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
