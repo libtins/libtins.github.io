@@ -1,0 +1,123 @@
+---
+title: "Tutorial: Sniffing packets on Windows"
+layout: default
+section: tutorial
+---
+<div class="page-header section-header">
+<h3>Sniffing</h3>
+<p class="section-description">
+This is a small tutorial on how to deal with Windows interfaces. You should
+read the <a href="{{ site.url }}/tutorial/sniffing">sniffing tutorial</a> 
+before reading this section.
+</p>
+<hr />
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<b>Part 2.5: Sniffing on Windows</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#interfaces">Windows interfaces</a></li>
+        <li><a href="#listing">Listing interfaces</a></li>
+        <li><a href="#sniffing">Sniffing</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<a href="{{ site.url }}/tutorial/protocols/">Part 4: Protocols</a><br />
+<a href="{{ site.url }}/tutorial/802.11/">Part 5: IEEE 802.11</a><br />
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 6: Adding new protocols</a>
+</div>
+
+<h3 id="interfaces">Windows interfaces</h3>
+
+<p>
+Network interface names on GNU/Linux are simple and easily readable, like <i>eth0</i> 
+or <i>wlan3</i>. But when it comes to Windows, the interface names are GUIDs, so they
+look like this <i>{8f063c61-68a7-48a2-965e-9eea2ba6c510}</i>. This can make capturing
+packets on the right interface a bit more difficult on this platform. <i>libtins</i>
+provides some features to simplify this and helping you find the right one easily.
+</p>
+
+<h3 id="listing">Listing interfaces</h3>
+
+<p>
+In order to capture packets on Windows, you could first list all network interfaces.
+You can do that easily by using the <code>NetworkInterface</code> class:
+</p>
+
+{% highlight cpp %}
+// First fetch all network interfaces
+vector<NetworkInterface> interfaces = NetworkInterface::all();
+
+// Now iterate them
+for (const NetworkInterface& iface : interfaces) {
+    // First print the name (GUID)
+    cout << "Interface name: " << iface.name();
+
+    // Now print the friendly name, a wstring that will contain something like 
+    // "Local Area Connection 2"
+    wcout << " (" << iface.friendly_name() << ")" << endl;
+}
+{% endhighlight %}
+
+<p>
+That small code snippet should provide an output like the following:
+</p>
+
+{% highlight shell %}
+Interface name: {6527cc7d-c647-4986-ac10-7784dc1f2439} (Local Area Connection 1)
+Interface name: {309d733f-79bb-41ef-aaec-8a7b83d2adcf} (Local Area Connection 2)
+Interface name: {55ab969f-80df-4d51-8130-291d54a752a3} (Local Area Connection 3)
+{% endhighlight %}
+
+<p>
+This might be enough for you to recognize which is the interface you want to use.
+You can also resort to getting the default interface, which is very likely the 
+one you want to use, or show the IP addresses of each of them until you recognize
+them:
+</p>
+
+{% highlight cpp %}
+// Get the default interface (where the default gateway route is)
+NetworkInterface iface = NetworkInterface::default_interface();
+
+// Print the name and the IP address
+cout << "Default interface: " << iface.name() 
+     << " (" << iface.addresses().ip_addr() << ")" << endl;
+{% endhighlight %}
+
+<p>
+This should help you find the right interface to capture packets on.
+</p>
+
+<h3 id="sniffing">Sniffing</h3>
+
+<p>
+Now that you know which is the interface in which you want to capture
+packets, you just have to use the network interface's name when instantiating
+the <code>Sniffer</code> class:
+</p>
+
+{% highlight cpp %}
+// Use the default interface
+NetworkInterface iface = NetworkInterface::default_interface();
+
+// Now instantiate the sniffer
+Sniffer sniffer(iface.name());
+
+// Ready to sniff!
+{% endhighlight %}
+
+<p>
+That's everything you need to know to start capturing packets on Windows.
+Note that if you know how WinPcap works, you probably know that the names
+you use when capturing look a bit more like this
+<i>\Device\NPF_{6527cc7d-c647-4986-ac10-7784dc1f2439}</i>. <i>libtins</i> 
+automatically prepends the <i>\Device\NPF_</i> string to the interface name
+before starting the capture, so you don't have to worry about that at all.
+</p>
+
+<div style="float: left;">
+    <a href="{{ site.url }}/tutorial/sniffing/">Previous part: Sniffing</a>
+</div>
+<div style="float: right;">
+    <a href="{{ site.url }}/tutorial/sending/">Next part: Sending packets</a>
+</div>
