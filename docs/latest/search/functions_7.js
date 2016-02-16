@@ -7,6 +7,7 @@ var searchData=
   ['handshakes',['handshakes',['../de/da8/classTins_1_1RSNHandshakeCapturer.html#a037e81d634e85c5aa4c2a1727de44aed',1,'Tins::RSNHandshakeCapturer']]],
   ['has_5fdest_5faddr',['has_dest_addr',['../d7/d38/classTins_1_1ICMPv6.html#a1fc8fbe53b29b6a9aed0c529beb9215e',1,'Tins::ICMPv6']]],
   ['has_5fextensions',['has_extensions',['../de/d91/classTins_1_1ICMP.html#af276639fb241fd7a52f14fa16ce26523',1,'Tins::ICMP::has_extensions()'],['../d7/d38/classTins_1_1ICMPv6.html#a166867afadbafb99cfa8beb09e26c53b',1,'Tins::ICMPv6::has_extensions()']]],
+  ['has_5fnext',['has_next',['../da/de2/classTins_1_1TCPIP_1_1AckedRange.html#ad610fd19273e7f120c577c3ba97df0b1',1,'Tins::TCPIP::AckedRange']]],
   ['has_5frapid_5fcommit',['has_rapid_commit',['../d8/d2b/classTins_1_1DHCPv6.html#a1bef5366cc78f50ade8014de6e4863cb',1,'Tins::DHCPv6']]],
   ['has_5freconfigure_5faccept',['has_reconfigure_accept',['../d8/d2b/classTins_1_1DHCPv6.html#a23ada28c29bd3d2870ca40680dacf92e',1,'Tins::DHCPv6']]],
   ['has_5fsack_5fpermitted',['has_sack_permitted',['../d0/de4/classTins_1_1TCP.html#a8465d6dde1bb67dc63a5d03711d48cb0',1,'Tins::TCP']]],

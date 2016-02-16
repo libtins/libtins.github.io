@@ -36,6 +36,7 @@ var searchData=
   ['is_5fmulticast',['is_multicast',['../dc/da6/classTins_1_1HWAddress.html#ae7214e3c7a8c0308df9e134aad35fc4b',1,'Tins::HWAddress::is_multicast()'],['../d2/d08/classTins_1_1IPv4Address.html#a165fe36d15d131f940b242791488de73',1,'Tins::IPv4Address::is_multicast()'],['../de/dd2/classTins_1_1IPv6Address.html#a52ae4ab3e241b26402c9c35147eab814',1,'Tins::IPv6Address::is_multicast()']]],
   ['is_5fprivate',['is_private',['../d2/d08/classTins_1_1IPv4Address.html#a8b27c40cf7733acc36e497920e197cff',1,'Tins::IPv4Address']]],
   ['is_5frelay_5fmessage',['is_relay_message',['../d8/d2b/classTins_1_1DHCPv6.html#af757b182f7af6da203b9ccf48e97d6b3',1,'Tins::DHCPv6']]],
+  ['is_5fsegment_5facked',['is_segment_acked',['../d2/d72/classTins_1_1TCPIP_1_1AckTracker.html#a93b1091e7ada690d5ad96fb5992f3144',1,'Tins::TCPIP::AckTracker']]],
   ['is_5funicast',['is_unicast',['../dc/da6/classTins_1_1HWAddress.html#a167489bebac889b78e12767af301f1e4',1,'Tins::HWAddress::is_unicast()'],['../d2/d08/classTins_1_1IPv4Address.html#aab9cb1b379240c88fb3ee94e9725daff',1,'Tins::IPv4Address::is_unicast()']]],
   ['is_5fup',['is_up',['../d0/de7/classTins_1_1NetworkInterface.html#a06c23cd6aefc98914d3c2fcb8de29fa3',1,'Tins::NetworkInterface']]]
 ];

@@ -110,6 +110,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a95df251272fd7f6b952e526ec1164b04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da0/classTins_1_1Packet.html#a95df251272fd7f6b952e526ec1164b04">Packet</a> (const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *apdu, const <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html">Timestamp</a> &amp;tstamp)</td></tr>
 <tr class="memdesc:a95df251272fd7f6b952e526ec1164b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> from a PDU* and a <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html" title="Represents a packet timestamp. ">Timestamp</a>.  <a href="#a95df251272fd7f6b952e526ec1164b04">More...</a><br/></td></tr>
 <tr class="separator:a95df251272fd7f6b952e526ec1164b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00529efe56d9e0f8e042d3dce938f9b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da0/classTins_1_1Packet.html#a00529efe56d9e0f8e042d3dce938f9b4">Packet</a> (const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;apdu, const <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html">Timestamp</a> &amp;tstamp)</td></tr>
+<tr class="memdesc:a00529efe56d9e0f8e042d3dce938f9b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> from a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>&amp; and a <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html" title="Represents a packet timestamp. ">Timestamp</a>.  <a href="#a00529efe56d9e0f8e042d3dce938f9b4">More...</a><br/></td></tr>
+<tr class="separator:a00529efe56d9e0f8e042d3dce938f9b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bb8fc56db050f2dfa78ecd64c526c50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da0/classTins_1_1Packet.html#a6bb8fc56db050f2dfa78ecd64c526c50">Packet</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *apdu, const <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html">Timestamp</a> &amp;tstamp, <a class="el" href="../../d6/db0/structTins_1_1Packet_1_1own__pdu.html">own_pdu</a>)</td></tr>
 <tr class="memdesc:a6bb8fc56db050f2dfa78ecd64c526c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> from a PDU* and a <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html" title="Represents a packet timestamp. ">Timestamp</a>.  <a href="#a6bb8fc56db050f2dfa78ecd64c526c50">More...</a><br/></td></tr>
 <tr class="separator:a6bb8fc56db050f2dfa78ecd64c526c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,7 +213,44 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> from a PDU* and a <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html" title="Represents a packet timestamp. ">Timestamp</a>. </p>
-<p>The PDU* is cloned using <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a903a2f833cde875be6bf62e50d19b603" title="Clones this packet. ">PDU::clone</a>. </p>
+<p>The <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is cloned using <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a903a2f833cde875be6bf62e50d19b603" title="Clones this packet. ">PDU::clone</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a00529efe56d9e0f8e042d3dce938f9b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tins::Packet::Packet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;&#160;</td>
+          <td class="paramname"><em>apdu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html">Timestamp</a> &amp;&#160;</td>
+          <td class="paramname"><em>tstamp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> from a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>&amp; and a <a class="el" href="../../d9/d36/classTins_1_1Timestamp.html" title="Represents a packet timestamp. ">Timestamp</a>. </p>
+<p>The <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> is cloned using <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a903a2f833cde875be6bf62e50d19b603" title="Clones this packet. ">PDU::clone</a>. </p>
 
 </div>
 </div>
@@ -562,7 +602,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 1 2016 20:32:56 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 15 2016 18:24:14 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

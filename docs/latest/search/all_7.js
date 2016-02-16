@@ -13,6 +13,7 @@ var searchData=
   ['handshakes_5ftype',['handshakes_type',['../de/da8/classTins_1_1RSNHandshakeCapturer.html#a7aeefaef6c6c24fa527e67fc004ee5ba',1,'Tins::RSNHandshakeCapturer']]],
   ['has_5fdest_5faddr',['has_dest_addr',['../d7/d38/classTins_1_1ICMPv6.html#a1fc8fbe53b29b6a9aed0c529beb9215e',1,'Tins::ICMPv6']]],
   ['has_5fextensions',['has_extensions',['../de/d91/classTins_1_1ICMP.html#af276639fb241fd7a52f14fa16ce26523',1,'Tins::ICMP::has_extensions()'],['../d7/d38/classTins_1_1ICMPv6.html#a166867afadbafb99cfa8beb09e26c53b',1,'Tins::ICMPv6::has_extensions()']]],
+  ['has_5fnext',['has_next',['../da/de2/classTins_1_1TCPIP_1_1AckedRange.html#ad610fd19273e7f120c577c3ba97df0b1',1,'Tins::TCPIP::AckedRange']]],
   ['has_5frapid_5fcommit',['has_rapid_commit',['../d8/d2b/classTins_1_1DHCPv6.html#a1bef5366cc78f50ade8014de6e4863cb',1,'Tins::DHCPv6']]],
   ['has_5freconfigure_5faccept',['has_reconfigure_accept',['../d8/d2b/classTins_1_1DHCPv6.html#a23ada28c29bd3d2870ca40680dacf92e',1,'Tins::DHCPv6']]],
   ['has_5fsack_5fpermitted',['has_sack_permitted',['../d0/de4/classTins_1_1TCP.html#a8465d6dde1bb67dc63a5d03711d48cb0',1,'Tins::TCP']]],
@@ -32,8 +33,8 @@ var searchData=
   ['htype',['htype',['../de/ddf/classTins_1_1BootP.html#ac6a28c6bd14cd74f5be0fc07aa4df395',1,'Tins::BootP::htype() const '],['../de/ddf/classTins_1_1BootP.html#a3c6b72f475969932f7d386a84b8981ea',1,'Tins::BootP::htype(uint8_t type)']]],
   ['hw_5faddr_5fformat',['hw_addr_format',['../d1/db0/classTins_1_1ARP.html#a1b77a018f8a0c13dc082a22210ccb815',1,'Tins::ARP::hw_addr_format() const '],['../d1/db0/classTins_1_1ARP.html#ab29bdc9a166b3826d7045b738059fb98',1,'Tins::ARP::hw_addr_format(uint16_t format)']]],
   ['hw_5faddr_5flength',['hw_addr_length',['../d1/db0/classTins_1_1ARP.html#acdf0e55d5b5c52b6be6b4bf414bb3dfe',1,'Tins::ARP::hw_addr_length() const '],['../d1/db0/classTins_1_1ARP.html#adc44f7c988b3ade3af73fa4184d52f82',1,'Tins::ARP::hw_addr_length(uint8_t length)']]],
-  ['hwaddress',['HWAddress',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]],
   ['hwaddress',['HWAddress',['../dc/da6/classTins_1_1HWAddress.html#af1d90cbf80d7c8c949eeec89b272c42b',1,'Tins::HWAddress::HWAddress(const storage_type *ptr=0)'],['../dc/da6/classTins_1_1HWAddress.html#adfc1447ad7f4fac17583a124c8d22bb8',1,'Tins::HWAddress::HWAddress(const std::string &amp;address)'],['../dc/da6/classTins_1_1HWAddress.html#a7fb9bc8f5554c571b77671a6cd65b6be',1,'Tins::HWAddress::HWAddress(const char(&amp;address)[i])'],['../dc/da6/classTins_1_1HWAddress.html#a10caf2f015906851cb19ccb38787757b',1,'Tins::HWAddress::HWAddress(const HWAddress&lt; i &gt; &amp;rhs)']]],
+  ['hwaddress',['HWAddress',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]],
   ['hwaddress_3c_203_20_3e',['HWAddress&lt; 3 &gt;',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]],
   ['hwaddress_3c_206_20_3e',['HWAddress&lt; 6 &gt;',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]],
   ['hwaddress_5ftype',['hwaddress_type',['../d1/db0/classTins_1_1ARP.html#a6fd5595750bf0140dc02b192f7ebc8ef',1,'Tins::ARP::hwaddress_type()'],['../d7/d38/classTins_1_1ICMPv6.html#a2dc0b9b1658c87db6269a3813656da3d',1,'Tins::ICMPv6::hwaddress_type()']]]
