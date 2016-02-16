@@ -1,0 +1,243 @@
+---
+title: "Tutorial: TCP streams"
+layout: default
+section: tutorial
+---
+<div class="page-header section-header">
+<h3>Sniffing</h3>
+<p class="section-description">
+In this section we'll have a deeper look at how to perform sniffing
+using <i>libtins</i>.
+</p>
+<hr />
+<a href="{{ site.url }}/tutorial/">Part 1: Basics</a> <br />
+<a href="{{ site.url }}/tutorial/sniffing/">Part 2: Sniffing</a><br />
+<a href="{{ site.url }}/tutorial/sending/">Part 3: Sending packets</a><br />
+<b>Part 4: TCP streams</b>
+<div id="section-listing">
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#stream-follower">Using StreamFollower</a></li>
+        <li><a href="#stream">Using Stream</a></li>
+        <li><a href="#stream-data">Handling Streams' data</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+</div>
+<a href="{{ site.url }}/tutorial/protocols/">Part 5: Protocols</a><br />
+<a href="{{ site.url }}/tutorial/802.11/">Part 6: IEEE 802.11</a><br />
+<a href="{{ site.url }}/tutorial/new_protocols/">Part 7: Adding new protocols</a>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>
+As of version 3.4, <i>libtins</i> will introduce a new set of classes which 
+allow reassembling TCP streams in a very simple, yet powerful, way. Before this
+classes were introduced, there was a <i>TCPStreamFollower</i> class which sort of did
+this, but in a not-so-extensible not usable way. Note that this code is currently
+available on the <b>master branch</b> of the repository.
+</p>
+
+<p>
+These new classes aim to provide a really simple way to follow streams, process
+their data, get their attributes and more, using a simple callback based interface.
+The streams will handle out-of-order data, reassemble it and let the user process it
+without having to deal with packets, payloads, sequence numbers, etc.
+</p>
+
+<p>
+All of this classes require using C++11, as they use <code>std::function</code> as
+a way to specify callbacks. Therefore, you should use some fairly recent compiler
+to use it. If you're using GCC, 4.6 is probably enough, maybe even older versions.
+</p>
+
+<h3 id="stream-follower">StreamFollower</h3>
+
+<p>
+The main class you should know about is <code>StreamFollower</code>. This class will process
+TCP packets, looking at the IP addresses and ports used in them. Whenever a new 4-tuple
+(client address, client port, server address, server port) is seen, it will create some
+context for that TCP stream and execute a user-provided callback to notify the creation
+of it. After that, all packets that belong to that stream will be forwarded to the
+right object, letting it process data and update its internal state.
+</p>
+
+<p>
+The other responsibility of the <code>StreamFollower</code> is detecting that something's going
+wrong in a stream. Let's say you have a high packet loss (e.g. your program 
+fails to process the packets fast enough), you don't want to keep buffering data for streams
+that will never be reassembled, or store state and data for a stream that was actually
+closed but the FIN/RST packets weren't captured. For this reason, this class will detect
+these events (too many buffered packets, stream timeouts, etc) and delete their state 
+if this happens. 
+</p>
+
+<p>
+As a simple example of how to create a <code>StreamFollower</code> and set up some callbacks:
+</p>
+
+{% highlight cpp %}
+#include <tins/tcp_ip/stream_follower.h>
+
+using Tins::TCPIP::Stream;
+using Tins::TCPIP::StreamFollower;
+
+// New stream is seen
+void on_new_stream(Stream& stream) {
+
+}
+
+// A stream was terminated. The second argument is the reason why it was terminated
+void on_stream_terminated(Stream& stream, StreamFollower::TerminationReason reason) {
+
+}
+
+
+// Create our follower
+Tins::TCPIP::StreamFollower follower;
+
+// Set the callback for new streams. Note that this is a <i>std::function</i>, so you
+// could use <i>std::bind</i> and use a member function for this
+follower.new_stream_callback(&on_new_stream);
+
+// Now set up the termination callback. This will be called whenever a stream is 
+// stopped being followed for some of the reasons explained above
+follower.stream_termination_callback(&on_stream_terminated);
+
+// Now create some sniffer
+Sniffer sniffer = ...;
+
+// And start sniffing, forwarding all packets to our follower
+sniffer.sniff_loop([&](PDU& pdu) {
+    follower.process_packed(pdu);
+    return true;
+})
+{% endhighlight %}
+
+<p>
+Note that <code>StreamFollower::process_packet</code> has another overload that
+takes a <code>Packet</code>. You should try to use this overload as it will
+make streams timeout at the actual packet time rather than using the system clock.
+</p>
+
+<p>
+So that is the first step into reassembling TCP streams. In the next sections, we'll
+see how to do something useful with that.
+</p>
+
+<h3 id="stream">Using Stream</h3>
+
+<p>
+Once you've configured the callback for new streams on the <code>StreamFollower</code>,
+you probably want to do something with that new stream. <code>Stream</code>s allow you 
+to configure callbacks for different events that occur on the stream.
+</p>
+
+<p>
+Data events are generated whenever there's new, ready to be processed, data. This means
+that a packet with the next expected sequence number arrived and its payload is available
+plus all of the out-of-order payload that could have been received before and couldn't be
+processed because that first packet's data was missing.
+</p>
+
+<p>
+You can optionally subscribe to both client and server data events. This means that
+you can be notified on a different callback whenever there's new data from the client
+or from the server on each stream. Let's use this in a short example:
+</p>
+
+{% highlight cpp %} 
+// This will be called when there's new client data
+void on_client_data(Stream& stream) {
+    // Get the client's payload, this is a vector<uint8_t>
+    const Stream::payload_type& payload = stream.client_payload();
+
+    // Now do something with it!
+}
+
+// This will be called when there's new server data
+void on_server_data(Stream& stream) {
+    // Process the server's data
+}
+
+// New stream is seen
+void on_new_stream(Stream& stream) {
+    // Configure the client and server data callbacks
+    stream.client_data_callback(&on_client_data);
+    stream.server_data_callback(&on_server_data);
+
+    // Done!
+}
+{% endhighlight %}
+
+<p>
+So that's it, the <code>StreamFollower</code> we constructed before will keep processing
+packets and forwarding them to the right <code>Stream</code> objects, which will execute
+those callbacks when appropriate.
+</p>
+
+<p>
+You can also subscribe to other events on each <code>Stream</code>. One of them is the
+close event, which is executed whenever the stream is properly closed. 
+You can do this by calling <code>Stream::stream_closed_callback</code>.
+</p>
+
+<h3 id="stream-data">Handling Streams' data</h3>
+
+<p>
+So now that we've seen the basics on how to use streams, lets see some other features.
+</p>
+
+<p>
+By default, whenever new data is available for a stream, that data will be moved
+to the stream's payload, the data callback is going to be executed, and then that 
+data is going to be erased. This is done so that data doesn't start buffering, 
+making memory usage go up until the stream is closed (or you run out of memory).
+In case you want to buffer the data and use your own handling of it, then you
+should call the following functions:
+</p>
+
+{% highlight cpp %} 
+// New stream is seen
+void on_new_stream(Stream& stream) {
+    // Disables auto-deleting the client's data after the callback is executed
+    stream.auto_cleanup_client_data(true);
+
+    // Same thing for the server's data
+    stream.auto_cleanup_server_data(true);
+
+    // Or a shortcut to doing this for both:
+    stream.auto_cleanup_payloads(true);
+}
+{% endhighlight %}
+
+<p>
+If you're only planning on processing say the client's data and not the server's
+then you should call <code>ignore_client/server_data</code>. Otherwise, even
+if you don't set a callback, the data will still be buffered and re-ordered 
+as needed:
+</p>
+
+{% highlight cpp %} 
+// New stream is seen
+void on_new_stream(Stream& stream) {
+    // We don't even want to buffer the client's data
+    stream.ignore_client_data():
+}
+{% endhighlight %}
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>
+This should have given you a fairly good introduction on how to use the
+<code>StreamFollower</code> and <code>Stream</code> classes. You can check out the
+<a href="{{ site.url }}/examples/http-requests/">HTTP requests example</a> to see a
+pretty simple example of this being put into practice.
+</p>
+
+<div style="float: left;">
+    <a href="{{ site.url }}/tutorial/sending/">Previous part: Sending</a>
+</div>
+<div style="float: right;">
+    <a href="{{ site.url }}/tutorial/protocols/">Next part: Protocols</a>
+</div>
