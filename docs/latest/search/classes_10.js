@@ -23,7 +23,10 @@ var searchData=
   ['socket_5fwrite_5ferror',['socket_write_error',['../d3/dea/classTins_1_1socket__write__error.html',1,'Tins']]],
   ['status_5fcode_5ftype',['status_code_type',['../d7/db2/structTins_1_1DHCPv6_1_1status__code__type.html',1,'Tins::DHCPv6']]],
   ['stp',['STP',['../da/df7/classTins_1_1STP.html',1,'Tins']]],
+  ['stream',['Stream',['../dc/da4/classTins_1_1TCPIP_1_1Stream.html',1,'Tins::TCPIP']]],
+  ['stream_5fid',['stream_id',['../dc/dc5/structTins_1_1TCPIP_1_1StreamFollower_1_1stream__id.html',1,'Tins::TCPIP::StreamFollower']]],
   ['stream_5fnot_5ffound',['stream_not_found',['../d5/d34/classTins_1_1stream__not__found.html',1,'Tins']]],
+  ['streamfollower',['StreamFollower',['../d3/d62/classTins_1_1TCPIP_1_1StreamFollower.html',1,'Tins::TCPIP']]],
   ['streaminfo',['StreamInfo',['../d3/d45/structTins_1_1TCPStream_1_1StreamInfo.html',1,'Tins::TCPStream']]],
   ['supplicantdata',['SupplicantData',['../d8/d6f/classTins_1_1Crypto_1_1WPA2_1_1SupplicantData.html',1,'Tins::Crypto::WPA2']]]
 ];
