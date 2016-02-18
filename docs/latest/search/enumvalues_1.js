@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sacked_5fsegments',['SACKED_SEGMENTS',['../d3/d62/classTins_1_1TCPIP_1_1StreamFollower.html#a53ffb3943bbae6918f47efd1b2e3d088a91dd0eb1e6ca9dfa8e4e2a10a4ed0dac',1,'Tins::TCPIP::StreamFollower']]]
+  ['fragmented',['FRAGMENTED',['../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba6378211bf10da35930acc4901eff3629',1,'Tins::IPv4Reassembler']]]
 ];

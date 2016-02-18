@@ -104,9 +104,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a99eb71bd9a8004d57f48f7283b2cdc7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7b">packet_status</a> { <b>NOT_FRAGMENTED</b>, 
-<b>FRAGMENTED</b>, 
-<b>REASSEMBLED</b>
+<tr class="memitem:a99eb71bd9a8004d57f48f7283b2cdc7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7b">packet_status</a> { <a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba0c97e5129d8828ca80f94447600ccfa2">NOT_FRAGMENTED</a>, 
+<a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba6378211bf10da35930acc4901eff3629">FRAGMENTED</a>, 
+<a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba25f6872c2d345b6b661841e6eaa8b7c4">REASSEMBLED</a>
  }</td></tr>
 <tr class="separator:a99eb71bd9a8004d57f48f7283b2cdc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d424e58be27aaa9adfec0b3bb1e069b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a6d424e58be27aaa9adfec0b3bb1e069b">overlapping_technique</a> { <b>NONE</b>
@@ -128,7 +128,18 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Reassembles fragmented <a class="el" href="../../dd/d3f/classTins_1_1IP.html" title="Class that represents an IP PDU. ">IP</a> packets. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<p>This class is fairly simple: just feed packets into it using <a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#aca4d72e13add82e896c3cc38ac5cfafa" title="Processes a PDU and tries to reassemble it. ">IPv4Reassembler::process</a>. If the return value is <a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba6378211bf10da35930acc4901eff3629" title="The given packet is fragmented and can&#39;t be reassembled yet. ">IPv4Reassembler::FRAGMENTED</a>, then the packet is fragmented and we haven't yet seen the missing fragments, hence we can't reassemble it. If the function returns either <a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba0c97e5129d8828ca80f94447600ccfa2" title="The given packet is not fragmented. ">IPv4Reassembler::NOT_FRAGMENTED</a> (meaning the packet wasn't fragmented) or <a class="el" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba25f6872c2d345b6b661841e6eaa8b7c4" title="The given packet was fragmented but is now reassembled. ">IPv4Reassembler::REASSEMBLED</a> (meaning the packet was fragmented but it's now reassembled), then you can process the packet normally.</p>
+<p>Simple example:</p>
+<div class="fragment"><div class="line"><a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#ad767fb8f6e48db86085f7cf9bde5912a">IPv4Reassembler</a> reassembler;</div>
+<div class="line">Sniffer sniffer = ...;</div>
+<div class="line">sniffer.sniff_loop([&amp;](PDU&amp; pdu) {</div>
+<div class="line">    <span class="comment">// Process it in any case, unless it&#39;s fragmented (and can&#39;t be reassembled yet)</span></div>
+<div class="line">    <span class="keywordflow">if</span> (reassembler.process(pdu) != <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba6378211bf10da35930acc4901eff3629">IPv4Reassembler::FRAGMENTED</a>) {</div>
+<div class="line">        <span class="comment">// Now actually process the packet</span></div>
+<div class="line">        process_packet(pdu);</div>
+<div class="line">    }</div>
+<div class="line">});</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a6d424e58be27aaa9adfec0b3bb1e069b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -152,6 +163,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The status of each processed packet. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a99eb71bd9a8004d57f48f7283b2cdc7ba0c97e5129d8828ca80f94447600ccfa2"></a>NOT_FRAGMENTED</em>&#160;</td><td class="fielddoc">
+<p>The given packet is not fragmented. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a99eb71bd9a8004d57f48f7283b2cdc7ba6378211bf10da35930acc4901eff3629"></a>FRAGMENTED</em>&#160;</td><td class="fielddoc">
+<p>The given packet is fragmented and can't be reassembled yet. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a99eb71bd9a8004d57f48f7283b2cdc7ba25f6872c2d345b6b661841e6eaa8b7c4"></a>REASSEMBLED</em>&#160;</td><td class="fielddoc">
+<p>The given packet was fragmented but is now reassembled. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -272,7 +294,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:00:35 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 17 2016 20:23:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
