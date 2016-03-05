@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -115,6 +115,16 @@ typedef <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">HWAddress<
 <a class="el" href="../../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html">WPA2::SessionKeys</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a></td></tr>
 <tr class="memdesc:a743290b502d012e5bb02129ab093868e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps an address pair to the session keys.  <a href="#a743290b502d012e5bb02129ab093868e">More...</a><br/></td></tr>
 <tr class="separator:a743290b502d012e5bb02129ab093868e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90089fc6bfeca74b5265e6b10996c4a"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(const <br class="typebreak"/>
+std::string &amp;, const <br class="typebreak"/>
+<a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ad90089fc6bfeca74b5265e6b10996c4a">ap_found_callback_type</a></td></tr>
+<tr class="memdesc:ad90089fc6bfeca74b5265e6b10996c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used to store the callback type used when a new access point is found.  <a href="#ad90089fc6bfeca74b5265e6b10996c4a">More...</a><br/></td></tr>
+<tr class="separator:ad90089fc6bfeca74b5265e6b10996c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac390dbe678cb04e2bf8f35f2ab1408d9"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(const <br class="typebreak"/>
+std::string &amp;, const <br class="typebreak"/>
+<a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &amp;, const <br class="typebreak"/>
+<a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ac390dbe678cb04e2bf8f35f2ab1408d9">handshake_captured_callback_type</a></td></tr>
+<tr class="separator:ac390dbe678cb04e2bf8f35f2ab1408d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -130,6 +140,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abdf7d1f0c5e306b56ca259630301d760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#abdf7d1f0c5e306b56ca259630301d760">decrypt</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu)</td></tr>
 <tr class="memdesc:abdf7d1f0c5e306b56ca259630301d760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts the provided <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#abdf7d1f0c5e306b56ca259630301d760">More...</a><br/></td></tr>
 <tr class="separator:abdf7d1f0c5e306b56ca259630301d760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79710c10e842c49966ed8e7bc829b8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#aa79710c10e842c49966ed8e7bc829b8e">handshake_captured_callback</a> (const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ac390dbe678cb04e2bf8f35f2ab1408d9">handshake_captured_callback_type</a> &amp;callback)</td></tr>
+<tr class="memdesc:aa79710c10e842c49966ed8e7bc829b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the handshake captured callback.  <a href="#aa79710c10e842c49966ed8e7bc829b8e">More...</a><br/></td></tr>
+<tr class="separator:aa79710c10e842c49966ed8e7bc829b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade32f28c703b7b4cdb73cccfcc91583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#aade32f28c703b7b4cdb73cccfcc91583">ap_found_callback</a> (const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ad90089fc6bfeca74b5265e6b10996c4a">ap_found_callback_type</a> &amp;callback)</td></tr>
+<tr class="memdesc:aade32f28c703b7b4cdb73cccfcc91583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the access point found callback.  <a href="#aade32f28c703b7b4cdb73cccfcc91583">More...</a><br/></td></tr>
+<tr class="separator:aade32f28c703b7b4cdb73cccfcc91583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4edf4607641dcd5aee5d97c2eccd0e1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#a743290b502d012e5bb02129ab093868e">keys_map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ab4edf4607641dcd5aee5d97c2eccd0e1">get_keys</a> () const </td></tr>
 <tr class="memdesc:ab4edf4607641dcd5aee5d97c2eccd0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the keys on this decrypter.  <a href="#ab4edf4607641dcd5aee5d97c2eccd0e1">More...</a><br/></td></tr>
 <tr class="separator:ab4edf4607641dcd5aee5d97c2eccd0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +166,35 @@ Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a pair of mac addresses. </p>
 <p>This is used to identify a host and the access point to which it is connected. The first element in the pair will always de lower or equal than the second one, so that given any host and the access point it's connected to, we can uniquely identify it with an address pair. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad90089fc6bfeca74b5265e6b10996c4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;void(const std::string&amp;, const <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp;)&gt; <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ad90089fc6bfeca74b5265e6b10996c4a">Tins::Crypto::WPA2Decrypter::ap_found_callback_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type used to store the callback type used when a new access point is found. </p>
+<p>The first argument to the function will be the access point's SSID and the second one its BSSID. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac390dbe678cb04e2bf8f35f2ab1408d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;void(const std::string&amp;, const <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp;, const <a class="el" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp;)&gt; <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ac390dbe678cb04e2bf8f35f2ab1408d9">Tins::Crypto::WPA2Decrypter::handshake_captured_callback_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The type used to store the callback type used when a new handshake is captured.</p>
+<p>The first argument to the function will be the access point's SSID and the second one its BSSID. The third argument will be the client's hardware address. </p>
 
 </div>
 </div>
@@ -290,6 +335,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aade32f28c703b7b4cdb73cccfcc91583"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::Crypto::WPA2Decrypter::ap_found_callback </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ad90089fc6bfeca74b5265e6b10996c4a">ap_found_callback_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the access point found callback. </p>
+<p>This callback will be executed every time a new access point is found, that's advertising an SSID added when calling add_ap_data.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ad90089fc6bfeca74b5265e6b10996c4a" title="The type used to store the callback type used when a new access point is found. ">ap_found_callback_type</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>The new callback to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="abdf7d1f0c5e306b56ca259630301d760"></a>
 <div class="memitem">
 <div class="memproto">
@@ -330,13 +401,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa79710c10e842c49966ed8e7bc829b8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::Crypto::WPA2Decrypter::handshake_captured_callback </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ac390dbe678cb04e2bf8f35f2ab1408d9">handshake_captured_callback_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the handshake captured callback. </p>
+<p>This callback will be executed every time a new handshake is captured.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../da/d45/classTins_1_1Crypto_1_1WPA2Decrypter.html#ac390dbe678cb04e2bf8f35f2ab1408d9">handshake_captured_callback_type</a> </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>The new callback to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/matias/Projects/libtins/code/include/tins/<a class="el" href="../../da/da0/crypto_8h_source.html">crypto.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:10 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:44 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

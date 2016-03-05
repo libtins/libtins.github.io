@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -273,6 +273,7 @@ Public Types</h2></td></tr>
 <b>PKTAP</b>, 
 <br/>
 &#160;&#160;<b>MPLS</b>, 
+<b>UNKNOWN</b> = 999, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -417,6 +418,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ac7b791c7965e27aa2121aff055c24099"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db0/classTins_1_1ARP.html#ac7b791c7965e27aa2121aff055c24099">extract_metadata</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
+<tr class="memdesc:ac7b791c7965e27aa2121aff055c24099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts metadata for this protocol based on the buffer provided.  <a href="#ac7b791c7965e27aa2121aff055c24099">More...</a><br/></td></tr>
+<tr class="separator:ac7b791c7965e27aa2121aff055c24099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae009559f8f520823902d86ba1faf790f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html">EthernetII</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db0/classTins_1_1ARP.html#ae009559f8f520823902d86ba1faf790f">make_arp_request</a> (<a class="el" href="../../d1/db0/classTins_1_1ARP.html#a6923fda7e5028e1ec6f9e6030c759b96">ipaddress_type</a> target, <a class="el" href="../../d1/db0/classTins_1_1ARP.html#a6923fda7e5028e1ec6f9e6030c759b96">ipaddress_type</a> sender, const <a class="el" href="../../d1/db0/classTins_1_1ARP.html#a6fd5595750bf0140dc02b192f7ebc8ef">hwaddress_type</a> &amp;hw_snd=<a class="el" href="../../d1/db0/classTins_1_1ARP.html#a6fd5595750bf0140dc02b192f7ebc8ef">hwaddress_type</a>())</td></tr>
 <tr class="memdesc:ae009559f8f520823902d86ba1faf790f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="../../d1/db0/classTins_1_1ARP.html" title="Represents an ARP PDU. ">ARP</a> Request within an <a class="el" href="../../df/dcb/classTins_1_1EthernetII.html" title="Represents an Ethernet II PDU. ">EthernetII</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#ae009559f8f520823902d86ba1faf790f">More...</a><br/></td></tr>
 <tr class="separator:ae009559f8f520823902d86ba1faf790f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -599,6 +603,49 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a903a2f833cde875be6bf62e50d19b603" title="Clones this packet. ">PDU::clone</a> </dd></dl>
 
 <p>Implements <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a903a2f833cde875be6bf62e50d19b603">Tins::PDU</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7b791c7965e27aa2121aff055c24099"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">PDU::metadata</a> Tins::ARP::extract_metadata </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>total_sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts metadata for this protocol based on the buffer provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer to a buffer </td></tr>
+    <tr><td class="paramname">total_sz</td><td>Size of the buffer pointed by buffer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1274,7 +1321,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

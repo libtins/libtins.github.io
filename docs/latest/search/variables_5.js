@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['id_5fsize',['id_size',['../da/de8/classTins_1_1RSNEAPOL.html#aa6c551111a418ed5d086b74e63780229',1,'Tins::RSNEAPOL']]],
-  ['interface',['interface',['../d9/d05/structTins_1_1Utils_1_1RouteEntry.html#afd80cf9cc3714186ebdee6dc59f53f45',1,'Tins::Utils::RouteEntry']]]
+  ['gateway',['gateway',['../d9/d05/structTins_1_1Utils_1_1RouteEntry.html#a3ec495912d0d842f1ee1f36c296a8ed7',1,'Tins::Utils::RouteEntry']]],
+  ['global_5fdsap_5faddr',['GLOBAL_DSAP_ADDR',['../d3/dac/classTins_1_1LLC.html#a768a1b0cb42ac31abd7b2010ba009956',1,'Tins::LLC']]]
 ];

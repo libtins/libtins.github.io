@@ -14,11 +14,12 @@ var searchData=
   ['next',['next',['../da/de2/classTins_1_1TCPIP_1_1AckedRange.html#a74d6be79382083098225e3c73026f4e3',1,'Tins::TCPIP::AckedRange']]],
   ['next_5fheader',['next_header',['../d5/d99/classTins_1_1IPSecAH.html#a884dd4dadb1c69f7b836213e794329e8',1,'Tins::IPSecAH::next_header() const '],['../d5/d99/classTins_1_1IPSecAH.html#ad78205d857b2129ee9337f51c7136047',1,'Tins::IPSecAH::next_header(uint8_t new_next_header)'],['../dd/d25/classTins_1_1IPv6.html#a2e18007221d6677cad9b939861ae56da',1,'Tins::IPv6::next_header() const '],['../dd/d25/classTins_1_1IPv6.html#abac2729a9e9be9c63b0c0cdf20988217',1,'Tins::IPv6::next_header(uint8_t new_next_header)']]],
   ['next_5fpacket',['next_packet',['../d2/d96/classTins_1_1BaseSniffer.html#a86017793ebf553aeacc2797eb018bc61',1,'Tins::BaseSniffer']]],
+  ['next_5fpdu_5ftype',['next_pdu_type',['../dc/d52/structTins_1_1PDU_1_1metadata.html#acaf052195fc8372f9fba96a697acdf46',1,'Tins::PDU::metadata']]],
   ['no_5finner_5fpdu',['no_inner_pdu',['../d1/d91/structTins_1_1Dot11Data_1_1no__inner__pdu.html',1,'Tins::Dot11Data']]],
   ['nonce',['nonce',['../da/de8/classTins_1_1RSNEAPOL.html#af97c472fc8d346dc37731fb7f533f3e4',1,'Tins::RSNEAPOL::nonce() const '],['../da/de8/classTins_1_1RSNEAPOL.html#a6f53d2cc216f4b1e08f826734bc15773',1,'Tins::RSNEAPOL::nonce(const uint8_t *ptr)'],['../d7/d38/classTins_1_1ICMPv6.html#a83d00df65557b0a4388566c13f0559e7',1,'Tins::ICMPv6::nonce(const nonce_type &amp;value)'],['../d7/d38/classTins_1_1ICMPv6.html#ac3047cff780588ab077d0a31197db2e8',1,'Tins::ICMPv6::nonce() const ']]],
   ['nonce_5fsize',['nonce_size',['../da/de8/classTins_1_1RSNEAPOL.html#a188deb9bc612f204b0ac3d67e02345e6',1,'Tins::RSNEAPOL']]],
   ['nonce_5ftype',['nonce_type',['../d7/d38/classTins_1_1ICMPv6.html#ad852494f764eb405beb64c15855fcf9d',1,'Tins::ICMPv6']]],
   ['noop',['noop',['../dd/d3f/classTins_1_1IP.html#aacd14ac31fc7c1f01b2c856091fe5251',1,'Tins::IP']]],
-  ['not_5ffragmented',['NOT_FRAGMENTED',['../d4/dbb/classTins_1_1IPv4Reassembler.html#a99eb71bd9a8004d57f48f7283b2cdc7ba0c97e5129d8828ca80f94447600ccfa2',1,'Tins::IPv4Reassembler']]],
+  ['not_5ffragmented',['NOT_FRAGMENTED',['../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2',1,'Tins::IPv4Reassembler']]],
   ['null_5faddr',['NULL_ADDR',['../d3/dac/classTins_1_1LLC.html#ad435abc81b653a42949a0a02334d3511',1,'Tins::LLC']]]
 ];

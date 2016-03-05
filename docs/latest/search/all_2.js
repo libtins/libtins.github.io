@@ -55,6 +55,7 @@ var searchData=
   ['crc32',['crc32',['../db/d81/namespaceTins_1_1Utils.html#acaebe364881dba0d94babc1537a93def',1,'Tins::Utils']]],
   ['create_5ftime',['create_time',['../dc/da4/classTins_1_1TCPIP_1_1Stream.html#afbf0c5d7c44059eb753a7c1ecad84bbd',1,'Tins::TCPIP::Stream']]],
   ['current_5fap',['current_ap',['../d7/de6/classTins_1_1Dot11ReAssocRequest.html#aab1b98c2ca493e480b0b962be9de3356',1,'Tins::Dot11ReAssocRequest::current_ap() const '],['../d7/de6/classTins_1_1Dot11ReAssocRequest.html#af4339e36827c22e954745716736f7163',1,'Tins::Dot11ReAssocRequest::current_ap(const address_type &amp;new_current_ap)']]],
+  ['current_5fpdu_5ftype',['current_pdu_type',['../dc/d52/structTins_1_1PDU_1_1metadata.html#a1373e4900ce9e990720969906c5b0134',1,'Tins::PDU::metadata']]],
   ['current_5ftime',['current_time',['../d9/d36/classTins_1_1Timestamp.html#af267c3468d42d769ed93f6cd6e18ba0b',1,'Tins::Timestamp']]],
   ['cyphers_5ftype',['cyphers_type',['../df/dd6/classTins_1_1RSNInformation.html#a7362ca205532c192b8cd8a4e2646e728',1,'Tins::RSNInformation']]],
   ['cyphersuites',['CypherSuites',['../df/dd6/classTins_1_1RSNInformation.html#a579066df68187349e86381fd594450ca',1,'Tins::RSNInformation']]]

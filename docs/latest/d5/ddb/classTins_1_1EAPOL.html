@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -202,6 +202,7 @@ Public Types</h2></td></tr>
 <b>PKTAP</b>, 
 <br/>
 &#160;&#160;<b>MPLS</b>, 
+<b>UNKNOWN</b> = 999, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -312,6 +313,9 @@ virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:afc103e7a709ebb391ad0d15f9638b381"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#afc103e7a709ebb391ad0d15f9638b381">extract_metadata</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
+<tr class="memdesc:afc103e7a709ebb391ad0d15f9638b381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts metadata for this protocol based on the buffer provided.  <a href="#afc103e7a709ebb391ad0d15f9638b381">More...</a><br/></td></tr>
+<tr class="separator:afc103e7a709ebb391ad0d15f9638b381"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1212b93777370e99e47cd22b2cd4fd4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html">EAPOL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#ac1212b93777370e99e47cd22b2cd4fd4">from_bytes</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
 <tr class="memdesc:ac1212b93777370e99e47cd22b2cd4fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to instantiate the correct <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html" title="Represents the EAP encapsulation over LAN. ">EAPOL</a> subclass based on a raw buffer.  <a href="#ac1212b93777370e99e47cd22b2cd4fd4">More...</a><br/></td></tr>
 <tr class="separator:ac1212b93777370e99e47cd22b2cd4fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -425,6 +429,49 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afc103e7a709ebb391ad0d15f9638b381"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">PDU::metadata</a> Tins::EAPOL::extract_metadata </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>total_sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts metadata for this protocol based on the buffer provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer to a buffer </td></tr>
+    <tr><td class="paramname">total_sz</td><td>Size of the buffer pointed by buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="ac1212b93777370e99e47cd22b2cd4fd4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -742,7 +789,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:43 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

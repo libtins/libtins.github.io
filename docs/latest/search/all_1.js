@@ -9,6 +9,7 @@ var searchData=
   ['bitmap_5fsize',['bitmap_size',['../d3/d51/classTins_1_1Dot11BlockAck.html#acadf8e6dfb0a712eeb341db8822f4d1d',1,'Tins::Dot11BlockAck']]],
   ['bootp',['BootP',['../de/ddf/classTins_1_1BootP.html#a89f86ab157a8ec4db79cd5eb8abfbf16',1,'Tins::BootP::BootP()'],['../de/ddf/classTins_1_1BootP.html#a86474cfda43ef591ec95b5c0fd4092f3',1,'Tins::BootP::BootP(const uint8_t *buffer, uint32_t total_sz, uint32_t vend_field_size=64)']]],
   ['bootp',['BootP',['../de/ddf/classTins_1_1BootP.html',1,'Tins']]],
+  ['bootp_5fheader',['bootp_header',['../d5/dd0/structTins_1_1BootP_1_1bootp__header.html',1,'Tins::BootP']]],
   ['bottom_5fof_5fstack',['bottom_of_stack',['../db/d4a/classTins_1_1MPLS.html#a2323a79c9efee82779420aa0b412e5b3',1,'Tins::MPLS::bottom_of_stack() const '],['../db/d4a/classTins_1_1MPLS.html#a1d803d92b87afd30185928d5ef25bd98',1,'Tins::MPLS::bottom_of_stack(small_uint&lt; 1 &gt; value)']]],
   ['bpdu_5fflags',['bpdu_flags',['../da/df7/classTins_1_1STP.html#a9b0e002f115541c65d75ebf45e65f5fc',1,'Tins::STP::bpdu_flags() const '],['../da/df7/classTins_1_1STP.html#a018249e41a1e8fa0b94f3ea8ce118eb3',1,'Tins::STP::bpdu_flags(uint8_t new_bpdu_flags)']]],
   ['bpdu_5fid_5ftype',['bpdu_id_type',['../d3/d45/structTins_1_1STP_1_1bpdu__id__type.html',1,'Tins::STP']]],

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>Memory {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> read_data(<span class="keyword">const</span> uint8_t* buffer, uint8_t* output_buffer, uint32_t size) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> read_data(<span class="keyword">const</span> uint8_t* buffer, uint8_t* output_buffer, <span class="keywordtype">size_t</span> size) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::memcpy(output_buffer, buffer, size);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::memcpy(&amp;value, buffer, <span class="keyword">sizeof</span>(value));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> write_data(uint8_t* buffer, <span class="keyword">const</span> uint8_t* ptr, uint32_t size) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> write_data(uint8_t* buffer, <span class="keyword">const</span> uint8_t* ptr, <span class="keywordtype">size_t</span> size) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::memcpy(buffer, ptr, size);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">class </span>InputMemoryStream {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    InputMemoryStream(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    InputMemoryStream(<span class="keyword">const</span> uint8_t* buffer, <span class="keywordtype">size_t</span> total_sz)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    : buffer_(buffer), size_(total_sz) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
@@ -163,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    : buffer_(&amp;data[0]), size_(data.size()) {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> skip(uint32_t size) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> skip(<span class="keywordtype">size_t</span> size) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (TINS_UNLIKELY(size &gt; size_)) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">throw</span> malformed_packet();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
@@ -171,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        size_ -= size;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> can_read(uint32_t byte_count)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> can_read(<span class="keywordtype">size_t</span> byte_count)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> TINS_LIKELY(size_ &gt;= byte_count);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        skip(HWAddress&lt;n&gt;::address_size);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> read(<span class="keywordtype">void</span>* output_buffer, uint32_t output_buffer_size) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> read(<span class="keywordtype">void</span>* output_buffer, <span class="keywordtype">size_t</span> output_buffer_size) {</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">if</span> (!can_read(output_buffer_size)) {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">throw</span> malformed_packet();</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
@@ -242,11 +242,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> buffer_;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    uint32_t size()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> size_;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span> size(uint32_t new_size) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">void</span> size(<span class="keywordtype">size_t</span> new_size) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        size_ = new_size;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
@@ -255,12 +255,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">const</span> uint8_t* buffer_;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    uint32_t size_;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">size_t</span> size_;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">class </span>OutputMemoryStream {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    OutputMemoryStream(uint8_t* buffer, uint32_t total_sz)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    OutputMemoryStream(uint8_t* buffer, <span class="keywordtype">size_t</span> total_sz)</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    : buffer_(buffer), size_(total_sz) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    : buffer_(&amp;buffer[0]), size_(buffer.size()) {</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> skip(uint32_t size) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> skip(<span class="keywordtype">size_t</span> size) {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">if</span> (TINS_UNLIKELY(size &gt; size_)) {</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">throw</span> malformed_packet();</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
@@ -297,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ForwardIterator&gt;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">void</span> write(ForwardIterator start, ForwardIterator end) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">const</span> uint32_t length = std::distance(start, end); </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> length = std::distance(start, end); </div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">if</span> (TINS_UNLIKELY(size_ &lt; length)) {</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">throw</span> serialization_error();</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
@@ -305,7 +305,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        skip(length);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">void</span> write(<span class="keyword">const</span> uint8_t* ptr, uint32_t length) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">void</span> write(<span class="keyword">const</span> uint8_t* ptr, <span class="keywordtype">size_t</span> length) {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        write(ptr, ptr + length);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
@@ -322,7 +322,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        write(address.begin(), address.end());</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">void</span> fill(uint32_t size, uint8_t value) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">void</span> fill(<span class="keywordtype">size_t</span> size, uint8_t value) {</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (TINS_UNLIKELY(size_ &lt; size)) {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">throw</span> serialization_error();</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div>
@@ -334,12 +334,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">return</span> buffer_;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    uint32_t size()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">return</span> size_;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    uint8_t* buffer_;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    uint32_t size_;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">size_t</span> size_;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;};</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;} <span class="comment">// Memory</span></div>
@@ -349,7 +349,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

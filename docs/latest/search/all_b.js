@@ -20,6 +20,8 @@ var searchData=
   ['mcs',['mcs',['../d7/d0e/classTins_1_1RadioTap.html#a114a03950be58baad6370b28aef70678',1,'Tins::RadioTap::mcs(const mcs_type &amp;new_mcs)'],['../d7/d0e/classTins_1_1RadioTap.html#aae0a1702c1817fbf6d92f8037fe3b4ab',1,'Tins::RadioTap::mcs() const ']]],
   ['mcs_5ftype',['mcs_type',['../d8/dbb/structTins_1_1RadioTap_1_1mcs__type.html',1,'Tins::RadioTap']]],
   ['messagetype',['MessageType',['../d8/d2b/classTins_1_1DHCPv6.html#a207c4fee31ce2ebb29410d28a7729b8d',1,'Tins::DHCPv6']]],
+  ['metadata',['metadata',['../dc/d52/structTins_1_1PDU_1_1metadata.html',1,'Tins::PDU']]],
+  ['metadata',['metadata',['../dc/d52/structTins_1_1PDU_1_1metadata.html#a0724aa616d68a1883a44bc399ce654e3',1,'Tins::PDU::metadata::metadata()'],['../dc/d52/structTins_1_1PDU_1_1metadata.html#a55b39f89fd90ac60e020bda703dbcfac',1,'Tins::PDU::metadata::metadata(uint32_t header_size, PDUType current_type, PDUType next_type)']]],
   ['metric',['metric',['../d9/d05/structTins_1_1Utils_1_1RouteEntry.html#ab3e165961035b5f6634b88f15b267d30',1,'Tins::Utils::RouteEntry']]],
   ['mhz_5fto_5fchannel',['mhz_to_channel',['../db/d81/namespaceTins_1_1Utils.html#a3fae98a55c5656dcb805f32eb580b67c',1,'Tins::Utils']]],
   ['mic',['mic',['../da/de8/classTins_1_1RSNEAPOL.html#a7156e256c7fe49b9625d5f783b8647b9',1,'Tins::RSNEAPOL::mic() const '],['../da/de8/classTins_1_1RSNEAPOL.html#a8163da94af272ba3f6951f6c3f103b36',1,'Tins::RSNEAPOL::mic(const uint8_t *ptr)']]],

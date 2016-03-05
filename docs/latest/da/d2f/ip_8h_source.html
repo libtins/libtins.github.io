@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -256,268 +256,271 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
 <div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac6f90669c7f0f040e1d2674fe34d6ee5">  247</a></span>&#160;    <span class="keyword">typedef</span> std::list&lt;option&gt; <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac6f90669c7f0f040e1d2674fe34d6ee5">options_type</a>;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>(<a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> ip_dst = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>(), </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;       <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> ip_src = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>());</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">/* Getters */</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
-<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a27e5472bb7b782ea6b16b5745911e1f3">  282</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;4&gt;</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a27e5472bb7b782ea6b16b5745911e1f3">head_len</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">return</span> this-&gt;header_.ihl;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">  291</a></span>&#160;    uint8_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">tos</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> header_.tos;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a5dd91c562550c00b67227a7d4a1ba252">  300</a></span>&#160;    uint16_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a5dd91c562550c00b67227a7d4a1ba252">tot_len</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.tot_len);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">  309</a></span>&#160;    uint16_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">id</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.id);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
-<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">  323</a></span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">TINS_DEPRECATED</a>(uint16_t frag_off() <span class="keyword">const</span>) {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.frag_off);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
-<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">  335</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;13&gt;</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">fragment_offset</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.frag_off) &amp; 0x1fff;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
-<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">  344</a></span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">flags</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a><span class="keyword">&gt;</span>(Endian::be_to_host(header_.frag_off) &gt;&gt; 13);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
-<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">  353</a></span>&#160;    uint8_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">ttl</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">return</span> header_.ttl;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    }</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">  362</a></span>&#160;    uint8_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">protocol</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">return</span> header_.protocol;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
-<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a1cd16dc025b29116dbf0ed1ac389bd64">  371</a></span>&#160;    uint16_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a1cd16dc025b29116dbf0ed1ac389bd64">checksum</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.check);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    }</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;</div>
-<div class="line"><a name="l00380"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7daac2cf96a885f8c23ae745fcafba5a">  380</a></span>&#160;    <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7daac2cf96a885f8c23ae745fcafba5a">src_addr</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>(header_.saddr);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
-<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">  388</a></span>&#160;    <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">dst_addr</a>()<span class="keyword"> const  </span>{</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>(header_.daddr);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">metadata</a> extract_metadata(<span class="keyword">const</span> uint8_t *buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>(<a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> ip_dst = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>(), </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;       <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> ip_src = <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>());</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">/* Getters */</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a27e5472bb7b782ea6b16b5745911e1f3">  290</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;4&gt;</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a27e5472bb7b782ea6b16b5745911e1f3">head_len</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">return</span> this-&gt;header_.ihl;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">  299</a></span>&#160;    uint8_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">tos</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">return</span> header_.tos;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a5dd91c562550c00b67227a7d4a1ba252">  308</a></span>&#160;    uint16_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a5dd91c562550c00b67227a7d4a1ba252">tot_len</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.tot_len);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">  317</a></span>&#160;    uint16_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">id</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.id);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">  331</a></span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">TINS_DEPRECATED</a>(uint16_t frag_off() <span class="keyword">const</span>) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.frag_off);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">  343</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;13&gt;</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">fragment_offset</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.frag_off) &amp; 0x1fff;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00352"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">  352</a></span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">flags</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Flags</a><span class="keyword">&gt;</span>(Endian::be_to_host(header_.frag_off) &gt;&gt; 13);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00361"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">  361</a></span>&#160;    uint8_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">ttl</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">return</span> header_.ttl;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">  370</a></span>&#160;    uint8_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">protocol</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">return</span> header_.protocol;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a1cd16dc025b29116dbf0ed1ac389bd64">  379</a></span>&#160;    uint16_t <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a1cd16dc025b29116dbf0ed1ac389bd64">checksum</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">return</span> Endian::be_to_host(header_.check);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;</div>
+<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7daac2cf96a885f8c23ae745fcafba5a">  388</a></span>&#160;    <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7daac2cf96a885f8c23ae745fcafba5a">src_addr</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>(header_.saddr);</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    </div>
-<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">  396</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;4&gt;</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">version</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">return</span> header_.version;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">  396</a></span>&#160;    <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">dst_addr</a>()<span class="keyword"> const  </span>{</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">address_type</a>(header_.daddr);</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;</div>
-<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7c8a47eae50f5b9cb8322ed24f64c443">  404</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac6f90669c7f0f040e1d2674fe34d6ee5">options_type</a>&amp; <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7c8a47eae50f5b9cb8322ed24f64c443">options</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">return</span> ip_options_;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    </div>
+<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">  404</a></span>&#160;    <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;4&gt;</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">version</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">return</span> header_.version;</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">/* Setters */</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordtype">void</span> tos(uint8_t new_tos);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordtype">void</span> id(uint16_t new_id);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    TINS_DEPRECATED(<span class="keywordtype">void</span> frag_off(uint16_t new_frag_off));</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    </div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordtype">void</span> fragment_offset(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;13&gt;</a> new_frag_off);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordtype">void</span> flags(Flags new_flags);</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keywordtype">void</span> ttl(uint8_t new_ttl);</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordtype">void</span> protocol(uint8_t new_protocol);</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <span class="keywordtype">void</span> src_addr(address_type ip);</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordtype">void</span> dst_addr(address_type ip);</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    </div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keywordtype">void</span> version(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;4&gt;</a> ver);</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordtype">void</span> add_option(<span class="keyword">const</span> option&amp; opt);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    </div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;<span class="preprocessor">    #if TINS_IS_CXX11</span></div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00518"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#afb5733422e8fb992f5b9707358c28b95">  518</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#afb5733422e8fb992f5b9707358c28b95">add_option</a>(<a class="code" href="../../df/ddb/classTins_1_1PDUOption.html">option</a> &amp;&amp;opt) {</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            internal_add_option(opt);</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            ip_options_.push_back(std::move(opt));</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        }</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00532"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ade5e7db78613c61a54e6c58e24f20716">  532</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ade5e7db78613c61a54e6c58e24f20716">add_option</a>(Args&amp;&amp;... args) {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            ip_options_.emplace_back(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            internal_add_option(ip_options_.back());</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        }</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordtype">bool</span> remove_option(option_identifier <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keyword">const</span> option* search_option(option_identifier <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="comment">// Option setters</span></div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="keywordtype">void</span> eol();</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keywordtype">void</span> noop();</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordtype">void</span> security(<span class="keyword">const</span> security_type&amp; data);</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    </div>
-<div class="line"><a name="l00584"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac3ef8ac6f40f1bbe6e456f54fc85fbdb">  584</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac3ef8ac6f40f1bbe6e456f54fc85fbdb">lsrr</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">lsrr_type</a>&amp; data) {</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        add_route_option(131, data);</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    }</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    </div>
-<div class="line"><a name="l00593"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a8f8793d16a7c7f791364c0dfb6a2cab8">  593</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a8f8793d16a7c7f791364c0dfb6a2cab8">ssrr</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">ssrr_type</a>&amp; data) {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        add_route_option(137, data);</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    }</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    </div>
-<div class="line"><a name="l00602"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#aea8a73ddfc9083808fd3cbeb3324243f">  602</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#aea8a73ddfc9083808fd3cbeb3324243f">record_route</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">record_route_type</a>&amp; data) {</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        add_route_option(7, data);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    }</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    </div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="keywordtype">void</span> stream_identifier(uint16_t stream_id);</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    </div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="comment">// Option getters</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    </div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    security_type security() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    </div>
-<div class="line"><a name="l00634"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a09de15748671cff2ef09eab7495bfb8c">  634</a></span>&#160;    <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">lsrr_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a09de15748671cff2ef09eab7495bfb8c">lsrr</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        <span class="keywordflow">return</span> search_route_option(131);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    }</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    </div>
-<div class="line"><a name="l00647"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">  647</a></span>&#160;    <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">ssrr_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">ssrr</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        <span class="keywordflow">return</span> search_route_option(137);</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    }</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    </div>
-<div class="line"><a name="l00659"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac912f1df3212bd822c1c91a6e6547736">  659</a></span>&#160;    <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">record_route_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac912f1df3212bd822c1c91a6e6547736">record_route</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        <span class="keywordflow">return</span> search_route_option(7);</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    }</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    uint16_t stream_identifier() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">/* Virtual methods */</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    uint32_t header_size() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordtype">void</span> send(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a>&amp; sender, <span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keywordtype">bool</span> matches_response(<span class="keyword">const</span> uint8_t* ptr, uint32_t total_sz) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>* recv_response(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a>&amp; sender, <span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;);</div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7c8a47eae50f5b9cb8322ed24f64c443">  412</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac6f90669c7f0f040e1d2674fe34d6ee5">options_type</a>&amp; <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7c8a47eae50f5b9cb8322ed24f64c443">options</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">return</span> ip_options_;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment">/* Setters */</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordtype">void</span> tos(uint8_t new_tos);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">void</span> id(uint16_t new_id);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    TINS_DEPRECATED(<span class="keywordtype">void</span> frag_off(uint16_t new_frag_off));</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="keywordtype">void</span> fragment_offset(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;13&gt;</a> new_frag_off);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordtype">void</span> flags(Flags new_flags);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordtype">void</span> ttl(uint8_t new_ttl);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keywordtype">void</span> protocol(uint8_t new_protocol);</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="keywordtype">void</span> src_addr(address_type ip);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordtype">void</span> dst_addr(address_type ip);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    </div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordtype">void</span> version(<a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;4&gt;</a> ver);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="keywordtype">void</span> add_option(<span class="keyword">const</span> option&amp; opt);</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="preprocessor">    #if TINS_IS_CXX11</span></div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00526"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#afb5733422e8fb992f5b9707358c28b95">  526</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#afb5733422e8fb992f5b9707358c28b95">add_option</a>(<a class="code" href="../../df/ddb/classTins_1_1PDUOption.html">option</a> &amp;&amp;opt) {</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            internal_add_option(opt);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            ip_options_.push_back(std::move(opt));</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        }</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00540"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ade5e7db78613c61a54e6c58e24f20716">  540</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ade5e7db78613c61a54e6c58e24f20716">add_option</a>(Args&amp;&amp;... args) {</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            ip_options_.emplace_back(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            internal_add_option(ip_options_.back());</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        }</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordtype">bool</span> remove_option(option_identifier <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="keyword">const</span> option* search_option(option_identifier <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="comment">// Option setters</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    </div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="keywordtype">void</span> eol();</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="keywordtype">void</span> noop();</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordtype">void</span> security(<span class="keyword">const</span> security_type&amp; data);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    </div>
+<div class="line"><a name="l00592"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac3ef8ac6f40f1bbe6e456f54fc85fbdb">  592</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac3ef8ac6f40f1bbe6e456f54fc85fbdb">lsrr</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">lsrr_type</a>&amp; data) {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        add_route_option(131, data);</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    </div>
+<div class="line"><a name="l00601"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a8f8793d16a7c7f791364c0dfb6a2cab8">  601</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a8f8793d16a7c7f791364c0dfb6a2cab8">ssrr</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">ssrr_type</a>&amp; data) {</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        add_route_option(137, data);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    }</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    </div>
+<div class="line"><a name="l00610"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#aea8a73ddfc9083808fd3cbeb3324243f">  610</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#aea8a73ddfc9083808fd3cbeb3324243f">record_route</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">record_route_type</a>&amp; data) {</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        add_route_option(7, data);</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    </div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keywordtype">void</span> stream_identifier(uint16_t stream_id);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    </div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// Option getters</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    security_type security() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    </div>
+<div class="line"><a name="l00642"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a09de15748671cff2ef09eab7495bfb8c">  642</a></span>&#160;    <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">lsrr_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a09de15748671cff2ef09eab7495bfb8c">lsrr</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keywordflow">return</span> search_route_option(131);</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    }</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    </div>
+<div class="line"><a name="l00655"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">  655</a></span>&#160;    <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">ssrr_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">ssrr</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;        <span class="keywordflow">return</span> search_route_option(137);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    }</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    </div>
+<div class="line"><a name="l00667"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#ac912f1df3212bd822c1c91a6e6547736">  667</a></span>&#160;    <a class="code" href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">record_route_type</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#ac912f1df3212bd822c1c91a6e6547736">record_route</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <span class="keywordflow">return</span> search_route_option(7);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    }</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    uint16_t stream_identifier() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">/* Virtual methods */</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    uint32_t header_size() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keywordtype">void</span> send(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a>&amp; sender, <span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;);</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keywordtype">bool</span> matches_response(<span class="keyword">const</span> uint8_t* ptr, uint32_t total_sz) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordtype">bool</span> is_fragmented() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;</div>
-<div class="line"><a name="l00715"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a1821d42cbd07ec3c94239459cb8de6fc">  715</a></span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a1821d42cbd07ec3c94239459cb8de6fc">pdu_type</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keywordflow">return</span> pdu_flag;</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    }</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>* recv_response(<a class="code" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a>&amp; sender, <span class="keyword">const</span> <a class="code" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keywordtype">bool</span> is_fragmented() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;</div>
-<div class="line"><a name="l00722"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">  722</a></span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>* <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">clone</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    }</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t DEFAULT_TTL;</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    TINS_BEGIN_PACK</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keyword">struct </span>ip_header {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;<span class="preprocessor">    #if TINS_IS_LITTLE_ENDIAN</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;<span class="preprocessor"></span>        uint8_t ihl:4,</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                version:4;</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="preprocessor">    #else</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;<span class="preprocessor"></span>        uint8_t version:4,</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                ihl:4;</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;<span class="preprocessor"></span>        uint8_t tos;</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        uint16_t tot_len;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        uint16_t id;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        uint16_t frag_off;</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        uint8_t ttl;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        uint8_t protocol;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        uint16_t check;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        uint32_t saddr;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        uint32_t daddr;</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    } TINS_END_PACK;</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="keywordtype">void</span> head_len(small_uint&lt;4&gt; new_head_len);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">void</span> tot_len(uint16_t new_tot_len);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="keywordtype">void</span> prepare_for_serialize(<span class="keyword">const</span> PDU* parent);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <span class="keywordtype">void</span> internal_add_option(<span class="keyword">const</span> option&amp; option);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordtype">void</span> init_ip_fields();</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t* buffer, uint32_t total_sz, <span class="keyword">const</span> PDU* parent);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    <span class="keywordtype">void</span> write_option(<span class="keyword">const</span> option&amp; opt, Memory::OutputMemoryStream&amp; stream);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="keywordtype">void</span> add_route_option(option_identifier <span class="keywordtype">id</span>, <span class="keyword">const</span> generic_route_option_type&amp; data);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    generic_route_option_type search_route_option(option_identifier <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="keywordtype">void</span> checksum(uint16_t new_check);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    options_type::const_iterator search_option_iterator(option_identifier <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    options_type::iterator search_option_iterator(option_identifier <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordtype">void</span> update_padded_options_size();</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    ip_header header_;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    uint16_t options_size_, padded_options_size_;</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    options_type ip_options_;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;};</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;} <span class="comment">// Tins</span></div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="preprocessor">#endif // TINS_IP_H</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a1821d42cbd07ec3c94239459cb8de6fc">  723</a></span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a1821d42cbd07ec3c94239459cb8de6fc">pdu_type</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="keywordflow">return</span> pdu_flag;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    }</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;</div>
+<div class="line"><a name="l00730"></a><span class="lineno"><a class="line" href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">  730</a></span>&#160;    <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>* <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">clone</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t DEFAULT_TTL;</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    TINS_BEGIN_PACK</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keyword">struct </span>ip_header {</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;<span class="preprocessor">    #if TINS_IS_LITTLE_ENDIAN</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;<span class="preprocessor"></span>        uint8_t ihl:4,</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                version:4;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;<span class="preprocessor"></span>        uint8_t version:4,</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                ihl:4;</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;<span class="preprocessor"></span>        uint8_t tos;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        uint16_t tot_len;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        uint16_t id;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        uint16_t frag_off;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        uint8_t ttl;</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        uint8_t protocol;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        uint16_t check;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        uint32_t saddr;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        uint32_t daddr;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    } TINS_END_PACK;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="keywordtype">void</span> head_len(small_uint&lt;4&gt; new_head_len);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="keywordtype">void</span> tot_len(uint16_t new_tot_len);</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keywordtype">void</span> prepare_for_serialize(<span class="keyword">const</span> PDU* parent);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordtype">void</span> internal_add_option(<span class="keyword">const</span> option&amp; option);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordtype">void</span> init_ip_fields();</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t* buffer, uint32_t total_sz, <span class="keyword">const</span> PDU* parent);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keywordtype">void</span> write_option(<span class="keyword">const</span> option&amp; opt, Memory::OutputMemoryStream&amp; stream);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="keywordtype">void</span> add_route_option(option_identifier <span class="keywordtype">id</span>, <span class="keyword">const</span> generic_route_option_type&amp; data);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    generic_route_option_type search_route_option(option_identifier <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordtype">void</span> checksum(uint16_t new_check);</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    options_type::const_iterator search_option_iterator(option_identifier <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    options_type::iterator search_option_iterator(option_identifier <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="keywordtype">void</span> update_padded_options_size();</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    ip_header header_;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    uint16_t options_size_, padded_options_size_;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    options_type ip_options_;</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;};</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="preprocessor">#endif // TINS_IP_H</span></div>
 <div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a60e64c2c5c5521535805f9c1908f66a1"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a60e64c2c5c5521535805f9c1908f66a1">Tins::IP::option_identifier::option_identifier</a></div><div class="ttdeci">option_identifier()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> ip.h:142</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a7daac2cf96a885f8c23ae745fcafba5a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7daac2cf96a885f8c23ae745fcafba5a">Tins::IP::src_addr</a></div><div class="ttdeci">address_type src_addr() const </div><div class="ttdoc">Getter for the source address field. </div><div class="ttdef"><b>Definition:</b> ip.h:380</div></div>
-<div class="ttc" id="classTins_1_1IP_html_ac3c7d3d678ea191435048fad09c76873"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">Tins::IP::flags</a></div><div class="ttdeci">Flags flags() const </div><div class="ttdoc">Getter for the flags field. </div><div class="ttdef"><b>Definition:</b> ip.h:344</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a7daac2cf96a885f8c23ae745fcafba5a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7daac2cf96a885f8c23ae745fcafba5a">Tins::IP::src_addr</a></div><div class="ttdeci">address_type src_addr() const </div><div class="ttdoc">Getter for the source address field. </div><div class="ttdef"><b>Definition:</b> ip.h:388</div></div>
+<div class="ttc" id="classTins_1_1IP_html_ac3c7d3d678ea191435048fad09c76873"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac3c7d3d678ea191435048fad09c76873">Tins::IP::flags</a></div><div class="ttdeci">Flags flags() const </div><div class="ttdoc">Getter for the flags field. </div><div class="ttdef"><b>Definition:</b> ip.h:352</div></div>
 <div class="ttc" id="classTins_1_1IP_html"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html">Tins::IP</a></div><div class="ttdoc">Class that represents an IP PDU. </div><div class="ttdef"><b>Definition:</b> ip.h:64</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a81abc8a8f90b73b8d593fa0b85e53432"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a81abc8a8f90b73b8d593fa0b85e53432">Tins::IP::lsrr_type</a></div><div class="ttdeci">generic_route_option_type lsrr_type</div><div class="ttdef"><b>Definition:</b> ip.h:232</div></div>
 <div class="ttc" id="classTins_1_1IP_html_af54ead91fe8e749c9cde822534d658bf"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#af54ead91fe8e749c9cde822534d658bf">Tins::IP::ssrr_type</a></div><div class="ttdeci">generic_route_option_type ssrr_type</div><div class="ttdef"><b>Definition:</b> ip.h:237</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a1821d42cbd07ec3c94239459cb8de6fc"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a1821d42cbd07ec3c94239459cb8de6fc">Tins::IP::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> ip.h:715</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a27e5472bb7b782ea6b16b5745911e1f3"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a27e5472bb7b782ea6b16b5745911e1f3">Tins::IP::head_len</a></div><div class="ttdeci">small_uint&lt; 4 &gt; head_len() const </div><div class="ttdoc">Getter for the header length field. </div><div class="ttdef"><b>Definition:</b> ip.h:282</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a1821d42cbd07ec3c94239459cb8de6fc"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a1821d42cbd07ec3c94239459cb8de6fc">Tins::IP::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> ip.h:723</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a27e5472bb7b782ea6b16b5745911e1f3"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a27e5472bb7b782ea6b16b5745911e1f3">Tins::IP::head_len</a></div><div class="ttdeci">small_uint&lt; 4 &gt; head_len() const </div><div class="ttdoc">Getter for the header length field. </div><div class="ttdef"><b>Definition:</b> ip.h:290</div></div>
 <div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:128</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a48923f5353017ef75bbe2c6db2b71b5a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a48923f5353017ef75bbe2c6db2b71b5a">Tins::IP::Flags</a></div><div class="ttdeci">Flags</div><div class="ttdef"><b>Definition:</b> ip.h:79</div></div>
-<div class="ttc" id="classTins_1_1IP_html_ac3ef8ac6f40f1bbe6e456f54fc85fbdb"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac3ef8ac6f40f1bbe6e456f54fc85fbdb">Tins::IP::lsrr</a></div><div class="ttdeci">void lsrr(const lsrr_type &amp;data)</div><div class="ttdoc">Adds a Loose Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:584</div></div>
+<div class="ttc" id="classTins_1_1IP_html_ac3ef8ac6f40f1bbe6e456f54fc85fbdb"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac3ef8ac6f40f1bbe6e456f54fc85fbdb">Tins::IP::lsrr</a></div><div class="ttdeci">void lsrr(const lsrr_type &amp;data)</div><div class="ttdoc">Adds a Loose Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:592</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1generic__route__option__type_html"><div class="ttname"><a href="../../d3/d65/structTins_1_1IP_1_1generic__route__option__type.html">Tins::IP::generic_route_option_type</a></div><div class="ttdef"><b>Definition:</b> ip.h:217</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a0052624d24554ed0768179ad2895b810"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">Tins::IP::TINS_DEPRECATED</a></div><div class="ttdeci">TINS_DEPRECATED(uint16_t frag_off() const)</div><div class="ttdoc">Getter for the fragment offset field. </div><div class="ttdef"><b>Definition:</b> ip.h:323</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a0052624d24554ed0768179ad2895b810"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">Tins::IP::TINS_DEPRECATED</a></div><div class="ttdeci">TINS_DEPRECATED(uint16_t frag_off() const)</div><div class="ttdoc">Getter for the fragment offset field. </div><div class="ttdef"><b>Definition:</b> ip.h:331</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a8b3a2eb88cc4075706325f94c2280dcf"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a8b3a2eb88cc4075706325f94c2280dcf">Tins::IP::option</a></div><div class="ttdeci">PDUOption&lt; option_identifier, IP &gt; option</div><div class="ttdef"><b>Definition:</b> ip.h:194</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a09de15748671cff2ef09eab7495bfb8c"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a09de15748671cff2ef09eab7495bfb8c">Tins::IP::lsrr</a></div><div class="ttdeci">lsrr_type lsrr() const </div><div class="ttdoc">Searchs and returns a Loose Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:634</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a8f8793d16a7c7f791364c0dfb6a2cab8"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a8f8793d16a7c7f791364c0dfb6a2cab8">Tins::IP::ssrr</a></div><div class="ttdeci">void ssrr(const ssrr_type &amp;data)</div><div class="ttdoc">Adds a Strict Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:593</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a5dd91c562550c00b67227a7d4a1ba252"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a5dd91c562550c00b67227a7d4a1ba252">Tins::IP::tot_len</a></div><div class="ttdeci">uint16_t tot_len() const </div><div class="ttdoc">Getter for the total length field. </div><div class="ttdef"><b>Definition:</b> ip.h:300</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a09de15748671cff2ef09eab7495bfb8c"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a09de15748671cff2ef09eab7495bfb8c">Tins::IP::lsrr</a></div><div class="ttdeci">lsrr_type lsrr() const </div><div class="ttdoc">Searchs and returns a Loose Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:642</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a8f8793d16a7c7f791364c0dfb6a2cab8"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a8f8793d16a7c7f791364c0dfb6a2cab8">Tins::IP::ssrr</a></div><div class="ttdeci">void ssrr(const ssrr_type &amp;data)</div><div class="ttdoc">Adds a Strict Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:601</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a5dd91c562550c00b67227a7d4a1ba252"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a5dd91c562550c00b67227a7d4a1ba252">Tins::IP::tot_len</a></div><div class="ttdeci">uint16_t tot_len() const </div><div class="ttdoc">Getter for the total length field. </div><div class="ttdef"><b>Definition:</b> ip.h:308</div></div>
 <div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:117</div></div>
 <div class="ttc" id="classTins_1_1PDUOption_html"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html">Tins::PDUOption</a></div><div class="ttdoc">Represents a PDU option field. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:320</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a7c8a47eae50f5b9cb8322ed24f64c443"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7c8a47eae50f5b9cb8322ed24f64c443">Tins::IP::options</a></div><div class="ttdeci">const options_type &amp; options() const </div><div class="ttdoc">Getter for the IP options. </div><div class="ttdef"><b>Definition:</b> ip.h:404</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a7c8a47eae50f5b9cb8322ed24f64c443"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7c8a47eae50f5b9cb8322ed24f64c443">Tins::IP::options</a></div><div class="ttdeci">const options_type &amp; options() const </div><div class="ttdoc">Getter for the IP options. </div><div class="ttdef"><b>Definition:</b> ip.h:412</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a6732c318307ed290ca6773c5cd9efe1a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a6732c318307ed290ca6773c5cd9efe1a">Tins::IP::address_type</a></div><div class="ttdeci">IPv4Address address_type</div><div class="ttdef"><b>Definition:</b> ip.h:74</div></div>
 <div class="ttc" id="classTins_1_1IP_html_ac6f90669c7f0f040e1d2674fe34d6ee5"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac6f90669c7f0f040e1d2674fe34d6ee5">Tins::IP::options_type</a></div><div class="ttdeci">std::list&lt; option &gt; options_type</div><div class="ttdef"><b>Definition:</b> ip.h:247</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a7e151549d909452591112f2d768fa928"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">Tins::IP::ssrr</a></div><div class="ttdeci">ssrr_type ssrr() const </div><div class="ttdoc">Searchs and returns a Strict Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:647</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a5f980999d3d2bf6943024395720d710d"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">Tins::IP::clone</a></div><div class="ttdeci">IP * clone() const </div><div class="ttdef"><b>Definition:</b> ip.h:722</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a7e151549d909452591112f2d768fa928"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">Tins::IP::ssrr</a></div><div class="ttdeci">ssrr_type ssrr() const </div><div class="ttdoc">Searchs and returns a Strict Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:655</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a5f980999d3d2bf6943024395720d710d"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">Tins::IP::clone</a></div><div class="ttdeci">IP * clone() const </div><div class="ttdef"><b>Definition:</b> ip.h:730</div></div>
 <div class="ttc" id="classTins_1_1small__uint_html"><div class="ttname"><a href="../../d0/df2/classTins_1_1small__uint.html">Tins::small_uint&lt; 1 &gt;</a></div></div>
-<div class="ttc" id="classTins_1_1IP_html_a61d2b3ef6b4ac44e0b450cf0be5fa937"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">Tins::IP::id</a></div><div class="ttdeci">uint16_t id() const </div><div class="ttdoc">Getter for the id field. </div><div class="ttdef"><b>Definition:</b> ip.h:309</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a61d2b3ef6b4ac44e0b450cf0be5fa937"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">Tins::IP::id</a></div><div class="ttdeci">uint16_t id() const </div><div class="ttdoc">Getter for the id field. </div><div class="ttdef"><b>Definition:</b> ip.h:317</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a0ef893a6853b95b3446718133a95da27"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a0ef893a6853b95b3446718133a95da27">Tins::IP::OptionClass</a></div><div class="ttdeci">OptionClass</div><div class="ttdoc">Enum indicating the option&#39;s class. </div><div class="ttdef"><b>Definition:</b> ip.h:91</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1security__type_html"><div class="ttname"><a href="../../d3/d6e/structTins_1_1IP_1_1security__type.html">Tins::IP::security_type</a></div><div class="ttdef"><b>Definition:</b> ip.h:199</div></div>
+<div class="ttc" id="structTins_1_1PDU_1_1metadata_html"><div class="ttname"><a href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">Tins::PDU::metadata</a></div><div class="ttdoc">Type used to store a PDU header&#39;s data. </div><div class="ttdef"><b>Definition:</b> pdu.h:195</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a90e7a9449a21c49ea3360bf7870581fc"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a90e7a9449a21c49ea3360bf7870581fc">Tins::IP::option_identifier::option_identifier</a></div><div class="ttdeci">option_identifier(OptionNumber number, OptionClass op_class, small_uint&lt; 1 &gt; copied)</div><div class="ttdef"><b>Definition:</b> ip.h:175</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a932807f1348dd17a0d049434dccd4e12"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">Tins::IP::tos</a></div><div class="ttdeci">uint8_t tos() const </div><div class="ttdoc">Getter for the type of service field. </div><div class="ttdef"><b>Definition:</b> ip.h:291</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a932807f1348dd17a0d049434dccd4e12"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">Tins::IP::tos</a></div><div class="ttdeci">uint8_t tos() const </div><div class="ttdoc">Getter for the type of service field. </div><div class="ttdef"><b>Definition:</b> ip.h:299</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a395bd7f0e06bd9e47ad96634203fa5b3"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a395bd7f0e06bd9e47ad96634203fa5b3">Tins::IP::option_identifier::option_identifier</a></div><div class="ttdeci">option_identifier(uint8_t value)</div><div class="ttdoc">Constructs this option from a single uint8_t value. </div><div class="ttdef"><b>Definition:</b> ip.h:158</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a5b14eafddca24c1506be81a8829f37a3"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a5b14eafddca24c1506be81a8829f37a3">Tins::IP::option_identifier::operator==</a></div><div class="ttdeci">bool operator==(const option_identifier &amp;rhs) const </div><div class="ttdoc">Equality operator. </div><div class="ttdef"><b>Definition:</b> ip.h:186</div></div>
-<div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:46</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a93c91c976756e0868af87b274c5cfc0a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">Tins::IP::protocol</a></div><div class="ttdeci">uint8_t protocol() const </div><div class="ttdoc">Getter for the protocol field. </div><div class="ttdef"><b>Definition:</b> ip.h:362</div></div>
+<div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:47</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a93c91c976756e0868af87b274c5cfc0a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">Tins::IP::protocol</a></div><div class="ttdeci">uint8_t protocol() const </div><div class="ttdoc">Getter for the protocol field. </div><div class="ttdef"><b>Definition:</b> ip.h:370</div></div>
 <div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:44</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a07b61165e3fae7e90c78d2b96ecec86e"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">Tins::IP::dst_addr</a></div><div class="ttdeci">address_type dst_addr() const </div><div class="ttdoc">Getter for the destination address field. </div><div class="ttdef"><b>Definition:</b> ip.h:388</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a61b3008542f465c448eb03b1ba0c8ad1"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">Tins::IP::version</a></div><div class="ttdeci">small_uint&lt; 4 &gt; version() const </div><div class="ttdoc">Getter for the version field. </div><div class="ttdef"><b>Definition:</b> ip.h:396</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a32a6bf84af274748317ef61ce1a91ce5"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">Tins::IP::fragment_offset</a></div><div class="ttdeci">small_uint&lt; 13 &gt; fragment_offset() const </div><div class="ttdoc">Getter for the fragment offset field. </div><div class="ttdef"><b>Definition:</b> ip.h:335</div></div>
-<div class="ttc" id="classTins_1_1IP_html_afb5733422e8fb992f5b9707358c28b95"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#afb5733422e8fb992f5b9707358c28b95">Tins::IP::add_option</a></div><div class="ttdeci">void add_option(option &amp;&amp;opt)</div><div class="ttdoc">Adds an IP option. </div><div class="ttdef"><b>Definition:</b> ip.h:518</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a07b61165e3fae7e90c78d2b96ecec86e"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">Tins::IP::dst_addr</a></div><div class="ttdeci">address_type dst_addr() const </div><div class="ttdoc">Getter for the destination address field. </div><div class="ttdef"><b>Definition:</b> ip.h:396</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a61b3008542f465c448eb03b1ba0c8ad1"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">Tins::IP::version</a></div><div class="ttdeci">small_uint&lt; 4 &gt; version() const </div><div class="ttdoc">Getter for the version field. </div><div class="ttdef"><b>Definition:</b> ip.h:404</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a32a6bf84af274748317ef61ce1a91ce5"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">Tins::IP::fragment_offset</a></div><div class="ttdeci">small_uint&lt; 13 &gt; fragment_offset() const </div><div class="ttdoc">Getter for the fragment offset field. </div><div class="ttdef"><b>Definition:</b> ip.h:343</div></div>
+<div class="ttc" id="classTins_1_1IP_html_afb5733422e8fb992f5b9707358c28b95"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#afb5733422e8fb992f5b9707358c28b95">Tins::IP::add_option</a></div><div class="ttdeci">void add_option(option &amp;&amp;opt)</div><div class="ttdoc">Adds an IP option. </div><div class="ttdef"><b>Definition:</b> ip.h:526</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a3b96232bd6da9d793fe87e8b7f58d9a9"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a3b96232bd6da9d793fe87e8b7f58d9a9">Tins::IP::record_route_type</a></div><div class="ttdeci">generic_route_option_type record_route_type</div><div class="ttdef"><b>Definition:</b> ip.h:242</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1option__identifier_html"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html">Tins::IP::option_identifier</a></div><div class="ttdoc">The type used to represent an option&#39;s type. </div><div class="ttdef"><b>Definition:</b> ip.h:127</div></div>
-<div class="ttc" id="classTins_1_1IP_html_aea8a73ddfc9083808fd3cbeb3324243f"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#aea8a73ddfc9083808fd3cbeb3324243f">Tins::IP::record_route</a></div><div class="ttdeci">void record_route(const record_route_type &amp;data)</div><div class="ttdoc">Adds a Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:602</div></div>
+<div class="ttc" id="classTins_1_1IP_html_aea8a73ddfc9083808fd3cbeb3324243f"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#aea8a73ddfc9083808fd3cbeb3324243f">Tins::IP::record_route</a></div><div class="ttdeci">void record_route(const record_route_type &amp;data)</div><div class="ttdoc">Adds a Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:610</div></div>
 <div class="ttc" id="classTins_1_1IP_html_acb02dc41d46b656715b9878108cbd2ff"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#acb02dc41d46b656715b9878108cbd2ff">Tins::IP::OptionNumber</a></div><div class="ttdeci">OptionNumber</div><div class="ttdoc">Enum indicating the option&#39;s id number. </div><div class="ttdef"><b>Definition:</b> ip.h:101</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a1cd16dc025b29116dbf0ed1ac389bd64"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a1cd16dc025b29116dbf0ed1ac389bd64">Tins::IP::checksum</a></div><div class="ttdeci">uint16_t checksum() const </div><div class="ttdoc">Getter for the checksum field. </div><div class="ttdef"><b>Definition:</b> ip.h:371</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a1cd16dc025b29116dbf0ed1ac389bd64"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a1cd16dc025b29116dbf0ed1ac389bd64">Tins::IP::checksum</a></div><div class="ttdeci">uint16_t checksum() const </div><div class="ttdoc">Getter for the checksum field. </div><div class="ttdef"><b>Definition:</b> ip.h:379</div></div>
 <div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:108</div></div>
-<div class="ttc" id="classTins_1_1IP_html_ade5e7db78613c61a54e6c58e24f20716"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ade5e7db78613c61a54e6c58e24f20716">Tins::IP::add_option</a></div><div class="ttdeci">void add_option(Args &amp;&amp;...args)</div><div class="ttdoc">Adds an IP option. </div><div class="ttdef"><b>Definition:</b> ip.h:532</div></div>
-<div class="ttc" id="classTins_1_1IP_html_a7df8889b6fd693048102e2a905b71df1"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">Tins::IP::ttl</a></div><div class="ttdeci">uint8_t ttl() const </div><div class="ttdoc">Getter for the time to live field. </div><div class="ttdef"><b>Definition:</b> ip.h:353</div></div>
-<div class="ttc" id="classTins_1_1IP_html_ac912f1df3212bd822c1c91a6e6547736"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac912f1df3212bd822c1c91a6e6547736">Tins::IP::record_route</a></div><div class="ttdeci">record_route_type record_route() const </div><div class="ttdoc">Searchs and returns a Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:659</div></div>
+<div class="ttc" id="classTins_1_1IP_html_ade5e7db78613c61a54e6c58e24f20716"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ade5e7db78613c61a54e6c58e24f20716">Tins::IP::add_option</a></div><div class="ttdeci">void add_option(Args &amp;&amp;...args)</div><div class="ttdoc">Adds an IP option. </div><div class="ttdef"><b>Definition:</b> ip.h:540</div></div>
+<div class="ttc" id="classTins_1_1IP_html_a7df8889b6fd693048102e2a905b71df1"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7df8889b6fd693048102e2a905b71df1">Tins::IP::ttl</a></div><div class="ttdeci">uint8_t ttl() const </div><div class="ttdoc">Getter for the time to live field. </div><div class="ttdef"><b>Definition:</b> ip.h:361</div></div>
+<div class="ttc" id="classTins_1_1IP_html_ac912f1df3212bd822c1c91a6e6547736"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#ac912f1df3212bd822c1c91a6e6547736">Tins::IP::record_route</a></div><div class="ttdeci">record_route_type record_route() const </div><div class="ttdoc">Searchs and returns a Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:667</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -174,7 +174,7 @@ Public Types</h2></td></tr>
 <br/>
 &#160;&#160;<b>NEIGHBOUR_ADVERT</b> = 136, 
 <b>REDIRECT</b> = 137, 
-<b>ROUTER_RENUMBER</b> = 137, 
+<b>ROUTER_RENUMBER</b> = 138, 
 <b>NI_QUERY</b> = 139, 
 <br/>
 &#160;&#160;<b>NI_REPLY</b> = 140, 
@@ -182,8 +182,15 @@ Public Types</h2></td></tr>
 <b>DHAAD_REQUEST</b> = 144, 
 <b>DHAAD_REPLY</b> = 145, 
 <br/>
-&#160;&#160;<b>MOBILE_PREFIX_SOL</b> = 146, 
-<b>MOBILE_PREFIX_ADV</b> = 147
+&#160;&#160;<b>MOBILE_PREFIX_SOLICIT</b> = 146, 
+<b>MOBILE_PREFIX_ADVERT</b> = 147, 
+<b>CERT_PATH_SOLICIT</b> = 148, 
+<b>CERT_PATH_ADVERT</b> = 149, 
+<br/>
+&#160;&#160;<b>MULTICAST_ROUTER_ADVERT</b> = 151, 
+<b>MULTICAST_ROUTER_SOLICIT</b> = 152, 
+<b>MULTICAST_ROUTER_TERMINATE</b> = 153, 
+<b>RPL_CONTROL_MSG</b> = 155
 <br/>
  }</td></tr>
 <tr class="separator:a437e0548f5341674f454361c5d4af150"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -331,6 +338,7 @@ typedef std::list&lt; <a class="el" href="../../d7/d38/classTins_1_1ICMPv6.html#
 <b>PKTAP</b>, 
 <br/>
 &#160;&#160;<b>MPLS</b>, 
+<b>UNKNOWN</b> = 999, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -1483,7 +1491,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the header size. </p>
-<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a>. This size includes the payload and options size. </p>
+<p>This method overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a>. This size includes the payload and options size. </p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a> </dd></dl>
 
 <p>Implements <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750">Tins::PDU</a>.</p>
@@ -3530,7 +3538,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the trailer size. </p>
-<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67" title="Trailer&#39;s size. ">PDU::trailer_size</a>. This size will hold the extensions size</p>
+<p>This method overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67" title="Trailer&#39;s size. ">PDU::trailer_size</a>. This size will hold the extensions size</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#aa5f4ea02961e44b98b25d3f74ad6cb67">Tins::PDU</a>.</p>
@@ -3616,7 +3624,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:43 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -196,6 +196,7 @@ Public Types</h2></td></tr>
 <b>PKTAP</b>, 
 <br/>
 &#160;&#160;<b>MPLS</b>, 
+<b>UNKNOWN</b> = 999, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -373,6 +374,9 @@ static const <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42d
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classTins_1_1EAPOL"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classTins_1_1EAPOL')"><img src="../../closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html">Tins::EAPOL</a></td></tr>
+<tr class="memitem:afc103e7a709ebb391ad0d15f9638b381 inherit pub_static_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#afc103e7a709ebb391ad0d15f9638b381">extract_metadata</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
+<tr class="memdesc:afc103e7a709ebb391ad0d15f9638b381 inherit pub_static_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts metadata for this protocol based on the buffer provided.  <a href="#afc103e7a709ebb391ad0d15f9638b381">More...</a><br/></td></tr>
+<tr class="separator:afc103e7a709ebb391ad0d15f9638b381 inherit pub_static_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1212b93777370e99e47cd22b2cd4fd4 inherit pub_static_methods_classTins_1_1EAPOL"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html">EAPOL</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html#ac1212b93777370e99e47cd22b2cd4fd4">from_bytes</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
 <tr class="memdesc:ac1212b93777370e99e47cd22b2cd4fd4 inherit pub_static_methods_classTins_1_1EAPOL"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static method to instantiate the correct <a class="el" href="../../d5/ddb/classTins_1_1EAPOL.html" title="Represents the EAP encapsulation over LAN. ">EAPOL</a> subclass based on a raw buffer.  <a href="#ac1212b93777370e99e47cd22b2cd4fd4">More...</a><br/></td></tr>
 <tr class="separator:ac1212b93777370e99e47cd22b2cd4fd4 inherit pub_static_methods_classTins_1_1EAPOL"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -512,7 +516,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 </div><div class="memdoc">
 
 <p>Returns the header size. </p>
-<p>This metod overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a>. This size includes the payload and options size.</p>
+<p>This method overrides <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a>. This size includes the payload and options size.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750" title="The header&#39;s size. ">PDU::header_size</a> </dd></dl>
 
 <p>Implements <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a3303076c6cc764e04a7d1fe008fc0750">Tins::PDU</a>.</p>
@@ -1003,7 +1007,7 @@ TINS_BEGIN_PACK struct <br class="typebreak"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:09 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:43 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

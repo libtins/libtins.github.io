@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">    #if TINS_IS_CXX11</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d2/d96/classTins_1_1BaseSniffer.html#acd30e3a1144d15dedd96cb17c5a7c997">   73</a></span>&#160;        <a class="code" href="../../d2/d96/classTins_1_1BaseSniffer.html#acd30e3a1144d15dedd96cb17c5a7c997">BaseSniffer</a>(<a class="code" href="../../d2/d96/classTins_1_1BaseSniffer.html">BaseSniffer</a> &amp;&amp;rhs) TINS_NOEXCEPT</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        : handle_(<span class="keywordtype">nullptr</span>), mask_(), extract_raw_(false) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        : handle_(0), mask_(), extract_raw_(false) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            *<span class="keyword">this</span> = std::move(rhs);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
@@ -343,7 +343,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        RFMON = 4,</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        PACKET_FILTER = 8,</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        IMMEDIATE_MODE = 16,</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        DIRECTION = 16</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        DIRECTION = 32</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    };</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keywordtype">void</span> configure_sniffer_pre_activation(<a class="code" href="../../de/dbb/classTins_1_1Sniffer.html">Sniffer</a>&amp; sniffer) <span class="keyword">const</span>;</div>
@@ -417,7 +417,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -91,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="../../d0/d52/classTins_1_1DHCP-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -308,6 +309,7 @@ Public Types</h2></td></tr>
 <b>PKTAP</b>, 
 <br/>
 &#160;&#160;<b>MPLS</b>, 
+<b>UNKNOWN</b> = 999, 
 <b>USER_DEFINED_PDU</b> = 1000
 <br/>
  }</td></tr>
@@ -584,6 +586,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> matches the specified flag.  <a href="#ae34f7381fddcee41ab4525985634b781">More...</a><br/></td></tr>
 <tr class="separator:ae34f7381fddcee41ab4525985634b781 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a545aab6d2e559325b41d6defbe22426a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#a545aab6d2e559325b41d6defbe22426a">extract_metadata</a> (const uint8_t *buffer, uint32_t total_sz)</td></tr>
+<tr class="memdesc:a545aab6d2e559325b41d6defbe22426a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts metadata for this protocol based on the buffer provided.  <a href="#a545aab6d2e559325b41d6defbe22426a">More...</a><br/></td></tr>
+<tr class="separator:a545aab6d2e559325b41d6defbe22426a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ac555e6be41e1f7ac0cfeeec4208d6963"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbb/classTins_1_1DHCP.html#ac555e6be41e1f7ac0cfeeec4208d6963">pdu_flag</a> = PDU::DHCP</td></tr>
@@ -621,6 +629,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a292094fe6758b3e61383d6a59e18aec2">serialize</a> (uint8_t *buffer, uint32_t total_sz, const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *parent)</td></tr>
 <tr class="memdesc:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> and propagates this action to child PDUs.  <a href="#a292094fe6758b3e61383d6a59e18aec2">More...</a><br/></td></tr>
 <tr class="separator:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classTins_1_1BootP"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classTins_1_1BootP')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../de/ddf/classTins_1_1BootP.html">Tins::BootP</a></td></tr>
+<tr class="memitem:af86c4c395dfed7498f49002f1b5eb99a inherit pro_attribs_classTins_1_1BootP"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af86c4c395dfed7498f49002f1b5eb99a"></a>
+TINS_BEGIN_PACK struct <br class="typebreak"/>
+<a class="el" href="../../d5/dd0/structTins_1_1BootP_1_1bootp__header.html">Tins::BootP::bootp_header</a>&#160;</td><td class="memItemRight" valign="bottom"><b>TINS_END_PACK</b></td></tr>
+<tr class="separator:af86c4c395dfed7498f49002f1b5eb99a inherit pro_attribs_classTins_1_1BootP"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> the <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
@@ -964,6 +977,49 @@ Additional Inherited Members</h2></td></tr>
 <p>Adds an end option to the option list. </p>
 <p>The new option is appended at the end of the list.</p>
 <p>The END option is not added automatically. You should explicitly add it at the end of the <a class="el" href="../../db/dbb/classTins_1_1DHCP.html" title="Represents the DHCP PDU. ">DHCP</a> options for the <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> to be standard-compliant. </p>
+
+</div>
+</div>
+<a class="anchor" id="a545aab6d2e559325b41d6defbe22426a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">PDU::metadata</a> Tins::DHCP::extract_metadata </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>total_sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts metadata for this protocol based on the buffer provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer to a buffer </td></tr>
+    <tr><td class="paramname">total_sz</td><td>Size of the buffer pointed by buffer </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1526,7 +1582,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

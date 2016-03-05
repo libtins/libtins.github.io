@@ -25,5 +25,6 @@ var searchData=
   ['ipv4reassemblerproxy',['IPv4ReassemblerProxy',['../db/d75/classTins_1_1IPv4ReassemblerProxy.html',1,'Tins']]],
   ['ipv6',['IPv6',['../dd/d25/classTins_1_1IPv6.html',1,'Tins']]],
   ['ipv6address',['IPv6Address',['../de/dd2/classTins_1_1IPv6Address.html',1,'Tins']]],
+  ['ipv6prefix',['IPv6Prefix',['../dc/d62/structTins_1_1NetworkInterface_1_1IPv6Prefix.html',1,'Tins::NetworkInterface']]],
   ['is_5fpdu',['is_pdu',['../df/d7f/structTins_1_1Utils_1_1is__pdu.html',1,'Tins::Utils']]]
 ];

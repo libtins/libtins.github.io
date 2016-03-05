@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -424,7 +424,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        real_size_ = rhs.real_size_;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">if</span> (real_size_ &gt; small_buffer_size) {</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            payload_.big_buffer_ptr = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            payload_.big_buffer_ptr = 0;</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            std::swap(payload_.big_buffer_ptr, rhs.payload_.big_buffer_ptr);</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            rhs.real_size_ = 0;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        }</div>
@@ -569,7 +569,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.3</span>
+   &#160;<span id="projectnumber">3.4</span>
    </div>
   </td>
  </tr>
@@ -239,9 +239,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="../../de/ddf/classTins_1_1BootP.html#a6761af26fa2f1777a9bbd02d8b4dbc08">  333</a></span>&#160;    <a class="code" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a>&amp; <a class="code" href="../../de/ddf/classTins_1_1BootP.html#a6761af26fa2f1777a9bbd02d8b4dbc08">vend</a>() { <span class="keywordflow">return</span> vend_; }</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t* buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>* parent);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    </div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    TINS_BEGIN_PACK</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">struct </span>bootp_header {</div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="../../d5/dd0/structTins_1_1BootP_1_1bootp__header.html">  341</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d5/dd0/structTins_1_1BootP_1_1bootp__header.html">bootp_header</a> {</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        uint8_t opcode;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        uint8_t htype;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        uint8_t hlen;</div>
@@ -258,13 +258,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        uint8_t file[128];</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    } TINS_END_PACK;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    bootp_header bootp_;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    vend_type vend_;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;};</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;} <span class="comment">// Tins</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">#endif // TINS_BOOTP_H</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="../../d5/dd0/structTins_1_1BootP_1_1bootp__header.html">bootp_header</a> bootp_;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">vend_type</a> vend_;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;};</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">#endif // TINS_BOOTP_H</span></div>
 <div class="ttc" id="classTins_1_1HWAddress_html_aa28e9fddd1afdbe7a0f0836d48093a8b"><div class="ttname"><a href="../../dc/da6/classTins_1_1HWAddress.html#aa28e9fddd1afdbe7a0f0836d48093a8b">Tins::HWAddress::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdoc">Retrieves an iterator pointing to the begining of the address. </div><div class="ttdef"><b>Definition:</b> hw_address.h:186</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_a4745c5a25a5d7435a971779f07901d9c"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#a4745c5a25a5d7435a971779f07901d9c">Tins::BootP::xid</a></div><div class="ttdeci">uint32_t xid() const </div><div class="ttdoc">Getter for the xid field. </div><div class="ttdef"><b>Definition:</b> bootp.h:129</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_ac6a28c6bd14cd74f5be0fc07aa4df395"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#ac6a28c6bd14cd74f5be0fc07aa4df395">Tins::BootP::htype</a></div><div class="ttdeci">uint8_t htype() const </div><div class="ttdoc">Getter for the htype field. </div><div class="ttdef"><b>Definition:</b> bootp.h:111</div></div>
@@ -274,6 +275,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1BootP_html_ab20d3cbd679a1f09c52b39f45e2791d9"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9">Tins::BootP::vend_type</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; vend_type</div><div class="ttdef"><b>Definition:</b> bootp.h:63</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_acd8b9d7118117ed7a71cce4164380b09"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#acd8b9d7118117ed7a71cce4164380b09">Tins::BootP::hlen</a></div><div class="ttdeci">uint8_t hlen() const </div><div class="ttdoc">Getter for the hlen field. </div><div class="ttdef"><b>Definition:</b> bootp.h:117</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_aa1411a91206c379bbb2af57c71a3bed3"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#aa1411a91206c379bbb2af57c71a3bed3">Tins::BootP::giaddr</a></div><div class="ttdeci">ipaddress_type giaddr() const </div><div class="ttdoc">Getter for the giaddr field. </div><div class="ttdef"><b>Definition:</b> bootp.h:164</div></div>
+<div class="ttc" id="structTins_1_1BootP_1_1bootp__header_html"><div class="ttname"><a href="../../d5/dd0/structTins_1_1BootP_1_1bootp__header.html">Tins::BootP::bootp_header</a></div><div class="ttdef"><b>Definition:</b> bootp.h:341</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_a94f9e490b0f41834e68ba60fbb30e3dc"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#a94f9e490b0f41834e68ba60fbb30e3dc">Tins::BootP::sname</a></div><div class="ttdeci">const uint8_t * sname() const </div><div class="ttdoc">Getter for the sname field. </div><div class="ttdef"><b>Definition:</b> bootp.h:176</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_ade4da300149982c6a884505ebadcf6ce"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#ade4da300149982c6a884505ebadcf6ce">Tins::BootP::secs</a></div><div class="ttdeci">uint16_t secs() const </div><div class="ttdoc">Getter for the secs field. </div><div class="ttdef"><b>Definition:</b> bootp.h:135</div></div>
 <div class="ttc" id="classTins_1_1BootP_html_a73fdd4597bd8387f48d0bba949baee68"><div class="ttname"><a href="../../de/ddf/classTins_1_1BootP.html#a73fdd4597bd8387f48d0bba949baee68">Tins::BootP::chaddr</a></div><div class="ttdeci">void chaddr(const HWAddress&lt; n &gt; &amp;new_chaddr)</div><div class="ttdoc">Setter for the chaddr field. The new_chaddr pointer must be at least BOOTP::hlen() bytes long...</div><div class="ttdef"><b>Definition:</b> bootp.h:270</div></div>
@@ -297,7 +299,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 17 2016 20:23:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Mar 5 2016 15:49:42 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
