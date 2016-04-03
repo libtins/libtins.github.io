@@ -264,9 +264,23 @@ g++ app.cpp -o app -ltins
 <h3 id="using-windows">Using <i>libtins</i> on <i>Windows</i></h3>
 
 <p>
-If you are using <i>libtins</i> on <i>Windows</i>, then you have link 
-your application with <i>tins.lib</i> and you also need to 
-include the following, additional, linker dependencies: 
+If you are using a static build of <i>libtins</i> on <i>Windows</i>, 
+then you have link your application with <i>tins.lib</i>. You also need to
+add this macro definition to your project:
+</p>
+
+{% highlight cpp %}
+TINS_STATIC
+{% endhighlight 
+
+<p>
+This will make your project use <i>libtins</i> without trying to import
+symbols from a DLL but from the static library.
+</p>
+
+<p>
+You will also need to include the following linker dependencies on your 
+project: 
 </p>
 
 {% highlight bash %}
