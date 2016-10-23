@@ -83,7 +83,8 @@ cd build
 cmake ../ -DCMAKE_FIND_ROOT_PATH=/opt/mips_linux_toolchain/ \
 -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY \
 -DCMAKE_CXX_COMPILER=/opt/mips_linux_toolchain/bin/mips-linux-gnu-g++ \
--DLIBTINS_ENABLE_WPA2=0
+-DLIBTINS_ENABLE_WPA2=0 \
+-DCROSS_COMPILING=1
 {% endhighlight %}
 
 <p>
@@ -102,6 +103,7 @@ Let's look at each flag used:
     we are going to use</li>
     <li><i>LIBTINS_ENABLE_WPA2</i>: since I haven't cross-compiled
     <i>libcrypto</i>, I've disabled this feature.</li>
+    <li><i>CROSS_COMPILING</i> indicates we're doing a cross compiled build.</li>
 </ul>
 
 <p>
