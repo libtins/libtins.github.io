@@ -92,8 +92,10 @@ int main() {
     EthernetII eth;
     IP *ip = new IP();
     TCP *tcp = new TCP();
+
     // tcp is ip's inner pdu
     ip->inner_pdu(tcp);
+
     // ip is eth's inner pdu
     eth.inner_pdu(ip);
 }
@@ -137,8 +139,10 @@ using namespace Tins;
 int main() {
     // Simple stuff, no need to use pointers!
     EthernetII eth = EthernetII() / IP() / TCP();
+
     // Retrieve a pointer to the stored TCP PDU
     TCP *tcp = eth.find_pdu<TCP>();
+
     // You can also retrieve a reference. This will throw a
     // pdu_not_found exception if there is no such PDU in this packet.
     IP &ip = eth.rfind_pdu<IP>();
@@ -166,8 +170,10 @@ std::string lo_string("127.0.0.1");
 
 IPv4Address lo("127.0.0.1");
 IPv4Address empty; // represents the address 0.0.0.0
+
 // IPv6
 IPv6Address lo_6("::1");
+
 // Write it to stdout
 std::cout << "Lo: " << lo << std::endl;
 std::cout << "Empty: " << empty << std::endl;
@@ -353,11 +359,14 @@ using namespace Tins;
 int main() {
     // We'll write packets to /tmp/test.pcap. The lowest layer will be 
     // EthernetII, so we use the appropriate identifier.
-    PacketWriter writer("/tmp/test.pcap", PacketWriter::ETH2);
+    PacketWriter writer("/tmp/test.pcap", DataLinkType<EthernetII>());
+
     // A vector containing one EthernetII PDU.
     std::vector<EthernetII> vec(1, EthernetII("00:da:fe:13:ad:fa"));
+
     // Write the PDU(s) in the vector(only one, in this case).
     writer.write(vec.begin(), vec.end());
+
     // Write the same PDU once again, using another overload.
     writer.write(vec[0]);
 }
