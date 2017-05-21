@@ -312,21 +312,12 @@ once and store the return value.
 <p>
 Writing packets to a pcap file is very simple as well. The 
 <code>PacketWriter</code> class takes the name of the file in which you want 
-to store packets as its argument, and a flag indicating which will be
+to store packets as its argument, and a data link type indicating which will be
 the lowest layer written to the file. That means, if you're writing 
-<code>EthernetII PDU</code>s, you should use the <code>PacketWriter::ETH2</code>
-flag, while on wireless interfaces you should use <code>PacketWriter::RADIOTAP</code>
-or <code>PacketWriter::DOT11</code>, depending on the encapsulation used in
+<code>EthernetII PDU</code>s, you should use the <code>DataLinkType&lt;EthernetII&gt;</code>
+flag, while on wireless interfaces you should use <code>DataLinkType&lt;RadioTap&gt;</code>
+or <code>DataLinkType&lt;Dot11&gt;</code>, depending on the encapsulation used in
 the device.
-</p>
-<p>
-As of version <i>3.2</i> , there's a simpler way to indicate the link layer
-protocol to  be used on the packets written by a <code>PacketWriter</code>. 
-This can be done by instantiating the template class <code>DataLinkType</code> 
-with a link layer protocol <code>PDU</code> as its template argument. 
-This makes it easier to use this class, since you won't have to 
-remember which is the identifier name for some link layer protocol. 
-The following example illustrates this usage: 
 </p>
 {% highlight cpp %}
 // We'll write packets to /tmp/test.pcap. Use EthernetII as the link
