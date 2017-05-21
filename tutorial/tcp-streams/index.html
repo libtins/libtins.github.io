@@ -34,8 +34,7 @@ their data.
 As of version 3.4, <i>libtins</i> will introduce a new set of classes which 
 allow reassembling TCP streams in a very simple, yet powerful, way. Before this
 classes were introduced, there was a <i>TCPStreamFollower</i> class which sort of did
-this, but in a not-so-extensible not usable way. Note that this code is currently
-available on the <b>master branch</b> of the repository.
+this, but in a not-so-extensible not usable way.
 </p>
 
 <p>
@@ -96,8 +95,8 @@ void on_stream_terminated(Stream& stream, StreamFollower::TerminationReason reas
 // Create our follower
 Tins::TCPIP::StreamFollower follower;
 
-// Set the callback for new streams. Note that this is a <i>std::function</i>, so you
-// could use <i>std::bind</i> and use a member function for this
+// Set the callback for new streams. Note that this is a std::function, so you
+// could use std::bind and use a member function for this
 follower.new_stream_callback(&on_new_stream);
 
 // Now set up the termination callback. This will be called whenever a stream is 
