@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.4</span>
+   &#160;<span id="projectnumber">4.0</span>
    </div>
   </td>
  </tr>
@@ -116,16 +116,16 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a0216ac38ae0a77f472dc0bd8eff68ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that indicates the state of this flow.  <a href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a0216ac38ae0a77f472dc0bd8eff68ee7">More...</a><br/></td></tr>
 <tr class="separator:a0216ac38ae0a77f472dc0bd8eff68ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4fb75ad99924d78be4c508c8ea4c59a"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a></td></tr>
-<tr class="separator:aa4fb75ad99924d78be4c508c8ea4c59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac74d66de1fc5b711d5e7260f844dce7b"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; uint32_t, <br class="typebreak"/>
-<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ac74d66de1fc5b711d5e7260f844dce7b">buffered_payload_type</a></td></tr>
-<tr class="separator:ac74d66de1fc5b711d5e7260f844dce7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8f95027c4e53ba91c512e847a42c7e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">DataTracker::payload_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a></td></tr>
+<tr class="separator:a6e8f95027c4e53ba91c512e847a42c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ee02b4eb84d049bf6e4b4651aa5028"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+<a class="el" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">DataTracker::buffered_payload_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a38ee02b4eb84d049bf6e4b4651aa5028">buffered_payload_type</a></td></tr>
+<tr class="separator:a38ee02b4eb84d049bf6e4b4651aa5028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2551c46e056fbd0f114acc26cd3ba212"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html">Flow</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a2551c46e056fbd0f114acc26cd3ba212">data_available_callback_type</a></td></tr>
 <tr class="separator:a2551c46e056fbd0f114acc26cd3ba212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5980034fb2af4dd473fe5495376e9ff"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html">Flow</a> <br class="typebreak"/>
 &amp;, uint32_t, const <br class="typebreak"/>
-<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ad5980034fb2af4dd473fe5495376e9ff">flow_packet_callback_type</a></td></tr>
+<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ad5980034fb2af4dd473fe5495376e9ff">flow_packet_callback_type</a></td></tr>
 <tr class="memdesc:ad5980034fb2af4dd473fe5495376e9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used to store the callback called when data is buffered.  <a href="#ad5980034fb2af4dd473fe5495376e9ff">More...</a><br/></td></tr>
 <tr class="separator:ad5980034fb2af4dd473fe5495376e9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -144,6 +144,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6a006c07e95baf01a2a28ffb03f705ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6a006c07e95baf01a2a28ffb03f705ba">process_packet</a> (<a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu)</td></tr>
 <tr class="memdesc:a6a006c07e95baf01a2a28ffb03f705ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a packet.  <a href="#a6a006c07e95baf01a2a28ffb03f705ba">More...</a><br/></td></tr>
 <tr class="separator:a6a006c07e95baf01a2a28ffb03f705ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12095215f194ca9782bae1390eec8d63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a12095215f194ca9782bae1390eec8d63">advance_sequence</a> (uint32_t seq)</td></tr>
+<tr class="memdesc:a12095215f194ca9782bae1390eec8d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip forward to a sequence number.  <a href="#a12095215f194ca9782bae1390eec8d63">More...</a><br/></td></tr>
+<tr class="separator:a12095215f194ca9782bae1390eec8d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe82f7a472a6827cda58e17bec260779"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#afe82f7a472a6827cda58e17bec260779">is_v6</a> () const </td></tr>
 <tr class="separator:afe82f7a472a6827cda58e17bec260779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3de8ead99948d2a5f8dfd21cc1427754"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a3de8ead99948d2a5f8dfd21cc1427754">is_finished</a> () const </td></tr>
@@ -160,18 +163,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a33db444a2125da165273f41cb1a65d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af039fe105827bac983fe7243d59b137e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#af039fe105827bac983fe7243d59b137e">dport</a> () const </td></tr>
 <tr class="separator:af039fe105827bac983fe7243d59b137e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8834479d85a4255b985d51139b88812"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ae8834479d85a4255b985d51139b88812">payload</a> () const </td></tr>
-<tr class="separator:ae8834479d85a4255b985d51139b88812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d40ce569d7f930259a46bbe22fb35b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a4d40ce569d7f930259a46bbe22fb35b6">payload</a> ()</td></tr>
-<tr class="separator:a4d40ce569d7f930259a46bbe22fb35b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f396018deff043df94aaf3c88d01f62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a0216ac38ae0a77f472dc0bd8eff68ee7">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a1f396018deff043df94aaf3c88d01f62">state</a> () const </td></tr>
-<tr class="separator:a1f396018deff043df94aaf3c88d01f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6cff5b363ed80d3f82b86fdd8f3b8b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a3c6cff5b363ed80d3f82b86fdd8f3b8b">payload</a> () const </td></tr>
+<tr class="separator:a3c6cff5b363ed80d3f82b86fdd8f3b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa70abd9e4b21dac5ead6a1dc385430cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa70abd9e4b21dac5ead6a1dc385430cf">payload</a> ()</td></tr>
+<tr class="separator:aa70abd9e4b21dac5ead6a1dc385430cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34d06fa820062eb8f77051810448c32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a0216ac38ae0a77f472dc0bd8eff68ee7">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#af34d06fa820062eb8f77051810448c32">state</a> () const </td></tr>
+<tr class="separator:af34d06fa820062eb8f77051810448c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15a0c2efba080b7c2c3206232aab27b4"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a15a0c2efba080b7c2c3206232aab27b4">sequence_number</a> () const </td></tr>
 <tr class="separator:a15a0c2efba080b7c2c3206232aab27b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61aa91b596f072982c5406f84b497504"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ac74d66de1fc5b711d5e7260f844dce7b">buffered_payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a61aa91b596f072982c5406f84b497504">buffered_payload</a> () const </td></tr>
-<tr class="separator:a61aa91b596f072982c5406f84b497504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a820379a4a2c7f957ea86a18076eb448c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ac74d66de1fc5b711d5e7260f844dce7b">buffered_payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a820379a4a2c7f957ea86a18076eb448c">buffered_payload</a> ()</td></tr>
-<tr class="separator:a820379a4a2c7f957ea86a18076eb448c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32b620e2d64d3a21218e2ad49143be30"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a38ee02b4eb84d049bf6e4b4651aa5028">buffered_payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a32b620e2d64d3a21218e2ad49143be30">buffered_payload</a> () const </td></tr>
+<tr class="separator:a32b620e2d64d3a21218e2ad49143be30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781c6e44f7c9e56657fa1f252b15c97e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a38ee02b4eb84d049bf6e4b4651aa5028">buffered_payload_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a781c6e44f7c9e56657fa1f252b15c97e">buffered_payload</a> ()</td></tr>
+<tr class="separator:a781c6e44f7c9e56657fa1f252b15c97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a552e956b443d588f5eebfa1f1800d1f8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a552e956b443d588f5eebfa1f1800d1f8">total_buffered_bytes</a> () const </td></tr>
 <tr class="separator:a552e956b443d588f5eebfa1f1800d1f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e29d8f7ec7508140ada205db1953074"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a5e29d8f7ec7508140ada205db1953074">state</a> (<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a0216ac38ae0a77f472dc0bd8eff68ee7">State</a> new_state)</td></tr>
@@ -204,12 +207,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <p>A <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> stream (see class <a class="el" href="../../dc/da4/classTins_1_1TCPIP_1_1Stream.html" title="Represents a TCP stream. ">Stream</a>) is made out of 2 Flows, so you should probably have a look at that class first.</p>
 <p>You shouldn't normally need to interact with this class. <a class="el" href="../../dc/da4/classTins_1_1TCPIP_1_1Stream.html" title="Represents a TCP stream. ">Stream</a> already provides proxys to most of its <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html" title="Represents an unidirectional TCP flow between 2 endpoints. ">Flow</a>'s attributes. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="ac74d66de1fc5b711d5e7260f844dce7b"></a>
+<a class="anchor" id="a38ee02b4eb84d049bf6e4b4651aa5028"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::map&lt;uint32_t, <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a>&gt; <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ac74d66de1fc5b711d5e7260f844dce7b">Tins::TCPIP::Flow::buffered_payload_type</a></td>
+          <td class="memname">typedef <a class="el" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">DataTracker::buffered_payload_type</a> <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a38ee02b4eb84d049bf6e4b4651aa5028">Tins::TCPIP::Flow::buffered_payload_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -235,7 +238,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::function&lt;void(<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html">Flow</a>&amp;, uint32_t, const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">payload_type</a>&amp;)&gt; <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ad5980034fb2af4dd473fe5495376e9ff">Tins::TCPIP::Flow::flow_packet_callback_type</a></td>
+          <td class="memname">typedef std::function&lt;void(<a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html">Flow</a>&amp;, uint32_t, const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a>&amp;)&gt; <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ad5980034fb2af4dd473fe5495376e9ff">Tins::TCPIP::Flow::flow_packet_callback_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -245,12 +248,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 </div>
 </div>
-<a class="anchor" id="aa4fb75ad99924d78be4c508c8ea4c59a"></a>
+<a class="anchor" id="a6e8f95027c4e53ba91c512e847a42c7e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;uint8_t&gt; <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">Tins::TCPIP::Flow::payload_type</a></td>
+          <td class="memname">typedef <a class="el" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">DataTracker::payload_type</a> <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">Tins::TCPIP::Flow::payload_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -390,12 +393,39 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 </div>
 </div>
-<a class="anchor" id="a61aa91b596f072982c5406f84b497504"></a>
+<a class="anchor" id="a12095215f194ca9782bae1390eec8d63"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ac74d66de1fc5b711d5e7260f844dce7b">Flow::buffered_payload_type</a> &amp; Tins::TCPIP::Flow::buffered_payload </td>
+          <td class="memname">void Tins::TCPIP::Flow::advance_sequence </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Skip forward to a sequence number. </p>
+<p>This allows to recover from packet loss, if we just do not see all packets of an original stream. This recovery can only sensibly triggered from the application layer.</p>
+<p>This method is particularly useful to call from an out of order callback, if the application wants to skip forward to this out of order block. The application will then get the normal data callback!</p>
+<p>IMPORTANT: If you call this method with a sequence number that is not exactly a <a class="el" href="../../d0/de4/classTins_1_1TCP.html" title="Represents a TCP PDU. ">TCP</a> fragment boundary, the flow will never recover from this.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seq</td><td>The sequence number to skip to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a32b620e2d64d3a21218e2ad49143be30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a38ee02b4eb84d049bf6e4b4651aa5028">buffered_payload_type</a>&amp; Tins::TCPIP::Flow::buffered_payload </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -406,12 +436,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 </div>
 </div>
-<a class="anchor" id="a820379a4a2c7f957ea86a18076eb448c"></a>
+<a class="anchor" id="a781c6e44f7c9e56657fa1f252b15c97e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#ac74d66de1fc5b711d5e7260f844dce7b">Flow::buffered_payload_type</a> &amp; Tins::TCPIP::Flow::buffered_payload </td>
+          <td class="memname"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a38ee02b4eb84d049bf6e4b4651aa5028">buffered_payload_type</a>&amp; Tins::TCPIP::Flow::buffered_payload </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -637,12 +667,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 </div>
 </div>
-<a class="anchor" id="ae8834479d85a4255b985d51139b88812"></a>
+<a class="anchor" id="a3c6cff5b363ed80d3f82b86fdd8f3b8b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">Flow::payload_type</a> &amp; Tins::TCPIP::Flow::payload </td>
+          <td class="memname">const <a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a>&amp; Tins::TCPIP::Flow::payload </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -653,19 +683,19 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 
 </div>
 </div>
-<a class="anchor" id="a4d40ce569d7f930259a46bbe22fb35b6"></a>
+<a class="anchor" id="aa70abd9e4b21dac5ead6a1dc385430cf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#aa4fb75ad99924d78be4c508c8ea4c59a">Flow::payload_type</a> &amp; Tins::TCPIP::Flow::payload </td>
+          <td class="memname"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a6e8f95027c4e53ba91c512e847a42c7e">payload_type</a>&amp; Tins::TCPIP::Flow::payload </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retrieves this flow's destination port </p>
+<p>Retrieves this flow's payload </p>
 
 </div>
 </div>
@@ -714,12 +744,12 @@ Flow::buffering_callback </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a1f396018deff043df94aaf3c88d01f62"></a>
+<a class="anchor" id="af34d06fa820062eb8f77051810448c32"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a0216ac38ae0a77f472dc0bd8eff68ee7">Flow::State</a> Tins::TCPIP::Flow::state </td>
+          <td class="memname"><a class="el" href="../../d5/df5/classTins_1_1TCPIP_1_1Flow.html#a0216ac38ae0a77f472dc0bd8eff68ee7">State</a> Tins::TCPIP::Flow::state </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -769,14 +799,13 @@ Flow::buffering_callback </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/matias/Projects/libtins/code/include/tins/tcp_ip/<a class="el" href="../../da/d76/flow_8h_source.html">flow.h</a></li>
-<li>/home/matias/Projects/libtins/code/src/tcp_ip/flow.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 28 2016 20:49:21 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 5 2017 19:21:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

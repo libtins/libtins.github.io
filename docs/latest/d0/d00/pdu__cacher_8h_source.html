@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.4</span>
+   &#160;<span id="projectnumber">4.0</span>
    </div>
   </td>
  </tr>
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2016, Matias Fontanini</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2017, Matias Fontanini</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef TINS_PDU_CACHER_H</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_PDU_CACHER_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;pdu.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;macros.h&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
@@ -170,11 +170,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> cached_.pdu_type();</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t* buffer, uint32_t total_sz, <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>* parent) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> write_serialization(uint8_t* buffer, uint32_t total_sz) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (cached_serialization_.size() != total_sz) {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            cached_serialization_ = cached_.serialize();</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::copy(cached_serialization_.begin(), cached_serialization_.end(), buffer);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::memcpy(buffer, &amp;*cached_serialization_.begin(), cached_serialization_.size());</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../de/d6a/classTins_1_1PDUCacher.html#a3bc0c51cbad399b5f7d561d8e5760272">cached_type</a> cached_;</div>
@@ -184,26 +184,26 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif // TINS_PDU_CACHER_H</span></div>
-<div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:128</div></div>
+<div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:127</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_a3bc0c51cbad399b5f7d561d8e5760272"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#a3bc0c51cbad399b5f7d561d8e5760272">Tins::PDUCacher::cached_type</a></div><div class="ttdeci">T cached_type</div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:61</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_a17eb9b9adc2eed1718075c75659164c6"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#a17eb9b9adc2eed1718075c75659164c6">Tins::PDUCacher::PDUCacher</a></div><div class="ttdeci">PDUCacher(const cached_type &amp;pdu)</div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:78</div></div>
-<div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:117</div></div>
+<div class="ttc" id="classTins_1_1PacketSender_html"><div class="ttname"><a href="../../d3/dea/classTins_1_1PacketSender.html">Tins::PacketSender</a></div><div class="ttdoc">Sends packets through a network interface. </div><div class="ttdef"><b>Definition:</b> packet_sender.h:116</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_a5c875f586cfcb18f2af37d3a58c47bdb"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#a5c875f586cfcb18f2af37d3a58c47bdb">Tins::PDUCacher::PDUCacher</a></div><div class="ttdeci">PDUCacher()</div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:71</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_a5034c5f87cba10b222a27ee560b1bb25"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#a5034c5f87cba10b222a27ee560b1bb25">Tins::PDUCacher::matches_response</a></div><div class="ttdeci">bool matches_response(const uint8_t *ptr, uint32_t total_sz) const </div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:125</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_a90a0c0e6fedb963b575ef421abaec267"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#a90a0c0e6fedb963b575ef421abaec267">Tins::PDUCacher::header_size</a></div><div class="ttdeci">uint32_t header_size() const </div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:86</div></div>
 <div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:47</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_aa207db2fd4e3f5fc2f6419c4aaf2c0e7"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#aa207db2fd4e3f5fc2f6419c4aaf2c0e7">Tins::PDUCacher::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:143</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_accd418635bd0aed6bb84c8c1e89e21e1"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#accd418635bd0aed6bb84c8c1e89e21e1">Tins::PDUCacher::matches_flag</a></div><div class="ttdeci">bool matches_flag(PDUType flag) const </div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:134</div></div>
-<div class="ttc" id="classTins_1_1PDU_html_a46ba1ff589a753e815692b88efe97739"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a46ba1ff589a753e815692b88efe97739">Tins::PDU::serialization_type</a></div><div class="ttdeci">byte_array serialization_type</div><div class="ttdef"><b>Definition:</b> pdu.h:113</div></div>
+<div class="ttc" id="classTins_1_1PDU_html_a46ba1ff589a753e815692b88efe97739"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a46ba1ff589a753e815692b88efe97739">Tins::PDU::serialization_type</a></div><div class="ttdeci">byte_array serialization_type</div><div class="ttdef"><b>Definition:</b> pdu.h:112</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html">Tins::PDUCacher</a></div><div class="ttdoc">PDU wrapper that caches the result of the wrapped PDU&#39;s serialization. </div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:56</div></div>
-<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:108</div></div>
+<div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:107</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_afb8605de473b22bb56919e0cbdbd9b7b"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#afb8605de473b22bb56919e0cbdbd9b7b">Tins::PDUCacher::recv_response</a></div><div class="ttdeci">PDU * recv_response(PacketSender &amp;sender, const NetworkInterface &amp;iface)</div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:116</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_a5ac85f5a937fdf199ecdf6494deae5ee"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#a5ac85f5a937fdf199ecdf6494deae5ee">Tins::PDUCacher::send</a></div><div class="ttdeci">void send(PacketSender &amp;sender, const NetworkInterface &amp;iface)</div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:107</div></div>
 <div class="ttc" id="classTins_1_1PDUCacher_html_aa8df5c86e1e252de1bdf0cde78fd311a"><div class="ttname"><a href="../../de/d6a/classTins_1_1PDUCacher.html#aa8df5c86e1e252de1bdf0cde78fd311a">Tins::PDUCacher::clone</a></div><div class="ttdeci">PDUCacher * clone() const </div><div class="ttdef"><b>Definition:</b> pdu_cacher.h:98</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 28 2016 20:49:20 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

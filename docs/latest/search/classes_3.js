@@ -1,6 +1,7 @@
 var searchData=
 [
   ['datalinktype',['DataLinkType',['../d5/d26/structTins_1_1DataLinkType.html',1,'Tins']]],
+  ['datatracker',['DataTracker',['../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html',1,'Tins::TCPIP']]],
   ['decrypterproxy',['DecrypterProxy',['../d8/de1/classTins_1_1Crypto_1_1DecrypterProxy.html',1,'Tins::Crypto']]],
   ['dhcp',['DHCP',['../db/dbb/classTins_1_1DHCP.html',1,'Tins']]],
   ['dhcpv6',['DHCPv6',['../d8/d2b/classTins_1_1DHCPv6.html',1,'Tins']]],

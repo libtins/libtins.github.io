@@ -7,5 +7,6 @@ var searchData=
   ['use_5fmldv2',['use_mldv2',['../d7/d38/classTins_1_1ICMPv6.html#a99d292f6b4df85685f94e3fb864471db',1,'Tins::ICMPv6']]],
   ['use_5fsack',['use_sack',['../d2/d72/classTins_1_1TCPIP_1_1AckTracker.html#a84e64095656f0e323d8db6543a7530d9',1,'Tins::TCPIP::AckTracker']]],
   ['user_5fclass',['user_class',['../d8/d2b/classTins_1_1DHCPv6.html#adc4586fedc71b2515481a43e269574be',1,'Tins::DHCPv6::user_class() const '],['../d8/d2b/classTins_1_1DHCPv6.html#a4ecd04964a7ef6104a9711f1ec6103a5',1,'Tins::DHCPv6::user_class(const user_class_type &amp;value)']]],
+  ['user_5fdata',['user_data',['../dc/da4/classTins_1_1TCPIP_1_1Stream.html#a994fa6c6e4a96b7c4c6dadfb0d9bad33',1,'Tins::TCPIP::Stream']]],
   ['uses_5fccmp',['uses_ccmp',['../d4/dce/classTins_1_1Crypto_1_1WPA2_1_1SessionKeys.html#abd93d6cb631be92b0ece158b2fc0f9c1',1,'Tins::Crypto::WPA2::SessionKeys']]]
 ];

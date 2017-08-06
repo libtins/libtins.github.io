@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['qrtype',['QRType',['../d2/d17/classTins_1_1DNS.html#a2f6553418a1f482f3647a14ccb7e5163',1,'Tins::DNS']]],
-  ['querytype',['QueryType',['../d2/d17/classTins_1_1DNS.html#a6e67b7a0ad2227f49398a4b693c68115',1,'Tins::DNS']]]
+  ['packetstatus',['PacketStatus',['../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248',1,'Tins::IPv4Reassembler']]],
+  ['pdutype',['PDUType',['../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95',1,'Tins::PDU']]],
+  ['presentflags',['PresentFlags',['../d7/d0e/classTins_1_1RadioTap.html#ada2e8a0fdc1ed3721c9c766e053c647f',1,'Tins::RadioTap']]],
+  ['promisc_5ftype',['promisc_type',['../de/dbb/classTins_1_1Sniffer.html#a88243ed15db23d03c953ac93a105136d',1,'Tins::Sniffer']]]
 ];

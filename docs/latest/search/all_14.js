@@ -2,6 +2,7 @@ var searchData=
 [
   ['validate_5fextensions',['validate_extensions',['../d7/d1d/classTins_1_1ICMPExtensionsStructure.html#a9d9752deabb2c977b8b5990bfe8948f9',1,'Tins::ICMPExtensionsStructure']]],
   ['value_5ftoo_5flarge',['value_too_large',['../d9/d04/classTins_1_1value__too__large.html',1,'Tins']]],
+  ['value_5ftype',['value_type',['../d0/de0/classTins_1_1PDUIterator.html#a2b65d6504c10237be4ea850c22ee7a8f',1,'Tins::PDUIterator::value_type()'],['../d6/d62/classTins_1_1ConstPDUIterator.html#a30c659172406e3ae8dde611ab9eec13f',1,'Tins::ConstPDUIterator::value_type()']]],
   ['vend',['vend',['../de/ddf/classTins_1_1BootP.html#a0921428bec64eeaf814f7dbbfaa99a0c',1,'Tins::BootP::vend() const '],['../de/ddf/classTins_1_1BootP.html#a05abf86687a1c84137d7bf9e91186d9c',1,'Tins::BootP::vend(const vend_type &amp;newvend_)'],['../de/ddf/classTins_1_1BootP.html#a6761af26fa2f1777a9bbd02d8b4dbc08',1,'Tins::BootP::vend()']]],
   ['vend_5ftype',['vend_type',['../de/ddf/classTins_1_1BootP.html#ab20d3cbd679a1f09c52b39f45e2791d9',1,'Tins::BootP']]],
   ['vendor_5fclass',['vendor_class',['../d8/d2b/classTins_1_1DHCPv6.html#acf0282a2b6d378d67af417d9795e80b4',1,'Tins::DHCPv6::vendor_class() const '],['../d8/d2b/classTins_1_1DHCPv6.html#a5c6f6968b5a85d034ed0fce1daaf361f',1,'Tins::DHCPv6::vendor_class(const vendor_class_type &amp;value)']]],

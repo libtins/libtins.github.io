@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libtins
-   &#160;<span id="projectnumber">3.4</span>
+   &#160;<span id="projectnumber">4.0</span>
    </div>
   </td>
  </tr>
@@ -128,12 +128,17 @@ Public Types</h2></td></tr>
 <br/>
  }</td></tr>
 <tr class="separator:a8818a0ba9596f5b27f4a29955d1f0207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20f0d090e1422fd3e0ab9987267d3ac"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#af20f0d090e1422fd3e0ab9987267d3ac">OptionType</a> { <b>PAD_1</b> = 0, 
+<b>PAD_N</b> = 1, 
+<b>JUMBO_PAYLOAD</b> = 0xC2
+ }</td></tr>
+<tr class="separator:af20f0d090e1422fd3e0ab9987267d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14568b94e80f22f742f4e1df326d1b66"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../de/dd2/classTins_1_1IPv6Address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a14568b94e80f22f742f4e1df326d1b66">address_type</a></td></tr>
 <tr class="separator:a14568b94e80f22f742f4e1df326d1b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f262518750410391af4ac59d09ee267"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../df/ddb/classTins_1_1PDUOption.html">PDUOption</a>&lt; uint8_t, <a class="el" href="../../dd/d25/classTins_1_1IPv6.html">IPv6</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a></td></tr>
 <tr class="separator:a4f262518750410391af4ac59d09ee267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ac946b4ef4eb6df2f52e15c7c5c17a5"><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a5ac946b4ef4eb6df2f52e15c7c5c17a5">headers_type</a></td></tr>
-<tr class="separator:a5ac946b4ef4eb6df2f52e15c7c5c17a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecd12edf42ada3d5c0f6c807d2d678c"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4ecd12edf42ada3d5c0f6c807d2d678c">headers_type</a></td></tr>
+<tr class="separator:a4ecd12edf42ada3d5c0f6c807d2d678c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classTins_1_1PDU"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classTins_1_1PDU')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></td></tr>
 <tr class="memitem:a027b795cdc01bbecb841bffde2fa6651 inherit pub_types_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a027b795cdc01bbecb841bffde2fa6651">endian_type</a> { <b>BE</b>, 
 <b>LE</b>
@@ -247,7 +252,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae211f32073cb721bff8c36ee946495db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a14568b94e80f22f742f4e1df326d1b66">address_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#ae211f32073cb721bff8c36ee946495db">dst_addr</a> () const </td></tr>
 <tr class="memdesc:ae211f32073cb721bff8c36ee946495db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the dst_addr field.  <a href="#ae211f32073cb721bff8c36ee946495db">More...</a><br/></td></tr>
 <tr class="separator:ae211f32073cb721bff8c36ee946495db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0afc13c42d2439b9e061c55f9054be6a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a5ac946b4ef4eb6df2f52e15c7c5c17a5">headers_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a0afc13c42d2439b9e061c55f9054be6a">headers</a> () const </td></tr>
+<tr class="memitem:a0afc13c42d2439b9e061c55f9054be6a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4ecd12edf42ada3d5c0f6c807d2d678c">headers_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a0afc13c42d2439b9e061c55f9054be6a">headers</a> () const </td></tr>
 <tr class="memdesc:a0afc13c42d2439b9e061c55f9054be6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the <a class="el" href="../../dd/d25/classTins_1_1IPv6.html">IPv6</a> extension headers.  <a href="#a0afc13c42d2439b9e061c55f9054be6a">More...</a><br/></td></tr>
 <tr class="separator:a0afc13c42d2439b9e061c55f9054be6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adae34041fb12db84619b493aa9dc49b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#adae34041fb12db84619b493aa9dc49b8">version</a> (<a class="el" href="../../d0/df2/classTins_1_1small__uint.html">small_uint</a>&lt; 4 &gt; new_version)</td></tr>
@@ -287,8 +292,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa3a0251451bfee3bce9c36129e995712"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdf5379c9669a43ceb4e59de4b59af72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#afdf5379c9669a43ceb4e59de4b59af72">send</a> (<a class="el" href="../../d3/dea/classTins_1_1PacketSender.html">PacketSender</a> &amp;sender, const <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html">NetworkInterface</a> &amp;)</td></tr>
 <tr class="separator:afdf5379c9669a43ceb4e59de4b59af72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8c193be156f1820adb0d631fd3a7156"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#aa8c193be156f1820adb0d631fd3a7156">add_ext_header</a> (const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &amp;header)</td></tr>
-<tr class="separator:aa8c193be156f1820adb0d631fd3a7156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3ba3cb2963503951c7f02c3f607b4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a8a3ba3cb2963503951c7f02c3f607b4d">TINS_DEPRECATED</a> (void add_ext_header(const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &amp;header))</td></tr>
+<tr class="separator:a8a3ba3cb2963503951c7f02c3f607b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cdfb47704931828e65f9bcebb4fe154"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a7cdfb47704931828e65f9bcebb4fe154">add_header</a> (const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &amp;header)</td></tr>
+<tr class="separator:a7cdfb47704931828e65f9bcebb4fe154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae530fc0957e1dbb5015f01261efd73ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#ae530fc0957e1dbb5015f01261efd73ea">add_header</a> (<a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &amp;&amp;header)</td></tr>
+<tr class="separator:ae530fc0957e1dbb5015f01261efd73ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dad12a934c81ff8358aa5a00c9d468f"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a4dad12a934c81ff8358aa5a00c9d468f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4dad12a934c81ff8358aa5a00c9d468f">add_header</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="separator:a4dad12a934c81ff8358aa5a00c9d468f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ae346a1d458b27a6b416e532d76db2e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4ae346a1d458b27a6b416e532d76db2e">search_header</a> (<a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a8818a0ba9596f5b27f4a29955d1f0207">ExtensionHeader</a> id) const </td></tr>
 <tr class="memdesc:a4ae346a1d458b27a6b416e532d76db2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searchs for an extension header that matchs the given flag.  <a href="#a4ae346a1d458b27a6b416e532d76db2e">More...</a><br/></td></tr>
 <tr class="separator:a4ae346a1d458b27a6b416e532d76db2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,6 +327,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a96cf9d607151f277528d058cd4152a31 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a96cf9d607151f277528d058cd4152a31">inner_pdu</a> () const </td></tr>
 <tr class="memdesc:a96cf9d607151f277528d058cd4152a31 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the inner <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a96cf9d607151f277528d058cd4152a31">More...</a><br/></td></tr>
 <tr class="separator:a96cf9d607151f277528d058cd4152a31 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79dfd9f18704bfd27eaeadffba5b7eaf inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a79dfd9f18704bfd27eaeadffba5b7eaf">parent_pdu</a> () const </td></tr>
+<tr class="separator:a79dfd9f18704bfd27eaeadffba5b7eaf inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a302fa02decfafd585d8ec227bf9f06 inherit pub_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a8a302fa02decfafd585d8ec227bf9f06">release_inner_pdu</a> ()</td></tr>
 <tr class="memdesc:a8a302fa02decfafd585d8ec227bf9f06 inherit pub_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the inner <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>.  <a href="#a8a302fa02decfafd585d8ec227bf9f06">More...</a><br/></td></tr>
 <tr class="separator:a8a302fa02decfafd585d8ec227bf9f06 inherit pub_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,12 +392,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a20c4a5be760bd77bf0f69bb138e4cda9 inherit pro_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a20c4a5be760bd77bf0f69bb138e4cda9">copy_inner_pdu</a> (const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> &amp;pdu)</td></tr>
 <tr class="memdesc:a20c4a5be760bd77bf0f69bb138e4cda9 inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy other <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>'s inner PDU(if any).  <a href="#a20c4a5be760bd77bf0f69bb138e4cda9">More...</a><br/></td></tr>
 <tr class="separator:a20c4a5be760bd77bf0f69bb138e4cda9 inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23fc0f192d0e53d8493c11c1b4dc7d4b inherit pro_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a23fc0f192d0e53d8493c11c1b4dc7d4b">prepare_for_serialize</a> (const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *parent)</td></tr>
-<tr class="memdesc:a23fc0f192d0e53d8493c11c1b4dc7d4b inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> for serialization.  <a href="#a23fc0f192d0e53d8493c11c1b4dc7d4b">More...</a><br/></td></tr>
-<tr class="separator:a23fc0f192d0e53d8493c11c1b4dc7d4b inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a292094fe6758b3e61383d6a59e18aec2">serialize</a> (uint8_t *buffer, uint32_t total_sz, const <a class="el" href="../../d8/de6/classTins_1_1PDU.html">PDU</a> *parent)</td></tr>
-<tr class="memdesc:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> and propagates this action to child PDUs.  <a href="#a292094fe6758b3e61383d6a59e18aec2">More...</a><br/></td></tr>
-<tr class="separator:a292094fe6758b3e61383d6a59e18aec2 inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5231a8b297e56e597a52496d34124fdc inherit pro_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a5231a8b297e56e597a52496d34124fdc">prepare_for_serialize</a> ()</td></tr>
+<tr class="memdesc:a5231a8b297e56e597a52496d34124fdc inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> for serialization.  <a href="#a5231a8b297e56e597a52496d34124fdc">More...</a><br/></td></tr>
+<tr class="separator:a5231a8b297e56e597a52496d34124fdc inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334e0edb06110e8c30d52670c95214db inherit pro_methods_classTins_1_1PDU"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a334e0edb06110e8c30d52670c95214db">serialize</a> (uint8_t *buffer, uint32_t total_sz)</td></tr>
+<tr class="memdesc:a334e0edb06110e8c30d52670c95214db inherit pro_methods_classTins_1_1PDU"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> and propagates this action to child PDUs.  <a href="#a334e0edb06110e8c30d52670c95214db">More...</a><br/></td></tr>
+<tr class="separator:a334e0edb06110e8c30d52670c95214db inherit pro_methods_classTins_1_1PDU"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> an <a class="el" href="../../dd/d25/classTins_1_1IPv6.html">IPv6</a> <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
@@ -414,12 +428,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5ac946b4ef4eb6df2f52e15c7c5c17a5"></a>
+<a class="anchor" id="a4ecd12edf42ada3d5c0f6c807d2d678c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::list&lt;<a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a>&gt; <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a5ac946b4ef4eb6df2f52e15c7c5c17a5">Tins::IPv6::headers_type</a></td>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a>&gt; <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4ecd12edf42ada3d5c0f6c807d2d678c">Tins::IPv6::headers_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -438,6 +452,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The values used to identify extension headers. </p>
+
+</div>
+</div>
+<a class="anchor" id="af20f0d090e1422fd3e0ab9987267d3ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#af20f0d090e1422fd3e0ab9987267d3ac">Tins::IPv6::OptionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The values used to identify Hop-By-Hop Options and Destination Options. </p>
 
 </div>
 </div>
@@ -521,12 +548,12 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa8c193be156f1820adb0d631fd3a7156"></a>
+<a class="anchor" id="a7cdfb47704931828e65f9bcebb4fe154"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Tins::IPv6::add_ext_header </td>
+          <td class="memname">void Tins::IPv6::add_header </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &amp;&#160;</td>
           <td class="paramname"><em>header</em></td><td>)</td>
@@ -534,7 +561,72 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds an extension header.</p>
+<p>Adds an extension header</p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>Use <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a7cdfb47704931828e65f9bcebb4fe154">IPv6::add_header</a> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The extension header to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae530fc0957e1dbb5015f01261efd73ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::IPv6::add_header </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4f262518750410391af4ac59d09ee267">ext_header</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Adds an extension header by moving it</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The extension header to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4dad12a934c81ff8358aa5a00c9d468f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Tins::IPv6::add_header </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Adds an extension header by using the provided parameters</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">header</td><td>The extension header to be added. </td></tr>
@@ -750,7 +842,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a5ac946b4ef4eb6df2f52e15c7c5c17a5">headers_type</a>&amp; Tins::IPv6::headers </td>
+          <td class="memname">const <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a4ecd12edf42ada3d5c0f6c807d2d678c">headers_type</a>&amp; Tins::IPv6::headers </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -851,7 +943,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check whether ptr points to a valid response for this <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="../../d8/de6/classTins_1_1PDU.html#ab90fc86d17dcaa8c728ba97c1857f35b" title="Check whether ptr points to a valid response for this PDU. ">PDU::matches_response</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td>The pointer to the buffer. </td></tr>
@@ -860,7 +952,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#a460063a6577eb92bd24a9d66ad7e581f">Tins::PDU</a>.</p>
+<p>Reimplemented from <a class="el" href="../../d8/de6/classTins_1_1PDU.html#ab90fc86d17dcaa8c728ba97c1857f35b">Tins::PDU</a>.</p>
 
 </div>
 </div>
@@ -1104,6 +1196,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8a3ba3cb2963503951c7f02c3f607b4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tins::IPv6::TINS_DEPRECATED </td>
+          <td>(</td>
+          <td class="paramtype">void &#160;</td>
+          <td class="paramname"><em>add_ext_header</em>const ext_header &amp;header</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds an extension header.</p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>Use <a class="el" href="../../dd/d25/classTins_1_1IPv6.html#a7cdfb47704931828e65f9bcebb4fe154">IPv6::add_header</a> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">header</td><td>The extension header to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a8cccbdb05f8dfbf66825032567802de6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1233,7 +1349,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 28 2016 20:49:21 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Aug 5 2017 19:21:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
