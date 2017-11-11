@@ -29,7 +29,7 @@ Every benchmark was executed on a computer with the following specs:
     <li>Intel Core i7-2670QM(2.20Hz)</li>
     <li>8GB DDR3 RAM (1333 MHz)</li>
     <li>Linux mint 17 - 64bits, kernel 3.13.0</li>
-    <li>Compiler - gcc 4.8.2</li>
+    <li>Compiler - gcc 4.8.4</li>
 </ul>
 
 <h3 id="libs">Tested libraries</h3>
@@ -37,9 +37,10 @@ Every benchmark was executed on a computer with the following specs:
 Benchmarks were executed using the following libraries:
 </p>
 <ul>
-    <li><a href="http://libtins.sourceforge.net">libtins</a> v3.0(compiled 
+    <li><a href="http://libtins.sourceforge.net">libtins</a> v4.0 (compiled 
     using the <i>LIBTINS_ENABLE_CXX11</i> <i>CMake</i> switch)</li>
     <li><a href="http://code.google.com/p/libcrafter/">libcrafter</a> v0.3</li>
+    <li><a href="https://github.com/seladb/PcapPlusPlus">Pcap++</a> v17.11</li>
     <li><a href="http://www.secdev.org/projects/scapy/">scapy</a> v2.2</li>
     <li><a href="http://corelabs.coresecurity.com/index.php?module=Wiki&amp;action=view&amp;type=tool&amp;name=Impacket">impacket</a> v0.9.11</li>
     <li><a href="http://code.google.com/p/dpkt/">dpkt</a> v1.8</li>
@@ -120,8 +121,13 @@ The benchmark results were the following:
                 </tr>
                 <tr style="font-weight: bold">
                     <td>libtins</td>
-                    <td>0.312</td>
-                    <td>1602564</td>
+                    <td>0.273</td>
+                    <td>1831501</td>
+                </tr>
+                <tr>
+                    <td>pcapplusplus</td>
+                    <td>0.38</td>
+                    <td>1315789</td>
                 </tr>
                 <tr>
                     <td>dpkt</td>
@@ -204,8 +210,13 @@ The results of this benchmark were the following:
                 </tr>
                 <tr style="font-weight: bold;">
                     <td>libtins</td>
-                    <td>0.48</td>
-                    <td>1041666</td>
+                    <td>0.364</td>
+                    <td>1373626</td>
+                </tr>
+                <tr>
+                    <td>pcapplusplus</td>
+                    <td>0.385</td>
+                    <td>1298701</td>
                 </tr>
                 <tr>
                     <td>dpkt</td>
@@ -285,8 +296,13 @@ The results of this benchmark were the following:
                 </tr>
                 <tr style="font-weight: bold;">
                     <td>libtins</td>
-                    <td>0.377</td>
-                    <td>1326259</td>
+                    <td>0.391</td>
+                    <td>1278772</td>
+                </tr>
+                <tr>
+                    <td>pcapplusplus</td>
+                    <td>0.724</td>
+                    <td>690607</td>
                 </tr>
                 <tr>
                     <td>libcrafter</td>
@@ -315,7 +331,7 @@ The results of this benchmark were the following:
 <h3>Conclusions</h3>
 
 <p>
-As you can see, <i>libtins</i> is quite faster at interpreting
+As you can see, <i>libtins</i> is faster at interpreting
 packets than the rest of the libraries tested. Moreover, it has
 very little overhead compared to <i>libpcap</i>, which does not perform
 any packet interpretation at all.
@@ -377,9 +393,9 @@ More benchmarks will be added soon.
     }
 
     function draw_charts() {
-        draw_graphic('', 'test1-chart-div', [['libtins', 312],['libpcap', 141],['scapy', 187082],['dpkt', 8132],['libcrafter', 12209],['impacket', 18500]]);
-        draw_graphic('', 'test2-chart-div', [['libtins', 480],['libpcap', 145],['scapy', 194543],['dpkt', 8508],['libcrafter', 20199],['impacket', 44491]]);
-        draw_graphic('', 'test3-chart-div', [['libtins', 377],['libpcap', 36],['scapy', 374637],['dpkt', 23319],['libcrafter', 13524],['impacket', 36487]]);
+        draw_graphic('', 'test1-chart-div', [['libtins', 273],['pcapplusplus', 380],['libpcap', 141],['scapy', 187082],['dpkt', 8132],['libcrafter', 12209],['impacket', 18500]]);
+        draw_graphic('', 'test2-chart-div', [['libtins', 364],['pcapplusplus', 385],['libpcap', 145],['scapy', 194543],['dpkt', 8508],['libcrafter', 20199],['impacket', 44491]]);
+        draw_graphic('', 'test3-chart-div', [['libtins', 391],['pcapplusplus', 724],['libpcap', 36],['scapy', 374637],['dpkt', 23319],['libcrafter', 13524],['impacket', 36487]]);
     }
     
     $('.benchmark-tabs a').click(function (e) {
