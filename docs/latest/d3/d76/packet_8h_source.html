@@ -121,9 +121,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef TINS_PACKET_H</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_PACKET_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;cxxstd.h&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;pdu.h&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;timestamp.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;tins/cxxstd.h&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;tins/pdu.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;tins/timestamp.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
@@ -157,8 +157,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> ts_;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/d96/classTins_1_1BaseSniffer.html">BaseSniffer</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/dc9/classTins_1_1SnifferIterator.html">SnifferIterator</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span>BaseSniffer;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span>SnifferIterator;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../da/d28/classTins_1_1PacketWrapper.html">PacketWrapper</a>(pdu_type <a class="code" href="../../da/d28/classTins_1_1PacketWrapper.html#ab85837868cdaca310b33c6ed75183aef">pdu</a>, <span class="keyword">const</span> <a class="code" href="../../d9/d36/classTins_1_1Timestamp.html">Timestamp</a>&amp; ts) </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    : pdu_(pdu), ts_(ts) {}</div>
@@ -274,9 +274,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1Packet_html_a642fc194bea8fae41219acfcc6d5576e"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#a642fc194bea8fae41219acfcc6d5576e">Tins::Packet::operator/=</a></div><div class="ttdeci">Packet &amp; operator/=(const PDU &amp;rhs)</div><div class="ttdoc">Concatenation operator. </div><div class="ttdef"><b>Definition:</b> packet.h:311</div></div>
 <div class="ttc" id="classTins_1_1Packet_html_ac9e9fdb9d90bc5f495d9ad21d2f88d1d"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#ac9e9fdb9d90bc5f495d9ad21d2f88d1d">Tins::Packet::pdu</a></div><div class="ttdeci">PDU * pdu()</div><div class="ttdoc">Returns the stored PDU*. </div><div class="ttdef"><b>Definition:</b> packet.h:266</div></div>
 <div class="ttc" id="classTins_1_1Packet_html_aaa2c51ac69fd601d7acd3cfb45ffcde3"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#aaa2c51ac69fd601d7acd3cfb45ffcde3">Tins::Packet::Packet</a></div><div class="ttdeci">Packet(Packet &amp;&amp;rhs) TINS_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> packet.h:227</div></div>
-<div class="ttc" id="classTins_1_1BaseSniffer_html"><div class="ttname"><a href="../../d2/d96/classTins_1_1BaseSniffer.html">Tins::BaseSniffer</a></div><div class="ttdoc">Base class for sniffers. </div><div class="ttdef"><b>Definition:</b> sniffer.h:63</div></div>
 <div class="ttc" id="classTins_1_1Packet_html_a95f7f2f697dca2d56a32898690950661"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#a95f7f2f697dca2d56a32898690950661">Tins::Packet::pdu</a></div><div class="ttdeci">const PDU * pdu() const </div><div class="ttdoc">Returns the stored PDU*. </div><div class="ttdef"><b>Definition:</b> packet.h:275</div></div>
-<div class="ttc" id="classTins_1_1SnifferIterator_html"><div class="ttname"><a href="../../d0/dc9/classTins_1_1SnifferIterator.html">Tins::SnifferIterator</a></div><div class="ttdoc">Iterates over packets sniffed by a BaseSniffer. </div><div class="ttdef"><b>Definition:</b> sniffer.h:452</div></div>
 <div class="ttc" id="classTins_1_1Packet_html_ad01b468247a91a6a8ebd0e9ad21086d3"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#ad01b468247a91a6a8ebd0e9ad21086d3">Tins::Packet::operator=</a></div><div class="ttdeci">Packet &amp; operator=(const Packet &amp;rhs)</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> packet.h:214</div></div>
 <div class="ttc" id="classTins_1_1Packet_html_a860413ed685570ea42662a2e9d42c99c"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#a860413ed685570ea42662a2e9d42c99c">Tins::Packet::timestamp</a></div><div class="ttdeci">const Timestamp &amp; timestamp() const </div><div class="ttdef"><b>Definition:</b> packet.h:257</div></div>
 <div class="ttc" id="classTins_1_1Packet_html_a6bb8fc56db050f2dfa78ecd64c526c50"><div class="ttname"><a href="../../da/da0/classTins_1_1Packet.html#a6bb8fc56db050f2dfa78ecd64c526c50">Tins::Packet::Packet</a></div><div class="ttdeci">Packet(PDU *apdu, const Timestamp &amp;tstamp, own_pdu)</div><div class="ttdoc">Constructs a Packet from a PDU* and a Timestamp. </div><div class="ttdef"><b>Definition:</b> packet.h:171</div></div>
@@ -299,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

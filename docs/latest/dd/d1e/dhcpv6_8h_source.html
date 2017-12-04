@@ -122,12 +122,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_DHCPV6_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;pdu.h&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;macros.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;endianness.h&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;small_uint.h&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;ipv6_address.h&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;pdu_option.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;tins/pdu.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;tins/endianness.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;tins/small_uint.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;tins/ipv6_address.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;tins/pdu_option.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>Memory  {</div>
@@ -417,7 +417,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        : id(duid_en::duid_id), data(identifier.serialize()) {}</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        </div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <a class="code" href="../../d1/d61/structTins_1_1DHCPv6_1_1duid__type.html">duid_type</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d6c/structTins_1_1DHCPv6_1_1duid__ll.html">duid_ll</a>&amp; identifier)</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        : id(duid_en::duid_id), data(identifier.serialize()) {}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        : id(duid_ll::duid_id), data(identifier.serialize()) {}</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keyword">static</span> <a class="code" href="../../d1/d61/structTins_1_1DHCPv6_1_1duid__type.html">duid_type</a> from_option(<span class="keyword">const</span> <a class="code" href="../../df/ddb/classTins_1_1PDUOption.html">option</a>&amp; opt);</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    };</div>
@@ -636,7 +636,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="structTins_1_1DHCPv6_1_1duid__en_html"><div class="ttname"><a href="../../dc/de7/structTins_1_1DHCPv6_1_1duid__en.html">Tins::DHCPv6::duid_en</a></div><div class="ttdef"><b>Definition:</b> dhcpv6.h:339</div></div>
 <div class="ttc" id="classTins_1_1DHCPv6_html_a5abd590a3db91659cb3be9e0f9c232ab"><div class="ttname"><a href="../../d8/d2b/classTins_1_1DHCPv6.html#a5abd590a3db91659cb3be9e0f9c232ab">Tins::DHCPv6::hop_count</a></div><div class="ttdeci">uint8_t hop_count() const </div><div class="ttdoc">Getter for the hop count field. </div><div class="ttdef"><b>Definition:</b> dhcpv6.h:455</div></div>
 <div class="ttc" id="classTins_1_1DHCPv6_html_aee16284d6f97cf00a16af724a54827d2"><div class="ttname"><a href="../../d8/d2b/classTins_1_1DHCPv6.html#aee16284d6f97cf00a16af724a54827d2">Tins::DHCPv6::peer_address</a></div><div class="ttdeci">const ipaddress_type &amp; peer_address() const </div><div class="ttdoc">Getter for the peer address field. </div><div class="ttdef"><b>Definition:</b> dhcpv6.h:473</div></div>
-<div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:44</div></div>
+<div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:45</div></div>
 <div class="ttc" id="classTins_1_1DHCPv6_html_ab59a581d27581f1a5fa10d30da6802bf"><div class="ttname"><a href="../../d8/d2b/classTins_1_1DHCPv6.html#ab59a581d27581f1a5fa10d30da6802bf">Tins::DHCPv6::OptionTypes</a></div><div class="ttdeci">OptionTypes</div><div class="ttdef"><b>Definition:</b> dhcpv6.h:85</div></div>
 <div class="ttc" id="classTins_1_1PDU_html_a46ba1ff589a753e815692b88efe97739"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a46ba1ff589a753e815692b88efe97739">Tins::PDU::serialization_type</a></div><div class="ttdeci">byte_array serialization_type</div><div class="ttdef"><b>Definition:</b> pdu.h:112</div></div>
 <div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:107</div></div>
@@ -648,7 +648,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['new_5fha_5finfo_5ftype',['new_ha_info_type',['../d7/d38/classTins_1_1ICMPv6.html#a34db5309c6ea22042e61258ef69fe5ec',1,'Tins::ICMPv6']]],
-  ['nonce_5ftype',['nonce_type',['../d7/d38/classTins_1_1ICMPv6.html#ad852494f764eb405beb64c15855fcf9d',1,'Tins::ICMPv6']]]
+  ['option',['option',['../db/dbb/classTins_1_1DHCP.html#a90b7a9b607b36a1db2152a196394878c',1,'Tins::DHCP::option()'],['../d8/d2b/classTins_1_1DHCPv6.html#aa982362a9f5fd85623bf8e413e40ff14',1,'Tins::DHCPv6::option()'],['../d7/d38/classTins_1_1ICMPv6.html#a278ee6b9fc8cef0033aa6b01359396ea',1,'Tins::ICMPv6::option()'],['../dd/d3f/classTins_1_1IP.html#a8b3a2eb88cc4075706325f94c2280dcf',1,'Tins::IP::option()'],['../d0/de4/classTins_1_1TCP.html#a57cd2e5e46a00532241451f1edcd881d',1,'Tins::TCP::option()']]],
+  ['option_5frequest_5ftype',['option_request_type',['../d8/d2b/classTins_1_1DHCPv6.html#a3029e95e6edd6d4166bf482a622227fa',1,'Tins::DHCPv6']]],
+  ['options_5ftype',['options_type',['../db/dbb/classTins_1_1DHCP.html#af1d7c2f5c44f925e63fa75144c621865',1,'Tins::DHCP::options_type()'],['../d8/d2b/classTins_1_1DHCPv6.html#aab380efddf8fa90038a2a14cfe35a6dd',1,'Tins::DHCPv6::options_type()'],['../d7/d38/classTins_1_1ICMPv6.html#a7ff6494fc2366a2711a97681058a89b1',1,'Tins::ICMPv6::options_type()'],['../dd/d3f/classTins_1_1IP.html#a34a1cb34cc298116bcc8504b9c62b30b',1,'Tins::IP::options_type()'],['../d0/de4/classTins_1_1TCP.html#abd5c96a6972342258614cfcfb2e6f7dc',1,'Tins::TCP::options_type()']]]
 ];

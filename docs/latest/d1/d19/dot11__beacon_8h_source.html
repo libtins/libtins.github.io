@@ -118,38 +118,38 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span>    </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;../config.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;tins/config.h&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if !defined(TINS_DOT11_DOT11_BEACON_H) &amp;&amp; defined(TINS_HAVE_DOT11)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_DOT11_DOT11_BEACON_H</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;../dot11/dot11_mgmt.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;../macros.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;tins/dot11/dot11_mgmt.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html">   44</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html">Dot11Beacon</a> : <span class="keyword">public</span> <a class="code" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html">Dot11ManagementFrame</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>TINS_API Dot11Beacon : <span class="keyword">public</span> Dot11ManagementFrame {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a26a838ba15c9b3096608f16fd994581f">   49</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> pdu_flag = PDU::DOT11_BEACON;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDU::PDUType</a> pdu_flag = PDU::DOT11_BEACON;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html">Dot11Beacon</a>(<span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; dst_hw_addr = <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>(), </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>&amp; src_hw_addr = <a class="code" href="../../dc/da6/classTins_1_1HWAddress.html">address_type</a>());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Dot11Beacon(<span class="keyword">const</span> address_type&amp; dst_hw_addr = address_type(), </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">const</span> address_type&amp; src_hw_addr = address_type());</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html">Dot11Beacon</a>(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Dot11Beacon(<span class="keyword">const</span> uint8_t* buffer, uint32_t total_sz);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a2147fb60cf6fb6e629d9760bac7ad7d0">   84</a></span>&#160;    uint64_t <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a2147fb60cf6fb6e629d9760bac7ad7d0">timestamp</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    uint64_t timestamp()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> Endian::le_to_host(body_.timestamp);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#aeda723b149bfc94768312e6a7650854e">   93</a></span>&#160;    uint16_t <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#aeda723b149bfc94768312e6a7650854e">interval</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    uint16_t interval()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> Endian::le_to_host(body_.interval);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a753f4a0730b4cfce24c8ce2c4ed5d532">  103</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d2/d63/classTins_1_1Dot11ManagementFrame_1_1capability__information.html">capability_information</a>&amp; <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a753f4a0730b4cfce24c8ce2c4ed5d532">capabilities</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> capability_information&amp; capabilities()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> body_.capability;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#ada2dfca551c5c1bcd7ae68895c22b553">  113</a></span>&#160;    <a class="code" href="../../d2/d63/classTins_1_1Dot11ManagementFrame_1_1capability__information.html">capability_information</a>&amp; <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#ada2dfca551c5c1bcd7ae68895c22b553">capabilities</a>() {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    capability_information&amp; capabilities() {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> body_.capability;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
@@ -159,15 +159,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    uint32_t header_size() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a5625ce3a9d05b8d9a30232327129ea60">  144</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a5625ce3a9d05b8d9a30232327129ea60">matches_flag</a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> flag)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;       <span class="keywordflow">return</span> flag == pdu_flag || <a class="code" href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#af23670c0f64ed093fa54c5e08977f921">Dot11ManagementFrame::matches_flag</a>(flag);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">bool</span> matches_flag(PDUType flag)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;       <span class="keywordflow">return</span> flag == pdu_flag || Dot11ManagementFrame::matches_flag(flag);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a522494f766bc74d423673ef0ea4b4065">  153</a></span>&#160;    <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html">Dot11Beacon</a>* <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#a522494f766bc74d423673ef0ea4b4065">clone</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html">Dot11Beacon</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    Dot11Beacon* clone()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> Dot11Beacon(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="../../d8/de5/classTins_1_1Dot11Beacon.html#ac50be7de8acf84bfb21f5385825b05cc">  161</a></span>&#160;    <a class="code" href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">PDUType</a> <a class="code" href="../../d8/de5/classTins_1_1Dot11Beacon.html#ac50be7de8acf84bfb21f5385825b05cc">pdu_type</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    PDUType pdu_type()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> pdu_flag;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">private</span>:</div>
@@ -186,23 +186,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;} <span class="comment">// namespace Tins</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#endif // TINS_DOT11_DOT11_BEACON_H</span></div>
-<div class="ttc" id="classTins_1_1Dot11ManagementFrame_1_1capability__information_html"><div class="ttname"><a href="../../d2/d63/classTins_1_1Dot11ManagementFrame_1_1capability__information.html">Tins::Dot11ManagementFrame::capability_information</a></div><div class="ttdef"><b>Definition:</b> dot11_mgmt.h:132</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_ada2dfca551c5c1bcd7ae68895c22b553"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#ada2dfca551c5c1bcd7ae68895c22b553">Tins::Dot11Beacon::capabilities</a></div><div class="ttdeci">capability_information &amp; capabilities()</div><div class="ttdoc">Getter for the Capabilities Information. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:113</div></div>
 <div class="ttc" id="classTins_1_1PDU_html_a6e9f9dea42db9ec8606759ec4569da95"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a6e9f9dea42db9ec8606759ec4569da95">Tins::PDU::PDUType</a></div><div class="ttdeci">PDUType</div><div class="ttdoc">Enum which identifies each type of PDU. </div><div class="ttdef"><b>Definition:</b> pdu.h:127</div></div>
-<div class="ttc" id="classTins_1_1Dot11ManagementFrame_html_af23670c0f64ed093fa54c5e08977f921"><div class="ttname"><a href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html#af23670c0f64ed093fa54c5e08977f921">Tins::Dot11ManagementFrame::matches_flag</a></div><div class="ttdeci">bool matches_flag(PDUType flag) const </div><div class="ttdoc">Check whether this PDU matches the specified flag. </div><div class="ttdef"><b>Definition:</b> dot11_mgmt.h:1226</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html">Tins::Dot11Beacon</a></div><div class="ttdoc">Represents an IEEE 802.11 Beacon. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:44</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_ac50be7de8acf84bfb21f5385825b05cc"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#ac50be7de8acf84bfb21f5385825b05cc">Tins::Dot11Beacon::pdu_type</a></div><div class="ttdeci">PDUType pdu_type() const </div><div class="ttdoc">Getter for the PDU&#39;s type. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:161</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_a5625ce3a9d05b8d9a30232327129ea60"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#a5625ce3a9d05b8d9a30232327129ea60">Tins::Dot11Beacon::matches_flag</a></div><div class="ttdeci">bool matches_flag(PDUType flag) const </div><div class="ttdoc">Check whether this PDU matches the specified flag. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:144</div></div>
-<div class="ttc" id="classTins_1_1Dot11ManagementFrame_html"><div class="ttname"><a href="../../dd/da0/classTins_1_1Dot11ManagementFrame.html">Tins::Dot11ManagementFrame</a></div><div class="ttdoc">Base class for all management frames in the IEEE 802.11 protocol. </div><div class="ttdef"><b>Definition:</b> dot11_mgmt.h:45</div></div>
-<div class="ttc" id="classTins_1_1HWAddress_html"><div class="ttname"><a href="../../dc/da6/classTins_1_1HWAddress.html">Tins::HWAddress&lt; 6 &gt;</a></div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_aeda723b149bfc94768312e6a7650854e"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#aeda723b149bfc94768312e6a7650854e">Tins::Dot11Beacon::interval</a></div><div class="ttdeci">uint16_t interval() const </div><div class="ttdoc">Getter for the interval field. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:93</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_a2147fb60cf6fb6e629d9760bac7ad7d0"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#a2147fb60cf6fb6e629d9760bac7ad7d0">Tins::Dot11Beacon::timestamp</a></div><div class="ttdeci">uint64_t timestamp() const </div><div class="ttdoc">Getter for the timestamp field. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:84</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_a522494f766bc74d423673ef0ea4b4065"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#a522494f766bc74d423673ef0ea4b4065">Tins::Dot11Beacon::clone</a></div><div class="ttdeci">Dot11Beacon * clone() const </div><div class="ttdoc">Clones this PDU. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:153</div></div>
-<div class="ttc" id="classTins_1_1Dot11Beacon_html_a753f4a0730b4cfce24c8ce2c4ed5d532"><div class="ttname"><a href="../../d8/de5/classTins_1_1Dot11Beacon.html#a753f4a0730b4cfce24c8ce2c4ed5d532">Tins::Dot11Beacon::capabilities</a></div><div class="ttdeci">const capability_information &amp; capabilities() const </div><div class="ttdoc">Getter for the Capabilities Information structure. </div><div class="ttdef"><b>Definition:</b> dot11_beacon.h:103</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

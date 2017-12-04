@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['channeltype',['ChannelType',['../d7/d0e/classTins_1_1RadioTap.html#aee6d4da8dfa1f3489d273e29c93267f3',1,'Tins::RadioTap']]],
-  ['controlsubtypes',['ControlSubtypes',['../d8/df1/classTins_1_1Dot11.html#ab14a737d98c56b91bd97a67b8636616b',1,'Tins::Dot11']]],
-  ['cyphersuites',['CypherSuites',['../df/dd6/classTins_1_1RSNInformation.html#a579066df68187349e86381fd594450ca',1,'Tins::RSNInformation']]]
+  ['eapoltype',['EAPOLTYPE',['../d5/ddb/classTins_1_1EAPOL.html#af7c7917f8725dbb0901c6c4e88fce148',1,'Tins::EAPOL']]],
+  ['endian_5ftype',['endian_type',['../d8/de6/classTins_1_1PDU.html#a027b795cdc01bbecb841bffde2fa6651',1,'Tins::PDU']]],
+  ['extensionheader',['ExtensionHeader',['../dd/d25/classTins_1_1IPv6.html#a8818a0ba9596f5b27f4a29955d1f0207',1,'Tins::IPv6']]]
 ];

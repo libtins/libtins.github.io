@@ -201,6 +201,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aee51efaa2968a2567ebaee8a784ef29b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html#aee51efaa2968a2567ebaee8a784ef29b">RawPDU</a> (ForwardIterator start, ForwardIterator end)</td></tr>
 <tr class="memdesc:aee51efaa2968a2567ebaee8a784ef29b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> from an iterator range.  <a href="#aee51efaa2968a2567ebaee8a784ef29b">More...</a><br/></td></tr>
 <tr class="separator:aee51efaa2968a2567ebaee8a784ef29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d93dbe361c256941dcd137e98380f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html#ad7d93dbe361c256941dcd137e98380f1">RawPDU</a> (const <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html#a0bb70e1da40029b84c747e16d80ab316">payload_type</a> &amp;data)</td></tr>
+<tr class="memdesc:ad7d93dbe361c256941dcd137e98380f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> from a payload_type.  <a href="#ad7d93dbe361c256941dcd137e98380f1">More...</a><br/></td></tr>
+<tr class="separator:ad7d93dbe361c256941dcd137e98380f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a483f897e1c25ace3d7762e81d311c7cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html#a483f897e1c25ace3d7762e81d311c7cf">RawPDU</a> (<a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html#a0bb70e1da40029b84c747e16d80ab316">payload_type</a> &amp;&amp;data)</td></tr>
 <tr class="memdesc:a483f897e1c25ace3d7762e81d311c7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> from a payload_type.  <a href="#a483f897e1c25ace3d7762e81d311c7cf">More...</a><br/></td></tr>
 <tr class="separator:a483f897e1c25ace3d7762e81d311c7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -422,6 +425,39 @@ template&lt;typename ForwardIterator &gt; </div>
   <table class="params">
     <tr><td class="paramname">start</td><td>The beginning of the iterator range. </td></tr>
     <tr><td class="paramname">end</td><td>The end of the iterator range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7d93dbe361c256941dcd137e98380f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tins::RawPDU::RawPDU </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html#a0bb70e1da40029b84c747e16d80ab316">payload_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an instance of <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a> from a payload_type. </p>
+<p>The payload is copied into the <a class="el" href="../../d0/dfc/classTins_1_1RawPDU.html">RawPDU</a>'s internal buffer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The payload to use. </td></tr>
   </table>
   </dd>
 </dl>
@@ -793,7 +829,7 @@ template&lt;typename ForwardIterator &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

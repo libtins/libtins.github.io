@@ -124,25 +124,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;../config.h&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;../macros.h&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;tins/config.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef TINS_HAVE_TCPIP</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>TCPIP {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html">   50</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html">DataTracker</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">class </span>TINS_API DataTracker {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">   55</a></span>&#160;    <span class="keyword">typedef</span> std::vector&lt;uint8_t&gt; <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">payload_type</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;uint8_t&gt; payload_type;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">   60</a></span>&#160;    <span class="keyword">typedef</span> std::map&lt;uint32_t, payload_type&gt; <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">buffered_payload_type</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">typedef</span> std::map&lt;uint32_t, payload_type&gt; buffered_payload_type;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html">DataTracker</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    DataTracker();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html">DataTracker</a>(uint32_t seq_number);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    DataTracker(uint32_t seq_number);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> process_payload(uint32_t seq, <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">payload_type</a> payload);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> process_payload(uint32_t seq, payload_type payload);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> advance_sequence(uint32_t seq);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
@@ -150,21 +150,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> sequence_number(uint32_t seq);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">payload_type</a>&amp; payload() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">const</span> payload_type&amp; payload() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">payload_type</a>&amp; payload();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    payload_type&amp; payload();</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">buffered_payload_type</a>&amp; buffered_payload() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">const</span> buffered_payload_type&amp; buffered_payload() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">buffered_payload_type</a>&amp; buffered_payload();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    buffered_payload_type&amp; buffered_payload();</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    uint32_t total_buffered_bytes() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> store_payload(uint32_t seq, <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">payload_type</a> payload);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> store_payload(uint32_t seq, payload_type payload);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    buffered_payload_type::iterator erase_iterator(buffered_payload_type::iterator iter);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">payload_type</a> payload_;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">buffered_payload_type</a> buffered_payload_;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    payload_type payload_;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    buffered_payload_type buffered_payload_;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    uint32_t seq_number_;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    uint32_t total_buffered_bytes_;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;};</div>
@@ -175,13 +175,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif // TINS_HAVE_TCPIP</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif // TINS_TCP_IP_DATA_TRACKER_H</span></div>
-<div class="ttc" id="classTins_1_1TCPIP_1_1DataTracker_html_acd606a6e87657def277196e5bbad4b4a"><div class="ttname"><a href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#acd606a6e87657def277196e5bbad4b4a">Tins::TCPIP::DataTracker::payload_type</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; payload_type</div><div class="ttdef"><b>Definition:</b> data_tracker.h:55</div></div>
-<div class="ttc" id="classTins_1_1TCPIP_1_1DataTracker_html_a42b7cdba7caf24e240fee261b80eb3b2"><div class="ttname"><a href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html#a42b7cdba7caf24e240fee261b80eb3b2">Tins::TCPIP::DataTracker::buffered_payload_type</a></div><div class="ttdeci">std::map&lt; uint32_t, payload_type &gt; buffered_payload_type</div><div class="ttdef"><b>Definition:</b> data_tracker.h:60</div></div>
-<div class="ttc" id="classTins_1_1TCPIP_1_1DataTracker_html"><div class="ttname"><a href="../../dc/d0b/classTins_1_1TCPIP_1_1DataTracker.html">Tins::TCPIP::DataTracker</a></div><div class="ttdef"><b>Definition:</b> data_tracker.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

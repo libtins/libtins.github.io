@@ -3,7 +3,6 @@ var searchData=
   ['ia_5faddress_5ftype',['ia_address_type',['../da/dae/structTins_1_1DHCPv6_1_1ia__address__type.html',1,'Tins::DHCPv6']]],
   ['ia_5fna_5ftype',['ia_na_type',['../d8/ddb/structTins_1_1DHCPv6_1_1ia__na__type.html',1,'Tins::DHCPv6']]],
   ['ia_5fta_5ftype',['ia_ta_type',['../d7/d3a/structTins_1_1DHCPv6_1_1ia__ta__type.html',1,'Tins::DHCPv6']]],
-  ['ibss_5fdfs_5fparams',['ibss_dfs_params',['../df/de1/structTins_1_1Dot11ManagementFrame_1_1ibss__dfs__params.html',1,'Tins::Dot11ManagementFrame']]],
   ['icmp',['ICMP',['../de/d91/classTins_1_1ICMP.html',1,'Tins']]],
   ['icmpextension',['ICMPExtension',['../dd/ddb/classTins_1_1ICMPExtension.html',1,'Tins']]],
   ['icmpextensionsstructure',['ICMPExtensionsStructure',['../d7/d1d/classTins_1_1ICMPExtensionsStructure.html',1,'Tins']]],

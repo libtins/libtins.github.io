@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['radiotap',['RadioTap',['../d7/d0e/classTins_1_1RadioTap.html',1,'Tins']]],
-  ['radiotapflags',['RadioTapFlags',['../d2/d05/structTins_1_1Utils_1_1RadioTapFlags.html',1,'Tins::Utils']]],
-  ['radiotapparser',['RadioTapParser',['../db/df3/classTins_1_1Utils_1_1RadioTapParser.html',1,'Tins::Utils']]],
-  ['radiotapwriter',['RadioTapWriter',['../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html',1,'Tins::Utils']]],
   ['rawpdu',['RawPDU',['../d0/dfc/classTins_1_1RawPDU.html',1,'Tins']]],
   ['rc4eapol',['RC4EAPOL',['../d9/d51/classTins_1_1RC4EAPOL.html',1,'Tins']]],
   ['recursive_5fdns_5ftype',['recursive_dns_type',['../df/db3/structTins_1_1ICMPv6_1_1recursive__dns__type.html',1,'Tins::ICMPv6']]],
@@ -15,7 +11,5 @@ var searchData=
   ['route_5finfo_5ftype',['route_info_type',['../dc/d79/structTins_1_1ICMPv6_1_1route__info__type.html',1,'Tins::ICMPv6']]],
   ['routeentry',['RouteEntry',['../d9/d05/structTins_1_1Utils_1_1RouteEntry.html',1,'Tins::Utils']]],
   ['rsa_5fsign_5ftype',['rsa_sign_type',['../da/da2/structTins_1_1ICMPv6_1_1rsa__sign__type.html',1,'Tins::ICMPv6']]],
-  ['rsneapol',['RSNEAPOL',['../da/de8/classTins_1_1RSNEAPOL.html',1,'Tins']]],
-  ['rsnhandshakecapturer',['RSNHandshakeCapturer',['../de/da8/classTins_1_1RSNHandshakeCapturer.html',1,'Tins']]],
-  ['rsninformation',['RSNInformation',['../df/dd6/classTins_1_1RSNInformation.html',1,'Tins']]]
+  ['rsneapol',['RSNEAPOL',['../da/de8/classTins_1_1RSNEAPOL.html',1,'Tins']]]
 ];

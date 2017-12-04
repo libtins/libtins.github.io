@@ -123,13 +123,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;pdu.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;macros.h&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;ip_address.h&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>Tins {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>IP;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;tins/pdu.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;tins/ip_address.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;tins/ip.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>Tins {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>Internals {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">class </span>IPv4Fragment {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
@@ -162,102 +162,104 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> add_fragment(IP* ip);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> is_complete() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    PDU* allocate_pdu() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;IPv4Fragment&gt; fragments_type;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    uint16_t extract_offset(<span class="keyword">const</span> IP* ip);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> extract_more_frag(<span class="keyword">const</span> IP* ip);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    fragments_type fragments_;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> received_end_;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t transport_proto_;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">size_t</span> received_size_, total_size_;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace Internals</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">  118</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a> {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248">  123</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248">PacketStatus</a> {</div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2">  124</a></span>&#160;        <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2">NOT_FRAGMENTED</a>, </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">  125</a></span>&#160;        <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">FRAGMENTED</a>, </div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a25f6872c2d345b6b661841e6eaa8b7c4">  126</a></span>&#160;        REASSEMBLED </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    TINS_DEPRECATED(<span class="keyword">typedef</span> PacketStatus packet_status);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> IP&amp; first_fragment() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;IPv4Fragment&gt; fragments_type;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint16_t extract_offset(<span class="keyword">const</span> IP* ip);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> extract_more_frag(<span class="keyword">const</span> IP* ip);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    fragments_type fragments_;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">size_t</span> received_size_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">size_t</span> total_size_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    IP first_fragment_;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> received_end_;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace Internals</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">  120</a></span>&#160;<span class="keyword">class </span>TINS_API <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a> {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248">  125</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248">PacketStatus</a> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2">  126</a></span>&#160;        <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2">NOT_FRAGMENTED</a>, </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">  127</a></span>&#160;        <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">FRAGMENTED</a>, </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a25f6872c2d345b6b661841e6eaa8b7c4">  128</a></span>&#160;        REASSEMBLED </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    };</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a3103507c78fe746dc5264a8e913d0cd5">  135</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a3103507c78fe746dc5264a8e913d0cd5">OverlappingTechnique</a> {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        NONE </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    };</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a>();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a>(OverlappingTechnique technique);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    PacketStatus process(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> clear_streams();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> remove_stream(uint16_t <span class="keywordtype">id</span>, <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr1, <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr2);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keyword">typedef</span> std::pair&lt;IPv4Address, IPv4Address&gt; address_pair;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">typedef</span> std::pair&lt;uint16_t, address_pair&gt; key_type;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">typedef</span> std::map&lt;key_type, Internals::IPv4Stream&gt; streams_type;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    key_type make_key(<span class="keyword">const</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>* ip) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    address_pair make_address_pair(<a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr1, <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr2) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    streams_type streams_;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    OverlappingTechnique technique_;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;};</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
-<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">  200</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">IPv4ReassemblerProxy</a> {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a3454b0bb7d1654e596e36ddb5489e6e6">  207</a></span>&#160;    <a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a3454b0bb7d1654e596e36ddb5489e6e6">IPv4ReassemblerProxy</a>(Functor func)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    : functor_(func) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    TINS_DEPRECATED(<span class="keyword">typedef</span> PacketStatus packet_status);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a3103507c78fe746dc5264a8e913d0cd5">  137</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a3103507c78fe746dc5264a8e913d0cd5">OverlappingTechnique</a> {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        NONE </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    };</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a>(OverlappingTechnique technique);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    PacketStatus process(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> clear_streams();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> remove_stream(uint16_t <span class="keywordtype">id</span>, <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr1, <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr2);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">typedef</span> std::pair&lt;IPv4Address, IPv4Address&gt; address_pair;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">typedef</span> std::pair&lt;uint16_t, address_pair&gt; key_type;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">typedef</span> std::map&lt;key_type, Internals::IPv4Stream&gt; streams_type;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    key_type make_key(<span class="keyword">const</span> <a class="code" href="../../dd/d3f/classTins_1_1IP.html">IP</a>* ip) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    address_pair make_address_pair(<a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr1, <a class="code" href="../../d2/d08/classTins_1_1IPv4Address.html">IPv4Address</a> addr2) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    streams_type streams_;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    OverlappingTechnique technique_;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;};</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">  202</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">IPv4ReassemblerProxy</a> {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a3454b0bb7d1654e596e36ddb5489e6e6">  209</a></span>&#160;    <a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a3454b0bb7d1654e596e36ddb5489e6e6">IPv4ReassemblerProxy</a>(Functor func)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    : functor_(func) {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a1be322301064fddbc176d29e8db8c32c">  220</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a1be322301064fddbc176d29e8db8c32c">operator()</a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="comment">// Forward it unless it&#39;s fragmented.</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (reassembler_.<a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a8b9040f98c74d03e6b24eae2d80a65a3">process</a>(pdu) != <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">IPv4Reassembler::FRAGMENTED</a>) {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">return</span> functor_(pdu);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a> reassembler_;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    Functor functor_;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;};</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
-<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="../../d8/d36/namespaceTins.html#a605d3f7c4e53083f0102331ddf708566">  241</a></span>&#160;<a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">IPv4ReassemblerProxy&lt;Functor&gt;</a> <a class="code" href="../../d8/d36/namespaceTins.html#a605d3f7c4e53083f0102331ddf708566">make_ipv4_reassembler_proxy</a>(Functor func) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">IPv4ReassemblerProxy&lt;Functor&gt;</a>(func);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a1be322301064fddbc176d29e8db8c32c">  222</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a1be322301064fddbc176d29e8db8c32c">operator()</a>(<a class="code" href="../../d8/de6/classTins_1_1PDU.html">PDU</a>&amp; pdu) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// Forward it unless it&#39;s fragmented.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordflow">if</span> (reassembler_.<a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a8b9040f98c74d03e6b24eae2d80a65a3">process</a>(pdu) != <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">IPv4Reassembler::FRAGMENTED</a>) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">return</span> functor_(pdu);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">IPv4Reassembler</a> reassembler_;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    Functor functor_;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;};</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Functor&gt;</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="../../d8/d36/namespaceTins.html#a605d3f7c4e53083f0102331ddf708566">  243</a></span>&#160;<a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">IPv4ReassemblerProxy&lt;Functor&gt;</a> <a class="code" href="../../d8/d36/namespaceTins.html#a605d3f7c4e53083f0102331ddf708566">make_ipv4_reassembler_proxy</a>(Functor func) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">IPv4ReassemblerProxy&lt;Functor&gt;</a>(func);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#endif // TINS_IP_REASSEMBLER_H</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif // TINS_IP_REASSEMBLER_H</span></div>
 <div class="ttc" id="classTins_1_1IP_html"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html">Tins::IP</a></div><div class="ttdoc">Class that represents an IP PDU. </div><div class="ttdef"><b>Definition:</b> ip.h:63</div></div>
-<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a3103507c78fe746dc5264a8e913d0cd5"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a3103507c78fe746dc5264a8e913d0cd5">Tins::IPv4Reassembler::OverlappingTechnique</a></div><div class="ttdeci">OverlappingTechnique</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:135</div></div>
-<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a9a2dbcb65662a7b6a9a6624f80758248"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248">Tins::IPv4Reassembler::PacketStatus</a></div><div class="ttdeci">PacketStatus</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:123</div></div>
-<div class="ttc" id="classTins_1_1IPv4ReassemblerProxy_html_a3454b0bb7d1654e596e36ddb5489e6e6"><div class="ttname"><a href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a3454b0bb7d1654e596e36ddb5489e6e6">Tins::IPv4ReassemblerProxy::IPv4ReassemblerProxy</a></div><div class="ttdeci">IPv4ReassemblerProxy(Functor func)</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:207</div></div>
-<div class="ttc" id="classTins_1_1IPv4ReassemblerProxy_html_a1be322301064fddbc176d29e8db8c32c"><div class="ttname"><a href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a1be322301064fddbc176d29e8db8c32c">Tins::IPv4ReassemblerProxy::operator()</a></div><div class="ttdeci">bool operator()(PDU &amp;pdu)</div><div class="ttdoc">Tries to reassemble the packet and forwards it to the functor. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:220</div></div>
-<div class="ttc" id="classTins_1_1IPv4ReassemblerProxy_html"><div class="ttname"><a href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">Tins::IPv4ReassemblerProxy</a></div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:200</div></div>
-<div class="ttc" id="namespaceTins_html_a605d3f7c4e53083f0102331ddf708566"><div class="ttname"><a href="../../d8/d36/namespaceTins.html#a605d3f7c4e53083f0102331ddf708566">Tins::make_ipv4_reassembler_proxy</a></div><div class="ttdeci">IPv4ReassemblerProxy&lt; Functor &gt; make_ipv4_reassembler_proxy(Functor func)</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:241</div></div>
-<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2">Tins::IPv4Reassembler::NOT_FRAGMENTED</a></div><div class="ttdoc">The given packet is not fragmented. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:124</div></div>
-<div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:44</div></div>
-<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a8b9040f98c74d03e6b24eae2d80a65a3"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a8b9040f98c74d03e6b24eae2d80a65a3">Tins::IPv4Reassembler::process</a></div><div class="ttdeci">PacketStatus process(PDU &amp;pdu)</div><div class="ttdoc">Processes a PDU and tries to reassemble it. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.cpp:106</div></div>
+<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a3103507c78fe746dc5264a8e913d0cd5"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a3103507c78fe746dc5264a8e913d0cd5">Tins::IPv4Reassembler::OverlappingTechnique</a></div><div class="ttdeci">OverlappingTechnique</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:137</div></div>
+<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a9a2dbcb65662a7b6a9a6624f80758248"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248">Tins::IPv4Reassembler::PacketStatus</a></div><div class="ttdeci">PacketStatus</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:125</div></div>
+<div class="ttc" id="classTins_1_1IPv4ReassemblerProxy_html_a3454b0bb7d1654e596e36ddb5489e6e6"><div class="ttname"><a href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a3454b0bb7d1654e596e36ddb5489e6e6">Tins::IPv4ReassemblerProxy::IPv4ReassemblerProxy</a></div><div class="ttdeci">IPv4ReassemblerProxy(Functor func)</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:209</div></div>
+<div class="ttc" id="classTins_1_1IPv4ReassemblerProxy_html_a1be322301064fddbc176d29e8db8c32c"><div class="ttname"><a href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html#a1be322301064fddbc176d29e8db8c32c">Tins::IPv4ReassemblerProxy::operator()</a></div><div class="ttdeci">bool operator()(PDU &amp;pdu)</div><div class="ttdoc">Tries to reassemble the packet and forwards it to the functor. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:222</div></div>
+<div class="ttc" id="classTins_1_1IPv4ReassemblerProxy_html"><div class="ttname"><a href="../../db/d75/classTins_1_1IPv4ReassemblerProxy.html">Tins::IPv4ReassemblerProxy</a></div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:202</div></div>
+<div class="ttc" id="namespaceTins_html_a605d3f7c4e53083f0102331ddf708566"><div class="ttname"><a href="../../d8/d36/namespaceTins.html#a605d3f7c4e53083f0102331ddf708566">Tins::make_ipv4_reassembler_proxy</a></div><div class="ttdeci">IPv4ReassemblerProxy&lt; Functor &gt; make_ipv4_reassembler_proxy(Functor func)</div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:243</div></div>
+<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a0c97e5129d8828ca80f94447600ccfa2">Tins::IPv4Reassembler::NOT_FRAGMENTED</a></div><div class="ttdoc">The given packet is not fragmented. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:126</div></div>
+<div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:45</div></div>
+<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a8b9040f98c74d03e6b24eae2d80a65a3"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a8b9040f98c74d03e6b24eae2d80a65a3">Tins::IPv4Reassembler::process</a></div><div class="ttdeci">PacketStatus process(PDU &amp;pdu)</div><div class="ttdoc">Processes a PDU and tries to reassemble it. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.cpp:119</div></div>
 <div class="ttc" id="classTins_1_1PDU_html_a46ba1ff589a753e815692b88efe97739"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html#a46ba1ff589a753e815692b88efe97739">Tins::PDU::serialization_type</a></div><div class="ttdeci">byte_array serialization_type</div><div class="ttdef"><b>Definition:</b> pdu.h:112</div></div>
-<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">Tins::IPv4Reassembler::FRAGMENTED</a></div><div class="ttdoc">The given packet is fragmented and can&#39;t be reassembled yet. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:125</div></div>
+<div class="ttc" id="classTins_1_1IPv4Reassembler_html_a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html#a9a2dbcb65662a7b6a9a6624f80758248a6378211bf10da35930acc4901eff3629">Tins::IPv4Reassembler::FRAGMENTED</a></div><div class="ttdoc">The given packet is fragmented and can&#39;t be reassembled yet. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:127</div></div>
 <div class="ttc" id="classTins_1_1PDU_html"><div class="ttname"><a href="../../d8/de6/classTins_1_1PDU.html">Tins::PDU</a></div><div class="ttdoc">Base class for protocol data units. </div><div class="ttdef"><b>Definition:</b> pdu.h:107</div></div>
-<div class="ttc" id="classTins_1_1IPv4Reassembler_html"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">Tins::IPv4Reassembler</a></div><div class="ttdoc">Reassembles fragmented IP packets. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:118</div></div>
+<div class="ttc" id="classTins_1_1IPv4Reassembler_html"><div class="ttname"><a href="../../d4/dbb/classTins_1_1IPv4Reassembler.html">Tins::IPv4Reassembler</a></div><div class="ttdoc">Reassembles fragmented IP packets. </div><div class="ttdef"><b>Definition:</b> ip_reassembler.h:120</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_CHECKSUM_UTILS_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../macros.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
@@ -153,14 +153,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif // TINS_CHECKSUM_UTILS_H</span></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_a6f8e8fafa83afd7281380177e7c949d3"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a6f8e8fafa83afd7281380177e7c949d3">Tins::Utils::crc32</a></div><div class="ttdeci">TINS_API uint32_t crc32(const uint8_t *data, uint32_t data_size)</div><div class="ttdoc">Returns the 32 bit crc of the given buffer. </div><div class="ttdef"><b>Definition:</b> checksum_utils.cpp:112</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_a41f2f9386491ac4b0fd31a73f44cf9a6"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a41f2f9386491ac4b0fd31a73f44cf9a6">Tins::Utils::sum_range</a></div><div class="ttdeci">TINS_API uint16_t sum_range(const uint8_t *start, const uint8_t *end)</div><div class="ttdoc">Computes the 16 bit sum of the input buffer. </div><div class="ttdef"><b>Definition:</b> checksum_utils.cpp:49</div></div>
-<div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:44</div></div>
+<div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:45</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_aceb57a571aceae1285c8239cc8508a52"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#aceb57a571aceae1285c8239cc8508a52">Tins::Utils::do_checksum</a></div><div class="ttdeci">TINS_API uint32_t do_checksum(const uint8_t *start, const uint8_t *end)</div><div class="ttdoc">Does the 16 bits sum of all 2 bytes elements between start and end. </div><div class="ttdef"><b>Definition:</b> checksum_utils.cpp:45</div></div>
-<div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:44</div></div>
+<div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:45</div></div>
 <div class="ttc" id="namespaceTins_1_1Utils_html_a5b2844701a2ae75e77b3642a1cca86dc"><div class="ttname"><a href="../../db/d81/namespaceTins_1_1Utils.html#a5b2844701a2ae75e77b3642a1cca86dc">Tins::Utils::pseudoheader_checksum</a></div><div class="ttdeci">TINS_API uint32_t pseudoheader_checksum(IPv4Address source_ip, IPv4Address dest_ip, uint16_t len, uint16_t flag)</div><div class="ttdoc">Performs the pseudo header checksum used in TCP and UDP PDUs. </div><div class="ttdef"><b>Definition:</b> checksum_utils.cpp:94</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

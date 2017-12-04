@@ -93,8 +93,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <dt><a class="anchor" id="_deprecated000004"></a>Member <a class="el" href="../../db/d25/classTins_1_1DNS_1_1resource.html#a5ef61ff05f3857ab6fb275139d7cd0dd">Tins::DNS::resource::TINS_DEPRECATED</a>  (void type(uint16_t data))</dt>
 <dd><dl class="section see"><dt>See Also</dt><dd>resource::query_type  </dd></dl>
 </dd>
-<dt><a class="anchor" id="_deprecated000015"></a>Member <a class="el" href="../../d9/d02/classTins_1_1FileSniffer.html#ac4738b75f0cf187161fac2d9490ba80e">Tins::FileSniffer::FileSniffer</a>  (const std::string &amp;file_name, const std::string &amp;filter="")</dt>
-<dd>Use the constructor that takes a SnifferConfiguration instead. </dd>
 <dt><a class="anchor" id="_deprecated000005"></a>Member <a class="el" href="../../dd/d3f/classTins_1_1IP.html#a0052624d24554ed0768179ad2895b810">Tins::IP::TINS_DEPRECATED</a>  (uint16_t frag_off() const)</dt>
 <dd><dl class="section return"><dt>Returns</dt><dd>The fragment offset for this IP PDU. </dd></dl>
 <dl class="section see"><dt>See Also</dt><dd>IP::fragment_offset </dd>
@@ -130,40 +128,11 @@ IP::flags  </dd></dl>
 </dd>
 <dt><a class="anchor" id="_deprecated000009"></a>Member <a class="el" href="../../d0/de7/classTins_1_1NetworkInterface.html#affe3b4fcdcdaa036b2ad9520861fa8c1">Tins::NetworkInterface::addresses</a>  () const </dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000010"></a>Member <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a42cccda42b3b89d2c87a0db54416eb38">Tins::PacketWriter::LinkType</a>  </dt>
-<dd>Use DataLinkType instead of this enum. </dd>
-<dt><a class="anchor" id="_deprecated000011"></a>Member <a class="el" href="../../da/d6d/classTins_1_1PacketWriter.html#a5503e1c85bd863121fbf34e24d37e6b9">Tins::PacketWriter::PacketWriter</a>  (const std::string &amp;file_name, LinkType lt)</dt>
-<dd>Use the PacketWriter(const std::string&amp;, const DataLinkType&lt;T&gt;&amp;) constructor. </dd>
-<dt><a class="anchor" id="_deprecated000012"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a88243ed15db23d03c953ac93a105136d">Tins::Sniffer::promisc_type</a>  </dt>
-<dd>This enum is no longer necessary. You should use the Sniffer(const std::string&amp;, const SnifferConfiguration&amp;) constructor.  </dd>
-<dt><a class="anchor" id="_deprecated000013"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a8c2645a8f37208944850910727779dd4">Tins::Sniffer::TINS_DEPRECATED</a>  (Sniffer(const std::string &amp;device, unsigned max_packet_size, bool promisc=false, const std::string &amp;filter="", bool rfmon=false))</dt>
-<dd>Use the Sniffer(const std::string&amp;, const SnifferConfiguration&amp;) constructor. <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
-    <tr><td class="paramname">max_packet_size</td><td>The maximum packet size to be read. </td></tr>
-    <tr><td class="paramname">promisc</td><td>bool indicating whether to put the interface in promiscuous mode.(optional) </td></tr>
-    <tr><td class="paramname">filter</td><td>A capture filter to be used on the sniffing session.(optional); </td></tr>
-    <tr><td class="paramname">rfmon</td><td>Indicates if the interface should be put in monitor mode.(optional);  </td></tr>
-  </table>
-  </dd>
-</dl>
-</dd>
-<dt><a class="anchor" id="_deprecated000014"></a>Member <a class="el" href="../../de/dbb/classTins_1_1Sniffer.html#a223e71aecd791f5ee02ca599a93ecf5a">Tins::Sniffer::TINS_DEPRECATED</a>  (Sniffer(const std::string &amp;device, promisc_type promisc, const std::string &amp;filter="", bool rfmon=false))</dt>
-<dd>Use the Sniffer(const std::string&amp;, const SnifferConfiguration&amp;) constructor. <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device</td><td>The device which will be sniffed. </td></tr>
-    <tr><td class="paramname">promisc</td><td>Indicates if the interface should be put in promiscuous mode. </td></tr>
-    <tr><td class="paramname">filter</td><td>A capture filter to be used on the sniffing session.(optional); </td></tr>
-    <tr><td class="paramname">rfmon</td><td>Indicates if the interface should be put in monitor mode.(optional); </td></tr>
-  </table>
-  </dd>
-</dl>
-</dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:50 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

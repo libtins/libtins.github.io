@@ -118,43 +118,41 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef TINS_RADIOTAP_WRITER_H</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_RADIOTAP_WRITER_H</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;../radiotap.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>Tins {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>Utils {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;tins/config.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if !defined(TINS_RADIOTAP_WRITER_H) &amp;&amp; defined(TINS_HAVE_DOT11)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define TINS_RADIOTAP_WRITER_H</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;tins/radiotap.h&gt;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">class </span>RadioTapParser;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html">RadioTapWriter</a> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html#a3bc273093d9f03cf87e6b5e7f33c77e2">RadioTapWriter</a>(std::vector&lt;uint8_t&gt;&amp; buffer);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html#aee7861807c30eb5e1628a9ddce51dd66">write_option</a>(<span class="keyword">const</span> <a class="code" href="../../df/ddb/classTins_1_1PDUOption.html">RadioTap::option</a>&amp; option);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;uint8_t&gt; build_padding_vector(<span class="keyword">const</span> uint8_t* last_ptr, <a class="code" href="../../db/df3/classTins_1_1Utils_1_1RadioTapParser.html">RadioTapParser</a>&amp; parser);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> update_paddings(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; paddings, uint32_t offset);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::vector&lt;uint8_t&gt;&amp; buffer_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>Tins {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>Utils {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">class </span>RadioTapParser;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">class </span>RadioTapWriter {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    RadioTapWriter(std::vector&lt;uint8_t&gt;&amp; buffer);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> write_option(<span class="keyword">const</span> RadioTap::option&amp; option);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::vector&lt;uint8_t&gt; build_padding_vector(<span class="keyword">const</span> uint8_t* last_ptr, RadioTapParser&amp; parser);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> update_paddings(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; paddings, uint32_t offset);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// Utils</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::vector&lt;uint8_t&gt;&amp; buffer_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // TINS_RADIOTAP_WRITER_H</span></div>
-<div class="ttc" id="classTins_1_1PDUOption_html"><div class="ttname"><a href="../../df/ddb/classTins_1_1PDUOption.html">Tins::PDUOption</a></div><div class="ttdoc">Represents a PDU option field. </div><div class="ttdef"><b>Definition:</b> pdu_option.h:201</div></div>
-<div class="ttc" id="classTins_1_1Utils_1_1RadioTapWriter_html_aee7861807c30eb5e1628a9ddce51dd66"><div class="ttname"><a href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html#aee7861807c30eb5e1628a9ddce51dd66">Tins::Utils::RadioTapWriter::write_option</a></div><div class="ttdeci">void write_option(const RadioTap::option &amp;option)</div><div class="ttdoc">Writes an option, adding/removing padding as needed. </div><div class="ttdef"><b>Definition:</b> radiotap_writer.cpp:52</div></div>
-<div class="ttc" id="classTins_1_1Utils_1_1RadioTapWriter_html_a3bc273093d9f03cf87e6b5e7f33c77e2"><div class="ttname"><a href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html#a3bc273093d9f03cf87e6b5e7f33c77e2">Tins::Utils::RadioTapWriter::RadioTapWriter</a></div><div class="ttdeci">RadioTapWriter(std::vector&lt; uint8_t &gt; &amp;buffer)</div><div class="ttdoc">Constructs a RadioTapWriter object. </div><div class="ttdef"><b>Definition:</b> radiotap_writer.cpp:48</div></div>
-<div class="ttc" id="classTins_1_1Utils_1_1RadioTapParser_html"><div class="ttname"><a href="../../db/df3/classTins_1_1Utils_1_1RadioTapParser.html">Tins::Utils::RadioTapParser</a></div><div class="ttdoc">Allows parsing RadioTap options. </div><div class="ttdef"><b>Definition:</b> radiotap_parser.h:50</div></div>
-<div class="ttc" id="classTins_1_1Utils_1_1RadioTapWriter_html"><div class="ttname"><a href="../../dc/d5f/classTins_1_1Utils_1_1RadioTapWriter.html">Tins::Utils::RadioTapWriter</a></div><div class="ttdoc">Writes RadioTap options into a buffer. </div><div class="ttdef"><b>Definition:</b> radiotap_writer.h:52</div></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// Utils</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <span class="comment">// Tins</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif // TINS_RADIOTAP_WRITER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

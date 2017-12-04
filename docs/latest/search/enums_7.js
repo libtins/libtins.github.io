@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['namespacetype',['NamespaceType',['../db/df3/classTins_1_1Utils_1_1RadioTapParser.html#aaa3b3056991a5ea32e8c6b12c2d535fd',1,'Tins::Utils::RadioTapParser']]]
+  ['sockettype',['SocketType',['../d3/dea/classTins_1_1PacketSender.html#a1d36b09517550b9d7d7d650d5c2944c9',1,'Tins::PacketSender']]],
+  ['supervisoryfunctions',['SupervisoryFunctions',['../d3/dac/classTins_1_1LLC.html#add9c5528c949be11a934a4e0759599ba',1,'Tins::LLC']]]
 ];

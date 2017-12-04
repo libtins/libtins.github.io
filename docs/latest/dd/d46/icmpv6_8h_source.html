@@ -122,16 +122,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_ICMPV6_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;macros.h&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;pdu.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;ipv6_address.h&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;pdu_option.h&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;endianness.h&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;small_uint.h&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;hw_address.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;small_uint.h&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;icmp_extension.h&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;cxxstd.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;tins/pdu.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;tins/ipv6_address.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;tins/pdu_option.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;tins/endianness.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;tins/small_uint.h&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;tins/hw_address.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;tins/small_uint.h&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;tins/icmp_extension.h&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;tins/cxxstd.h&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>Memory {</div>
@@ -995,7 +995,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1ICMPv6_html_a91b81691b43bdc3a6c17ec549f6f8f02"><div class="ttname"><a href="../../d7/d38/classTins_1_1ICMPv6.html#a91b81691b43bdc3a6c17ec549f6f8f02">Tins::ICMPv6::options</a></div><div class="ttdeci">const options_type &amp; options() const </div><div class="ttdoc">Getter for the ICMPv6 options. </div><div class="ttdef"><b>Definition:</b> icmpv6.h:750</div></div>
 <div class="ttc" id="classTins_1_1ICMPv6_html_aa3514dd15c5947eb5072301f6eafb17f"><div class="ttname"><a href="../../d7/d38/classTins_1_1ICMPv6.html#aa3514dd15c5947eb5072301f6eafb17f">Tins::ICMPv6::router</a></div><div class="ttdeci">small_uint&lt; 1 &gt; router() const </div><div class="ttdoc">Getter for the router field. </div><div class="ttdef"><b>Definition:</b> icmpv6.h:643</div></div>
 <div class="ttc" id="classTins_1_1ICMPv6_html_a6f587ee13abbe8d0d43e79b8dca61b18"><div class="ttname"><a href="../../d7/d38/classTins_1_1ICMPv6.html#a6f587ee13abbe8d0d43e79b8dca61b18">Tins::ICMPv6::dest_addr</a></div><div class="ttdeci">const ipaddress_type &amp; dest_addr() const </div><div class="ttdoc">Getter for the destination address field. </div><div class="ttdef"><b>Definition:</b> icmpv6.h:731</div></div>
-<div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:44</div></div>
+<div class="ttc" id="classTins_1_1IPv6Address_html"><div class="ttname"><a href="../../de/dd2/classTins_1_1IPv6Address.html">Tins::IPv6Address</a></div><div class="ttdef"><b>Definition:</b> ipv6_address.h:45</div></div>
 <div class="ttc" id="classTins_1_1ICMPv6_html_a5bb465af73f42cc938f90e44ccbabab1"><div class="ttname"><a href="../../d7/d38/classTins_1_1ICMPv6.html#a5bb465af73f42cc938f90e44ccbabab1">Tins::ICMPv6::extensions</a></div><div class="ttdeci">const ICMPExtensionsStructure &amp; extensions() const </div><div class="ttdoc">Getter for the extensions field. </div><div class="ttdef"><b>Definition:</b> icmpv6.h:1054</div></div>
 <div class="ttc" id="classTins_1_1ICMPv6_html_a278ee6b9fc8cef0033aa6b01359396ea"><div class="ttname"><a href="../../d7/d38/classTins_1_1ICMPv6.html#a278ee6b9fc8cef0033aa6b01359396ea">Tins::ICMPv6::option</a></div><div class="ttdeci">PDUOption&lt; uint8_t, ICMPv6 &gt; option</div><div class="ttdef"><b>Definition:</b> icmpv6.h:152</div></div>
 <div class="ttc" id="classTins_1_1ICMPExtensionsStructure_html"><div class="ttname"><a href="../../d7/d1d/classTins_1_1ICMPExtensionsStructure.html">Tins::ICMPExtensionsStructure</a></div><div class="ttdoc">Class that represents an ICMP extensions structure. </div><div class="ttdef"><b>Definition:</b> icmp_extension.h:161</div></div>
@@ -1017,7 +1017,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

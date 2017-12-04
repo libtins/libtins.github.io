@@ -144,7 +144,7 @@ class Tins::PacketWrapper&lt; WrappedType, TimestampType &gt;</h3>
 
 <p><a class="el" href="../../da/de8/classRepresents.html">Represents</a> a sniffed packet. </p>
 <p>RefPackets contain a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> reference and a timestamp. The difference between this class and the <a class="el" href="../../da/da0/classTins_1_1Packet.html">Packet</a> class is that this one contains a reference to a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a>, and not a pointer to one.</p>
-<p>This class is only used in some <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html" title="Base class for sniffers. ">BaseSniffer</a> methods as a thin wrapper to a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> pointer/reference. Only <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html" title="Base class for sniffers. ">BaseSniffer</a> and derived objects can create instances of it. </p>
+<p>This class is only used in some BaseSniffer methods as a thin wrapper to a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> pointer/reference. Only BaseSniffer and derived objects can create instances of it. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a65aa278b40f700a3ace5c7a7d86b517a"></a>
 <div class="memitem">
@@ -170,7 +170,7 @@ template&lt;typename WrappedType , typename TimestampType &gt; </div>
 </div><div class="memdoc">
 
 <p>User defined conversion to wrapped_type. </p>
-<p>This conversion is defined so that <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a724fc3b740bc9d91aeaff4cfb5244868" title="Starts a sniffing loop, using a callback functor for every sniffed packet. ">BaseSniffer::sniff_loop</a> callback or code that calls <a class="el" href="../../d2/d96/classTins_1_1BaseSniffer.html#a86017793ebf553aeacc2797eb018bc61" title="Compiles a filter and uses it to capture one packet. ">BaseSniffer::next_packet</a> can still receive a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> pointer/reference without modifying the code at all. </p>
+<p>This conversion is defined so that BaseSniffer::sniff_loop callback or code that calls BaseSniffer::next_packet can still receive a <a class="el" href="../../d8/de6/classTins_1_1PDU.html" title="Base class for protocol data units. ">PDU</a> pointer/reference without modifying the code at all. </p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ template&lt;typename WrappedType , typename TimestampType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:51 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:08 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

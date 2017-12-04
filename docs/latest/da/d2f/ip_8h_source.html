@@ -121,13 +121,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef TINS_IP_H</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TINS_IP_H</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;pdu.h&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;small_uint.h&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;endianness.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;ip_address.h&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;pdu_option.h&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;macros.h&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;cxxstd.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;tins/pdu.h&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;tins/small_uint.h&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;tins/endianness.h&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;tins/ip_address.h&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;tins/pdu_option.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;tins/macros.h&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;tins/cxxstd.h&gt;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>Tins {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>Memory {</div>
@@ -194,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor"></span>        : copied(0), op_class(0), number(0) {}</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a395bd7f0e06bd9e47ad96634203fa5b3">  157</a></span>&#160;        <a class="code" href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a395bd7f0e06bd9e47ad96634203fa5b3">option_identifier</a>(uint8_t value) </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        option_identifier(uint8_t value) </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="preprocessor">#if TINS_IS_LITTLE_ENDIAN</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor"></span>        : number(value &amp; 0x1f), </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          op_class((value &gt;&gt; 5) &amp; 0x03), </div>
@@ -205,8 +205,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;          number(value &amp; 0x1f) {}</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">        #endif</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor"></span>        </div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a90e7a9449a21c49ea3360bf7870581fc">  174</a></span>&#160;        <a class="code" href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a90e7a9449a21c49ea3360bf7870581fc">option_identifier</a>(<a class="code" href="../../dd/d3f/classTins_1_1IP.html#acb02dc41d46b656715b9878108cbd2ff">OptionNumber</a> number, <a class="code" href="../../dd/d3f/classTins_1_1IP.html#a0ef893a6853b95b3446718133a95da27">OptionClass</a> op_class,</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          <a class="code" href="../../d0/df2/classTins_1_1small__uint.html">small_uint&lt;1&gt;</a> copied) </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        option_identifier(OptionNumber number, OptionClass op_class,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          small_uint&lt;1&gt; copied) </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="preprocessor">#if TINS_IS_LITTLE_ENDIAN</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor"></span>        : number(number), op_class(op_class), copied(copied) {}</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">        #else</span></div>
@@ -487,19 +487,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="classTins_1_1IP_html_a6732c318307ed290ca6773c5cd9efe1a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a6732c318307ed290ca6773c5cd9efe1a">Tins::IP::address_type</a></div><div class="ttdeci">IPv4Address address_type</div><div class="ttdef"><b>Definition:</b> ip.h:73</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a7e151549d909452591112f2d768fa928"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a7e151549d909452591112f2d768fa928">Tins::IP::ssrr</a></div><div class="ttdeci">ssrr_type ssrr() const </div><div class="ttdoc">Searchs and returns a Strict Source and Record Route option. </div><div class="ttdef"><b>Definition:</b> ip.h:652</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a5f980999d3d2bf6943024395720d710d"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a5f980999d3d2bf6943024395720d710d">Tins::IP::clone</a></div><div class="ttdeci">IP * clone() const </div><div class="ttdef"><b>Definition:</b> ip.h:727</div></div>
-<div class="ttc" id="classTins_1_1small__uint_html"><div class="ttname"><a href="../../d0/df2/classTins_1_1small__uint.html">Tins::small_uint&lt; 1 &gt;</a></div></div>
+<div class="ttc" id="classTins_1_1small__uint_html"><div class="ttname"><a href="../../d0/df2/classTins_1_1small__uint.html">Tins::small_uint&lt; 24 &gt;</a></div></div>
 <div class="ttc" id="classTins_1_1IP_html_a61d2b3ef6b4ac44e0b450cf0be5fa937"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a61d2b3ef6b4ac44e0b450cf0be5fa937">Tins::IP::id</a></div><div class="ttdeci">uint16_t id() const </div><div class="ttdoc">Getter for the id field. </div><div class="ttdef"><b>Definition:</b> ip.h:316</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a0ef893a6853b95b3446718133a95da27"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a0ef893a6853b95b3446718133a95da27">Tins::IP::OptionClass</a></div><div class="ttdeci">OptionClass</div><div class="ttdoc">Enum indicating the option&#39;s class. </div><div class="ttdef"><b>Definition:</b> ip.h:90</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1security__type_html"><div class="ttname"><a href="../../d3/d6e/structTins_1_1IP_1_1security__type.html">Tins::IP::security_type</a></div><div class="ttdef"><b>Definition:</b> ip.h:198</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a34a1cb34cc298116bcc8504b9c62b30b"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a34a1cb34cc298116bcc8504b9c62b30b">Tins::IP::options_type</a></div><div class="ttdeci">std::vector&lt; option &gt; options_type</div><div class="ttdef"><b>Definition:</b> ip.h:246</div></div>
 <div class="ttc" id="structTins_1_1PDU_1_1metadata_html"><div class="ttname"><a href="../../dc/d52/structTins_1_1PDU_1_1metadata.html">Tins::PDU::metadata</a></div><div class="ttdoc">Type used to store a PDU header&#39;s data. </div><div class="ttdef"><b>Definition:</b> pdu.h:194</div></div>
-<div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a90e7a9449a21c49ea3360bf7870581fc"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a90e7a9449a21c49ea3360bf7870581fc">Tins::IP::option_identifier::option_identifier</a></div><div class="ttdeci">option_identifier(OptionNumber number, OptionClass op_class, small_uint&lt; 1 &gt; copied)</div><div class="ttdef"><b>Definition:</b> ip.h:174</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a932807f1348dd17a0d049434dccd4e12"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a932807f1348dd17a0d049434dccd4e12">Tins::IP::tos</a></div><div class="ttdeci">uint8_t tos() const </div><div class="ttdoc">Getter for the type of service field. </div><div class="ttdef"><b>Definition:</b> ip.h:298</div></div>
-<div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a395bd7f0e06bd9e47ad96634203fa5b3"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a395bd7f0e06bd9e47ad96634203fa5b3">Tins::IP::option_identifier::option_identifier</a></div><div class="ttdeci">option_identifier(uint8_t value)</div><div class="ttdoc">Constructs this option from a single uint8_t value. </div><div class="ttdef"><b>Definition:</b> ip.h:157</div></div>
 <div class="ttc" id="structTins_1_1IP_1_1option__identifier_html_a5b14eafddca24c1506be81a8829f37a3"><div class="ttname"><a href="../../d3/d1a/structTins_1_1IP_1_1option__identifier.html#a5b14eafddca24c1506be81a8829f37a3">Tins::IP::option_identifier::operator==</a></div><div class="ttdeci">bool operator==(const option_identifier &amp;rhs) const </div><div class="ttdoc">Equality operator. </div><div class="ttdef"><b>Definition:</b> ip.h:185</div></div>
 <div class="ttc" id="classTins_1_1NetworkInterface_html"><div class="ttname"><a href="../../d0/de7/classTins_1_1NetworkInterface.html">Tins::NetworkInterface</a></div><div class="ttdoc">Abstraction of a network interface. </div><div class="ttdef"><b>Definition:</b> network_interface.h:47</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a93c91c976756e0868af87b274c5cfc0a"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a93c91c976756e0868af87b274c5cfc0a">Tins::IP::protocol</a></div><div class="ttdeci">uint8_t protocol() const </div><div class="ttdoc">Getter for the protocol field. </div><div class="ttdef"><b>Definition:</b> ip.h:369</div></div>
-<div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:44</div></div>
+<div class="ttc" id="classTins_1_1IPv4Address_html"><div class="ttname"><a href="../../d2/d08/classTins_1_1IPv4Address.html">Tins::IPv4Address</a></div><div class="ttdoc">Abstraction of an IPv4 address. </div><div class="ttdef"><b>Definition:</b> ip_address.h:45</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a07b61165e3fae7e90c78d2b96ecec86e"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a07b61165e3fae7e90c78d2b96ecec86e">Tins::IP::dst_addr</a></div><div class="ttdeci">address_type dst_addr() const </div><div class="ttdoc">Getter for the destination address field. </div><div class="ttdef"><b>Definition:</b> ip.h:395</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a61b3008542f465c448eb03b1ba0c8ad1"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a61b3008542f465c448eb03b1ba0c8ad1">Tins::IP::version</a></div><div class="ttdeci">small_uint&lt; 4 &gt; version() const </div><div class="ttdoc">Getter for the version field. </div><div class="ttdef"><b>Definition:</b> ip.h:403</div></div>
 <div class="ttc" id="classTins_1_1IP_html_a32a6bf84af274748317ef61ce1a91ce5"><div class="ttname"><a href="../../dd/d3f/classTins_1_1IP.html#a32a6bf84af274748317ef61ce1a91ce5">Tins::IP::fragment_offset</a></div><div class="ttdeci">small_uint&lt; 13 &gt; fragment_offset() const </div><div class="ttdoc">Getter for the fragment offset field. </div><div class="ttdef"><b>Definition:</b> ip.h:342</div></div>
@@ -516,7 +514,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 5 2017 19:21:49 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 3 2017 16:05:07 for libtins by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
