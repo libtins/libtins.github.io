@@ -311,7 +311,7 @@ Reading files in <i>pcap</i> format is very straightforward. The
 <code>FileSniffer</code> class takes the name of the file to be opened as 
 argument, and lets you process the packets in it. Both <code>Sniffer</code>
 and <code>FileSniffer</code> inherit from <code>BaseSniffer</code>, which is
-the class that actually implements <code>next_pdu</code> and <code>sniff_loop</code>.
+the class that actually implements <code>next_packet</code> and <code>sniff_loop</code>.
 Therefore, we can use the <code>FileSniffer</code> class in the same way
 we used <code>Sniffer</code> in the examples above:
 </p>
@@ -400,7 +400,7 @@ bool handler(const PDU& pkt) {
 The same mechanism should be used for other protocols such as <code>DHCP</code>.
 In case you're wondering why application-layer protocols aren't interpreted 
 automatically by transport-layer <code>PDU</code>s, the reason is efficiency.
-Transport layer protocols, such as <code>DNS</code>, require much more processing
+Application layer protocols, such as <code>DNS</code>, require much more processing
 in order to parse them than lower layer protocols. In addition, some 
 applications might not even require to use those protocols, so making them
 pay for that extra processing is undesirable.
