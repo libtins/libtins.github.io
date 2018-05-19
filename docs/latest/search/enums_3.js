@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['messagetype',['MessageType',['../d8/d2b/classTins_1_1DHCPv6.html#a207c4fee31ce2ebb29410d28a7729b8d',1,'Tins::DHCPv6']]],
-  ['modifierfunctions',['ModifierFunctions',['../d3/dac/classTins_1_1LLC.html#a1196abbaf5f7576180da5e690227c528',1,'Tins::LLC']]]
+  ['eapoltype',['EAPOLTYPE',['../d5/ddb/classTins_1_1EAPOL.html#af7c7917f8725dbb0901c6c4e88fce148',1,'Tins::EAPOL']]],
+  ['endian_5ftype',['endian_type',['../d8/de6/classTins_1_1PDU.html#a027b795cdc01bbecb841bffde2fa6651',1,'Tins::PDU']]],
+  ['extensionheader',['ExtensionHeader',['../dd/d25/classTins_1_1IPv6.html#a8818a0ba9596f5b27f4a29955d1f0207',1,'Tins::IPv6']]]
 ];

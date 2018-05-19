@@ -6,6 +6,8 @@ var searchData=
   ['hash_3c_20tins_3a_3ahwaddress_3c_20n_20_3e_20_3e',['hash&lt; Tins::HWAddress&lt; n &gt; &gt;',['../d4/dfc/structstd_1_1hash_3_01Tins_1_1HWAddress_3_01n_01_4_01_4.html',1,'std']]],
   ['hash_3c_20tins_3a_3aipv4address_20_3e',['hash&lt; Tins::IPv4Address &gt;',['../d8/d9c/structstd_1_1hash_3_01Tins_1_1IPv4Address_01_4.html',1,'std']]],
   ['hash_3c_20tins_3a_3aipv6address_20_3e',['hash&lt; Tins::IPv6Address &gt;',['../dc/de8/structstd_1_1hash_3_01Tins_1_1IPv6Address_01_4.html',1,'std']]],
+  ['hop_5fby_5fhop_5fheader',['hop_by_hop_header',['../d5/de3/structTins_1_1IPv6_1_1hop__by__hop__header.html',1,'Tins::IPv6']]],
   ['hwaddress',['HWAddress',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]],
+  ['hwaddress_3c_203_20_3e',['HWAddress&lt; 3 &gt;',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]],
   ['hwaddress_3c_206_20_3e',['HWAddress&lt; 6 &gt;',['../dc/da6/classTins_1_1HWAddress.html',1,'Tins']]]
 ];
