@@ -88,8 +88,8 @@ public:
      * PDU. On libtins 4.0 this parameter was removed as you can get
      * the parent PDU by calling PDU::parent_pdu()
      */
-    void write_serialization(uint8_t *data, uint32_t sz) { 
-        buffer_.assign(data, data + sz);
+    void write_serialization(uint8_t *data, uint32_t sz) {
+        std::memcpy(data, buffer_.data(), sz);
     }
     
     // This is just a getter to retrieve the buffer member.
