@@ -108,7 +108,7 @@ Sniffer sniffer = ...;
 
 // And start sniffing, forwarding all packets to our follower
 sniffer.sniff_loop([&](PDU& pdu) {
-    follower.process_packed(pdu);
+    follower.process_packet(pdu);
     return true;
 })
 {% endhighlight %}
