@@ -18,6 +18,7 @@ to save developers time when they come across them.
     <li><a href="#config-issues"><i>config.h</i> can't be found</a></li>
     <li><a href="#linking">Can't find symbols when building your application</a></li>
     <li><a href="#sniffer-error">Sniffing packets fails</a></li>
+    <li><a href="#build">I am having trouble building a utility that uses libtins</a></li>
 </ul>
 </div>
 
@@ -98,4 +99,10 @@ If you're using Windows, you need to have the WinPCAP driver installed and
 running to be able to capture packets. Note that this is different from the
 WinPCAP libraries/include files that you would need in order to build
 <i>libtins</i>.
+</p>
+
+<h3 id="build">I am having trouble building a utility that uses libtins</h3>
+<p>
+If you get random dependency errors when building something that uses <i>libtins</i>, consider building with
+    a known good environment inside docker, like <a href="https://github.com/pollere/pping">pping</a> does <a href="https://github.com/dagelf/pping/tree/master/docker">here.</a>
 </p>
